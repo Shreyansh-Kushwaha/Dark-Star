@@ -38,6 +38,9 @@ export class UIScene extends Phaser.Scene {
     this._keyI   = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.I);
     this._keyM   = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.M);
     this._keyF11 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F11);
+    this._keyR   = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
+    this._youDiedActive      = false;
+    this._youDiedRetryRegion = null;
 
     const gs = this.scene.get('GameScene');
     gs.events.on('boss_entered',       this._onBossEntered,    this);
@@ -57,6 +60,7 @@ export class UIScene extends Phaser.Scene {
     gs.events.on('update_ui',          this._updateHUD,        this);
     gs.events.on('ability_used',       this._onAbilityUsed,    this);
     gs.events.on('show_inventory',     this._showInventory,    this);
+    gs.events.on('game_over',          this._onGameOver,       this);
   }
 
   // ── Top HUD ────────────────────────────────────────────────────────────────
@@ -295,6 +299,31 @@ export class UIScene extends Phaser.Scene {
       } else {
         icon.cd.setText('–');
         icon.border.setAlpha(0.5);
+      }
+    }
+
+    // YOU DIED input — takes priority over all other keys
+    if (this._youDiedRetryRegion !== null) {
+      if (Phaser.Input.Keyboard.JustDown(this._keyR)) {
+        const ri = this._youDiedRetryRegion;
+        this._youDiedRetryRegion = null;
+        this.cameras.main.fadeOut(500, 0, 0, 0);
+        this.cameras.main.once('camerafadeoutcomplete', () => {
+          this.scene.stop('UIScene');
+          this.scene.stop('GameScene');
+          this.scene.start('GameScene', { regionIndex: ri });
+        });
+        return;
+      }
+      if (Phaser.Input.Keyboard.JustDown(this._keyEsc)) {
+        this._youDiedRetryRegion = null;
+        this.cameras.main.fadeOut(500, 0, 0, 0);
+        this.cameras.main.once('camerafadeoutcomplete', () => {
+          this.scene.stop('UIScene');
+          this.scene.stop('GameScene');
+          this.scene.start('MainMenuScene');
+        });
+        return;
       }
     }
 
@@ -637,6 +666,52 @@ export class UIScene extends Phaser.Scene {
   _refreshInventory(gs) {
     const items = gs?.saveData?.inventory || gs?.players?.[0]?.inventory || [];
     this._invText.setText(items.length ? items.join('\n') : 'No items yet.');
+  }
+
+  // ── YOU DIED screen ────────────────────────────────────────────────────────
+
+  _onGameOver(data) {
+    const regionIndex = data?.regionIndex ?? 0;
+
+    // Layer order: overlay → divider lines → main text → subtitle → hint
+    const depth = 9995;
+
+    // Full-screen black veil
+    const veil = this.add.rectangle(0, 0, GAME_W, GAME_H, 0x000000, 0).setOrigin(0).setDepth(depth);
+    this.tweens.add({ targets: veil, alpha: 0.88, duration: 1100, ease: 'Power2.In' });
+
+    // Thin blood-red horizontal lines flanking the text
+    const lineL = this.add.rectangle(GAME_W / 2 - 320, GAME_H / 2 - 2, 260, 1, 0x880000, 0)
+      .setOrigin(1, 0.5).setDepth(depth + 1);
+    const lineR = this.add.rectangle(GAME_W / 2 + 320, GAME_H / 2 - 2, 260, 1, 0x880000, 0)
+      .setOrigin(0, 0.5).setDepth(depth + 1);
+    this.tweens.add({ targets: [lineL, lineR], alpha: 0.6, duration: 600, delay: 1400 });
+
+    // "YOU DIED" — large, blood red, fades in slowly with slight scale
+    const mainTxt = this.add.text(GAME_W / 2, GAME_H / 2 - 4, 'YOU DIED', {
+      fontSize: '72px', color: '#cc1111', fontFamily: 'serif',
+      stroke: '#220000', strokeThickness: 8,
+      letterSpacing: 12,
+    }).setOrigin(0.5).setDepth(depth + 2).setAlpha(0).setScale(1.08);
+
+    this.tweens.add({
+      targets: mainTxt, alpha: 1, scaleX: 1, scaleY: 1,
+      duration: 2200, delay: 300, ease: 'Power2.Out',
+    });
+
+    // Subtitle with retry / menu options
+    const hintTxt = this.add.text(GAME_W / 2, GAME_H / 2 + 54, '[R]  Retry Region      [ESC]  Main Menu', {
+      fontSize: '14px', color: '#886666', fontFamily: 'monospace',
+      stroke: '#000', strokeThickness: 2,
+    }).setOrigin(0.5).setDepth(depth + 2).setAlpha(0);
+
+    this.tweens.add({ targets: hintTxt, alpha: 1, duration: 500, delay: 2200 });
+
+    // Key handler — fires once after hint appears
+    this._youDiedActive = true;
+    this.time.delayedCall(2200, () => {
+      this._youDiedRetryRegion = regionIndex;
+    });
   }
 
   // ── Toast utility ──────────────────────────────────────────────────────────
