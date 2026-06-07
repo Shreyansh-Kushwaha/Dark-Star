@@ -433,7 +433,7 @@ export class GameScene extends Phaser.Scene {
       ...(region.fixedEnemies || []).map(e => ({ x: e.x - forestX, y: e.y, r: 120 })),
     ];
 
-    const points = poissonDisk(forestW, WORLD_H, 110, 160, excl, 1234);
+    const points = poissonDisk(forestW, WORLD_H, 80, 160, excl, 1234);
 
     for (const pt of points) {
       const wx = pt.x + forestX;
@@ -441,13 +441,13 @@ export class GameScene extends Phaser.Scene {
       let key, scale;
       if (r < 0.20) {
         key   = stumpKeys[Math.floor(Math.random() * stumpKeys.length)];
-        scale = 0.50 + Math.random() * 0.20;
+        scale = 0.30 + Math.random() * 0.15;
       } else if (r < 0.60) {
         key   = jungleKeys[Math.floor(Math.random() * jungleKeys.length)];
-        scale = 2.50 + Math.random() * 1.00;
+        scale = 0.60 + Math.random() * 0.40;
       } else {
         key   = firKeys[Math.floor(Math.random() * firKeys.length)];
-        scale = 3.50 + Math.random() * 1.50;
+        scale = 0.70 + Math.random() * 0.40;
       }
       this.add.image(wx, pt.y, key).setScale(scale).setDepth(1);
     }
@@ -502,26 +502,26 @@ export class GameScene extends Phaser.Scene {
       ...(region.platePositions || []).map(p => ({ x: p.x, y: p.y, r: 100 })),
     ];
 
-    const points = poissonDisk(WORLD_W, WORLD_H, 100, 200, excl, 5678);
+    const points = poissonDisk(WORLD_W, WORLD_H, 80, 200, excl, 5678);
 
     for (const pt of points) {
       const r = Math.random();
       let key, scale, tint = null;
       if (r < 0.35) {
         key   = stumpKeys[Math.floor(Math.random() * stumpKeys.length)];
-        scale = 0.50 + Math.random() * 0.20;
+        scale = 0.30 + Math.random() * 0.15;
       } else if (r < 0.80) {
         const jungle = Math.random() < 0.55;
         key   = jungle
           ? jungleKeys[Math.floor(Math.random() * jungleKeys.length)]
           : firKeys[Math.floor(Math.random() * firKeys.length)];
-        scale = jungle ? 2.50 + Math.random() * 1.00 : 3.50 + Math.random() * 1.50;
+        scale = 0.60 + Math.random() * 0.40;
       } else {
         const jungle = Math.random() < 0.55;
         key   = jungle
           ? jungleKeys[Math.floor(Math.random() * jungleKeys.length)]
           : firKeys[Math.floor(Math.random() * firKeys.length)];
-        scale = jungle ? 2.50 + Math.random() * 1.00 : 3.50 + Math.random() * 1.50;
+        scale = 0.60 + Math.random() * 0.40;
         tint  = 0x336622;
       }
       const img = this.add.image(pt.x, pt.y, key).setScale(scale).setDepth(1);
@@ -597,21 +597,21 @@ export class GameScene extends Phaser.Scene {
       ...(region.platePositions || []).map(p => ({ x: p.x, y: p.y, r: 100 })),
     ];
 
-    const deadPts = poissonDisk(WORLD_W, WORLD_H, 110, 110, deadExcl, 9012);
+    const deadPts = poissonDisk(WORLD_W, WORLD_H, 80, 110, deadExcl, 9012);
     for (const pt of deadPts) {
       const r = Math.random();
       let key, scale, tint;
       if (r < 0.55) {
         key   = stumpKeys[Math.floor(Math.random() * stumpKeys.length)];
-        scale = 0.50 + Math.random() * 0.20;
+        scale = 0.30 + Math.random() * 0.15;
         tint  = 0x7a4422;
       } else if (r < 0.85) {
         key   = firKeys[Math.floor(Math.random() * firKeys.length)];
-        scale = 3.50 + Math.random() * 1.50;
+        scale = 0.70 + Math.random() * 0.40;
         tint  = 0x4a2800;
       } else {
         key   = jungleKeys[Math.floor(Math.random() * jungleKeys.length)];
-        scale = 2.50 + Math.random() * 1.00;
+        scale = 0.60 + Math.random() * 0.40;
         tint  = 0x2a1200;
       }
       this.add.image(pt.x, pt.y, key).setScale(scale).setDepth(1).setTint(tint);
