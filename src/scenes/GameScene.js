@@ -504,16 +504,44 @@ export class GameScene extends Phaser.Scene {
   _spawnRabbitDecoration(regionIndex) {
     if (regionIndex > 2) return;
     const forestX = 900;
-    const spawnOne = (key, animKey, x, y) => {
-      if (!this.textures.exists(key)) return;
-      const spr = this.add.sprite(x, y, key).setScale(2.5).setDepth(y - 2).setAlpha(0.9);
-      if (this.anims.exists(animKey)) spr.play(animKey);
+
+    const spawnOne = (texKey, idleAnim, moveAnim, x, y) => {
+      if (!this.textures.exists(texKey)) return;
+      const spr = this.add.sprite(x, y, texKey).setScale(2.5).setDepth(y - 2).setAlpha(0.9);
+      const flip = Math.random() < 0.5;
+      spr.setFlipX(flip);
+
+      const loop = () => {
+        if (!spr.active) return;
+        const resting = Math.random() < 0.55;
+        const dur = resting ? 1500 + Math.random() * 2500 : 800 + Math.random() * 1200;
+        if (resting) {
+          if (this.anims.exists(idleAnim)) spr.play(idleAnim);
+        } else {
+          const dir = Math.random() < 0.5 ? 1 : -1;
+          spr.setFlipX(dir < 0);
+          if (this.anims.exists(moveAnim)) spr.play(moveAnim);
+          this.tweens.add({
+            targets: spr,
+            x: spr.x + dir * (40 + Math.random() * 60),
+            duration: dur,
+            ease: 'Linear',
+          });
+        }
+        this.time.delayedCall(dur, loop);
+      };
+      loop();
     };
+
     for (let i = 0; i < 8; i++) {
-      spawnOne('rabbit_idle', 'rabbit_idle', forestX + Math.random() * (WORLD_W - forestX - 200), 300 + Math.random() * (WORLD_H - 600));
+      spawnOne('rabbit_idle', 'rabbit_idle', 'rabbit_move',
+        forestX + Math.random() * (WORLD_W - forestX - 200),
+        300 + Math.random() * (WORLD_H - 600));
     }
     for (let i = 0; i < 4; i++) {
-      spawnOne('rabbitH_idle', 'rabbitH_idle', forestX + Math.random() * (WORLD_W - forestX - 200), 300 + Math.random() * (WORLD_H - 600));
+      spawnOne('rabbitH_idle', 'rabbitH_idle', 'rabbit_move',
+        forestX + Math.random() * (WORLD_W - forestX - 200),
+        300 + Math.random() * (WORLD_H - 600));
     }
   }
 

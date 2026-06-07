@@ -11,7 +11,7 @@ export class MainMenuScene extends Phaser.Scene {
     bg.fillRect(0, 0, GAME_W, GAME_H);
 
     // Procedural mandala
-    this._drawMandala(GAME_W / 2, GAME_H / 2 + 40, 180);
+    this._drawMandala(GAME_W / 2, GAME_H / 2 - 30, 180);
 
     // Title
     this.add.text(GAME_W / 2, 80, 'AKHAND SUTRA', {
@@ -29,20 +29,20 @@ export class MainMenuScene extends Phaser.Scene {
       fontSize: '12px', color: '#886644', fontFamily: 'serif',
     }).setOrigin(0.5);
 
-    // Buttons
+    // Buttons — centered vertically on screen
     const cx = GAME_W / 2;
-    this._makeButton(cx, 420, 'SOLO PLAY', () => this._startGame(false));
-    this._makeButton(cx, 480, 'HOST CO-OP', () => this._hostCoop());
-    this._makeButton(cx, 540, 'JOIN CO-OP', () => this._joinCoop());
+    this._makeButton(cx, 280, 'SOLO PLAY', () => this._startGame(false));
+    this._makeButton(cx, 340, 'HOST CO-OP', () => this._hostCoop());
+    this._makeButton(cx, 400, 'JOIN CO-OP', () => this._joinCoop());
 
-    this._makeButton(cx, 600, 'LOAD REGION', () => this._toggleRegionSelect());
+    this._makeButton(cx, 460, 'LOAD REGION', () => this._toggleRegionSelect());
     this._regionSelectPanel = null;
     this._regionSelectOpen = false;
 
     const hasSave = !!SaveManager.load();
     if (hasSave) {
-      this._makeButton(cx, 660, 'CONTINUE', () => this._continueGame(), 0x224422, 0x44ff44);
-      this._makeButton(cx + 220, 660, 'NEW GAME', () => { SaveManager.clear(); this._startGame(false); }, 0x442222, 0xff8888);
+      this._makeButton(cx, 520, 'CONTINUE', () => this._continueGame(), 0x224422, 0x44ff44);
+      this._makeButton(cx + 220, 520, 'NEW GAME', () => { SaveManager.clear(); this._startGame(false); }, 0x442222, 0xff8888);
     }
 
     // Version
@@ -56,14 +56,14 @@ export class MainMenuScene extends Phaser.Scene {
     }).setOrigin(0.5, 0.5);
 
     // Co-op room code input area (hidden by default)
-    this._roomInput = this.add.text(cx, 730, '', {
+    this._roomInput = this.add.text(cx, 620, '', {
       fontSize: '22px', color: '#ffd700', fontFamily: 'monospace',
       stroke: '#000', strokeThickness: 3,
       backgroundColor: '#111',
       padding: { x: 12, y: 8 },
     }).setOrigin(0.5).setAlpha(0);
 
-    this._roomPrompt = this.add.text(cx, 700, '', {
+    this._roomPrompt = this.add.text(cx, 590, '', {
       fontSize: '13px', color: '#aaa', fontFamily: 'monospace',
     }).setOrigin(0.5).setAlpha(0);
 
@@ -170,7 +170,7 @@ export class MainMenuScene extends Phaser.Scene {
   _makeRegionSelect() {
     const cx = GAME_W / 2;
     const panelX = cx + 160;
-    const startY = 530;
+    const startY = 390;
     const rowH   = 36;
     const objs   = [];
 
