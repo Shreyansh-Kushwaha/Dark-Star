@@ -483,6 +483,8 @@ export class GameScene extends Phaser.Scene {
       return;
     }
 
+    if (region.mapImage) return;
+
     const r = regionIndex;
     const count = 30;
     for (let i = 0; i < count; i++) {
@@ -691,29 +693,31 @@ export class GameScene extends Phaser.Scene {
     const isHermit = region.villageStyle === 'hermit';
     const g = this.add.graphics().setDepth(-6);
 
-    g.fillStyle(isHermit ? 0x2a4a1a : 0x5a9448, isHermit ? 0.7 : 0.55);
-    g.fillRect(vz.x, vz.y, vz.w, vz.h);
+    if (!region.mapImage) {
+      g.fillStyle(isHermit ? 0x2a4a1a : 0x5a9448, isHermit ? 0.7 : 0.55);
+      g.fillRect(vz.x, vz.y, vz.w, vz.h);
 
-    g.lineStyle(4, isHermit ? 0x4a3010 : 0x8b5c2a, 0.85);
-    g.strokeRect(vz.x + 10, vz.y + 10, vz.w - 20, vz.h - 20);
+      g.lineStyle(4, isHermit ? 0x4a3010 : 0x8b5c2a, 0.85);
+      g.strokeRect(vz.x + 10, vz.y + 10, vz.w - 20, vz.h - 20);
 
-    g.fillStyle(isHermit ? 0x3a2010 : 0x7a4e20, 1);
-    for (let px = vz.x + 10; px < vz.x + vz.w - 10; px += 80) {
-      g.fillRect(px - 4, vz.y + 6, 8, 18);
-      g.fillRect(px - 4, vz.y + vz.h - 24, 8, 18);
+      g.fillStyle(isHermit ? 0x3a2010 : 0x7a4e20, 1);
+      for (let px = vz.x + 10; px < vz.x + vz.w - 10; px += 80) {
+        g.fillRect(px - 4, vz.y + 6, 8, 18);
+        g.fillRect(px - 4, vz.y + vz.h - 24, 8, 18);
+      }
+      for (let py = vz.y + 10; py < vz.y + vz.h - 10; py += 80) {
+        g.fillRect(vz.x + 6, py - 4, 18, 8);
+        g.fillRect(vz.x + vz.w - 24, py - 4, 18, 8);
+      }
+
+      // Gate opening on right side at CY
+      g.fillStyle(isHermit ? 0x2a4a1a : 0x5a9448, 1);
+      g.fillRect(vz.x + vz.w - 24, WORLD_H / 2 - 60, 30, 120);
+
+      g.fillStyle(isHermit ? 0x3a2010 : 0x5c3410, 1);
+      g.fillRect(vz.x + vz.w - 8, WORLD_H / 2 - 64, 12, 24);
+      g.fillRect(vz.x + vz.w - 8, WORLD_H / 2 + 40, 12, 24);
     }
-    for (let py = vz.y + 10; py < vz.y + vz.h - 10; py += 80) {
-      g.fillRect(vz.x + 6, py - 4, 18, 8);
-      g.fillRect(vz.x + vz.w - 24, py - 4, 18, 8);
-    }
-
-    // Gate opening on right side at CY
-    g.fillStyle(isHermit ? 0x2a4a1a : 0x5a9448, 1);
-    g.fillRect(vz.x + vz.w - 24, WORLD_H / 2 - 60, 30, 120);
-
-    g.fillStyle(isHermit ? 0x3a2010 : 0x5c3410, 1);
-    g.fillRect(vz.x + vz.w - 8, WORLD_H / 2 - 64, 12, 24);
-    g.fillRect(vz.x + vz.w - 8, WORLD_H / 2 + 40, 12, 24);
 
     const hutColor = isHermit ? 0x5c4020 : 0xb8824a;
     region.npcPositions.forEach(np => {
