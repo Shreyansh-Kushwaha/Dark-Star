@@ -181,6 +181,11 @@ export class PreloadScene extends Phaser.Scene {
     for (const name of treeFiles) {
       this.load.image(name, `${CP}/${name}.png`);
     }
+
+    // ── Tiny Swords Stumps (broken/dead trees) ───────────────────
+    for (let i = 1; i <= 4; i++) {
+      this.load.image(`ts_stump_${i}`, `${TS}/Terrain/Resources/Wood/Trees/Stump ${i}.png`);
+    }
   }
 
   create() {

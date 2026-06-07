@@ -410,36 +410,62 @@ export class GameScene extends Phaser.Scene {
   }
 
   _buildDenseForest(region) {
-    // Exclusion zones
-    const exclusions = [
-      { ...region.spawnPos,  r: 180 },
-      { ...region.bossPos,   r: 200 },
-      { ...region.portalBack, r: 160 },
-      ...(region.portalNext ? [{ ...region.portalNext, r: 160 }] : []),
-      ...(region.spawnerPositions || []).map(p => ({ ...p, r: 160 })),
-      ...(region.npcPositions || []).map(p => ({ ...p, r: 160 })),
+    const jungleKeys = [
+      'jungle_tree_1','jungle_tree_2','jungle_tree_3','jungle_tree_4','jungle_tree_5',
+      'jungle_tree_6','jungle_tree_7','jungle_tree_8','jungle_tree_9','jungle_tree_10',
+      'jungle_tree_11','jungle_tree_12','jungle_tree_13','jungle_tree_14',
+    ];
+    const firKeys = [
+      'fir_tree_1','fir_tree_2','fir_tree_3','fir_tree_4','fir_tree_5',
+      'fir_tree_6','fir_tree_7','fir_tree_8','fir_tree_9','fir_tree_10','fir_tree_11',
+    ];
+    const stumpKeys = ['ts_stump_1','ts_stump_2','ts_stump_3','ts_stump_4'];
+
+    // Trees only in the forest zone (x > 900 — village is left side)
+    const forestX = 900;
+    const forestW = WORLD_W - forestX;
+
+    // Translate exclusions to local forest coords
+    const excl = [
+      ...(region.portalNext   ? [{ x: region.portalNext.x   - forestX, y: region.portalNext.y,   r: 160 }] : []),
+      ...(region.portalBack   ? [{ x: region.portalBack.x   - forestX, y: region.portalBack.y,   r: 160 }] : []),
+      ...(region.spawnPos     ? [{ x: region.spawnPos.x     - forestX, y: region.spawnPos.y,     r: 180 }] : []),
+      ...(region.fixedEnemies || []).map(e => ({ x: e.x - forestX, y: e.y, r: 120 })),
     ];
 
-    // Bushes via Poisson disk
-    const bushKeys = ['bush1','bush2','bush3','bush4'];
-    const bushPoints = poissonDisk(WORLD_W, WORLD_H, 38, 110, exclusions, 7331);
-    for (const pt of bushPoints) {
-      const key  = bushKeys[Math.floor(Math.random() * bushKeys.length)];
-      const scale = 1.8 + Math.random() * 1.2;
-      this.add.image(pt.x, pt.y, key).setScale(scale).setDepth(pt.y - 1);
+    const points = poissonDisk(forestW, WORLD_H, 55, 160, excl, 1234);
+
+    for (const pt of points) {
+      const wx = pt.x + forestX;
+      const r  = Math.random();
+      let key, scale;
+      if (r < 0.20) {
+        key   = stumpKeys[Math.floor(Math.random() * stumpKeys.length)];
+        scale = 0.08 + Math.random() * 0.06;
+      } else if (r < 0.60) {
+        key   = jungleKeys[Math.floor(Math.random() * jungleKeys.length)];
+        scale = 0.12 + Math.random() * 0.10;
+      } else {
+        key   = firKeys[Math.floor(Math.random() * firKeys.length)];
+        scale = 0.12 + Math.random() * 0.10;
+      }
+      this.add.image(wx, pt.y, key).setScale(scale).setDepth(1);
     }
   }
 
   _buildRegionDecorations(region, regionIndex) {
+    if (regionIndex === 2) {
+      this._buildSacredGroveTrees(region);
+      return;
+    }
+
     const r = regionIndex;
-    // Scatter rocks, bushes, region-specific decor
     const count = 30;
     for (let i = 0; i < count; i++) {
       const x = 200 + Math.random() * (WORLD_W - 400);
       const y = 200 + Math.random() * (WORLD_H - 400);
       let key = 'bush1';
-      if (r === 3) key = Math.random() < 0.5 ? 'water_rock1' : 'water_rock2';
-      else if (r >= 4) key = Math.random() < 0.5 ? 'rock1' : 'rock2';
+      if (r >= 4) key = Math.random() < 0.5 ? 'rock1' : 'rock2';
       else key = ['bush1','bush2','bush3','bush4','rock1','rock2'][Math.floor(Math.random()*6)];
       this.add.image(x, y, key).setScale(1.5 + Math.random()).setDepth(y);
     }
@@ -452,6 +478,54 @@ export class GameScene extends Phaser.Scene {
         const key = Math.random() < 0.5 ? 'cloud1' : 'cloud2';
         this.add.image(x, y, key).setScale(2 + Math.random()).setAlpha(0.4).setDepth(-8);
       }
+    }
+  }
+
+  _buildSacredGroveTrees(region) {
+    const jungleKeys = [
+      'jungle_tree_1','jungle_tree_2','jungle_tree_3','jungle_tree_4','jungle_tree_5',
+      'jungle_tree_6','jungle_tree_7','jungle_tree_8','jungle_tree_9','jungle_tree_10',
+      'jungle_tree_11','jungle_tree_12','jungle_tree_13','jungle_tree_14',
+    ];
+    const firKeys = [
+      'fir_tree_1','fir_tree_2','fir_tree_3','fir_tree_4','fir_tree_5',
+      'fir_tree_6','fir_tree_7','fir_tree_8','fir_tree_9','fir_tree_10','fir_tree_11',
+    ];
+    const stumpKeys = ['ts_stump_1','ts_stump_2','ts_stump_3','ts_stump_4'];
+
+    const excl = [
+      ...(region.spawnPos    ? [{ ...region.spawnPos,  r: 180 }] : []),
+      ...(region.portalBack  ? [{ ...region.portalBack, r: 160 }] : []),
+      ...(region.portalNext  ? [{ ...region.portalNext, r: 160 }] : []),
+      ...(region.fixedEnemies || []).map(e => ({ x: e.x, y: e.y, r: 140 })),
+      ...(region.npcPositions || []).map(n => ({ x: n.x, y: n.y, r: 120 })),
+      ...(region.platePositions || []).map(p => ({ x: p.x, y: p.y, r: 100 })),
+    ];
+
+    const points = poissonDisk(WORLD_W, WORLD_H, 50, 200, excl, 5678);
+
+    for (const pt of points) {
+      const r = Math.random();
+      let key, scale, tint = null;
+      if (r < 0.35) {
+        key   = stumpKeys[Math.floor(Math.random() * stumpKeys.length)];
+        scale = 0.09 + Math.random() * 0.06;
+      } else if (r < 0.80) {
+        const jungle = Math.random() < 0.55;
+        key   = jungle
+          ? jungleKeys[Math.floor(Math.random() * jungleKeys.length)]
+          : firKeys[Math.floor(Math.random() * firKeys.length)];
+        scale = 0.13 + Math.random() * 0.11;
+      } else {
+        const jungle = Math.random() < 0.55;
+        key   = jungle
+          ? jungleKeys[Math.floor(Math.random() * jungleKeys.length)]
+          : firKeys[Math.floor(Math.random() * firKeys.length)];
+        scale = 0.13 + Math.random() * 0.11;
+        tint  = 0x336622;
+      }
+      const img = this.add.image(pt.x, pt.y, key).setScale(scale).setDepth(1);
+      if (tint !== null) img.setTint(tint);
     }
   }
 
@@ -498,6 +572,49 @@ export class GameScene extends Phaser.Scene {
       const y = 200 + Math.random() * (WORLD_H - 400);
       const key = shrubKeys[Math.floor(Math.random() * shrubKeys.length)];
       this.add.image(x, y, key).setScale(1.0 + Math.random() * 0.5).setDepth(y).setTint(0xcc8844);
+    }
+
+    // Petrified/dead tree overlay — setDepth(1) so always behind players/enemies
+    const firKeys = [
+      'fir_tree_1','fir_tree_2','fir_tree_3','fir_tree_4','fir_tree_5',
+      'fir_tree_6','fir_tree_7','fir_tree_8','fir_tree_9','fir_tree_10','fir_tree_11',
+    ];
+    const jungleKeys = [
+      'jungle_tree_1','jungle_tree_2','jungle_tree_3','jungle_tree_4','jungle_tree_5',
+      'jungle_tree_6','jungle_tree_7','jungle_tree_8','jungle_tree_9','jungle_tree_10',
+      'jungle_tree_11','jungle_tree_12','jungle_tree_13','jungle_tree_14',
+    ];
+    const stumpKeys = ['ts_stump_1','ts_stump_2','ts_stump_3','ts_stump_4'];
+
+    const deadExcl = [
+      ...(region.spawnPos    ? [{ ...region.spawnPos,  r: 180 }] : []),
+      ...(region.portalBack  ? [{ ...region.portalBack, r: 160 }] : []),
+      ...(region.portalNext  ? [{ ...region.portalNext, r: 160 }] : []),
+      ...(region.bossPos     ? [{ ...region.bossPos,   r: 200 }] : []),
+      ...(region.spawnerPositions || []).map(s => ({ x: s.x, y: s.y, r: 140 })),
+      ...(region.npcPositions || []).map(n => ({ x: n.x, y: n.y, r: 120 })),
+      ...(region.fixedEnemies || []).map(e => ({ x: e.x, y: e.y, r: 120 })),
+      ...(region.platePositions || []).map(p => ({ x: p.x, y: p.y, r: 100 })),
+    ];
+
+    const deadPts = poissonDisk(WORLD_W, WORLD_H, 65, 110, deadExcl, 9012);
+    for (const pt of deadPts) {
+      const r = Math.random();
+      let key, scale, tint;
+      if (r < 0.55) {
+        key   = stumpKeys[Math.floor(Math.random() * stumpKeys.length)];
+        scale = 0.09 + Math.random() * 0.07;
+        tint  = 0x7a4422;
+      } else if (r < 0.85) {
+        key   = firKeys[Math.floor(Math.random() * firKeys.length)];
+        scale = 0.13 + Math.random() * 0.13;
+        tint  = 0x4a2800;
+      } else {
+        key   = jungleKeys[Math.floor(Math.random() * jungleKeys.length)];
+        scale = 0.13 + Math.random() * 0.13;
+        tint  = 0x2a1200;
+      }
+      this.add.image(pt.x, pt.y, key).setScale(scale).setDepth(1).setTint(tint);
     }
   }
 
