@@ -226,8 +226,18 @@ export class UIScene extends Phaser.Scene {
     const gs = this.scene.get('GameScene');
     if (!gs || !gs.players) return;
 
-    // Update ability cooldowns display
-    // (GameScene will emit ability_used events with remaining CD)
+    // Drive ability cooldown countdown display
+    for (const icon of this._abilityIcons) {
+      if (icon.cdLeft > 0) {
+        icon.cdLeft = Math.max(0, icon.cdLeft - delta);
+        const pct = icon.cdLeft / icon.cdMax;
+        icon.border.setAlpha(0.25 + 0.75 * (1 - pct));
+        icon.cd.setText(icon.cdLeft > 0 ? (icon.cdLeft / 1000).toFixed(1) : '–');
+      } else {
+        icon.cd.setText('–');
+        icon.border.setAlpha(0.5);
+      }
+    }
 
     // Key handlers
     if (Phaser.Input.Keyboard.JustDown(this._keyEsc)) {
@@ -360,10 +370,24 @@ export class UIScene extends Phaser.Scene {
   }
 
   _onAbilityUsed(data) {
-    const idx = ['Q','E','R'].indexOf(data.key);
+    const idx = ['Q', 'E', 'R'].indexOf(data.key);
     if (idx < 0 || !this._abilityIcons[idx]) return;
-    this._abilityIcons[idx].cdLeft = data.cd;
-    this._abilityIcons[idx].cdMax  = data.cd;
+    const icon = this._abilityIcons[idx];
+    icon.cdLeft = data.cd;
+    icon.cdMax  = data.cd;
+
+    if (!data.name) return;
+    if (icon._nameText) { icon._nameText.destroy(); icon._nameText = null; }
+    const nameText = this.add.text(icon.x, icon.y - 36, data.name, {
+      fontSize: '10px', color: '#ffffff', fontFamily: 'monospace',
+      stroke: '#000000', strokeThickness: 2,
+    }).setOrigin(0.5, 1).setDepth(200);
+    icon._nameText = nameText;
+    this.tweens.add({
+      targets: nameText, alpha: 0, y: icon.y - 54,
+      duration: 1500, ease: 'Power2',
+      onComplete: () => { nameText.destroy(); icon._nameText = null; },
+    });
   }
 
   _showInventory(data) {
