@@ -1,0 +1,12 @@
+{
+  "name": "akhand-sutra-server",
+  "version": "1.0.0",
+  "description": "Akhand Sutra WebSocket game server",
+  "main": "combined_server.js",
+  "scripts": {
+    "start": "node combined_server.js"
+  },
+  "dependencies": {
+    "ws": "^8.16.0"
+  }
+}

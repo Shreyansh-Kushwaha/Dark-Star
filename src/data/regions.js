@@ -47,7 +47,6 @@ export const REGIONS = [
 
     enemyTypes: ['melee'],
     ambientKey: 0,
-    mapImage: 'map_region_0',
   },
 
   // 1 — Mahāvana  (deep green, half-village half-dense-forest)
