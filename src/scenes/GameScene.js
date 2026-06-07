@@ -173,9 +173,10 @@ export class GameScene extends Phaser.Scene {
     this._createBossArena(region);
 
     if (region.denseForest) this._buildDenseForest(region);
+    else if (region.serpentRealm) this._buildSerpentRealm(region);
     else this._buildRegionDecorations(region, regionIndex);
 
-    if (regionIndex === 0) {
+    if (regionIndex === 0 || (regionIndex === 1 && region.villageZone)) {
       this._buildVillage(region);
       this._tutorialShown = false;
     }
@@ -480,68 +481,108 @@ export class GameScene extends Phaser.Scene {
     }
   }
 
-  _buildVillage(region) {
-    const vz = region.villageZone; // { x, y, w, h }
+  _buildSerpentRealm(region) {
     const g = this.add.graphics().setDepth(-6);
 
-    // Ground fill — slightly lighter patch to mark village
-    g.fillStyle(0x5a9448, 0.55);
+    // Snake den mounds
+    for (let i = 0; i < 18; i++) {
+      const x = 300 + Math.random() * (WORLD_W - 600);
+      const y = 200 + Math.random() * (WORLD_H - 400);
+      const w = 80 + Math.random() * 40, h = 40 + Math.random() * 20;
+      g.fillStyle(0x6a3a0a, 0.7);
+      g.fillEllipse(x, y, w, h);
+      g.lineStyle(2, 0x4a2800, 0.6);
+      g.strokeEllipse(x, y, w, h);
+      g.fillStyle(0x1a0800, 0.9);
+      g.fillEllipse(x, y + 8, 20, 12);
+    }
+
+    // Glowing amber pools
+    for (let i = 0; i < 10; i++) {
+      const x = 400 + Math.random() * (WORLD_W - 800);
+      const y = 300 + Math.random() * (WORLD_H - 600);
+      const r = 25 + Math.random() * 20;
+      g.fillStyle(0xffaa22, 0.22);
+      g.fillEllipse(x, y, r * 2, r);
+      g.lineStyle(1.5, 0xff8800, 0.4);
+      g.strokeEllipse(x, y, r * 2, r);
+    }
+
+    // Rocks
+    const rockKeys = ['rock1', 'rock2'].filter(k => this.textures.exists(k));
+    for (let i = 0; i < 24; i++) {
+      const x = 200 + Math.random() * (WORLD_W - 400);
+      const y = 200 + Math.random() * (WORLD_H - 400);
+      const key = rockKeys.length ? rockKeys[Math.floor(Math.random() * rockKeys.length)] : 'bush1';
+      this.add.image(x, y, key).setScale(1.2 + Math.random() * 0.8).setDepth(y).setTint(0xaa6633);
+    }
+
+    // Small dry shrubs
+    const shrubKeys = ['bush1','bush2','bush3'].filter(k => this.textures.exists(k));
+    for (let i = 0; i < 20; i++) {
+      const x = 200 + Math.random() * (WORLD_W - 400);
+      const y = 200 + Math.random() * (WORLD_H - 400);
+      const key = shrubKeys[Math.floor(Math.random() * shrubKeys.length)];
+      this.add.image(x, y, key).setScale(1.0 + Math.random() * 0.5).setDepth(y).setTint(0xcc8844);
+    }
+  }
+
+  _buildVillage(region) {
+    const vz = region.villageZone;
+    const isHermit = region.villageStyle === 'hermit';
+    const g = this.add.graphics().setDepth(-6);
+
+    g.fillStyle(isHermit ? 0x2a4a1a : 0x5a9448, isHermit ? 0.7 : 0.55);
     g.fillRect(vz.x, vz.y, vz.w, vz.h);
 
-    // Village fence — simple post border
-    g.lineStyle(4, 0x8b5c2a, 0.85);
+    g.lineStyle(4, isHermit ? 0x4a3010 : 0x8b5c2a, 0.85);
     g.strokeRect(vz.x + 10, vz.y + 10, vz.w - 20, vz.h - 20);
 
-    // Fence posts every 80px along top + bottom
-    g.fillStyle(0x7a4e20, 1);
+    g.fillStyle(isHermit ? 0x3a2010 : 0x7a4e20, 1);
     for (let px = vz.x + 10; px < vz.x + vz.w - 10; px += 80) {
-      g.fillRect(px - 4, vz.y + 6,  8, 18);
+      g.fillRect(px - 4, vz.y + 6, 8, 18);
       g.fillRect(px - 4, vz.y + vz.h - 24, 8, 18);
     }
-    // Fence posts along left + right
     for (let py = vz.y + 10; py < vz.y + vz.h - 10; py += 80) {
-      g.fillRect(vz.x + 6,       py - 4, 18, 8);
+      g.fillRect(vz.x + 6, py - 4, 18, 8);
       g.fillRect(vz.x + vz.w - 24, py - 4, 18, 8);
     }
 
-    // Village gate (opening in fence on right side, at CY)
-    g.fillStyle(0x5a9448, 1);
-    g.fillRect(vz.x + vz.w - 24, WORLD_H / 2 - 60, 30, 120); // erase fence segment
+    // Gate opening on right side at CY
+    g.fillStyle(isHermit ? 0x2a4a1a : 0x5a9448, 1);
+    g.fillRect(vz.x + vz.w - 24, WORLD_H / 2 - 60, 30, 120);
 
-    // Gate posts
-    g.fillStyle(0x5c3410, 1);
+    g.fillStyle(isHermit ? 0x3a2010 : 0x5c3410, 1);
     g.fillRect(vz.x + vz.w - 8, WORLD_H / 2 - 64, 12, 24);
     g.fillRect(vz.x + vz.w - 8, WORLD_H / 2 + 40, 12, 24);
 
-    // Hut circles for each NPC position
-    const hutColor = 0xb8824a;
+    const hutColor = isHermit ? 0x5c4020 : 0xb8824a;
     region.npcPositions.forEach(np => {
-      g.fillStyle(hutColor, 0.45);
+      g.fillStyle(hutColor, isHermit ? 0.6 : 0.45);
       g.fillCircle(np.x, np.y, 48);
-      g.lineStyle(3, 0x8b5c2a, 0.8);
+      g.lineStyle(3, isHermit ? 0x3a2010 : 0x8b5c2a, 0.8);
       g.strokeCircle(np.x, np.y, 48);
-      // Doorway
-      g.fillStyle(0x4a2e0a, 0.9);
+      g.fillStyle(0x2a1000, 0.9);
       g.fillRect(np.x - 8, np.y + 30, 16, 20);
     });
 
-    // Well in the center of the village
-    const wx = vz.x + vz.w * 0.5;
-    const wy = WORLD_H / 2;
-    g.fillStyle(0x6a6a6a, 0.9);
-    g.fillCircle(wx, wy, 22);
-    g.fillStyle(0x2255aa, 0.8);
-    g.fillCircle(wx, wy, 14);
-    g.lineStyle(3, 0x444, 0.9);
-    g.strokeCircle(wx, wy, 22);
+    const cx = vz.x + vz.w * 0.5;
+    const cy = WORLD_H / 2;
+    if (isHermit) {
+      g.fillStyle(0x333333, 0.9); g.fillCircle(cx, cy, 16);
+      g.fillStyle(0xff6600, 0.9); g.fillCircle(cx, cy, 8);
+      g.fillStyle(0xffcc00, 0.8); g.fillCircle(cx, cy, 4);
+    } else {
+      g.fillStyle(0x6a6a6a, 0.9); g.fillCircle(cx, cy, 22);
+      g.fillStyle(0x2255aa, 0.8); g.fillCircle(cx, cy, 14);
+      g.lineStyle(3, 0x444444, 0.9); g.strokeCircle(cx, cy, 22);
+    }
 
-    // "Village" sign text near gate
-    this.add.text(vz.x + vz.w - 80, WORLD_H / 2 - 90, 'Gramavana', {
-      fontSize: '13px', color: '#e8c87a', fontFamily: 'serif',
-      stroke: '#2a1a00', strokeThickness: 3,
+    const label = isHermit ? "Hermit's Camp" : 'Gramavana';
+    this.add.text(vz.x + vz.w - 100, WORLD_H / 2 - 90, label, {
+      fontSize: '13px', color: isHermit ? '#c8a060' : '#e8c87a',
+      fontFamily: 'serif', stroke: '#1a0a00', strokeThickness: 3,
     }).setDepth(10);
-
-    // Forest boundary sign on the right side of the gate
     this.add.text(vz.x + vz.w + 20, WORLD_H / 2 - 90, '⟶ Forest', {
       fontSize: '13px', color: '#88cc55', fontFamily: 'serif',
       stroke: '#0a2200', strokeThickness: 3,
