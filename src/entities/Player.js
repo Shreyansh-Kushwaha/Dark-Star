@@ -4,6 +4,7 @@ import {
   PERFECT_DODGE_WINDOW, PERFECT_DODGE_SLOWMO, PERFECT_DODGE_DURATION,
   WARRIOR_FRAME,
 } from '../constants.js';
+import { AbilityManager } from '../systems/AbilityManager.js';
 
 const ABILITY_CDS = { Q: 8000, E: 10000, R: 12000 };
 
@@ -41,6 +42,8 @@ export class Player extends Phaser.GameObjects.Container {
     this._dodgeTimer         = 0;
     this._guardStance        = false;
     this._questKillCount     = 0;
+    this._agniShieldTimer = 0;
+    this._agniShieldFx    = null;
 
     const base = isP1 ? 'dhruva' : 'tara';
     this.baseKey = base;
@@ -98,6 +101,7 @@ export class Player extends Phaser.GameObjects.Container {
     }
 
     this.setDepth(this.y);
+    if (this._agniShieldFx) this._agniShieldFx.setPosition(this.x, this.y);
 
     if (this.downed) {
       this._downTimer -= delta;
@@ -131,6 +135,14 @@ export class Player extends Phaser.GameObjects.Container {
     if (this._dodgeTimer > 0) {
       this._dodgeTimer -= delta;
       if (this._dodgeTimer <= 0) this.dodging = false;
+    }
+
+    if (this._agniShieldTimer > 0) {
+      this._agniShieldTimer -= delta;
+      if (this._agniShieldTimer <= 0) {
+        this._agniShieldTimer = 0;
+        if (this._agniShieldFx) { this._agniShieldFx.destroy(); this._agniShieldFx = null; }
+      }
     }
   }
 
@@ -186,17 +198,20 @@ export class Player extends Phaser.GameObjects.Container {
       this._doDodge(scene);
     }
 
-    if (keys.Q && Phaser.Input.Keyboard.JustDown(keys.Q) && this._abilityCds.Q <= 0) {
-      this._abilityCds.Q = ABILITY_CDS.Q;
-      this._useAbilityQ(enemies, scene);
-    }
-    if (keys.E && Phaser.Input.Keyboard.JustDown(keys.E) && this._abilityCds.E <= 0) {
-      this._abilityCds.E = ABILITY_CDS.E;
-      this._useAbilityE(enemies, scene);
-    }
-    if (keys.R && Phaser.Input.Keyboard.JustDown(keys.R) && this._abilityCds.R <= 0) {
-      this._abilityCds.R = ABILITY_CDS.R;
-      this._useAbilityR(enemies, scene);
+    const char = this.isP1 ? 'dhruva' : 'tara';
+    for (const k of ['Q', 'E', 'R']) {
+      if (!keys[k] || !Phaser.Input.Keyboard.JustDown(keys[k])) continue;
+      if (this._abilityCds[k] > 0) continue;
+      const ability = AbilityManager.getAbility(char, k);
+      if (!ability || this.stamina < ability.stamina) continue;
+      this.stamina -= ability.stamina;
+      const fired = AbilityManager.use(k, this, scene);
+      if (fired) {
+        this._abilityCds[k] = ability.cooldown;
+        scene.events.emit('ability_used', { key: k, cd: ability.cooldown, name: ability.name });
+      } else {
+        this.stamina += ability.stamina;
+      }
     }
   }
 
@@ -301,6 +316,10 @@ export class Player extends Phaser.GameObjects.Container {
     if (!this.alive || this.downed) return;
     if (this.dodging && this.checkPerfectDodge(scene)) return;
     if (this._guardStance) amount *= 0.5;
+    if (this._agniShieldTimer > 0) {
+      amount *= 0.5;
+      if (source?.takeDamage) source.takeDamage(10, this, scene);
+    }
 
     this.hp = Math.max(0, this.hp - amount);
     this._updateHpBar();
@@ -331,87 +350,6 @@ export class Player extends Phaser.GameObjects.Container {
     this.sprite.setAlpha(1);
     this._updateHpBar();
     this.scene?.events?.emit('player_revived', { player: this });
-  }
-
-  _useAbilityQ(enemies, scene) {
-    if (this.isP1) this._vajraSlam(enemies, scene);
-    else           this._mantraBolt(scene);
-    scene.audio.ability();
-  }
-
-  _useAbilityE(enemies, scene) {
-    if (this.isP1) this._akshaLunge(enemies, scene);
-    else           this._divyaDrishti(enemies, scene);
-    scene.audio.ability();
-  }
-
-  _useAbilityR(enemies, scene) {
-    if (this.isP1) this._guardianStance(scene);
-    else           this._healingAura(scene);
-    scene.audio.ability();
-  }
-
-  _vajraSlam(enemies, scene) {
-    const r = 160;
-    scene.events.emit('ability_fx', { type: 'explosion', x: this.x, y: this.y });
-    for (const e of enemies) {
-      if (!e?.active || !e.alive) continue;
-      const d = Phaser.Math.Distance.Between(this.x, this.y, e.x, e.y);
-      if (d <= r) {
-        e.takeDamage(LIGHT_DMG * this.abilityPow, this, scene);
-        const angle = Math.atan2(e.y - this.y, e.x - this.x);
-        e.knockback(angle, 300);
-      }
-    }
-    this._spawnAbilityCircle(scene, this.x, this.y, r, 0xffdd44);
-  }
-
-  _akshaLunge(enemies, scene) {
-    const dist  = 220;
-    const tx    = this.x + this.facingX * dist;
-    const ty    = this.y + (this.facingY || 0);
-    const angle = Math.atan2(this.y - ty || 0, tx - this.x);
-    scene.tweens.add({ targets: this, x: tx, y: ty, duration: 180 });
-    for (const e of enemies) {
-      if (!e?.active || !e.alive) continue;
-      const d = Phaser.Math.Distance.Between(this.x, this.y, e.x, e.y);
-      if (d < dist + 40) e.takeDamage(HEAVY_DMG * this.abilityPow, this, scene);
-    }
-  }
-
-  _guardianStance(scene) {
-    this._guardStance = true;
-    scene.events.emit('ability_fx', { type: 'guard', x: this.x, y: this.y });
-    scene.time.delayedCall(3000, () => { this._guardStance = false; });
-  }
-
-  _mantraBolt(scene) {
-    scene.events.emit('spawn_projectile', {
-      x: this.x, y: this.y,
-      angle: Math.atan2(this.facingY || 0, this.facingX),
-      damage: 35 * this.abilityPow,
-      fromEnemy: false,
-      key: 'fire_01',
-      speed: 400,
-      tint: 0x88aaff,
-    });
-  }
-
-  _divyaDrishti(enemies, scene) {
-    scene.events.emit('spawn_projectile', {
-      x: this.x, y: this.y,
-      angle: Math.atan2(this.facingY || 0, this.facingX),
-      damage: 5,
-      fromEnemy: false,
-      key: 'fire_02',
-      speed: 200,
-      slowOnHit: true,
-    });
-  }
-
-  _healingAura(scene) {
-    scene.events.emit('healing_aura', { players: scene.players });
-    scene.events.emit('ability_fx', { type: 'heal', x: this.x, y: this.y });
   }
 
   _spawnHitFX(scene, x, y) {
