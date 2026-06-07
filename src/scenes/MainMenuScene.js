@@ -187,6 +187,9 @@ export class MainMenuScene extends Phaser.Scene {
     this._qualityBtn = this._makeButton(cx, 480, this._qualityLabel(), () => this._cycleQuality(),
       { bg: 0x0c1428, border: 0x2244aa, text: '#88aaff', w: 200 });
 
+    this._fsBtn = this._makeButton(cx, 535, this._fsLabel(), () => this._toggleFullscreen(),
+      { bg: 0x0c1428, border: 0x334466, text: '#7799bb', w: 200 });
+
     this._regionSelectPanel = null;
     this._regionSelectOpen  = false;
 
@@ -388,6 +391,22 @@ export class MainMenuScene extends Phaser.Scene {
   _cycleQuality() {
     QualitySettings.cycle();
     this._qualityBtn.txt.setText(this._qualityLabel());
+  }
+
+  _fsLabel() {
+    return this.scale?.isFullscreen ? '>  FULLSCREEN: ON' : '>  FULLSCREEN: OFF';
+  }
+
+  _toggleFullscreen() {
+    if (this.scale.isFullscreen) {
+      this.scale.stopFullscreen();
+    } else {
+      this.scale.startFullscreen();
+    }
+    // Update label after a tick (isFullscreen updates asynchronously)
+    this.time.delayedCall(100, () => {
+      this._fsBtn.txt.setText(this._fsLabel());
+    });
   }
 
   update() {}
