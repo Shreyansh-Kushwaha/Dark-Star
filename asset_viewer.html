@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Akhand Sutra — Asset Viewer</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0a0010; color: #ffd700; font-family: serif; }
+  h1 { text-align: center; padding: 24px 0 8px; font-size: 28px; letter-spacing: 2px; }
+  .subtitle { text-align: center; color: #886644; font-size: 14px; padding-bottom: 24px; font-style: italic; }
+  .section { padding: 24px 32px; border-top: 1px solid #333; }
+  .section-title { font-size: 20px; color: #ffd700; margin-bottom: 6px; letter-spacing: 1px; }
+  .section-sub { font-size: 12px; color: #888; margin-bottom: 16px; }
+  .grid { display: flex; flex-wrap: wrap; gap: 16px; }
+  .card { background: #12001c; border: 1px solid #333; border-radius: 8px; padding: 12px; min-width: 180px; max-width: 260px; }
+  .card img { display: block; max-width: 100%; max-height: 200px; margin: 0 auto 8px; image-rendering: pixelated; background: #1a0028; border-radius: 4px; }
+  .card .label { font-size: 13px; color: #ffe8a0; text-align: center; font-weight: bold; }
+  .card .tag { font-size: 11px; color: #888; text-align: center; margin-top: 4px; }
+  .card.boss { border-color: #ff4444; }
+  .card.boss .label { color: #ff8888; }
+  .card.new-boss { border-color: #ff9900; }
+  .card.new-boss .label { color: #ffcc44; }
+  .card.enemy { border-color: #4488ff; }
+  .card.enemy .label { color: #88ccff; }
+  .card.deco { border-color: #44aa44; }
+  .card.deco .label { color: #88ff88; }
+  .region-card { background: #12001c; border: 1px solid #555; border-radius: 8px; padding: 10px; }
+  .region-card img { display: block; width: 400px; height: 225px; object-fit: cover; border-radius: 4px; margin-bottom: 8px; }
+  .region-card .label { font-size: 14px; color: #ffd700; font-weight: bold; }
+  .region-card .tag { font-size: 11px; color: #888; margin-top: 3px; }
+  .divider { height: 1px; background: linear-gradient(to right, transparent, #ffd700, transparent); margin: 0 32px; }
+  .legend { display: flex; gap: 16px; padding: 8px 32px; font-size: 11px; }
+  .legend span { display: flex; align-items: center; gap: 6px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+</style>
+</head>
+<body>
+
+<h1>AKHAND SUTRA — Asset Viewer</h1>
+<p class="subtitle">Regions · Current Bosses · New Bosses · New Enemies · Decoration</p>
+
+<div class="legend">
+  <span><span class="dot" style="background:#ff4444"></span> Current Boss</span>
+  <span><span class="dot" style="background:#ff9900"></span> New Boss (to add)</span>
+  <span><span class="dot" style="background:#4488ff"></span> New Enemy</span>
+  <span><span class="dot" style="background:#44aa44"></span> Background Decoration</span>
+</div>
+
+<!-- REGIONS -->
+<div class="section">
+  <div class="section-title">Region Screenshots</div>
+  <div class="section-sub">Current gameplay screenshots for reference</div>
+  <div class="grid">
+    <div class="region-card">
+      <img src="temp/region0.png" alt="Region 0" onerror="this.style.background='#1a0028';this.alt='No screenshot'">
+      <div class="label">Region 0 — Gramavana</div>
+      <div class="tag">The Forest Village · No Boss</div>
+    </div>
+    <div class="region-card">
+      <img src="temp/region0_village.png" alt="Region 0 Village">
+      <div class="label">Region 0 — Village Area</div>
+      <div class="tag">Village zone with NPCs</div>
+    </div>
+    <div class="region-card">
+      <img src="temp/region1.png" alt="Region 1">
+      <div class="label">Region 1 — Mahāvana</div>
+      <div class="tag">The Great Forest · No Boss · NPC-talk unlock</div>
+    </div>
+    <div class="region-card">
+      <img src="temp/region2.png" alt="Region 2">
+      <div class="label">Region 2 — Vrindavana</div>
+      <div class="tag">The Sacred Grove · No Boss · Kill-all unlock</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CURRENT BOSSES -->
+<div class="section">
+  <div class="section-title">Current Bosses (Regions 3–6)</div>
+  <div class="section-sub">Existing boss sprites using THE PACK assets</div>
+  <div class="grid">
+
+    <div class="card boss">
+      <img src="THE PACK/Monsters/ORC2/IDEL/01.png" alt="Nagraj Kaliya">
+      <div class="label">Nagraj Kaliya</div>
+      <div class="tag">Region 3 · Serpent Realm · ORC2 sprite</div>
+    </div>
+
+    <div class="card boss">
+      <img src="THE PACK/Monsters/ORC2/IDEL/01.png" alt="Pashana Daitya">
+      <div class="label">Pashana Daitya</div>
+      <div class="tag">Region 4 · Temple · ORC2 sprite (placeholder)</div>
+    </div>
+
+    <div class="card boss">
+      <img src="THE PACK/Monsters/Tree/ground Up/01.png" alt="Vayu Rakshasa">
+      <div class="label">Vayu Rakshasa</div>
+      <div class="tag">Region 5 · Heaven's Edge · Tree Boss sprite</div>
+    </div>
+
+    <div class="card boss">
+      <img src="THE PACK/Monsters/KING SLIME/idel/01.png" alt="Viyogasur">
+      <div class="label">Viyogasur</div>
+      <div class="tag">Region 6 · Final Boss · King Slime sprite (placeholder)</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- NEW BOSSES -->
+<div class="section">
+  <div class="section-title">New Bosses — To Be Added</div>
+  <div class="section-sub">These replace the placeholder sprites above</div>
+  <div class="grid">
+
+    <div class="card new-boss">
+      <img src="assest2/Frost_Guardian_FREE_v1.0/PNG files/idle/idle_1.png" alt="Frost Guardian">
+      <div class="label">Frost Guardian</div>
+      <div class="tag">idle×6 · walk×10 · attack×14 · take_hit · death</div>
+    </div>
+
+    <div class="card new-boss">
+      <img src="assest2/boss_demon_slime_FREE_v1.0/individual sprites/01_demon_idle/demon_idle_1.png" alt="Demon Slime">
+      <div class="label">Boss Demon Slime</div>
+      <div class="tag">idle×6 · walk×12 · cleave×15 · take_hit×5 · death×22</div>
+    </div>
+
+    <div class="card new-boss">
+      <img src="assest2/mino_v1.1_free/animations/idle/idle_1.png" alt="Minotaur">
+      <div class="label">Minotaur (Mino)</div>
+      <div class="tag">idle×16 · walk×12 · attack</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- NEW ENEMIES -->
+<div class="section">
+  <div class="section-title">New Enemies — Goblin · Orc · Ogre</div>
+  <div class="section-sub">To replace/supplement existing ORC enemy sprites across regions</div>
+  <div class="grid">
+
+    <div class="card enemy">
+      <img src="assest2/craftpix-064112-free-orc-ogre-and-goblin-chibi-2d-game-sprites/Goblin/PNG/PNG Sequences/Idle/0_Goblin_Idle_000.png" alt="Goblin">
+      <div class="label">Goblin</div>
+      <div class="tag">Idle · Run · Slashing · Throwing · Dying</div>
+    </div>
+
+    <div class="card enemy">
+      <img src="assest2/craftpix-064112-free-orc-ogre-and-goblin-chibi-2d-game-sprites/Orc/PNG/PNG Sequences/Idle/0_Orc_Idle_000.png" alt="Orc">
+      <div class="label">Orc</div>
+      <div class="tag">Idle · Run · Slashing · Run Slashing · Dying</div>
+    </div>
+
+    <div class="card enemy">
+      <img src="assest2/craftpix-064112-free-orc-ogre-and-goblin-chibi-2d-game-sprites/Ogre/PNG/PNG Sequences/Idle/0_Ogre_Idle_000.png" alt="Ogre">
+      <div class="label">Ogre</div>
+      <div class="tag">Idle · Run · Slashing · Kicking · Dying</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- RABBIT DECORATION -->
+<div class="section">
+  <div class="section-title">Background Decoration — Rabbits</div>
+  <div class="section-sub">Ambient sprites to place in forest regions (not enemies)</div>
+  <div class="grid">
+
+    <div class="card deco">
+      <img src="assest2/Monster Pack (Free)/Spritesheets/Updated Rabbit/Rabbit_Brown_Idle.png" alt="Brown Rabbit" style="max-height:120px;">
+      <div class="label">Brown Rabbit</div>
+      <div class="tag">Idle + Move spritesheet (512×512)</div>
+    </div>
+
+    <div class="card deco">
+      <img src="assest2/Monster Pack (Free)/Spritesheets/Updated Rabbit Horned/Rabbit_Horned_Idle.png" alt="Horned Rabbit" style="max-height:120px;">
+      <div class="label">Horned Rabbit</div>
+      <div class="tag">Idle + Move + Attack spritesheet (512×512)</div>
+    </div>
+
+  </div>
+</div>
+
+<div style="height:40px"></div>
+
+</body>
+</html>
