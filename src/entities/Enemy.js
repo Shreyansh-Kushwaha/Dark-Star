@@ -1,0 +1,285 @@
+import { ENEMY_TYPES } from '../data/enemies.js';
+import { QualitySettings } from '../systems/QualitySettings.js';
+
+const STATE = { IDLE: 'idle', PURSUE: 'pursue', ATTACK: 'attack', DEAD: 'dead' };
+const IDLE_ROAM_DIST = 120;
+const DETECT_RANGE   = 350;
+
+export class Enemy extends Phaser.GameObjects.Container {
+  constructor(scene, x, y, typeKey, diffMult = 1) {
+    super(scene, x, y);
+    scene.add.existing(this);
+
+    const cfg = ENEMY_TYPES[typeKey];
+    this.typeKey   = typeKey;
+    this.cfg       = cfg;
+    this.alive     = true;
+    this.state     = STATE.IDLE;
+    this.speed     = cfg.speed;
+    this.maxHp     = Math.floor(cfg.maxHp * diffMult);
+    this.hp        = this.maxHp;
+    this.damage    = cfg.attackDmg * diffMult;
+    this.range     = cfg.attackRange;
+    this.attackCd  = cfg.attackCd;
+    this._atkTimer = 0;
+    this._shockwaveTimer = cfg.shockwaveCd || Infinity;
+    this._coverTree = null;
+    this._lastDepthY = y;
+
+    this._spawnX = x;
+    this._spawnY = y;
+    this._roamTarget = null;
+    this._roamTimer  = 0;
+
+    // Build sprite
+    const baseKey = cfg.textureBase;
+    this.sprite = scene.add.sprite(0, 0, baseKey + '_idle_01');
+    this.sprite.setScale(cfg.scale || 1);
+    if (cfg.tint) this.sprite.setTint(cfg.tint);
+    this.add(this.sprite);
+
+    // Shadow
+    if (QualitySettings.shadows) {
+      const shadow = scene.add.ellipse(0, this.sprite.displayHeight * 0.35, 30 * (cfg.scale || 1), 10, 0x000000, 0.25);
+      this.addAt(shadow, 0);
+    }
+
+    // HP bar
+    this._hpBar = scene.add.rectangle(0, -32 * (cfg.scale || 1), 40, 4, 0x22cc44).setOrigin(0.5, 0.5);
+    this._hpBg  = scene.add.rectangle(0, -32 * (cfg.scale || 1), 40, 4, 0x333333).setOrigin(0.5, 0.5);
+    this.add(this._hpBg);
+    this.add(this._hpBar);
+
+    // Physics
+    scene.physics.add.existing(this);
+    this.body.setSize(28, 28);
+    this.body.setOffset(-14, -14);
+    if (cfg.physics) this.body.allowGravity = false;
+
+    this._playAnim('idle');
+    this.setDepth(y);
+  }
+
+  _playAnim(state) {
+    const key = `${this.cfg.textureBase}_${state}`;
+    if (this.scene.anims.exists(key)) {
+      this.sprite.play(key, true);
+    }
+  }
+
+  update(time, delta, players, treePositions) {
+    if (!this.alive) return;
+    this._atkTimer = Math.max(0, this._atkTimer - delta);
+    if (this._shockwaveTimer !== Infinity) this._shockwaveTimer = Math.max(0, this._shockwaveTimer - delta);
+
+    if (Math.abs(this.y - this._lastDepthY) > 1) {
+      this.setDepth(this.y);
+      this._lastDepthY = this.y;
+    }
+
+    const target = this._nearestPlayer(players);
+
+    switch (this.state) {
+      case STATE.IDLE:    this._doIdle(time, delta, target); break;
+      case STATE.PURSUE:  this._doPursue(delta, target, treePositions); break;
+      case STATE.ATTACK:  this._doAttack(target); break;
+    }
+  }
+
+  _nearestPlayer(players) {
+    let best = null, bestDist = Infinity;
+    for (const p of players) {
+      if (!p || !p.active || !p.alive || p.downed) continue;
+      const d = Phaser.Math.Distance.Between(this.x, this.y, p.x, p.y);
+      if (d < bestDist) { best = p; bestDist = d; }
+    }
+    return bestDist < DETECT_RANGE || this.state !== STATE.IDLE ? best : null;
+  }
+
+  _doIdle(time, delta, target) {
+    if (target) {
+      const d = Phaser.Math.Distance.Between(this.x, this.y, target.x, target.y);
+      if (d < DETECT_RANGE) { this.state = STATE.PURSUE; return; }
+    }
+
+    this._roamTimer -= delta;
+    if (this._roamTimer <= 0) {
+      this._roamTimer = Phaser.Math.Between(2000, 4000);
+      const angle = Math.random() * Math.PI * 2;
+      this._roamTarget = {
+        x: this._spawnX + Math.cos(angle) * IDLE_ROAM_DIST,
+        y: this._spawnY + Math.sin(angle) * IDLE_ROAM_DIST,
+      };
+    }
+
+    if (this._roamTarget) {
+      const dx = this._roamTarget.x - this.x;
+      const dy = this._roamTarget.y - this.y;
+      const d  = Math.sqrt(dx * dx + dy * dy);
+      if (d > 8) {
+        const s = this.speed * 0.4;
+        this.body.setVelocity(dx / d * s, dy / d * s);
+        this.sprite.setFlipX(dx < 0);
+        this._playAnim('run');
+      } else {
+        this.body.setVelocity(0, 0);
+        this._playAnim('idle');
+      }
+    } else {
+      this.body.setVelocity(0, 0);
+      this._playAnim('idle');
+    }
+  }
+
+  _doPursue(delta, target, treePositions) {
+    if (!target) { this.state = STATE.IDLE; return; }
+
+    const dx = target.x - this.x;
+    const dy = target.y - this.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+
+    if (dist <= this.range) {
+      this.body.setVelocity(0, 0);
+      this.state = STATE.ATTACK;
+      return;
+    }
+
+    // Ranged enemies seek cover near trees before shooting
+    let mx = dx / dist, my = dy / dist;
+    if (this.typeKey === 'ranged' && treePositions?.length && dist > 200) {
+      const cover = this._findCoverPos(target, treePositions);
+      if (cover) {
+        const cdx = cover.x - this.x;
+        const cdy = cover.y - this.y;
+        const cd  = Math.sqrt(cdx * cdx + cdy * cdy);
+        if (cd > 10) { mx = cdx / cd; my = cdy / cd; }
+      }
+    }
+
+    this.body.setVelocity(mx * this.speed, my * this.speed);
+    this.sprite.setFlipX(mx < 0);
+    this._playAnim('run');
+  }
+
+  _findCoverPos(target, trees) {
+    let best = null, bestScore = -Infinity;
+    for (const t of trees) {
+      const coverDist = Phaser.Math.Distance.Between(this.x, this.y, t.x, t.y);
+      const targetDist = Phaser.Math.Distance.Between(t.x, t.y, target.x, target.y);
+      // Prefer trees close to us but with line-of-sight to target
+      const score = -coverDist + (targetDist < 400 ? 100 : 0);
+      if (score > bestScore) { bestScore = score; best = t; }
+    }
+    return best;
+  }
+
+  _doAttack(target) {
+    if (!target) { this.state = STATE.IDLE; return; }
+    const dist = Phaser.Math.Distance.Between(this.x, this.y, target.x, target.y);
+
+    if (dist > this.range * 1.3) {
+      this.state = STATE.PURSUE;
+      return;
+    }
+
+    this.body.setVelocity(0, 0);
+    this.sprite.setFlipX(target.x < this.x);
+
+    if (this._atkTimer <= 0) {
+      this._atkTimer = this.attackCd;
+      this._playAnim('attack');
+
+      if (this.typeKey === 'ranged') {
+        this._fireProjectile(target);
+      } else {
+        target.notifyIncomingAttack?.();
+        this.scene.time.delayedCall(300, () => {
+          if (!this.alive || !target.alive) return;
+          const d2 = Phaser.Math.Distance.Between(this.x, this.y, target.x, target.y);
+          if (d2 <= this.range * 1.4) {
+            target.takeDamage(this.damage, this, this.scene);
+          }
+        });
+      }
+
+      // Elite shockwave
+      if (this.typeKey === 'elite' && this._shockwaveTimer <= 0) {
+        this._shockwaveTimer = this.cfg.shockwaveCd;
+        this._doShockwave();
+      }
+    }
+  }
+
+  _fireProjectile(target) {
+    const angle = Math.atan2(target.y - this.y, target.x - this.x);
+    this.scene.events.emit('spawn_projectile', {
+      x: this.x, y: this.y, angle,
+      damage: this.damage, fromEnemy: true,
+      key: 'arrow', speed: 280,
+    });
+  }
+
+  _doShockwave() {
+    const r = 140;
+    this.scene.events.emit('ability_fx', { type: 'shockwave', x: this.x, y: this.y, r });
+    const players = this.scene.players || [];
+    for (const p of players) {
+      if (!p?.alive || p.downed) continue;
+      if (Phaser.Math.Distance.Between(this.x, this.y, p.x, p.y) <= r) {
+        p.takeDamage(this.damage * 0.8, this, this.scene);
+      }
+    }
+  }
+
+  takeDamage(amount, source, scene) {
+    if (!this.alive) return;
+    this.hp = Math.max(0, this.hp - amount);
+    this._updateHpBar();
+
+    this.sprite.setTint(0xff8888);
+    scene.time.delayedCall(100, () => {
+      if (this.alive) this.sprite.clearTint();
+    });
+
+    // Aggro on hit
+    if (this.state === STATE.IDLE) this.state = STATE.PURSUE;
+
+    if (this.hp <= 0) this._die(scene);
+  }
+
+  knockback(angle, force) {
+    if (!this.body) return;
+    this.body.setVelocity(Math.cos(angle) * force, Math.sin(angle) * force);
+    this.scene.time.delayedCall(200, () => {
+      if (this.body) this.body.setVelocity(0, 0);
+    });
+  }
+
+  _die(scene) {
+    this.alive = false;
+    this.state = STATE.DEAD;
+    this.body.setVelocity(0, 0);
+    this.body.enable = false;
+    this._hpBar.setVisible(false);
+    this._hpBg.setVisible(false);
+
+    this._playAnim('dead');
+    scene?.audio?.enemyDeath?.();
+    scene?.events?.emit('enemy_killed', { enemy: this });
+
+    this.scene.time.delayedCall(800, () => {
+      this.scene.tweens.add({
+        targets: this, alpha: 0, duration: 600,
+        onComplete: () => this.destroy(),
+      });
+    });
+  }
+
+  _updateHpBar() {
+    const pct = this.hp / this.maxHp;
+    this._hpBar.scaleX = pct;
+    this._hpBar.setFillStyle(pct > 0.5 ? 0x22cc44 : pct > 0.25 ? 0xffcc00 : 0xff4444);
+    this._hpBar.setVisible(pct < 1);
+    this._hpBg.setVisible(pct < 1);
+  }
+}

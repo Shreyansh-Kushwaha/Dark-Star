@@ -1,5 +1,6 @@
 import { GAME_W, GAME_H, REGION_NAMES } from '../constants.js';
 import { SaveManager } from '../systems/SaveManager.js';
+import { QualitySettings } from '../systems/QualitySettings.js';
 
 const PAL = {
   sky:      0x05050f,
@@ -182,6 +183,9 @@ export class MainMenuScene extends Phaser.Scene {
     this._makeButton(cx, 300, '>  HOST CO-OP',  () => this._hostCoop());
     this._makeButton(cx, 360, '>  JOIN CO-OP',  () => this._joinCoop());
     this._makeButton(cx, 420, '>  LOAD REGION', () => this._toggleRegionSelect());
+
+    this._qualityBtn = this._makeButton(cx, 480, this._qualityLabel(), () => this._cycleQuality(),
+      { bg: 0x0c1428, border: 0x2244aa, text: '#88aaff', w: 200 });
 
     this._regionSelectPanel = null;
     this._regionSelectOpen  = false;
@@ -375,6 +379,15 @@ export class MainMenuScene extends Phaser.Scene {
       this._joinCode += e.key.toUpperCase();
     }
     this._roomInput.setText(this._joinCode.padEnd(4, '_'));
+  }
+
+  _qualityLabel() {
+    return `>  QUALITY: ${QualitySettings.level.toUpperCase()}`;
+  }
+
+  _cycleQuality() {
+    QualitySettings.cycle();
+    this._qualityBtn.txt.setText(this._qualityLabel());
   }
 
   update() {}

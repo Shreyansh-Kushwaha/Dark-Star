@@ -10,6 +10,7 @@ import { AudioManager } from '../systems/AudioManager.js';
 import { QuestManager } from '../systems/QuestManager.js';
 import { SaveManager } from '../systems/SaveManager.js';
 import { NetworkManager } from '../systems/NetworkManager.js';
+import { QualitySettings } from '../systems/QualitySettings.js';
 
 // Poisson-disk sampling (returns {x,y}[] within bounds avoiding exclusion zones)
 function poissonDisk(width, height, minDist, count, exclusions, seed = 42) {
@@ -162,6 +163,8 @@ export class GameScene extends Phaser.Scene {
     this._dialogueLine = '';
     this._interactTarget = null;
     this._netTimer = 0;
+    this._uiThrottleCounter = 0;
+    this._slowTickCounter   = 0;
     this._paused = false;
     this._fixedEnemyMode = false;
     this._anyEnemyKilled = false;
@@ -311,6 +314,7 @@ export class GameScene extends Phaser.Scene {
   }
 
   _spawnEnemyGroup(pos, region) {
+    if (this.enemies.length >= QualitySettings.maxEnemies) return;
     const types = region.enemyTypes || ['melee'];
     const type  = types[Math.floor(Math.random() * types.length)];
     // Region 0 is a tutorial — spawn only 1–2 per group
@@ -435,6 +439,8 @@ export class GameScene extends Phaser.Scene {
 
     const points = poissonDisk(forestW, WORLD_H, 80, 160, excl, 1234);
 
+    const rt = this.add.renderTexture(0, 0, WORLD_W, WORLD_H).setOrigin(0, 0).setDepth(1);
+    rt.beginDraw();
     for (const pt of points) {
       const wx = pt.x + forestX;
       const r  = Math.random();
@@ -449,8 +455,11 @@ export class GameScene extends Phaser.Scene {
         key   = firKeys[Math.floor(Math.random() * firKeys.length)];
         scale = 0.70 + Math.random() * 0.40;
       }
-      this.add.image(wx, pt.y, key).setScale(scale).setDepth(1);
+      const img = this.make.image({ x: wx, y: pt.y, key, add: false });
+      img.setScale(scale);
+      rt.batchDraw(img, 0, 0);
     }
+    rt.endDraw();
   }
 
   _buildRegionDecorations(region, regionIndex) {
@@ -504,6 +513,8 @@ export class GameScene extends Phaser.Scene {
 
     const points = poissonDisk(WORLD_W, WORLD_H, 80, 200, excl, 5678);
 
+    const rt = this.add.renderTexture(0, 0, WORLD_W, WORLD_H).setOrigin(0, 0).setDepth(1);
+    rt.beginDraw();
     for (const pt of points) {
       const r = Math.random();
       let key, scale, tint = null;
@@ -524,9 +535,12 @@ export class GameScene extends Phaser.Scene {
         scale = 0.60 + Math.random() * 0.40;
         tint  = 0x336622;
       }
-      const img = this.add.image(pt.x, pt.y, key).setScale(scale).setDepth(1);
+      const img = this.make.image({ x: pt.x, y: pt.y, key, add: false });
+      img.setScale(scale);
       if (tint !== null) img.setTint(tint);
+      rt.batchDraw(img, 0, 0);
     }
+    rt.endDraw();
   }
 
   _buildSerpentRealm(region) {
@@ -598,6 +612,8 @@ export class GameScene extends Phaser.Scene {
     ];
 
     const deadPts = poissonDisk(WORLD_W, WORLD_H, 80, 110, deadExcl, 9012);
+    const rtDead = this.add.renderTexture(0, 0, WORLD_W, WORLD_H).setOrigin(0, 0).setDepth(1);
+    rtDead.beginDraw();
     for (const pt of deadPts) {
       const r = Math.random();
       let key, scale, tint;
@@ -614,12 +630,17 @@ export class GameScene extends Phaser.Scene {
         scale = 0.60 + Math.random() * 0.40;
         tint  = 0x2a1200;
       }
-      this.add.image(pt.x, pt.y, key).setScale(scale).setDepth(1).setTint(tint);
+      const img = this.make.image({ x: pt.x, y: pt.y, key, add: false });
+      img.setScale(scale);
+      img.setTint(tint);
+      rtDead.batchDraw(img, 0, 0);
     }
+    rtDead.endDraw();
   }
 
   _spawnRabbitDecoration(regionIndex) {
     if (regionIndex > 2) return;
+    if (QualitySettings.rabbits === 0) return;
     const forestX = 900;
 
     const spawnOne = (texKey, idleAnim, moveAnim, x, y) => {
@@ -805,9 +826,14 @@ export class GameScene extends Phaser.Scene {
     else if (p2 && !p2.isLocal) this._taraAI(p1, p2, delta);
 
     // ── Enemies ───────────────────────────────────────────────────
+    const cam = this.cameras.main;
+    const camCX = cam.scrollX + GAME_W / 2;
+    const camCY = cam.scrollY + GAME_H / 2;
     for (let i = this.enemies.length - 1; i >= 0; i--) {
       const e = this.enemies[i];
       if (!e || !e.active) { this.enemies.splice(i, 1); continue; }
+      const dx = e.x - camCX, dy = e.y - camCY;
+      if (dx * dx + dy * dy > 640000) continue;
       e.update(time, delta, this.players, this._treePositions);
     }
 
@@ -836,14 +862,18 @@ export class GameScene extends Phaser.Scene {
       if (p?.alive && p.x > 900) this._showTutorial();
     }
 
-    // ── Tree occlusion ghost highlight ────────────────────────────
-    this._updateOcclusionAlpha();
+    // ── Throttle counters ─────────────────────────────────────────
+    this._uiThrottleCounter++;
+    this._slowTickCounter++;
 
-    // ── Pressure plates ───────────────────────────────────────────
-    this._checkPressurePlates();
+    // ── Tree occlusion (High quality only) ────────────────────────
+    if (QualitySettings.occlusion) this._updateOcclusionAlpha();
 
-    // ── Portals ───────────────────────────────────────────────────
-    this._checkPortals();
+    // ── Slow tick: portals + pressure plates (every 8 frames) ─────
+    if (this._slowTickCounter % 8 === 0) {
+      this._checkPressurePlates();
+      this._checkPortals();
+    }
 
     // ── Interact ─────────────────────────────────────────────────
     if (Phaser.Input.Keyboard.JustDown(this._keys.F)) {
@@ -856,18 +886,22 @@ export class GameScene extends Phaser.Scene {
     // ── Both players downed check ─────────────────────────────────
     this._checkBothDowned();
 
-    // ── Network broadcast ─────────────────────────────────────────
-    this._netTimer += delta;
-    if (this._netTimer >= NET_INTERVAL) {
-      this._netTimer = 0;
-      this._netBroadcast();
+    // ── Network broadcast (only when connected) ───────────────────
+    if (this.network?.connected) {
+      this._netTimer += delta;
+      if (this._netTimer >= NET_INTERVAL) {
+        this._netTimer = 0;
+        this._netBroadcast();
+      }
     }
 
-    // ── UI update ─────────────────────────────────────────────────
-    this.events.emit('update_ui', {
-      players: this.players,
-      boss: this._boss?.alive ? this._boss : null,
-    });
+    // ── UI update (every 2 frames) ────────────────────────────────
+    if (this._uiThrottleCounter % 2 === 0) {
+      this.events.emit('update_ui', {
+        players: this.players,
+        boss: this._boss?.alive ? this._boss : null,
+      });
+    }
   }
 
   _taraAI(p1, p2, delta) {

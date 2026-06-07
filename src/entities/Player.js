@@ -5,6 +5,7 @@ import {
   WARRIOR_FRAME,
 } from '../constants.js';
 import { AbilityManager } from '../systems/AbilityManager.js';
+import { QualitySettings } from '../systems/QualitySettings.js';
 
 const ABILITY_CDS = { Q: 8000, E: 10000, R: 12000 };
 
@@ -55,9 +56,11 @@ export class Player extends Phaser.GameObjects.Container {
     this.sprite.play(base + '_idle');
 
     // Shadow
-    const shadow = scene.add.ellipse(0, 16, 40, 12, 0x000000, 0.3);
-    this.add(shadow);
-    this.addAt(shadow, 0);
+    if (QualitySettings.shadows) {
+      const shadow = scene.add.ellipse(0, 16, 40, 12, 0x000000, 0.3);
+      this.add(shadow);
+      this.addAt(shadow, 0);
+    }
 
     // HP bar above head
     this._hpBar = this._makeBar(scene, -30, -60, 60, 7, 0x00e676, 0x333333);
