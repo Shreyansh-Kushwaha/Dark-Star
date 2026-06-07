@@ -595,6 +595,28 @@ export class GameScene extends Phaser.Scene {
     });
   }
 
+  _updateOcclusionAlpha() {
+    if (!this._treePositions.length) return;
+    const entities = [
+      ...this.players.filter(p => p?.active),
+      ...this.enemies.filter(e => e?.active),
+    ];
+    for (const ent of entities) {
+      let behind = false;
+      for (const tree of this._treePositions) {
+        if (ent.y >= tree.y) continue;
+        const dx = ent.x - tree.x;
+        const dy = ent.y - tree.y;
+        if (Math.sqrt(dx * dx + dy * dy) < tree.r) {
+          behind = true;
+          break;
+        }
+      }
+      const target = behind ? 0.38 : 1.0;
+      if (Math.abs(ent.alpha - target) > 0.01) ent.setAlpha(target);
+    }
+  }
+
   update(time, delta) {
     if (this._paused) return;
 
@@ -637,6 +659,9 @@ export class GameScene extends Phaser.Scene {
       const p = this.players[0];
       if (p?.alive && p.x > 900) this._showTutorial();
     }
+
+    // ── Tree occlusion ghost highlight ────────────────────────────
+    this._updateOcclusionAlpha();
 
     // ── Pressure plates ───────────────────────────────────────────
     this._checkPressurePlates();
