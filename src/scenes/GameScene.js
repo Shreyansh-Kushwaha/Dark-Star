@@ -176,6 +176,8 @@ export class GameScene extends Phaser.Scene {
     else if (region.serpentRealm) this._buildSerpentRealm(region);
     else this._buildRegionDecorations(region, regionIndex);
 
+    this._spawnRabbitDecoration(regionIndex);
+
     if (regionIndex === 0 || (regionIndex === 1 && region.villageZone)) {
       this._buildVillage(region);
       this._tutorialShown = false;
@@ -418,23 +420,6 @@ export class GameScene extends Phaser.Scene {
       ...(region.npcPositions || []).map(p => ({ ...p, r: 160 })),
     ];
 
-    const treeKeys = [
-      'jungle_tree_1','jungle_tree_2','jungle_tree_3','jungle_tree_4','jungle_tree_5',
-      'jungle_tree_6','jungle_tree_7','jungle_tree_8','jungle_tree_9','jungle_tree_10',
-      'jungle_tree_11','jungle_tree_12','jungle_tree_13','jungle_tree_14',
-      'fir_tree_1','fir_tree_2','fir_tree_3','fir_tree_4','fir_tree_5',
-      'fir_tree_6','fir_tree_7','fir_tree_8','fir_tree_9','fir_tree_10','fir_tree_11',
-    ].filter(k => this.textures.exists(k));
-
-    // Small trees via Poisson disk (no large trees)
-    const treePoints = poissonDisk(WORLD_W, WORLD_H, 72, 140, exclusions, 1337);
-    for (const pt of treePoints) {
-      const key   = treeKeys[Math.floor(Math.random() * treeKeys.length)];
-      const scale = 1.0 + Math.random() * 0.8;
-      const tree  = this.add.image(pt.x, pt.y, key).setScale(scale).setDepth(pt.y);
-      this._treePositions.push({ x: pt.x, y: pt.y, r: scale * 22 });
-    }
-
     // Bushes via Poisson disk
     const bushKeys = ['bush1','bush2','bush3','bush4'];
     const bushPoints = poissonDisk(WORLD_W, WORLD_H, 38, 110, exclusions, 7331);
@@ -457,17 +442,6 @@ export class GameScene extends Phaser.Scene {
       else if (r >= 4) key = Math.random() < 0.5 ? 'rock1' : 'rock2';
       else key = ['bush1','bush2','bush3','bush4','rock1','rock2'][Math.floor(Math.random()*6)];
       this.add.image(x, y, key).setScale(1.5 + Math.random()).setDepth(y);
-    }
-
-    // Small trees scattered
-    const treeKeys = ['fir_tree_1','fir_tree_2','fir_tree_3','jungle_tree_1','jungle_tree_2'].filter(k => this.textures.exists(k));
-    for (let i = 0; i < 20; i++) {
-      const x = 200 + Math.random() * (WORLD_W - 400);
-      const y = 200 + Math.random() * (WORLD_H - 400);
-      const key = treeKeys[Math.floor(Math.random() * treeKeys.length)];
-      const tScale = 1.0 + Math.random() * 0.8;
-      const spr = this.add.image(x, y, key).setScale(tScale).setDepth(y);
-      this._treePositions.push({ x, y, r: tScale * 22 });
     }
 
     // Clouds for Swarga Seema
@@ -524,6 +498,22 @@ export class GameScene extends Phaser.Scene {
       const y = 200 + Math.random() * (WORLD_H - 400);
       const key = shrubKeys[Math.floor(Math.random() * shrubKeys.length)];
       this.add.image(x, y, key).setScale(1.0 + Math.random() * 0.5).setDepth(y).setTint(0xcc8844);
+    }
+  }
+
+  _spawnRabbitDecoration(regionIndex) {
+    if (regionIndex > 2) return;
+    const forestX = 900;
+    const spawnOne = (key, animKey, x, y) => {
+      if (!this.textures.exists(key)) return;
+      const spr = this.add.sprite(x, y, key).setScale(2.5).setDepth(y - 2).setAlpha(0.9);
+      if (this.anims.exists(animKey)) spr.play(animKey);
+    };
+    for (let i = 0; i < 8; i++) {
+      spawnOne('rabbit_idle', 'rabbit_idle', forestX + Math.random() * (WORLD_W - forestX - 200), 300 + Math.random() * (WORLD_H - 600));
+    }
+    for (let i = 0; i < 4; i++) {
+      spawnOne('rabbitH_idle', 'rabbitH_idle', forestX + Math.random() * (WORLD_W - forestX - 200), 300 + Math.random() * (WORLD_H - 600));
     }
   }
 
