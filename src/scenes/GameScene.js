@@ -426,11 +426,11 @@ export class GameScene extends Phaser.Scene {
       'fir_tree_6','fir_tree_7','fir_tree_8','fir_tree_9','fir_tree_10','fir_tree_11',
     ].filter(k => this.textures.exists(k));
 
-    // Trees via Poisson disk
+    // Small trees via Poisson disk (no large trees)
     const treePoints = poissonDisk(WORLD_W, WORLD_H, 72, 140, exclusions, 1337);
     for (const pt of treePoints) {
       const key   = treeKeys[Math.floor(Math.random() * treeKeys.length)];
-      const scale = 3.5 + Math.random() * 2;
+      const scale = 1.0 + Math.random() * 0.8;
       const tree  = this.add.image(pt.x, pt.y, key).setScale(scale).setDepth(pt.y);
       this._treePositions.push({ x: pt.x, y: pt.y, r: scale * 22 });
     }
@@ -459,13 +459,13 @@ export class GameScene extends Phaser.Scene {
       this.add.image(x, y, key).setScale(1.5 + Math.random()).setDepth(y);
     }
 
-    // Some craftpix trees scattered (not dense)
+    // Small trees scattered
     const treeKeys = ['fir_tree_1','fir_tree_2','fir_tree_3','jungle_tree_1','jungle_tree_2'].filter(k => this.textures.exists(k));
     for (let i = 0; i < 20; i++) {
       const x = 200 + Math.random() * (WORLD_W - 400);
       const y = 200 + Math.random() * (WORLD_H - 400);
       const key = treeKeys[Math.floor(Math.random() * treeKeys.length)];
-      const tScale = 4 + Math.random() * 2;
+      const tScale = 1.0 + Math.random() * 0.8;
       const spr = this.add.image(x, y, key).setScale(tScale).setDepth(y);
       this._treePositions.push({ x, y, r: tScale * 22 });
     }
