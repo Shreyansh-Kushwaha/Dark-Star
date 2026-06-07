@@ -45,7 +45,7 @@ export const REGIONS = [
       { x: 1900, y: 1150 },
     ],
 
-    enemyTypes: ['melee'],     // tutorial: only basic melee
+    enemyTypes: ['melee'],
     ambientKey: 0,
   },
 
@@ -86,7 +86,6 @@ export const REGIONS = [
     spawnerPositions: [],
     platePositions: [],
     enemyTypes: ['melee'],
-
     portalUnlock: 'npc_talk:mahavana_hermit',
     denseForest: true,
     ambientKey: 1,
@@ -134,8 +133,7 @@ export const REGIONS = [
       { x: 1500, y: 850 },
       { x: 1500, y: 1150 },
     ],
-    enemyTypes: ['melee', 'ranged', 'elite'],
-
+    enemyTypes: ['melee', 'ranged', 'orc'],
     portalUnlock: 'kill_all',
     ambientKey: 2,
   },
@@ -174,7 +172,7 @@ export const REGIONS = [
       { x: 1700, y: 800  },
       { x: 1700, y: 1200 },
     ],
-    enemyTypes: ['melee', 'ranged', 'flying'],
+    enemyTypes: ['orc', 'ranged', 'flying'],
     serpentRealm: true,
 
     portalUnlock: 'boss_kill',
@@ -209,7 +207,7 @@ export const REGIONS = [
       { x: 1500, y: 800 },
       { x: 1500, y: 1200 },
     ],
-    enemyTypes: ['melee', 'elite', 'flying'],
+    enemyTypes: ['orc', 'elite', 'flying'],
     ambientKey: 4,
   },
 
@@ -242,6 +240,7 @@ export const REGIONS = [
     ],
     enemyTypes: ['ranged', 'elite', 'flying'],
     ambientKey: 5,
+
   },
 
   // 6 — Viyoga Durga  (void black-purple)
@@ -273,5 +272,6 @@ export const REGIONS = [
     ],
     enemyTypes: ['melee', 'elite', 'flying'],
     ambientKey: 6,
+
   },
 ];
