@@ -871,7 +871,9 @@ export class GameScene extends Phaser.Scene {
         this.events.emit('show_dialogue', { text: line });
         this.audio.interact();
         // If gramavana elder triggers main quest
-        if (npc.npcId === 'elder_mahesh') {
+        const region = REGIONS[this._regionIndex];
+        const unlockKey = `npc_talk:${npc.npcId}`;
+        if (npc.npcId === 'elder_mahesh' || region.portalUnlock === unlockKey) {
           this._unlockPortalNext();
         }
       }
@@ -949,6 +951,15 @@ export class GameScene extends Phaser.Scene {
     this.questManager.onEnemyKill(this._regionIndex);
     const idx = this.enemies.indexOf(data.enemy);
     if (idx > -1) this.enemies.splice(idx, 1);
+
+    const region = REGIONS[this._regionIndex];
+    if (region.portalUnlock === 'kill_all' && this._fixedEnemyMode) {
+      this._anyEnemyKilled = true;
+      if (this.enemies.filter(e => e.alive).length === 0) {
+        this._unlockPortalNext();
+        this.events.emit('toast', { text: 'The grove is cleansed — the path opens.' });
+      }
+    }
   }
 
   _onBossKilled(data) {
