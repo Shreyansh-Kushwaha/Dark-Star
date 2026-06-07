@@ -165,8 +165,8 @@ export class UIScene extends Phaser.Scene {
     this._introOverlay = this.add.container(0, 0).setDepth(9990).setVisible(false);
 
     const fade    = this.add.rectangle(0, 0, GAME_W, GAME_H, 0x000000, 0).setOrigin(0);
-    const lineTop = this.add.rectangle(GAME_W / 2, GAME_H / 2 - 58, 660, 2, 0xaa8833, 0).setOrigin(0.5).setScaleX(0);
-    const lineBot = this.add.rectangle(GAME_W / 2, GAME_H / 2 + 60, 660, 2, 0xaa8833, 0).setOrigin(0.5).setScaleX(0);
+    const lineTop = this.add.rectangle(GAME_W / 2, GAME_H / 2 - 58, 660, 2, 0xaa8833, 0).setOrigin(0.5).setScale(0, 1);
+    const lineBot = this.add.rectangle(GAME_W / 2, GAME_H / 2 + 60, 660, 2, 0xaa8833, 0).setOrigin(0.5).setScale(0, 1);
 
     this._introName = this.add.text(GAME_W / 2 - 80, GAME_H / 2 - 22, '', {
       fontSize: '44px', color: '#ffd700', fontFamily: 'serif',
@@ -369,8 +369,8 @@ export class UIScene extends Phaser.Scene {
     // Reset intro elements
     this._introName.setText(name).setAlpha(0).setX(GAME_W / 2 - 80);
     this._introSub.setText(lore).setAlpha(0);
-    this._introLineTop.setAlpha(0).setScaleX(0);
-    this._introLineBot.setAlpha(0).setScaleX(0);
+    this._introLineTop.setAlpha(0).setScale(0, 1);
+    this._introLineBot.setAlpha(0).setScale(0, 1);
     this._introFade.setAlpha(0);
     this._introOverlay.setVisible(true);
 

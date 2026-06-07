@@ -237,11 +237,21 @@ export class GameScene extends Phaser.Scene {
   }
 
   _setupWorld(region) {
+    // Use image background for regions that have one
+    if (region.mapImage && this.textures.exists(region.mapImage)) {
+      this.add.image(0, 0, region.mapImage)
+        .setOrigin(0, 0)
+        .setDisplaySize(WORLD_W, WORLD_H)
+        .setDepth(-10);
+    }
+
     const g = this.add.graphics().setDepth(-10);
 
-    // Base ground fill
-    g.fillStyle(region.bgColor, 1);
-    g.fillRect(0, 0, WORLD_W, WORLD_H);
+    // Base ground fill (skipped if image background is used)
+    if (!region.mapImage || !this.textures.exists(region.mapImage)) {
+      g.fillStyle(region.bgColor, 1);
+      g.fillRect(0, 0, WORLD_W, WORLD_H);
+    }
 
     // Subtle variation: scatter darker/lighter patches using a seeded pattern
     g.fillStyle(region.bgColor2, 0.5);

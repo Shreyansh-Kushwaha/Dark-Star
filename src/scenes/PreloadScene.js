@@ -186,6 +186,9 @@ export class PreloadScene extends Phaser.Scene {
     for (let i = 1; i <= 4; i++) {
       this.load.image(`ts_stump_${i}`, `${TS}/Terrain/Resources/Wood/Trees/Stump ${i}.png`);
     }
+
+    // ── Region map backgrounds ────────────────────────────────────
+    this.load.image('map_region_0', 'src/map/region 0.png');
   }
 
   create() {
