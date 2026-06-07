@@ -165,6 +165,7 @@ export class GameScene extends Phaser.Scene {
     this._netTimer = 0;
     this._uiThrottleCounter = 0;
     this._slowTickCounter   = 0;
+    this._pendingRTBake     = [];
     this._paused = false;
     this._fixedEnemyMode = false;
     this._anyEnemyKilled = false;
@@ -219,6 +220,17 @@ export class GameScene extends Phaser.Scene {
     const mainQuestKey = QUEST_PREFIXES[regionIndex] + '_main';
     if (regionIndex > 0 && QUESTS[mainQuestKey]) {
       this.questManager.start(mainQuestKey, QUESTS[mainQuestKey]);
+    }
+
+    // Flush pending tree decorations as individual images at depth=1.
+    // All same-depth images batch together per texture in Phaser's WebGL pipeline
+    // (~29 texture batches vs hundreds when using setDepth(y)).
+    if (this._pendingRTBake.length) {
+      for (const d of this._pendingRTBake) {
+        const img = this.add.image(d.x, d.y, d.key).setScale(d.scale).setDepth(1);
+        if (d.tint != null) img.setTint(d.tint);
+      }
+      this._pendingRTBake = null;
     }
 
     console.log(`[GameScene] Region ${regionIndex}: ${region.name}`);
@@ -425,11 +437,9 @@ export class GameScene extends Phaser.Scene {
     ];
     const stumpKeys = ['ts_stump_1','ts_stump_2','ts_stump_3','ts_stump_4'];
 
-    // Trees only in the forest zone (x > 900 — village is left side)
     const forestX = 900;
     const forestW = WORLD_W - forestX;
 
-    // Translate exclusions to local forest coords
     const excl = [
       ...(region.portalNext   ? [{ x: region.portalNext.x   - forestX, y: region.portalNext.y,   r: 160 }] : []),
       ...(region.portalBack   ? [{ x: region.portalBack.x   - forestX, y: region.portalBack.y,   r: 160 }] : []),
@@ -439,8 +449,6 @@ export class GameScene extends Phaser.Scene {
 
     const points = poissonDisk(forestW, WORLD_H, 80, 160, excl, 1234);
 
-    const rt = this.add.renderTexture(0, 0, WORLD_W, WORLD_H).setOrigin(0, 0).setDepth(1);
-    rt.beginDraw();
     for (const pt of points) {
       const wx = pt.x + forestX;
       const r  = Math.random();
@@ -455,11 +463,8 @@ export class GameScene extends Phaser.Scene {
         key   = firKeys[Math.floor(Math.random() * firKeys.length)];
         scale = 0.70 + Math.random() * 0.40;
       }
-      const img = this.make.image({ x: wx, y: pt.y, key, add: false });
-      img.setScale(scale);
-      rt.batchDraw(img, 0, 0);
+      this._pendingRTBake.push({ x: wx, y: pt.y, key, scale, tint: null });
     }
-    rt.endDraw();
   }
 
   _buildRegionDecorations(region, regionIndex) {
@@ -513,8 +518,6 @@ export class GameScene extends Phaser.Scene {
 
     const points = poissonDisk(WORLD_W, WORLD_H, 80, 200, excl, 5678);
 
-    const rt = this.add.renderTexture(0, 0, WORLD_W, WORLD_H).setOrigin(0, 0).setDepth(1);
-    rt.beginDraw();
     for (const pt of points) {
       const r = Math.random();
       let key, scale, tint = null;
@@ -535,12 +538,8 @@ export class GameScene extends Phaser.Scene {
         scale = 0.60 + Math.random() * 0.40;
         tint  = 0x336622;
       }
-      const img = this.make.image({ x: pt.x, y: pt.y, key, add: false });
-      img.setScale(scale);
-      if (tint !== null) img.setTint(tint);
-      rt.batchDraw(img, 0, 0);
+      this._pendingRTBake.push({ x: pt.x, y: pt.y, key, scale, tint });
     }
-    rt.endDraw();
   }
 
   _buildSerpentRealm(region) {
@@ -612,8 +611,6 @@ export class GameScene extends Phaser.Scene {
     ];
 
     const deadPts = poissonDisk(WORLD_W, WORLD_H, 80, 110, deadExcl, 9012);
-    const rtDead = this.add.renderTexture(0, 0, WORLD_W, WORLD_H).setOrigin(0, 0).setDepth(1);
-    rtDead.beginDraw();
     for (const pt of deadPts) {
       const r = Math.random();
       let key, scale, tint;
@@ -630,12 +627,8 @@ export class GameScene extends Phaser.Scene {
         scale = 0.60 + Math.random() * 0.40;
         tint  = 0x2a1200;
       }
-      const img = this.make.image({ x: pt.x, y: pt.y, key, add: false });
-      img.setScale(scale);
-      img.setTint(tint);
-      rtDead.batchDraw(img, 0, 0);
+      this._pendingRTBake.push({ x: pt.x, y: pt.y, key, scale, tint });
     }
-    rtDead.endDraw();
   }
 
   _spawnRabbitDecoration(regionIndex) {
