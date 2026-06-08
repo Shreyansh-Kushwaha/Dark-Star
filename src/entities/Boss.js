@@ -88,7 +88,7 @@ export class Boss extends Phaser.GameObjects.Container {
 
     if (this.state === STATE.STAGGER) {
       this._staggerTimer -= delta;
-      this.body?.setVelocity(0, 0);
+      if (this.body) this.body.setVelocity(0, 0);
       if (this._staggerTimer <= 0) {
         this.state = STATE.FIGHT;
         this._invincible = false;
@@ -118,6 +118,9 @@ export class Boss extends Phaser.GameObjects.Container {
       this._sinWave += delta * 0.003;
     }
 
+    const shouldFlip = this.cfg.mirrorSprite ? dx > 0 : dx < 0;
+    this.sprite.setFlipX(shouldFlip);
+
     if (dist > 80) {
       let vx = dx / dist * phaseCfg.speed;
       let vy = dy / dist * phaseCfg.speed;
@@ -131,11 +134,12 @@ export class Boss extends Phaser.GameObjects.Container {
         vy += perpY * sway;
       }
 
-      this.body?.setVelocity(vx, vy);
+      // Direct position update — avoids Phaser Container + Arcade Physics velocity quirks
+      this.x += vx * delta / 1000;
+      this.y += vy * delta / 1000;
       this._playAnim('run');
-      this.sprite.setFlipX(dx < 0);
     } else {
-      this.body?.setVelocity(0, 0);
+      if (this.body) this.body.setVelocity(0, 0);
       this._doAttack(phaseCfg, target, scene);
     }
 
