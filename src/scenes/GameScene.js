@@ -162,6 +162,7 @@ export class GameScene extends Phaser.Scene {
     this._dialogueActive = false;
     this._dialogueLine = '';
     this._interactTarget = null;
+    this._pendingPortalUnlock = false;
     this._netTimer = 0;
     this._uiThrottleCounter = 0;
     this._slowTickCounter   = 0;
@@ -1086,23 +1087,26 @@ export class GameScene extends Phaser.Scene {
     if (this._dialogueActive) {
       this._dialogueActive = false;
       this.events.emit('hide_dialogue');
+      if (this._pendingPortalUnlock) {
+        this._pendingPortalUnlock = false;
+        this._unlockPortalNext();
+      }
       return;
     }
 
     for (const npc of this.npcs) {
       if (!npc.isPlayerNear) continue;
-      const regionKey = `${REGIONS[this._regionIndex].name.toLowerCase().split(' ')[0].replace(/[^a-z]/g,'')}_main`;
       const questForNpc = Object.values(QUESTS).find(q => q.trigger === `npc_talk:${npc.npcId}`);
       const line = npc.interact(this.questManager, questForNpc);
       if (line) {
         this._dialogueActive = true;
         this.events.emit('show_dialogue', { text: line });
         this.audio.interact();
-        // If gramavana elder triggers main quest
+        // Queue portal unlock to fire after player dismisses this dialogue
         const region = REGIONS[this._regionIndex];
         const unlockKey = `npc_talk:${npc.npcId}`;
         if (npc.npcId === 'elder_mahesh' || region.portalUnlock === unlockKey) {
-          this._unlockPortalNext();
+          this._pendingPortalUnlock = true;
         }
       }
       return;
