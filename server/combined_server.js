@@ -106,6 +106,7 @@ const ASSET_GROUPS = [
   { cat:'Resources', grp:'Wood',           rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood' },
   { cat:'Resources', grp:'Tools',          rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Tools' },
   { cat:'FX',        grp:'Particle FX',    rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Particle FX' },
+  { cat:'Cropped',   grp:'My Crops',       rel:'cropped' },
 ];
 
 function buildManifest() {
@@ -126,6 +127,28 @@ const server = http.createServer((req, res) => {
     const manifest = buildManifest();
     res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' });
     res.end(JSON.stringify(manifest));
+    return;
+  }
+
+  if (req.method === 'POST' && req.url === '/api/save-crop') {
+    let body = '';
+    req.on('data', chunk => body += chunk);
+    req.on('end', () => {
+      try {
+        const { name, dataURL } = JSON.parse(body);
+        const base64 = dataURL.split(',')[1];
+        const buf = Buffer.from(base64, 'base64');
+        const cropDir = path.join(GAME_ROOT, 'cropped');
+        if (!fs.existsSync(cropDir)) fs.mkdirSync(cropDir, { recursive: true });
+        const safeName = name.replace(/[^a-zA-Z0-9_\- ]/g, '_').slice(0, 64).trim() + '.png';
+        fs.writeFileSync(path.join(cropDir, safeName), buf);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: true, file: safeName }));
+      } catch (e) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: false, error: e.message }));
+      }
+    });
     return;
   }
 
