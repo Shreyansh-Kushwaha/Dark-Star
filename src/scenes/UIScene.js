@@ -202,16 +202,16 @@ export class UIScene extends Phaser.Scene {
   // ── Dialogue ───────────────────────────────────────────────────────────────
 
   _createDialogueBox() {
-    const dh = 110, dy = GAME_H - dh - 4;
+    const dh = 160, dy = GAME_H - dh - 4;
     this._dialogueContainer = this.add.container(0, 0).setVisible(false).setDepth(9999);
 
     const bg     = this.add.rectangle(0, dy, GAME_W, dh + 4, 0x0a0a14, 0.96).setOrigin(0, 0);
     const topBar = this.add.rectangle(0, dy, GAME_W, 3, 0xffd700, 1).setOrigin(0, 0);
     const botBar = this.add.rectangle(0, dy + dh + 1, GAME_W, 3, 0xffd700, 0.4).setOrigin(0, 0);
 
-    this._dialogueText = this.add.text(24, dy + 12, '', {
-      fontSize: '15px', color: '#ffe8a0', fontFamily: 'serif',
-      wordWrap: { width: GAME_W - 48 }, lineSpacing: 6,
+    this._dialogueText = this.add.text(24, dy + 14, '', {
+      fontSize: '17px', color: '#ffe8a0', fontFamily: 'serif',
+      wordWrap: { width: GAME_W - 48 }, lineSpacing: 8,
     });
     const hint = this.add.text(GAME_W - 16, dy + dh - 8, '[F] close', {
       fontSize: '10px', color: '#888', fontFamily: 'monospace',
