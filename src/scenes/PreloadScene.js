@@ -238,8 +238,8 @@ export class PreloadScene extends Phaser.Scene {
     this._buildMultiAnim('slime_boss_dead',   this._frames('slime_boss_dead',   [1,2,3,4,5,6,7,8]));
     this._buildMultiAnim('slime_boss_run',    this._frames('slime_boss_idle',   [1,2,3,4]));
 
-    this._buildMultiAnim('tree_boss_idle',   this._frames('tree_boss_idle',   [1,2,3,4,5,6,7,8,9,10,11]), 10, 0);
-    this._buildMultiAnim('tree_boss_run',    this._frames('tree_boss_run',    [1,2,3,4,5,6,7,8,9,10,11]));
+    this._buildMultiAnim('tree_boss_idle',   this._frames('tree_boss_idle',   [11]), 10, -1);
+    this._buildMultiAnim('tree_boss_run',    this._frames('tree_boss_run',    [11]), 10, -1);
     this._buildMultiAnim('tree_boss_attack', this._frames('tree_boss_attack', [1,2,3,4,5,6,7,8,9,10]));
     this._buildMultiAnim('tree_boss_dead',   this._frames('tree_boss_dead',   [1,2,3,4,5,6,7,8,9,10]));
 
