@@ -41,12 +41,12 @@ export const BOSSES = {
   pashana_daitya: {
     key: 'pashana_daitya', name: 'Pashana Daitya',
     lore: 'The stone demon — a lock placed upon the vault where the gods buried their crime in gold.',
-    textureBase: 'mino', scale: 2.5, tint: null,
+    textureBase: 'mino', scale: 2.5, tint: null, mirrorSprite: true,
     maxHp: 2400, maxPosture: 100, postureRegen: 5,
     phases: [
-      { hpThreshold: 1.0, speed: 80,  attackCd: 1800, patterns: ['smash', 'shockwave'] },
-      { hpThreshold: 0.5, speed: 105, attackCd: 1400, patterns: ['smash', 'shockwave', 'stone_throw'] },
-      { hpThreshold: 0.3, speed: 135, attackCd: 1100, patterns: ['smash', 'shockwave', 'stone_throw', 'rock_storm'] },
+      { hpThreshold: 1.0, speed: 80,  attackCd: 1800, patterns: ['smash', 'gust'] },
+      { hpThreshold: 0.5, speed: 105, attackCd: 1400, patterns: ['smash', 'gust', 'coil'] },
+      { hpThreshold: 0.3, speed: 135, attackCd: 1100, patterns: ['smash', 'gust', 'coil', 'vine_lash'] },
     ],
     phaseLines: ['', 'Stone does not bleed. Stone endures.', 'I am older than your gods.'],
     rewardItem: 'temple_offering', loreFragment: 'lore_pashana_kill',

@@ -97,10 +97,12 @@ export class Boss extends Phaser.GameObjects.Container {
     const dy   = target.y - this.y;
     const dist = Math.sqrt(dx * dx + dy * dy);
 
+    const shouldFlip = this.cfg.mirrorSprite ? dx > 0 : dx < 0;
+    this.sprite.setFlipX(shouldFlip);
+
     if (dist > 80) {
       this.body?.setVelocity(dx / dist * phaseCfg.speed, dy / dist * phaseCfg.speed);
       this._playAnim('run');
-      this.sprite.setFlipX(dx < 0);
     } else {
       this.body?.setVelocity(0, 0);
       this._doAttack(phaseCfg, target, scene);
