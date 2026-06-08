@@ -17,7 +17,118 @@ const MIME = {
   '.ogg':  'audio/ogg',
 };
 
+// ─── Asset manifest ──────────────────────────────────────────────────────────
+
+function isAnimFrame(name) {
+  return /^\d+\.png$/i.test(name) || /_\d+\.png$/i.test(name);
+}
+
+function frameNum(name) {
+  const m = name.match(/(\d+)\.png$/i);
+  return m ? parseInt(m[1], 10) : 0;
+}
+
+function scanDir(dir) {
+  try {
+    return fs.readdirSync(dir).map(name => {
+      const full = path.join(dir, name);
+      let isDir = false;
+      try { isDir = fs.statSync(full).isDirectory(); } catch {}
+      return { name, full, isDir };
+    });
+  } catch { return []; }
+}
+
+// Returns [{name, dir (relative URL path), frames[], animated}]
+function spritesFromDir(absDir, relDir) {
+  const entries  = scanDir(absDir);
+  const subDirs  = entries.filter(e => e.isDir);
+  const pngs     = entries.filter(e => !e.isDir && e.name.toLowerCase().endsWith('.png'));
+  const frames   = pngs.filter(e => isAnimFrame(e.name)).sort((a,b) => frameNum(a.name) - frameNum(b.name));
+  const statics  = pngs.filter(e => !isAnimFrame(e.name));
+  const out      = [];
+
+  if (subDirs.length > 0) {
+    for (const sub of subDirs) {
+      const subE = scanDir(sub.full);
+      const subF = subE.filter(e => !e.isDir && isAnimFrame(e.name))
+                       .sort((a,b) => frameNum(a.name) - frameNum(b.name));
+      const subRel = relDir + '/' + sub.name;
+      if (subF.length > 0) {
+        out.push({ name: path.basename(absDir) + ' — ' + sub.name, dir: subRel, frames: subF.map(f => f.name), animated: subF.length > 1 });
+      } else {
+        out.push(...spritesFromDir(sub.full, subRel));
+      }
+    }
+  } else if (frames.length > 0) {
+    out.push({ name: path.basename(absDir), dir: relDir, frames: frames.map(f => f.name), animated: frames.length > 1 });
+  }
+
+  for (const png of statics) {
+    out.push({ name: png.name.replace(/\.png$/i, ''), dir: relDir, frames: [png.name], animated: false });
+  }
+  return out;
+}
+
+const ASSET_GROUPS = [
+  { cat:'Terrain',   grp:'Tileset',        rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Tileset' },
+  { cat:'Terrain',   grp:'Bushes',         rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Bushes' },
+  { cat:'Terrain',   grp:'Rocks',          rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks' },
+  { cat:'Terrain',   grp:'Rocks in Water', rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water' },
+  { cat:'Terrain',   grp:'Clouds',         rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds' },
+  { cat:'Terrain',   grp:'Rubber Duck',    rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rubber Duck' },
+  { cat:'Terrain',   grp:'Trees',          rel:'craftpix-net-168228-free-tree-pixel-art-asset-pack/trees' },
+  { cat:'Buildings', grp:'Black',          rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Buildings/Black Buildings' },
+  { cat:'Buildings', grp:'Blue',           rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Buildings/Blue Buildings' },
+  { cat:'Buildings', grp:'Purple',         rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Buildings/Purple Buildings' },
+  { cat:'Buildings', grp:'Red',            rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Buildings/Red Buildings' },
+  { cat:'Buildings', grp:'Yellow',         rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Buildings/Yellow Buildings' },
+  { cat:'Monsters',  grp:'King Slime',     rel:'THE PACK/Monsters/KING SLIME' },
+  { cat:'Monsters',  grp:'ORC',            rel:'THE PACK/Monsters/ORC' },
+  { cat:'Monsters',  grp:'ORC2',           rel:'THE PACK/Monsters/ORC2' },
+  { cat:'Monsters',  grp:'Slime',          rel:'THE PACK/Monsters/Slime' },
+  { cat:'Monsters',  grp:'Slime 2',        rel:'THE PACK/Monsters/Slime 2' },
+  { cat:'Monsters',  grp:'Tree Monster',   rel:'THE PACK/Monsters/Tree' },
+  { cat:'Monsters',  grp:'Frost Guardian', rel:'assest2/Frost_Guardian_FREE_v1.0/PNG files' },
+  { cat:'Monsters',  grp:'Demon Slime',    rel:'assest2/boss_demon_slime_FREE_v1.0/individual sprites' },
+  { cat:'Monsters',  grp:'Minotaur',       rel:'assest2/mino_v1.1_free/animations' },
+  { cat:'Monsters',  grp:'Goblin',         rel:'assest2/craftpix-064112-free-orc-ogre-and-goblin-chibi-2d-game-sprites/Goblin/PNG/PNG Sequences' },
+  { cat:'Monsters',  grp:'Orc',            rel:'assest2/craftpix-064112-free-orc-ogre-and-goblin-chibi-2d-game-sprites/Orc/PNG/PNG Sequences' },
+  { cat:'Monsters',  grp:'Ogre',           rel:'assest2/craftpix-064112-free-orc-ogre-and-goblin-chibi-2d-game-sprites/Ogre/PNG/PNG Sequences' },
+  { cat:'Monsters',  grp:'Rabbit',         rel:'assest2/Monster Pack (Free)/Spritesheets' },
+  { cat:'Units',     grp:'Black',          rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Units/Black Units' },
+  { cat:'Units',     grp:'Blue',           rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Units/Blue Units' },
+  { cat:'Units',     grp:'Purple',         rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Units/Purple Units' },
+  { cat:'Units',     grp:'Red',            rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Units/Red Units' },
+  { cat:'Units',     grp:'Yellow',         rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Units/Yellow Units' },
+  { cat:'Resources', grp:'Gold',           rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold' },
+  { cat:'Resources', grp:'Meat',           rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Meat' },
+  { cat:'Resources', grp:'Wood',           rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood' },
+  { cat:'Resources', grp:'Tools',          rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Tools' },
+  { cat:'FX',        grp:'Particle FX',    rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Particle FX' },
+];
+
+function buildManifest() {
+  const catMap = {};
+  for (const { cat, grp, rel } of ASSET_GROUPS) {
+    const sprites = spritesFromDir(path.join(GAME_ROOT, rel), rel);
+    if (!sprites.length) continue;
+    if (!catMap[cat]) catMap[cat] = { name: cat, groups: [] };
+    catMap[cat].groups.push({ name: grp, sprites });
+  }
+  return { categories: Object.values(catMap) };
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+
 const server = http.createServer((req, res) => {
+  if (req.url === '/api/assets') {
+    const manifest = buildManifest();
+    res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' });
+    res.end(JSON.stringify(manifest));
+    return;
+  }
+
   let urlPath = decodeURIComponent(req.url.split('?')[0]);
   if (urlPath === '/') urlPath = '/index.html';
 
