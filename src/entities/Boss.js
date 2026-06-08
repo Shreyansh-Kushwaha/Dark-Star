@@ -25,6 +25,19 @@ export class Boss extends Phaser.GameObjects.Container {
     this._active       = false;
     this._introActive  = false;
 
+    // Charge attack state
+    this._chargeActive = false;
+    this._chargeVx     = 0;
+    this._chargeVy     = 0;
+    this._chargeHit    = null;
+    this._chargeStartX = 0;
+    this._chargeStartY = 0;
+
+    // Stone armor state
+    this.stoneArmor    = 0;
+    this.maxStoneArmor = cfg.maxStoneArmor || 0;
+    this._armorActive  = false;
+
     const texBase = cfg.textureBase;
     this.sprite = scene.add.sprite(0, 0, texBase + '_idle_01');
     this.sprite.setScale(cfg.scale);
@@ -72,6 +85,11 @@ export class Boss extends Phaser.GameObjects.Container {
 
     if (this._graceTimer > 0) { this._graceTimer -= delta; return; }
 
+    if (this._chargeActive) {
+      this._updateCharge(delta, players, scene);
+      return;
+    }
+
     if (this.state === STATE.FIGHT) {
       this.posture = Math.max(0, this.posture - this.cfg.postureRegen * delta / 1000);
     }
@@ -117,6 +135,74 @@ export class Boss extends Phaser.GameObjects.Container {
       if (d < bestD) { best = p; bestD = d; }
     }
     return best;
+  }
+
+  _updateCharge(delta, players, scene) {
+    const speed = (this.cfg.phases[this.phase]?.speed || 100) * 5.5;
+    this.body?.setVelocity(this._chargeVx * speed, this._chargeVy * speed);
+
+    for (const p of players) {
+      if (!p?.alive || p.downed || this._chargeHit.has(p)) continue;
+      if (Phaser.Math.Distance.Between(this.x, this.y, p.x, p.y) < 90) {
+        p.takeDamage(this.cfg.maxHp * 0.10, this, scene);
+        scene.cameras.main.shake(200, 0.012);
+        this._chargeHit.add(p);
+      }
+    }
+
+    const traveled = Phaser.Math.Distance.Between(this._chargeStartX, this._chargeStartY, this.x, this.y);
+    if (traveled > 750) this._endCharge(scene);
+  }
+
+  _endCharge(scene) {
+    this._chargeActive = false;
+    this.body?.setVelocity(0, 0);
+    this._atkTimer = Math.max(this._atkTimer, 1600);
+    scene.cameras.main.shake(360, 0.016);
+
+    // Stagger flash — free hit window visual
+    this.sprite.setTint(0xffaa44);
+    scene.time.delayedCall(1400, () => {
+      if (this.alive) this.sprite.setTint(this.cfg.tint || 0xffffff);
+    });
+
+    // Spawn impact rocks
+    const rockKeys = ['rock1', 'rock2'];
+    for (let i = 0; i < 6; i++) {
+      const angle = (Math.PI * 2 / 6) * i;
+      const rock = scene.add.image(this.x, this.y, rockKeys[i % 2])
+        .setScale(0.5 + Math.random() * 0.5).setDepth(this.y + 10);
+      scene.tweens.add({
+        targets: rock,
+        x: this.x + Math.cos(angle) * (80 + Math.random() * 80),
+        y: this.y + Math.sin(angle) * (80 + Math.random() * 80),
+        alpha: 0, duration: 600, ease: 'Power2.Out',
+        onComplete: () => rock.destroy(),
+      });
+    }
+  }
+
+  _activateArmor(scene) {
+    this.stoneArmor  = this.maxStoneArmor;
+    this._armorActive = true;
+    this.sprite.setTint(0x999999);
+    scene.time.delayedCall(350, () => {
+      if (this.alive) this.sprite.setTint(this.cfg.tint || 0xffffff);
+    });
+    scene.events.emit('boss_armor_changed', { boss: this });
+    scene.audio?.bossPhase?.();
+  }
+
+  _breakArmor(scene) {
+    this._armorActive = false;
+    this.stoneArmor   = 0;
+    scene.cameras.main.shake(320, 0.012);
+    scene.events.emit('boss_armor_broken', { boss: this });
+    scene.audio?.bossStagger?.();
+    this.sprite.setTint(0xffffff);
+    scene.time.delayedCall(250, () => {
+      if (this.alive) this.sprite.setTint(this.cfg.tint || 0xffffff);
+    });
   }
 
   _doAttack(phaseCfg, target, scene) {
@@ -174,6 +260,151 @@ export class Boss extends Phaser.GameObjects.Container {
         }
         break;
       }
+      case 'charge': {
+        const cdx = target.x - this.x, cdy = target.y - this.y;
+        const cdist = Math.sqrt(cdx * cdx + cdy * cdy) || 1;
+        this._chargeVx = cdx / cdist;
+        this._chargeVy = cdy / cdist;
+        this._chargeHit = new Set();
+
+        // Draw warning line over 800ms telegraph
+        const lineGfx = scene.add.graphics().setDepth(600);
+        lineGfx.lineStyle(4, 0xff4400, 0.75);
+        lineGfx.beginPath();
+        lineGfx.moveTo(this.x, this.y);
+        lineGfx.lineTo(this.x + this._chargeVx * 820, this.y + this._chargeVy * 820);
+        lineGfx.strokePath();
+        scene.cameras.main.shake(150, 0.006);
+        scene.tweens.add({ targets: lineGfx, alpha: 0, duration: 800, onComplete: () => lineGfx.destroy() });
+
+        scene.time.delayedCall(800, () => {
+          if (!this.alive) return;
+          this._chargeActive = true;
+          this._chargeStartX = this.x;
+          this._chargeStartY = this.y;
+          this._playAnim('run');
+        });
+        break;
+      }
+
+      case 'ground_crack': {
+        scene.cameras.main.shake(280, 0.010);
+        const baseAng = Math.atan2(target.y - this.y, target.x - this.x);
+        const crackAngles = [baseAng - 0.38, baseAng, baseAng + 0.38];
+        const crackLen = 320;
+
+        for (const ang of crackAngles) {
+          const cx = Math.cos(ang), cy = Math.sin(ang);
+          const gfx = scene.add.graphics().setDepth(400);
+          let progress = 0;
+
+          scene.time.addEvent({
+            delay: 18, repeat: 16,
+            callback: () => {
+              progress = Math.min(1, progress + 1 / 16);
+              gfx.clear();
+              gfx.lineStyle(9, 0xaa6633, 0.9);
+              gfx.beginPath();
+              gfx.moveTo(this.x, this.y);
+              gfx.lineTo(this.x + cx * crackLen * progress, this.y + cy * crackLen * progress);
+              gfx.strokePath();
+              // Thin inner line for detail
+              gfx.lineStyle(3, 0xffcc88, 0.6);
+              gfx.beginPath();
+              gfx.moveTo(this.x, this.y);
+              gfx.lineTo(this.x + cx * crackLen * progress, this.y + cy * crackLen * progress);
+              gfx.strokePath();
+            },
+          });
+
+          // Damage at 280ms (near full extension)
+          scene.time.delayedCall(280, () => {
+            if (!this.alive) return;
+            for (const p of scene.players) {
+              if (!p?.alive || p.downed) continue;
+              const pdx = p.x - this.x, pdy = p.y - this.y;
+              const t = pdx * cx + pdy * cy;
+              if (t < 0 || t > crackLen) continue;
+              const perp = Math.abs(pdx * (-cy) + pdy * cx);
+              if (perp < 48) p.takeDamage(this.cfg.maxHp * 0.05, this, scene);
+            }
+          });
+
+          scene.time.delayedCall(320, () => {
+            scene.tweens.add({ targets: gfx, alpha: 0, duration: 260, onComplete: () => gfx.destroy() });
+          });
+        }
+        break;
+      }
+
+      case 'stomp_warning': {
+        const bx = this.x, by = this.y;
+        const safeZones = [
+          { x: bx + 230, y: by - 140, r: 58 },
+          { x: bx - 210, y: by + 110, r: 58 },
+          { x: bx + 40,  y: by + 210, r: 58 },
+        ];
+
+        const gfxList = safeZones.map(sz => {
+          const g = scene.add.graphics().setDepth(400);
+          g.lineStyle(3, 0x00ff88, 0.85);
+          g.strokeCircle(sz.x, sz.y, sz.r);
+          g.fillStyle(0x00ff88, 0.14);
+          g.fillCircle(sz.x, sz.y, sz.r);
+          return g;
+        });
+
+        // Pulse the warning circles
+        scene.cameras.main.shake(120, 0.005);
+        scene.tweens.add({ targets: gfxList, alpha: 0.5, duration: 400, yoyo: true, repeat: 1 });
+
+        scene.time.delayedCall(1200, () => {
+          if (!this.alive) return;
+          gfxList.forEach(g => g.destroy());
+          scene.cameras.main.shake(500, 0.020);
+          scene.events.emit('ability_fx', { type: 'explosion', x: this.x, y: this.y, r: 310 });
+
+          for (const p of scene.players) {
+            if (!p?.alive || p.downed) continue;
+            const d = Phaser.Math.Distance.Between(this.x, this.y, p.x, p.y);
+            if (d > 310) continue;
+            const inSafe = safeZones.some(sz =>
+              Phaser.Math.Distance.Between(p.x, p.y, sz.x, sz.y) <= sz.r
+            );
+            if (!inSafe) p.takeDamage(this.cfg.maxHp * 0.09, this, scene);
+          }
+        });
+        break;
+      }
+
+      case 'split_gust': {
+        scene.cameras.main.shake(180, 0.007);
+        // Inner ring — players too close
+        scene.events.emit('ability_fx', { type: 'explosion', x: this.x, y: this.y, r: 145 });
+        for (const p of scene.players) {
+          if (!p?.alive || p.downed) continue;
+          if (Phaser.Math.Distance.Between(this.x, this.y, p.x, p.y) <= 145) {
+            p.takeDamage(this.cfg.maxHp * 0.04, this, scene);
+          }
+        }
+        // Outer ring 650ms later — players who backed away
+        scene.time.delayedCall(650, () => {
+          if (!this.alive) return;
+          scene.cameras.main.shake(240, 0.009);
+          const ringGfx = scene.add.graphics().setDepth(400);
+          ringGfx.lineStyle(7, 0xff8844, 0.88);
+          ringGfx.strokeCircle(this.x, this.y, 265);
+          scene.tweens.add({ targets: ringGfx, alpha: 0, duration: 380, onComplete: () => ringGfx.destroy() });
+
+          for (const p of scene.players) {
+            if (!p?.alive || p.downed) continue;
+            const d = Phaser.Math.Distance.Between(this.x, this.y, p.x, p.y);
+            if (d >= 155 && d <= 315) p.takeDamage(this.cfg.maxHp * 0.045, this, scene);
+          }
+        });
+        break;
+      }
+
       case 'rage_slam': case 'frenzy': case 'hydra_form':
       case 'rock_storm': case 'tornado': case 'annihilation': case 'severance': {
         // Final phase special — dense radial burst
@@ -197,6 +428,15 @@ export class Boss extends Phaser.GameObjects.Container {
 
   takeDamage(amount, scene) {
     if (!this.alive || this._invincible || this.state === STATE.STAGGER || this.state === STATE.DEAD) return;
+
+    if (this._armorActive && this.stoneArmor > 0) {
+      const drain = Math.min(this.stoneArmor, amount * 2);
+      this.stoneArmor = Math.max(0, this.stoneArmor - drain);
+      amount *= 0.3;
+      if (this.stoneArmor <= 0) this._breakArmor(scene);
+      scene.events.emit('boss_armor_changed', { boss: this });
+    }
+
     this.hp = Math.max(0, this.hp - amount);
 
     this.posture = Math.min(this.maxPosture, this.posture + amount * 0.4);
@@ -241,6 +481,16 @@ export class Boss extends Phaser.GameObjects.Container {
       scene.time.delayedCall(400, () => {
         if (this.alive) this.sprite.setTint(this.cfg.tint || 0xffffff);
       });
+
+      // Activate stone armor (pashana_daitya only)
+      if (this.cfg.maxStoneArmor) {
+        scene.time.delayedCall(600, () => { if (this.alive) this._activateArmor(scene); });
+      }
+
+      // Wall-break visual event
+      if (this.cfg.wallBreak) {
+        scene.time.delayedCall(300, () => { if (this.alive) scene.events.emit('boss_wall_break', { boss: this }); });
+      }
     }
 
     scene.cameras.main.shake(500, 0.018);

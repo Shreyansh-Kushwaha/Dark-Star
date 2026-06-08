@@ -50,6 +50,8 @@ export class UIScene extends Phaser.Scene {
     gs.events.on('boss_phase_changed', this._onBossPhase,      this);
     gs.events.on('boss_staggered',     this._onBossStaggered,  this);
     gs.events.on('boss_killed',        this._onBossKilled,     this);
+    gs.events.on('boss_armor_changed', this._onBossArmorChanged, this);
+    gs.events.on('boss_armor_broken',  this._onBossArmorBroken,  this);
     gs.events.on('player_damaged',     this._onPlayerDamaged,  this);
     gs.events.on('player_downed',      this._onPlayerDowned,   this);
     gs.events.on('player_revived',     this._onPlayerRevived,  this);
@@ -162,12 +164,19 @@ export class UIScene extends Phaser.Scene {
     this._bossPostureBg   = this.add.rectangle(POST_L, postY, POST_W, postH, 0x111111).setOrigin(0, 0.5);
     this._bossPostureFill = this.add.rectangle(POST_L, postY, POST_W, postH, 0xff8800).setOrigin(0, 0.5);
 
+    // Stone armor bar (hidden until activated — pashana_daitya phase 2)
+    const armorY = GAME_H - 30;
+    this._bossArmorLabel = this.add.text(30, armorY, 'STONE ARMOR', { fontSize: '7px', color: '#aaaaaa', fontFamily: 'monospace' }).setOrigin(0, 0.5).setVisible(false);
+    this._bossArmorBg    = this.add.rectangle(POST_L, armorY, POST_W, postH, 0x111111).setOrigin(0, 0.5).setVisible(false);
+    this._bossArmorFill  = this.add.rectangle(POST_L, armorY, POST_W, postH, 0x999999).setOrigin(0, 0.5).setVisible(false);
+
     this._bossContainer.add([
       panelBg, borderLine, borderLine2,
       this._bossName, this._bossPhaseLabel,
       hpLabel, this._bossHpBg, this._bossHpDelay, this._bossHpFill,
       hpGlint, notch50, notch30, this._bossHpText,
       postLabel, this._bossPostureBg, this._bossPostureFill,
+      this._bossArmorLabel, this._bossArmorBg, this._bossArmorFill,
     ]);
 
     this._bossHpDelayTween = null;
@@ -543,6 +552,30 @@ export class UIScene extends Phaser.Scene {
 
     this._bossPhaseLabel.setText(label).setAlpha(1);
     this.tweens.add({ targets: this._bossPhaseLabel, alpha: 0, duration: 1800, delay: 2200 });
+  }
+
+  _onBossArmorChanged(data) {
+    const { boss } = data;
+    const pct = boss.stoneArmor / boss.maxStoneArmor;
+    this._bossArmorLabel.setVisible(true);
+    this._bossArmorBg.setVisible(true);
+    this._bossArmorFill.setVisible(true).setScaleX(Math.max(0, pct));
+  }
+
+  _onBossArmorBroken() {
+    this._bossArmorFill.setScaleX(0);
+    this.toast('STONE ARMOR BROKEN!', '#aaaaff', 2000);
+
+    // Flash the armor bar grey then hide after a moment
+    this.tweens.add({
+      targets: [this._bossArmorBg, this._bossArmorFill, this._bossArmorLabel],
+      alpha: 0, duration: 800, delay: 600,
+      onComplete: () => {
+        this._bossArmorLabel.setVisible(false).setAlpha(1);
+        this._bossArmorBg.setVisible(false).setAlpha(1);
+        this._bossArmorFill.setVisible(false).setAlpha(1);
+      },
+    });
   }
 
   _onBossStaggered() {

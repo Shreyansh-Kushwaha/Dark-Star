@@ -204,7 +204,8 @@ export class GameScene extends Phaser.Scene {
     this.events.on('healing_aura',     this._onHealingAura, this);
     this.events.on('ability_fx',       this._onAbilityFx, this);
     this.events.on('enemy_killed',     this._onEnemyKilled, this);
-    this.events.on('boss_killed',      this._onBossKilled, this);
+    this.events.on('boss_killed',      this._onBossKilled,    this);
+    this.events.on('boss_wall_break',  this._onBossWallBreak, this);
 
     this.questManager.addEventListener('quest_started', (e) => {
       this.events.emit('quest_started', e.detail);
@@ -1338,6 +1339,41 @@ export class GameScene extends Phaser.Scene {
         }
       }
     }
+  }
+
+  _onBossWallBreak(data) {
+    const { boss } = data;
+    this.cameras.main.shake(900, 0.022);
+
+    // Screen flash
+    const flash = this.add.rectangle(0, 0, GAME_W, GAME_H, 0xffffff, 0.35)
+      .setScrollFactor(0).setDepth(9000);
+    this.tweens.add({ targets: flash, alpha: 0, duration: 450, onComplete: () => flash.destroy() });
+
+    // Debris rocks fly outward from boss position
+    const rockKeys = ['rock1', 'rock2'];
+    for (let i = 0; i < 10; i++) {
+      const angle = (Math.PI * 2 / 10) * i + (Math.random() * 0.3);
+      const rock = this.add.image(boss.x, boss.y, rockKeys[i % 2])
+        .setScale(0.5 + Math.random() * 0.7)
+        .setDepth(boss.y + 20);
+      this.tweens.add({
+        targets: rock,
+        x: boss.x + Math.cos(angle) * (120 + Math.random() * 160),
+        y: boss.y + Math.sin(angle) * (120 + Math.random() * 160),
+        angle: 360 * (Math.random() > 0.5 ? 1 : -1),
+        alpha: 0,
+        duration: 700 + Math.random() * 300,
+        ease: 'Power2.Out',
+        onComplete: () => rock.destroy(),
+      });
+    }
+
+    // Toast
+    this.time.delayedCall(200, () => {
+      this.events.emit('show_dialogue', { text: '⟨Pashana Daitya⟩ "You dare chip the stone? Then feel the mountain\'s RAGE!"' });
+      this.time.delayedCall(2800, () => this.events.emit('hide_dialogue'));
+    });
   }
 
   _startBossIntro(boss) {
