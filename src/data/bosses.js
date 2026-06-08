@@ -5,9 +5,9 @@ export const BOSSES = {
     textureBase: 'tree_boss', scale: 2.5, tint: 0x2d4a1e,
     maxHp: 1200, maxPosture: 100, postureRegen: 3,
     phases: [
-      { hpThreshold: 1.0, speed: 80,  attackCd: 2000, patterns: ['slam', 'root'] },
-      { hpThreshold: 0.5, speed: 110, attackCd: 1600, patterns: ['slam', 'root', 'spore_burst'] },
-      { hpThreshold: 0.3, speed: 140, attackCd: 1200, patterns: ['slam', 'root', 'spore_burst', 'rage_slam'] },
+      { hpThreshold: 1.0, speed: 80,  attackCd: 1000, patterns: ['slam', 'root'] },
+      { hpThreshold: 0.5, speed: 110, attackCd: 500, patterns: ['slam', 'root', 'spore_burst'] },
+      { hpThreshold: 0.3, speed: 140, attackCd: 200, patterns: ['slam', 'root', 'spore_burst', 'rage_slam'] },
     ],
     phaseLines: ['', 'The dark sap runs deep...', 'The forest... will not... fall...'],
     rewardItem: 'forest_totem', loreFragment: 'lore_vanaraksha_kill',
@@ -18,9 +18,9 @@ export const BOSSES = {
     textureBase: 'tree_boss', scale: 2.5, tint: 0x5c3d1e,
     maxHp: 1600, maxPosture: 100, postureRegen: 4,
     phases: [
-      { hpThreshold: 1.0, speed: 90,  attackCd: 1800, patterns: ['slam', 'vine_lash'] },
-      { hpThreshold: 0.5, speed: 120, attackCd: 1400, patterns: ['slam', 'vine_lash', 'seed_bomb'] },
-      { hpThreshold: 0.3, speed: 150, attackCd: 1100, patterns: ['slam', 'vine_lash', 'seed_bomb', 'frenzy'] },
+      { hpThreshold: 1.0, speed: 150,  attackCd: 1800, patterns: ['slam', 'vine_lash'] },
+      { hpThreshold: 0.5, speed: 190, attackCd: 1400, patterns: ['slam', 'vine_lash', 'seed_bomb'] },
+      { hpThreshold: 0.3, speed: 220, attackCd: 1100, patterns: ['slam', 'vine_lash', 'seed_bomb', 'frenzy'] },
     ],
     phaseLines: ['', 'You cannot burn what is already hunger.', 'The grove feeds me. You cannot starve a demon.'],
     rewardItem: 'ashram_blessing', loreFragment: 'lore_vanasur_kill',
@@ -28,12 +28,13 @@ export const BOSSES = {
   nagraj_kaliya: {
     key: 'nagraj_kaliya', name: 'Nagraj Kaliya',
     lore: 'Serpent king of the deep waters — guardian of the threshold that mortals were never meant to cross.',
-    textureBase: 'tree_boss', scale: 2.8, tint: 0x1a6633,
+    textureBase: 'tree_boss', scale: 2.8, tint: null,
+    visualOffsetY: -70, // <-- ADDED: Fixes the shadow/floating issue so he visually stands upright while his hit box stays on the ground
     maxHp: 2000, maxPosture: 100, postureRegen: 5,
     phaseScales: [2.8, 3.5, 4.2],
     phases: [
       { hpThreshold: 1.0, speed: 100, attackCd: 1600, patterns: ['bite', 'bite', 'venom_spit'] },
-      { hpThreshold: 0.5, speed: 130, attackCd: 1300, patterns: ['bite', 'venom_spit', 'coil', 'tail_sweep'] },
+      { hpThreshold: 0.5, speed: 130, attackCd: 1300, patterns: ['bite', 'venom_spit', 'coil', 'tail_sweep', 'ambush_popout'] }, // <-- ADDED: ambush_popout to Phase 2
       { hpThreshold: 0.3, speed: 160, attackCd: 1000, patterns: ['bite', 'venom_spit', 'coil', 'tail_sweep', 'hydra_form'] },
     ],
     introLine: '⟨Nagraj Kaliya⟩ "The threshold has not been crossed in ten thousand years. You are not the first fool to try."',

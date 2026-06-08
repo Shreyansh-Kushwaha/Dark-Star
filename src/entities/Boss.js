@@ -1,6 +1,6 @@
 import { BOSSES } from '../data/bosses.js';
 
-const STATE = { IDLE: 'idle', ENTER: 'enter', FIGHT: 'fight', STAGGER: 'stagger', DEAD: 'dead' };
+const STATE = { IDLE: 'idle', ENTER: 'enter', FIGHT: 'fight', STAGGER: 'stagger', DEAD: 'dead', AMBUSH: 'ambush' };
 
 export class Boss extends Phaser.GameObjects.Container {
   constructor(scene, x, y, bossKey) {
@@ -28,12 +28,12 @@ export class Boss extends Phaser.GameObjects.Container {
     this._decoys       = null;
 
     const texBase = cfg.textureBase;
-    this.sprite = scene.add.sprite(0, 0, texBase + '_idle_01');
+    this.sprite = scene.add.sprite(0, cfg.visualOffsetY || 0, texBase + '_idle_01');
     this.sprite.setScale(cfg.scale);
     if (cfg.tint) this.sprite.setTint(cfg.tint);
     this.add(this.sprite);
 
-    const shadow = scene.add.ellipse(0, 40 * cfg.scale, 60 * cfg.scale, 18, 0x000000, 0.3);
+    const shadow = scene.add.ellipse(0, 0, 60 * cfg.scale, 18, 0x000000, 0.3);
     this.addAt(shadow, 0);
 
     this.setAlpha(0);
@@ -52,7 +52,6 @@ export class Boss extends Phaser.GameObjects.Container {
       onComplete: () => {
         this._playAnim('idle');
 
-        // Intro line (nagraj_kaliya uses introLine; viyogasur uses introLines array)
         if (this.cfg.introLine) {
           this._introActive = true;
           scene.events.emit('boss_intro', { lines: [this.cfg.introLine], boss: this });
@@ -93,7 +92,6 @@ export class Boss extends Phaser.GameObjects.Container {
         this.state = STATE.FIGHT;
         this._invincible = false;
         this._playAnim('idle');
-        // Restore decoy visibility after stagger ends
         if (this._decoys?.length) {
           this._decoys.forEach(d => {
             if (d?.active) scene.tweens.add({ targets: d, alpha: 0.8, duration: 300 });
@@ -102,6 +100,9 @@ export class Boss extends Phaser.GameObjects.Container {
       }
       return;
     }
+
+    // Skip tracking routines if currently executing a burrow setup
+    if (this.state === STATE.AMBUSH) return;
 
     this._atkTimer = Math.max(0, this._atkTimer - delta);
 
@@ -113,7 +114,6 @@ export class Boss extends Phaser.GameObjects.Container {
     const dy   = target.y - this.y;
     const dist = Math.sqrt(dx * dx + dy * dy);
 
-    // Always advance sinWave for nagraj (weave + decoy bob)
     if (this.bossKey === 'nagraj_kaliya') {
       this._sinWave += delta * 0.003;
     }
@@ -121,11 +121,20 @@ export class Boss extends Phaser.GameObjects.Container {
     const shouldFlip = this.cfg.mirrorSprite ? dx > 0 : dx < 0;
     this.sprite.setFlipX(shouldFlip);
 
+    // --- PROXIMITY REACTION (RUNNING ATTACK) ---
+    // If a moving player runs too close, immediately hit them without stopping movement tracks
+    if (dist <= 110 && this._atkTimer <= 0) {
+      const targetIsMoving = (target.body && (target.body.velocity.x !== 0 || target.body.velocity.y !== 0));
+      if (targetIsMoving) {
+        this._doAttack(phaseCfg, target, scene);
+      }
+    }
+
+    // --- CHASE MOVEMENT ENGINE ---
     if (dist > 80) {
       let vx = dx / dist * phaseCfg.speed;
       let vy = dy / dist * phaseCfg.speed;
 
-      // Serpentine weaving: sinusoidal offset perpendicular to travel direction
       if (this.bossKey === 'nagraj_kaliya') {
         const perpX = -dy / dist;
         const perpY =  dx / dist;
@@ -134,16 +143,23 @@ export class Boss extends Phaser.GameObjects.Container {
         vy += perpY * sway;
       }
 
-      // Direct position update — avoids Phaser Container + Arcade Physics velocity quirks
-      this.x += vx * delta / 1000;
-      this.y += vy * delta / 1000;
-      this._playAnim('run');
+      if (this.body) {
+        this.body.setVelocity(vx, vy);
+      } else {
+        this.x += vx * delta / 1000;
+        this.y += vy * delta / 1000;
+      }
+
+      // Keep running animation rolling unless interrupted by a running attack clip
+      if (this.sprite.anims.currentAnim?.key !== `${this.cfg.textureBase}_attack`) {
+        this._playAnim('run');
+      }
     } else {
       if (this.body) this.body.setVelocity(0, 0);
       this._doAttack(phaseCfg, target, scene);
     }
 
-    // Hydra decoys lag-follow the boss with side offsets and a gentle bob
+    // Decoy tracking loops
     if (this._decoys?.length) {
       this._decoys.forEach((d, i) => {
         if (!d?.active) return;
@@ -176,24 +192,88 @@ export class Boss extends Phaser.GameObjects.Container {
     if (patterns.length === 1) {
       pattern = patterns[0];
     } else {
-      // Weighted random — avoid immediately repeating the last pattern
       const candidates = patterns.filter(p => p !== this._lastPattern);
       const pool = candidates.length ? candidates : patterns;
       pattern = pool[Math.floor(Math.random() * pool.length)];
     }
     this._lastPattern = pattern;
 
-    this._playAnim('attack');
+    // Trigger explicit animation context states unless handled internally by sub-actions
+    if (pattern !== 'ambush_popout') {
+      this._playAnim('attack');
+    }
+
     this._executePattern(pattern, target, scene);
   }
 
   _executePattern(pattern, target, scene) {
-    // ── Nagraj Kaliya unique attacks ───────────────────────────────────────
     if (this.bossKey === 'nagraj_kaliya') {
       switch (pattern) {
 
+        case 'ambush_popout': {
+          this.state = STATE.AMBUSH;
+          this._invincible = true;
+          if (this.body) this.body.setVelocity(0, 0);
+
+          // 1. Shrink down (burrow underground)
+          scene.tweens.add({
+            targets: this.sprite,
+            scaleX: 0,
+            scaleY: 0,
+            duration: 500,
+            ease: 'Quad.In',
+            onComplete: () => {
+              // Hide shadow while underground
+              this.alpha = 0; 
+
+              // 2. Delay tracking time underground, then snap immediately to the player's current location
+              scene.time.delayedCall(1000, () => {
+                if (!this.alive || !target.alive) {
+                  this.state = STATE.FIGHT;
+                  this.alpha = 1;
+                  this.sprite.setScale(this.cfg.scale);
+                  return;
+                }
+
+                this.x = target.x;
+                this.y = target.y;
+                this.setDepth(this.y);
+                this.alpha = 1;
+
+                // Spawn warning indicator asset under the player right before eruption
+                scene.events.emit('ability_fx', { type: 'venom_pool', x: this.x, y: this.y });
+
+                // 3. Scale burst back up violently (Pop-out attack)
+                scene.tweens.add({
+                  targets: this.sprite,
+                  scaleX: this.cfg.scale,
+                  scaleY: this.cfg.scale,
+                  duration: 400,
+                  ease: 'Back.Out',
+                  onStart: () => {
+                    this._playAnim('attack');
+                  },
+                  onComplete: () => {
+                    this._invincible = false;
+                    this.state = STATE.FIGHT;
+
+                    // Camera punch impact shake
+                    scene.cameras.main.shake(300, 0.015);
+
+                    // Direct landing hit resolution box check
+                    const d = Phaser.Math.Distance.Between(this.x, this.y, target.x, target.y);
+                    if (d <= 140) {
+                      target.takeDamage(this.cfg.maxHp * 0.09, this, scene);
+                    }
+                  }
+                });
+              });
+            }
+          });
+          return;
+        }
+
         case 'bite': {
-          // Rapid physics dash-lunge: high velocity burst, impact check on arrival
           target.notifyIncomingAttack?.();
           const ang = Math.atan2(target.y - this.y, target.x - this.x);
           this._invincible = true;
@@ -210,7 +290,6 @@ export class Boss extends Phaser.GameObjects.Container {
         }
 
         case 'venom_spit': {
-          // Green projectiles with poison DoT on hit + venom pool at predicted landing
           const ang = Math.atan2(target.y - this.y, target.x - this.x);
           const travelDist = 320;
           for (let i = 0; i < 3; i++) {
@@ -231,7 +310,6 @@ export class Boss extends Phaser.GameObjects.Container {
         }
 
         case 'coil': {
-          // Ring of projectiles spawned around the player, all aimed inward
           scene.cameras.main.shake(210, 0.008);
           const count  = 12;
           const radius = 235;
@@ -250,7 +328,6 @@ export class Boss extends Phaser.GameObjects.Container {
         }
 
         case 'tail_sweep': {
-          // Wide arc hitting players behind the boss — punishes circling
           const faceAng = Math.atan2(target.y - this.y, target.x - this.x);
           const rearAng = faceAng + Math.PI;
           const sweepR  = 190;
@@ -272,7 +349,6 @@ export class Boss extends Phaser.GameObjects.Container {
         }
 
         case 'hydra_form': {
-          // 8-way radial poison burst + spawn/refresh ghost decoy illusions
           scene.cameras.main.shake(360, 0.014);
           this._refreshDecoys(scene);
           for (let i = 0; i < 8; i++) {
@@ -288,7 +364,7 @@ export class Boss extends Phaser.GameObjects.Container {
       }
     }
 
-    // ── Generic patterns (all other bosses) ───────────────────────────────
+    // Generic fallback attack configs (Left untouched for other boss configurations)
     switch (pattern) {
       case 'slam': case 'smash': case 'bite': case 'void_slash': case 'wind_slash': {
         target.notifyIncomingAttack?.();
@@ -344,7 +420,6 @@ export class Boss extends Phaser.GameObjects.Container {
     }
   }
 
-  // ── Hydra decoys (phase 3 ghost illusions) ────────────────────────────────
   _spawnDecoys(scene) {
     this._dismissDecoys(scene);
     this._decoys = [];
@@ -384,7 +459,6 @@ export class Boss extends Phaser.GameObjects.Container {
     this._decoys = [];
   }
 
-  // ── Damage / stagger / phase / death ──────────────────────────────────────
   takeDamage(amount, scene) {
     if (!this.alive || this._invincible || this.state === STATE.STAGGER || this.state === STATE.DEAD) return;
     this.hp = Math.max(0, this.hp - amount);
@@ -418,13 +492,11 @@ export class Boss extends Phaser.GameObjects.Container {
     this.state         = STATE.STAGGER;
     this._staggerTimer = 2200;
 
-    // Pulse flash
     scene.tweens.add({
       targets: this, scaleX: 1.18, scaleY: 1.18,
       duration: 280, yoyo: true, ease: 'Power2',
     });
 
-    // Permanent sprite size increase per phase (driven by phaseScales in boss config)
     if (this.cfg.phaseScales) {
       const newSpriteScale = this.cfg.phaseScales[newPhase];
       scene.tweens.add({
@@ -455,7 +527,6 @@ export class Boss extends Phaser.GameObjects.Container {
     scene.cameras.main.shake(300, 0.01);
     scene.events.emit('boss_staggered');
     scene.audio?.bossStagger?.();
-    // Dim decoys so the player can re-orient on the real boss during stagger window
     if (this._decoys?.length) {
       this._decoys.forEach(d => { if (d?.active) scene.tweens.add({ targets: d, alpha: 0.15, duration: 300 }); });
     }
