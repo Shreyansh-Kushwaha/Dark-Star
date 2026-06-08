@@ -61,6 +61,10 @@ export class UIScene extends Phaser.Scene {
     gs.events.on('ability_used',       this._onAbilityUsed,    this);
     gs.events.on('show_inventory',     this._showInventory,    this);
     gs.events.on('game_over',          this._onGameOver,       this);
+    gs.events.on('lore_collected',     this._onLoreCollected,  this);
+
+    // Cache lore fragment data for the lore tab
+    import('/src/data/quests.js').then(m => { this._loreFragCache = m.LORE_FRAGMENTS; });
   }
 
   // ── Top HUD ────────────────────────────────────────────────────────────────
@@ -90,6 +94,10 @@ export class UIScene extends Phaser.Scene {
       fontSize: '13px', color: '#ffd700', fontFamily: 'serif',
       stroke: '#000', strokeThickness: 3,
     }).setOrigin(1, 0);
+
+    this._loreLabel = this.add.text(GAME_W - pad, 36, '◈ 0 / 20', {
+      fontSize: '10px', color: '#ffd700', fontFamily: 'monospace',
+    }).setOrigin(1, 0.5);
 
     this.add.text(GAME_W - pad, 52,
       '[J] Atk [K] Heavy [Q/E/R] Ability [Shift] Dodge [F] Talk [I] Inv [U] Quests', {
@@ -262,7 +270,18 @@ export class UIScene extends Phaser.Scene {
       wordWrap: { width: pw - 24 }, lineSpacing: 3,
     });
 
-    panel.add([bg, border, title, close, this._questText]);
+    this._loreDivider = this.add.text(12, 240, '── LORE FRAGMENTS ──────────────', {
+      fontSize: '9px', color: '#664400', fontFamily: 'monospace',
+    });
+    this._loreCountLabel = this.add.text(12, 254, '0 / 20 collected', {
+      fontSize: '9px', color: '#997744', fontFamily: 'monospace',
+    });
+    this._loreFragTitles = this.add.text(12, 268, '', {
+      fontSize: '9px', color: '#ccaa77', fontFamily: 'monospace',
+      wordWrap: { width: pw - 24 }, lineSpacing: 2,
+    });
+
+    panel.add([bg, border, title, close, this._questText, this._loreDivider, this._loreCountLabel, this._loreFragTitles]);
     return panel;
   }
 
@@ -335,7 +354,10 @@ export class UIScene extends Phaser.Scene {
     if (Phaser.Input.Keyboard.JustDown(this._keyU)) {
       this._questVisible = !this._questVisible;
       this._questPanel.setVisible(this._questVisible);
-      if (this._questVisible) this._refreshQuestLog(gs);
+      if (this._questVisible) {
+        this._refreshQuestLog(gs);
+        this._refreshLoreTab(gs);
+      }
     }
     if (Phaser.Input.Keyboard.JustDown(this._keyI)) {
       this._invVisible = !this._invVisible;
@@ -474,7 +496,9 @@ export class UIScene extends Phaser.Scene {
   }
 
   _onBossPhase(data) {
-    const label = data.label;
+    const { boss, phase } = data;
+    const phaseLine = boss?.cfg?.phaseLines?.[phase];
+    const isFullLine = boss?.cfg?.isFinal && phaseLine;
 
     // White flash
     const flash = this.add.rectangle(GAME_W / 2, GAME_H / 2, GAME_W, GAME_H, 0xffffff, 0.6)
@@ -484,7 +508,19 @@ export class UIScene extends Phaser.Scene {
       onComplete: () => flash.destroy(),
     });
 
-    // Giant center phase text scales in
+    if (isFullLine) {
+      // Final boss: show full dialogue line in the bottom dialogue box
+      const gs = this.scene.get('GameScene');
+      gs.events.emit('show_dialogue', { text: phaseLine });
+      this.time.delayedCall(3500, () => gs.events.emit('hide_dialogue'));
+      this._bossPhaseLabel.setText('').setAlpha(0);
+      return;
+    }
+
+    // All other bosses: short atmospheric label
+    const label = phaseLine || data.label;
+    if (!label) return;
+
     const phaseTxt = this.add.text(GAME_W / 2, GAME_H / 2 - 44, label, {
       fontSize: '54px', color: '#ff4444', fontFamily: 'serif',
       stroke: '#000', strokeThickness: 8, letterSpacing: 8,
@@ -503,7 +539,6 @@ export class UIScene extends Phaser.Scene {
       },
     });
 
-    // Update phase label on the bar
     this._bossPhaseLabel.setText(label).setAlpha(1);
     this.tweens.add({ targets: this._bossPhaseLabel, alpha: 0, duration: 1800, delay: 2200 });
   }
@@ -531,8 +566,16 @@ export class UIScene extends Phaser.Scene {
     });
   }
 
-  _onBossKilled() {
-    // Slide bar off-screen after a beat
+  _onBossKilled(data) {
+    const boss = data?.boss;
+
+    if (boss?.cfg?.isFinal) {
+      // Final boss — show defeat speech; GameScene handles scene transition at 8s
+      this._showViyogasurDefeatSpeech(boss.cfg.defeatLines || []);
+      return;
+    }
+
+    // Normal boss — slide bar off and show "ENEMY FELLED"
     this.time.delayedCall(900, () => {
       this.tweens.add({
         targets: this._bossContainer, y: GAME_H + 200,
@@ -544,7 +587,6 @@ export class UIScene extends Phaser.Scene {
       });
     });
 
-    // "ENEMY FELLED" text
     this.time.delayedCall(300, () => {
       const victor = this.add.text(GAME_W / 2, GAME_H / 2 - 64, 'ENEMY FELLED', {
         fontSize: '40px', color: '#ffd700', fontFamily: 'serif',
@@ -563,6 +605,46 @@ export class UIScene extends Phaser.Scene {
         },
       });
     });
+  }
+
+  _showViyogasurDefeatSpeech(lines) {
+    // Slide boss bar off first
+    this.tweens.add({
+      targets: this._bossContainer, y: GAME_H + 200,
+      duration: 600, ease: 'Power2.In',
+      onComplete: () => { this._bossContainer.setVisible(false); },
+    });
+
+    const depth = 9990;
+    const veil = this.add.rectangle(0, 0, GAME_W, GAME_H, 0x000000, 0)
+      .setOrigin(0).setDepth(depth);
+    this.tweens.add({ targets: veil, alpha: 0.85, duration: 1000 });
+
+    let delay = 1200;
+    for (const line of lines) {
+      this.time.delayedCall(delay, () => {
+        const t = this.add.text(GAME_W / 2, GAME_H / 2, line, {
+          fontSize: '17px', color: '#ddcc99', fontFamily: 'serif',
+          align: 'center', wordWrap: { width: 700 }, lineSpacing: 5,
+          stroke: '#000', strokeThickness: 3,
+        }).setOrigin(0.5).setDepth(depth + 1).setAlpha(0);
+        this.tweens.add({
+          targets: t, alpha: 1, duration: 600,
+          onComplete: () => {
+            this.time.delayedCall(2000, () => {
+              this.tweens.add({ targets: t, alpha: 0, duration: 500, onComplete: () => t.destroy() });
+            });
+          },
+        });
+      });
+      delay += 3200;
+    }
+  }
+
+  _onLoreCollected(data) {
+    if (this._loreLabel) {
+      this._loreLabel.setText(`◈ ${data.count} / ${data.total}`);
+    }
   }
 
   // ── Player events ──────────────────────────────────────────────────────────
@@ -647,6 +729,20 @@ export class UIScene extends Phaser.Scene {
     this._refreshInventory({ saveData: data });
     this._invVisible = true;
     this._invPanel.setVisible(true);
+  }
+
+  _refreshLoreTab(gs) {
+    const lm = gs?.loreManager;
+    if (!lm || !this._loreFragTitles) return;
+    this._loreCountLabel.setText(`${lm.count()} / ${lm.total()} collected`);
+    if (!this._loreFragCache) {
+      this._loreFragTitles.setText('Loading...');
+      return;
+    }
+    const lines = this._loreFragCache
+      .filter(f => lm.has(f.id))
+      .map(f => `◈ ${f.title}`);
+    this._loreFragTitles.setText(lines.join('\n') || 'None found yet.');
   }
 
   _refreshQuestLog(gs) {
