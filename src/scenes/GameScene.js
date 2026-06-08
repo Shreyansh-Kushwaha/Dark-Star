@@ -110,7 +110,8 @@ export class GameScene extends Phaser.Scene {
     this.questManager.load(saveData.completedQuests || []);
     this.loreManager = new LoreManager();
     this.loreManager.load(saveData.collectedLoreIds || []);
-    this.network = new NetworkManager();
+    this.network = this.registry.get('network') || new NetworkManager();
+    this.registry.remove('network');
 
     // Physics world
     this.physics.world.setBounds(0, 0, WORLD_W, WORLD_H);

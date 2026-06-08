@@ -1,6 +1,7 @@
 import { GAME_W, GAME_H, REGION_NAMES } from '../constants.js';
 import { SaveManager } from '../systems/SaveManager.js';
 import { QualitySettings } from '../systems/QualitySettings.js';
+import { NetworkManager } from '../systems/NetworkManager.js';
 
 const PAL = {
   sky:      0x05050f,
@@ -355,10 +356,26 @@ export class MainMenuScene extends Phaser.Scene {
     });
   }
 
-  _hostCoop() {
-    this._roomPrompt.setText('HOSTING...  ws://localhost:8080').setAlpha(1);
-    this._roomInput.setText('HOSTING').setAlpha(1);
-    this.time.delayedCall(1500, () => this._startGame(true));
+  async _hostCoop() {
+    this._roomPrompt.setText('CONNECTING...').setAlpha(1);
+    this._roomInput.setText('....').setAlpha(1);
+    try {
+      const net = new NetworkManager();
+      await net.connect();
+      net.createRoom();
+      net.on('ROOM_READY', ({ code }) => {
+        this._roomInput.setText(code);
+        this._roomPrompt.setText('WAITING FOR PARTNER...');
+      });
+      net.on('CLIENT_JOINED', () => {
+        this._roomPrompt.setText('PARTNER JOINED!  STARTING...');
+        this.registry.set('network', net);
+        this.time.delayedCall(800, () => this._startGame(true));
+      });
+    } catch (err) {
+      this._roomPrompt.setText('CONNECTION FAILED');
+      this._roomInput.setAlpha(0);
+    }
   }
 
   _joinCoop() {
@@ -378,8 +395,30 @@ export class MainMenuScene extends Phaser.Scene {
     }
     if (e.key === 'Enter' && this._joinCode.length === 4) {
       this._joiningMode = false;
-      this._roomPrompt.setText('JOINING ' + this._joinCode + '...');
-      this.time.delayedCall(1000, () => this._startGame(true));
+      const code = this._joinCode;
+      this._roomPrompt.setText('JOINING ' + code + '...');
+      (async () => {
+        try {
+          const net = new NetworkManager();
+          await net.connect();
+          net.joinRoom(code);
+          net.on('ROOM_READY', () => {
+            this._roomPrompt.setText('CONNECTED!  STARTING...');
+            this.registry.set('network', net);
+            this.time.delayedCall(800, () => this._startGame(true));
+          });
+          net.on('ROOM_ERROR', ({ reason }) => {
+            this._roomPrompt.setText('ERROR: ' + reason);
+            this._roomInput.setText('____');
+            this._joiningMode = true;
+            this._joinCode = '';
+          });
+        } catch (err) {
+          this._roomPrompt.setText('CONNECTION FAILED');
+          this._joiningMode = true;
+          this._joinCode = '';
+        }
+      })();
       return;
     }
     if (e.key === 'Backspace') {
