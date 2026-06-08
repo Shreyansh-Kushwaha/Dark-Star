@@ -206,18 +206,24 @@ function bindZoomPan() {
   window.addEventListener('keydown', e => { if (e.code === 'Space' && !e.target.matches('input')) { spaceDown = true; document.getElementById('canvas-container').style.cursor = 'grab'; e.preventDefault(); } });
   window.addEventListener('keyup',   e => { if (e.code === 'Space') { spaceDown = false; updateCursor(); } });
 
-  S.stage.on('mousedown', e => {
-    if ((spaceDown || S.panMode || e.evt.button === 1) && e.evt.button !== 2) {
-      panStart = { x: e.evt.clientX, y: e.evt.clientY };
+  const canvasEl = document.getElementById('canvas-container');
+  canvasEl.addEventListener('mousedown', e => {
+    if ((spaceDown || S.panMode || e.button === 1) && e.button !== 2) {
+      panStart = { x: e.clientX, y: e.clientY };
       panOrigin = { x: S.stage.x(), y: S.stage.y() };
-      if (S.panMode) document.getElementById('canvas-container').style.cursor = 'grabbing';
+      canvasEl.style.cursor = 'grabbing';
+      e.preventDefault();
     }
   });
-  S.stage.on('mousemove', e => {
+  window.addEventListener('mousemove', e => {
     if (!panStart) return;
-    S.stage.position({ x: panOrigin.x + e.evt.clientX - panStart.x, y: panOrigin.y + e.evt.clientY - panStart.y });
+    S.stage.position({ x: panOrigin.x + e.clientX - panStart.x, y: panOrigin.y + e.clientY - panStart.y });
   });
-  S.stage.on('mouseup', () => { panStart = null; if (S.panMode) document.getElementById('canvas-container').style.cursor = 'grab'; });
+  window.addEventListener('mouseup', () => {
+    if (!panStart) return;
+    panStart = null;
+    updateCursor();
+  });
 
   document.getElementById('btn-zoom-in').onclick  = () => applyZoom(1.15);
   document.getElementById('btn-zoom-out').onclick = () => applyZoom(0.87);
@@ -251,8 +257,11 @@ function setMode(mode) {
     cancelPlacing();
     deselectAll();
   }
+  // Toggle draggable on all existing sprites so pan/delete mode can intercept mouse events
+  const draggable = !S.panMode && !S.deleteMode;
+  S.spritesLayer.getChildren().forEach(n => n.draggable(draggable));
   updateCursor();
-  if (S.panMode)    setStatus('Pan mode — drag to scroll');
+  if (S.panMode)         setStatus('Pan mode — drag to scroll the map');
   else if (S.deleteMode) setStatus('Delete mode — click any sprite to remove it');
   else setStatus('');
 }
