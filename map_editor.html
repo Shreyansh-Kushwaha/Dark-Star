@@ -73,6 +73,9 @@ button.active{background:#4488ff33;border-color:#88aaff}
   <div class="sep"></div>
   <button class="purple" id="btn-preview">▶ Preview</button>
   <div class="sep"></div>
+  <button id="btn-pan">✋ Pan</button>
+  <button class="red" id="btn-del-mode">🗑 Delete Mode</button>
+  <div class="sep"></div>
   <span id="status-msg"></span>
   <input type="file" id="file-open" accept=".json" style="display:none">
 </div>
@@ -121,6 +124,8 @@ const S = {
   activeCat: 0,
   activeGrp: null,
   searchQ: '',
+  panMode: false,
+  deleteMode: false,
 };
 
 // ── Utility ────────────────────────────────────────────────────────────────
@@ -199,19 +204,20 @@ function bindZoomPan() {
 
   let spaceDown = false, panStart = null, panOrigin = null;
   window.addEventListener('keydown', e => { if (e.code === 'Space' && !e.target.matches('input')) { spaceDown = true; document.getElementById('canvas-container').style.cursor = 'grab'; e.preventDefault(); } });
-  window.addEventListener('keyup',   e => { if (e.code === 'Space') { spaceDown = false; document.getElementById('canvas-container').style.cursor = S.placingAsset ? 'crosshair' : 'default'; } });
+  window.addEventListener('keyup',   e => { if (e.code === 'Space') { spaceDown = false; updateCursor(); } });
 
   S.stage.on('mousedown', e => {
-    if ((spaceDown || e.evt.button === 1) && e.evt.button !== 2) {
+    if ((spaceDown || S.panMode || e.evt.button === 1) && e.evt.button !== 2) {
       panStart = { x: e.evt.clientX, y: e.evt.clientY };
       panOrigin = { x: S.stage.x(), y: S.stage.y() };
+      if (S.panMode) document.getElementById('canvas-container').style.cursor = 'grabbing';
     }
   });
   S.stage.on('mousemove', e => {
     if (!panStart) return;
     S.stage.position({ x: panOrigin.x + e.evt.clientX - panStart.x, y: panOrigin.y + e.evt.clientY - panStart.y });
   });
-  S.stage.on('mouseup', () => { panStart = null; });
+  S.stage.on('mouseup', () => { panStart = null; if (S.panMode) document.getElementById('canvas-container').style.cursor = 'grab'; });
 
   document.getElementById('btn-zoom-in').onclick  = () => applyZoom(1.15);
   document.getElementById('btn-zoom-out').onclick = () => applyZoom(0.87);
@@ -228,10 +234,34 @@ function applyZoom(factor) {
   updateZoomLabel();
 }
 
+function updateCursor() {
+  const cc = document.getElementById('canvas-container');
+  if (S.placingAsset)   cc.style.cursor = 'crosshair';
+  else if (S.panMode)   cc.style.cursor = 'grab';
+  else if (S.deleteMode) cc.style.cursor = 'not-allowed';
+  else                  cc.style.cursor = 'default';
+}
+
+function setMode(mode) {
+  S.panMode    = (mode === 'pan');
+  S.deleteMode = (mode === 'delete');
+  document.getElementById('btn-pan').classList.toggle('active', S.panMode);
+  document.getElementById('btn-del-mode').classList.toggle('active', S.deleteMode);
+  if (S.panMode || S.deleteMode) {
+    cancelPlacing();
+    deselectAll();
+  }
+  updateCursor();
+  if (S.panMode)    setStatus('Pan mode — drag to scroll');
+  else if (S.deleteMode) setStatus('Delete mode — click any sprite to remove it');
+  else setStatus('');
+}
+
 // ── Stage click (place / deselect) ────────────────────────────────────────
 function bindStageClick() {
   S.stage.on('click tap', e => {
     if (e.evt.button === 2) return;
+    if (S.panMode) return;
     const target = e.target;
     if (S.placingAsset && (target === S.stage || target === S.bgRect || target === S.bgImage)) {
       const pos = S.stage.getPointerPosition();
@@ -244,14 +274,14 @@ function bindStageClick() {
       deselectAll();
     }
   });
-  S.stage.on('contextmenu', e => { e.evt.preventDefault(); cancelPlacing(); });
+  S.stage.on('contextmenu', e => { e.evt.preventDefault(); cancelPlacing(); setMode('none'); });
 }
 
 // ── Keyboard ───────────────────────────────────────────────────────────────
 function bindKeyboard() {
   window.addEventListener('keydown', e => {
     if (e.target.matches('input')) return;
-    if (e.key === 'Escape') { cancelPlacing(); deselectAll(); }
+    if (e.key === 'Escape') { cancelPlacing(); deselectAll(); setMode('none'); }
     if ((e.key === 'Delete' || e.key === 'Backspace') && S.selectedNode) deleteSelected();
     if (e.ctrlKey && e.key === 'z') { e.preventDefault(); undo(); }
   });
@@ -268,6 +298,8 @@ function bindToolbar() {
   document.getElementById('file-open').onchange = e => loadJSON(e.target.files[0]);
   document.getElementById('btn-save').onclick   = saveJSON;
   document.getElementById('btn-export').onclick = exportPNG;
+  document.getElementById('btn-pan').onclick = () => setMode(S.panMode ? 'none' : 'pan');
+  document.getElementById('btn-del-mode').onclick = () => setMode(S.deleteMode ? 'none' : 'delete');
 }
 
 // ── Init ───────────────────────────────────────────────────────────────────
@@ -371,9 +403,10 @@ function renderTrayGrid() {
 }
 
 function startPlacing(asset) {
+  setMode('none');
   S.placingAsset = asset;
   deselectAll();
-  document.getElementById('canvas-container').style.cursor = 'crosshair';
+  updateCursor();
   setStatus('Placing: ' + asset.name + ' — click canvas or Esc to cancel');
   renderTrayGrid();
 }
@@ -404,17 +437,31 @@ async function placeSprite(asset, x, y) {
 
 function cancelPlacing() {
   S.placingAsset = null;
-  document.getElementById('canvas-container').style.cursor = 'default';
+  updateCursor();
   setStatus('');
   renderTrayGrid();
 }
 
 function bindSpriteEvents(node) {
   node.on('click tap', e => {
+    if (S.panMode) return;
+    if (S.deleteMode) {
+      e.cancelBubble = true;
+      S.transformer.nodes([]);
+      S.selectedNode = null;
+      node.destroy();
+      S.spritesLayer.batchDraw();
+      S.selLayer.batchDraw();
+      document.getElementById('props').classList.remove('visible');
+      pushHistory();
+      setStatus('Deleted — click another sprite or press Esc to exit Delete mode');
+      return;
+    }
     if (S.placingAsset) return;
     e.cancelBubble = true;
     selectNode(node);
   });
+  node.draggable(!S.panMode && !S.deleteMode);
   node.on('dragend', () => { pushHistory(); updatePropsPanel(node); });
   node.on('transformend', () => { pushHistory(); updatePropsPanel(node); });
 }
