@@ -1,6 +1,7 @@
 import { WORLD_W, WORLD_H, GAME_W, GAME_H, NET_INTERVAL, TETHER_DIST, TETHER_SPEED, BOSS_TRIGGER_DIST } from '../constants.js';
 import { REGIONS } from '../data/regions.js';
-import { QUESTS, NPC_DIALOGUE } from '../data/quests.js';
+import { QUESTS, NPC_DIALOGUE, LORE_FRAGMENTS } from '../data/quests.js';
+import { LoreManager } from '../systems/LoreManager.js';
 import { Player } from '../entities/Player.js';
 import { Enemy  } from '../entities/Enemy.js';
 import { Boss   } from '../entities/Boss.js';
@@ -107,6 +108,8 @@ export class GameScene extends Phaser.Scene {
     this.audio  = new AudioManager();
     this.questManager = new QuestManager();
     this.questManager.load(saveData.completedQuests || []);
+    this.loreManager = new LoreManager();
+    this.loreManager.load(saveData.collectedLoreIds || []);
     this.network = new NetworkManager();
 
     // Physics world
@@ -163,6 +166,9 @@ export class GameScene extends Phaser.Scene {
     this._dialogueLine = '';
     this._interactTarget = null;
     this._pendingPortalUnlock = false;
+    this._firedEchoes = new Set();
+    this._worldFragmentObjects = [];
+    this._bossIntroActive = false;
     this._netTimer = 0;
     this._uiThrottleCounter = 0;
     this._slowTickCounter   = 0;
@@ -172,6 +178,7 @@ export class GameScene extends Phaser.Scene {
     this._anyEnemyKilled = false;
 
     this._createNPCs(region);
+    this._createWorldFragments(region);
     this._createSpawners(region);
     this._createPortals(region);
     this._createPressurePlates(region);
@@ -289,6 +296,22 @@ export class GameScene extends Phaser.Scene {
     for (const npcCfg of (region.npcPositions || [])) {
       const npc = new NPC(this, npcCfg.x, npcCfg.y, npcCfg);
       this.npcs.push(npc);
+    }
+  }
+
+  _createWorldFragments(region) {
+    for (const frag of (region.worldFragments || [])) {
+      if (this.loreManager.has(frag.fragmentId)) continue;
+
+      const gfx = this.add.circle(frag.x, frag.y, 14, 0xffd700, 0.5).setDepth(frag.y + 1);
+      this.tweens.add({ targets: gfx, alpha: 0.2, duration: 900, yoyo: true, repeat: -1 });
+
+      const prompt = this.add.text(frag.x, frag.y - 28, '[F]', {
+        fontSize: '12px', color: '#ffd700', fontFamily: 'monospace',
+        stroke: '#000', strokeThickness: 2,
+      }).setOrigin(0.5, 1).setAlpha(0).setDepth(frag.y + 2);
+
+      this._worldFragmentObjects.push({ fragmentId: frag.fragmentId, x: frag.x, y: frag.y, gfx, prompt });
     }
   }
 
@@ -842,6 +865,17 @@ export class GameScene extends Phaser.Scene {
     // ── NPCs ──────────────────────────────────────────────────────
     for (const npc of this.npcs) npc.update(this.players);
 
+    // ── World fragment proximity prompts ──────────────────────────
+    for (const wf of this._worldFragmentObjects) {
+      let nearest = Infinity;
+      for (const p of this.players) {
+        if (!p?.active) continue;
+        const d = Phaser.Math.Distance.Between(wf.x, wf.y, p.x, p.y);
+        if (d < nearest) nearest = d;
+      }
+      wf.prompt.setAlpha(nearest < 80 ? 1 : 0);
+    }
+
     // ── Boss ──────────────────────────────────────────────────────
     if (this._boss?.active) {
       this._boss.update(time, delta, this.players, this);
@@ -863,10 +897,11 @@ export class GameScene extends Phaser.Scene {
     // ── Tree occlusion (High quality only) ────────────────────────
     if (QualitySettings.occlusion) this._updateOcclusionAlpha();
 
-    // ── Slow tick: portals + pressure plates (every 8 frames) ─────
+    // ── Slow tick: portals + pressure plates + echoes (every 8 frames)
     if (this._slowTickCounter % 8 === 0) {
       this._checkPressurePlates();
       this._checkPortals();
+      this._checkEchoTriggers();
     }
 
     // ── Interact ─────────────────────────────────────────────────
@@ -987,6 +1022,10 @@ export class GameScene extends Phaser.Scene {
 
     boss.enter(this);
     this.audio.bossPhase();
+
+    if (boss.cfg.isFinal) {
+      this._startBossIntro(boss);
+    }
   }
 
   _checkPressurePlates() {
@@ -1066,7 +1105,7 @@ export class GameScene extends Phaser.Scene {
       statTiers: this._save?.statTiers || {},
       completedQuests: this.questManager.getCompletedArray(),
       inventory: this._save?.inventory || [],
-      loreCount: this._save?.loreCount || 0,
+      collectedLoreIds: this.loreManager.toArray(),
       bossKills: this._save?.bossKills || [],
     };
     SaveManager.save(saveData);
@@ -1094,6 +1133,33 @@ export class GameScene extends Phaser.Scene {
       return;
     }
 
+    // ── World fragment objects ────────────────────────────────────
+    for (const wf of this._worldFragmentObjects) {
+      let nearest = Infinity;
+      for (const p of this.players) {
+        if (!p?.active) continue;
+        const d = Phaser.Math.Distance.Between(wf.x, wf.y, p.x, p.y);
+        if (d < nearest) nearest = d;
+      }
+      if (nearest >= 80) continue;
+
+      this.loreManager.collect(wf.fragmentId);
+      this._saveCollectedLore();
+      this.events.emit('lore_collected', { count: this.loreManager.count(), total: this.loreManager.total() });
+
+      const fragData = LORE_FRAGMENTS.find(f => f.id === wf.fragmentId);
+      if (fragData) {
+        this._dialogueActive = true;
+        this.events.emit('show_dialogue', { text: fragData.text });
+      }
+
+      wf.gfx.destroy();
+      wf.prompt.destroy();
+      this._worldFragmentObjects = this._worldFragmentObjects.filter(o => o !== wf);
+      return;
+    }
+
+    // ── NPCs ─────────────────────────────────────────────────────
     for (const npc of this.npcs) {
       if (!npc.isPlayerNear) continue;
       const questForNpc = Object.values(QUESTS).find(q => q.trigger === `npc_talk:${npc.npcId}`);
@@ -1102,6 +1168,15 @@ export class GameScene extends Phaser.Scene {
         this._dialogueActive = true;
         this.events.emit('show_dialogue', { text: line });
         this.audio.interact();
+
+        // Collect NPC lore fragment on first talk (idempotent)
+        const npcFrag = LORE_FRAGMENTS.find(f => f.source === 'npc' && f.npcId === npc.npcId);
+        if (npcFrag && !this.loreManager.has(npcFrag.id)) {
+          this.loreManager.collect(npcFrag.id);
+          this._saveCollectedLore();
+          this.events.emit('lore_collected', { count: this.loreManager.count(), total: this.loreManager.total() });
+        }
+
         // Queue portal unlock to fire after player dismisses this dialogue
         const region = REGIONS[this._regionIndex];
         const unlockKey = `npc_talk:${npc.npcId}`;
@@ -1110,6 +1185,13 @@ export class GameScene extends Phaser.Scene {
         }
       }
       return;
+    }
+  }
+
+  _saveCollectedLore() {
+    if (this._save) {
+      this._save.collectedLoreIds = this.loreManager.toArray();
+      SaveManager.save(this._save);
     }
   }
 
@@ -1206,25 +1288,78 @@ export class GameScene extends Phaser.Scene {
       SaveManager.save(save);
     }
 
-    // Show boss lore
-    const bossData = data.boss?.cfg;
-    if (bossData) {
-      this.time.delayedCall(1500, () => {
-        this.events.emit('show_dialogue', { text: `✦ ${bossData.name} defeated ✦\n"${bossData.lore}"` });
-        this.time.delayedCall(5000, () => this.events.emit('hide_dialogue'));
-      });
+    // Collect boss lore fragment
+    const bossFragId = data.boss?.cfg?.loreFragment;
+    if (bossFragId && !this.loreManager.has(bossFragId)) {
+      this.loreManager.collect(bossFragId);
+      this._saveCollectedLore();
+      this.events.emit('lore_collected', { count: this.loreManager.count(), total: this.loreManager.total() });
     }
 
-    // Final boss check
+    // Show boss lore (non-final only — final boss uses UIScene defeat speech)
+    if (bossKey !== 'viyogasur') {
+      const bossData = data.boss?.cfg;
+      if (bossData) {
+        this.time.delayedCall(1500, () => {
+          this.events.emit('show_dialogue', { text: `✦ ${bossData.name} defeated ✦\n"${bossData.lore}"` });
+          this.time.delayedCall(5000, () => this.events.emit('hide_dialogue'));
+        });
+      }
+    }
+
+    // Final boss: UIScene handles defeat speech; we transition after 8s
     if (bossKey === 'viyogasur') {
-      this.time.delayedCall(6000, () => {
+      this.time.delayedCall(8000, () => {
         this.scene.stop('UIScene');
         this.scene.start('GameEndingScene', {
-          loreCount: this._save?.loreCount || 0,
+          loreCount:       this.loreManager.count(),
+          loreTotal:       this.loreManager.total(),
+          canTrueEnding:   this.loreManager.canTrueEnding(),
           questsCompleted: this.questManager.getCompletedArray().length,
         });
       });
     }
+  }
+
+  _checkEchoTriggers() {
+    const region = REGIONS[this._regionIndex];
+    if (!region.echoTriggers?.length) return;
+    for (const trigger of region.echoTriggers) {
+      if (this._firedEchoes.has(trigger.id)) continue;
+      for (const p of this.players) {
+        if (!p?.active) continue;
+        const d = Phaser.Math.Distance.Between(p.x, p.y, trigger.x, trigger.y);
+        if (d < trigger.r) {
+          this._firedEchoes.add(trigger.id);
+          this.events.emit('show_dialogue', { text: trigger.text });
+          this.time.delayedCall(4000, () => this.events.emit('hide_dialogue'));
+          break;
+        }
+      }
+    }
+  }
+
+  _startBossIntro(boss) {
+    if (!boss.cfg.introLines?.length) return;
+    this._bossIntroActive = true;
+    boss._introActive = true;
+
+    const lines = boss.cfg.introLines;
+    let i = 0;
+    const showNext = () => {
+      if (i >= lines.length) {
+        this.time.delayedCall(800, () => {
+          this._bossIntroActive = false;
+          boss._introActive = false;
+          this.events.emit('hide_dialogue');
+        });
+        return;
+      }
+      this.events.emit('show_dialogue', { text: lines[i++] });
+      this.time.delayedCall(3000, showNext);
+    };
+    // Delay to let the boss name-card overlay finish (~2.8s in UIScene)
+    this.time.delayedCall(3200, showNext);
   }
 
   togglePause() {
