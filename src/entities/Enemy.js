@@ -87,6 +87,7 @@ export class Enemy extends Phaser.GameObjects.Container {
   }
 
   _nearestPlayer(players) {
+    if (this.scene?.freeroam) return null;
     let best = null, bestDist = Infinity;
     for (const p of players) {
       if (!p || !p.active || !p.alive || p.downed) continue;

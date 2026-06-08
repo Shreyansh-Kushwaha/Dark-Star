@@ -33,6 +33,8 @@ export class UIScene extends Phaser.Scene {
     this._invPanel.setVisible(false);
     this._invVisible = false;
 
+    this._createCheatConsole();
+
     this._keyEsc = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
     this._keyU   = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.U);
     this._keyI   = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.I);
@@ -820,6 +822,100 @@ export class UIScene extends Phaser.Scene {
         });
       });
     });
+  }
+
+  // ── Cheat console ──────────────────────────────────────────────────────────
+
+  _createCheatConsole() {
+    this._cheatOpen  = false;
+    this._cheatInput = '';
+
+    const cw = 320, ch = 36;
+    this._cheatContainer = this.add.container(GAME_W / 2, GAME_H / 2 - 60)
+      .setVisible(false).setDepth(9998);
+    const bg     = this.add.rectangle(0, 0, cw, ch, 0x000000, 0.88).setOrigin(0.5);
+    const border = this.add.rectangle(0, 0, cw, ch, 0x00ff88, 0).setOrigin(0.5).setStrokeStyle(1, 0x00ff88);
+    const label  = this.add.text(-cw / 2 + 10, -6, 'CHEAT', {
+      fontSize: '8px', color: '#00aa55', fontFamily: 'monospace',
+    }).setOrigin(0, 0);
+    this._cheatInputText = this.add.text(-cw / 2 + 10, 6, '> _', {
+      fontSize: '13px', color: '#00ff88', fontFamily: 'monospace',
+    }).setOrigin(0, 0.5);
+    this._cheatContainer.add([bg, border, label, this._cheatInputText]);
+
+    // Active-cheat badges shown below the region label
+    this._cheatBadge = this.add.text(GAME_W - 12, 68, '', {
+      fontSize: '9px', color: '#00ff88', fontFamily: 'monospace', align: 'right',
+    }).setOrigin(1, 0).setDepth(100);
+
+    this.input.keyboard.on('keydown', (event) => {
+      if (!this._cheatOpen) {
+        if (event.keyCode === 191) {  // '/'
+          event.stopPropagation?.();
+          this._openCheatConsole();
+        }
+        return;
+      }
+      event.stopPropagation?.();
+      if (event.keyCode === 13) {           // Enter
+        this._processCheat(this._cheatInput.trim().toLowerCase());
+        this._closeCheatConsole();
+      } else if (event.keyCode === 27) {    // Escape
+        this._closeCheatConsole();
+      } else if (event.keyCode === 8) {     // Backspace
+        this._cheatInput = this._cheatInput.slice(0, -1);
+        this._cheatInputText.setText('> ' + this._cheatInput + '_');
+      } else if (event.key.length === 1) {
+        this._cheatInput += event.key;
+        this._cheatInputText.setText('> ' + this._cheatInput + '_');
+      }
+    });
+  }
+
+  _openCheatConsole() {
+    this._cheatOpen  = true;
+    this._cheatInput = '';
+    this._cheatInputText.setText('> _');
+    this._cheatContainer.setVisible(true);
+    const gs = this.scene.get('GameScene');
+    if (gs) gs.cheatConsoleOpen = true;
+  }
+
+  _closeCheatConsole() {
+    this._cheatOpen = false;
+    this._cheatContainer.setVisible(false);
+    const gs = this.scene.get('GameScene');
+    if (gs) gs.cheatConsoleOpen = false;
+  }
+
+  _processCheat(cmd) {
+    const gs = this.scene.get('GameScene');
+    if (!gs) return;
+
+    if (cmd === 'health') {
+      const on = !gs.players?.some(p => p?.godMode);
+      gs.players?.forEach(p => { if (p) p.godMode = on; });
+      this.toast(on ? 'GOD MODE ON' : 'GOD MODE OFF', '#00ff88', 1800);
+    } else if (cmd === 'oneshot') {
+      const on = !gs.players?.some(p => p?.oneShotMode);
+      gs.players?.forEach(p => { if (p) p.oneShotMode = on; });
+      this.toast(on ? 'ONE SHOT ON' : 'ONE SHOT OFF', '#ffaa00', 1800);
+    } else if (cmd === 'freeroam') {
+      gs.freeroam = !gs.freeroam;
+      this.toast(gs.freeroam ? 'FREEROAM ON' : 'FREEROAM OFF', '#88aaff', 1800);
+    } else if (cmd.length > 0) {
+      this.toast('Unknown: ' + cmd, '#ff6666', 1500);
+    }
+
+    this._updateCheatBadge(gs);
+  }
+
+  _updateCheatBadge(gs) {
+    const badges = [];
+    if (gs.players?.some(p => p?.godMode))     badges.push('♥ GODMODE');
+    if (gs.players?.some(p => p?.oneShotMode)) badges.push('⚡ ONESHOT');
+    if (gs.freeroam)                            badges.push('✦ FREEROAM');
+    this._cheatBadge.setText(badges.join('\n'));
   }
 
   // ── Toast utility ──────────────────────────────────────────────────────────

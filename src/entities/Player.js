@@ -46,6 +46,9 @@ export class Player extends Phaser.GameObjects.Container {
     this._agniShieldTimer = 0;
     this._agniShieldFx    = null;
 
+    this.godMode     = false;
+    this.oneShotMode = false;
+
     const base = isP1 ? 'dhruva' : 'tara';
     this.baseKey = base;
 
@@ -152,8 +155,9 @@ export class Player extends Phaser.GameObjects.Container {
   _regen() {}
 
   _move(delta, cursors, keys) {
-    if (this.dodging) return; // handled by dodge momentum
+    if (this.dodging) return;
     if (!keys && !cursors) return;
+    if (this.scene?.cheatConsoleOpen) { this.body.setVelocity(0, 0); return; }
 
     let vx = 0, vy = 0;
     const left  = (cursors?.left.isDown)  || (keys?.A?.isDown) || (keys?.LEFT?.isDown);
@@ -183,6 +187,7 @@ export class Player extends Phaser.GameObjects.Container {
   }
 
   _handleInput(time, keys, enemies, scene) {
+    if (scene?.cheatConsoleOpen) return;
     if (keys.J?.isDown && this._lightCd <= 0 && !this.dodging) {
       this._lightCd = LIGHT_CD;
       this._doAttack(LIGHT_DMG * this.abilityPow * this._nextAttackMult, 40, enemies, scene);
@@ -219,6 +224,7 @@ export class Player extends Phaser.GameObjects.Container {
   }
 
   _doAttack(damage, hitstop, enemies, scene) {
+    if (this.oneShotMode) damage *= 9999;
     this.attacking = true;
     const atkKey = damage > 25 ? '_attack2' : '_attack1';
     this.sprite.play(this.baseKey + atkKey, true).once('animationcomplete', () => {
@@ -317,6 +323,7 @@ export class Player extends Phaser.GameObjects.Container {
 
   takeDamage(amount, source, scene) {
     if (!this.alive || this.downed) return;
+    if (this.godMode) return;
     if (this.dodging && this.checkPerfectDodge(scene)) return;
     if (this._guardStance) amount *= 0.5;
     if (this._agniShieldTimer > 0) {
