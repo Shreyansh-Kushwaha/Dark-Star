@@ -2,6 +2,5 @@ node_modules/
 temp/
 .superpowers/
 docs/superpowers/brainstorm/
-docs/superpowers/plans/
 screenshot_regions.py
 screenshot_regions.mjs
