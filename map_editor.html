@@ -89,6 +89,14 @@ button.active{background:#4488ff33;border-color:#88aaff}
   <button id="btn-select">🖱 Select</button>
   <button id="btn-pan">✋ Pan</button>
   <button class="red" id="btn-del-mode">🗑 Delete Mode</button>
+  <button id="btn-draw">✏️ Draw</button>
+  <div id="draw-opts" style="display:none;align-items:center;gap:5px;flex-shrink:0">
+    <input type="color" id="draw-color" value="#ff4444" title="Brush color" style="width:22px;height:22px;border:1px solid #555;border-radius:2px;cursor:pointer;padding:1px;background:none">
+    <input type="range" id="draw-size" min="1" max="120" value="12" title="Brush size" style="width:72px;accent-color:#4488ff;cursor:pointer">
+    <span id="draw-size-lbl" style="font-size:10px;color:#888;min-width:28px">12px</span>
+    <button id="draw-round" class="active" title="Round brush" style="padding:2px 8px;font-size:13px;line-height:1">●</button>
+    <button id="draw-square" title="Square brush" style="padding:2px 8px;font-size:13px;line-height:1">■</button>
+  </div>
   <div class="sep"></div>
   <button class="green" id="btn-share">🔗 Share</button>
   <span id="peer-indicator" style="font-size:10px;color:#888;margin-left:4px"></span>
@@ -158,6 +166,11 @@ const S = {
   panMode: false,
   deleteMode: false,
   selectMode: false,
+  drawMode: false,
+  drawColor: '#ff4444',
+  drawSize: 12,
+  drawShape: 'round',
+  currentLine: null,
   ws: null,
   roomCode: null,
   peerConnected: false,
@@ -207,6 +220,7 @@ function initStage() {
 
   fitStage();
   bindZoomPan();
+  bindDrawing();
   bindStageClick();
   bindKeyboard();
   bindPropsPanel();
@@ -244,6 +258,7 @@ function bindZoomPan() {
 
   const canvasEl = document.getElementById('canvas-container');
   canvasEl.addEventListener('mousedown', e => {
+    if (S.drawMode) return;
     if ((spaceDown || S.panMode || e.button === 1) && e.button !== 2) {
       panStart = { x: e.clientX, y: e.clientY };
       panOrigin = { x: S.stage.x(), y: S.stage.y() };
@@ -276,12 +291,55 @@ function applyZoom(factor) {
   updateZoomLabel();
 }
 
+// ── Drawing ────────────────────────────────────────────────────────────────
+function clientToWorld(clientX, clientY) {
+  const rect = S.stage.container().getBoundingClientRect();
+  return {
+    x: (clientX - rect.left - S.stage.x()) / S.stage.scaleX(),
+    y: (clientY - rect.top  - S.stage.y()) / S.stage.scaleY(),
+  };
+}
+
+function bindDrawing() {
+  const canvasEl = document.getElementById('canvas-container');
+
+  canvasEl.addEventListener('mousedown', e => {
+    if (!S.drawMode || e.button !== 0) return;
+    e.preventDefault();
+    const { x, y } = clientToWorld(e.clientX, e.clientY);
+    S.currentLine = new Konva.Line({
+      stroke: S.drawColor,
+      strokeWidth: S.drawSize,
+      lineCap: S.drawShape,
+      lineJoin: S.drawShape === 'round' ? 'round' : 'miter',
+      globalCompositeOperation: 'source-over',
+      points: [x, y, x, y],
+      listening: false,
+    });
+    S.spritesLayer.add(S.currentLine);
+    S.spritesLayer.batchDraw();
+  });
+
+  window.addEventListener('mousemove', e => {
+    if (!S.drawMode || !S.currentLine) return;
+    const { x, y } = clientToWorld(e.clientX, e.clientY);
+    S.currentLine.points(S.currentLine.points().concat([x, y]));
+    S.spritesLayer.batchDraw();
+  });
+
+  window.addEventListener('mouseup', e => {
+    if (!S.drawMode || !S.currentLine) return;
+    S.currentLine = null;
+    pushHistory();
+  });
+}
+
 function updateCursor() {
   const cc = document.getElementById('canvas-container');
   if (S.placingAsset)    cc.style.cursor = 'crosshair';
   else if (S.panMode)    cc.style.cursor = 'grab';
   else if (S.deleteMode) cc.style.cursor = 'not-allowed';
-  else if (S.selectMode) cc.style.cursor = 'default';
+  else if (S.drawMode)   cc.style.cursor = 'crosshair';
   else                   cc.style.cursor = 'default';
 }
 
@@ -289,19 +347,23 @@ function setMode(mode) {
   S.panMode    = (mode === 'pan');
   S.deleteMode = (mode === 'delete');
   S.selectMode = (mode === 'select');
+  S.drawMode   = (mode === 'draw');
   document.getElementById('btn-pan').classList.toggle('active', S.panMode);
   document.getElementById('btn-del-mode').classList.toggle('active', S.deleteMode);
   document.getElementById('btn-select').classList.toggle('active', S.selectMode);
-  if (S.panMode || S.deleteMode || S.selectMode) {
+  document.getElementById('btn-draw').classList.toggle('active', S.drawMode);
+  document.getElementById('draw-opts').style.display = S.drawMode ? 'flex' : 'none';
+  if (S.panMode || S.deleteMode || S.selectMode || S.drawMode) {
     cancelPlacing();
     if (!S.selectMode) deselectAll();
   }
-  const draggable = !S.panMode && !S.deleteMode;
-  S.spritesLayer.getChildren().forEach(n => n.draggable(draggable));
+  const draggable = !S.panMode && !S.deleteMode && !S.drawMode;
+  S.spritesLayer.getChildren().forEach(n => { if (n instanceof Konva.Line) return; n.draggable(draggable); });
   updateCursor();
   if (S.panMode)         setStatus('Pan mode — drag to scroll the map');
   else if (S.deleteMode) setStatus('Delete mode — click any sprite to remove it');
   else if (S.selectMode) setStatus('Select mode — click a sprite to select it');
+  else if (S.drawMode)   setStatus('Draw mode — drag to paint on the canvas');
   else setStatus('');
 }
 
@@ -349,6 +411,22 @@ function bindToolbar() {
   document.getElementById('btn-select').onclick = () => setMode(S.selectMode ? 'none' : 'select');
   document.getElementById('btn-pan').onclick = () => setMode(S.panMode ? 'none' : 'pan');
   document.getElementById('btn-del-mode').onclick = () => setMode(S.deleteMode ? 'none' : 'delete');
+  document.getElementById('btn-draw').onclick = () => setMode(S.drawMode ? 'none' : 'draw');
+  document.getElementById('draw-color').oninput = e => { S.drawColor = e.target.value; };
+  document.getElementById('draw-size').oninput  = e => {
+    S.drawSize = +e.target.value;
+    document.getElementById('draw-size-lbl').textContent = S.drawSize + 'px';
+  };
+  document.getElementById('draw-round').onclick = () => {
+    S.drawShape = 'round';
+    document.getElementById('draw-round').classList.add('active');
+    document.getElementById('draw-square').classList.remove('active');
+  };
+  document.getElementById('draw-square').onclick = () => {
+    S.drawShape = 'square';
+    document.getElementById('draw-square').classList.add('active');
+    document.getElementById('draw-round').classList.remove('active');
+  };
   document.getElementById('btn-share').onclick = shareRoom;
 }
 
@@ -640,16 +718,22 @@ function genSpriteId() {
 }
 
 function serializeSprites() {
-  return S.spritesLayer.getChildren().map(n => ({
-    spriteId: n.getAttr('spriteId'),
-    dir:      n.getAttr('assetDir'),
-    frames:   n.getAttr('assetFrames'),
-    name:     n.getAttr('assetName'),
-    animated: n.getAttr('assetAnimated'),
-    x: n.x(), y: n.y(),
-    scaleX: n.scaleX(), scaleY: n.scaleY(),
-    offsetX: n.offsetX(), offsetY: n.offsetY(),
-  }));
+  return S.spritesLayer.getChildren().map(n => {
+    if (n instanceof Konva.Line) {
+      return { type: 'stroke', points: n.points(), stroke: n.stroke(),
+               strokeWidth: n.strokeWidth(), lineCap: n.lineCap(), lineJoin: n.lineJoin() };
+    }
+    return { type: 'sprite',
+      spriteId: n.getAttr('spriteId'),
+      dir:      n.getAttr('assetDir'),
+      frames:   n.getAttr('assetFrames'),
+      name:     n.getAttr('assetName'),
+      animated: n.getAttr('assetAnimated'),
+      x: n.x(), y: n.y(),
+      scaleX: n.scaleX(), scaleY: n.scaleY(),
+      offsetX: n.offsetX(), offsetY: n.offsetY(),
+    };
+  });
 }
 
 function pushHistory() {
@@ -668,10 +752,16 @@ async function restoreSprites(list) {
   deselectAll();
   S.spritesLayer.destroyChildren();
   for (const d of list) {
+    if (d.type === 'stroke') {
+      const line = new Konva.Line({ stroke: d.stroke, strokeWidth: d.strokeWidth,
+        lineCap: d.lineCap, lineJoin: d.lineJoin, points: d.points, listening: false });
+      S.spritesLayer.add(line);
+      continue;
+    }
     const url = assetURL(d.dir, d.frames[0]);
     try {
       const img = await getImg(url);
-      const node = new Konva.Image({ x: d.x, y: d.y, image: img, scaleX: d.scaleX, scaleY: d.scaleY, offsetX: d.offsetX, offsetY: d.offsetY, draggable: !S.panMode && !S.deleteMode });
+      const node = new Konva.Image({ x: d.x, y: d.y, image: img, scaleX: d.scaleX, scaleY: d.scaleY, offsetX: d.offsetX, offsetY: d.offsetY, draggable: !S.panMode && !S.deleteMode && !S.drawMode });
       node.setAttr('assetDir',     d.dir);
       node.setAttr('assetFrames',  d.frames);
       node.setAttr('assetName',    d.name);
