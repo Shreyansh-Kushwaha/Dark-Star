@@ -687,12 +687,12 @@ export class UIScene extends Phaser.Scene {
   _onPlayerDamaged() {}
 
   _onPlayerDowned(data) {
-    const name = data.player?.isP1 ? 'DHRUVA' : 'TARA';
+    const name = (data.player?.charKey || (data.player?.isP1 ? 'dhruva' : 'tara')).toUpperCase();
     this.toast(`${name} IS DOWN! (12s)`, '#ff4444', 3000);
   }
 
   _onPlayerRevived(data) {
-    const name = data.player?.isP1 ? 'DHRUVA' : 'TARA';
+    const name = (data.player?.charKey || (data.player?.isP1 ? 'dhruva' : 'tara')).toUpperCase();
     this.toast(`${name} REVIVED!`, '#88ff88', 1500);
   }
 

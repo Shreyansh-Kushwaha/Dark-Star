@@ -123,13 +123,15 @@ export class GameScene extends Phaser.Scene {
     const spawnPos = region.spawnPos;
     this.players = [];
 
-    // In co-op: host=Dhruva(P1 local), client=Tara(P2 local). Solo: P1 local only.
+    // In co-op: host=P1 local, client=P2 local. Solo: P1 local only.
     const isClient = this.network.connected && this.network.isClient();
-    const p1 = new Player(this, spawnPos.x, spawnPos.y, true, saveData);
+    const p1Char   = data.p1Char || 'dhruva';
+    const p2Char   = data.p2Char || 'tara';
+    const p1 = new Player(this, spawnPos.x, spawnPos.y, true, saveData, p1Char);
     p1.isLocal = !isClient;
     this.players.push(p1);
 
-    const p2 = new Player(this, spawnPos.x + 60, spawnPos.y, false, saveData);
+    const p2 = new Player(this, spawnPos.x + 60, spawnPos.y, false, saveData, p2Char);
     p2.isLocal = isClient;
     this.players.push(p2);
 

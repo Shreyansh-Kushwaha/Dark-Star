@@ -333,16 +333,16 @@ export class MainMenuScene extends Phaser.Scene {
 
   // ── Game start / co-op ────────────────────────────────────────────────────
 
-  _startGame(isCoop, regionIndex = 0) {
+  _startGame(isCoop, regionIndex = 0, charData = {}) {
     this.cameras.main.fadeOut(400, 0, 0, 0);
     this.cameras.main.once('camerafadeoutcomplete', () => {
       this.scene.stop('MainMenuScene');
       // Show prologue only on fresh solo new games (co-op skips to keep both players in sync)
       const hasSave = !!SaveManager.load();
       if (!hasSave && regionIndex === 0 && !isCoop) {
-        this.scene.start('PrologueScene', { regionIndex, coop: isCoop });
+        this.scene.start('PrologueScene', { regionIndex, coop: isCoop, ...charData });
       } else {
-        this.scene.start('GameScene', { regionIndex, coop: isCoop });
+        this.scene.start('GameScene', { regionIndex, coop: isCoop, ...charData });
       }
     });
   }
@@ -365,12 +365,10 @@ export class MainMenuScene extends Phaser.Scene {
       net.createRoom();
       net.on('ROOM_READY', ({ code }) => {
         this._roomInput.setText(code);
-        this._roomPrompt.setText('YOU ARE DHRUVA  ·  WAITING FOR TARA...');
+        this._roomPrompt.setText('WAITING FOR PARTNER...');
       });
       net.on('CLIENT_JOINED', () => {
-        this._roomPrompt.setText('PARTNER JOINED!  STARTING...');
-        this.registry.set('network', net);
-        this.time.delayedCall(800, () => this._startGame(true));
+        this._showCharSelect(net, true);
       });
     } catch (err) {
       this._roomPrompt.setText('CONNECTION FAILED');
@@ -403,9 +401,7 @@ export class MainMenuScene extends Phaser.Scene {
           await net.connect();
           net.joinRoom(code);
           net.on('ROOM_READY', () => {
-            this._roomPrompt.setText('YOU ARE TARA  ·  CONNECTED!  STARTING...');
-            this.registry.set('network', net);
-            this.time.delayedCall(800, () => this._startGame(true));
+            this._showCharSelect(net, false);
           });
           net.on('ROOM_ERROR', ({ reason }) => {
             this._roomPrompt.setText('ERROR: ' + reason);
@@ -427,6 +423,107 @@ export class MainMenuScene extends Phaser.Scene {
       this._joinCode += e.key.toUpperCase();
     }
     this._roomInput.setText(this._joinCode.padEnd(4, '_'));
+  }
+
+  _showCharSelect(net, isHost) {
+    this._roomPrompt.setAlpha(0);
+    this._roomInput.setAlpha(0);
+
+    const D = 20;
+    this.add.rectangle(GAME_W / 2, GAME_H / 2, GAME_W, GAME_H, 0x000000, 0.88).setDepth(D);
+
+    this.add.text(GAME_W / 2, 62, 'SELECT YOUR CHARACTER', {
+      fontSize: '26px', fontFamily: 'monospace', color: '#ffdd00',
+      stroke: '#000000', strokeThickness: 3,
+    }).setOrigin(0.5).setDepth(D + 1);
+
+    const cardW = 320, cardH = 260, cardY = GAME_H / 2 - 10;
+    const cx = { dhruva: GAME_W / 2 - 200, tara: GAME_W / 2 + 200 };
+    const col = { dhruva: 0xcc99ff, tara: 0x88ccff };
+    const hex = { dhruva: '#cc99ff', tara: '#88ccff' };
+    const sub = { dhruva: 'Warrior of Earth & Fire', tara: 'Dancer of Wind & Water' };
+    const abils = {
+      dhruva: ['Q  —  Prithvi Slam', 'E  —  Agni Shield', 'R  —  Agni Burst'],
+      tara:   ['Q  —  Vayu Dash',    'E  —  Jal Mend',    'R  —  Vayu Storm'],
+    };
+
+    const borders = {};
+    const bgs    = {};
+
+    ['dhruva', 'tara'].forEach(char => {
+      const x = cx[char];
+      bgs[char] = this.add.rectangle(x, cardY, cardW, cardH, 0x0a0a1e).setDepth(D + 1);
+      borders[char] = this.add.rectangle(x, cardY, cardW, cardH)
+        .setStrokeStyle(2, 0x334466).setDepth(D + 2);
+
+      this.add.text(x, cardY - 95, char.toUpperCase(), {
+        fontSize: '20px', fontFamily: 'monospace', color: hex[char],
+        stroke: '#000', strokeThickness: 3,
+      }).setOrigin(0.5).setDepth(D + 3);
+
+      this.add.text(x, cardY - 68, sub[char], {
+        fontSize: '11px', fontFamily: 'monospace', color: '#888888',
+      }).setOrigin(0.5).setDepth(D + 3);
+
+      const dg = this.add.graphics().setDepth(D + 3);
+      dg.lineStyle(1, 0x334466, 0.7);
+      dg.lineBetween(x - 120, cardY - 50, x + 120, cardY - 50);
+
+      abils[char].forEach((a, i) => {
+        this.add.text(x, cardY - 24 + i * 26, a, {
+          fontSize: '13px', fontFamily: 'monospace', color: '#cccccc',
+        }).setOrigin(0.5).setDepth(D + 3);
+      });
+    });
+
+    const statusTxt = this.add.text(GAME_W / 2, GAME_H - 100, 'Click a card to choose your character', {
+      fontSize: '15px', fontFamily: 'monospace', color: '#778899',
+    }).setOrigin(0.5).setDepth(D + 1);
+
+    const partnerTxt = this.add.text(GAME_W / 2, GAME_H - 70, '', {
+      fontSize: '13px', fontFamily: 'monospace', color: '#556677',
+    }).setOrigin(0.5).setDepth(D + 1);
+
+    let myChar = null;
+    let partnerChar = null;
+
+    const tryStart = () => {
+      if (!myChar || !partnerChar) return;
+      const p1Char = isHost ? myChar : partnerChar;
+      const p2Char = isHost ? partnerChar : myChar;
+      statusTxt.setText('Both ready!  Starting...').setStyle({ color: '#ffdd00' });
+      this.registry.set('network', net);
+      this.time.delayedCall(800, () => this._startGame(true, 0, { p1Char, p2Char }));
+    };
+
+    const selectChar = (char) => {
+      if (myChar) return;
+      myChar = char;
+      const other = char === 'dhruva' ? 'tara' : 'dhruva';
+      borders[char].setStrokeStyle(3, col[char]);
+      borders[other].setStrokeStyle(2, 0x223344);
+      bgs[other].setAlpha(0.3);
+      this.add.text(cx[char], cardY + 108, '✓  SELECTED', {
+        fontSize: '13px', fontFamily: 'monospace', color: hex[char],
+      }).setOrigin(0.5).setDepth(D + 3);
+      statusTxt.setText('Waiting for partner...');
+      net.send('CHAR_SELECT', { char });
+      tryStart();
+    };
+
+    net.on('CHAR_SELECT', ({ char }) => {
+      partnerChar = char;
+      partnerTxt.setText(`Partner chose: ${char.toUpperCase()}`).setStyle({ color: hex[char] });
+      tryStart();
+    });
+
+    ['dhruva', 'tara'].forEach(char => {
+      const zone = this.add.zone(cx[char], cardY, cardW, cardH)
+        .setInteractive({ useHandCursor: true }).setDepth(D + 4);
+      zone.on('pointerover', () => { if (!myChar) borders[char].setStrokeStyle(2, col[char]); });
+      zone.on('pointerout',  () => { if (!myChar) borders[char].setStrokeStyle(2, 0x334466); });
+      zone.on('pointerdown', () => selectChar(char));
+    });
   }
 
   _qualityLabel() {

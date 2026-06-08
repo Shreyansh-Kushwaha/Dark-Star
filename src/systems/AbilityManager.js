@@ -18,7 +18,7 @@ export class AbilityManager {
 
   // Returns true if the ability fired, false if it silently refused (e.g. no targets).
   static use(key, player, scene) {
-    const char = player.isP1 ? 'dhruva' : 'tara';
+    const char = player.charKey || (player.isP1 ? 'dhruva' : 'tara');
     if (char === 'dhruva') {
       if (key === 'Q') { AbilityManager._prithviSlam(player, scene); return true; }
       if (key === 'E') { AbilityManager._agniShield(player, scene);  return true; }

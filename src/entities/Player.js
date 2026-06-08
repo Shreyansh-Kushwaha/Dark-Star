@@ -10,11 +10,12 @@ import { QualitySettings } from '../systems/QualitySettings.js';
 const ABILITY_CDS = { Q: 8000, E: 10000, R: 12000 };
 
 export class Player extends Phaser.GameObjects.Container {
-  constructor(scene, x, y, isP1, saveData) {
+  constructor(scene, x, y, isP1, saveData, charKey) {
     super(scene, x, y);
     scene.add.existing(this);
 
-    this.isP1 = isP1;
+    this.isP1    = isP1;
+    this.charKey = charKey || (isP1 ? 'dhruva' : 'tara');
     this.isLocal = true;
     this.facingX = 1;
     this.facingY = 0;
@@ -49,7 +50,7 @@ export class Player extends Phaser.GameObjects.Container {
     this.godMode     = false;
     this.oneShotMode = false;
 
-    const base = isP1 ? 'dhruva' : 'tara';
+    const base = this.charKey;
     this.baseKey = base;
 
     // Sprite
@@ -71,8 +72,9 @@ export class Player extends Phaser.GameObjects.Container {
     this.add(this._hpBar.fill);
 
     // Name tag
-    const nameTag = scene.add.text(0, -75, isP1 ? 'Dhruva' : 'Tara', {
-      fontSize: '11px', color: isP1 ? '#cc99ff' : '#88ccff',
+    const isD = this.charKey === 'dhruva';
+    const nameTag = scene.add.text(0, -75, isD ? 'Dhruva' : 'Tara', {
+      fontSize: '11px', color: isD ? '#cc99ff' : '#88ccff',
       fontFamily: 'monospace', stroke: '#000', strokeThickness: 2,
     }).setOrigin(0.5, 1);
     this.add(nameTag);
