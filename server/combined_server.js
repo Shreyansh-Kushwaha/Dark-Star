@@ -249,7 +249,7 @@ wss.on('connection', (ws) => {
     const room = rooms.get(ws._room);
     if (!room) return;
     const other = ws._role === 'host' ? room.client : room.host;
-    if (other) other.send(raw);
+    if (other) other.send(raw.toString('utf8'));
   });
 
   ws.on('close', () => {
