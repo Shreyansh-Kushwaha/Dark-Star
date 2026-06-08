@@ -1,5 +1,6 @@
 import { PreloadScene }     from './scenes/PreloadScene.js';
 import { MainMenuScene }    from './scenes/MainMenuScene.js';
+import { PrologueScene }    from './scenes/PrologueScene.js';
 import { GameScene }        from './scenes/GameScene.js';
 import { UIScene }          from './scenes/UIScene.js';
 import { PauseScene }       from './scenes/PauseScene.js';
@@ -35,6 +36,7 @@ const config = {
   scene: [
     PreloadScene,
     MainMenuScene,
+    PrologueScene,
     GameScene,
     UIScene,
     PauseScene,

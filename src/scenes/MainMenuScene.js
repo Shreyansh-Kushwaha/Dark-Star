@@ -336,7 +336,13 @@ export class MainMenuScene extends Phaser.Scene {
     this.cameras.main.fadeOut(400, 0, 0, 0);
     this.cameras.main.once('camerafadeoutcomplete', () => {
       this.scene.stop('MainMenuScene');
-      this.scene.start('GameScene', { regionIndex, coop: isCoop });
+      // Show prologue only on fresh new games (region 0, no existing save)
+      const hasSave = !!SaveManager.load();
+      if (!hasSave && regionIndex === 0) {
+        this.scene.start('PrologueScene', { regionIndex, coop: isCoop });
+      } else {
+        this.scene.start('GameScene', { regionIndex, coop: isCoop });
+      }
     });
   }
 
