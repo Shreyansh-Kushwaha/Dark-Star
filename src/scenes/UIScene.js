@@ -807,6 +807,18 @@ export class UIScene extends Phaser.Scene {
     this._youDiedActive = true;
     this.time.delayedCall(2200, () => {
       this._youDiedRetryRegion = regionIndex;
+
+      // Auto-redirect to main menu after 5 seconds if no key pressed
+      this.time.delayedCall(5000, () => {
+        if (this._youDiedRetryRegion === null) return; // already handled
+        this._youDiedRetryRegion = null;
+        this.cameras.main.fadeOut(500, 0, 0, 0);
+        this.cameras.main.once('camerafadeoutcomplete', () => {
+          this.scene.stop('UIScene');
+          this.scene.stop('GameScene');
+          this.scene.start('MainMenuScene');
+        });
+      });
     });
   }
 
