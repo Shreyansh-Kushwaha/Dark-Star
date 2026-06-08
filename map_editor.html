@@ -115,6 +115,9 @@ button.active{background:#4488ff33;border-color:#88aaff}
     <button id="draw-eraser" title="Eraser" style="padding:2px 8px;font-size:12px;line-height:1">⌫ Eraser</button>
   </div>
   <div class="sep"></div>
+  <button class="purple" id="btn-upload-asset">⬆ Upload Asset</button>
+  <input type="file" id="file-upload-asset" accept="image/*" multiple style="display:none">
+  <div class="sep"></div>
   <button class="green" id="btn-share">🔗 Share</button>
   <span id="peer-indicator" style="font-size:10px;color:#888;margin-left:4px"></span>
   <div class="sep"></div>
@@ -482,6 +485,8 @@ function bindToolbar() {
     updateCursor();
     setStatus(S.drawEraser ? 'Eraser mode — drag to erase draw strokes' : 'Draw mode — drag to paint on the canvas');
   };
+  document.getElementById('btn-upload-asset').onclick = () => document.getElementById('file-upload-asset').click();
+  document.getElementById('file-upload-asset').onchange = e => uploadAssets(e.target.files);
   document.getElementById('btn-share').onclick = shareRoom;
 }
 
@@ -1230,6 +1235,39 @@ function bindRandModal() {
     document.getElementById('rand-modal').classList.remove('open');
     setStatus('Placed ' + placed + ' × ' + _randAsset.name + ' (' + algo + ') — Ctrl+Z to undo');
   };
+}
+
+// ── Asset upload ───────────────────────────────────────────────────────────
+async function uploadAssets(files) {
+  if (!files || !files.length) return;
+  const fileInput = document.getElementById('file-upload-asset');
+  fileInput.value = '';
+  setStatus('Uploading ' + files.length + ' file(s)…');
+  let ok = 0, fail = 0;
+  for (const file of files) {
+    try {
+      const dataURL = await new Promise((res, rej) => {
+        const reader = new FileReader();
+        reader.onload = e => res(e.target.result);
+        reader.onerror = rej;
+        reader.readAsDataURL(file);
+      });
+      const resp = await fetch('/api/upload-asset', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: file.name, dataURL }),
+      });
+      const data = await resp.json();
+      if (data.ok) ok++; else { fail++; console.warn('Upload failed:', data.error); }
+    } catch (e) { fail++; console.warn('Upload error:', e); }
+  }
+  // Reload manifest and switch to Uploads tab
+  const ar = await fetch('/api/assets');
+  S.assets = await ar.json();
+  const ui = S.assets.categories.findIndex(c => c.name === 'Uploads');
+  if (ui >= 0) { S.activeCat = ui; S.activeGrp = null; }
+  renderTray();
+  setStatus(ok + ' asset(s) uploaded' + (fail ? ', ' + fail + ' failed' : '') + ' — now in Uploads tab');
 }
 
 // ── WebSocket collaboration ────────────────────────────────────────────────

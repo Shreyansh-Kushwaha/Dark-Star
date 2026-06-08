@@ -107,6 +107,7 @@ const ASSET_GROUPS = [
   { cat:'Resources', grp:'Tools',          rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Tools' },
   { cat:'FX',        grp:'Particle FX',    rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Particle FX' },
   { cat:'Cropped',   grp:'My Crops',       rel:'cropped' },
+  { cat:'Uploads',   grp:'My Assets',      rel:'uploads' },
 ];
 
 function buildManifest() {
@@ -127,6 +128,31 @@ const server = http.createServer((req, res) => {
     const manifest = buildManifest();
     res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' });
     res.end(JSON.stringify(manifest));
+    return;
+  }
+
+  if (req.method === 'POST' && req.url === '/api/upload-asset') {
+    let body = '';
+    req.on('data', chunk => body += chunk);
+    req.on('end', () => {
+      try {
+        const { name, dataURL } = JSON.parse(body);
+        const base64 = dataURL.split(',')[1];
+        const buf = Buffer.from(base64, 'base64');
+        const uploadDir = path.join(GAME_ROOT, 'uploads');
+        if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
+        const safeName = name.replace(/[^a-zA-Z0-9_\-. ]/g, '_').slice(0, 80).trim();
+        const ext = path.extname(safeName).toLowerCase() || '.png';
+        const base = path.basename(safeName, ext).trim() || 'asset';
+        const fileName = base + ext;
+        fs.writeFileSync(path.join(uploadDir, fileName), buf);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: true, file: fileName }));
+      } catch (e) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: false, error: e.message }));
+      }
+    });
     return;
   }
 
