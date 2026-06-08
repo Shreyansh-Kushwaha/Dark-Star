@@ -86,6 +86,7 @@ button.active{background:#4488ff33;border-color:#88aaff}
   <div class="sep"></div>
   <button class="purple" id="btn-preview">▶ Preview</button>
   <div class="sep"></div>
+  <button id="btn-select">🖱 Select</button>
   <button id="btn-pan">✋ Pan</button>
   <button class="red" id="btn-del-mode">🗑 Delete Mode</button>
   <div class="sep"></div>
@@ -156,6 +157,7 @@ const S = {
   searchQ: '',
   panMode: false,
   deleteMode: false,
+  selectMode: false,
   ws: null,
   roomCode: null,
   peerConnected: false,
@@ -276,27 +278,30 @@ function applyZoom(factor) {
 
 function updateCursor() {
   const cc = document.getElementById('canvas-container');
-  if (S.placingAsset)   cc.style.cursor = 'crosshair';
-  else if (S.panMode)   cc.style.cursor = 'grab';
+  if (S.placingAsset)    cc.style.cursor = 'crosshair';
+  else if (S.panMode)    cc.style.cursor = 'grab';
   else if (S.deleteMode) cc.style.cursor = 'not-allowed';
-  else                  cc.style.cursor = 'default';
+  else if (S.selectMode) cc.style.cursor = 'default';
+  else                   cc.style.cursor = 'default';
 }
 
 function setMode(mode) {
   S.panMode    = (mode === 'pan');
   S.deleteMode = (mode === 'delete');
+  S.selectMode = (mode === 'select');
   document.getElementById('btn-pan').classList.toggle('active', S.panMode);
   document.getElementById('btn-del-mode').classList.toggle('active', S.deleteMode);
-  if (S.panMode || S.deleteMode) {
+  document.getElementById('btn-select').classList.toggle('active', S.selectMode);
+  if (S.panMode || S.deleteMode || S.selectMode) {
     cancelPlacing();
-    deselectAll();
+    if (!S.selectMode) deselectAll();
   }
-  // Toggle draggable on all existing sprites so pan/delete mode can intercept mouse events
   const draggable = !S.panMode && !S.deleteMode;
   S.spritesLayer.getChildren().forEach(n => n.draggable(draggable));
   updateCursor();
   if (S.panMode)         setStatus('Pan mode — drag to scroll the map');
   else if (S.deleteMode) setStatus('Delete mode — click any sprite to remove it');
+  else if (S.selectMode) setStatus('Select mode — click a sprite to select it');
   else setStatus('');
 }
 
@@ -341,6 +346,7 @@ function bindToolbar() {
   document.getElementById('file-open').onchange = e => loadJSON(e.target.files[0]);
   document.getElementById('btn-save').onclick   = saveJSON;
   document.getElementById('btn-export').onclick = exportPNG;
+  document.getElementById('btn-select').onclick = () => setMode(S.selectMode ? 'none' : 'select');
   document.getElementById('btn-pan').onclick = () => setMode(S.panMode ? 'none' : 'pan');
   document.getElementById('btn-del-mode').onclick = () => setMode(S.deleteMode ? 'none' : 'delete');
   document.getElementById('btn-share').onclick = shareRoom;
@@ -515,7 +521,8 @@ function bindSpriteEvents(node) {
       setStatus('Deleted — click another sprite or press Esc to exit Delete mode');
       return;
     }
-    if (S.placingAsset) return;
+    // Select mode or normal mode both allow selection; placing mode is blocked only in non-select
+    if (S.placingAsset && !S.selectMode) return;
     e.cancelBubble = true;
     selectNode(node);
   });
