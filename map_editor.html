@@ -96,6 +96,8 @@ button.active{background:#4488ff33;border-color:#88aaff}
     <span id="draw-size-lbl" style="font-size:10px;color:#888;min-width:28px">12px</span>
     <button id="draw-round" class="active" title="Round brush" style="padding:2px 8px;font-size:13px;line-height:1">●</button>
     <button id="draw-square" title="Square brush" style="padding:2px 8px;font-size:13px;line-height:1">■</button>
+    <div class="sep"></div>
+    <button id="draw-eraser" title="Eraser" style="padding:2px 8px;font-size:12px;line-height:1">⌫ Eraser</button>
   </div>
   <div class="sep"></div>
   <button class="green" id="btn-share">🔗 Share</button>
@@ -151,7 +153,7 @@ const WORLD_W = 3200, WORLD_H = 2000;
 
 // ── State ──────────────────────────────────────────────────────────────────
 const S = {
-  stage: null, bgLayer: null, spritesLayer: null, selLayer: null,
+  stage: null, bgLayer: null, drawLayer: null, spritesLayer: null, selLayer: null,
   bgRect: null, bgImage: null,
   transformer: null,
   selectedNode: null,
@@ -167,6 +169,7 @@ const S = {
   deleteMode: false,
   selectMode: false,
   drawMode: false,
+  drawEraser: false,
   drawColor: '#ff4444',
   drawSize: 12,
   drawShape: 'round',
@@ -203,9 +206,10 @@ function initStage() {
   S.stage = new Konva.Stage({ container: 'canvas-container', width: wrap.clientWidth, height: wrap.clientHeight });
 
   S.bgLayer      = new Konva.Layer();
+  S.drawLayer    = new Konva.Layer();
   S.spritesLayer = new Konva.Layer();
   S.selLayer     = new Konva.Layer();
-  S.stage.add(S.bgLayer, S.spritesLayer, S.selLayer);
+  S.stage.add(S.bgLayer, S.drawLayer, S.spritesLayer, S.selLayer);
 
   S.bgRect = new Konva.Rect({ x:0, y:0, width:WORLD_W, height:WORLD_H, fill:'#2d5c28', listening:false });
   S.bgLayer.add(S.bgRect);
@@ -310,23 +314,23 @@ function bindDrawing() {
     e.preventDefault();
     const { x, y } = clientToWorld(e.clientX, e.clientY);
     S.currentLine = new Konva.Line({
-      stroke: S.drawColor,
+      stroke: S.drawEraser ? 'rgba(0,0,0,1)' : S.drawColor,
       strokeWidth: S.drawSize,
       lineCap: S.drawShape,
       lineJoin: S.drawShape === 'round' ? 'round' : 'miter',
-      globalCompositeOperation: 'source-over',
+      globalCompositeOperation: S.drawEraser ? 'destination-out' : 'source-over',
       points: [x, y, x, y],
       listening: false,
     });
-    S.spritesLayer.add(S.currentLine);
-    S.spritesLayer.batchDraw();
+    S.drawLayer.add(S.currentLine);
+    S.drawLayer.batchDraw();
   });
 
   window.addEventListener('mousemove', e => {
     if (!S.drawMode || !S.currentLine) return;
     const { x, y } = clientToWorld(e.clientX, e.clientY);
     S.currentLine.points(S.currentLine.points().concat([x, y]));
-    S.spritesLayer.batchDraw();
+    S.drawLayer.batchDraw();
   });
 
   window.addEventListener('mouseup', e => {
@@ -338,11 +342,12 @@ function bindDrawing() {
 
 function updateCursor() {
   const cc = document.getElementById('canvas-container');
-  if (S.placingAsset)    cc.style.cursor = 'crosshair';
-  else if (S.panMode)    cc.style.cursor = 'grab';
-  else if (S.deleteMode) cc.style.cursor = 'not-allowed';
-  else if (S.drawMode)   cc.style.cursor = 'crosshair';
-  else                   cc.style.cursor = 'default';
+  if (S.placingAsset)                cc.style.cursor = 'crosshair';
+  else if (S.panMode)                cc.style.cursor = 'grab';
+  else if (S.deleteMode)             cc.style.cursor = 'not-allowed';
+  else if (S.drawMode && S.drawEraser) cc.style.cursor = 'cell';
+  else if (S.drawMode)               cc.style.cursor = 'crosshair';
+  else                               cc.style.cursor = 'default';
 }
 
 function setMode(mode) {
@@ -355,6 +360,7 @@ function setMode(mode) {
   document.getElementById('btn-select').classList.toggle('active', S.selectMode);
   document.getElementById('btn-draw').classList.toggle('active', S.drawMode);
   document.getElementById('draw-opts').style.display = S.drawMode ? 'flex' : 'none';
+  if (!S.drawMode) { S.drawEraser = false; document.getElementById('draw-eraser').classList.remove('active'); }
   if (S.panMode || S.deleteMode || S.selectMode || S.drawMode) {
     cancelPlacing();
     if (!S.selectMode) deselectAll();
@@ -428,6 +434,12 @@ function bindToolbar() {
     S.drawShape = 'square';
     document.getElementById('draw-square').classList.add('active');
     document.getElementById('draw-round').classList.remove('active');
+  };
+  document.getElementById('draw-eraser').onclick = () => {
+    S.drawEraser = !S.drawEraser;
+    document.getElementById('draw-eraser').classList.toggle('active', S.drawEraser);
+    updateCursor();
+    setStatus(S.drawEraser ? 'Eraser mode — drag to erase draw strokes' : 'Draw mode — drag to paint on the canvas');
   };
   document.getElementById('btn-share').onclick = shareRoom;
 }
@@ -720,22 +732,23 @@ function genSpriteId() {
 }
 
 function serializeSprites() {
-  return S.spritesLayer.getChildren().map(n => {
-    if (n instanceof Konva.Line) {
-      return { type: 'stroke', points: n.points(), stroke: n.stroke(),
-               strokeWidth: n.strokeWidth(), lineCap: n.lineCap(), lineJoin: n.lineJoin() };
-    }
-    return { type: 'sprite',
-      spriteId: n.getAttr('spriteId'),
-      dir:      n.getAttr('assetDir'),
-      frames:   n.getAttr('assetFrames'),
-      name:     n.getAttr('assetName'),
-      animated: n.getAttr('assetAnimated'),
-      x: n.x(), y: n.y(),
-      scaleX: n.scaleX(), scaleY: n.scaleY(),
-      offsetX: n.offsetX(), offsetY: n.offsetY(),
-    };
-  });
+  const strokes = S.drawLayer.getChildren().map(n => ({
+    type: 'stroke', points: n.points(), stroke: n.stroke(),
+    strokeWidth: n.strokeWidth(), lineCap: n.lineCap(), lineJoin: n.lineJoin(),
+    composite: n.globalCompositeOperation(),
+  }));
+  const sprites = S.spritesLayer.getChildren().map(n => ({
+    type: 'sprite',
+    spriteId: n.getAttr('spriteId'),
+    dir:      n.getAttr('assetDir'),
+    frames:   n.getAttr('assetFrames'),
+    name:     n.getAttr('assetName'),
+    animated: n.getAttr('assetAnimated'),
+    x: n.x(), y: n.y(),
+    scaleX: n.scaleX(), scaleY: n.scaleY(),
+    offsetX: n.offsetX(), offsetY: n.offsetY(),
+  }));
+  return [...strokes, ...sprites];
 }
 
 function pushHistory() {
@@ -752,12 +765,17 @@ function undo() {
 
 async function restoreSprites(list) {
   deselectAll();
+  S.drawLayer.destroyChildren();
   S.spritesLayer.destroyChildren();
   for (const d of list) {
     if (d.type === 'stroke') {
-      const line = new Konva.Line({ stroke: d.stroke, strokeWidth: d.strokeWidth,
-        lineCap: d.lineCap, lineJoin: d.lineJoin, points: d.points, listening: false });
-      S.spritesLayer.add(line);
+      const line = new Konva.Line({
+        stroke: d.stroke, strokeWidth: d.strokeWidth,
+        lineCap: d.lineCap, lineJoin: d.lineJoin, points: d.points,
+        globalCompositeOperation: d.composite || 'source-over',
+        listening: false,
+      });
+      S.drawLayer.add(line);
       continue;
     }
     const url = assetURL(d.dir, d.frames[0]);
@@ -774,6 +792,7 @@ async function restoreSprites(list) {
       bindSpriteEvents(node);
     } catch { /* skip missing images */ }
   }
+  S.drawLayer.batchDraw();
   S.spritesLayer.batchDraw();
   setStatus('Undone');
 }
