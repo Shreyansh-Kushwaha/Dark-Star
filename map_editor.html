@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Map Editor — Akhand Sutra</title>
+<script src="https://unpkg.com/konva@9/konva.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0010;color:#ccc;font-family:monospace;display:flex;flex-direction:column;height:100vh;overflow:hidden;user-select:none}
+
+/* ── Toolbar ── */
+#toolbar{display:flex;align-items:center;gap:6px;padding:5px 10px;background:#12001c;border-bottom:1px solid #333;flex-shrink:0;flex-wrap:wrap}
+#toolbar .sep{width:1px;height:20px;background:#333;margin:0 4px}
+button{background:#1a0028;border:1px solid #4488ff;color:#88ccff;border-radius:3px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:monospace}
+button:hover{background:#2a0038;border-color:#6699ff}
+button.green{border-color:#44aa44;color:#88ff88}button.green:hover{background:#0a2a0a}
+button.purple{border-color:#aa44ff;color:#cc88ff}button.purple:hover{background:#1a0030}
+button.red{border-color:#ff4444;color:#ff8888}button.red:hover{background:#2a0000}
+button.active{background:#4488ff33;border-color:#88aaff}
+#zoom-label{font-size:11px;color:#888;min-width:40px;text-align:center}
+#status-msg{font-size:10px;color:#666;margin-left:8px}
+
+/* ── Main area: canvas + props ── */
+#main{display:flex;flex:1;overflow:hidden}
+#canvas-wrap{flex:1;position:relative;overflow:hidden;background:#050010}
+#canvas-container{position:absolute;inset:0}
+
+/* ── Properties panel ── */
+#props{width:150px;background:#12001c;border-left:1px solid #333;padding:10px;display:none;flex-direction:column;gap:8px;overflow-y:auto;flex-shrink:0}
+#props.visible{display:flex}
+#props h4{font-size:11px;color:#ffd700;border-bottom:1px solid #333;padding-bottom:4px}
+.prop-row{display:flex;justify-content:space-between;align-items:center;gap:4px}
+.prop-row label{font-size:10px;color:#888}
+.prop-row input[type=number]{width:64px;background:#0a0010;border:1px solid #333;color:#ccc;padding:2px 4px;font-size:10px;border-radius:2px;font-family:monospace}
+.prop-row input[type=checkbox]{accent-color:#4488ff}
+#prop-anim{font-size:9px;color:#666;word-break:break-all}
+
+/* ── Bottom tray ── */
+#tray{height:165px;background:#0d0018;border-top:2px solid #4488ff;display:flex;flex-direction:column;flex-shrink:0}
+#tray-tabs{display:flex;background:#12001c;border-bottom:1px solid #333;overflow-x:auto}
+.tab{padding:5px 12px;font-size:10px;color:#666;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent}
+.tab.active{color:#88ccff;border-bottom-color:#4488ff;background:#4488ff11}
+.tab:hover:not(.active){color:#aaa}
+#tray-sub{display:flex;gap:4px;padding:4px 8px;background:#0f001a;border-bottom:1px solid #222;overflow-x:auto;flex-shrink:0}
+.pill{background:#1a0028;border:1px solid #333;color:#666;border-radius:10px;padding:2px 8px;font-size:9px;cursor:pointer;white-space:nowrap}
+.pill.active{background:#4488ff22;border-color:#4488ff;color:#88ccff}
+#tray-search{margin-left:auto;background:#0a0010;border:1px solid #333;color:#ccc;padding:3px 8px;font-size:10px;border-radius:3px;width:110px;font-family:monospace}
+#tray-grid{display:flex;gap:6px;padding:6px 8px;overflow-x:auto;align-items:flex-start;flex:1}
+.asset-tile{display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;min-width:52px;max-width:52px}
+.asset-tile img{width:48px;height:48px;object-fit:contain;border:1px solid #333;border-radius:3px;background:#1a0028;image-rendering:pixelated}
+.asset-tile span{font-size:7px;color:#888;text-align:center;word-break:break-all;max-width:52px;line-height:1.2;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.asset-tile:hover img{border-color:#4488ff}
+.asset-tile.selected img{border:2px solid #ffd700}
+</style>
+</head>
+<body>
+
+<div id="toolbar">
+  <span style="color:#ffd700;font-weight:bold;font-size:12px;margin-right:4px">MAP EDITOR</span>
+  <div class="sep"></div>
+  <button id="btn-open">📂 Open</button>
+  <button id="btn-save">💾 Save JSON</button>
+  <button class="green" id="btn-export">🖼️ Export PNG</button>
+  <div class="sep"></div>
+  <label style="font-size:10px;color:#888">BG:</label>
+  <input type="color" id="bg-color" value="#2d5c28" style="width:28px;height:22px;border:1px solid #555;border-radius:2px;cursor:pointer;padding:1px;background:none">
+  <button id="btn-bg-img">🖼 Import</button>
+  <input type="file" id="file-bg" accept="image/*" style="display:none">
+  <div class="sep"></div>
+  <button id="btn-zoom-out">−</button>
+  <span id="zoom-label">25%</span>
+  <button id="btn-zoom-in">+</button>
+  <div class="sep"></div>
+  <button class="purple" id="btn-preview">▶ Preview</button>
+  <div class="sep"></div>
+  <span id="status-msg"></span>
+  <input type="file" id="file-open" accept=".json" style="display:none">
+</div>
+
+<div id="main">
+  <div id="canvas-wrap">
+    <div id="canvas-container"></div>
+  </div>
+
+  <div id="props">
+    <h4>PROPERTIES</h4>
+    <div class="prop-row"><label>X</label><input type="number" id="prop-x" step="1"></div>
+    <div class="prop-row"><label>Y</label><input type="number" id="prop-y" step="1"></div>
+    <div class="prop-row"><label>Scale</label><input type="number" id="prop-scale" step="0.1" min="0.1"></div>
+    <div class="prop-row"><label>Flip X</label><input type="checkbox" id="prop-flipx"></div>
+    <div style="font-size:9px;color:#666;margin-top:4px">Animation:</div>
+    <div id="prop-anim"></div>
+    <div style="flex:1"></div>
+    <button class="red" id="btn-del-sel" style="margin-top:8px">🗑 Delete</button>
+  </div>
+</div>
+
+<div id="tray">
+  <div id="tray-tabs"></div>
+  <div id="tray-sub">
+    <input type="text" id="tray-search" placeholder="🔍 search...">
+  </div>
+  <div id="tray-grid"></div>
+</div>
+
+<script>
+'use strict';
+const WORLD_W = 3200, WORLD_H = 2000;
+
+// ── State ──────────────────────────────────────────────────────────────────
+const S = {
+  stage: null, bgLayer: null, spritesLayer: null, selLayer: null,
+  bgRect: null, bgImage: null,
+  transformer: null,
+  selectedNode: null,
+  placingAsset: null,
+  previewInterval: null,
+  history: [],
+  assets: null,
+  imgCache: {},
+  activeCat: 0,
+  activeGrp: null,
+  searchQ: '',
+};
+
+// ── Utility ────────────────────────────────────────────────────────────────
+function assetURL(dir, frame) {
+  return '/' + dir.split('/').map(encodeURIComponent).join('/') + '/' + encodeURIComponent(frame);
+}
+
+function setStatus(msg) { document.getElementById('status-msg').textContent = msg; }
+
+function updateZoomLabel() {
+  document.getElementById('zoom-label').textContent = Math.round(S.stage.scaleX() * 100) + '%';
+}
+
+function getImg(url) {
+  if (S.imgCache[url]) return Promise.resolve(S.imgCache[url]);
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => { S.imgCache[url] = img; resolve(img); };
+    img.onerror = () => reject(new Error('Failed: ' + url));
+    img.src = url;
+  });
+}
+
+// ── Konva init ─────────────────────────────────────────────────────────────
+function initStage() {
+  const wrap = document.getElementById('canvas-wrap');
+  S.stage = new Konva.Stage({ container: 'canvas-container', width: wrap.clientWidth, height: wrap.clientHeight });
+
+  S.bgLayer      = new Konva.Layer();
+  S.spritesLayer = new Konva.Layer();
+  S.selLayer     = new Konva.Layer();
+  S.stage.add(S.bgLayer, S.spritesLayer, S.selLayer);
+
+  S.bgRect = new Konva.Rect({ x:0, y:0, width:WORLD_W, height:WORLD_H, fill:'#2d5c28', listening:false });
+  S.bgLayer.add(S.bgRect);
+
+  S.transformer = new Konva.Transformer({
+    keepRatio: true,
+    enabledAnchors: ['top-left','top-right','bottom-left','bottom-right'],
+    borderStroke: '#ffd700', borderStrokeWidth: 1.5,
+    anchorFill: '#ffd700', anchorStroke: '#000', anchorSize: 8,
+  });
+  S.selLayer.add(S.transformer);
+
+  fitStage();
+  bindZoomPan();
+  bindStageClick();
+  bindKeyboard();
+  bindPropsPanel();
+  bindToolbar();
+  pushHistory(); // initial empty state
+}
+
+function fitStage() {
+  const wrap = document.getElementById('canvas-wrap');
+  const cw = wrap.clientWidth, ch = wrap.clientHeight;
+  const scale = Math.min(cw / WORLD_W, ch / WORLD_H) * 0.9;
+  S.stage.size({ width: cw, height: ch });
+  S.stage.scale({ x: scale, y: scale });
+  S.stage.position({ x: (cw - WORLD_W * scale) / 2, y: (ch - WORLD_H * scale) / 2 });
+  updateZoomLabel();
+}
+
+// ── Zoom / Pan ─────────────────────────────────────────────────────────────
+function bindZoomPan() {
+  S.stage.on('wheel', e => {
+    e.evt.preventDefault();
+    const old = S.stage.scaleX();
+    const ptr = S.stage.getPointerPosition();
+    const origin = { x: (ptr.x - S.stage.x()) / old, y: (ptr.y - S.stage.y()) / old };
+    const ns = Math.max(0.1, Math.min(2, old * (e.evt.deltaY < 0 ? 1.06 : 0.94)));
+    S.stage.scale({ x: ns, y: ns });
+    S.stage.position({ x: ptr.x - origin.x * ns, y: ptr.y - origin.y * ns });
+    updateZoomLabel();
+  });
+
+  let spaceDown = false, panStart = null, panOrigin = null;
+  window.addEventListener('keydown', e => { if (e.code === 'Space' && !e.target.matches('input')) { spaceDown = true; document.getElementById('canvas-container').style.cursor = 'grab'; e.preventDefault(); } });
+  window.addEventListener('keyup',   e => { if (e.code === 'Space') { spaceDown = false; document.getElementById('canvas-container').style.cursor = S.placingAsset ? 'crosshair' : 'default'; } });
+
+  S.stage.on('mousedown', e => {
+    if ((spaceDown || e.evt.button === 1) && e.evt.button !== 2) {
+      panStart = { x: e.evt.clientX, y: e.evt.clientY };
+      panOrigin = { x: S.stage.x(), y: S.stage.y() };
+    }
+  });
+  S.stage.on('mousemove', e => {
+    if (!panStart) return;
+    S.stage.position({ x: panOrigin.x + e.evt.clientX - panStart.x, y: panOrigin.y + e.evt.clientY - panStart.y });
+  });
+  S.stage.on('mouseup', () => { panStart = null; });
+
+  document.getElementById('btn-zoom-in').onclick  = () => applyZoom(1.15);
+  document.getElementById('btn-zoom-out').onclick = () => applyZoom(0.87);
+}
+
+function applyZoom(factor) {
+  const wrap = document.getElementById('canvas-wrap');
+  const center = { x: wrap.clientWidth / 2, y: wrap.clientHeight / 2 };
+  const old = S.stage.scaleX();
+  const origin = { x: (center.x - S.stage.x()) / old, y: (center.y - S.stage.y()) / old };
+  const ns = Math.max(0.1, Math.min(2, old * factor));
+  S.stage.scale({ x: ns, y: ns });
+  S.stage.position({ x: center.x - origin.x * ns, y: center.y - origin.y * ns });
+  updateZoomLabel();
+}
+
+// ── Stage click (place / deselect) ────────────────────────────────────────
+function bindStageClick() {
+  S.stage.on('click tap', e => {
+    if (e.evt.button === 2) return;
+    const target = e.target;
+    if (S.placingAsset && (target === S.stage || target === S.bgRect || target === S.bgImage)) {
+      const pos = S.stage.getPointerPosition();
+      const worldX = (pos.x - S.stage.x()) / S.stage.scaleX();
+      const worldY = (pos.y - S.stage.y()) / S.stage.scaleY();
+      placeSprite(S.placingAsset, worldX, worldY);
+      return;
+    }
+    if (target === S.stage || target === S.bgRect || target === S.bgImage) {
+      deselectAll();
+    }
+  });
+  S.stage.on('contextmenu', e => { e.evt.preventDefault(); cancelPlacing(); });
+}
+
+// ── Keyboard ───────────────────────────────────────────────────────────────
+function bindKeyboard() {
+  window.addEventListener('keydown', e => {
+    if (e.target.matches('input')) return;
+    if (e.key === 'Escape') { cancelPlacing(); deselectAll(); }
+    if ((e.key === 'Delete' || e.key === 'Backspace') && S.selectedNode) deleteSelected();
+    if (e.ctrlKey && e.key === 'z') { e.preventDefault(); undo(); }
+  });
+}
+
+// ── Toolbar ────────────────────────────────────────────────────────────────
+function bindToolbar() {
+  document.getElementById('bg-color').oninput = e => setBgColor(e.target.value);
+  document.getElementById('btn-bg-img').onclick = () => document.getElementById('file-bg').click();
+  document.getElementById('file-bg').onchange  = e => loadBgImage(e.target.files[0]);
+  document.getElementById('btn-preview').onclick = togglePreview;
+  document.getElementById('btn-del-sel').onclick  = deleteSelected;
+  document.getElementById('btn-open').onclick   = () => document.getElementById('file-open').click();
+  document.getElementById('file-open').onchange = e => loadJSON(e.target.files[0]);
+  document.getElementById('btn-save').onclick   = saveJSON;
+  document.getElementById('btn-export').onclick = exportPNG;
+}
+
+// ── Init ───────────────────────────────────────────────────────────────────
+async function init() {
+  initStage();
+  try {
+    const res = await fetch('/api/assets');
+    S.assets = await res.json();
+    renderTray();
+    setStatus('Ready — ' + S.assets.categories.reduce((n,c)=>n+c.groups.reduce((m,g)=>m+g.sprites.length,0),0) + ' assets loaded');
+  } catch (err) {
+    setStatus('⚠ Could not load assets: ' + err.message);
+  }
+}
+
+// ── Background ─────────────────────────────────────────────────────────────
+function setBgColor(c) { S.bgRect.fill(c); S.bgLayer.batchDraw(); }
+
+function loadBgImage(file) {
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = new Image();
+    img.onload = () => {
+      if (S.bgImage) S.bgImage.destroy();
+      S.bgRect.fill('transparent');
+      S.bgImage = new Konva.Image({ x:0, y:0, image:img, width:WORLD_W, height:WORLD_H, listening:false });
+      S.bgLayer.add(S.bgImage);
+      S.bgImage.moveToBottom();
+      S.bgLayer.batchDraw();
+      setStatus('Background image loaded');
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+// ── Tray rendering ─────────────────────────────────────────────────────────
+function renderTray() {
+  if (!S.assets) return;
+  const cats = S.assets.categories;
+
+  const tabsEl = document.getElementById('tray-tabs');
+  tabsEl.innerHTML = '';
+  cats.forEach((cat, i) => {
+    const t = document.createElement('div');
+    t.className = 'tab' + (i === S.activeCat ? ' active' : '');
+    t.textContent = cat.name;
+    t.onclick = () => { S.activeCat = i; S.activeGrp = null; renderTray(); };
+    tabsEl.appendChild(t);
+  });
+
+  const cat = cats[S.activeCat];
+  if (!cat) return;
+
+  const subEl = document.getElementById('tray-sub');
+  subEl.innerHTML = '';
+  const allPill = document.createElement('div');
+  allPill.className = 'pill' + (!S.activeGrp ? ' active' : '');
+  allPill.textContent = 'All';
+  allPill.onclick = () => { S.activeGrp = null; renderTrayGrid(); };
+  subEl.appendChild(allPill);
+  cat.groups.forEach(g => {
+    const p = document.createElement('div');
+    p.className = 'pill' + (S.activeGrp === g.name ? ' active' : '');
+    p.textContent = g.name;
+    p.onclick = () => { S.activeGrp = g.name; renderTrayGrid(); };
+    subEl.appendChild(p);
+  });
+  const srch = document.createElement('input');
+  srch.type = 'text'; srch.id = 'tray-search'; srch.placeholder = '🔍 search...';
+  srch.value = S.searchQ;
+  srch.oninput = e => { S.searchQ = e.target.value.toLowerCase(); renderTrayGrid(); };
+  subEl.appendChild(srch);
+
+  renderTrayGrid();
+}
+
+function renderTrayGrid() {
+  if (!S.assets) return;
+  const cat = S.assets.categories[S.activeCat];
+  if (!cat) return;
+
+  let sprites = [];
+  for (const g of cat.groups) {
+    if (S.activeGrp && g.name !== S.activeGrp) continue;
+    sprites.push(...g.sprites);
+  }
+  if (S.searchQ) sprites = sprites.filter(s => s.name.toLowerCase().includes(S.searchQ));
+
+  const grid = document.getElementById('tray-grid');
+  grid.innerHTML = '';
+  for (const asset of sprites) {
+    const tile = document.createElement('div');
+    tile.className = 'asset-tile' + (S.placingAsset === asset ? ' selected' : '');
+    const url = assetURL(asset.dir, asset.frames[0]);
+    tile.innerHTML = `<img src="${url}" loading="lazy" title="${asset.name}"><span>${asset.name}</span>`;
+    tile.onclick = () => startPlacing(asset);
+    grid.appendChild(tile);
+  }
+}
+
+function startPlacing(asset) {
+  S.placingAsset = asset;
+  deselectAll();
+  document.getElementById('canvas-container').style.cursor = 'crosshair';
+  setStatus('Placing: ' + asset.name + ' — click canvas or Esc to cancel');
+  renderTrayGrid();
+}
+
+// ── Sprite placement ───────────────────────────────────────────────────────
+async function placeSprite(asset, x, y) {
+  const url = assetURL(asset.dir, asset.frames[0]);
+  let img;
+  try { img = await getImg(url); }
+  catch { setStatus('⚠ Failed to load: ' + url); return; }
+
+  const node = new Konva.Image({
+    x, y, image: img,
+    offsetX: img.width / 2, offsetY: img.height / 2,
+    draggable: true,
+  });
+  node.setAttr('assetDir',     asset.dir);
+  node.setAttr('assetFrames',  asset.frames);
+  node.setAttr('assetName',    asset.name);
+  node.setAttr('assetAnimated',asset.animated);
+  node.setAttr('currentFrame', 0);
+
+  S.spritesLayer.add(node);
+  bindSpriteEvents(node);
+  pushHistory();
+  setStatus('Placed: ' + asset.name);
+}
+
+function cancelPlacing() {
+  S.placingAsset = null;
+  document.getElementById('canvas-container').style.cursor = 'default';
+  setStatus('');
+  renderTrayGrid();
+}
+
+function bindSpriteEvents(node) {
+  node.on('click tap', e => {
+    if (S.placingAsset) return;
+    e.cancelBubble = true;
+    selectNode(node);
+  });
+  node.on('dragend', () => { pushHistory(); updatePropsPanel(node); });
+  node.on('transformend', () => { pushHistory(); updatePropsPanel(node); });
+}
+
+// ── Selection & properties ─────────────────────────────────────────────────
+function selectNode(node) {
+  S.selectedNode = node;
+  S.transformer.nodes([node]);
+  S.selLayer.batchDraw();
+  updatePropsPanel(node);
+}
+
+function updatePropsPanel(node) {
+  if (!node) return;
+  const panel = document.getElementById('props');
+  panel.classList.add('visible');
+  document.getElementById('prop-x').value     = Math.round(node.x());
+  document.getElementById('prop-y').value     = Math.round(node.y());
+  document.getElementById('prop-scale').value = Math.abs(node.scaleX()).toFixed(2);
+  document.getElementById('prop-flipx').checked = node.scaleX() < 0;
+  document.getElementById('prop-anim').textContent = node.getAttr('assetName') || '';
+}
+
+function deselectAll() {
+  S.selectedNode = null;
+  S.transformer.nodes([]);
+  S.selLayer.batchDraw();
+  document.getElementById('props').classList.remove('visible');
+}
+
+function deleteSelected() {
+  if (!S.selectedNode) return;
+  S.transformer.nodes([]);
+  S.selectedNode.destroy();
+  S.selectedNode = null;
+  S.spritesLayer.batchDraw();
+  S.selLayer.batchDraw();
+  document.getElementById('props').classList.remove('visible');
+  pushHistory();
+}
+
+function bindPropsPanel() {
+  function applyProp() {
+    if (!S.selectedNode) return;
+    const x     = parseFloat(document.getElementById('prop-x').value)     || 0;
+    const y     = parseFloat(document.getElementById('prop-y').value)     || 0;
+    const scale = parseFloat(document.getElementById('prop-scale').value) || 1;
+    const flipx = document.getElementById('prop-flipx').checked;
+    S.selectedNode.position({ x, y });
+    S.selectedNode.scaleX(flipx ? -Math.abs(scale) : Math.abs(scale));
+    S.selectedNode.scaleY(Math.abs(scale));
+    S.selectedNode.offsetX(flipx ? -S.selectedNode.width() / 2 : S.selectedNode.width() / 2);
+    S.spritesLayer.batchDraw();
+    S.transformer.forceUpdate();
+    pushHistory();
+  }
+  ['prop-x','prop-y','prop-scale'].forEach(id => document.getElementById(id).addEventListener('change', applyProp));
+  document.getElementById('prop-flipx').addEventListener('change', applyProp);
+}
+
+// ── Preview animation ──────────────────────────────────────────────────────
+function togglePreview() {
+  const btn = document.getElementById('btn-preview');
+  if (S.previewInterval) {
+    clearInterval(S.previewInterval);
+    S.previewInterval = null;
+    btn.textContent = '▶ Preview';
+    S.spritesLayer.getChildren().forEach(node => {
+      const frames = node.getAttr('assetFrames');
+      if (!frames || frames.length <= 1) return;
+      node.setAttr('currentFrame', 0);
+      const url = assetURL(node.getAttr('assetDir'), frames[0]);
+      getImg(url).then(img => { node.image(img); }).catch(() => {});
+    });
+    S.spritesLayer.batchDraw();
+    return;
+  }
+
+  btn.textContent = '⏹ Stop';
+  S.previewInterval = setInterval(() => {
+    S.spritesLayer.getChildren().forEach(node => {
+      const frames = node.getAttr('assetFrames');
+      if (!frames || frames.length <= 1) return;
+      const next = (node.getAttr('currentFrame') + 1) % frames.length;
+      node.setAttr('currentFrame', next);
+      const url = assetURL(node.getAttr('assetDir'), frames[next]);
+      getImg(url).then(img => { node.image(img); S.spritesLayer.batchDraw(); }).catch(() => {});
+    });
+  }, 120);
+}
+
+// ── Undo ───────────────────────────────────────────────────────────────────
+function serializeSprites() {
+  return S.spritesLayer.getChildren().map(n => ({
+    dir:      n.getAttr('assetDir'),
+    frames:   n.getAttr('assetFrames'),
+    name:     n.getAttr('assetName'),
+    animated: n.getAttr('assetAnimated'),
+    x: n.x(), y: n.y(),
+    scaleX: n.scaleX(), scaleY: n.scaleY(),
+    offsetX: n.offsetX(), offsetY: n.offsetY(),
+  }));
+}
+
+function pushHistory() {
+  S.history.push(JSON.stringify(serializeSprites()));
+  if (S.history.length > 20) S.history.shift();
+}
+
+function undo() {
+  if (S.history.length < 2) { setStatus('Nothing to undo'); return; }
+  S.history.pop();
+  const prev = JSON.parse(S.history[S.history.length - 1]);
+  restoreSprites(prev);
+}
+
+async function restoreSprites(list) {
+  deselectAll();
+  S.spritesLayer.destroyChildren();
+  for (const d of list) {
+    const url = assetURL(d.dir, d.frames[0]);
+    try {
+      const img = await getImg(url);
+      const node = new Konva.Image({ x: d.x, y: d.y, image: img, scaleX: d.scaleX, scaleY: d.scaleY, offsetX: d.offsetX, offsetY: d.offsetY, draggable: true });
+      node.setAttr('assetDir',     d.dir);
+      node.setAttr('assetFrames',  d.frames);
+      node.setAttr('assetName',    d.name);
+      node.setAttr('assetAnimated',d.animated);
+      node.setAttr('currentFrame', 0);
+      S.spritesLayer.add(node);
+      bindSpriteEvents(node);
+    } catch { /* skip missing images */ }
+  }
+  S.spritesLayer.batchDraw();
+  setStatus('Undone');
+}
+
+// ── Save / Load JSON ───────────────────────────────────────────────────────
+function saveJSON() {
+  const bgColorInput = document.getElementById('bg-color');
+  const data = {
+    version: 1,
+    background: S.bgImage
+      ? { type: 'image', value: null }
+      : { type: 'color', value: bgColorInput.value },
+    sprites: serializeSprites(),
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'map_editor_save.json';
+  a.click();
+  setStatus('Saved: map_editor_save.json');
+}
+
+function loadJSON(file) {
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = async e => {
+    let data;
+    try { data = JSON.parse(e.target.result); } catch { setStatus('⚠ Invalid JSON'); return; }
+    if (!data.version || !Array.isArray(data.sprites)) { setStatus('⚠ Unrecognised format'); return; }
+
+    if (data.background?.type === 'color' && data.background.value) {
+      document.getElementById('bg-color').value = data.background.value;
+      setBgColor(data.background.value);
+    }
+
+    await restoreSprites(data.sprites);
+    S.history = [];
+    pushHistory();
+    setStatus('Loaded: ' + file.name + ' (' + data.sprites.length + ' sprites)');
+  };
+  reader.readAsText(file);
+}
+
+// ── Export PNG ─────────────────────────────────────────────────────────────
+function exportPNG() {
+  if (S.previewInterval) togglePreview();
+  const wasSelected = S.selectedNode;
+  deselectAll();
+
+  setStatus('Exporting PNG…');
+
+  const savedScale = S.stage.scaleX();
+  const savedX = S.stage.x();
+  const savedY = S.stage.y();
+  const savedW = S.stage.width();
+  const savedH = S.stage.height();
+
+  S.stage.scale({ x: 1, y: 1 });
+  S.stage.position({ x: 0, y: 0 });
+  S.stage.size({ width: WORLD_W, height: WORLD_H });
+
+  setTimeout(() => {
+    const dataURL = S.stage.toDataURL({ mimeType: 'image/png', pixelRatio: 1 });
+    const a = document.createElement('a');
+    a.href = dataURL;
+    a.download = 'region_map.png';
+    a.click();
+
+    S.stage.scale({ x: savedScale, y: savedScale });
+    S.stage.position({ x: savedX, y: savedY });
+    S.stage.size({ width: savedW, height: savedH });
+
+    if (wasSelected) selectNode(wasSelected);
+    setStatus('Exported: region_map.png (3200×2000)');
+  }, 60);
+}
+
+window.addEventListener('load', init);
+window.addEventListener('resize', () => { const w=document.getElementById('canvas-wrap'); S.stage.size({width:w.clientWidth,height:w.clientHeight}); });
+</script>
+</body>
+</html>
