@@ -19,24 +19,13 @@ export class Boss extends Phaser.GameObjects.Container {
     this.maxPosture = cfg.maxPosture;
     this._staggerTimer = 0;
     this._atkTimer     = 0;
-    this._patternIdx   = 0;
+    this._lastPattern  = null;
     this._invincible   = false;
     this._graceTimer   = 2500;
     this._active       = false;
     this._introActive  = false;
-
-    // Charge attack state
-    this._chargeActive = false;
-    this._chargeVx     = 0;
-    this._chargeVy     = 0;
-    this._chargeHit    = null;
-    this._chargeStartX = 0;
-    this._chargeStartY = 0;
-
-    // Stone armor state
-    this.stoneArmor    = 0;
-    this.maxStoneArmor = cfg.maxStoneArmor || 0;
-    this._armorActive  = false;
+    this._sinWave      = 0;
+    this._decoys       = null;
 
     const texBase = cfg.textureBase;
     this.sprite = scene.add.sprite(0, 0, texBase + '_idle_01');
@@ -62,6 +51,14 @@ export class Boss extends Phaser.GameObjects.Container {
       targets: this, alpha: 1, duration: 600,
       onComplete: () => {
         this._playAnim('idle');
+
+        // Intro line (nagraj_kaliya uses introLine; viyogasur uses introLines array)
+        if (this.cfg.introLine) {
+          this._introActive = true;
+          scene.events.emit('boss_intro', { lines: [this.cfg.introLine], boss: this });
+          scene.time.delayedCall(3200, () => { this._introActive = false; });
+        }
+
         scene.time.delayedCall(1200, () => {
           cam.startFollow(scene.players[0], true, 0.1, 0.1);
           this.state       = STATE.FIGHT;
@@ -85,11 +82,6 @@ export class Boss extends Phaser.GameObjects.Container {
 
     if (this._graceTimer > 0) { this._graceTimer -= delta; return; }
 
-    if (this._chargeActive) {
-      this._updateCharge(delta, players, scene);
-      return;
-    }
-
     if (this.state === STATE.FIGHT) {
       this.posture = Math.max(0, this.posture - this.cfg.postureRegen * delta / 1000);
     }
@@ -101,6 +93,12 @@ export class Boss extends Phaser.GameObjects.Container {
         this.state = STATE.FIGHT;
         this._invincible = false;
         this._playAnim('idle');
+        // Restore decoy visibility after stagger ends
+        if (this._decoys?.length) {
+          this._decoys.forEach(d => {
+            if (d?.active) scene.tweens.add({ targets: d, alpha: 0.8, duration: 300 });
+          });
+        }
       }
       return;
     }
@@ -115,15 +113,43 @@ export class Boss extends Phaser.GameObjects.Container {
     const dy   = target.y - this.y;
     const dist = Math.sqrt(dx * dx + dy * dy);
 
-    const shouldFlip = this.cfg.mirrorSprite ? dx > 0 : dx < 0;
-    this.sprite.setFlipX(shouldFlip);
+    // Always advance sinWave for nagraj (weave + decoy bob)
+    if (this.bossKey === 'nagraj_kaliya') {
+      this._sinWave += delta * 0.003;
+    }
 
     if (dist > 80) {
-      this.body?.setVelocity(dx / dist * phaseCfg.speed, dy / dist * phaseCfg.speed);
+      let vx = dx / dist * phaseCfg.speed;
+      let vy = dy / dist * phaseCfg.speed;
+
+      // Serpentine weaving: sinusoidal offset perpendicular to travel direction
+      if (this.bossKey === 'nagraj_kaliya') {
+        const perpX = -dy / dist;
+        const perpY =  dx / dist;
+        const sway  = Math.sin(this._sinWave) * (phaseCfg.speed * 0.45);
+        vx += perpX * sway;
+        vy += perpY * sway;
+      }
+
+      this.body?.setVelocity(vx, vy);
       this._playAnim('run');
+      this.sprite.setFlipX(dx < 0);
     } else {
       this.body?.setVelocity(0, 0);
       this._doAttack(phaseCfg, target, scene);
+    }
+
+    // Hydra decoys lag-follow the boss with side offsets and a gentle bob
+    if (this._decoys?.length) {
+      this._decoys.forEach((d, i) => {
+        if (!d?.active) return;
+        const offset  = (i === 0 ? -1 : 1) * 165;
+        const targetX = this.x + offset;
+        const targetY = this.y + 22 * Math.sin(this._sinWave * 0.65 + i * Math.PI);
+        d.x += (targetX - d.x) * 0.04;
+        d.y += (targetY - d.y) * 0.04;
+        d.setDepth(d.y);
+      });
     }
   }
 
@@ -137,87 +163,128 @@ export class Boss extends Phaser.GameObjects.Container {
     return best;
   }
 
-  _updateCharge(delta, players, scene) {
-    const speed = (this.cfg.phases[this.phase]?.speed || 100) * 5.5;
-    this.body?.setVelocity(this._chargeVx * speed, this._chargeVy * speed);
-
-    for (const p of players) {
-      if (!p?.alive || p.downed || this._chargeHit.has(p)) continue;
-      if (Phaser.Math.Distance.Between(this.x, this.y, p.x, p.y) < 90) {
-        p.takeDamage(this.cfg.maxHp * 0.10, this, scene);
-        scene.cameras.main.shake(200, 0.012);
-        this._chargeHit.add(p);
-      }
-    }
-
-    const traveled = Phaser.Math.Distance.Between(this._chargeStartX, this._chargeStartY, this.x, this.y);
-    if (traveled > 750) this._endCharge(scene);
-  }
-
-  _endCharge(scene) {
-    this._chargeActive = false;
-    this.body?.setVelocity(0, 0);
-    this._atkTimer = Math.max(this._atkTimer, 1600);
-    scene.cameras.main.shake(360, 0.016);
-
-    // Stagger flash — free hit window visual
-    this.sprite.setTint(0xffaa44);
-    scene.time.delayedCall(1400, () => {
-      if (this.alive) this.sprite.setTint(this.cfg.tint || 0xffffff);
-    });
-
-    // Spawn impact rocks
-    const rockKeys = ['rock1', 'rock2'];
-    for (let i = 0; i < 6; i++) {
-      const angle = (Math.PI * 2 / 6) * i;
-      const rock = scene.add.image(this.x, this.y, rockKeys[i % 2])
-        .setScale(0.5 + Math.random() * 0.5).setDepth(this.y + 10);
-      scene.tweens.add({
-        targets: rock,
-        x: this.x + Math.cos(angle) * (80 + Math.random() * 80),
-        y: this.y + Math.sin(angle) * (80 + Math.random() * 80),
-        alpha: 0, duration: 600, ease: 'Power2.Out',
-        onComplete: () => rock.destroy(),
-      });
-    }
-  }
-
-  _activateArmor(scene) {
-    this.stoneArmor  = this.maxStoneArmor;
-    this._armorActive = true;
-    this.sprite.setTint(0x999999);
-    scene.time.delayedCall(350, () => {
-      if (this.alive) this.sprite.setTint(this.cfg.tint || 0xffffff);
-    });
-    scene.events.emit('boss_armor_changed', { boss: this });
-    scene.audio?.bossPhase?.();
-  }
-
-  _breakArmor(scene) {
-    this._armorActive = false;
-    this.stoneArmor   = 0;
-    scene.cameras.main.shake(320, 0.012);
-    scene.events.emit('boss_armor_broken', { boss: this });
-    scene.audio?.bossStagger?.();
-    this.sprite.setTint(0xffffff);
-    scene.time.delayedCall(250, () => {
-      if (this.alive) this.sprite.setTint(this.cfg.tint || 0xffffff);
-    });
-  }
-
   _doAttack(phaseCfg, target, scene) {
     if (this._atkTimer > 0) return;
     this._atkTimer = phaseCfg.attackCd;
 
     const patterns = phaseCfg.patterns;
-    const pattern  = patterns[this._patternIdx % patterns.length];
-    this._patternIdx++;
+    let pattern;
+    if (patterns.length === 1) {
+      pattern = patterns[0];
+    } else {
+      // Weighted random — avoid immediately repeating the last pattern
+      const candidates = patterns.filter(p => p !== this._lastPattern);
+      const pool = candidates.length ? candidates : patterns;
+      pattern = pool[Math.floor(Math.random() * pool.length)];
+    }
+    this._lastPattern = pattern;
 
     this._playAnim('attack');
     this._executePattern(pattern, target, scene);
   }
 
   _executePattern(pattern, target, scene) {
+    // ── Nagraj Kaliya unique attacks ───────────────────────────────────────
+    if (this.bossKey === 'nagraj_kaliya') {
+      switch (pattern) {
+
+        case 'bite': {
+          // Rapid physics dash-lunge: high velocity burst, impact check on arrival
+          target.notifyIncomingAttack?.();
+          const ang = Math.atan2(target.y - this.y, target.x - this.x);
+          this._invincible = true;
+          this.body?.setVelocity(Math.cos(ang) * 960, Math.sin(ang) * 960);
+          scene.time.delayedCall(165, () => {
+            this.body?.setVelocity(0, 0);
+            this._invincible = false;
+            scene.cameras.main.shake(210, 0.009);
+            if (!this.alive || !target.alive) return;
+            const d = Phaser.Math.Distance.Between(this.x, this.y, target.x, target.y);
+            if (d <= 165) target.takeDamage(this.cfg.maxHp * 0.07, this, scene);
+          });
+          return;
+        }
+
+        case 'venom_spit': {
+          // Green projectiles with poison DoT on hit + venom pool at predicted landing
+          const ang = Math.atan2(target.y - this.y, target.x - this.x);
+          const travelDist = 320;
+          for (let i = 0; i < 3; i++) {
+            const off   = (i - 1) * 0.32;
+            const poolX = this.x + Math.cos(ang + off) * travelDist;
+            const poolY = this.y + Math.sin(ang + off) * travelDist;
+            scene.events.emit('spawn_projectile', {
+              x: this.x, y: this.y, angle: ang + off,
+              damage: this.cfg.maxHp * 0.035, fromEnemy: true,
+              key: 'fire_01', speed: 230, tint: 0x00cc44, poisonOnHit: true,
+            });
+            const delay = (travelDist / 230) * 1000;
+            scene.time.delayedCall(delay, () => {
+              if (this.alive) scene.events.emit('ability_fx', { type: 'venom_pool', x: poolX, y: poolY });
+            });
+          }
+          return;
+        }
+
+        case 'coil': {
+          // Ring of projectiles spawned around the player, all aimed inward
+          scene.cameras.main.shake(210, 0.008);
+          const count  = 12;
+          const radius = 235;
+          for (let i = 0; i < count; i++) {
+            const a      = (Math.PI * 2 / count) * i;
+            const px     = target.x + Math.cos(a) * radius;
+            const py     = target.y + Math.sin(a) * radius;
+            const inward = Math.atan2(target.y - py, target.x - px);
+            scene.events.emit('spawn_projectile', {
+              x: px, y: py, angle: inward,
+              damage: this.cfg.maxHp * 0.03, fromEnemy: true,
+              key: 'fire_01', speed: 175, tint: 0x00cc44, poisonOnHit: true,
+            });
+          }
+          return;
+        }
+
+        case 'tail_sweep': {
+          // Wide arc hitting players behind the boss — punishes circling
+          const faceAng = Math.atan2(target.y - this.y, target.x - this.x);
+          const rearAng = faceAng + Math.PI;
+          const sweepR  = 190;
+          scene.cameras.main.shake(260, 0.009);
+          scene.events.emit('ability_fx', { type: 'tail_sweep', x: this.x, y: this.y, angle: rearAng, r: sweepR });
+          scene.time.delayedCall(180, () => {
+            for (const p of scene.players) {
+              if (!p?.alive || p.downed) continue;
+              const d = Phaser.Math.Distance.Between(this.x, this.y, p.x, p.y);
+              if (d > sweepR) continue;
+              const pAng = Math.atan2(p.y - this.y, p.x - this.x);
+              let diff = pAng - rearAng;
+              while (diff >  Math.PI) diff -= Math.PI * 2;
+              while (diff < -Math.PI) diff += Math.PI * 2;
+              if (Math.abs(diff) <= Math.PI * 0.6) p.takeDamage(this.cfg.maxHp * 0.055, this, scene);
+            }
+          });
+          return;
+        }
+
+        case 'hydra_form': {
+          // 8-way radial poison burst + spawn/refresh ghost decoy illusions
+          scene.cameras.main.shake(360, 0.014);
+          this._refreshDecoys(scene);
+          for (let i = 0; i < 8; i++) {
+            const a = (Math.PI * 2 / 8) * i;
+            scene.events.emit('spawn_projectile', {
+              x: this.x, y: this.y, angle: a,
+              damage: this.cfg.maxHp * 0.045, fromEnemy: true,
+              key: 'fire_01', speed: 210, tint: 0x00ff55, poisonOnHit: true,
+            });
+          }
+          return;
+        }
+      }
+    }
+
+    // ── Generic patterns (all other bosses) ───────────────────────────────
     switch (pattern) {
       case 'slam': case 'smash': case 'bite': case 'void_slash': case 'wind_slash': {
         target.notifyIncomingAttack?.();
@@ -243,182 +310,29 @@ export class Boss extends Phaser.GameObjects.Container {
       }
       case 'spore_burst': case 'seed_bomb': case 'stone_throw':
       case 'venom_spit': case 'despair_wave': case 'shockwave': case 'cyclone': {
-        const angle = Math.atan2(target.y - this.y, target.x - this.x);
+        const angle  = Math.atan2(target.y - this.y, target.x - this.x);
         const spread = pattern === 'despair_wave' ? 5 : 3;
         const step   = pattern === 'despair_wave' ? 0.25 : 0.32;
         for (let i = 0; i < spread; i++) {
           const off = (i - Math.floor(spread / 2)) * step;
           scene.events.emit('spawn_projectile', {
-            x: this.x, y: this.y,
-            angle: angle + off,
-            damage: this.cfg.maxHp * 0.035,
-            fromEnemy: true,
-            key: 'fire_01',
-            speed: 230,
-            tint: this.cfg.tint || 0xff4444,
+            x: this.x, y: this.y, angle: angle + off,
+            damage: this.cfg.maxHp * 0.035, fromEnemy: true,
+            key: 'fire_01', speed: 230, tint: this.cfg.tint || 0xff4444,
           });
         }
         break;
       }
-      case 'charge': {
-        const cdx = target.x - this.x, cdy = target.y - this.y;
-        const cdist = Math.sqrt(cdx * cdx + cdy * cdy) || 1;
-        this._chargeVx = cdx / cdist;
-        this._chargeVy = cdy / cdist;
-        this._chargeHit = new Set();
-
-        // Draw warning line over 800ms telegraph
-        const lineGfx = scene.add.graphics().setDepth(600);
-        lineGfx.lineStyle(4, 0xff4400, 0.75);
-        lineGfx.beginPath();
-        lineGfx.moveTo(this.x, this.y);
-        lineGfx.lineTo(this.x + this._chargeVx * 820, this.y + this._chargeVy * 820);
-        lineGfx.strokePath();
-        scene.cameras.main.shake(150, 0.006);
-        scene.tweens.add({ targets: lineGfx, alpha: 0, duration: 800, onComplete: () => lineGfx.destroy() });
-
-        scene.time.delayedCall(800, () => {
-          if (!this.alive) return;
-          this._chargeActive = true;
-          this._chargeStartX = this.x;
-          this._chargeStartY = this.y;
-          this._playAnim('run');
-        });
-        break;
-      }
-
-      case 'ground_crack': {
-        scene.cameras.main.shake(280, 0.010);
-        const baseAng = Math.atan2(target.y - this.y, target.x - this.x);
-        const crackAngles = [baseAng - 0.38, baseAng, baseAng + 0.38];
-        const crackLen = 320;
-
-        for (const ang of crackAngles) {
-          const cx = Math.cos(ang), cy = Math.sin(ang);
-          const gfx = scene.add.graphics().setDepth(400);
-          let progress = 0;
-
-          scene.time.addEvent({
-            delay: 18, repeat: 16,
-            callback: () => {
-              progress = Math.min(1, progress + 1 / 16);
-              gfx.clear();
-              gfx.lineStyle(9, 0xaa6633, 0.9);
-              gfx.beginPath();
-              gfx.moveTo(this.x, this.y);
-              gfx.lineTo(this.x + cx * crackLen * progress, this.y + cy * crackLen * progress);
-              gfx.strokePath();
-              // Thin inner line for detail
-              gfx.lineStyle(3, 0xffcc88, 0.6);
-              gfx.beginPath();
-              gfx.moveTo(this.x, this.y);
-              gfx.lineTo(this.x + cx * crackLen * progress, this.y + cy * crackLen * progress);
-              gfx.strokePath();
-            },
-          });
-
-          // Damage at 280ms (near full extension)
-          scene.time.delayedCall(280, () => {
-            if (!this.alive) return;
-            for (const p of scene.players) {
-              if (!p?.alive || p.downed) continue;
-              const pdx = p.x - this.x, pdy = p.y - this.y;
-              const t = pdx * cx + pdy * cy;
-              if (t < 0 || t > crackLen) continue;
-              const perp = Math.abs(pdx * (-cy) + pdy * cx);
-              if (perp < 48) p.takeDamage(this.cfg.maxHp * 0.05, this, scene);
-            }
-          });
-
-          scene.time.delayedCall(320, () => {
-            scene.tweens.add({ targets: gfx, alpha: 0, duration: 260, onComplete: () => gfx.destroy() });
-          });
-        }
-        break;
-      }
-
-      case 'stomp_warning': {
-        const bx = this.x, by = this.y;
-        const safeZones = [
-          { x: bx + 230, y: by - 140, r: 58 },
-          { x: bx - 210, y: by + 110, r: 58 },
-          { x: bx + 40,  y: by + 210, r: 58 },
-        ];
-
-        const gfxList = safeZones.map(sz => {
-          const g = scene.add.graphics().setDepth(400);
-          g.lineStyle(3, 0x00ff88, 0.85);
-          g.strokeCircle(sz.x, sz.y, sz.r);
-          g.fillStyle(0x00ff88, 0.14);
-          g.fillCircle(sz.x, sz.y, sz.r);
-          return g;
-        });
-
-        // Pulse the warning circles
-        scene.cameras.main.shake(120, 0.005);
-        scene.tweens.add({ targets: gfxList, alpha: 0.5, duration: 400, yoyo: true, repeat: 1 });
-
-        scene.time.delayedCall(1200, () => {
-          if (!this.alive) return;
-          gfxList.forEach(g => g.destroy());
-          scene.cameras.main.shake(500, 0.020);
-          scene.events.emit('ability_fx', { type: 'explosion', x: this.x, y: this.y, r: 310 });
-
-          for (const p of scene.players) {
-            if (!p?.alive || p.downed) continue;
-            const d = Phaser.Math.Distance.Between(this.x, this.y, p.x, p.y);
-            if (d > 310) continue;
-            const inSafe = safeZones.some(sz =>
-              Phaser.Math.Distance.Between(p.x, p.y, sz.x, sz.y) <= sz.r
-            );
-            if (!inSafe) p.takeDamage(this.cfg.maxHp * 0.09, this, scene);
-          }
-        });
-        break;
-      }
-
-      case 'split_gust': {
-        scene.cameras.main.shake(180, 0.007);
-        // Inner ring — players too close
-        scene.events.emit('ability_fx', { type: 'explosion', x: this.x, y: this.y, r: 145 });
-        for (const p of scene.players) {
-          if (!p?.alive || p.downed) continue;
-          if (Phaser.Math.Distance.Between(this.x, this.y, p.x, p.y) <= 145) {
-            p.takeDamage(this.cfg.maxHp * 0.04, this, scene);
-          }
-        }
-        // Outer ring 650ms later — players who backed away
-        scene.time.delayedCall(650, () => {
-          if (!this.alive) return;
-          scene.cameras.main.shake(240, 0.009);
-          const ringGfx = scene.add.graphics().setDepth(400);
-          ringGfx.lineStyle(7, 0xff8844, 0.88);
-          ringGfx.strokeCircle(this.x, this.y, 265);
-          scene.tweens.add({ targets: ringGfx, alpha: 0, duration: 380, onComplete: () => ringGfx.destroy() });
-
-          for (const p of scene.players) {
-            if (!p?.alive || p.downed) continue;
-            const d = Phaser.Math.Distance.Between(this.x, this.y, p.x, p.y);
-            if (d >= 155 && d <= 315) p.takeDamage(this.cfg.maxHp * 0.045, this, scene);
-          }
-        });
-        break;
-      }
-
       case 'rage_slam': case 'frenzy': case 'hydra_form':
       case 'rock_storm': case 'tornado': case 'annihilation': case 'severance': {
-        // Final phase special — dense radial burst
         scene.cameras.main.shake(350, 0.014);
         const count = pattern === 'annihilation' ? 12 : 8;
         for (let i = 0; i < count; i++) {
           const a = (Math.PI * 2 / count) * i;
           scene.events.emit('spawn_projectile', {
             x: this.x, y: this.y, angle: a,
-            damage: this.cfg.maxHp * 0.045,
-            fromEnemy: true,
-            key: 'fire_01',
-            speed: 210,
-            tint: this.cfg.tint || 0xff2200,
+            damage: this.cfg.maxHp * 0.045, fromEnemy: true,
+            key: 'fire_01', speed: 210, tint: this.cfg.tint || 0xff2200,
           });
         }
         break;
@@ -426,17 +340,49 @@ export class Boss extends Phaser.GameObjects.Container {
     }
   }
 
+  // ── Hydra decoys (phase 3 ghost illusions) ────────────────────────────────
+  _spawnDecoys(scene) {
+    this._dismissDecoys(scene);
+    this._decoys = [];
+    for (let i = 0; i < 2; i++) {
+      const offset = (i === 0 ? -1 : 1) * 165;
+      const decoy  = scene.add.sprite(this.x + offset, this.y, this.cfg.textureBase + '_idle_01');
+      decoy.setScale(this.sprite.scaleX);
+      decoy.setTint(this.cfg.tint || 0x1a6633);
+      decoy.setAlpha(0);
+      decoy.setDepth(this.y - 1);
+      if (scene.anims.exists(this.cfg.textureBase + '_idle')) {
+        decoy.play(this.cfg.textureBase + '_idle', true);
+      }
+      scene.tweens.add({ targets: decoy, alpha: 0.8, duration: 450 });
+      this._decoys.push(decoy);
+    }
+  }
+
+  _refreshDecoys(scene) {
+    if (!this._decoys?.length) { this._spawnDecoys(scene); return; }
+    this._decoys.forEach(d => {
+      if (!d?.active) return;
+      d.setScale(this.sprite.scaleX);
+      scene.tweens.add({ targets: d, alpha: 0.8, duration: 300 });
+    });
+  }
+
+  _dismissDecoys(scene) {
+    if (!this._decoys?.length) return;
+    this._decoys.forEach(d => {
+      if (!d?.active) return;
+      scene?.tweens?.add({
+        targets: d, alpha: 0, duration: 400,
+        onComplete: () => { try { d.destroy(); } catch {} },
+      });
+    });
+    this._decoys = [];
+  }
+
+  // ── Damage / stagger / phase / death ──────────────────────────────────────
   takeDamage(amount, scene) {
     if (!this.alive || this._invincible || this.state === STATE.STAGGER || this.state === STATE.DEAD) return;
-
-    if (this._armorActive && this.stoneArmor > 0) {
-      const drain = Math.min(this.stoneArmor, amount * 2);
-      this.stoneArmor = Math.max(0, this.stoneArmor - drain);
-      amount *= 0.3;
-      if (this.stoneArmor <= 0) this._breakArmor(scene);
-      scene.events.emit('boss_armor_changed', { boss: this });
-    }
-
     this.hp = Math.max(0, this.hp - amount);
 
     this.posture = Math.min(this.maxPosture, this.posture + amount * 0.4);
@@ -454,7 +400,7 @@ export class Boss extends Phaser.GameObjects.Container {
   }
 
   _checkPhaseTransition(scene) {
-    const hpPct    = this.hp / this.maxHp;
+    const hpPct  = this.hp / this.maxHp;
     let newPhase = 0;
     for (let i = this.cfg.phases.length - 1; i >= 0; i--) {
       if (hpPct <= this.cfg.phases[i].hpThreshold && i > 0) { newPhase = i; break; }
@@ -464,33 +410,31 @@ export class Boss extends Phaser.GameObjects.Container {
     this.phase = newPhase;
     const labels = ['', 'PHASE II', 'FINAL PHASE'];
 
-    // Dramatic phase transition: brief invincibility + forced stagger
     this._invincible   = true;
     this.state         = STATE.STAGGER;
     this._staggerTimer = 2200;
 
-    // Scale pulse
+    // Pulse flash
     scene.tweens.add({
       targets: this, scaleX: 1.18, scaleY: 1.18,
       duration: 280, yoyo: true, ease: 'Power2',
     });
 
-    // On final phase, tint boss red
+    // Permanent sprite size increase per phase (driven by phaseScales in boss config)
+    if (this.cfg.phaseScales) {
+      const newSpriteScale = this.cfg.phaseScales[newPhase];
+      scene.tweens.add({
+        targets: this.sprite,
+        scaleX: newSpriteScale, scaleY: newSpriteScale,
+        duration: 700, ease: 'Back.Out', delay: 280,
+      });
+    }
+
     if (newPhase === 2) {
       this.sprite.setTint(0xff2222);
       scene.time.delayedCall(400, () => {
         if (this.alive) this.sprite.setTint(this.cfg.tint || 0xffffff);
       });
-
-      // Activate stone armor (pashana_daitya only)
-      if (this.cfg.maxStoneArmor) {
-        scene.time.delayedCall(600, () => { if (this.alive) this._activateArmor(scene); });
-      }
-
-      // Wall-break visual event
-      if (this.cfg.wallBreak) {
-        scene.time.delayedCall(300, () => { if (this.alive) scene.events.emit('boss_wall_break', { boss: this }); });
-      }
     }
 
     scene.cameras.main.shake(500, 0.018);
@@ -507,6 +451,10 @@ export class Boss extends Phaser.GameObjects.Container {
     scene.cameras.main.shake(300, 0.01);
     scene.events.emit('boss_staggered');
     scene.audio?.bossStagger?.();
+    // Dim decoys so the player can re-orient on the real boss during stagger window
+    if (this._decoys?.length) {
+      this._decoys.forEach(d => { if (d?.active) scene.tweens.add({ targets: d, alpha: 0.15, duration: 300 }); });
+    }
   }
 
   _die(scene) {
@@ -515,6 +463,7 @@ export class Boss extends Phaser.GameObjects.Container {
     this.body?.setVelocity(0, 0);
     if (this.body) this.body.enable = false;
     this._playAnim('dead');
+    this._dismissDecoys(scene);
 
     scene.cameras.main.shake(700, 0.025);
     scene.audio?.victory?.();

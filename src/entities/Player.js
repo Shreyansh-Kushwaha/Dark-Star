@@ -345,6 +345,26 @@ export class Player extends Phaser.GameObjects.Container {
     scene?.events?.emit('player_damaged', { player: this });
   }
 
+  applyPoison(scene, dpsPerTick, duration) {
+    if (!this.alive || this.downed) return;
+    if (this._poisonTimer) { this._poisonTimer.remove(); this._poisonTimer = null; }
+    const ticks = Math.max(1, Math.floor(duration / 500));
+    let count = 0;
+    this._poisonTimer = scene.time.addEvent({
+      delay: 500, repeat: ticks - 1,
+      callback: () => {
+        if (!this.alive || this.downed) { this._poisonTimer = null; return; }
+        this.hp = Math.max(0, this.hp - dpsPerTick);
+        this._updateHpBar();
+        this.sprite.setTint(0x00ff88);
+        scene.time.delayedCall(120, () => { if (this.alive) this.sprite.clearTint(); });
+        count++;
+        if (this.hp <= 0) this._goDown(scene);
+        if (count >= ticks) this._poisonTimer = null;
+      },
+    });
+  }
+
   _goDown(scene) {
     this.downed = true;
     this._downTimer = 12000;

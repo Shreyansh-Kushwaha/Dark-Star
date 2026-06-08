@@ -966,6 +966,10 @@ export class GameScene extends Phaser.Scene {
         const d = Phaser.Math.Distance.Between(proj.x, proj.y, p.x, p.y);
         if (d < 24) {
           p.takeDamage(proj.damage, null, this);
+          if (proj.poisonOnHit) {
+            const dps = (this._boss?.cfg.maxHp || 2000) * 0.004;
+            p.applyPoison?.(this, dps, 3000);
+          }
           proj.hit();
           return;
         }
@@ -1259,6 +1263,44 @@ export class GameScene extends Phaser.Scene {
       this.tweens.add({
         targets: circle, alpha: 0, scaleX: 2, scaleY: 2,
         duration: 600, onComplete: () => circle.destroy(),
+      });
+    } else if (type === 'venom_pool') {
+      // Lingering poison zone — damages players who stand in it
+      const poolR  = 55;
+      const pool   = this.add.circle(x, y, poolR, 0x00aa33, 0.45);
+      pool.setDepth(1);
+      const tickDmg  = (this._boss?.cfg.maxHp || 2000) * 0.004;
+      const interval = this.time.addEvent({
+        delay: 600, repeat: 6,
+        callback: () => {
+          for (const p of this.players) {
+            if (!p?.alive || p.downed) continue;
+            if (Phaser.Math.Distance.Between(x, y, p.x, p.y) < poolR) {
+              p.takeDamage(tickDmg, null, this);
+            }
+          }
+        },
+      });
+      this.tweens.add({
+        targets: pool, alpha: 0, duration: 4200,
+        onComplete: () => { interval.remove(); pool.destroy(); },
+      });
+    } else if (type === 'tail_sweep') {
+      // Green arc drawn behind the boss showing sweep range
+      const { angle: sweepAngle, r: sweepR } = data;
+      const gfx = this.add.graphics();
+      gfx.lineStyle(3, 0x44ff88, 0.9);
+      gfx.fillStyle(0x44ff88, 0.18);
+      gfx.beginPath();
+      gfx.moveTo(x, y);
+      gfx.arc(x, y, sweepR, sweepAngle - Math.PI * 0.6, sweepAngle + Math.PI * 0.6, false);
+      gfx.closePath();
+      gfx.fillPath();
+      gfx.strokePath();
+      gfx.setDepth(2);
+      this.tweens.add({
+        targets: gfx, alpha: 0, duration: 450,
+        onComplete: () => gfx.destroy(),
       });
     }
   }
