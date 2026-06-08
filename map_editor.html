@@ -55,6 +55,21 @@ button.active{background:#4488ff33;border-color:#88aaff}
 .tile-img-wrap img{width:48px;height:48px;object-fit:contain;border:1px solid #333;border-radius:3px;background:#1a0028;image-rendering:pixelated}
 .crop-btn{position:absolute;bottom:0;right:0;display:none;padding:1px 4px;font-size:9px;background:#000d;border:1px solid #ffd700;color:#ffd700;cursor:pointer;border-radius:2px 0 2px 0;line-height:1.4;z-index:2}
 .asset-tile:hover .crop-btn{display:block}
+.rand-btn{position:absolute;top:0;right:0;display:none;padding:1px 4px;font-size:9px;background:#000d;border:1px solid #44ff88;color:#44ff88;cursor:pointer;border-radius:0 2px 0 2px;line-height:1.4;z-index:2}
+.asset-tile:hover .rand-btn{display:block}
+/* ── Randomizer modal ── */
+#rand-modal{position:fixed;inset:0;background:#000c;display:none;z-index:1000;align-items:center;justify-content:center}
+#rand-modal.open{display:flex}
+#rand-box{background:#12001c;border:1px solid #44ff88;border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:260px}
+#rand-box h4{color:#44ff88;font-size:12px;font-weight:bold;margin:0}
+#rand-asset-lbl{font-size:10px;color:#aaa}
+.rand-row{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:11px;color:#ccc}
+.rand-row label{color:#888;font-size:10px}
+.rand-row input[type=number]{width:72px;background:#0a0010;border:1px solid #333;color:#ccc;padding:2px 4px;font-size:10px;border-radius:2px;font-family:monospace}
+.rand-row select{background:#0a0010;border:1px solid #333;color:#ccc;padding:2px 4px;font-size:10px;border-radius:2px;font-family:monospace;flex:1}
+.rand-row input[type=checkbox]{accent-color:#44ff88}
+#rand-footer{display:flex;gap:8px;margin-top:4px}
+#rand-status{font-size:9px;color:#666;min-height:13px}
 /* ── Crop modal ── */
 #crop-modal{position:fixed;inset:0;background:#000c;display:none;z-index:1000;align-items:center;justify-content:center}
 #crop-modal.open{display:flex}
@@ -133,6 +148,27 @@ button.active{background:#4488ff33;border-color:#88aaff}
   <div id="tray-grid"></div>
 </div>
 
+<div id="rand-modal">
+  <div id="rand-box">
+    <h4>🎲 Randomize Asset</h4>
+    <div id="rand-asset-lbl"></div>
+    <div class="rand-row"><label>Count</label><input type="number" id="rand-count" min="1" max="500" value="20"></div>
+    <div class="rand-row"><label>Algorithm</label>
+      <select id="rand-algo">
+        <option value="scatter">Scatter — fully random</option>
+        <option value="cluster">Cluster — grouped clumps</option>
+        <option value="grid">Grid Jitter — even spread</option>
+      </select>
+    </div>
+    <div class="rand-row"><label>Avoid overlap</label><input type="checkbox" id="rand-avoid" checked></div>
+    <div id="rand-status"></div>
+    <div id="rand-footer">
+      <button class="green" id="btn-rand-go">🎲 Randomize</button>
+      <button id="btn-rand-cancel">Cancel</button>
+    </div>
+  </div>
+</div>
+
 <div id="crop-modal">
   <div id="crop-box">
     <div id="crop-title">✂️ Crop Asset</div>
@@ -177,6 +213,7 @@ const S = {
   ws: null,
   roomCode: null,
   peerConnected: false,
+  dragSel: { active: false, startX: 0, startY: 0, rect: null },
 };
 
 // ── Utility ────────────────────────────────────────────────────────────────
@@ -225,11 +262,13 @@ function initStage() {
   fitStage();
   bindZoomPan();
   bindDrawing();
+  bindDeleteDrag();
   bindStageClick();
   bindKeyboard();
   bindPropsPanel();
   bindToolbar();
   bindCropModal();
+  bindRandModal();
   pushHistory(); // initial empty state
 }
 
@@ -541,9 +580,10 @@ function renderTrayGrid() {
     const tile = document.createElement('div');
     tile.className = 'asset-tile' + (S.placingAsset === asset ? ' selected' : '');
     const url = assetURL(asset.dir, asset.frames[0]);
-    tile.innerHTML = `<div class="tile-img-wrap"><img src="${url}" loading="lazy" title="${asset.name}"><button class="crop-btn" title="Crop this asset">✂</button></div><span>${asset.name}</span>`;
+    tile.innerHTML = `<div class="tile-img-wrap"><img src="${url}" loading="lazy" title="${asset.name}"><button class="crop-btn" title="Crop this asset">✂</button><button class="rand-btn" title="Randomize this asset">🎲</button></div><span>${asset.name}</span>`;
     tile.onclick = () => startPlacing(asset);
     tile.querySelector('.crop-btn').onclick = e => { e.stopPropagation(); openCropModal(asset); };
+    tile.querySelector('.rand-btn').onclick = e => { e.stopPropagation(); openRandModal(asset); };
     grid.appendChild(tile);
   }
 }
@@ -990,6 +1030,200 @@ async function saveCrop() {
   } catch (e) {
     setStatus('⚠ Save failed: ' + e.message);
   }
+}
+
+// ── Drag-select delete ────────────────────────────────────────────────────
+function bindDeleteDrag() {
+  const canvasEl = document.getElementById('canvas-container');
+
+  canvasEl.addEventListener('mousedown', e => {
+    if (!S.deleteMode || e.button !== 0) return;
+    const pos = S.stage.getPointerPosition();
+    if (!pos) return;
+    const hit = S.stage.getIntersection(pos);
+    // Only start rubber-band on empty space (not on a sprite)
+    if (hit && hit !== S.bgRect && hit !== S.bgImage) return;
+    e.preventDefault();
+    const { x, y } = clientToWorld(e.clientX, e.clientY);
+    S.dragSel.active = true;
+    S.dragSel.startX = x;
+    S.dragSel.startY = y;
+    const rect = new Konva.Rect({
+      x, y, width: 0, height: 0,
+      fill: 'rgba(255,50,50,0.15)',
+      stroke: '#ff4444',
+      strokeWidth: 1 / S.stage.scaleX(),
+      dash: [6 / S.stage.scaleX(), 3 / S.stage.scaleX()],
+      listening: false,
+    });
+    S.dragSel.rect = rect;
+    S.selLayer.add(rect);
+    S.selLayer.batchDraw();
+  });
+
+  window.addEventListener('mousemove', e => {
+    if (!S.dragSel.active || !S.dragSel.rect) return;
+    const { x, y } = clientToWorld(e.clientX, e.clientY);
+    const rx = Math.min(x, S.dragSel.startX);
+    const ry = Math.min(y, S.dragSel.startY);
+    S.dragSel.rect.position({ x: rx, y: ry });
+    S.dragSel.rect.size({ width: Math.abs(x - S.dragSel.startX), height: Math.abs(y - S.dragSel.startY) });
+    S.selLayer.batchDraw();
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (!S.dragSel.active) return;
+    S.dragSel.active = false;
+    const rect = S.dragSel.rect;
+    S.dragSel.rect = null;
+    if (!rect) return;
+
+    const rx = rect.x(), ry = rect.y(), rw = rect.width(), rh = rect.height();
+    rect.destroy();
+    S.selLayer.batchDraw();
+
+    if (rw < 4 || rh < 4) return; // too small — treat as missed click, not a drag
+
+    const toDelete = S.spritesLayer.getChildren().filter(n => {
+      if (!(n instanceof Konva.Image)) return false;
+      const b = n.getClientRect({ relativeTo: S.spritesLayer });
+      return b.x < rx + rw && b.x + b.width > rx && b.y < ry + rh && b.y + b.height > ry;
+    });
+
+    if (toDelete.length === 0) return;
+    toDelete.forEach(n => {
+      if (S.selectedNode === n) { S.transformer.nodes([]); S.selectedNode = null; document.getElementById('props').classList.remove('visible'); }
+      broadcast({ type: 'SPRITE_DELETE', spriteId: n.getAttr('spriteId') });
+      n.destroy();
+    });
+    S.spritesLayer.batchDraw();
+    S.selLayer.batchDraw();
+    pushHistory();
+    setStatus('Deleted ' + toDelete.length + ' sprite(s) — Ctrl+Z to undo');
+  });
+}
+
+// ── Asset randomizer ───────────────────────────────────────────────────────
+function gaussianRand() {
+  // Box-Muller transform → standard normal
+  let u = 0, v = 0;
+  while (u === 0) u = Math.random();
+  while (v === 0) v = Math.random();
+  return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+}
+
+function clamp(val, lo, hi) { return Math.max(lo, Math.min(hi, val)); }
+
+function buildPositions(algo, count) {
+  const positions = [];
+  if (algo === 'scatter') {
+    for (let i = 0; i < count; i++) {
+      positions.push({ x: Math.random() * WORLD_W, y: Math.random() * WORLD_H });
+    }
+  } else if (algo === 'cluster') {
+    const clusterCount = Math.max(1, Math.floor(count / 8));
+    const spread = Math.min(WORLD_W, WORLD_H) * 0.12;
+    const seeds = Array.from({ length: clusterCount }, () => ({
+      x: Math.random() * WORLD_W, y: Math.random() * WORLD_H,
+    }));
+    for (let i = 0; i < count; i++) {
+      const seed = seeds[Math.floor(Math.random() * clusterCount)];
+      positions.push({
+        x: clamp(seed.x + gaussianRand() * spread, 0, WORLD_W),
+        y: clamp(seed.y + gaussianRand() * spread, 0, WORLD_H),
+      });
+    }
+  } else { // grid jitter
+    const cols = Math.ceil(Math.sqrt(count * (WORLD_W / WORLD_H)));
+    const rows = Math.ceil(count / cols);
+    const cellW = WORLD_W / cols, cellH = WORLD_H / rows;
+    const cells = [];
+    for (let r = 0; r < rows; r++)
+      for (let c = 0; c < cols; c++)
+        cells.push({ cx: cellW * (c + 0.5), cy: cellH * (r + 0.5), cw: cellW, ch: cellH });
+    // shuffle cells so we pick a diverse spread when count < cells
+    for (let i = cells.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [cells[i], cells[j]] = [cells[j], cells[i]];
+    }
+    for (let i = 0; i < count; i++) {
+      const { cx, cy, cw, ch } = cells[i % cells.length];
+      positions.push({
+        x: clamp(cx + (Math.random() - 0.5) * cw * 0.8, 0, WORLD_W),
+        y: clamp(cy + (Math.random() - 0.5) * ch * 0.8, 0, WORLD_H),
+      });
+    }
+  }
+  return positions;
+}
+
+let _randAsset = null;
+
+function openRandModal(asset) {
+  _randAsset = asset;
+  document.getElementById('rand-asset-lbl').textContent = asset.name;
+  document.getElementById('rand-status').textContent = '';
+  document.getElementById('rand-modal').classList.add('open');
+}
+
+function bindRandModal() {
+  document.getElementById('btn-rand-cancel').onclick = () => document.getElementById('rand-modal').classList.remove('open');
+  document.getElementById('rand-modal').addEventListener('click', e => {
+    if (e.target === document.getElementById('rand-modal')) document.getElementById('rand-modal').classList.remove('open');
+  });
+  document.getElementById('btn-rand-go').onclick = async () => {
+    if (!_randAsset) return;
+    const count = Math.max(1, Math.min(500, parseInt(document.getElementById('rand-count').value) || 20));
+    const algo  = document.getElementById('rand-algo').value;
+    const avoid = document.getElementById('rand-avoid').checked;
+    document.getElementById('rand-status').textContent = 'Placing…';
+
+    const url = assetURL(_randAsset.dir, _randAsset.frames[0]);
+    let img;
+    try { img = await getImg(url); }
+    catch { document.getElementById('rand-status').textContent = '⚠ Could not load image'; return; }
+
+    const hw = img.width / 2, hh = img.height / 2;
+
+    // Pre-collect existing bounding boxes for overlap check
+    let existingRects = avoid
+      ? S.spritesLayer.getChildren()
+          .filter(n => n instanceof Konva.Image)
+          .map(n => n.getClientRect({ relativeTo: S.spritesLayer }))
+      : [];
+
+    const positions = buildPositions(algo, count);
+    let placed = 0;
+
+    for (const { x, y } of positions) {
+      if (avoid) {
+        const nb = { x: x - hw, y: y - hh, width: img.width, height: img.height };
+        if (existingRects.some(r => nb.x < r.x + r.width && nb.x + nb.width > r.x && nb.y < r.y + r.height && nb.y + nb.height > r.y)) continue;
+        existingRects.push(nb);
+      }
+      const id = genSpriteId();
+      const node = new Konva.Image({
+        x, y, image: img, offsetX: hw, offsetY: hh,
+        draggable: !S.panMode && !S.deleteMode,
+      });
+      node.setAttr('assetDir',     _randAsset.dir);
+      node.setAttr('assetFrames',  _randAsset.frames);
+      node.setAttr('assetName',    _randAsset.name);
+      node.setAttr('assetAnimated',_randAsset.animated);
+      node.setAttr('currentFrame', 0);
+      node.setAttr('spriteId',     id);
+      S.spritesLayer.add(node);
+      bindSpriteEvents(node);
+      broadcast({ type: 'SPRITE_ADD', spriteId: id, dir: _randAsset.dir, frames: _randAsset.frames,
+        name: _randAsset.name, animated: _randAsset.animated, x, y, offsetX: hw, offsetY: hh, scaleX: 1, scaleY: 1 });
+      placed++;
+    }
+
+    S.spritesLayer.batchDraw();
+    pushHistory();
+    document.getElementById('rand-modal').classList.remove('open');
+    setStatus('Placed ' + placed + ' × ' + _randAsset.name + ' (' + algo + ') — Ctrl+Z to undo');
+  };
 }
 
 // ── WebSocket collaboration ────────────────────────────────────────────────
