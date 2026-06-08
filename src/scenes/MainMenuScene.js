@@ -337,9 +337,9 @@ export class MainMenuScene extends Phaser.Scene {
     this.cameras.main.fadeOut(400, 0, 0, 0);
     this.cameras.main.once('camerafadeoutcomplete', () => {
       this.scene.stop('MainMenuScene');
-      // Show prologue only on fresh new games (region 0, no existing save)
+      // Show prologue only on fresh solo new games (co-op skips to keep both players in sync)
       const hasSave = !!SaveManager.load();
-      if (!hasSave && regionIndex === 0) {
+      if (!hasSave && regionIndex === 0 && !isCoop) {
         this.scene.start('PrologueScene', { regionIndex, coop: isCoop });
       } else {
         this.scene.start('GameScene', { regionIndex, coop: isCoop });
@@ -365,7 +365,7 @@ export class MainMenuScene extends Phaser.Scene {
       net.createRoom();
       net.on('ROOM_READY', ({ code }) => {
         this._roomInput.setText(code);
-        this._roomPrompt.setText('WAITING FOR PARTNER...');
+        this._roomPrompt.setText('YOU ARE DHRUVA  ·  WAITING FOR TARA...');
       });
       net.on('CLIENT_JOINED', () => {
         this._roomPrompt.setText('PARTNER JOINED!  STARTING...');
@@ -403,7 +403,7 @@ export class MainMenuScene extends Phaser.Scene {
           await net.connect();
           net.joinRoom(code);
           net.on('ROOM_READY', () => {
-            this._roomPrompt.setText('CONNECTED!  STARTING...');
+            this._roomPrompt.setText('YOU ARE TARA  ·  CONNECTED!  STARTING...');
             this.registry.set('network', net);
             this.time.delayedCall(800, () => this._startGame(true));
           });

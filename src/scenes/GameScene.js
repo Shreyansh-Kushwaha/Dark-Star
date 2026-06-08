@@ -113,6 +113,14 @@ export class GameScene extends Phaser.Scene {
     this.network = this.registry.get('network') || new NetworkManager();
     this.registry.remove('network');
 
+    // Apply remote player state when packet arrives
+    if (this.network.connected) {
+      this.network.on('PLAYER_STATE', ({ playerIndex, state }) => {
+        const remote = this.players[playerIndex];
+        if (remote && !remote.isLocal) remote.applyNetState(state);
+      });
+    }
+
     // Physics world
     this.physics.world.setBounds(0, 0, WORLD_W, WORLD_H);
 
@@ -123,17 +131,20 @@ export class GameScene extends Phaser.Scene {
     const spawnPos = region.spawnPos;
     this.players = [];
 
+    // In co-op: host=Dhruva(P1 local), client=Tara(P2 local). Solo: P1 local only.
+    const isClient = this.network.connected && this.network.isClient();
     const p1 = new Player(this, spawnPos.x, spawnPos.y, true, saveData);
+    p1.isLocal = !isClient;
     this.players.push(p1);
 
-    // P2: spawn next to P1 (will be controlled by remote or follow AI)
     const p2 = new Player(this, spawnPos.x + 60, spawnPos.y, false, saveData);
-    p2.isLocal = false; // will be set true if P2 joins
+    p2.isLocal = isClient;
     this.players.push(p2);
 
-    // Camera
+    // Camera follows the local player
+    const localPlayer = isClient ? p2 : p1;
     this.cameras.main.setBounds(0, 0, WORLD_W, WORLD_H);
-    this.cameras.main.startFollow(p1, true, 0.1, 0.1);
+    this.cameras.main.startFollow(localPlayer, true, 0.1, 0.1);
 
     // ── Input ─────────────────────────────────────────────────────
     this._cursors = this.input.keyboard.createCursorKeys();
@@ -840,9 +851,10 @@ export class GameScene extends Phaser.Scene {
     const p1 = this.players[0];
     const p2 = this.players[1];
 
-    if (p1) p1.update(time, delta, this._cursors, this._keys, this.enemies, this);
-    if (p2 && p2.isLocal) p2.update(time, delta, null, null, this.enemies, this);
-    else if (p2 && !p2.isLocal) this._taraAI(p1, p2, delta);
+    if (p1 && p1.isLocal)  p1.update(time, delta, this._cursors, this._keys, this.enemies, this);
+    if (p2 && p2.isLocal)  p2.update(time, delta, this._cursors, this._keys, this.enemies, this);
+    // Solo only: Tara follows P1 via AI when there is no network connection
+    if (p2 && !p2.isLocal && !this.network.connected) this._taraAI(p1, p2, delta);
 
     // ── Enemies ───────────────────────────────────────────────────
     const cam = this.cameras.main;
@@ -1203,7 +1215,8 @@ export class GameScene extends Phaser.Scene {
 
   _enforceTether() {
     const [p1, p2] = this.players;
-    if (!p1 || !p2 || !p2.isLocal) return;
+    // Tether only applies in solo mode; in co-op positions come from network
+    if (!p1 || !p2 || !p2.isLocal || this.network.connected) return;
     const d = Phaser.Math.Distance.Between(p1.x, p1.y, p2.x, p2.y);
     if (d > TETHER_DIST) {
       const angle = Math.atan2(p1.y - p2.y, p1.x - p2.x);
@@ -1226,13 +1239,12 @@ export class GameScene extends Phaser.Scene {
 
   _netBroadcast() {
     if (!this.network?.connected) return;
-    const p = this.players[0];
+    const localIdx = this.network.isHost() ? 0 : 1;
+    const p = this.players[localIdx];
     if (!p) return;
     this.network.send('PLAYER_STATE', {
+      playerIndex: localIdx,
       state: p.getNetState(),
-      enemies: this.enemies.filter(e => e?.alive).map(e => ({
-        id: e._id, x: e.x, y: e.y, hp: e.hp,
-      })),
     });
   }
 
