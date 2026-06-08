@@ -257,9 +257,11 @@ function bindZoomPan() {
   window.addEventListener('keyup',   e => { if (e.code === 'Space') { spaceDown = false; updateCursor(); } });
 
   const canvasEl = document.getElementById('canvas-container');
+  canvasEl.addEventListener('contextmenu', e => e.preventDefault());
   canvasEl.addEventListener('mousedown', e => {
     if (S.drawMode) return;
-    if ((spaceDown || S.panMode || e.button === 1) && e.button !== 2) {
+    // right-click always pans; middle-click always pans; left-click pans in pan mode or space+drag
+    if (e.button === 2 || e.button === 1 || (e.button === 0 && (spaceDown || S.panMode))) {
       panStart = { x: e.clientX, y: e.clientY };
       panOrigin = { x: S.stage.x(), y: S.stage.y() };
       canvasEl.style.cursor = 'grabbing';
@@ -384,7 +386,7 @@ function bindStageClick() {
       deselectAll();
     }
   });
-  S.stage.on('contextmenu', e => { e.evt.preventDefault(); cancelPlacing(); setMode('none'); });
+  S.stage.on('contextmenu', e => { e.evt.preventDefault(); });
 }
 
 // ── Keyboard ───────────────────────────────────────────────────────────────
