@@ -76,6 +76,9 @@ button.active{background:#4488ff33;border-color:#88aaff}
   <button id="btn-pan">✋ Pan</button>
   <button class="red" id="btn-del-mode">🗑 Delete Mode</button>
   <div class="sep"></div>
+  <button class="green" id="btn-share">🔗 Share</button>
+  <span id="peer-indicator" style="font-size:10px;color:#888;margin-left:4px"></span>
+  <div class="sep"></div>
   <span id="status-msg"></span>
   <input type="file" id="file-open" accept=".json" style="display:none">
 </div>
@@ -126,6 +129,9 @@ const S = {
   searchQ: '',
   panMode: false,
   deleteMode: false,
+  ws: null,
+  roomCode: null,
+  peerConnected: false,
 };
 
 // ── Utility ────────────────────────────────────────────────────────────────
@@ -298,7 +304,7 @@ function bindKeyboard() {
 
 // ── Toolbar ────────────────────────────────────────────────────────────────
 function bindToolbar() {
-  document.getElementById('bg-color').oninput = e => setBgColor(e.target.value);
+  document.getElementById('bg-color').oninput = e => setBgColor(e.target.value, false);
   document.getElementById('btn-bg-img').onclick = () => document.getElementById('file-bg').click();
   document.getElementById('file-bg').onchange  = e => loadBgImage(e.target.files[0]);
   document.getElementById('btn-preview').onclick = togglePreview;
@@ -309,6 +315,7 @@ function bindToolbar() {
   document.getElementById('btn-export').onclick = exportPNG;
   document.getElementById('btn-pan').onclick = () => setMode(S.panMode ? 'none' : 'pan');
   document.getElementById('btn-del-mode').onclick = () => setMode(S.deleteMode ? 'none' : 'delete');
+  document.getElementById('btn-share').onclick = shareRoom;
 }
 
 // ── Init ───────────────────────────────────────────────────────────────────
@@ -322,10 +329,13 @@ async function init() {
   } catch (err) {
     setStatus('⚠ Could not load assets: ' + err.message);
   }
+  // Auto-join room if URL has a #CODE hash
+  const hashCode = location.hash.slice(1).toUpperCase();
+  if (/^[A-Z]{4}$/.test(hashCode)) joinRoom(hashCode);
 }
 
 // ── Background ─────────────────────────────────────────────────────────────
-function setBgColor(c) { S.bgRect.fill(c); S.bgLayer.batchDraw(); }
+function setBgColor(c, remote) { S.bgRect.fill(c); S.bgLayer.batchDraw(); if (!remote) broadcast({ type: 'BG_COLOR', value: c }); }
 
 function loadBgImage(file) {
   if (!file) return;
@@ -421,27 +431,35 @@ function startPlacing(asset) {
 }
 
 // ── Sprite placement ───────────────────────────────────────────────────────
-async function placeSprite(asset, x, y) {
+async function placeSprite(asset, x, y, spriteId) {
   const url = assetURL(asset.dir, asset.frames[0]);
   let img;
   try { img = await getImg(url); }
   catch { setStatus('⚠ Failed to load: ' + url); return; }
 
+  const id = spriteId || genSpriteId();
   const node = new Konva.Image({
     x, y, image: img,
     offsetX: img.width / 2, offsetY: img.height / 2,
-    draggable: true,
+    draggable: !S.panMode && !S.deleteMode,
   });
   node.setAttr('assetDir',     asset.dir);
   node.setAttr('assetFrames',  asset.frames);
   node.setAttr('assetName',    asset.name);
   node.setAttr('assetAnimated',asset.animated);
   node.setAttr('currentFrame', 0);
+  node.setAttr('spriteId',     id);
 
   S.spritesLayer.add(node);
   bindSpriteEvents(node);
-  pushHistory();
-  setStatus('Placed: ' + asset.name);
+  if (!spriteId) {
+    // local placement — broadcast to peer
+    broadcast({ type: 'SPRITE_ADD', spriteId: id, dir: asset.dir, frames: asset.frames,
+      name: asset.name, animated: asset.animated, x, y,
+      offsetX: img.width / 2, offsetY: img.height / 2, scaleX: 1, scaleY: 1 });
+    pushHistory();
+    setStatus('Placed: ' + asset.name);
+  }
 }
 
 function cancelPlacing() {
@@ -456,12 +474,14 @@ function bindSpriteEvents(node) {
     if (S.panMode) return;
     if (S.deleteMode) {
       e.cancelBubble = true;
+      const id = node.getAttr('spriteId');
       S.transformer.nodes([]);
       S.selectedNode = null;
       node.destroy();
       S.spritesLayer.batchDraw();
       S.selLayer.batchDraw();
       document.getElementById('props').classList.remove('visible');
+      broadcast({ type: 'SPRITE_DELETE', spriteId: id });
       pushHistory();
       setStatus('Deleted — click another sprite or press Esc to exit Delete mode');
       return;
@@ -471,8 +491,18 @@ function bindSpriteEvents(node) {
     selectNode(node);
   });
   node.draggable(!S.panMode && !S.deleteMode);
-  node.on('dragend', () => { pushHistory(); updatePropsPanel(node); });
-  node.on('transformend', () => { pushHistory(); updatePropsPanel(node); });
+  node.on('dragend', () => {
+    pushHistory(); updatePropsPanel(node);
+    broadcast({ type: 'SPRITE_MOVE', spriteId: node.getAttr('spriteId'),
+      x: node.x(), y: node.y(), scaleX: node.scaleX(), scaleY: node.scaleY(),
+      offsetX: node.offsetX(), offsetY: node.offsetY() });
+  });
+  node.on('transformend', () => {
+    pushHistory(); updatePropsPanel(node);
+    broadcast({ type: 'SPRITE_MOVE', spriteId: node.getAttr('spriteId'),
+      x: node.x(), y: node.y(), scaleX: node.scaleX(), scaleY: node.scaleY(),
+      offsetX: node.offsetX(), offsetY: node.offsetY() });
+  });
 }
 
 // ── Selection & properties ─────────────────────────────────────────────────
@@ -503,12 +533,14 @@ function deselectAll() {
 
 function deleteSelected() {
   if (!S.selectedNode) return;
+  const id = S.selectedNode.getAttr('spriteId');
   S.transformer.nodes([]);
   S.selectedNode.destroy();
   S.selectedNode = null;
   S.spritesLayer.batchDraw();
   S.selLayer.batchDraw();
   document.getElementById('props').classList.remove('visible');
+  broadcast({ type: 'SPRITE_DELETE', spriteId: id });
   pushHistory();
 }
 
@@ -525,6 +557,10 @@ function bindPropsPanel() {
     S.selectedNode.offsetX(flipx ? -S.selectedNode.width() / 2 : S.selectedNode.width() / 2);
     S.spritesLayer.batchDraw();
     S.transformer.forceUpdate();
+    broadcast({ type: 'SPRITE_MOVE', spriteId: S.selectedNode.getAttr('spriteId'),
+      x: S.selectedNode.x(), y: S.selectedNode.y(),
+      scaleX: S.selectedNode.scaleX(), scaleY: S.selectedNode.scaleY(),
+      offsetX: S.selectedNode.offsetX(), offsetY: S.selectedNode.offsetY() });
     pushHistory();
   }
   ['prop-x','prop-y','prop-scale'].forEach(id => document.getElementById(id).addEventListener('change', applyProp));
@@ -563,8 +599,13 @@ function togglePreview() {
 }
 
 // ── Undo ───────────────────────────────────────────────────────────────────
+function genSpriteId() {
+  return 's_' + Date.now() + '_' + Math.random().toString(36).slice(2, 7);
+}
+
 function serializeSprites() {
   return S.spritesLayer.getChildren().map(n => ({
+    spriteId: n.getAttr('spriteId'),
     dir:      n.getAttr('assetDir'),
     frames:   n.getAttr('assetFrames'),
     name:     n.getAttr('assetName'),
@@ -594,12 +635,13 @@ async function restoreSprites(list) {
     const url = assetURL(d.dir, d.frames[0]);
     try {
       const img = await getImg(url);
-      const node = new Konva.Image({ x: d.x, y: d.y, image: img, scaleX: d.scaleX, scaleY: d.scaleY, offsetX: d.offsetX, offsetY: d.offsetY, draggable: true });
+      const node = new Konva.Image({ x: d.x, y: d.y, image: img, scaleX: d.scaleX, scaleY: d.scaleY, offsetX: d.offsetX, offsetY: d.offsetY, draggable: !S.panMode && !S.deleteMode });
       node.setAttr('assetDir',     d.dir);
       node.setAttr('assetFrames',  d.frames);
       node.setAttr('assetName',    d.name);
       node.setAttr('assetAnimated',d.animated);
       node.setAttr('currentFrame', 0);
+      node.setAttr('spriteId',     d.spriteId || genSpriteId());
       S.spritesLayer.add(node);
       bindSpriteEvents(node);
     } catch { /* skip missing images */ }
@@ -679,6 +721,119 @@ function exportPNG() {
     if (wasSelected) selectNode(wasSelected);
     setStatus('Exported: region_map.png (3200×2000)');
   }, 60);
+}
+
+// ── WebSocket collaboration ────────────────────────────────────────────────
+function broadcast(msg) {
+  if (S.ws && S.ws.readyState === 1 && S.roomCode) S.ws.send(JSON.stringify(msg));
+}
+
+function updatePeerIndicator() {
+  const el = document.getElementById('peer-indicator');
+  if (!S.roomCode) { el.textContent = ''; return; }
+  el.textContent = S.peerConnected ? '👥 Connected' : '👤 Waiting for partner…';
+  el.style.color = S.peerConnected ? '#88ff88' : '#888';
+}
+
+function openWs(onOpen) {
+  if (S.ws && S.ws.readyState <= 1) { onOpen(); return; }
+  const proto = location.protocol === 'https:' ? 'wss:' : 'ws:';
+  S.ws = new WebSocket(proto + '//' + location.host);
+  S.ws.onopen = onOpen;
+  S.ws.onmessage = e => { let m; try { m = JSON.parse(e.data); } catch { return; } handleWsMsg(m); };
+  S.ws.onclose = () => { S.peerConnected = false; updatePeerIndicator(); };
+}
+
+function shareRoom() {
+  if (S.roomCode) {
+    navigator.clipboard.writeText(location.href).catch(() => {});
+    setStatus('URL copied — send it to your partner: ' + location.href);
+    return;
+  }
+  openWs(() => S.ws.send(JSON.stringify({ type: 'ROOM_CREATE' })));
+}
+
+function joinRoom(code) {
+  openWs(() => S.ws.send(JSON.stringify({ type: 'ROOM_JOIN', code })));
+}
+
+function sendFullState() {
+  broadcast({
+    type: 'FULL_STATE',
+    background: { type: 'color', value: document.getElementById('bg-color').value },
+    sprites: serializeSprites(),
+  });
+}
+
+async function handleWsMsg(msg) {
+  if (msg.type === 'ROOM_READY') {
+    S.roomCode = msg.code;
+    history.replaceState(null, '', '#' + msg.code);
+    document.getElementById('btn-share').textContent = '🔗 ' + msg.code;
+    updatePeerIndicator();
+    if (msg.role === 'client') {
+      setStatus('Joined room ' + msg.code + ' — waiting for scene…');
+      // host will send FULL_STATE when CLIENT_JOINED arrives on their end
+    } else {
+      setStatus('Room created — click 🔗 ' + msg.code + ' to copy the share URL');
+    }
+  }
+  else if (msg.type === 'CLIENT_JOINED') {
+    S.peerConnected = true;
+    updatePeerIndicator();
+    sendFullState();
+    setStatus('Partner connected — scene sent');
+  }
+  else if (msg.type === 'HOST_DISCONNECTED' || msg.type === 'CLIENT_DISCONNECTED') {
+    S.peerConnected = false;
+    updatePeerIndicator();
+    setStatus('Partner disconnected');
+  }
+  else if (msg.type === 'ROOM_ERROR') {
+    setStatus('⚠ Room error: ' + (msg.reason || 'unknown'));
+  }
+  else if (msg.type === 'FULL_STATE') {
+    if (msg.background?.type === 'color') {
+      document.getElementById('bg-color').value = msg.background.value;
+      setBgColor(msg.background.value, true);
+    }
+    await restoreSprites(msg.sprites);
+    S.history = []; pushHistory();
+    S.peerConnected = true;
+    updatePeerIndicator();
+    setStatus('Scene synced from partner (' + msg.sprites.length + ' sprites)');
+  }
+  else if (msg.type === 'SPRITE_ADD') {
+    const asset = { dir: msg.dir, frames: msg.frames, name: msg.name, animated: msg.animated };
+    const url = assetURL(msg.dir, msg.frames[0]);
+    let img; try { img = await getImg(url); } catch { return; }
+    const node = new Konva.Image({ x: msg.x, y: msg.y, image: img,
+      offsetX: msg.offsetX, offsetY: msg.offsetY, scaleX: msg.scaleX, scaleY: msg.scaleY,
+      draggable: !S.panMode && !S.deleteMode });
+    node.setAttr('assetDir', msg.dir); node.setAttr('assetFrames', msg.frames);
+    node.setAttr('assetName', msg.name); node.setAttr('assetAnimated', msg.animated);
+    node.setAttr('currentFrame', 0); node.setAttr('spriteId', msg.spriteId);
+    S.spritesLayer.add(node); bindSpriteEvents(node); S.spritesLayer.batchDraw();
+  }
+  else if (msg.type === 'SPRITE_MOVE') {
+    const node = S.spritesLayer.getChildren().find(n => n.getAttr('spriteId') === msg.spriteId);
+    if (!node) return;
+    node.position({ x: msg.x, y: msg.y });
+    node.scaleX(msg.scaleX); node.scaleY(msg.scaleY);
+    node.offsetX(msg.offsetX); node.offsetY(msg.offsetY);
+    S.spritesLayer.batchDraw();
+    if (S.selectedNode === node) updatePropsPanel(node);
+  }
+  else if (msg.type === 'SPRITE_DELETE') {
+    const node = S.spritesLayer.getChildren().find(n => n.getAttr('spriteId') === msg.spriteId);
+    if (!node) return;
+    if (S.selectedNode === node) { S.transformer.nodes([]); S.selectedNode = null; document.getElementById('props').classList.remove('visible'); }
+    node.destroy(); S.spritesLayer.batchDraw(); S.selLayer.batchDraw();
+  }
+  else if (msg.type === 'BG_COLOR') {
+    document.getElementById('bg-color').value = msg.value;
+    setBgColor(msg.value, true);
+  }
 }
 
 window.addEventListener('load', init);
