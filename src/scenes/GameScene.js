@@ -140,14 +140,42 @@ export class GameScene extends Phaser.Scene {
     this.cameras.main.setBounds(0, 0, WORLD_W, WORLD_H);
     this.cameras.main.startFollow(localPlayer, true, 0.1, 0.1);
 
-    // Register network receive handler NOW — players array is populated
+    // Register network receive handlers NOW — players array is populated
     if (this.network.connected) {
       this.network.on('PLAYER_STATE', ({ playerIndex, state }) => {
         const remote = this.players[playerIndex];
-        if (remote && !remote.isLocal) {
-          remote.applyNetState(state);
-        }
+        if (remote && !remote.isLocal) remote.applyNetState(state);
       });
+
+      // Client: apply enemy states broadcast by host
+      if (this.network.isClient()) {
+        this._remoteEnemyMap = new Map();
+        this.network.on('ENEMY_SYNC', ({ enemies }) => {
+          if (!enemies) return;
+          const seenIds = new Set();
+          for (const state of enemies) {
+            seenIds.add(state.id);
+            let e = this._remoteEnemyMap.get(state.id);
+            if (!e) {
+              e = new Enemy(this, state.x, state.y, state.typeKey, 1);
+              e._id   = state.id;
+              e.maxHp = state.maxHp;
+              this.enemies.push(e);
+              this._remoteEnemyMap.set(state.id, e);
+            }
+            e.applyNetState(state);
+          }
+          // Remove enemies that are gone on host (killed)
+          for (const [id, e] of this._remoteEnemyMap) {
+            if (!seenIds.has(id)) {
+              if (e.alive) e._die(null);
+              const idx = this.enemies.indexOf(e);
+              if (idx > -1) this.enemies.splice(idx, 1);
+              this._remoteEnemyMap.delete(id);
+            }
+          }
+        });
+      }
     }
 
     // ── Input ─────────────────────────────────────────────────────
@@ -333,6 +361,9 @@ export class GameScene extends Phaser.Scene {
   }
 
   _createSpawners(region) {
+    // In co-op: only host spawns and simulates enemies
+    if (this.network.connected && !this.network.isHost()) return;
+
     if (region.fixedEnemies?.length) {
       this._spawnFixedEnemies(region);
     }
@@ -864,12 +895,15 @@ export class GameScene extends Phaser.Scene {
     const cam = this.cameras.main;
     const camCX = cam.scrollX + GAME_W / 2;
     const camCY = cam.scrollY + GAME_H / 2;
-    for (let i = this.enemies.length - 1; i >= 0; i--) {
-      const e = this.enemies[i];
-      if (!e || !e.active) { this.enemies.splice(i, 1); continue; }
-      const dx = e.x - camCX, dy = e.y - camCY;
-      if (dx * dx + dy * dy > 640000) continue;
-      e.update(time, delta, this.players, this._treePositions);
+    // Only host runs enemy AI; client receives positions via ENEMY_SYNC
+    if (!this.network.connected || this.network.isHost()) {
+      for (let i = this.enemies.length - 1; i >= 0; i--) {
+        const e = this.enemies[i];
+        if (!e || !e.active) { this.enemies.splice(i, 1); continue; }
+        const dx = e.x - camCX, dy = e.y - camCY;
+        if (dx * dx + dy * dy > 640000) continue;
+        e.update(time, delta, this.players, this._treePositions);
+      }
     }
 
     // ── Projectiles ───────────────────────────────────────────────
@@ -1250,6 +1284,13 @@ export class GameScene extends Phaser.Scene {
       playerIndex: localIdx,
       state: p.getNetState(),
     });
+    // Host broadcasts all enemy states so client can render them
+    if (this.network.isHost()) {
+      const enemyStates = this.enemies
+        .filter(e => e?.active)
+        .map(e => e.getNetState());
+      this.network.send('ENEMY_SYNC', { enemies: enemyStates });
+    }
   }
 
   _onSpawnProjectile(data) {

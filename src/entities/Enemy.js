@@ -4,11 +4,13 @@ import { QualitySettings } from '../systems/QualitySettings.js';
 const STATE = { IDLE: 'idle', PURSUE: 'pursue', ATTACK: 'attack', DEAD: 'dead' };
 const IDLE_ROAM_DIST = 120;
 const DETECT_RANGE   = 350;
+let _enemyIdCounter  = 0;
 
 export class Enemy extends Phaser.GameObjects.Container {
   constructor(scene, x, y, typeKey, diffMult = 1) {
     super(scene, x, y);
     scene.add.existing(this);
+    this._id = ++_enemyIdCounter;
 
     const cfg = ENEMY_TYPES[typeKey];
     this.typeKey   = typeKey;
@@ -282,5 +284,36 @@ export class Enemy extends Phaser.GameObjects.Container {
     this._hpBar.setFillStyle(pct > 0.5 ? 0x22cc44 : pct > 0.25 ? 0xffcc00 : 0xff4444);
     this._hpBar.setVisible(pct < 1);
     this._hpBg.setVisible(pct < 1);
+  }
+
+  getNetState() {
+    return {
+      id:      this._id,
+      typeKey: this.typeKey,
+      x:       this.x,
+      y:       this.y,
+      hp:      this.hp,
+      maxHp:   this.maxHp,
+      alive:   this.alive,
+      flipX:   this.sprite?.flipX || false,
+      anim:    this.sprite?.anims?.currentAnim?.key || '',
+    };
+  }
+
+  applyNetState(state) {
+    if (!state.alive && this.alive) { this._die(null); return; }
+    if (!this.alive) return;
+    if (this.body) this.body.reset(state.x, state.y);
+    else { this.x = state.x; this.y = state.y; }
+    this.hp = state.hp;
+    this._updateHpBar();
+    if (this.sprite) {
+      this.sprite.setFlipX(state.flipX);
+      const k = state.anim;
+      if (k && this.sprite.anims?.currentAnim?.key !== k && this.scene.anims.exists(k)) {
+        this.sprite.play(k, true);
+      }
+    }
+    this.setDepth(state.y);
   }
 }
