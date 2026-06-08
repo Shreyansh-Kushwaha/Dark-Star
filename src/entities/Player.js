@@ -423,8 +423,14 @@ export class Player extends Phaser.GameObjects.Container {
   }
 
   applyNetState(state) {
-    this.x       = state.x;
-    this.y       = state.y;
+    // body.reset() moves both the physics body AND the container atomically.
+    // Direct this.x/this.y assignment gets overridden by body.postUpdate() every frame.
+    if (this.body) {
+      this.body.reset(state.x, state.y);
+    } else {
+      this.x = state.x;
+      this.y = state.y;
+    }
     this.hp      = state.hp;
     this.stamina = state.stamina;
     this.downed  = state.downed;
@@ -433,7 +439,7 @@ export class Player extends Phaser.GameObjects.Container {
       this.sprite.play(state.anim, true);
     }
     this._updateHpBar();
-    this.setDepth(this.y);
+    this.setDepth(state.y);
   }
 
   applyStat(stat, tier) {

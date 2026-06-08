@@ -113,14 +113,6 @@ export class GameScene extends Phaser.Scene {
     this.network = this.registry.get('network') || new NetworkManager();
     this.registry.remove('network');
 
-    // Apply remote player state when packet arrives
-    if (this.network.connected) {
-      this.network.on('PLAYER_STATE', ({ playerIndex, state }) => {
-        const remote = this.players[playerIndex];
-        if (remote && !remote.isLocal) remote.applyNetState(state);
-      });
-    }
-
     // Physics world
     this.physics.world.setBounds(0, 0, WORLD_W, WORLD_H);
 
@@ -145,6 +137,16 @@ export class GameScene extends Phaser.Scene {
     const localPlayer = isClient ? p2 : p1;
     this.cameras.main.setBounds(0, 0, WORLD_W, WORLD_H);
     this.cameras.main.startFollow(localPlayer, true, 0.1, 0.1);
+
+    // Register network receive handler NOW — players array is populated
+    if (this.network.connected) {
+      this.network.on('PLAYER_STATE', ({ playerIndex, state }) => {
+        const remote = this.players[playerIndex];
+        if (remote && !remote.isLocal) {
+          remote.applyNetState(state);
+        }
+      });
+    }
 
     // ── Input ─────────────────────────────────────────────────────
     this._cursors = this.input.keyboard.createCursorKeys();
