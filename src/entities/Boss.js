@@ -23,6 +23,7 @@ export class Boss extends Phaser.GameObjects.Container {
     this._invincible   = false;
     this._graceTimer   = 2500;
     this._active       = false;
+    this._introActive  = false;
 
     const texBase = cfg.textureBase;
     this.sprite = scene.add.sprite(0, 0, texBase + '_idle_01');
@@ -66,6 +67,7 @@ export class Boss extends Phaser.GameObjects.Container {
 
   update(time, delta, players, scene) {
     if (!this.alive || !this._active) return;
+    if (this._introActive) return;
     this.setDepth(this.y);
 
     if (this._graceTimer > 0) { this._graceTimer -= delta; return; }
@@ -240,7 +242,7 @@ export class Boss extends Phaser.GameObjects.Container {
     }
 
     scene.cameras.main.shake(500, 0.018);
-    scene.events.emit('boss_phase_changed', { phase: newPhase, label: labels[newPhase], boss: this });
+    scene.events.emit('boss_phase_changed', { phase: newPhase, label: labels[newPhase], boss: this, phaseIndex: newPhase });
     scene.audio?.bossPhase?.();
   }
 

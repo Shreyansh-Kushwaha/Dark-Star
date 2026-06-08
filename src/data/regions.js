@@ -8,7 +8,7 @@ export const REGIONS = [
   {
     index: 0,
     name: 'Gramavana',
-    subtitle: 'The Forest Village',
+    subtitle: 'The Village of Ash and Memory',
     bgColor:     0x4a7c3f,
     bgColor2:    0x3d6a33,
     borderColor: 0x1e3d18,
@@ -46,6 +46,10 @@ export const REGIONS = [
     ],
 
     enemyTypes: ['melee'],
+    echoTriggers: [],
+    worldFragments: [
+      { fragmentId: 'lore_gramavana_stone', x: 1900, y: 850 },
+    ],
     ambientKey: 0,
   },
 
@@ -88,6 +92,13 @@ export const REGIONS = [
     enemyTypes: ['melee'],
     portalUnlock: 'npc_talk:mahavana_hermit',
     denseForest: true,
+    echoTriggers: [
+      { id: 'echo_mahavana_voice', x: 1800, y: 950, r: 220,
+        text: '⟨Voice in the Trees⟩ "They called me the problem because I refused to become their excuse."' },
+    ],
+    worldFragments: [
+      { fragmentId: 'lore_mahavana_roots', x: 1750, y: 920 },
+    ],
     ambientKey: 1,
   },
 
@@ -135,6 +146,10 @@ export const REGIONS = [
     ],
     enemyTypes: ['melee', 'ranged', 'orc'],
     portalUnlock: 'kill_all',
+    echoTriggers: [],
+    worldFragments: [
+      { fragmentId: 'lore_grove_mural', x: 1800, y: 900 },
+    ],
     ambientKey: 2,
   },
 
@@ -177,6 +192,13 @@ export const REGIONS = [
 
     portalUnlock: 'boss_kill',
     waterAmbient: true,
+    echoTriggers: [
+      { id: 'echo_nagapatal_prison', x: 1700, y: 1000, r: 200,
+        text: '⟨Sealed Prison Echo⟩ "I held the thread together when the heavens began to fear it. I was not rewarded. I was renamed."' },
+    ],
+    worldFragments: [
+      { fragmentId: 'lore_drowned_reliquary', x: 1700, y: 800 },
+    ],
     ambientKey: 3,
   },
 
@@ -184,7 +206,7 @@ export const REGIONS = [
   {
     index: 4,
     name: 'Deva Mandira',
-    subtitle: 'Temple of the Gods',
+    subtitle: 'The Temple of the Gods',
     bgColor:     0xc47a28,
     bgColor2:    0xaa6820,
     borderColor: 0x5c3410,
@@ -208,6 +230,13 @@ export const REGIONS = [
       { x: 1500, y: 1200 },
     ],
     enemyTypes: ['orc', 'elite', 'flying'],
+    echoTriggers: [
+      { id: 'echo_devamandira_vault', x: 1500, y: 1000, r: 180,
+        text: '⟨Memory Echo⟩ "Ekatmadeva spoke: I asked only for the people to remain whole. Suryadeva replied: Wholeness is power. Power must be governed."' },
+    ],
+    worldFragments: [
+      { fragmentId: 'lore_vault_mural', x: 1500, y: 850 },
+    ],
     ambientKey: 4,
   },
 
@@ -215,7 +244,7 @@ export const REGIONS = [
   {
     index: 5,
     name: 'Swarga Seema',
-    subtitle: 'Edge of Heaven',
+    subtitle: 'The Edge of Heaven',
     bgColor:     0x8ab4d4,
     bgColor2:    0x7aa0c0,
     borderColor: 0x3a5a7a,
@@ -239,6 +268,13 @@ export const REGIONS = [
       { x: 1600, y: 1200 },
     ],
     enemyTypes: ['ranged', 'elite', 'flying'],
+    echoTriggers: [
+      { id: 'echo_swargaseema_seal', x: 1600, y: 950, r: 200,
+        text: '⟨Cloud Seal Inscription⟩ "The higher you climb, the thinner the story becomes. Heaven is not a sanctuary. It is a palace built on omission."' },
+    ],
+    worldFragments: [
+      { fragmentId: 'lore_cloud_inscription', x: 1600, y: 800 },
+    ],
     ambientKey: 5,
 
   },
@@ -271,6 +307,13 @@ export const REGIONS = [
       { x: 1500, y: 1150 },
     ],
     enemyTypes: ['melee', 'elite', 'flying'],
+    echoTriggers: [
+      { id: 'echo_viyoga_void', x: 1500, y: 1000, r: 240,
+        text: '⟨Voice in the Void⟩ "The final prison is not stone. It is belief. You carry the key — you always did."' },
+    ],
+    worldFragments: [
+      { fragmentId: 'lore_prison_stone', x: 1500, y: 1100 },
+    ],
     ambientKey: 6,
 
   },

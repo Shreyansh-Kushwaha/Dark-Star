@@ -34,7 +34,7 @@ export class SaveManager {
       statTiers: { maxHp: 0, stamina: 0, abilityPow: 0 },
       completedQuests: [],
       inventory: [],
-      loreCount: 0,
+      collectedLoreIds: [],
       bossKills: [],
     };
   }
