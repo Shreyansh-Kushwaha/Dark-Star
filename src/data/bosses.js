@@ -86,9 +86,9 @@ export const BOSSES = {
     textureBase: 'dslime', scale: 2.8, tint: null,
     maxHp: 4000, maxPosture: 100, postureRegen: 4,
     phases: [
-      { hpThreshold: 1.0, speed: 90,  attackCd: 1600, patterns: ['void_slash', 'despair_wave'] },
-      { hpThreshold: 0.5, speed: 120, attackCd: 1300, patterns: ['void_slash', 'despair_wave', 'severance'] },
-      { hpThreshold: 0.3, speed: 150, attackCd: 1000, patterns: ['void_slash', 'despair_wave', 'severance', 'annihilation'] },
+      { hpThreshold: 1.0, speed: 90,  attackCd: 1600, patterns: ['void_slash', 'despair_wave', 'soul_split'] },
+      { hpThreshold: 0.5, speed: 125, attackCd: 1250, patterns: ['void_slash', 'despair_wave', 'soul_split', 'soul_split', 'severance', 'speed_burst'] },
+      { hpThreshold: 0.3, speed: 162, attackCd: 950,  patterns: ['void_slash', 'despair_wave', 'soul_split', 'soul_split', 'severance', 'speed_burst', 'annihilation', 'annihilation'] },
     ],
     phaseLines: [
       '',

@@ -25,9 +25,10 @@ export class Boss extends Phaser.GameObjects.Container {
     this._active       = false;
     this._introActive  = false;
     this._sinWave      = 0;
-    this._decoys       = null;
+    this._decoys        = null;
     this._windCorridors = [];
-    this._aura         = null;
+    this._splitShadows  = [];
+    this._aura          = null;
 
     const texBase = cfg.textureBase;
     this.sprite = scene.add.sprite(0, cfg.visualOffsetY || 0, texBase + '_idle_01');
@@ -223,6 +224,7 @@ export class Boss extends Phaser.GameObjects.Container {
     }
 
     if (this._windCorridors?.length) this._updateWindCorridors(delta, players, scene);
+    if (this._splitShadows?.length)  this._updateSplitShadows(time, delta, players, scene);
   }
 
   _nearestPlayer(players) {
@@ -401,6 +403,66 @@ export class Boss extends Phaser.GameObjects.Container {
               key: 'fire_01', speed: 210, tint: 0x00ff55, poisonOnHit: true,
             });
           }
+          return;
+        }
+      }
+    }
+
+    if (this.bossKey === 'viyogasur') {
+      switch (pattern) {
+
+        case 'soul_split': {
+          // Separates a void shadow from the player — it chases and attacks them
+          scene.cameras.main.shake(220, 0.008);
+          const tx = target.x, ty = target.y;
+          const burst = scene.add.circle(tx, ty, 48, 0x9900ff, 0.55).setDepth(ty + 1);
+          scene.tweens.add({ targets: burst, alpha: 0, scaleX: 2.2, scaleY: 2.2, duration: 360, onComplete: () => burst.destroy() });
+          scene.time.delayedCall(320, () => {
+            if (!this.alive) return;
+            const shadow = scene.add.sprite(tx, ty, this.cfg.textureBase + '_idle_01')
+              .setScale(this.sprite.scaleX * 0.65)
+              .setTint(0x1a0033)
+              .setAlpha(0)
+              .setDepth(ty);
+            if (scene.anims.exists(this.cfg.textureBase + '_idle')) shadow.play(this.cfg.textureBase + '_idle', true);
+            scene.tweens.add({ targets: shadow, alpha: 0.82, duration: 380 });
+            this._splitShadows.push({ sprite: shadow, x: tx, y: ty, timer: 9000, atkTimer: 0 });
+          });
+          return;
+        }
+
+        case 'speed_burst': {
+          // Boss dashes through the player at lethal speed, leaving void trails
+          target.notifyIncomingAttack?.();
+          const ang = Math.atan2(target.y - this.y, target.x - this.x);
+          this._invincible = true;
+          scene.cameras.main.shake(180, 0.009);
+          scene.time.delayedCall(160, () => {
+            if (!this.alive) return;
+            this.body?.setVelocity(Math.cos(ang) * 1500, Math.sin(ang) * 1500);
+            // Trail afterimages
+            for (let t = 0; t < 5; t++) {
+              scene.time.delayedCall(t * 35, () => {
+                if (!this.alive) return;
+                const trail = scene.add.sprite(this.x, this.y, this.cfg.textureBase + '_idle_01')
+                  .setScale(this.sprite.scaleX).setTint(0x6600aa).setAlpha(0.45).setDepth(this.y - 1);
+                scene.tweens.add({ targets: trail, alpha: 0, duration: 260, onComplete: () => trail.destroy() });
+              });
+            }
+            scene.time.delayedCall(230, () => {
+              if (!this.alive) return;
+              this.body?.setVelocity(0, 0);
+              this._invincible = false;
+              scene.cameras.main.shake(280, 0.012);
+              for (const p of scene.players) {
+                if (!p?.alive || p.downed) continue;
+                if (Phaser.Math.Distance.Between(this.x, this.y, p.x, p.y) <= 140) {
+                  p.takeDamage(this.cfg.maxHp * 0.09, this, scene);
+                  p.applySlow?.(scene, 900);
+                }
+              }
+            });
+          });
           return;
         }
       }
@@ -695,6 +757,53 @@ export class Boss extends Phaser.GameObjects.Container {
     }
   }
 
+  _updateSplitShadows(time, delta, players, scene) {
+    const speed = this.cfg.phases[this.phase].speed * 0.72;
+    for (let i = this._splitShadows.length - 1; i >= 0; i--) {
+      const sh = this._splitShadows[i];
+      if (!sh.sprite?.active) { this._splitShadows.splice(i, 1); continue; }
+      sh.timer -= delta;
+      sh.atkTimer = Math.max(0, sh.atkTimer - delta);
+
+      if (sh.timer <= 0) {
+        // Shadow expires: void burst at its position
+        scene.cameras.main.shake(180, 0.007);
+        for (let j = 0; j < 6; j++) {
+          const a = (Math.PI * 2 / 6) * j;
+          scene.events.emit('spawn_projectile', {
+            x: sh.x, y: sh.y, angle: a,
+            damage: this.cfg.maxHp * 0.04, fromEnemy: true,
+            key: 'fire_01', speed: 175, tint: 0xaa00ff,
+          });
+        }
+        scene.tweens.add({ targets: sh.sprite, alpha: 0, scaleX: 2, scaleY: 2, duration: 280, onComplete: () => { try { sh.sprite.destroy(); } catch {} } });
+        this._splitShadows.splice(i, 1);
+        continue;
+      }
+
+      // Chase nearest player
+      const t = this._nearestPlayer(players);
+      if (t) {
+        const ddx = t.x - sh.x, ddy = t.y - sh.y;
+        const dist = Math.sqrt(ddx * ddx + ddy * ddy);
+        if (dist > 30) {
+          sh.x += (ddx / dist) * speed * delta / 1000;
+          sh.y += (ddy / dist) * speed * delta / 1000;
+          sh.sprite.setFlipX(ddx < 0);
+        } else if (sh.atkTimer <= 0) {
+          sh.atkTimer = 950;
+          t.takeDamage(this.cfg.maxHp * 0.042, this, scene);
+          scene.cameras.main.shake(130, 0.005);
+        }
+      }
+
+      sh.sprite.setPosition(sh.x, sh.y);
+      sh.sprite.setDepth(sh.y);
+      // Eerie flicker
+      sh.sprite.setAlpha(0.65 + Math.sin(time / 110) * 0.18);
+    }
+  }
+
   _spawnDamageNumber(scene, amount) {
     if (!scene) return;
     const heavy = amount >= 40;
@@ -757,10 +866,26 @@ export class Boss extends Phaser.GameObjects.Container {
     }
 
     if (newPhase === 2) {
-      this.sprite.setTint(0xff2222);
-      scene.time.delayedCall(400, () => {
-        if (this.alive) this.sprite.setTint(this.cfg.tint || 0xffffff);
-      });
+      if (this.bossKey === 'viyogasur') {
+        // True form reveal: brief gold flash (Ekatmadeva), then void-purple final form
+        this._staggerTimer = 4200;
+        this.sprite.setTint(0xffd700);
+        const goldAura = scene.add.circle(this.x, this.y, 140, 0xffdd44, 0.3).setDepth(this.y - 1);
+        scene.tweens.add({ targets: goldAura, alpha: 0, scaleX: 3.2, scaleY: 3.2, duration: 2400, ease: 'Power2.Out', onComplete: () => goldAura.destroy() });
+        scene.tweens.add({ targets: this.sprite, alpha: { from: 1, to: 0.5 }, duration: 220, yoyo: true, repeat: 3, delay: 400 });
+        scene.events.emit('show_dialogue', { text: '⟨Ekatmadeva⟩ "...you see me.\nNot the demon.\nThe wound."' });
+        scene.time.delayedCall(2600, () => {
+          if (!this.alive) return;
+          scene.events.emit('hide_dialogue');
+          this.sprite.setTint(0x5500cc);
+          scene.cameras.main.shake(550, 0.024);
+        });
+      } else {
+        this.sprite.setTint(0xff2222);
+        scene.time.delayedCall(400, () => {
+          if (this.alive) this.sprite.setTint(this.cfg.tint || 0xffffff);
+        });
+      }
     }
 
     scene.cameras.main.shake(500, 0.018);
@@ -791,6 +916,8 @@ export class Boss extends Phaser.GameObjects.Container {
     this._dismissDecoys(scene);
     for (const c of this._windCorridors) { try { c.gfx?.destroy(); } catch {} }
     this._windCorridors = [];
+    for (const sh of this._splitShadows) { try { sh.sprite?.destroy(); } catch {} }
+    this._splitShadows = [];
     if (this._aura) { this._aura.destroy(); this._aura = null; }
 
     scene.cameras.main.shake(700, 0.025);
