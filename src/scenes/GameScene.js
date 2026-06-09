@@ -143,23 +143,30 @@ export class GameScene extends Phaser.Scene {
     this.cameras.main.setBounds(0, 0, WORLD_W, WORLD_H);
     this.cameras.main.startFollow(localPlayer, true, 0.1, 0.1);
 
-    // Register network receive handlers NOW — players array is populated
+    // Register network receive handlers NOW — players array is populated.
+    // Store references so shutdown can call off() and prevent accumulation on restart.
     if (this.network.connected) {
-      this.network.on('PLAYER_STATE', ({ playerIndex, state }) => {
+      const _netCleanup = [];
+
+      const onPlayerState = ({ playerIndex, state }) => {
         const remote = this.players[playerIndex];
         if (remote && !remote.isLocal) remote.applyNetState(state);
-      });
+      };
+      this.network.on('PLAYER_STATE', onPlayerState);
+      _netCleanup.push(['PLAYER_STATE', onPlayerState]);
 
       // Client: apply enemy states broadcast by host
       if (this.network.isClient()) {
-        this.network.on('REGION_CHANGE', ({ newIndex }) => {
+        const onRegionChange = ({ newIndex }) => {
           this._saveProgress(newIndex);
           this.audio.portal();
           this._fadeAndTransition(newIndex);
-        });
+        };
+        this.network.on('REGION_CHANGE', onRegionChange);
+        _netCleanup.push(['REGION_CHANGE', onRegionChange]);
 
         this._remoteEnemyMap = new Map();
-        this.network.on('ENEMY_SYNC', ({ enemies }) => {
+        const onEnemySync = ({ enemies }) => {
           if (!enemies) return;
           const seenIds = new Set();
           for (const state of enemies) {
@@ -183,8 +190,14 @@ export class GameScene extends Phaser.Scene {
               this._remoteEnemyMap.delete(id);
             }
           }
-        });
+        };
+        this.network.on('ENEMY_SYNC', onEnemySync);
+        _netCleanup.push(['ENEMY_SYNC', onEnemySync]);
       }
+
+      this.events.once('shutdown', () => {
+        for (const [type, fn] of _netCleanup) this.network.off(type, fn);
+      });
     }
 
     // ── Input ─────────────────────────────────────────────────────
@@ -1166,12 +1179,13 @@ export class GameScene extends Phaser.Scene {
   }
 
   _saveProgress(newIndex) {
+    const localPlayer = this.players.find(p => p.isLocal) || this.players[0];
     const saveData = {
       regionIndex: newIndex,
       playerStats: {
-        maxHp: this.players[0]?.maxHp || 200,
-        maxStamina: this.players[0]?.maxStamina || 100,
-        abilityPow: this.players[0]?.abilityPow || 1.0,
+        maxHp: localPlayer?.maxHp || 200,
+        maxStamina: localPlayer?.maxStamina || 100,
+        abilityPow: localPlayer?.abilityPow || 1.0,
       },
       statTiers: this._save?.statTiers || {},
       completedQuests: this.questManager.getCompletedArray(),

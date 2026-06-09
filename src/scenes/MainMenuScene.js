@@ -543,7 +543,7 @@ export class MainMenuScene extends Phaser.Scene {
     this.add.rectangle(cx, panelY, panelW, panelH, 0x04040f, 0.96).setDepth(D + 5);
     this.add.rectangle(cx, panelY, panelW, panelH).setStrokeStyle(2, 0x4444dd).setDepth(D + 6);
 
-    this.add.text(cx, panelY - 140, 'SELECT STARTING REGION', {
+    const titleTxt = this.add.text(cx, panelY - 140, 'SELECT STARTING REGION', {
       fontSize: '20px', fontFamily: 'monospace', color: '#ffdd00',
       stroke: '#000', strokeThickness: 3,
     }).setOrigin(0.5).setDepth(D + 7);
@@ -553,6 +553,9 @@ export class MainMenuScene extends Phaser.Scene {
     const startX = cx - ((cols * btnW + (cols - 1) * gapX) / 2) + btnW / 2;
     const startY = panelY - 90;
 
+    let started = false;
+
+    const allBgs = [];
     REGION_NAMES.forEach((name, i) => {
       const col = i % cols;
       const row = Math.floor(i / cols);
@@ -566,14 +569,26 @@ export class MainMenuScene extends Phaser.Scene {
         fontSize: '11px', fontFamily: 'monospace', color: '#cccccc',
       }).setOrigin(0.5).setDepth(D + 9);
 
-      bg.on('pointerover', () => { border.setStrokeStyle(2, 0xffdd00); txt.setStyle({ color: '#ffdd00' }); });
-      bg.on('pointerout',  () => { border.setStrokeStyle(1, 0x334466); txt.setStyle({ color: '#cccccc' }); });
+      allBgs.push(bg);
+      bg.on('pointerover', () => { if (!started) { border.setStrokeStyle(2, 0xffdd00); txt.setStyle({ color: '#ffdd00' }); } });
+      bg.on('pointerout',  () => { if (!started) { border.setStrokeStyle(1, 0x334466); txt.setStyle({ color: '#cccccc' }); } });
       bg.on('pointerdown', () => {
+        if (started) return;
+        started = true;
+        allBgs.forEach(b => b.disableInteractive());
         net.send('REGION_SELECT', { regionIndex: i });
         this.registry.set('network', net);
         this._startGame(true, i, { p1Char, p2Char });
       });
     });
+
+    // If connection drops while host is choosing, show error instead of launching solo silently
+    const onDisconnect = () => {
+      started = true;
+      allBgs.forEach(b => b.disableInteractive());
+      titleTxt.setText('PARTNER DISCONNECTED').setStyle({ color: '#ff4444', fontSize: '18px' });
+    };
+    net.on('disconnected', onDisconnect);
   }
 
   _qualityLabel() {
