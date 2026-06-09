@@ -122,7 +122,6 @@ export class Boss extends Phaser.GameObjects.Container {
     this.sprite.setFlipX(shouldFlip);
 
     // --- PROXIMITY REACTION (RUNNING ATTACK) ---
-    // If a moving player runs too close, immediately hit them without stopping movement tracks
     if (dist <= 110 && this._atkTimer <= 0) {
       const targetIsMoving = (target.body && (target.body.velocity.x !== 0 || target.body.velocity.y !== 0));
       if (targetIsMoving) {
@@ -150,7 +149,7 @@ export class Boss extends Phaser.GameObjects.Container {
         this.y += vy * delta / 1000;
       }
 
-      // Keep running animation rolling unless interrupted by a running attack clip
+      // Keep running animation rolling unless interrupted by an attack
       if (this.sprite.anims.currentAnim?.key !== `${this.cfg.textureBase}_attack`) {
         this._playAnim('run');
       }
@@ -198,7 +197,6 @@ export class Boss extends Phaser.GameObjects.Container {
     }
     this._lastPattern = pattern;
 
-    // Trigger explicit animation context states unless handled internally by sub-actions
     if (pattern !== 'ambush_popout') {
       this._playAnim('attack');
     }
@@ -215,7 +213,6 @@ export class Boss extends Phaser.GameObjects.Container {
           this._invincible = true;
           if (this.body) this.body.setVelocity(0, 0);
 
-          // 1. Shrink down (burrow underground)
           scene.tweens.add({
             targets: this.sprite,
             scaleX: 0,
@@ -223,10 +220,8 @@ export class Boss extends Phaser.GameObjects.Container {
             duration: 500,
             ease: 'Quad.In',
             onComplete: () => {
-              // Hide shadow while underground
               this.alpha = 0; 
 
-              // 2. Delay tracking time underground, then snap immediately to the player's current location
               scene.time.delayedCall(1000, () => {
                 if (!this.alive || !target.alive) {
                   this.state = STATE.FIGHT;
@@ -240,10 +235,8 @@ export class Boss extends Phaser.GameObjects.Container {
                 this.setDepth(this.y);
                 this.alpha = 1;
 
-                // Spawn warning indicator asset under the player right before eruption
                 scene.events.emit('ability_fx', { type: 'venom_pool', x: this.x, y: this.y });
 
-                // 3. Scale burst back up violently (Pop-out attack)
                 scene.tweens.add({
                   targets: this.sprite,
                   scaleX: this.cfg.scale,
@@ -256,11 +249,7 @@ export class Boss extends Phaser.GameObjects.Container {
                   onComplete: () => {
                     this._invincible = false;
                     this.state = STATE.FIGHT;
-
-                    // Camera punch impact shake
                     scene.cameras.main.shake(300, 0.015);
-
-                    // Direct landing hit resolution box check
                     const d = Phaser.Math.Distance.Between(this.x, this.y, target.x, target.y);
                     if (d <= 140) {
                       target.takeDamage(this.cfg.maxHp * 0.09, this, scene);
@@ -364,7 +353,6 @@ export class Boss extends Phaser.GameObjects.Container {
       }
     }
 
-    // Generic fallback attack configs (Left untouched for other boss configurations)
     switch (pattern) {
       case 'slam': case 'smash': case 'bite': case 'void_slash': case 'wind_slash': {
         target.notifyIncomingAttack?.();
@@ -560,4 +548,75 @@ export class Boss extends Phaser.GameObjects.Container {
 
   getPosturePct() { return this.posture / this.maxPosture; }
   getHpPct()      { return this.hp / this.maxHp; }
+
+  // --------------------------------------------------------
+  // --- NETWORK SYNC METHODS ADDED BELOW ---
+  // --------------------------------------------------------
+
+  getNetState() {
+    return {
+      bossKey: this.bossKey,
+      x:       this.x,
+      y:       this.y,
+      hp:      this.hp,
+      posture: this.posture,
+      phase:   this.phase,
+      state:   this.state,
+      flipX:   this.sprite?.flipX || false,
+      anim:    this.sprite?.anims?.currentAnim?.key || '',
+    };
+  }
+
+  applyNetState(state) {
+    if (!this.alive) return;
+
+    this.hp      = state.hp;
+    this.posture = state.posture;
+    this.phase   = state.phase;
+    this.state   = state.state;
+
+    // Apply animation and direction
+    if (this.sprite) {
+      this.sprite.setFlipX(state.flipX);
+      const k = state.anim;
+      if (k && this.sprite.anims?.currentAnim?.key !== k && this.scene?.anims?.exists(k)) {
+        this.sprite.play(k, true);
+      }
+    }
+
+    this.setDepth(state.y);
+
+    // --- SMOOTH NETWORK GLIDING (TWEEN FIX) ---
+    const dx = state.x - this.x;
+    const dy = state.y - this.y;
+
+    if (Math.abs(dx) > 150 || Math.abs(dy) > 150) {
+      // Snap instantly if distance is huge (e.g., spawn or ambush teleport)
+      this.x = state.x;
+      this.y = state.y;
+      if (this.body) {
+        this.body.setVelocity(0, 0);
+        this.body.reset(this.x, this.y);
+      }
+    } else {
+      // Stop the old tween if a new packet arrives early
+      if (this._netTween) this._netTween.stop();
+
+      // Smoothly slide the boss to the exact coordinates over 100 milliseconds
+      this._netTween = this.scene.tweens.add({
+        targets: this,
+        x: state.x,
+        y: state.y,
+        duration: 100, // Matches standard network tick rates
+        ease: 'Linear',
+        onUpdate: () => {
+          // Tell Phaser's physics engine NOT to fight the slide
+          if (this.body) {
+            this.body.setVelocity(0, 0);
+            this.body.updateFromGameObject();
+          }
+        }
+      });
+    }
+  }
 }

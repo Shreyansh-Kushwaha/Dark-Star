@@ -303,10 +303,10 @@ export class Enemy extends Phaser.GameObjects.Container {
   applyNetState(state) {
     if (!state.alive && this.alive) { this._die(null); return; }
     if (!this.alive) return;
-    if (this.body) this.body.reset(state.x, state.y);
-    else { this.x = state.x; this.y = state.y; }
+
     this.hp = state.hp;
     this._updateHpBar();
+
     if (this.sprite) {
       this.sprite.setFlipX(state.flipX);
       const k = state.anim;
@@ -315,5 +315,38 @@ export class Enemy extends Phaser.GameObjects.Container {
       }
     }
     this.setDepth(state.y);
+
+    // --- SMOOTH NETWORK GLIDING (TWEEN FIX) ---
+    const dx = state.x - this.x;
+    const dy = state.y - this.y;
+
+    if (Math.abs(dx) > 150 || Math.abs(dy) > 150) {
+      // Snap instantly if distance is huge (e.g., just spawned in)
+      this.x = state.x;
+      this.y = state.y;
+      if (this.body) {
+        this.body.setVelocity(0, 0);
+        this.body.reset(this.x, this.y);
+      }
+    } else {
+      // Stop the old tween if a new packet arrives early
+      if (this._netTween) this._netTween.stop();
+
+      // Smoothly slide them to the exact coordinates over 100 milliseconds
+      this._netTween = this.scene.tweens.add({
+        targets: this,
+        x: state.x,
+        y: state.y,
+        duration: 100, // Matches standard network tick rates
+        ease: 'Linear',
+        onUpdate: () => {
+          // Tell Phaser's physics engine NOT to fight the slide
+          if (this.body) {
+            this.body.setVelocity(0, 0);
+            this.body.updateFromGameObject();
+          }
+        }
+      });
+    }
   }
 }

@@ -158,7 +158,11 @@ export class Player extends Phaser.GameObjects.Container {
 
   _move(delta, cursors, keys) {
     if (this.dodging) return;
+
+    // If no keys/cursors are passed, it's the remote player.
+    // We let the Tween in applyNetState handle the movement now!
     if (!keys && !cursors) return;
+
     if (this.scene?.cheatConsoleOpen) { this.body.setVelocity(0, 0); return; }
 
     let vx = 0, vy = 0;
@@ -417,6 +421,8 @@ export class Player extends Phaser.GameObjects.Container {
   getNetState() {
     return {
       x: this.x, y: this.y,
+      vx: this.body ? this.body.velocity.x : 0, 
+      vy: this.body ? this.body.velocity.y : 0, 
       hp: this.hp, stamina: this.stamina,
       facingX: this.facingX, facingY: this.facingY,
       downed: this.downed,
@@ -425,23 +431,52 @@ export class Player extends Phaser.GameObjects.Container {
   }
 
   applyNetState(state) {
-    // body.reset() moves both the physics body AND the container atomically.
-    // Direct this.x/this.y assignment gets overridden by body.postUpdate() every frame.
-    if (this.body) {
-      this.body.reset(state.x, state.y);
-    } else {
-      this.x = state.x;
-      this.y = state.y;
-    }
     this.hp      = state.hp;
     this.stamina = state.stamina;
     this.downed  = state.downed;
+    this.facingX = state.facingX; 
+    this.facingY = state.facingY;
+
     this.sprite.setFlipX(state.facingX < 0);
     if (state.anim && this.sprite.anims.currentAnim?.key !== state.anim) {
       this.sprite.play(state.anim, true);
     }
+
     this._updateHpBar();
     this.setDepth(state.y);
+
+    // --- SMOOTH NETWORK GLIDING (TWEEN FIX) ---
+    const dx = state.x - this.x;
+    const dy = state.y - this.y;
+
+    if (Math.abs(dx) > 150 || Math.abs(dy) > 150) {
+      // Snap instantly if distance is huge (e.g. just spawned in)
+      this.x = state.x;
+      this.y = state.y;
+      if (this.body) {
+        this.body.setVelocity(0, 0);
+        this.body.reset(this.x, this.y);
+      }
+    } else {
+      // Stop the old tween if a new packet arrives early
+      if (this._netTween) this._netTween.stop();
+
+      // Smoothly slide them to the exact coordinates over 100 milliseconds
+      this._netTween = this.scene.tweens.add({
+        targets: this,
+        x: state.x,
+        y: state.y,
+        duration: 100, // Matches standard network tick rates
+        ease: 'Linear',
+        onUpdate: () => {
+          // Tell Phaser's physics engine NOT to fight the slide
+          if (this.body) {
+            this.body.setVelocity(0, 0);
+            this.body.updateFromGameObject();
+          }
+        }
+      });
+    }
   }
 
   applyStat(stat, tier) {
