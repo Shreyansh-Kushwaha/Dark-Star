@@ -32,10 +32,23 @@ export class SaveManager {
         abilityPow: 1.0,
       },
       statTiers: { maxHp: 0, stamina: 0, abilityPow: 0 },
+      playerLevel: 1,
+      playerXP: 0,
       completedQuests: [],
       inventory: [],
       collectedLoreIds: [],
       bossKills: [],
     };
+  }
+
+  static addItem(saveData, itemId) {
+    if (!saveData.inventory) saveData.inventory = [];
+    saveData.inventory.push(itemId);
+  }
+
+  static removeItem(saveData, itemId) {
+    if (!saveData.inventory) return;
+    const idx = saveData.inventory.indexOf(itemId);
+    if (idx > -1) saveData.inventory.splice(idx, 1);
   }
 }

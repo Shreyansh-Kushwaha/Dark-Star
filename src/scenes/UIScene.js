@@ -1,4 +1,4 @@
-import { GAME_W, GAME_H } from '../constants.js';
+import { GAME_W, GAME_H, ITEM_DEFS, XP_THRESHOLDS } from '../constants.js';
 
 const BAR_L     = 52;          // HP bar left x
 const BAR_R     = GAME_W - 30; // HP bar right x
@@ -38,12 +38,14 @@ export class UIScene extends Phaser.Scene {
 
     this._statTiers = {};
 
-    this._keyEsc = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
-    this._keyU   = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.U);
-    this._keyI   = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.I);
-    this._keyM   = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.M);
-    this._keyF11 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F11);
-    this._keyR   = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
+    this._keyEsc  = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
+    this._keyHome = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.HOME);
+    this._keyU    = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.U);
+    this._keyI    = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.I);
+    this._keyM    = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.M);
+    this._keyF11  = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F11);
+    this._keyR    = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
+    this._keyF    = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
     this._youDiedActive      = false;
     this._youDiedRetryRegion = null;
 
@@ -74,6 +76,8 @@ export class UIScene extends Phaser.Scene {
     gs.events.on('level_up_available', this._onLevelUpAvailable, this);
     gs.events.on('kill_combo',         this._onKillCombo,       this);
     gs.events.on('status_flash',       this._onStatusFlash,     this);
+    gs.events.on('item_acquired',      this._onItemAcquired,    this);
+    gs.events.on('xp_changed',         this._onXpChanged,       this);
 
     // Cache lore fragment data for the lore tab
     import('/src/data/quests.js').then(m => { this._loreFragCache = m.LORE_FRAGMENTS; });
@@ -112,9 +116,17 @@ export class UIScene extends Phaser.Scene {
     }).setOrigin(1, 0.5);
 
     this.add.text(GAME_W - pad, 52,
-      '[J] Atk [K] Heavy [Q/E/R] Ability [Shift] Dodge [F] Talk [I] Inv [U] Quests', {
+      '[J] Atk [K] Heavy [Q/E/R] Ability [Shift] Dodge [F] Talk/Use [I] Inv [U] Quests', {
         fontSize: '9px', color: '#666', fontFamily: 'monospace',
       }).setOrigin(1, 0.5);
+
+    // XP bar and level badge (below Dhruva's stamina bar)
+    const xpBarX = pad, xpBarY = 54, xpBarW = 120, xpBarH = 5;
+    this.add.rectangle(xpBarX + xpBarW / 2, xpBarY, xpBarW, xpBarH, 0x222222).setOrigin(0.5, 0.5);
+    this._xpBarFill = this.add.rectangle(xpBarX, xpBarY, 0, xpBarH, 0x9966ff).setOrigin(0, 0.5);
+    this._levelLabel = this.add.text(xpBarX + xpBarW + 4, xpBarY, 'LVL 1', {
+      fontSize: '9px', color: '#bb99ff', fontFamily: 'monospace',
+    }).setOrigin(0, 0.5);
   }
 
   // ── Boss bar (Dark Souls style) ────────────────────────────────────────────
@@ -306,20 +318,24 @@ export class UIScene extends Phaser.Scene {
   }
 
   _createInventoryPanel() {
-    const pw = 260, ph = 280;
+    const pw = 300, ph = 320;
     const panel = this.add.container(GAME_W / 2 - pw / 2, GAME_H / 2 - ph / 2);
 
-    const bg     = this.add.rectangle(0, 0, pw, ph, 0x1a1000, 0.95).setOrigin(0, 0);
+    const bg     = this.add.rectangle(0, 0, pw, ph, 0x1a1000, 0.96).setOrigin(0, 0);
     const border = this.add.rectangle(0, 0, pw, ph, 0xcc9933, 0).setOrigin(0, 0).setStrokeStyle(2, 0xcc9933);
     const title  = this.add.text(pw / 2, 10, 'INVENTORY', { fontSize: '14px', fontStyle: 'bold', color: '#ffd700', fontFamily: 'serif' }).setOrigin(0.5, 0);
     const close  = this.add.text(pw - 10, 10, '[I] close', { fontSize: '10px', color: '#666', fontFamily: 'monospace' }).setOrigin(1, 0);
 
     this._invText = this.add.text(12, 36, 'No items yet.', {
       fontSize: '11px', color: '#ddcc99', fontFamily: 'monospace',
-      wordWrap: { width: pw - 24 }, lineSpacing: 4,
+      wordWrap: { width: pw - 24 }, lineSpacing: 6,
     });
 
-    panel.add([bg, border, title, close, this._invText]);
+    this._invUseHint = this.add.text(pw / 2, ph - 14, '', {
+      fontSize: '10px', color: '#88ff88', fontFamily: 'monospace',
+    }).setOrigin(0.5, 1);
+
+    panel.add([bg, border, title, close, this._invText, this._invUseHint]);
     return panel;
   }
 
@@ -366,7 +382,14 @@ export class UIScene extends Phaser.Scene {
       }
     }
 
-    if (Phaser.Input.Keyboard.JustDown(this._keyEsc)) {
+    const escDown  = Phaser.Input.Keyboard.JustDown(this._keyEsc);
+    const homeDown = Phaser.Input.Keyboard.JustDown(this._keyHome);
+    if (escDown) {
+      if (this._questVisible) { this._questPanel.setVisible(false); this._questVisible = false; }
+      else if (this._invVisible) { this._invPanel.setVisible(false); this._invVisible = false; }
+      else this.scene.get('GameScene')?.togglePause();
+    }
+    if (homeDown) {
       if (this._questVisible) { this._questPanel.setVisible(false); this._questVisible = false; }
       else if (this._invVisible) { this._invPanel.setVisible(false); this._invVisible = false; }
       else this.scene.get('GameScene')?.togglePause();
@@ -383,6 +406,9 @@ export class UIScene extends Phaser.Scene {
       this._invVisible = !this._invVisible;
       this._invPanel.setVisible(this._invVisible);
       if (this._invVisible) this._refreshInventory(gs);
+    }
+    if (Phaser.Input.Keyboard.JustDown(this._keyF) && this._invVisible) {
+      this._useFirstConsumable(gs);
     }
     if (Phaser.Input.Keyboard.JustDown(this._keyM)) {
       gs.audio?.toggleMute();
@@ -848,6 +874,20 @@ export class UIScene extends Phaser.Scene {
     this.toast('Quest Complete! ' + (data.quest?.title || ''), '#88ff88', 2500);
   }
 
+  _onItemAcquired(data) {
+    const name = data.name || data.itemId;
+    this.toast(`Item: ${name} obtained!`, '#ffd700', 2500);
+  }
+
+  _onXpChanged(data) {
+    if (!this._xpBarFill || !this._levelLabel) return;
+    const { xp, level, threshold } = data;
+    const maxXp = threshold ?? XP_THRESHOLDS[level - 1] ?? 1;
+    const targetW = Math.min(120, Math.floor((xp / maxXp) * 120));
+    this.tweens.add({ targets: this._xpBarFill, width: targetW, duration: 300, ease: 'Power1.Out' });
+    this._levelLabel.setText(`LVL ${level}`);
+  }
+
   // ── Dialogue ───────────────────────────────────────────────────────────────
 
   _showDialogue(data) {
@@ -935,8 +975,58 @@ export class UIScene extends Phaser.Scene {
   }
 
   _refreshInventory(gs) {
-    const items = gs?.saveData?.inventory || gs?.players?.[0]?.inventory || [];
-    this._invText.setText(items.length ? items.join('\n') : 'No items yet.');
+    const items = gs?.saveData?.inventory || [];
+    if (!items.length) {
+      this._invText.setText('No items yet.');
+      this._invUseHint?.setText('');
+      return;
+    }
+    const lines = [];
+    let hasConsumable = false;
+    const seen = {};
+    for (const id of items) {
+      seen[id] = (seen[id] || 0) + 1;
+    }
+    const listed = [];
+    for (const [id, count] of Object.entries(seen)) {
+      if (listed.includes(id)) continue;
+      listed.push(id);
+      const def = ITEM_DEFS[id];
+      if (!def) { lines.push(`• ${id}`); continue; }
+      const typeTag = def.type === 'consumable' ? '[use]' : def.type === 'passive' ? '[passive]' : '[token]';
+      const countStr = count > 1 ? ` ×${count}` : '';
+      lines.push(`• ${def.name}${countStr}  ${typeTag}`);
+      lines.push(`  ${def.desc}`);
+      if (def.type === 'consumable') hasConsumable = true;
+    }
+    this._invText.setText(lines.join('\n'));
+    this._invUseHint?.setText(hasConsumable ? '[F] Use first consumable' : '');
+  }
+
+  _useFirstConsumable(gs) {
+    const saveData = gs?.saveData;
+    if (!saveData?.inventory?.length) return;
+    const idx = saveData.inventory.findIndex(id => ITEM_DEFS[id]?.type === 'consumable');
+    if (idx === -1) return;
+    const itemId = saveData.inventory[idx];
+    const def = ITEM_DEFS[itemId];
+    const player = gs?.players?.find(p => p?.alive) || gs?.players?.[0];
+    if (!player) return;
+
+    if (def.effect.stat === 'hp') {
+      player.hp = Math.min(player.maxHp, player.hp + def.effect.amount);
+      player._updateHpBar?.();
+    } else if (def.effect.stat === 'stamina') {
+      player.stamina = Math.min(player.maxStamina, player.stamina + def.effect.amount);
+    }
+
+    import('../systems/SaveManager.js').then(m => {
+      m.SaveManager.removeItem(saveData, itemId);
+      m.SaveManager.save(saveData);
+    });
+
+    this.toast(`Used ${def.name} — ${def.desc}`, '#88ff88', 2500);
+    this.time.delayedCall(50, () => this._refreshInventory(gs));
   }
 
   // ── YOU DIED screen ────────────────────────────────────────────────────────

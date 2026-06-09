@@ -10,7 +10,7 @@ export const BOSSES = {
       { hpThreshold: 0.3, speed: 140, attackCd: 200, patterns: ['slam', 'root', 'spore_burst', 'rage_slam'] },
     ],
     phaseLines: ['', 'The dark sap runs deep...', 'The forest... will not... fall...'],
-    rewardItem: 'forest_totem', loreFragment: 'lore_vanaraksha_kill',
+    rewardItem: 'forest_totem', loreFragment: 'lore_vanaraksha_kill', xpValue: 200,
   },
   vanasur: {
     key: 'vanasur', name: 'Vanasur',
@@ -29,7 +29,7 @@ export const BOSSES = {
       '⟨Vanasur⟩ "Let me show you what a living god devours."',
     ],
     phaseLines: ['', 'You cannot burn what is already hunger.', 'The grove feeds me. You cannot starve a demon.'],
-    rewardItem: 'ashram_blessing', loreFragment: 'lore_vanasur_kill',
+    rewardItem: 'ashram_blessing', loreFragment: 'lore_vanasur_kill', xpValue: 250,
   },
   nagraj_kaliya: {
     key: 'nagraj_kaliya', name: 'Nagraj Kaliya',
@@ -45,7 +45,7 @@ export const BOSSES = {
     ],
     introLine: '⟨Nagraj Kaliya⟩ "The threshold has not been crossed in ten thousand years. You are not the first fool to try."',
     phaseLines: ['', 'The deep waters have no mercy.', 'A thousand heads. A thousand deaths.'],
-    rewardItem: 'naga_scale', loreFragment: 'lore_nagraj_kill',
+    rewardItem: 'naga_scale', loreFragment: 'lore_nagraj_kill', xpValue: 300,
   },
   pashana_daitya: {
     key: 'pashana_daitya', name: 'Pashana Daitya',
@@ -59,7 +59,7 @@ export const BOSSES = {
       { hpThreshold: 0.3, speed: 135, attackCd: 1100, patterns: ['smash', 'ground_crack', 'charge', 'stomp_warning', 'split_gust'] },
     ],
     phaseLines: ['', 'Stone does not bleed. Stone endures.', 'I am older than your gods.'],
-    rewardItem: 'temple_offering', loreFragment: 'lore_pashana_kill',
+    rewardItem: 'temple_offering', loreFragment: 'lore_pashana_kill', xpValue: 350,
   },
   vayu_rakshasa: {
     key: 'vayu_rakshasa', name: 'Vayu Rakshasa',
@@ -78,7 +78,7 @@ export const BOSSES = {
       '⟨Vayu Rakshasa⟩ "The storm does not negotiate."',
     ],
     phaseLines: ['', 'The sky obeys no master.', 'You fight the storm itself.'],
-    rewardItem: 'vayu_note', loreFragment: 'lore_vayu_kill',
+    rewardItem: 'vayu_note', loreFragment: 'lore_vayu_kill', xpValue: 400,
   },
   viyogasur: {
     key: 'viyogasur', name: 'Viyogasur',
@@ -109,7 +109,7 @@ export const BOSSES = {
       '⟨Viyogasur⟩ "That is why they feared me."',
       '⟨Viyogasur⟩ "Now choose: restore their order, accept their lie, or weave a new one from the ashes of both."',
     ],
-    rewardItem: 'akhand_fragment', loreFragment: 'lore_viyogasur_kill',
+    rewardItem: 'akhand_fragment', loreFragment: 'lore_viyogasur_kill', xpValue: 500,
     isFinal: true,
   },
 };

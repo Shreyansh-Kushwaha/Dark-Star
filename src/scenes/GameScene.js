@@ -1,4 +1,4 @@
-import { WORLD_W, WORLD_H, GAME_W, GAME_H, NET_INTERVAL, TETHER_DIST, TETHER_SPEED, BOSS_TRIGGER_DIST } from '../constants.js';
+import { WORLD_W, WORLD_H, GAME_W, GAME_H, NET_INTERVAL, TETHER_DIST, TETHER_SPEED, BOSS_TRIGGER_DIST, ITEM_DEFS } from '../constants.js';
 import { REGIONS } from '../data/regions.js';
 import { _mapSpriteKey } from './PreloadScene.js';
 import { QUESTS, NPC_DIALOGUE, LORE_FRAGMENTS } from '../data/quests.js';
@@ -6,6 +6,7 @@ import { LoreManager } from '../systems/LoreManager.js';
 import { Player } from '../entities/Player.js';
 import { Enemy  } from '../entities/Enemy.js';
 import { Boss   } from '../entities/Boss.js';
+import { BOSSES } from '../data/bosses.js';
 import { NPC    } from '../entities/NPC.js';
 import { Projectile } from '../entities/Projectile.js';
 import { AudioManager } from '../systems/AudioManager.js';
@@ -303,6 +304,14 @@ export class GameScene extends Phaser.Scene {
     });
     this.questManager.addEventListener('quest_completed', (e) => {
       this.events.emit('quest_completed', e.detail);
+      const reward = e.detail?.quest?.reward;
+      if (reward?.item) {
+        SaveManager.addItem(this.saveData, reward.item);
+        SaveManager.save(this.saveData);
+        const def = ITEM_DEFS[reward.item];
+        if (def?.type === 'passive') this._applyPassiveItem(def);
+        this.events.emit('item_acquired', { itemId: reward.item, name: def?.name || reward.name });
+      }
     });
     this.questManager.addEventListener('boss_killed', () => {
       this._unlockPortalNext();
@@ -1684,6 +1693,28 @@ export class GameScene extends Phaser.Scene {
       this._spawnFoodPickup(e.x, e.y, foodType, healAmt);
     }
 
+    // XP gain
+    const xpGain = e.cfg?.xpValue ?? 10;
+    const primaryPlayer = this.players?.find(p => p?.alive) || this.players?.[0];
+    if (primaryPlayer?.gainXP) {
+      primaryPlayer.gainXP(xpGain);
+      this.saveData.playerXP = primaryPlayer.xp;
+      this.saveData.playerLevel = primaryPlayer.level;
+    }
+
+    // Item drop from enemy loot table
+    const drops = e.cfg?.drops || [];
+    for (const drop of drops) {
+      if (Math.random() < drop.chance) {
+        SaveManager.addItem(this.saveData, drop.item);
+        SaveManager.save(this.saveData);
+        const def = ITEM_DEFS[drop.item];
+        if (def?.type === 'passive') this._applyPassiveItem(def);
+        this.events.emit('item_acquired', { itemId: drop.item, name: def?.name || drop.item });
+        break;
+      }
+    }
+
     const region = REGIONS[this._regionIndex];
     if (region.portalUnlock === 'kill_all' && this._fixedEnemyMode) {
       this._anyEnemyKilled = true;
@@ -1691,6 +1722,24 @@ export class GameScene extends Phaser.Scene {
         this._unlockPortalNext();
         this.events.emit('toast', { text: 'The grove is cleansed — the path opens.' });
       }
+    }
+  }
+
+  _applyPassiveItem(def) {
+    if (!def?.effect) return;
+    for (const p of (this.players || [])) {
+      if (!p?.alive) continue;
+      if (def.effect.stat === 'maxHp') {
+        p.maxHp += def.effect.amount;
+        p.hp = Math.min(p.hp + def.effect.amount, p.maxHp);
+        p._updateHpBar?.();
+      } else if (def.effect.stat === 'abilityPow') {
+        p.abilityPow = Math.round((p.abilityPow + def.effect.amount) * 100) / 100;
+      }
+    }
+    if (this.saveData?.playerStats) {
+      if (def.effect.stat === 'maxHp') this.saveData.playerStats.maxHp = (this.saveData.playerStats.maxHp || 200) + def.effect.amount;
+      if (def.effect.stat === 'abilityPow') this.saveData.playerStats.abilityPow = Math.round(((this.saveData.playerStats.abilityPow || 1.0) + def.effect.amount) * 100) / 100;
     }
   }
 
@@ -1755,6 +1804,24 @@ export class GameScene extends Phaser.Scene {
     // Clear arena hazards
     for (const h of this._arenaHazards) h.gfx?.destroy();
     this._arenaHazards = [];
+
+    // Boss XP reward
+    const bossXp = BOSSES[bossKey]?.xpValue ?? 200;
+    const primaryPlayer = this.players?.find(p => p?.alive) || this.players?.[0];
+    if (primaryPlayer?.gainXP) {
+      primaryPlayer.gainXP(bossXp);
+      this.saveData.playerXP = primaryPlayer.xp;
+      this.saveData.playerLevel = primaryPlayer.level;
+    }
+
+    // Boss reward item
+    const bossRewardItem = BOSSES[bossKey]?.rewardItem;
+    if (bossRewardItem) {
+      SaveManager.addItem(this.saveData, bossRewardItem);
+      SaveManager.save(this.saveData);
+      const def = ITEM_DEFS[bossRewardItem];
+      this.events.emit('item_acquired', { itemId: bossRewardItem, name: def?.name || bossRewardItem });
+    }
 
     // Collect boss lore fragment
     const bossFragId = data.boss?.cfg?.loreFragment;

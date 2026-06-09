@@ -12,6 +12,7 @@ export const ENEMY_TYPES = {
     tint: null,
     physics: false,
     label: 'Forest Raksha',
+    drops: [{ item: 'healing_herb', chance: 0.08 }],
   },
   ranged: {
     key: 'ranged',
@@ -26,6 +27,7 @@ export const ENEMY_TYPES = {
     tint: null,
     physics: false,
     label: 'Shadara Archer',
+    drops: [{ item: 'healing_herb', chance: 0.06 }],
   },
   flying: {
     key: 'flying',
@@ -40,6 +42,7 @@ export const ENEMY_TYPES = {
     tint: 0x0891b2,
     physics: true,
     label: 'Vayu Bhuta',
+    drops: [{ item: 'spirit_fern', chance: 0.07 }],
   },
   orc: {
     key: 'orc',
@@ -54,6 +57,7 @@ export const ENEMY_TYPES = {
     tint: null,
     physics: false,
     label: 'Vana Raksha',
+    drops: [{ item: 'healing_herb', chance: 0.12 }, { item: 'forest_totem', chance: 0.04 }],
   },
   elite: {
     key: 'elite',
@@ -69,6 +73,7 @@ export const ENEMY_TYPES = {
     shockwaveCd: 6000,
     physics: false,
     label: 'Mahavir Raksha',
+    drops: [{ item: 'prithvi_shard', chance: 0.10 }, { item: 'agni_ember', chance: 0.05 }],
   },
   bat: {
     key: 'bat',
@@ -84,6 +89,7 @@ export const ENEMY_TYPES = {
     tint: null,
     physics: true,
     label: 'Vayu Pakshi',
+    drops: [],
   },
   rat: {
     key: 'rat',
@@ -99,6 +105,7 @@ export const ENEMY_TYPES = {
     tint: null,
     physics: false,
     label: 'Kshetra Mooshak',
+    drops: [],
   },
   slimem: {
     key: 'slimem',
@@ -114,6 +121,7 @@ export const ENEMY_TYPES = {
     tint: null,
     physics: false,
     label: 'Vikrit Kshira',
+    drops: [{ item: 'water_blessing', chance: 0.05 }],
   },
   mimic: {
     key: 'mimic',
@@ -130,5 +138,6 @@ export const ENEMY_TYPES = {
     physics: false,
     isMimic: true,
     label: 'Mayavi Peti',
+    drops: [{ item: 'agni_ember', chance: 0.15 }, { item: 'cloud_crystal', chance: 0.10 }],
   },
 };

@@ -2,7 +2,7 @@ import {
   PLAYER_SPEED, LIGHT_DMG, HEAVY_DMG, ATTACK_RANGE, ATTACK_ARC,
   LIGHT_CD, HEAVY_CD, DODGE_CD, DODGE_STAMINA, DODGE_DURATION,
   PERFECT_DODGE_WINDOW, PERFECT_DODGE_SLOWMO, PERFECT_DODGE_DURATION,
-  WARRIOR_FRAME,
+  WARRIOR_FRAME, XP_THRESHOLDS,
 } from '../constants.js';
 import { AbilityManager } from '../systems/AbilityManager.js';
 import { QualitySettings } from '../systems/QualitySettings.js';
@@ -26,6 +26,8 @@ export class Player extends Phaser.GameObjects.Container {
     this.maxStamina = stats.maxStamina;
     this.stamina    = this.maxStamina;
     this.abilityPow = stats.abilityPow;
+    this.level      = saveData?.playerLevel ?? 1;
+    this.xp         = saveData?.playerXP    ?? 0;
 
     // State
     this.alive    = true;
@@ -579,5 +581,17 @@ export class Player extends Phaser.GameObjects.Container {
       this.abilityPow = mult;
     }
     this._updateHpBar();
+  }
+
+  gainXP(amount) {
+    if (!this.alive) return;
+    this.xp += amount;
+    const threshold = XP_THRESHOLDS[this.level - 1];
+    if (threshold && this.xp >= threshold) {
+      this.level++;
+      this.xp -= threshold;
+      this.scene.events.emit('level_up_available', { source: 'xp' });
+    }
+    this.scene.events.emit('xp_changed', { xp: this.xp, level: this.level, threshold: XP_THRESHOLDS[this.level - 1] });
   }
 }

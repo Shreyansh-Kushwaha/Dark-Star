@@ -33,7 +33,13 @@ export class MainMenuScene extends Phaser.Scene {
 
     this._joinCode = '';
     this._joiningMode = false;
+    this._selIdx = 0;
     this.input.keyboard.on('keydown', (e) => this._onKey(e));
+
+    this._menuCursor = this.add.text(0, 0, '►', {
+      fontSize: '15px', color: '#ffdd00', fontFamily: 'monospace',
+    }).setOrigin(1, 0.5).setDepth(20);
+    this._updateMenuCursor();
   }
 
   // ── Background ─────────────────────────────────────────────────────────────
@@ -180,15 +186,23 @@ export class MainMenuScene extends Phaser.Scene {
   _drawButtons() {
     const cx = GAME_W / 2;
 
-    this._makeButton(cx, 240, '>  PLAY SOLO',   () => this._startGame(false));
-    this._makeButton(cx, 300, '>  HOST CO-OP',  () => this._hostCoop());
-    this._makeButton(cx, 360, '>  JOIN CO-OP',  () => this._joinCoop());
-    this._makeButton(cx, 420, '>  LOAD REGION', () => this._toggleRegionSelect());
+    // Main nav buttons — tracked for keyboard arrow selection
+    this._navButtons = [];
+    const addNav = (x, y, label, action, opts) => {
+      const btn = this._makeButton(x, y, label, action, opts);
+      this._navButtons.push({ btn, x, y, action });
+      return btn;
+    };
 
-    this._qualityBtn = this._makeButton(cx, 480, this._qualityLabel(), () => this._cycleQuality(),
+    addNav(cx, 240, '>  PLAY SOLO',   () => this._startGame(false));
+    addNav(cx, 300, '>  HOST CO-OP',  () => this._hostCoop());
+    addNav(cx, 360, '>  JOIN CO-OP',  () => this._joinCoop());
+    addNav(cx, 420, '>  LOAD REGION', () => this._toggleRegionSelect());
+
+    this._qualityBtn = addNav(cx, 480, this._qualityLabel(), () => this._cycleQuality(),
       { bg: 0x0c1428, border: 0x2244aa, text: '#88aaff', w: 200 });
 
-    this._fsBtn = this._makeButton(cx, 535, this._fsLabel(), () => this._toggleFullscreen(),
+    this._fsBtn = addNav(cx, 535, this._fsLabel(), () => this._toggleFullscreen(),
       { bg: 0x0c1428, border: 0x334466, text: '#7799bb', w: 200 });
 
     this._regionSelectPanel = null;
@@ -213,6 +227,16 @@ export class MainMenuScene extends Phaser.Scene {
     this._roomPrompt = this.add.text(cx, 572, '', {
       fontSize: '12px', fontFamily: 'monospace', color: '#8899ff',
     }).setOrigin(0.5).setAlpha(0).setDepth(10);
+  }
+
+  _updateMenuCursor() {
+    if (!this._navButtons?.length || !this._menuCursor) return;
+    const entry = this._navButtons[this._selIdx];
+    if (!entry) return;
+    this._menuCursor.setPosition(entry.x - 148, entry.y);
+    this._navButtons.forEach((e, i) => {
+      if (e.btn?.txt) e.btn.txt.setColor(i === this._selIdx ? '#ffdd00' : '#ffffff');
+    });
   }
 
   _makeButton(x, y, label, onClick, opts = {}) {
@@ -384,7 +408,23 @@ export class MainMenuScene extends Phaser.Scene {
   }
 
   _onKey(e) {
-    if (!this._joiningMode) return;
+    if (!this._joiningMode) {
+      if (e.key === 'ArrowUp') {
+        this._selIdx = (this._selIdx - 1 + this._navButtons.length) % this._navButtons.length;
+        this._updateMenuCursor();
+        return;
+      }
+      if (e.key === 'ArrowDown') {
+        this._selIdx = (this._selIdx + 1) % this._navButtons.length;
+        this._updateMenuCursor();
+        return;
+      }
+      if (e.key === 'Enter' || e.key === ' ') {
+        this._navButtons[this._selIdx]?.action();
+        return;
+      }
+      return;
+    }
     if (e.key === 'Escape') {
       this._joiningMode = false;
       this._roomInput.setAlpha(0);
