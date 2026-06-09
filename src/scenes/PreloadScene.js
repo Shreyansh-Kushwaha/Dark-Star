@@ -1,6 +1,7 @@
 const TS  = "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)";
 const PK  = "THE PACK/Monsters";
 const CP  = "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees";
+const A3  = "assets3";
 
 // Warrior: 192×192 frames
 const W = 192;
@@ -186,6 +187,84 @@ export class PreloadScene extends Phaser.Scene {
     for (let i = 1; i <= 4; i++) {
       this.load.image(`ts_stump_${i}`, `${TS}/Terrain/Resources/Wood/Trees/Stump ${i}.png`);
     }
+
+    // ── VFX: White Smoke (s1=7, s2=5, s3=9, s4=6 frames) ───────
+    for (let i = 1; i <= 7; i++) this.load.image(`vfx_s1_${i}`, `${A3}/vfx/smoke/s1_${i}.png`);
+    for (let i = 1; i <= 5; i++) this.load.image(`vfx_s2_${i}`, `${A3}/vfx/smoke/s2_${i}.png`);
+    for (let i = 1; i <= 9; i++) this.load.image(`vfx_s3_${i}`, `${A3}/vfx/smoke/s3_${i}.png`);
+    for (let i = 1; i <= 6; i++) this.load.image(`vfx_s4_${i}`, `${A3}/vfx/smoke/s4_${i}.png`);
+
+    // ── VFX: Yellow Power (y1=8, y2=11, y3=12 frames) ───────────
+    for (let i = 1; i <= 8;  i++) this.load.image(`vfx_y1_${i}`, `${A3}/vfx/yellow/y1_${i}.png`);
+    for (let i = 1; i <= 11; i++) this.load.image(`vfx_y2_${i}`, `${A3}/vfx/yellow/y2_${i}.png`);
+    for (let i = 1; i <= 12; i++) this.load.image(`vfx_y3_${i}`, `${A3}/vfx/yellow/y3_${i}.png`);
+
+    // ── VFX: Green Attack (g1=9,g2=6,g3=9,g4=8,g5=17 frames) ───
+    for (let i = 1; i <= 9;  i++) this.load.image(`vfx_g1_${i}`, `${A3}/vfx/green/g1_${i}.png`);
+    for (let i = 1; i <= 6;  i++) this.load.image(`vfx_g2_${i}`, `${A3}/vfx/green/g2_${i}.png`);
+    for (let i = 1; i <= 9;  i++) this.load.image(`vfx_g3_${i}`, `${A3}/vfx/green/g3_${i}.png`);
+    for (let i = 1; i <= 8;  i++) this.load.image(`vfx_g4_${i}`, `${A3}/vfx/green/g4_${i}.png`);
+    for (let i = 1; i <= 17; i++) this.load.image(`vfx_g5_${i}`, `${A3}/vfx/green/g5_${i}.png`);
+
+    // ── VFX: Blue Lightning (l1=4,l2=4,l3=5,l4=5,l5=4,l6=7) ────
+    for (let i = 1; i <= 4; i++) this.load.image(`vfx_l1_${i}`, `${A3}/vfx/lightning/l1_${i}.png`);
+    for (let i = 1; i <= 4; i++) this.load.image(`vfx_l2_${i}`, `${A3}/vfx/lightning/l2_${i}.png`);
+    for (let i = 1; i <= 5; i++) this.load.image(`vfx_l3_${i}`, `${A3}/vfx/lightning/l3_${i}.png`);
+    for (let i = 1; i <= 5; i++) this.load.image(`vfx_l4_${i}`, `${A3}/vfx/lightning/l4_${i}.png`);
+    for (let i = 1; i <= 4; i++) this.load.image(`vfx_l5_${i}`, `${A3}/vfx/lightning/l5_${i}.png`);
+    for (let i = 1; i <= 7; i++) this.load.image(`vfx_l6_${i}`, `${A3}/vfx/lightning/l6_${i}.png`);
+
+    // ── VFX: Frost (fr1=14,fr2=9,fr3=11 frames) ─────────────────
+    for (let i = 1; i <= 14; i++) this.load.image(`vfx_fr1_${i}`, `${A3}/vfx/frost/fr1_${i}.png`);
+    for (let i = 1; i <= 9;  i++) this.load.image(`vfx_fr2_${i}`, `${A3}/vfx/frost/fr2_${i}.png`);
+    for (let i = 1; i <= 11; i++) this.load.image(`vfx_fr3_${i}`, `${A3}/vfx/frost/fr3_${i}.png`);
+
+    // ── VFX: Red Fireball (fb1s=8,fb1l=5,fb1e=6,fb2=12,fb3=4) ──
+    for (let i = 1; i <= 8;  i++) this.load.image(`vfx_fb1s_${i}`, `${A3}/vfx/fireball/fb1s_${i}.png`);
+    for (let i = 1; i <= 5;  i++) this.load.image(`vfx_fb1l_${i}`, `${A3}/vfx/fireball/fb1l_${i}.png`);
+    for (let i = 1; i <= 6;  i++) this.load.image(`vfx_fb1e_${i}`, `${A3}/vfx/fireball/fb1e_${i}.png`);
+    for (let i = 1; i <= 12; i++) this.load.image(`vfx_fb2_${i}`,  `${A3}/vfx/fireball/fb2_${i}.png`);
+    for (let i = 1; i <= 4;  i++) this.load.image(`vfx_fb3_${i}`,  `${A3}/vfx/fireball/fb3_${i}.png`);
+
+    // ── Monsters: Bat (87×87 frames) ─────────────────────────────
+    this.load.spritesheet('bat_ss_fly',    `${A3}/monsters/bat/fly.png`,    { frameWidth: 87, frameHeight: 87 });
+    this.load.spritesheet('bat_ss_attack', `${A3}/monsters/bat/attack.png`, { frameWidth: 87, frameHeight: 87 });
+    this.load.spritesheet('bat_ss_hurt',   `${A3}/monsters/bat/hurt.png`,   { frameWidth: 87, frameHeight: 87 });
+    this.load.spritesheet('bat_ss_death',  `${A3}/monsters/bat/death.png`,  { frameWidth: 87, frameHeight: 87 });
+    this.load.spritesheet('bat_ss_fall',   `${A3}/monsters/bat/fall.png`,   { frameWidth: 87, frameHeight: 87 });
+
+    // ── Monsters: Rat (70×70 frames) ─────────────────────────────
+    this.load.spritesheet('rat_ss_idle',   `${A3}/monsters/rat/idle.png`,   { frameWidth: 70, frameHeight: 70 });
+    this.load.spritesheet('rat_ss_run',    `${A3}/monsters/rat/run.png`,    { frameWidth: 70, frameHeight: 70 });
+    this.load.spritesheet('rat_ss_attack', `${A3}/monsters/rat/attack.png`, { frameWidth: 70, frameHeight: 70 });
+    this.load.spritesheet('rat_ss_hurt',   `${A3}/monsters/rat/hurt.png`,   { frameWidth: 70, frameHeight: 70 });
+    this.load.spritesheet('rat_ss_dead',   `${A3}/monsters/rat/dead.png`,   { frameWidth: 70, frameHeight: 70 });
+
+    // ── Monsters: Slime (156×156 frames) ─────────────────────────
+    this.load.spritesheet('slimem_ss_idle',   `${A3}/monsters/slime/idle.png`,   { frameWidth: 156, frameHeight: 156 });
+    this.load.spritesheet('slimem_ss_walk',   `${A3}/monsters/slime/walk.png`,   { frameWidth: 156, frameHeight: 156 });
+    this.load.spritesheet('slimem_ss_attack', `${A3}/monsters/slime/attack.png`, { frameWidth: 156, frameHeight: 156 });
+    this.load.spritesheet('slimem_ss_hurt',   `${A3}/monsters/slime/hurt.png`,   { frameWidth: 156, frameHeight: 156 });
+    this.load.spritesheet('slimem_ss_death',  `${A3}/monsters/slime/death.png`,  { frameWidth: 156, frameHeight: 156 });
+
+    // ── Monsters: Mimic (146×146 frames) ─────────────────────────
+    this.load.spritesheet('mimic_ss_closed',  `${A3}/monsters/mimic/closed.png`,      { frameWidth: 146, frameHeight: 146 });
+    this.load.spritesheet('mimic_ss_open',    `${A3}/monsters/mimic/open.png`,         { frameWidth: 146, frameHeight: 146 });
+    this.load.spritesheet('mimic_ss_opening', `${A3}/monsters/mimic/opening.png`,      { frameWidth: 146, frameHeight: 146 });
+    this.load.spritesheet('mimic_ss_transform',`${A3}/monsters/mimic/transform.png`,   { frameWidth: 146, frameHeight: 146 });
+    this.load.spritesheet('mimic_ss_attack1', `${A3}/monsters/mimic/attack1.png`,      { frameWidth: 146, frameHeight: 146 });
+    this.load.spritesheet('mimic_ss_attack2', `${A3}/monsters/mimic/attack2.png`,      { frameWidth: 146, frameHeight: 146 });
+    this.load.spritesheet('mimic_ss_hurt',    `${A3}/monsters/mimic/hurt.png`,         { frameWidth: 146, frameHeight: 146 });
+    this.load.spritesheet('mimic_ss_death',   `${A3}/monsters/mimic/death.png`,        { frameWidth: 146, frameHeight: 146 });
+    this.load.spritesheet('mimic_ss_walk',    `${A3}/monsters/mimic/walk.png`,         { frameWidth: 146, frameHeight: 146 });
+
+    // ── Food pickups ───────────────────────────────────────────────
+    this.load.spritesheet('food_donut',  `${A3}/food/donut.png`,  { frameWidth: 32, frameHeight: 32 });
+    this.load.spritesheet('food_pizza',  `${A3}/food/pizza.png`,  { frameWidth: 32, frameHeight: 32 });
+    this.load.spritesheet('food_melon',  `${A3}/food/melon.png`,  { frameWidth: 32, frameHeight: 32 });
+    this.load.image('food_burger', `${A3}/food/burger.png`);
+    this.load.image('food_cookie', `${A3}/food/cookie.png`);
+    this.load.image('food_cherry', `${A3}/food/cherry.png`);
   }
 
   create() {
@@ -288,6 +367,72 @@ export class PreloadScene extends Phaser.Scene {
     if (this.textures.exists('rabbit_idle'))  anims.create({ key: 'rabbit_idle',  frames: anims.generateFrameNumbers('rabbit_idle',  { start: 0, end: 3 }), frameRate: 6, repeat: -1 });
     if (this.textures.exists('rabbit_move'))  anims.create({ key: 'rabbit_move',  frames: anims.generateFrameNumbers('rabbit_move',  { start: 0, end: 5 }), frameRate: 8, repeat: -1 });
     if (this.textures.exists('rabbitH_idle')) anims.create({ key: 'rabbitH_idle', frames: anims.generateFrameNumbers('rabbitH_idle', { start: 0, end: 3 }), frameRate: 6, repeat: -1 });
+
+    // ── VFX animations (multi-image, single-play) ─────────────
+    const _vfx = (key, prefix, n, fps = 14) => {
+      this._buildMultiAnim(key, Array.from({length: n}, (_, i) => ({ key: `${prefix}${i + 1}` })), fps, 0);
+    };
+    _vfx('vfx_smoke1', 'vfx_s1_', 7);
+    _vfx('vfx_smoke2', 'vfx_s2_', 5);
+    _vfx('vfx_smoke3', 'vfx_s3_', 9);
+    _vfx('vfx_smoke4', 'vfx_s4_', 6);
+    _vfx('vfx_yellow1', 'vfx_y1_', 8);
+    _vfx('vfx_yellow2', 'vfx_y2_', 11);
+    _vfx('vfx_yellow3', 'vfx_y3_', 12);
+    _vfx('vfx_green1', 'vfx_g1_', 9);
+    _vfx('vfx_green2', 'vfx_g2_', 6);
+    _vfx('vfx_green3', 'vfx_g3_', 9);
+    _vfx('vfx_green4', 'vfx_g4_', 8);
+    _vfx('vfx_green5', 'vfx_g5_', 17);
+    _vfx('vfx_lightning1', 'vfx_l1_', 4, 18);
+    _vfx('vfx_lightning2', 'vfx_l2_', 4, 18);
+    _vfx('vfx_lightning3', 'vfx_l3_', 5, 18);
+    _vfx('vfx_lightning4', 'vfx_l4_', 5, 18);
+    _vfx('vfx_lightning5', 'vfx_l5_', 4, 18);
+    _vfx('vfx_lightning6', 'vfx_l6_', 7, 18);
+    _vfx('vfx_frost1', 'vfx_fr1_', 14, 14);
+    _vfx('vfx_frost2', 'vfx_fr2_', 9,  14);
+    _vfx('vfx_frost3', 'vfx_fr3_', 11, 14);
+    _vfx('vfx_fire1s', 'vfx_fb1s_', 8,  16);
+    _vfx('vfx_fire1l', 'vfx_fb1l_', 5,  16);
+    _vfx('vfx_fire1e', 'vfx_fb1e_', 6,  16);
+    _vfx('vfx_fire2',  'vfx_fb2_',  12, 16);
+    _vfx('vfx_fire3',  'vfx_fb3_',  4,  16);
+
+    // ── Bat animations ────────────────────────────────────────
+    anims.create({ key: 'bat_idle',   frames: anims.generateFrameNumbers('bat_ss_fly',    { start: 0, end: 10 }), frameRate: 12, repeat: -1 });
+    anims.create({ key: 'bat_run',    frames: anims.generateFrameNumbers('bat_ss_fly',    { start: 0, end: 10 }), frameRate: 14, repeat: -1 });
+    anims.create({ key: 'bat_attack', frames: anims.generateFrameNumbers('bat_ss_attack', { start: 0, end: 10 }), frameRate: 14, repeat: 0  });
+    anims.create({ key: 'bat_hurt',   frames: anims.generateFrameNumbers('bat_ss_hurt',   { start: 0, end: 2  }), frameRate: 12, repeat: 0  });
+    anims.create({ key: 'bat_dead',   frames: anims.generateFrameNumbers('bat_ss_death',  { start: 0, end: 3  }), frameRate: 10, repeat: 0  });
+
+    // ── Rat animations ────────────────────────────────────────
+    anims.create({ key: 'rat_idle',   frames: anims.generateFrameNumbers('rat_ss_idle',   { start: 0, end: 9  }), frameRate: 10, repeat: -1 });
+    anims.create({ key: 'rat_run',    frames: anims.generateFrameNumbers('rat_ss_run',    { start: 0, end: 7  }), frameRate: 12, repeat: -1 });
+    anims.create({ key: 'rat_attack', frames: anims.generateFrameNumbers('rat_ss_attack', { start: 0, end: 11 }), frameRate: 14, repeat: 0  });
+    anims.create({ key: 'rat_hurt',   frames: anims.generateFrameNumbers('rat_ss_hurt',   { start: 0, end: 2  }), frameRate: 12, repeat: 0  });
+    anims.create({ key: 'rat_dead',   frames: anims.generateFrameNumbers('rat_ss_dead',   { start: 0, end: 5  }), frameRate: 10, repeat: 0  });
+
+    // ── Slime enemy animations ────────────────────────────────
+    anims.create({ key: 'slimem_idle',   frames: anims.generateFrameNumbers('slimem_ss_idle',   { start: 0, end: 13 }), frameRate: 10, repeat: -1 });
+    anims.create({ key: 'slimem_run',    frames: anims.generateFrameNumbers('slimem_ss_walk',   { start: 0, end: 5  }), frameRate: 10, repeat: -1 });
+    anims.create({ key: 'slimem_attack', frames: anims.generateFrameNumbers('slimem_ss_attack', { start: 0, end: 18 }), frameRate: 14, repeat: 0  });
+    anims.create({ key: 'slimem_hurt',   frames: anims.generateFrameNumbers('slimem_ss_hurt',   { start: 0, end: 2  }), frameRate: 12, repeat: 0  });
+    anims.create({ key: 'slimem_dead',   frames: anims.generateFrameNumbers('slimem_ss_death',  { start: 0, end: 10 }), frameRate: 10, repeat: 0  });
+
+    // ── Mimic animations ──────────────────────────────────────
+    anims.create({ key: 'mimic_idle',      frames: anims.generateFrameNumbers('mimic_ss_closed',    { start: 0, end: 0  }), frameRate: 4,  repeat: -1 });
+    anims.create({ key: 'mimic_run',       frames: anims.generateFrameNumbers('mimic_ss_walk',      { start: 0, end: 5  }), frameRate: 8,  repeat: -1 });
+    anims.create({ key: 'mimic_opening',   frames: anims.generateFrameNumbers('mimic_ss_opening',   { start: 0, end: 5  }), frameRate: 8,  repeat: 0  });
+    anims.create({ key: 'mimic_transform', frames: anims.generateFrameNumbers('mimic_ss_transform', { start: 0, end: 6  }), frameRate: 8,  repeat: 0  });
+    anims.create({ key: 'mimic_attack',    frames: anims.generateFrameNumbers('mimic_ss_attack1',   { start: 0, end: 13 }), frameRate: 14, repeat: 0  });
+    anims.create({ key: 'mimic_hurt',      frames: anims.generateFrameNumbers('mimic_ss_hurt',      { start: 0, end: 2  }), frameRate: 12, repeat: 0  });
+    anims.create({ key: 'mimic_dead',      frames: anims.generateFrameNumbers('mimic_ss_death',     { start: 0, end: 5  }), frameRate: 10, repeat: 0  });
+
+    // ── Food pickup animations ────────────────────────────────
+    anims.create({ key: 'food_donut_spin', frames: anims.generateFrameNumbers('food_donut', { start: 0, end: 8 }), frameRate: 8, repeat: -1 });
+    anims.create({ key: 'food_pizza_eat',  frames: anims.generateFrameNumbers('food_pizza', { start: 0, end: 4 }), frameRate: 10, repeat: -1 });
+    anims.create({ key: 'food_melon_spin', frames: anims.generateFrameNumbers('food_melon', { start: 0, end: 4 }), frameRate: 8, repeat: -1 });
   }
 
   _frames(prefix, nums) {

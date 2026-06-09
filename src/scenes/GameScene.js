@@ -265,12 +265,13 @@ export class GameScene extends Phaser.Scene {
     this.scene.launch('UIScene', { gameScene: this });
 
     // ── Event listeners ───────────────────────────────────────────
-    this.events.on('spawn_projectile', this._onSpawnProjectile, this);
-    this.events.on('healing_aura',     this._onHealingAura, this);
-    this.events.on('ability_fx',       this._onAbilityFx, this);
-    this.events.on('enemy_killed',     this._onEnemyKilled, this);
-    this.events.on('boss_killed',      this._onBossKilled,    this);
-    this.events.on('boss_wall_break',  this._onBossWallBreak, this);
+    this.events.on('spawn_projectile',  this._onSpawnProjectile, this);
+    this.events.on('healing_aura',      this._onHealingAura, this);
+    this.events.on('ability_fx',        this._onAbilityFx, this);
+    this.events.on('enemy_killed',      this._onEnemyKilled, this);
+    this.events.on('boss_killed',       this._onBossKilled,    this);
+    this.events.on('boss_wall_break',   this._onBossWallBreak, this);
+    this.events.on('boss_phase_changed',this._onBossPhaseChanged, this);
 
     this.questManager.addEventListener('quest_started', (e) => {
       this.events.emit('quest_started', e.detail);
@@ -928,6 +929,32 @@ export class GameScene extends Phaser.Scene {
       }
     }
 
+    // ── Food pickup collection ────────────────────────────────────
+    if (this.foodPickups?.length) {
+      for (let i = this.foodPickups.length - 1; i >= 0; i--) {
+        const fp = this.foodPickups[i];
+        if (fp.collected) { this.foodPickups.splice(i, 1); continue; }
+        for (const pl of this.players) {
+          if (!pl?.alive || pl.downed) continue;
+          if (Phaser.Math.Distance.Between(fp.x, fp.y, pl.x, pl.y) < 40) {
+            fp.collected = true;
+            pl.hp = Math.min(pl.maxHp, pl.hp + fp.healAmt);
+            pl._updateHpBar?.();
+            // Golden pickup flash
+            if (this.anims?.exists('vfx_yellow1')) {
+              const s = this.add.sprite(fp.x, fp.y - 10, 'vfx_y1_1').setScale(1.0).setDepth(fp.sprite.depth + 1).setAlpha(0.85);
+              s.play('vfx_yellow1');
+              s.once('animationcomplete', () => s.destroy());
+            }
+            this.tweens.add({ targets: fp.sprite, y: fp.sprite.y - 20, alpha: 0, duration: 300, onComplete: () => fp.sprite.destroy() });
+            this.foodPickups.splice(i, 1);
+            this.events.emit('toast', { text: `+${fp.healAmt} HP`, color: '#88ff88' });
+            break;
+          }
+        }
+      }
+    }
+
     // ── Projectiles ───────────────────────────────────────────────
     for (let i = this.projectiles.length - 1; i >= 0; i--) {
       const p = this.projectiles[i];
@@ -1347,7 +1374,16 @@ export class GameScene extends Phaser.Scene {
 
   _onAbilityFx(data) {
     const { type, x, y, r } = data;
-    if (type === 'explosion' || type === 'shockwave') {
+    if (type === 'shockwave') {
+      // Elite shockwave — lightning burst
+      if (this.anims?.exists('vfx_lightning6')) {
+        const s = this.add.sprite(x, y, 'vfx_l6_1').setScale(1.6).setDepth(y + 5).setAlpha(0.9);
+        s.play('vfx_lightning6');
+        s.once('animationcomplete', () => this.tweens.add({ targets: s, alpha: 0, duration: 100, onComplete: () => s.destroy() }));
+      }
+      const circle = this.add.circle(x, y, r || 60, 0x88ccff, 0.2);
+      this.tweens.add({ targets: circle, alpha: 0, scaleX: 1.5, scaleY: 1.5, duration: 350, onComplete: () => circle.destroy() });
+    } else if (type === 'explosion') {
       const circle = this.add.circle(x, y, r || 60, 0xffcc44, 0.3);
       this.tweens.add({
         targets: circle, alpha: 0, scaleX: 1.4, scaleY: 1.4,
@@ -1405,12 +1441,71 @@ export class GameScene extends Phaser.Scene {
     const idx = this.enemies.indexOf(data.enemy);
     if (idx > -1) this.enemies.splice(idx, 1);
 
+    // Food drop — 28% chance, elite/mimic drop better food
+    const e = data.enemy;
+    const roll = Math.random();
+    if (roll < 0.28) {
+      const isElite = e.typeKey === 'elite' || e.typeKey === 'mimic';
+      const isMid   = e.typeKey === 'orc' || e.typeKey === 'slimem' || e.typeKey === 'rat';
+      let foodType, healAmt;
+      if (isElite)      { foodType = 'food_donut';  healAmt = 50; }
+      else if (isMid)   { foodType = 'food_pizza';  healAmt = 35; }
+      else              { foodType = 'food_melon';  healAmt = 20; }
+      this._spawnFoodPickup(e.x, e.y, foodType, healAmt);
+    }
+
     const region = REGIONS[this._regionIndex];
     if (region.portalUnlock === 'kill_all' && this._fixedEnemyMode) {
       this._anyEnemyKilled = true;
       if (this.enemies.filter(e => e.alive).length === 0) {
         this._unlockPortalNext();
         this.events.emit('toast', { text: 'The grove is cleansed — the path opens.' });
+      }
+    }
+  }
+
+  _spawnFoodPickup(x, y, textureKey, healAmt) {
+    if (!this.foodPickups) this.foodPickups = [];
+    const animMap = { food_donut: 'food_donut_spin', food_pizza: 'food_pizza_eat', food_melon: 'food_melon_spin' };
+    const isAnimated = !!animMap[textureKey];
+    const sprite = isAnimated
+      ? this.add.sprite(x, y - 5, textureKey).play(animMap[textureKey])
+      : this.add.image(x, y - 5, textureKey);
+    sprite.setDepth(y + 5).setScale(isAnimated ? 2.5 : 2.0);
+
+    // Bob tween
+    this.tweens.add({ targets: sprite, y: sprite.y - 6, duration: 600, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
+
+    const pickup = { sprite, healAmt, textureKey, x, y, lifetime: 15000 };
+    this.foodPickups.push(pickup);
+
+    // Auto-despawn
+    this.time.delayedCall(15000, () => {
+      if (!pickup.collected) {
+        this.tweens.add({ targets: sprite, alpha: 0, duration: 400, onComplete: () => sprite.destroy() });
+        const i = this.foodPickups.indexOf(pickup);
+        if (i > -1) this.foodPickups.splice(i, 1);
+      }
+    });
+  }
+
+  _onBossPhaseChanged(data) {
+    const boss = data.boss;
+    if (!boss) return;
+    // Big smoke burst on each boss phase transition
+    const cx = boss.x, cy = boss.y;
+    for (let i = 0; i < 5; i++) {
+      const ox = Phaser.Math.Between(-60, 60);
+      const oy = Phaser.Math.Between(-60, 30);
+      const smokeKey = i < 3 ? 'vfx_smoke3' : 'vfx_smoke4';
+      if (this.anims?.exists(smokeKey)) {
+        const pfx = i < 3 ? 'vfx_s3_' : 'vfx_s4_';
+        this.time.delayedCall(i * 80, () => {
+          if (!this.scene.isActive()) return;
+          const s = this.add.sprite(cx + ox, cy + oy, `${pfx}1`).setScale(1.0).setDepth(cy + 50).setAlpha(0.75);
+          s.play(smokeKey);
+          s.once('animationcomplete', () => this.tweens.add({ targets: s, alpha: 0, duration: 200, onComplete: () => s.destroy() }));
+        });
       }
     }
   }

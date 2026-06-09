@@ -33,12 +33,19 @@ export class Enemy extends Phaser.GameObjects.Container {
     this._roamTarget = null;
     this._roamTimer  = 0;
 
-    // Build sprite
-    const baseKey = cfg.textureBase;
-    this.sprite = scene.add.sprite(0, 0, baseKey + '_idle_01');
+    // Build sprite — new spritesheet-based enemies have a spriteTexture override
+    const baseKey  = cfg.textureBase;
+    const initTex  = cfg.spriteTexture || (baseKey + '_idle_01');
+    this.sprite = scene.add.sprite(0, 0, initTex);
     this.sprite.setScale(cfg.scale || 1);
     if (cfg.tint) this.sprite.setTint(cfg.tint);
     this.add(this.sprite);
+
+    // Mimic: starts dormant (chest) until player gets close
+    if (cfg.isMimic) {
+      this._mimicAwake = false;
+      this._mimicPhase = 'chest'; // 'chest' | 'opening' | 'awake'
+    }
 
     // Shadow
     if (QualitySettings.shadows) {
@@ -80,6 +87,24 @@ export class Enemy extends Phaser.GameObjects.Container {
     }
 
     const target = this._nearestPlayer(players);
+
+    // Mimic: awaken sequence when player steps close
+    if (this.cfg.isMimic && !this._mimicAwake) {
+      if (target) {
+        const d = Phaser.Math.Distance.Between(this.x, this.y, target.x, target.y);
+        if (d < 200 && this._mimicPhase === 'chest') {
+          this._mimicPhase = 'opening';
+          this._playAnim('opening');
+          this.scene.time.delayedCall(900, () => {
+            if (!this.alive) return;
+            this._mimicPhase = 'awake';
+            this._mimicAwake = true;
+            this._playAnim('run');
+          });
+        }
+      }
+      if (this._mimicPhase !== 'awake') return; // stay frozen until awake
+    }
 
     switch (this.state) {
       case STATE.IDLE:    this._doIdle(time, delta, target); break;
@@ -269,6 +294,18 @@ export class Enemy extends Phaser.GameObjects.Container {
     this._playAnim('dead');
     scene?.audio?.enemyDeath?.();
     scene?.events?.emit('enemy_killed', { enemy: this });
+
+    // Death smoke puff
+    if (scene) {
+      const idx = Phaser.Math.Between(1, 2);
+      const smokeKey  = `vfx_smoke${idx}`;
+      const initFrame = `vfx_s${idx}_1`;
+      if (scene.anims?.exists(smokeKey) && scene.textures?.exists(initFrame)) {
+        const s = scene.add.sprite(this.x, this.y - 10, initFrame).setScale(0.8).setDepth(this.depth + 1).setAlpha(0.85);
+        s.play(smokeKey);
+        s.once('animationcomplete', () => s.destroy());
+      }
+    }
 
     this.scene.time.delayedCall(800, () => {
       this.scene.tweens.add({

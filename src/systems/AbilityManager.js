@@ -11,6 +11,36 @@ const ABILITIES = {
   },
 };
 
+// Plays a one-shot VFX sprite animation at (x, y) in scene.
+function _vfxPlay(scene, animKey, x, y, scale = 1, depth = 10) {
+  if (!scene?.anims?.exists(animKey)) return;
+  const firstFrameKey = animKey.replace('vfx_', 'vfx_').replace(/(\d+)$/, '') + '1';
+  // Derive a valid first-frame image key from the anim key pattern
+  const framePrefix = _animToPrefix(animKey);
+  if (!framePrefix) return;
+  const s = scene.add.sprite(x, y, `${framePrefix}1`).setScale(scale).setDepth(depth).setAlpha(0.92);
+  s.play(animKey);
+  s.once('animationcomplete', () => {
+    scene.tweens.add({ targets: s, alpha: 0, duration: 120, onComplete: () => s.destroy() });
+  });
+  return s;
+}
+
+function _animToPrefix(key) {
+  const map = {
+    vfx_smoke1: 'vfx_s1_', vfx_smoke2: 'vfx_s2_', vfx_smoke3: 'vfx_s3_', vfx_smoke4: 'vfx_s4_',
+    vfx_yellow1: 'vfx_y1_', vfx_yellow2: 'vfx_y2_', vfx_yellow3: 'vfx_y3_',
+    vfx_green1: 'vfx_g1_', vfx_green2: 'vfx_g2_', vfx_green3: 'vfx_g3_',
+    vfx_green4: 'vfx_g4_', vfx_green5: 'vfx_g5_',
+    vfx_lightning1: 'vfx_l1_', vfx_lightning2: 'vfx_l2_', vfx_lightning3: 'vfx_l3_',
+    vfx_lightning4: 'vfx_l4_', vfx_lightning5: 'vfx_l5_', vfx_lightning6: 'vfx_l6_',
+    vfx_frost1: 'vfx_fr1_', vfx_frost2: 'vfx_fr2_', vfx_frost3: 'vfx_fr3_',
+    vfx_fire1s: 'vfx_fb1s_', vfx_fire1l: 'vfx_fb1l_', vfx_fire1e: 'vfx_fb1e_',
+    vfx_fire2: 'vfx_fb2_', vfx_fire3: 'vfx_fb3_',
+  };
+  return map[key] || null;
+}
+
 export class AbilityManager {
   static getAbility(char, key) {
     return ABILITIES[char]?.[key] ?? null;
@@ -42,15 +72,19 @@ export class AbilityManager {
       if (d <= r) {
         e.takeDamage(dmg, player, scene);
         e._hitstopTimer = 300;
+        // Small yellow burst on each hit enemy
+        _vfxPlay(scene, 'vfx_yellow1', e.x, e.y - 20, 0.7, e.depth + 2);
       }
     }
-    // Yellow expanding ring
+    // Large golden shockwave (yellow power VFX2 = rising light column, scaled up)
+    _vfxPlay(scene, 'vfx_yellow2', player.x, player.y - 30, 1.4, player.depth + 1);
+    // Expanding ring fallback still keeps it readable at large radius
     const gfx = scene.add.graphics();
     scene.tweens.addCounter({
-      from: 0, to: r, duration: 400,
+      from: 0, to: r, duration: 380,
       onUpdate: tw => {
         gfx.clear();
-        gfx.lineStyle(3, 0xffdd44, 0.85 * (1 - tw.progress));
+        gfx.lineStyle(3, 0xffdd44, 0.6 * (1 - tw.progress));
         gfx.strokeCircle(player.x, player.y, tw.getValue());
       },
       onComplete: () => gfx.destroy(),
@@ -60,14 +94,15 @@ export class AbilityManager {
 
   static _agniShield(player, scene) {
     player._agniShieldTimer = 3000;
-    // Replace any existing shield FX
     if (player._agniShieldFx) { player._agniShieldFx.destroy(); player._agniShieldFx = null; }
-    const fx = scene.add.ellipse(player.x, player.y, 64, 64, 0xff6600, 0.28);
+    const fx = scene.add.ellipse(player.x, player.y, 64, 64, 0xff6600, 0.22);
     player._agniShieldFx = fx;
     scene.tweens.add({
-      targets: fx, scaleX: 1.18, scaleY: 1.18, alpha: 0.45,
+      targets: fx, scaleX: 1.18, scaleY: 1.18, alpha: 0.38,
       duration: 450, yoyo: true, repeat: -1,
     });
+    // Fire burst on activation
+    _vfxPlay(scene, 'vfx_fire1s', player.x, player.y - 20, 1.1, player.depth + 2);
     scene.audio.ability();
   }
 
@@ -81,19 +116,12 @@ export class AbilityManager {
         e.takeDamage(dmg, player, scene);
         const angle = Math.atan2(e.y - player.y, e.x - player.x);
         if (e.knockback) e.knockback(angle, 300);
+        // Small fireball on each hit enemy
+        _vfxPlay(scene, 'vfx_fire3', e.x, e.y - 15, 0.8, e.depth + 2);
       }
     }
-    // Red-orange expanding ring
-    const gfx = scene.add.graphics();
-    scene.tweens.addCounter({
-      from: 0, to: r, duration: 600,
-      onUpdate: tw => {
-        gfx.clear();
-        gfx.lineStyle(5, 0xff5500, 0.9 * (1 - tw.progress));
-        gfx.strokeCircle(player.x, player.y, tw.getValue());
-      },
-      onComplete: () => gfx.destroy(),
-    });
+    // Central fireball explosion (VFX2 = large 12-frame burst)
+    _vfxPlay(scene, 'vfx_fire2', player.x, player.y - 20, 2.0, player.depth + 2);
     scene.cameras.main.shake(300, 0.012);
     scene.audio.ability();
   }
@@ -102,8 +130,6 @@ export class AbilityManager {
 
   static _vayuDash(player, scene) {
     const dist = 300;
-    // facingX/Y are not guaranteed to be a unit vector (facingX persists across vertical moves),
-    // so normalize before computing the dash target and path rectangle.
     const rawDx = player.facingX, rawDy = player.facingY || 0;
     const len = Math.sqrt(rawDx * rawDx + rawDy * rawDy) || 1;
     const dx = rawDx / len, dy = rawDy / len;
@@ -112,28 +138,27 @@ export class AbilityManager {
     const dmg = 50 * player.abilityPow;
     const halfW = 30;
 
-    // Hit enemies in a 60px-wide rectangle along the dash path
     for (const e of scene.enemies) {
       if (!e?.active || !e.alive) continue;
       const ex = e.x - player.x, ey = e.y - player.y;
       const proj = ex * dx + ey * dy;
       if (proj < 0 || proj > dist) continue;
       const perpDist = Math.abs(ex * dy - ey * dx);
-      if (perpDist <= halfW) e.takeDamage(dmg, player, scene);
+      if (perpDist <= halfW) {
+        e.takeDamage(dmg, player, scene);
+        _vfxPlay(scene, 'vfx_green2', e.x, e.y - 15, 0.7, e.depth + 2);
+      }
     }
 
-    // 3 cyan ghost ellipses trailing behind
-    for (let i = 0; i < 3; i++) {
-      const gx = player.x + dx * dist * (i / 3);
-      const gy = player.y + dy * dist * (i / 3);
-      const ghost = scene.add.ellipse(gx, gy, 34, 34, 0x44ccff, 0.4 - i * 0.1);
-      scene.tweens.add({
-        targets: ghost, alpha: 0, scaleX: 0.4, scaleY: 0.4,
-        duration: 300, delay: i * 60, onComplete: () => ghost.destroy(),
+    // Green dash trail — 4 VFX sprites spaced along the path
+    for (let i = 0; i < 4; i++) {
+      const gx = player.x + dx * dist * (i / 4);
+      const gy = player.y + dy * dist * (i / 4);
+      scene.time.delayedCall(i * 35, () => {
+        _vfxPlay(scene, 'vfx_green1', gx, gy - 10, 0.85, player.depth + 1);
       });
     }
 
-    // Move player to destination
     scene.tweens.add({ targets: player, x: tx, y: ty, duration: 180 });
     scene.audio.ability();
   }
@@ -144,7 +169,11 @@ export class AbilityManager {
       if (!p?.alive || p.downed) continue;
       p.hp = Math.min(p.maxHp, p.hp + healAmt);
       p._updateHpBar();
+      // Golden heal glow on each healed player
+      _vfxPlay(scene, 'vfx_yellow1', p.x, p.y - 30, 1.2, p.depth + 2);
     }
+    // Large radiant circle for the overall aura
+    _vfxPlay(scene, 'vfx_yellow3', player.x, player.y - 30, 1.6, player.depth + 2);
     scene.events.emit('healing_aura', { players: scene.players });
     scene.audio.ability();
   }
@@ -172,16 +201,25 @@ export class AbilityManager {
       if (next) chain.push(next);
     }
 
-    // Damage and draw chain lightning lines
+    // Chain lightning: VFX sprites at each target + thin line between
     let prev = { x: player.x, y: player.y };
-    for (const target of chain) {
+    chain.forEach((target, idx) => {
       target.takeDamage(dmg, player, scene);
+
+      // Lightning bolt VFX at target (alternate VFX1/VFX2 for variety)
+      const lKey = idx % 2 === 0 ? 'vfx_lightning1' : 'vfx_lightning2';
+      _vfxPlay(scene, lKey, target.x, target.y - 20, 1.1, target.depth + 2);
+
+      // Keep a thin arc line for spatial readability
       const line = scene.add.graphics();
-      line.lineStyle(2, 0x88eeff, 0.9);
+      line.lineStyle(2, 0x55ddff, 0.75);
       line.strokeLineShape(new Phaser.Geom.Line(prev.x, prev.y, target.x, target.y));
-      scene.tweens.add({ targets: line, alpha: 0, duration: 500, onComplete: () => line.destroy() });
+      scene.tweens.add({ targets: line, alpha: 0, duration: 400, onComplete: () => line.destroy() });
       prev = { x: target.x, y: target.y };
-    }
+    });
+
+    // Origin burst at player
+    _vfxPlay(scene, 'vfx_lightning3', player.x, player.y - 25, 1.0, player.depth + 2);
     scene.audio.ability();
     return true;
   }

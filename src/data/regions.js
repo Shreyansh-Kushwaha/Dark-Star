@@ -45,7 +45,7 @@ export const REGIONS = [
       { x: 1900, y: 1150 },
     ],
 
-    enemyTypes: ['melee'],
+    enemyTypes: ['melee', 'rat'],
     echoTriggers: [],
     worldFragments: [
       { fragmentId: 'lore_gramavana_stone', x: 1900, y: 850 },
@@ -89,7 +89,7 @@ export const REGIONS = [
 
     spawnerPositions: [],
     platePositions: [],
-    enemyTypes: ['melee'],
+    enemyTypes: ['melee', 'rat'],
     portalUnlock: 'npc_talk:mahavana_hermit',
     denseForest: true,
     echoTriggers: [
@@ -144,7 +144,7 @@ export const REGIONS = [
       { x: 1500, y: 850 },
       { x: 1500, y: 1150 },
     ],
-    enemyTypes: ['melee', 'ranged', 'orc'],
+    enemyTypes: ['melee', 'ranged', 'orc', 'slimem'],
     portalUnlock: 'kill_all',
     echoTriggers: [],
     worldFragments: [
@@ -187,7 +187,7 @@ export const REGIONS = [
       { x: 1700, y: 800  },
       { x: 1700, y: 1200 },
     ],
-    enemyTypes: ['orc', 'ranged', 'flying'],
+    enemyTypes: ['orc', 'ranged', 'flying', 'bat', 'slimem'],
     serpentRealm: true,
 
     portalUnlock: 'boss_kill',
@@ -229,7 +229,7 @@ export const REGIONS = [
       { x: 1500, y: 800 },
       { x: 1500, y: 1200 },
     ],
-    enemyTypes: ['orc', 'elite', 'flying'],
+    enemyTypes: ['orc', 'elite', 'flying', 'mimic'],
     echoTriggers: [
       { id: 'echo_devamandira_vault', x: 1500, y: 1000, r: 180,
         text: '⟨Memory Echo⟩ "Ekatmadeva spoke: I asked only for the people to remain whole. Suryadeva replied: Wholeness is power. Power must be governed."' },
@@ -267,7 +267,7 @@ export const REGIONS = [
       { x: 1600, y: 800 },
       { x: 1600, y: 1200 },
     ],
-    enemyTypes: ['ranged', 'elite', 'flying'],
+    enemyTypes: ['ranged', 'elite', 'flying', 'bat'],
     echoTriggers: [
       { id: 'echo_swargaseema_seal', x: 1600, y: 950, r: 200,
         text: '⟨Cloud Seal Inscription⟩ "The higher you climb, the thinner the story becomes. Heaven is not a sanctuary. It is a palace built on omission."' },
