@@ -17,7 +17,9 @@ button:hover{background:#2a0038;border-color:#6699ff}
 button.green{border-color:#44aa44;color:#88ff88}button.green:hover{background:#0a2a0a}
 button.purple{border-color:#aa44ff;color:#cc88ff}button.purple:hover{background:#1a0030}
 button.red{border-color:#ff4444;color:#ff8888}button.red:hover{background:#2a0000}
+button.orange{border-color:#ff8833;color:#ffaa55}button.orange:hover{background:#2a1400}
 button.active{background:#4488ff33;border-color:#88aaff}
+button.orange.active{background:#ff883322;border-color:#ffaa55}
 #zoom-label{font-size:11px;color:#888;min-width:40px;text-align:center}
 #status-msg{font-size:10px;color:#666;margin-left:8px}
 
@@ -27,13 +29,14 @@ button.active{background:#4488ff33;border-color:#88aaff}
 #canvas-container{position:absolute;inset:0}
 
 /* ── Properties panel ── */
-#props{width:150px;background:#12001c;border-left:1px solid #333;padding:10px;display:none;flex-direction:column;gap:8px;overflow-y:auto;flex-shrink:0}
+#props{width:162px;background:#12001c;border-left:1px solid #333;padding:10px;display:none;flex-direction:column;gap:8px;overflow-y:auto;flex-shrink:0}
 #props.visible{display:flex}
 #props h4{font-size:11px;color:#ffd700;border-bottom:1px solid #333;padding-bottom:4px}
 .prop-row{display:flex;justify-content:space-between;align-items:center;gap:4px}
 .prop-row label{font-size:10px;color:#888}
 .prop-row input[type=number]{width:64px;background:#0a0010;border:1px solid #333;color:#ccc;padding:2px 4px;font-size:10px;border-radius:2px;font-family:monospace}
 .prop-row input[type=checkbox]{accent-color:#4488ff}
+.prop-row select{flex:1;background:#0a0010;border:1px solid #333;color:#ccc;padding:2px 3px;font-size:9px;border-radius:2px;font-family:monospace}
 #prop-anim{font-size:9px;color:#666;word-break:break-all}
 
 /* ── Bottom tray ── */
@@ -61,7 +64,7 @@ button.active{background:#4488ff33;border-color:#88aaff}
 /* ── Randomizer modal ── */
 #rand-modal{position:fixed;inset:0;background:#000c;display:none;z-index:1000;align-items:center;justify-content:center}
 #rand-modal.open{display:flex}
-#rand-box{background:#12001c;border:1px solid #44ff88;border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:260px}
+#rand-box{background:#12001c;border:1px solid #44ff88;border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:280px}
 #rand-box h4{color:#44ff88;font-size:12px;font-weight:bold;margin:0}
 #rand-asset-lbl{font-size:10px;color:#aaa}
 .rand-row{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:11px;color:#ccc}
@@ -115,6 +118,7 @@ button.active{background:#4488ff33;border-color:#88aaff}
     <div class="sep"></div>
     <button id="draw-eraser" title="Eraser" style="padding:2px 8px;font-size:12px;line-height:1">⌫ Eraser</button>
   </div>
+  <button class="orange" id="btn-nowalk">⛔ No-Walk Zone</button>
   <div class="sep"></div>
   <button class="purple" id="btn-upload-asset">⬆ Upload Asset</button>
   <input type="file" id="file-upload-asset" accept="image/*" multiple style="display:none">
@@ -137,6 +141,14 @@ button.active{background:#4488ff33;border-color:#88aaff}
     <div class="prop-row"><label>Y</label><input type="number" id="prop-y" step="1"></div>
     <div class="prop-row"><label>Scale</label><input type="number" id="prop-scale" step="0.1" min="0.1"></div>
     <div class="prop-row"><label>Flip X</label><input type="checkbox" id="prop-flipx"></div>
+    <div class="prop-row">
+      <label>Layer</label>
+      <select id="prop-layer">
+        <option value="below">Below Player</option>
+        <option value="above">Above Player</option>
+      </select>
+    </div>
+    <button id="btn-select-same" title="Select all placed sprites using this same asset" style="font-size:9px;padding:3px 6px;margin-top:0">Select All Same Asset</button>
     <div style="font-size:9px;color:#666;margin-top:4px">Animation:</div>
     <div id="prop-anim"></div>
     <div style="flex:1"></div>
@@ -167,6 +179,12 @@ button.active{background:#4488ff33;border-color:#88aaff}
     <div class="rand-row"><label>Scale min</label><input type="number" id="rand-scale-min" min="0.1" max="10" step="0.1" value="1.0"></div>
     <div class="rand-row"><label>Scale max</label><input type="number" id="rand-scale-max" min="0.1" max="10" step="0.1" value="1.0"></div>
     <div class="rand-row"><label>Avoid overlap</label><input type="checkbox" id="rand-avoid" checked></div>
+    <div class="rand-row"><label>Layer</label>
+      <select id="rand-layer">
+        <option value="below">Below Player</option>
+        <option value="above">Above Player</option>
+      </select>
+    </div>
     <div id="rand-status"></div>
     <div id="rand-footer">
       <button class="green" id="btn-rand-go">🎲 Randomize</button>
@@ -195,7 +213,12 @@ const WORLD_W = 3200, WORLD_H = 2000;
 
 // ── State ──────────────────────────────────────────────────────────────────
 const S = {
-  stage: null, bgLayer: null, drawLayer: null, spritesLayer: null, selLayer: null,
+  stage: null,
+  bgLayer: null, drawLayer: null,
+  belowLayer: null,  // sprites rendered below the player character
+  aboveLayer: null,  // sprites rendered above the player character
+  noWalkLayer: null, // no-walk zone rectangles
+  selLayer: null,
   bgRect: null, bgImage: null,
   transformer: null,
   selectedNode: null,
@@ -211,6 +234,7 @@ const S = {
   deleteMode: false,
   selectMode: false,
   drawMode: false,
+  noWalkMode: false,
   drawEraser: false,
   drawColor: '#ff4444',
   drawSize: 12,
@@ -220,19 +244,18 @@ const S = {
   roomCode: null,
   peerConnected: false,
   dragSel: { active: false, startX: 0, startY: 0, rect: null },
+  noWalkDrag: { active: false, startX: 0, startY: 0, previewRect: null },
+  noWalkZones: [], // [{ id, x, y, w, h, konvaRect, konvaLabel }]
 };
 
 // ── Utility ────────────────────────────────────────────────────────────────
 function assetURL(dir, frame) {
   return '/' + dir.split('/').map(encodeURIComponent).join('/') + '/' + encodeURIComponent(frame);
 }
-
 function setStatus(msg) { document.getElementById('status-msg').textContent = msg; }
-
 function updateZoomLabel() {
   document.getElementById('zoom-label').textContent = Math.round(S.stage.scaleX() * 100) + '%';
 }
-
 function getImg(url) {
   if (S.imgCache[url]) return Promise.resolve(S.imgCache[url]);
   return new Promise((resolve, reject) => {
@@ -243,16 +266,31 @@ function getImg(url) {
   });
 }
 
+// Returns all sprite Image nodes from both layers
+function getAllSpriteNodes() {
+  return [
+    ...S.belowLayer.getChildren().filter(n => n instanceof Konva.Image),
+    ...S.aboveLayer.getChildren().filter(n => n instanceof Konva.Image),
+  ];
+}
+
+// Returns the Konva layer for a given spriteLayer attribute value
+function konvaLayerFor(spriteLayerAttr) {
+  return spriteLayerAttr === 'above' ? S.aboveLayer : S.belowLayer;
+}
+
 // ── Konva init ─────────────────────────────────────────────────────────────
 function initStage() {
   const wrap = document.getElementById('canvas-wrap');
   S.stage = new Konva.Stage({ container: 'canvas-container', width: wrap.clientWidth, height: wrap.clientHeight });
 
-  S.bgLayer      = new Konva.Layer();
-  S.drawLayer    = new Konva.Layer();
-  S.spritesLayer = new Konva.Layer();
-  S.selLayer     = new Konva.Layer();
-  S.stage.add(S.bgLayer, S.drawLayer, S.spritesLayer, S.selLayer);
+  S.bgLayer     = new Konva.Layer();
+  S.drawLayer   = new Konva.Layer();
+  S.belowLayer  = new Konva.Layer(); // below player
+  S.aboveLayer  = new Konva.Layer(); // above player
+  S.noWalkLayer = new Konva.Layer(); // no-walk zones
+  S.selLayer    = new Konva.Layer();
+  S.stage.add(S.bgLayer, S.drawLayer, S.belowLayer, S.aboveLayer, S.noWalkLayer, S.selLayer);
 
   S.bgRect = new Konva.Rect({ x:0, y:0, width:WORLD_W, height:WORLD_H, fill:'#2d5c28', listening:false });
   S.bgLayer.add(S.bgRect);
@@ -269,13 +307,14 @@ function initStage() {
   bindZoomPan();
   bindDrawing();
   bindDeleteDrag();
+  bindNoWalkZone();
   bindStageClick();
   bindKeyboard();
   bindPropsPanel();
   bindToolbar();
   bindCropModal();
   bindRandModal();
-  pushHistory(); // initial empty state
+  pushHistory();
 }
 
 function fitStage() {
@@ -308,8 +347,7 @@ function bindZoomPan() {
   const canvasEl = document.getElementById('canvas-container');
   canvasEl.addEventListener('contextmenu', e => e.preventDefault());
   canvasEl.addEventListener('mousedown', e => {
-    if (S.drawMode) return;
-    // right-click always pans; middle-click always pans; left-click pans in pan mode or space+drag
+    if (S.drawMode || S.noWalkMode) return;
     if (e.button === 2 || e.button === 1 || (e.button === 0 && (spaceDown || S.panMode))) {
       panStart = { x: e.clientX, y: e.clientY };
       panOrigin = { x: S.stage.x(), y: S.stage.y() };
@@ -353,7 +391,6 @@ function clientToWorld(clientX, clientY) {
 
 function bindDrawing() {
   const canvasEl = document.getElementById('canvas-container');
-
   canvasEl.addEventListener('mousedown', e => {
     if (!S.drawMode || e.button !== 0) return;
     e.preventDefault();
@@ -370,15 +407,13 @@ function bindDrawing() {
     S.drawLayer.add(S.currentLine);
     S.drawLayer.batchDraw();
   });
-
   window.addEventListener('mousemove', e => {
     if (!S.drawMode || !S.currentLine) return;
     const { x, y } = clientToWorld(e.clientX, e.clientY);
     S.currentLine.points(S.currentLine.points().concat([x, y]));
     S.drawLayer.batchDraw();
   });
-
-  window.addEventListener('mouseup', e => {
+  window.addEventListener('mouseup', () => {
     if (!S.drawMode || !S.currentLine) return;
     S.currentLine = null;
     pushHistory();
@@ -387,12 +422,13 @@ function bindDrawing() {
 
 function updateCursor() {
   const cc = document.getElementById('canvas-container');
-  if (S.placingAsset)                cc.style.cursor = 'crosshair';
-  else if (S.panMode)                cc.style.cursor = 'grab';
-  else if (S.deleteMode)             cc.style.cursor = 'not-allowed';
-  else if (S.drawMode && S.drawEraser) cc.style.cursor = 'cell';
-  else if (S.drawMode)               cc.style.cursor = 'crosshair';
-  else                               cc.style.cursor = 'default';
+  if (S.placingAsset)                   cc.style.cursor = 'crosshair';
+  else if (S.panMode)                   cc.style.cursor = 'grab';
+  else if (S.deleteMode)                cc.style.cursor = 'not-allowed';
+  else if (S.noWalkMode)                cc.style.cursor = 'cell';
+  else if (S.drawMode && S.drawEraser)  cc.style.cursor = 'cell';
+  else if (S.drawMode)                  cc.style.cursor = 'crosshair';
+  else                                  cc.style.cursor = 'default';
 }
 
 function setMode(mode) {
@@ -400,23 +436,26 @@ function setMode(mode) {
   S.deleteMode = (mode === 'delete');
   S.selectMode = (mode === 'select');
   S.drawMode   = (mode === 'draw');
-  document.getElementById('btn-pan').classList.toggle('active', S.panMode);
+  S.noWalkMode = (mode === 'nowalk');
+  document.getElementById('btn-pan').classList.toggle('active',     S.panMode);
   document.getElementById('btn-del-mode').classList.toggle('active', S.deleteMode);
-  document.getElementById('btn-select').classList.toggle('active', S.selectMode);
-  document.getElementById('btn-draw').classList.toggle('active', S.drawMode);
+  document.getElementById('btn-select').classList.toggle('active',  S.selectMode);
+  document.getElementById('btn-draw').classList.toggle('active',    S.drawMode);
+  document.getElementById('btn-nowalk').classList.toggle('active',  S.noWalkMode);
   document.getElementById('draw-opts').style.display = S.drawMode ? 'flex' : 'none';
   if (!S.drawMode) { S.drawEraser = false; document.getElementById('draw-eraser').classList.remove('active'); }
-  if (S.panMode || S.deleteMode || S.selectMode || S.drawMode) {
+  if (S.panMode || S.deleteMode || S.selectMode || S.drawMode || S.noWalkMode) {
     cancelPlacing();
     if (!S.selectMode) deselectAll();
   }
-  const draggable = !S.panMode && !S.deleteMode && !S.drawMode;
-  S.spritesLayer.getChildren().forEach(n => { if (n instanceof Konva.Line) return; n.draggable(draggable); });
+  const draggable = !S.panMode && !S.deleteMode && !S.drawMode && !S.noWalkMode;
+  getAllSpriteNodes().forEach(n => { n.draggable(draggable); });
   updateCursor();
-  if (S.panMode)         setStatus('Pan mode — drag to scroll the map');
-  else if (S.deleteMode) setStatus('Delete mode — click any sprite to remove it');
+  if      (S.panMode)    setStatus('Pan mode — drag to scroll the map');
+  else if (S.deleteMode) setStatus('Delete mode — click or drag to remove sprites');
   else if (S.selectMode) setStatus('Select mode — click a sprite to select it');
   else if (S.drawMode)   setStatus('Draw mode — drag to paint on the canvas');
+  else if (S.noWalkMode) setStatus('No-Walk Zone — drag to paint blocked area, click a zone to delete it');
   else setStatus('');
 }
 
@@ -424,7 +463,7 @@ function setMode(mode) {
 function bindStageClick() {
   S.stage.on('click tap', e => {
     if (e.evt.button === 2) return;
-    if (S.panMode) return;
+    if (S.panMode || S.noWalkMode) return;
     const target = e.target;
     if (S.placingAsset && (target === S.stage || target === S.bgRect || target === S.bgImage)) {
       const pos = S.stage.getPointerPosition();
@@ -462,9 +501,10 @@ function bindToolbar() {
   document.getElementById('btn-save').onclick   = saveJSON;
   document.getElementById('btn-export').onclick = exportPNG;
   document.getElementById('btn-select').onclick = () => setMode(S.selectMode ? 'none' : 'select');
-  document.getElementById('btn-pan').onclick = () => setMode(S.panMode ? 'none' : 'pan');
+  document.getElementById('btn-pan').onclick    = () => setMode(S.panMode    ? 'none' : 'pan');
   document.getElementById('btn-del-mode').onclick = () => setMode(S.deleteMode ? 'none' : 'delete');
-  document.getElementById('btn-draw').onclick = () => setMode(S.drawMode ? 'none' : 'draw');
+  document.getElementById('btn-draw').onclick   = () => setMode(S.drawMode   ? 'none' : 'draw');
+  document.getElementById('btn-nowalk').onclick = () => setMode(S.noWalkMode ? 'none' : 'nowalk');
   document.getElementById('draw-color').oninput = e => { S.drawColor = e.target.value; };
   document.getElementById('draw-size').oninput  = e => {
     S.drawSize = +e.target.value;
@@ -484,7 +524,7 @@ function bindToolbar() {
     S.drawEraser = !S.drawEraser;
     document.getElementById('draw-eraser').classList.toggle('active', S.drawEraser);
     updateCursor();
-    setStatus(S.drawEraser ? 'Eraser mode — drag to erase draw strokes' : 'Draw mode — drag to paint on the canvas');
+    setStatus(S.drawEraser ? 'Eraser mode' : 'Draw mode');
   };
   document.getElementById('btn-upload-asset').onclick = () => document.getElementById('file-upload-asset').click();
   document.getElementById('file-upload-asset').onchange = e => uploadAssets(e.target.files);
@@ -502,7 +542,6 @@ async function init() {
   } catch (err) {
     setStatus('⚠ Could not load assets: ' + err.message);
   }
-  // Auto-join room if URL has a #CODE hash
   const hashCode = location.hash.slice(1).toUpperCase();
   if (/^[A-Z]{4}$/.test(hashCode)) joinRoom(hashCode);
 }
@@ -533,7 +572,6 @@ function loadBgImage(file) {
 function renderTray() {
   if (!S.assets) return;
   const cats = S.assets.categories;
-
   const tabsEl = document.getElementById('tray-tabs');
   tabsEl.innerHTML = '';
   cats.forEach((cat, i) => {
@@ -543,10 +581,8 @@ function renderTray() {
     t.onclick = () => { S.activeCat = i; S.activeGrp = null; renderTray(); };
     tabsEl.appendChild(t);
   });
-
   const cat = cats[S.activeCat];
   if (!cat) return;
-
   const subEl = document.getElementById('tray-sub');
   subEl.innerHTML = '';
   const allPill = document.createElement('div');
@@ -566,7 +602,6 @@ function renderTray() {
   srch.value = S.searchQ;
   srch.oninput = e => { S.searchQ = e.target.value.toLowerCase(); renderTrayGrid(); };
   subEl.appendChild(srch);
-
   renderTrayGrid();
 }
 
@@ -574,14 +609,12 @@ function renderTrayGrid() {
   if (!S.assets) return;
   const cat = S.assets.categories[S.activeCat];
   if (!cat) return;
-
   let sprites = [];
   for (const g of cat.groups) {
     if (S.activeGrp && g.name !== S.activeGrp) continue;
     sprites.push(...g.sprites);
   }
   if (S.searchQ) sprites = sprites.filter(s => s.name.toLowerCase().includes(S.searchQ));
-
   const grid = document.getElementById('tray-grid');
   grid.innerHTML = '';
   for (const asset of sprites) {
@@ -606,17 +639,18 @@ function startPlacing(asset) {
 }
 
 // ── Sprite placement ───────────────────────────────────────────────────────
-async function placeSprite(asset, x, y, spriteId) {
+async function placeSprite(asset, x, y, spriteId, layerAttr) {
   const url = assetURL(asset.dir, asset.frames[0]);
   let img;
   try { img = await getImg(url); }
   catch { setStatus('⚠ Failed to load: ' + url); return; }
 
+  const layer = layerAttr || 'below';
   const id = spriteId || genSpriteId();
   const node = new Konva.Image({
     x, y, image: img,
     offsetX: img.width / 2, offsetY: img.height / 2,
-    draggable: !S.panMode && !S.deleteMode,
+    draggable: !S.panMode && !S.deleteMode && !S.noWalkMode,
   });
   node.setAttr('assetDir',     asset.dir);
   node.setAttr('assetFrames',  asset.frames);
@@ -624,16 +658,17 @@ async function placeSprite(asset, x, y, spriteId) {
   node.setAttr('assetAnimated',asset.animated);
   node.setAttr('currentFrame', 0);
   node.setAttr('spriteId',     id);
+  node.setAttr('spriteLayer',  layer);
 
-  S.spritesLayer.add(node);
+  konvaLayerFor(layer).add(node);
   bindSpriteEvents(node);
   if (!spriteId) {
-    // local placement — broadcast to peer
     broadcast({ type: 'SPRITE_ADD', spriteId: id, dir: asset.dir, frames: asset.frames,
       name: asset.name, animated: asset.animated, x, y,
-      offsetX: img.width / 2, offsetY: img.height / 2, scaleX: 1, scaleY: 1 });
+      offsetX: img.width / 2, offsetY: img.height / 2, scaleX: 1, scaleY: 1,
+      spriteLayer: layer });
     pushHistory();
-    setStatus('Placed: ' + asset.name);
+    setStatus('Placed: ' + asset.name + ' [' + (layer === 'above' ? 'Above Player' : 'Below Player') + ']');
   }
 }
 
@@ -646,27 +681,26 @@ function cancelPlacing() {
 
 function bindSpriteEvents(node) {
   node.on('click tap', e => {
-    if (S.panMode) return;
+    if (S.panMode || S.noWalkMode) return;
     if (S.deleteMode) {
       e.cancelBubble = true;
       const id = node.getAttr('spriteId');
       S.transformer.nodes([]);
       S.selectedNode = null;
       node.destroy();
-      S.spritesLayer.batchDraw();
+      konvaLayerFor(node.getAttr('spriteLayer')).batchDraw();
       S.selLayer.batchDraw();
       document.getElementById('props').classList.remove('visible');
       broadcast({ type: 'SPRITE_DELETE', spriteId: id });
       pushHistory();
-      setStatus('Deleted — click another sprite or press Esc to exit Delete mode');
+      setStatus('Deleted — Esc to exit Delete mode');
       return;
     }
-    // Select mode or normal mode both allow selection; placing mode is blocked only in non-select
     if (S.placingAsset && !S.selectMode) return;
     e.cancelBubble = true;
     selectNode(node);
   });
-  node.draggable(!S.panMode && !S.deleteMode);
+  node.draggable(!S.panMode && !S.deleteMode && !S.noWalkMode);
   node.on('dragend', () => {
     pushHistory(); updatePropsPanel(node);
     broadcast({ type: 'SPRITE_MOVE', spriteId: node.getAttr('spriteId'),
@@ -681,6 +715,18 @@ function bindSpriteEvents(node) {
   });
 }
 
+// ── Move a node between below/above layers ─────────────────────────────────
+function moveNodeToLayer(node, newLayerAttr) {
+  const cur = node.getAttr('spriteLayer') || 'below';
+  if (cur === newLayerAttr) return;
+  const oldKonva = konvaLayerFor(cur);
+  const newKonva = konvaLayerFor(newLayerAttr);
+  node.setAttr('spriteLayer', newLayerAttr);
+  node.moveTo(newKonva);
+  oldKonva.batchDraw();
+  newKonva.batchDraw();
+}
+
 // ── Selection & properties ─────────────────────────────────────────────────
 function selectNode(node) {
   S.selectedNode = node;
@@ -691,12 +737,12 @@ function selectNode(node) {
 
 function updatePropsPanel(node) {
   if (!node) return;
-  const panel = document.getElementById('props');
-  panel.classList.add('visible');
-  document.getElementById('prop-x').value     = Math.round(node.x());
-  document.getElementById('prop-y').value     = Math.round(node.y());
-  document.getElementById('prop-scale').value = Math.abs(node.scaleX()).toFixed(2);
+  document.getElementById('props').classList.add('visible');
+  document.getElementById('prop-x').value      = Math.round(node.x());
+  document.getElementById('prop-y').value      = Math.round(node.y());
+  document.getElementById('prop-scale').value  = Math.abs(node.scaleX()).toFixed(2);
   document.getElementById('prop-flipx').checked = node.scaleX() < 0;
+  document.getElementById('prop-layer').value  = node.getAttr('spriteLayer') || 'below';
   document.getElementById('prop-anim').textContent = node.getAttr('assetName') || '';
 }
 
@@ -710,10 +756,11 @@ function deselectAll() {
 function deleteSelected() {
   if (!S.selectedNode) return;
   const id = S.selectedNode.getAttr('spriteId');
+  const kl = konvaLayerFor(S.selectedNode.getAttr('spriteLayer'));
   S.transformer.nodes([]);
   S.selectedNode.destroy();
   S.selectedNode = null;
-  S.spritesLayer.batchDraw();
+  kl.batchDraw();
   S.selLayer.batchDraw();
   document.getElementById('props').classList.remove('visible');
   broadcast({ type: 'SPRITE_DELETE', spriteId: id });
@@ -731,7 +778,7 @@ function bindPropsPanel() {
     S.selectedNode.scaleX(flipx ? -Math.abs(scale) : Math.abs(scale));
     S.selectedNode.scaleY(Math.abs(scale));
     S.selectedNode.offsetX(flipx ? -S.selectedNode.width() / 2 : S.selectedNode.width() / 2);
-    S.spritesLayer.batchDraw();
+    konvaLayerFor(S.selectedNode.getAttr('spriteLayer')).batchDraw();
     S.transformer.forceUpdate();
     broadcast({ type: 'SPRITE_MOVE', spriteId: S.selectedNode.getAttr('spriteId'),
       x: S.selectedNode.x(), y: S.selectedNode.y(),
@@ -741,6 +788,32 @@ function bindPropsPanel() {
   }
   ['prop-x','prop-y','prop-scale'].forEach(id => document.getElementById(id).addEventListener('change', applyProp));
   document.getElementById('prop-flipx').addEventListener('change', applyProp);
+
+  // Layer change — applies to ALL currently transformer-selected nodes
+  document.getElementById('prop-layer').addEventListener('change', e => {
+    const newLayer = e.target.value;
+    const nodes = S.transformer.nodes().filter(n => n instanceof Konva.Image);
+    if (nodes.length === 0) return;
+    nodes.forEach(n => moveNodeToLayer(n, newLayer));
+    S.transformer.forceUpdate();
+    S.selLayer.batchDraw();
+    pushHistory();
+    const label = newLayer === 'above' ? 'Above Player' : 'Below Player';
+    setStatus('Layer → ' + label + ' (' + nodes.length + ' sprite' + (nodes.length > 1 ? 's' : '') + ')');
+  });
+
+  // Select all sprites that share the same asset as the currently selected one
+  document.getElementById('btn-select-same').onclick = () => {
+    if (!S.selectedNode) return;
+    const dir = S.selectedNode.getAttr('assetDir');
+    const matches = getAllSpriteNodes().filter(n => n.getAttr('assetDir') === dir);
+    if (matches.length === 0) return;
+    S.transformer.nodes(matches);
+    S.selLayer.batchDraw();
+    // Show props for the originally selected node as reference
+    document.getElementById('props').classList.add('visible');
+    setStatus('Selected ' + matches.length + ' × "' + (S.selectedNode.getAttr('assetName') || dir) + '" — use Layer dropdown to change all');
+  };
 }
 
 // ── Preview animation ──────────────────────────────────────────────────────
@@ -750,26 +823,26 @@ function togglePreview() {
     clearInterval(S.previewInterval);
     S.previewInterval = null;
     btn.textContent = '▶ Preview';
-    S.spritesLayer.getChildren().forEach(node => {
+    getAllSpriteNodes().forEach(node => {
       const frames = node.getAttr('assetFrames');
       if (!frames || frames.length <= 1) return;
       node.setAttr('currentFrame', 0);
-      const url = assetURL(node.getAttr('assetDir'), frames[0]);
-      getImg(url).then(img => { node.image(img); }).catch(() => {});
+      getImg(assetURL(node.getAttr('assetDir'), frames[0])).then(img => { node.image(img); }).catch(() => {});
     });
-    S.spritesLayer.batchDraw();
+    S.belowLayer.batchDraw(); S.aboveLayer.batchDraw();
     return;
   }
-
   btn.textContent = '⏹ Stop';
   S.previewInterval = setInterval(() => {
-    S.spritesLayer.getChildren().forEach(node => {
+    getAllSpriteNodes().forEach(node => {
       const frames = node.getAttr('assetFrames');
       if (!frames || frames.length <= 1) return;
       const next = (node.getAttr('currentFrame') + 1) % frames.length;
       node.setAttr('currentFrame', next);
-      const url = assetURL(node.getAttr('assetDir'), frames[next]);
-      getImg(url).then(img => { node.image(img); S.spritesLayer.batchDraw(); }).catch(() => {});
+      getImg(assetURL(node.getAttr('assetDir'), frames[next])).then(img => {
+        node.image(img);
+        konvaLayerFor(node.getAttr('spriteLayer')).batchDraw();
+      }).catch(() => {});
     });
   }, 120);
 }
@@ -785,13 +858,14 @@ function serializeSprites() {
     strokeWidth: n.strokeWidth(), lineCap: n.lineCap(), lineJoin: n.lineJoin(),
     composite: n.globalCompositeOperation(),
   }));
-  const sprites = S.spritesLayer.getChildren().map(n => ({
+  const sprites = getAllSpriteNodes().map(n => ({
     type: 'sprite',
-    spriteId: n.getAttr('spriteId'),
-    dir:      n.getAttr('assetDir'),
-    frames:   n.getAttr('assetFrames'),
-    name:     n.getAttr('assetName'),
-    animated: n.getAttr('assetAnimated'),
+    spriteId:    n.getAttr('spriteId'),
+    dir:         n.getAttr('assetDir'),
+    frames:      n.getAttr('assetFrames'),
+    name:        n.getAttr('assetName'),
+    animated:    n.getAttr('assetAnimated'),
+    spriteLayer: n.getAttr('spriteLayer') || 'below',
     x: n.x(), y: n.y(),
     scaleX: n.scaleX(), scaleY: n.scaleY(),
     offsetX: n.offsetX(), offsetY: n.offsetY(),
@@ -799,8 +873,12 @@ function serializeSprites() {
   return [...strokes, ...sprites];
 }
 
+function serializeNoWalkZones() {
+  return S.noWalkZones.map(z => ({ id: z.id, x: z.x, y: z.y, w: z.w, h: z.h }));
+}
+
 function pushHistory() {
-  S.history.push(JSON.stringify(serializeSprites()));
+  S.history.push(JSON.stringify({ sprites: serializeSprites(), noWalkZones: serializeNoWalkZones() }));
   if (S.history.length > 20) S.history.shift();
 }
 
@@ -808,52 +886,179 @@ function undo() {
   if (S.history.length < 2) { setStatus('Nothing to undo'); return; }
   S.history.pop();
   const prev = JSON.parse(S.history[S.history.length - 1]);
-  restoreSprites(prev);
+  restoreSprites(prev.sprites);
+  restoreNoWalkZones(prev.noWalkZones || []);
 }
 
 async function restoreSprites(list) {
   deselectAll();
   S.drawLayer.destroyChildren();
-  S.spritesLayer.destroyChildren();
+  S.belowLayer.destroyChildren();
+  S.aboveLayer.destroyChildren();
   for (const d of list) {
     if (d.type === 'stroke') {
-      const line = new Konva.Line({
+      S.drawLayer.add(new Konva.Line({
         stroke: d.stroke, strokeWidth: d.strokeWidth,
         lineCap: d.lineCap, lineJoin: d.lineJoin, points: d.points,
         globalCompositeOperation: d.composite || 'source-over',
         listening: false,
-      });
-      S.drawLayer.add(line);
+      }));
       continue;
     }
     const url = assetURL(d.dir, d.frames[0]);
     try {
       const img = await getImg(url);
-      const node = new Konva.Image({ x: d.x, y: d.y, image: img, scaleX: d.scaleX, scaleY: d.scaleY, offsetX: d.offsetX, offsetY: d.offsetY, draggable: !S.panMode && !S.deleteMode && !S.drawMode });
+      const la = d.spriteLayer || 'below';
+      const node = new Konva.Image({
+        x: d.x, y: d.y, image: img,
+        scaleX: d.scaleX, scaleY: d.scaleY,
+        offsetX: d.offsetX, offsetY: d.offsetY,
+        draggable: !S.panMode && !S.deleteMode && !S.drawMode && !S.noWalkMode,
+      });
       node.setAttr('assetDir',     d.dir);
       node.setAttr('assetFrames',  d.frames);
       node.setAttr('assetName',    d.name);
       node.setAttr('assetAnimated',d.animated);
       node.setAttr('currentFrame', 0);
       node.setAttr('spriteId',     d.spriteId || genSpriteId());
-      S.spritesLayer.add(node);
+      node.setAttr('spriteLayer',  la);
+      konvaLayerFor(la).add(node);
       bindSpriteEvents(node);
     } catch { /* skip missing images */ }
   }
   S.drawLayer.batchDraw();
-  S.spritesLayer.batchDraw();
+  S.belowLayer.batchDraw();
+  S.aboveLayer.batchDraw();
   setStatus('Undone');
+}
+
+// ── No-Walk Zones ──────────────────────────────────────────────────────────
+function genZoneId() {
+  return 'z_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6);
+}
+
+function addNoWalkZone(x, y, w, h, id) {
+  const zoneId = id || genZoneId();
+
+  const konvaRect = new Konva.Rect({
+    x, y, width: w, height: h,
+    fill: 'rgba(255,30,30,0.18)',
+    stroke: '#ff3333',
+    strokeWidth: 1.5,
+    dash: [6, 3],
+    listening: true,
+  });
+  konvaRect.setAttr('zoneId', zoneId);
+
+  const konvaLabel = new Konva.Text({
+    x: x + 5, y: y + 4,
+    text: '⛔ NO-WALK',
+    fontSize: 11,
+    fill: '#ff6666',
+    listening: false,
+  });
+  konvaLabel.setAttr('zoneId', zoneId);
+
+  S.noWalkLayer.add(konvaRect);
+  S.noWalkLayer.add(konvaLabel);
+  S.noWalkLayer.batchDraw();
+
+  konvaRect.on('click tap', e => {
+    if (!S.noWalkMode) return;
+    e.cancelBubble = true;
+    removeNoWalkZone(zoneId);
+    pushHistory();
+    setStatus('No-walk zone removed — Ctrl+Z to undo');
+  });
+
+  S.noWalkZones.push({ id: zoneId, x, y, w, h, konvaRect, konvaLabel });
+  return zoneId;
+}
+
+function removeNoWalkZone(zoneId) {
+  const idx = S.noWalkZones.findIndex(z => z.id === zoneId);
+  if (idx < 0) return;
+  const zone = S.noWalkZones[idx];
+  zone.konvaRect.destroy();
+  zone.konvaLabel.destroy();
+  S.noWalkZones.splice(idx, 1);
+  S.noWalkLayer.batchDraw();
+}
+
+function restoreNoWalkZones(zones) {
+  S.noWalkZones.forEach(z => { z.konvaRect.destroy(); z.konvaLabel.destroy(); });
+  S.noWalkZones = [];
+  S.noWalkLayer.batchDraw();
+  zones.forEach(z => addNoWalkZone(z.x, z.y, z.w, z.h, z.id));
+}
+
+function bindNoWalkZone() {
+  const canvasEl = document.getElementById('canvas-container');
+
+  canvasEl.addEventListener('mousedown', e => {
+    if (!S.noWalkMode || e.button !== 0) return;
+    const pos = S.stage.getPointerPosition();
+    if (!pos) return;
+    const hit = S.stage.getIntersection(pos);
+    // If clicking an existing zone rect, let its own click handler delete it
+    if (hit && hit.getAttr('zoneId')) return;
+    e.preventDefault();
+    const { x, y } = clientToWorld(e.clientX, e.clientY);
+    S.noWalkDrag.active = true;
+    S.noWalkDrag.startX = x;
+    S.noWalkDrag.startY = y;
+    const preview = new Konva.Rect({
+      x, y, width: 0, height: 0,
+      fill: 'rgba(255,30,30,0.3)',
+      stroke: '#ff4444',
+      strokeWidth: 1.5,
+      dash: [6, 3],
+      listening: false,
+    });
+    S.noWalkDrag.previewRect = preview;
+    S.selLayer.add(preview);
+    S.selLayer.batchDraw();
+  });
+
+  window.addEventListener('mousemove', e => {
+    if (!S.noWalkDrag.active || !S.noWalkDrag.previewRect) return;
+    const { x, y } = clientToWorld(e.clientX, e.clientY);
+    S.noWalkDrag.previewRect.position({
+      x: Math.min(x, S.noWalkDrag.startX),
+      y: Math.min(y, S.noWalkDrag.startY),
+    });
+    S.noWalkDrag.previewRect.size({
+      width:  Math.abs(x - S.noWalkDrag.startX),
+      height: Math.abs(y - S.noWalkDrag.startY),
+    });
+    S.selLayer.batchDraw();
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (!S.noWalkDrag.active) return;
+    S.noWalkDrag.active = false;
+    const preview = S.noWalkDrag.previewRect;
+    S.noWalkDrag.previewRect = null;
+    if (!preview) return;
+    const rx = preview.x(), ry = preview.y(), rw = preview.width(), rh = preview.height();
+    preview.destroy();
+    S.selLayer.batchDraw();
+    if (rw < 8 || rh < 8) return;
+    addNoWalkZone(rx, ry, rw, rh);
+    pushHistory();
+    setStatus('No-walk zone added (' + Math.round(rw) + '×' + Math.round(rh) + 'px) — click zone to delete, Ctrl+Z to undo');
+  });
 }
 
 // ── Save / Load JSON ───────────────────────────────────────────────────────
 function saveJSON() {
-  const bgColorInput = document.getElementById('bg-color');
   const data = {
     version: 1,
     background: S.bgImage
       ? { type: 'image', value: null }
-      : { type: 'color', value: bgColorInput.value },
+      : { type: 'color', value: document.getElementById('bg-color').value },
     sprites: serializeSprites(),
+    noWalkZones: serializeNoWalkZones(),
   };
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
   const a = document.createElement('a');
@@ -870,16 +1075,15 @@ function loadJSON(file) {
     let data;
     try { data = JSON.parse(e.target.result); } catch { setStatus('⚠ Invalid JSON'); return; }
     if (!data.version || !Array.isArray(data.sprites)) { setStatus('⚠ Unrecognised format'); return; }
-
     if (data.background?.type === 'color' && data.background.value) {
       document.getElementById('bg-color').value = data.background.value;
       setBgColor(data.background.value);
     }
-
     await restoreSprites(data.sprites);
+    restoreNoWalkZones(data.noWalkZones || []);
     S.history = [];
     pushHistory();
-    setStatus('Loaded: ' + file.name + ' (' + data.sprites.length + ' sprites)');
+    setStatus('Loaded: ' + file.name + ' (' + data.sprites.length + ' items, ' + (data.noWalkZones?.length || 0) + ' no-walk zones)');
   };
   reader.readAsText(file);
 }
@@ -889,30 +1093,21 @@ function exportPNG() {
   if (S.previewInterval) togglePreview();
   const wasSelected = S.selectedNode;
   deselectAll();
-
   setStatus('Exporting PNG…');
-
-  const savedScale = S.stage.scaleX();
-  const savedX = S.stage.x();
-  const savedY = S.stage.y();
-  const savedW = S.stage.width();
-  const savedH = S.stage.height();
-
+  const savedScale = S.stage.scaleX(), savedX = S.stage.x(), savedY = S.stage.y();
+  const savedW = S.stage.width(), savedH = S.stage.height();
   S.stage.scale({ x: 1, y: 1 });
   S.stage.position({ x: 0, y: 0 });
   S.stage.size({ width: WORLD_W, height: WORLD_H });
-
+  S.noWalkLayer.visible(false); // hide zones in the export
   setTimeout(() => {
     const dataURL = S.stage.toDataURL({ mimeType: 'image/png', pixelRatio: 1 });
     const a = document.createElement('a');
-    a.href = dataURL;
-    a.download = 'region_map.png';
-    a.click();
-
+    a.href = dataURL; a.download = 'region_map.png'; a.click();
     S.stage.scale({ x: savedScale, y: savedScale });
     S.stage.position({ x: savedX, y: savedY });
     S.stage.size({ width: savedW, height: savedH });
-
+    S.noWalkLayer.visible(true);
     if (wasSelected) selectNode(wasSelected);
     setStatus('Exported: region_map.png (3200×2000)');
   }, 60);
@@ -924,19 +1119,12 @@ const Crop = { img: null, scale: 1, rect: null, drag: null };
 function openCropModal(asset) {
   const url = assetURL(asset.dir, asset.frames[0]);
   getImg(url).then(img => {
-    Crop.img = img;
-    Crop.rect = null;
-    Crop.drag = null;
-
+    Crop.img = img; Crop.rect = null; Crop.drag = null;
     const canvas = document.getElementById('crop-canvas');
-    // Scale up small sprites so they're easy to crop; cap to viewport
     const scaleUp = Math.min(8, 600 / Math.max(img.width, img.height));
-    const maxW = window.innerWidth  * 0.8;
-    const maxH = window.innerHeight * 0.65;
-    Crop.scale = Math.min(scaleUp, maxW / img.width, maxH / img.height);
+    Crop.scale = Math.min(scaleUp, window.innerWidth * 0.8 / img.width, window.innerHeight * 0.65 / img.height);
     canvas.width  = Math.round(img.width  * Crop.scale);
     canvas.height = Math.round(img.height * Crop.scale);
-
     drawCropCanvas();
     document.getElementById('crop-name').value = asset.name.replace(/[^a-zA-Z0-9_\- ]/g, '_') + '_crop';
     document.getElementById('crop-modal').classList.add('open');
@@ -949,55 +1137,35 @@ function drawCropCanvas() {
   ctx.imageSmoothingEnabled = false;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(Crop.img, 0, 0, canvas.width, canvas.height);
-
   if (Crop.rect && Crop.rect.w > 1 && Crop.rect.h > 1) {
     const { x, y, w, h } = Crop.rect;
-    // dim everything outside
     ctx.fillStyle = 'rgba(0,0,0,0.55)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    // restore cropped region
     ctx.imageSmoothingEnabled = false;
-    ctx.drawImage(Crop.img,
-      x / Crop.scale, y / Crop.scale, w / Crop.scale, h / Crop.scale,
-      x, y, w, h);
-    // dashed yellow border
-    ctx.strokeStyle = '#ffd700';
-    ctx.lineWidth = 1.5;
-    ctx.setLineDash([5, 3]);
-    ctx.strokeRect(x + 0.5, y + 0.5, w - 1, h - 1);
-    ctx.setLineDash([]);
-    // size label
-    const srcW = Math.round(w / Crop.scale);
-    const srcH = Math.round(h / Crop.scale);
-    ctx.fillStyle = '#ffd700';
-    ctx.font = '11px monospace';
-    ctx.fillText(srcW + '×' + srcH, x + 3, y + 13);
+    ctx.drawImage(Crop.img, x/Crop.scale, y/Crop.scale, w/Crop.scale, h/Crop.scale, x, y, w, h);
+    ctx.strokeStyle = '#ffd700'; ctx.lineWidth = 1.5;
+    ctx.setLineDash([5, 3]); ctx.strokeRect(x+0.5, y+0.5, w-1, h-1); ctx.setLineDash([]);
+    const srcW = Math.round(w/Crop.scale), srcH = Math.round(h/Crop.scale);
+    ctx.fillStyle = '#ffd700'; ctx.font = '11px monospace';
+    ctx.fillText(srcW + '×' + srcH, x+3, y+13);
   }
 }
 
 function bindCropModal() {
   const canvas = document.getElementById('crop-canvas');
-
   canvas.addEventListener('mousedown', e => {
     const r = canvas.getBoundingClientRect();
-    Crop.drag = { x: e.clientX - r.left, y: e.clientY - r.top };
-    Crop.rect = null;
+    Crop.drag = { x: e.clientX - r.left, y: e.clientY - r.top }; Crop.rect = null;
   });
   canvas.addEventListener('mousemove', e => {
     if (!Crop.drag) return;
     const r = canvas.getBoundingClientRect();
-    const cx = Math.max(0, Math.min(canvas.width,  e.clientX - r.left));
+    const cx = Math.max(0, Math.min(canvas.width, e.clientX - r.left));
     const cy = Math.max(0, Math.min(canvas.height, e.clientY - r.top));
-    Crop.rect = {
-      x: Math.min(Crop.drag.x, cx),
-      y: Math.min(Crop.drag.y, cy),
-      w: Math.abs(cx - Crop.drag.x),
-      h: Math.abs(cy - Crop.drag.y),
-    };
+    Crop.rect = { x: Math.min(Crop.drag.x, cx), y: Math.min(Crop.drag.y, cy), w: Math.abs(cx-Crop.drag.x), h: Math.abs(cy-Crop.drag.y) };
     drawCropCanvas();
   });
   window.addEventListener('mouseup', () => { Crop.drag = null; });
-
   document.getElementById('btn-crop-save').onclick   = saveCrop;
   document.getElementById('btn-crop-cancel').onclick = () => document.getElementById('crop-modal').classList.remove('open');
   document.getElementById('crop-modal').addEventListener('click', e => {
@@ -1006,106 +1174,78 @@ function bindCropModal() {
 }
 
 async function saveCrop() {
-  if (!Crop.rect || Crop.rect.w < 2 || Crop.rect.h < 2) {
-    setStatus('⚠ Draw a crop region first'); return;
-  }
+  if (!Crop.rect || Crop.rect.w < 2 || Crop.rect.h < 2) { setStatus('⚠ Draw a crop region first'); return; }
   const { x, y, w, h } = Crop.rect;
-  const srcX = x / Crop.scale, srcY = y / Crop.scale;
-  const srcW = Math.max(1, Math.round(w / Crop.scale));
-  const srcH = Math.max(1, Math.round(h / Crop.scale));
-
+  const srcX = x/Crop.scale, srcY = y/Crop.scale;
+  const srcW = Math.max(1, Math.round(w/Crop.scale)), srcH = Math.max(1, Math.round(h/Crop.scale));
   const tmp = document.createElement('canvas');
   tmp.width = srcW; tmp.height = srcH;
   const ctx = tmp.getContext('2d');
   ctx.imageSmoothingEnabled = false;
   ctx.drawImage(Crop.img, srcX, srcY, srcW, srcH, 0, 0, srcW, srcH);
-
   const name = document.getElementById('crop-name').value.trim() || 'crop';
-  const dataURL = tmp.toDataURL('image/png');
-
   try {
-    const res  = await fetch('/api/save-crop', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, dataURL }) });
+    const res  = await fetch('/api/save-crop', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, dataURL: tmp.toDataURL('image/png') }) });
     const data = await res.json();
     if (!data.ok) throw new Error(data.error);
     document.getElementById('crop-modal').classList.remove('open');
-    // Reload asset manifest and switch to Cropped tab
     const ar = await fetch('/api/assets');
     S.assets = await ar.json();
     const ci = S.assets.categories.findIndex(c => c.name === 'Cropped');
     if (ci >= 0) { S.activeCat = ci; S.activeGrp = null; }
     renderTray();
     setStatus('Saved crop: ' + data.file + ' (' + srcW + '×' + srcH + 'px)');
-  } catch (e) {
-    setStatus('⚠ Save failed: ' + e.message);
-  }
+  } catch (e) { setStatus('⚠ Save failed: ' + e.message); }
 }
 
 // ── Drag-select delete ────────────────────────────────────────────────────
 function bindDeleteDrag() {
   const canvasEl = document.getElementById('canvas-container');
-
   canvasEl.addEventListener('mousedown', e => {
     if (!S.deleteMode || e.button !== 0) return;
     const pos = S.stage.getPointerPosition();
     if (!pos) return;
     const hit = S.stage.getIntersection(pos);
-    // Only start rubber-band on empty space (not on a sprite)
     if (hit && hit !== S.bgRect && hit !== S.bgImage) return;
     e.preventDefault();
     const { x, y } = clientToWorld(e.clientX, e.clientY);
-    S.dragSel.active = true;
-    S.dragSel.startX = x;
-    S.dragSel.startY = y;
+    S.dragSel.active = true; S.dragSel.startX = x; S.dragSel.startY = y;
     const rect = new Konva.Rect({
       x, y, width: 0, height: 0,
-      fill: 'rgba(255,50,50,0.15)',
-      stroke: '#ff4444',
-      strokeWidth: 1 / S.stage.scaleX(),
-      dash: [6 / S.stage.scaleX(), 3 / S.stage.scaleX()],
+      fill: 'rgba(255,50,50,0.15)', stroke: '#ff4444',
+      strokeWidth: 1/S.stage.scaleX(),
+      dash: [6/S.stage.scaleX(), 3/S.stage.scaleX()],
       listening: false,
     });
     S.dragSel.rect = rect;
-    S.selLayer.add(rect);
-    S.selLayer.batchDraw();
+    S.selLayer.add(rect); S.selLayer.batchDraw();
   });
-
   window.addEventListener('mousemove', e => {
     if (!S.dragSel.active || !S.dragSel.rect) return;
     const { x, y } = clientToWorld(e.clientX, e.clientY);
-    const rx = Math.min(x, S.dragSel.startX);
-    const ry = Math.min(y, S.dragSel.startY);
-    S.dragSel.rect.position({ x: rx, y: ry });
-    S.dragSel.rect.size({ width: Math.abs(x - S.dragSel.startX), height: Math.abs(y - S.dragSel.startY) });
+    S.dragSel.rect.position({ x: Math.min(x, S.dragSel.startX), y: Math.min(y, S.dragSel.startY) });
+    S.dragSel.rect.size({ width: Math.abs(x-S.dragSel.startX), height: Math.abs(y-S.dragSel.startY) });
     S.selLayer.batchDraw();
   });
-
   window.addEventListener('mouseup', () => {
     if (!S.dragSel.active) return;
     S.dragSel.active = false;
-    const rect = S.dragSel.rect;
-    S.dragSel.rect = null;
+    const rect = S.dragSel.rect; S.dragSel.rect = null;
     if (!rect) return;
-
     const rx = rect.x(), ry = rect.y(), rw = rect.width(), rh = rect.height();
-    rect.destroy();
-    S.selLayer.batchDraw();
-
-    if (rw < 4 || rh < 4) return; // too small — treat as missed click, not a drag
-
-    const toDelete = S.spritesLayer.getChildren().filter(n => {
-      if (!(n instanceof Konva.Image)) return false;
-      const b = n.getClientRect({ relativeTo: S.spritesLayer });
-      return b.x < rx + rw && b.x + b.width > rx && b.y < ry + rh && b.y + b.height > ry;
+    rect.destroy(); S.selLayer.batchDraw();
+    if (rw < 4 || rh < 4) return;
+    const toDelete = getAllSpriteNodes().filter(n => {
+      const b = n.getClientRect({ relativeTo: konvaLayerFor(n.getAttr('spriteLayer')) });
+      return b.x < rx+rw && b.x+b.width > rx && b.y < ry+rh && b.y+b.height > ry;
     });
-
     if (toDelete.length === 0) return;
     toDelete.forEach(n => {
       if (S.selectedNode === n) { S.transformer.nodes([]); S.selectedNode = null; document.getElementById('props').classList.remove('visible'); }
       broadcast({ type: 'SPRITE_DELETE', spriteId: n.getAttr('spriteId') });
       n.destroy();
     });
-    S.spritesLayer.batchDraw();
-    S.selLayer.batchDraw();
+    S.belowLayer.batchDraw(); S.aboveLayer.batchDraw(); S.selLayer.batchDraw();
     pushHistory();
     setStatus('Deleted ' + toDelete.length + ' sprite(s) — Ctrl+Z to undo');
   });
@@ -1113,53 +1253,38 @@ function bindDeleteDrag() {
 
 // ── Asset randomizer ───────────────────────────────────────────────────────
 function gaussianRand() {
-  // Box-Muller transform → standard normal
   let u = 0, v = 0;
   while (u === 0) u = Math.random();
   while (v === 0) v = Math.random();
   return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
 }
-
 function clamp(val, lo, hi) { return Math.max(lo, Math.min(hi, val)); }
 
 function buildPositions(algo, count) {
   const positions = [];
   if (algo === 'scatter') {
-    for (let i = 0; i < count; i++) {
+    for (let i = 0; i < count; i++)
       positions.push({ x: Math.random() * WORLD_W, y: Math.random() * WORLD_H });
-    }
   } else if (algo === 'cluster') {
     const clusterCount = Math.max(1, Math.floor(count / 8));
     const spread = Math.min(WORLD_W, WORLD_H) * 0.12;
-    const seeds = Array.from({ length: clusterCount }, () => ({
-      x: Math.random() * WORLD_W, y: Math.random() * WORLD_H,
-    }));
+    const seeds = Array.from({ length: clusterCount }, () => ({ x: Math.random() * WORLD_W, y: Math.random() * WORLD_H }));
     for (let i = 0; i < count; i++) {
       const seed = seeds[Math.floor(Math.random() * clusterCount)];
-      positions.push({
-        x: clamp(seed.x + gaussianRand() * spread, 0, WORLD_W),
-        y: clamp(seed.y + gaussianRand() * spread, 0, WORLD_H),
-      });
+      positions.push({ x: clamp(seed.x + gaussianRand() * spread, 0, WORLD_W), y: clamp(seed.y + gaussianRand() * spread, 0, WORLD_H) });
     }
-  } else { // grid jitter
+  } else {
     const cols = Math.ceil(Math.sqrt(count * (WORLD_W / WORLD_H)));
     const rows = Math.ceil(count / cols);
     const cellW = WORLD_W / cols, cellH = WORLD_H / rows;
     const cells = [];
     for (let r = 0; r < rows; r++)
       for (let c = 0; c < cols; c++)
-        cells.push({ cx: cellW * (c + 0.5), cy: cellH * (r + 0.5), cw: cellW, ch: cellH });
-    // shuffle cells so we pick a diverse spread when count < cells
-    for (let i = cells.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [cells[i], cells[j]] = [cells[j], cells[i]];
-    }
+        cells.push({ cx: cellW*(c+0.5), cy: cellH*(r+0.5), cw: cellW, ch: cellH });
+    for (let i = cells.length-1; i > 0; i--) { const j = Math.floor(Math.random()*(i+1)); [cells[i],cells[j]]=[cells[j],cells[i]]; }
     for (let i = 0; i < count; i++) {
       const { cx, cy, cw, ch } = cells[i % cells.length];
-      positions.push({
-        x: clamp(cx + (Math.random() - 0.5) * cw * 0.8, 0, WORLD_W),
-        y: clamp(cy + (Math.random() - 0.5) * ch * 0.8, 0, WORLD_H),
-      });
+      positions.push({ x: clamp(cx+(Math.random()-0.5)*cw*0.8, 0, WORLD_W), y: clamp(cy+(Math.random()-0.5)*ch*0.8, 0, WORLD_H) });
     }
   }
   return positions;
@@ -1186,6 +1311,7 @@ function bindRandModal() {
     const avoid    = document.getElementById('rand-avoid').checked;
     const scaleMin = Math.max(0.1, parseFloat(document.getElementById('rand-scale-min').value) || 1);
     const scaleMax = Math.max(scaleMin, parseFloat(document.getElementById('rand-scale-max').value) || 1);
+    const layerAttr = document.getElementById('rand-layer').value;
     document.getElementById('rand-status').textContent = 'Placing…';
 
     const url = assetURL(_randAsset.dir, _randAsset.frames[0]);
@@ -1194,12 +1320,10 @@ function bindRandModal() {
     catch { document.getElementById('rand-status').textContent = '⚠ Could not load image'; return; }
 
     const hw = img.width / 2, hh = img.height / 2;
+    const targetKonvaLayer = konvaLayerFor(layerAttr);
 
-    // Pre-collect existing bounding boxes for overlap check
     let existingRects = avoid
-      ? S.spritesLayer.getChildren()
-          .filter(n => n instanceof Konva.Image)
-          .map(n => n.getClientRect({ relativeTo: S.spritesLayer }))
+      ? getAllSpriteNodes().map(n => n.getClientRect({ relativeTo: konvaLayerFor(n.getAttr('spriteLayer')) }))
       : [];
 
     const positions = buildPositions(algo, count);
@@ -1208,15 +1332,15 @@ function bindRandModal() {
     for (const { x, y } of positions) {
       const scale = scaleMin + Math.random() * (scaleMax - scaleMin);
       if (avoid) {
-        const nb = { x: x - hw * scale, y: y - hh * scale, width: img.width * scale, height: img.height * scale };
-        if (existingRects.some(r => nb.x < r.x + r.width && nb.x + nb.width > r.x && nb.y < r.y + r.height && nb.y + nb.height > r.y)) continue;
+        const nb = { x: x-hw*scale, y: y-hh*scale, width: img.width*scale, height: img.height*scale };
+        if (existingRects.some(r => nb.x < r.x+r.width && nb.x+nb.width > r.x && nb.y < r.y+r.height && nb.y+nb.height > r.y)) continue;
         existingRects.push(nb);
       }
       const id = genSpriteId();
       const node = new Konva.Image({
         x, y, image: img, offsetX: hw, offsetY: hh,
         scaleX: scale, scaleY: scale,
-        draggable: !S.panMode && !S.deleteMode,
+        draggable: !S.panMode && !S.deleteMode && !S.noWalkMode,
       });
       node.setAttr('assetDir',     _randAsset.dir);
       node.setAttr('assetFrames',  _randAsset.frames);
@@ -1224,45 +1348,40 @@ function bindRandModal() {
       node.setAttr('assetAnimated',_randAsset.animated);
       node.setAttr('currentFrame', 0);
       node.setAttr('spriteId',     id);
-      S.spritesLayer.add(node);
+      node.setAttr('spriteLayer',  layerAttr);
+      targetKonvaLayer.add(node);
       bindSpriteEvents(node);
       broadcast({ type: 'SPRITE_ADD', spriteId: id, dir: _randAsset.dir, frames: _randAsset.frames,
-        name: _randAsset.name, animated: _randAsset.animated, x, y, offsetX: hw, offsetY: hh, scaleX: scale, scaleY: scale });
+        name: _randAsset.name, animated: _randAsset.animated, x, y, offsetX: hw, offsetY: hh,
+        scaleX: scale, scaleY: scale, spriteLayer: layerAttr });
       placed++;
     }
 
-    S.spritesLayer.batchDraw();
+    targetKonvaLayer.batchDraw();
     pushHistory();
     document.getElementById('rand-modal').classList.remove('open');
-    setStatus('Placed ' + placed + ' × ' + _randAsset.name + ' (' + algo + ') — Ctrl+Z to undo');
+    setStatus('Placed ' + placed + ' × ' + _randAsset.name + ' (' + algo + ', ' + (layerAttr === 'above' ? 'Above Player' : 'Below Player') + ') — Ctrl+Z to undo');
   };
 }
 
 // ── Asset upload ───────────────────────────────────────────────────────────
 async function uploadAssets(files) {
   if (!files || !files.length) return;
-  const fileInput = document.getElementById('file-upload-asset');
-  fileInput.value = '';
+  document.getElementById('file-upload-asset').value = '';
   setStatus('Uploading ' + files.length + ' file(s)…');
   let ok = 0, fail = 0;
   for (const file of files) {
     try {
       const dataURL = await new Promise((res, rej) => {
         const reader = new FileReader();
-        reader.onload = e => res(e.target.result);
-        reader.onerror = rej;
+        reader.onload = e => res(e.target.result); reader.onerror = rej;
         reader.readAsDataURL(file);
       });
-      const resp = await fetch('/api/upload-asset', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: file.name, dataURL }),
-      });
+      const resp = await fetch('/api/upload-asset', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: file.name, dataURL }) });
       const data = await resp.json();
       if (data.ok) ok++; else { fail++; console.warn('Upload failed:', data.error); }
     } catch (e) { fail++; console.warn('Upload error:', e); }
   }
-  // Reload manifest and switch to Uploads tab
   const ar = await fetch('/api/assets');
   S.assets = await ar.json();
   const ui = S.assets.categories.findIndex(c => c.name === 'Uploads');
@@ -1275,14 +1394,12 @@ async function uploadAssets(files) {
 function broadcast(msg) {
   if (S.ws && S.ws.readyState === 1 && S.roomCode) S.ws.send(JSON.stringify(msg));
 }
-
 function updatePeerIndicator() {
   const el = document.getElementById('peer-indicator');
   if (!S.roomCode) { el.textContent = ''; return; }
   el.textContent = S.peerConnected ? '👥 Connected' : '👤 Waiting for partner…';
   el.style.color = S.peerConnected ? '#88ff88' : '#888';
 }
-
 function openWs(onOpen) {
   if (S.ws && S.ws.readyState <= 1) { onOpen(); return; }
   const proto = location.protocol === 'https:' ? 'wss:' : 'ws:';
@@ -1291,25 +1408,16 @@ function openWs(onOpen) {
   S.ws.onmessage = e => { let m; try { m = JSON.parse(e.data); } catch { return; } handleWsMsg(m); };
   S.ws.onclose = () => { S.peerConnected = false; updatePeerIndicator(); };
 }
-
 function shareRoom() {
-  if (S.roomCode) {
-    navigator.clipboard.writeText(location.href).catch(() => {});
-    setStatus('URL copied — send it to your partner: ' + location.href);
-    return;
-  }
+  if (S.roomCode) { navigator.clipboard.writeText(location.href).catch(()=>{}); setStatus('URL copied: ' + location.href); return; }
   openWs(() => S.ws.send(JSON.stringify({ type: 'ROOM_CREATE' })));
 }
-
-function joinRoom(code) {
-  openWs(() => S.ws.send(JSON.stringify({ type: 'ROOM_JOIN', code })));
-}
-
+function joinRoom(code) { openWs(() => S.ws.send(JSON.stringify({ type: 'ROOM_JOIN', code }))); }
 function sendFullState() {
-  broadcast({
-    type: 'FULL_STATE',
+  broadcast({ type: 'FULL_STATE',
     background: { type: 'color', value: document.getElementById('bg-color').value },
     sprites: serializeSprites(),
+    noWalkZones: serializeNoWalkZones(),
   });
 }
 
@@ -1319,69 +1427,44 @@ async function handleWsMsg(msg) {
     history.replaceState(null, '', '#' + msg.code);
     document.getElementById('btn-share').textContent = '🔗 ' + msg.code;
     updatePeerIndicator();
-    if (msg.role === 'client') {
-      setStatus('Joined room ' + msg.code + ' — waiting for scene…');
-      // host will send FULL_STATE when CLIENT_JOINED arrives on their end
-    } else {
-      setStatus('Room created — click 🔗 ' + msg.code + ' to copy the share URL');
-    }
+    setStatus(msg.role === 'client' ? 'Joined room ' + msg.code : 'Room created — click 🔗 ' + msg.code + ' to copy URL');
   }
-  else if (msg.type === 'CLIENT_JOINED') {
-    S.peerConnected = true;
-    updatePeerIndicator();
-    sendFullState();
-    setStatus('Partner connected — scene sent');
-  }
-  else if (msg.type === 'HOST_DISCONNECTED' || msg.type === 'CLIENT_DISCONNECTED') {
-    S.peerConnected = false;
-    updatePeerIndicator();
-    setStatus('Partner disconnected');
-  }
-  else if (msg.type === 'ROOM_ERROR') {
-    setStatus('⚠ Room error: ' + (msg.reason || 'unknown'));
-  }
+  else if (msg.type === 'CLIENT_JOINED') { S.peerConnected = true; updatePeerIndicator(); sendFullState(); setStatus('Partner connected — scene sent'); }
+  else if (msg.type === 'HOST_DISCONNECTED' || msg.type === 'CLIENT_DISCONNECTED') { S.peerConnected = false; updatePeerIndicator(); setStatus('Partner disconnected'); }
+  else if (msg.type === 'ROOM_ERROR') { setStatus('⚠ Room error: ' + (msg.reason || 'unknown')); }
   else if (msg.type === 'FULL_STATE') {
-    if (msg.background?.type === 'color') {
-      document.getElementById('bg-color').value = msg.background.value;
-      setBgColor(msg.background.value, true);
-    }
+    if (msg.background?.type === 'color') { document.getElementById('bg-color').value = msg.background.value; setBgColor(msg.background.value, true); }
     await restoreSprites(msg.sprites);
-    S.history = []; pushHistory();
-    S.peerConnected = true;
-    updatePeerIndicator();
-    setStatus('Scene synced from partner (' + msg.sprites.length + ' sprites)');
+    restoreNoWalkZones(msg.noWalkZones || []);
+    S.history = []; pushHistory(); S.peerConnected = true; updatePeerIndicator();
+    setStatus('Scene synced from partner');
   }
   else if (msg.type === 'SPRITE_ADD') {
-    const asset = { dir: msg.dir, frames: msg.frames, name: msg.name, animated: msg.animated };
     const url = assetURL(msg.dir, msg.frames[0]);
     let img; try { img = await getImg(url); } catch { return; }
-    const node = new Konva.Image({ x: msg.x, y: msg.y, image: img,
-      offsetX: msg.offsetX, offsetY: msg.offsetY, scaleX: msg.scaleX, scaleY: msg.scaleY,
-      draggable: !S.panMode && !S.deleteMode });
+    const la = msg.spriteLayer || 'below';
+    const node = new Konva.Image({ x: msg.x, y: msg.y, image: img, offsetX: msg.offsetX, offsetY: msg.offsetY, scaleX: msg.scaleX, scaleY: msg.scaleY, draggable: !S.panMode && !S.deleteMode && !S.noWalkMode });
     node.setAttr('assetDir', msg.dir); node.setAttr('assetFrames', msg.frames);
     node.setAttr('assetName', msg.name); node.setAttr('assetAnimated', msg.animated);
-    node.setAttr('currentFrame', 0); node.setAttr('spriteId', msg.spriteId);
-    S.spritesLayer.add(node); bindSpriteEvents(node); S.spritesLayer.batchDraw();
+    node.setAttr('currentFrame', 0); node.setAttr('spriteId', msg.spriteId); node.setAttr('spriteLayer', la);
+    konvaLayerFor(la).add(node); bindSpriteEvents(node); konvaLayerFor(la).batchDraw();
   }
   else if (msg.type === 'SPRITE_MOVE') {
-    const node = S.spritesLayer.getChildren().find(n => n.getAttr('spriteId') === msg.spriteId);
+    const node = getAllSpriteNodes().find(n => n.getAttr('spriteId') === msg.spriteId);
     if (!node) return;
-    node.position({ x: msg.x, y: msg.y });
-    node.scaleX(msg.scaleX); node.scaleY(msg.scaleY);
+    node.position({ x: msg.x, y: msg.y }); node.scaleX(msg.scaleX); node.scaleY(msg.scaleY);
     node.offsetX(msg.offsetX); node.offsetY(msg.offsetY);
-    S.spritesLayer.batchDraw();
+    konvaLayerFor(node.getAttr('spriteLayer')).batchDraw();
     if (S.selectedNode === node) updatePropsPanel(node);
   }
   else if (msg.type === 'SPRITE_DELETE') {
-    const node = S.spritesLayer.getChildren().find(n => n.getAttr('spriteId') === msg.spriteId);
+    const node = getAllSpriteNodes().find(n => n.getAttr('spriteId') === msg.spriteId);
     if (!node) return;
     if (S.selectedNode === node) { S.transformer.nodes([]); S.selectedNode = null; document.getElementById('props').classList.remove('visible'); }
-    node.destroy(); S.spritesLayer.batchDraw(); S.selLayer.batchDraw();
+    const kl = konvaLayerFor(node.getAttr('spriteLayer'));
+    node.destroy(); kl.batchDraw(); S.selLayer.batchDraw();
   }
-  else if (msg.type === 'BG_COLOR') {
-    document.getElementById('bg-color').value = msg.value;
-    setBgColor(msg.value, true);
-  }
+  else if (msg.type === 'BG_COLOR') { document.getElementById('bg-color').value = msg.value; setBgColor(msg.value, true); }
 }
 
 window.addEventListener('load', init);
