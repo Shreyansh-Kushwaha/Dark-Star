@@ -123,6 +123,10 @@ export class GameScene extends Phaser.Scene {
 
     // ── World setup ────────────────────────────────────────────────
     this._setupWorld(region);
+    this._buildParallaxBorder(regionIndex, region);
+    this._buildGroundTexture();
+    this._spawnAmbientParticles(regionIndex);
+    this._applyRegionColorOverlay(regionIndex);
 
     // ── Players ───────────────────────────────────────────────────
     const spawnPos = region.spawnPos;
@@ -240,6 +244,8 @@ export class GameScene extends Phaser.Scene {
     this._worldFragmentObjects = [];
     this._bossIntroActive = false;
     this._arenaHazards = [];
+    this._comboCount   = 0;
+    this._comboTimer   = null;
     this._netTimer = 0;
     this._uiThrottleCounter = 0;
     this._slowTickCounter   = 0;
@@ -316,11 +322,116 @@ export class GameScene extends Phaser.Scene {
       for (const d of this._pendingRTBake) {
         const img = this.add.image(d.x, d.y, d.key).setScale(d.scale).setDepth(1);
         if (d.tint != null) img.setTint(d.tint);
+        // Gentle sway on larger trees
+        if (d.scale > 0.4 && !d.key.includes('stump')) {
+          const amp   = 0.4 + Math.random() * 0.7;
+          const dur   = 2000 + Math.random() * 2200;
+          this.tweens.add({
+            targets: img,
+            angle: { from: -amp, to: amp },
+            duration: dur, yoyo: true, repeat: -1,
+            ease: 'Sine.easeInOut',
+            delay: Math.random() * dur,
+          });
+        }
       }
       this._pendingRTBake = null;
     }
 
     console.log(`[GameScene] Region ${regionIndex}: ${region.name}`);
+  }
+
+  _buildGroundTexture() {
+    if (!this.textures.exists('ground_tile_noise')) {
+      const TILE = 48;
+      const g = this.make.graphics({ add: false });
+      g.fillStyle(0xffffff, 0.055);
+      [[5,4],[17,10],[31,6],[43,18],[8,24],[25,30],[40,24],[12,38],[36,44],[42,14],[22,52],[6,50]].forEach(([dx,dy]) => {
+        if (dx < TILE && dy < TILE) g.fillRect(dx, dy, 2, 2);
+      });
+      g.fillStyle(0x000000, 0.09);
+      [[12,8],[28,18],[44,10],[6,32],[22,42],[38,36],[14,50]].forEach(([dx,dy]) => {
+        if (dx < TILE && dy < TILE) g.fillRect(dx, dy, 2, 2);
+      });
+      g.lineStyle(1, 0x000000, 0.05);
+      g.strokeRect(0, 0, TILE, TILE);
+      g.generateTexture('ground_tile_noise', TILE, TILE);
+      g.destroy();
+    }
+    this.add.tileSprite(0, 0, WORLD_W, WORLD_H, 'ground_tile_noise')
+      .setOrigin(0, 0).setDepth(-8).setAlpha(0.65);
+  }
+
+  _buildParallaxBorder(regionIndex, region) {
+    const silColors = [0x0d2010, 0x091a0c, 0x0a0a18, 0x06100d, 0x1a0e04, 0x060d1a, 0x1a0606];
+    const col = silColors[regionIndex % silColors.length];
+    const g   = this.add.graphics().setDepth(-17);
+    g.fillStyle(col, 0.68);
+    const TOP = 54;
+    for (let x = 0; x < WORLD_W; x += 48) {
+      const seed = (((x + regionIndex * 55 + 100) * 2654435761) >>> 0) % 100;
+      g.fillRect(x, 0, 48, TOP + seed * 0.36);
+      const seed2 = (((x + regionIndex * 55 + 500) * 2654435761) >>> 0) % 100;
+      const h2 = TOP + seed2 * 0.36;
+      g.fillRect(x, WORLD_H - h2, 48, h2);
+    }
+    for (let y = TOP; y < WORLD_H - TOP; y += 48) {
+      const seed = (((y + regionIndex * 33 + 200) * 2654435761) >>> 0) % 100;
+      g.fillRect(0, y, 40 + seed * 0.28, 48);
+      const seed2 = (((y + regionIndex * 33 + 700) * 2654435761) >>> 0) % 100;
+      const w2 = 40 + seed2 * 0.28;
+      g.fillRect(WORLD_W - w2, y, w2, 48);
+    }
+  }
+
+  _spawnAmbientParticles(regionIndex) {
+    if (!this.textures.exists('amb_particle')) {
+      const g = this.make.graphics({ add: false });
+      g.fillStyle(0xffffff, 1);
+      g.fillCircle(3, 3, 3);
+      g.generateTexture('amb_particle', 7, 7);
+      g.destroy();
+    }
+    const cfgs = [
+      { tints: [0x44bb33, 0x88cc44, 0x66aa22], gravity: -18, freq: 320, blend: 'NORMAL' },
+      { tints: [0x55cc33, 0x77dd44, 0x44aa22], gravity: -20, freq: 300, blend: 'NORMAL' },
+      { tints: [0xffdd44, 0xffbb22, 0xaadd44], gravity: -25, freq: 350, blend: 'ADD'    },
+      { tints: [0x44aa66, 0x228855, 0x99cc44], gravity: -15, freq: 330, blend: 'NORMAL' },
+      { tints: [0xff6600, 0xffaa44, 0xff4422], gravity: -22, freq: 360, blend: 'ADD'    },
+      { tints: [0xeeeeff, 0xaaddff, 0xffeedd], gravity: -30, freq: 290, blend: 'ADD'    },
+      { tints: [0xff3300, 0x882222, 0xff6644], gravity: -18, freq: 370, blend: 'ADD'    },
+    ];
+    const cfg = cfgs[regionIndex] || cfgs[0];
+    this.add.particles(WORLD_W / 2, WORLD_H / 2, 'amb_particle', {
+      x:        { min: -WORLD_W / 2 + 150, max: WORLD_W / 2 - 150 },
+      y:        { min: -WORLD_H / 2 + 150, max: WORLD_H / 2 - 150 },
+      scale:    { start: 0.6, end: 0.1 },
+      alpha:    { start: 0.55, end: 0 },
+      speed:    { min: 10, max: 30 },
+      angle:    { min: 180, max: 360 },
+      lifespan: { min: 5000, max: 9000 },
+      frequency: cfg.freq,
+      quantity:  1,
+      tint:      cfg.tints,
+      depth:    -2,
+      gravityY:  cfg.gravity,
+      blendMode: cfg.blend,
+    });
+  }
+
+  _applyRegionColorOverlay(regionIndex) {
+    const overlays = [
+      null,
+      { color: 0x001100, alpha: 0.06 },
+      { color: 0x001408, alpha: 0.07 },
+      { color: 0x010d00, alpha: 0.10 },
+      { color: 0x100500, alpha: 0.09 },
+      { color: 0x000510, alpha: 0.08 },
+      { color: 0x100000, alpha: 0.12 },
+    ];
+    const ov = overlays[regionIndex];
+    if (!ov) return;
+    this.add.rectangle(WORLD_W / 2, WORLD_H / 2, WORLD_W, WORLD_H, ov.color, ov.alpha).setDepth(-7);
   }
 
   _setupWorld(region) {
@@ -384,6 +495,13 @@ export class GameScene extends Phaser.Scene {
     for (const npcCfg of (region.npcPositions || [])) {
       const npc = new NPC(this, npcCfg.x, npcCfg.y, npcCfg);
       this.npcs.push(npc);
+      // Warm lantern glow under each NPC
+      const g = this.add.circle(npcCfg.x, npcCfg.y + 10, 44, 0xffcc44, 0.1)
+        .setDepth(npcCfg.y - 1);
+      this.tweens.add({
+        targets: g, alpha: { from: 0.06, to: 0.18 },
+        duration: 1600, yoyo: true, repeat: -1, ease: 'Sine.easeInOut',
+      });
     }
   }
 
@@ -486,6 +604,16 @@ export class GameScene extends Phaser.Scene {
       fontSize: '12px', color: '#' + color.toString(16).padStart(6,'0'),
       fontFamily: 'monospace', stroke: '#000', strokeThickness: 2,
     }).setOrigin(0.5, 0.5).setDepth(100);
+
+    // Floor glow ring
+    const glowRing = this.add.circle(x, y, 52, color, 0.1).setDepth(-3);
+    this.tweens.add({
+      targets: glowRing,
+      alpha:  { from: 0.06, to: 0.20 },
+      scaleX: { from: 0.78, to: 1.22 },
+      scaleY: { from: 0.78, to: 1.22 },
+      duration: 880, yoyo: true, repeat: -1, ease: 'Sine.easeInOut',
+    });
 
     // Pulsing tween
     this.tweens.add({
@@ -1509,6 +1637,12 @@ export class GameScene extends Phaser.Scene {
     this.questManager.onEnemyKill(this._regionIndex);
     const idx = this.enemies.indexOf(data.enemy);
     if (idx > -1) this.enemies.splice(idx, 1);
+
+    // Kill combo tracker
+    this._comboCount = (this._comboCount || 0) + 1;
+    if (this._comboTimer) this._comboTimer.remove();
+    this._comboTimer = this.time.delayedCall(3000, () => { this._comboCount = 0; this._comboTimer = null; });
+    if (this._comboCount >= 2) this.events.emit('kill_combo', { count: this._comboCount });
 
     // Food drop — 28% chance, elite/mimic drop better food
     const e = data.enemy;

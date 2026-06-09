@@ -49,6 +49,7 @@ export class Player extends Phaser.GameObjects.Container {
     this._slowMult   = 1.0;
     this._burnTimer  = null;
     this._slowTimer  = null;
+    this._dustTimer  = 0;
 
     this.godMode     = false;
     this.oneShotMode = false;
@@ -193,8 +194,18 @@ export class Player extends Phaser.GameObjects.Container {
       else if (vy !== 0) { this.facingY = Math.sign(vy); }
       this.sprite.setFlipX(this.facingX < 0);
       if (!this.attacking) this.sprite.play(this.baseKey + '_run', true);
+
+      // Footstep dust puffs
+      if (this.isLocal) {
+        this._dustTimer -= delta;
+        if (this._dustTimer <= 0) {
+          this._dustTimer = 340;
+          this._spawnFootDust(this.scene);
+        }
+      }
     } else {
       this.body.setVelocity(0, 0);
+      this._dustTimer = 0;
       if (!this.attacking) this.sprite.play(this.baseKey + '_idle', true);
     }
   }
@@ -239,10 +250,13 @@ export class Player extends Phaser.GameObjects.Container {
   _doAttack(damage, hitstop, enemies, scene) {
     if (this.oneShotMode) damage *= 9999;
     this.attacking = true;
-    const atkKey = damage > 25 ? '_attack2' : '_attack1';
+    const heavy  = damage > 25;
+    const atkKey = heavy ? '_attack2' : '_attack1';
     this.sprite.play(this.baseKey + atkKey, true).once('animationcomplete', () => {
       this.attacking = false;
     });
+
+    if (heavy) this._spawnAttackTrail(scene);
 
     this._hitstopTimer = hitstop;
 
@@ -262,7 +276,7 @@ export class Player extends Phaser.GameObjects.Container {
       const hits = dist <= 50 || Math.abs(Phaser.Math.Angle.Wrap(Math.atan2(dy, dx) - angle)) < halfArc;
       if (hits) {
         enemy.takeDamage(damage, this, scene);
-        this._spawnHitFX(scene, enemy.x, enemy.y);
+        this._spawnHitFX(scene, enemy.x, enemy.y, heavy);
       }
     }
 
@@ -277,7 +291,7 @@ export class Player extends Phaser.GameObjects.Container {
         const hits = dist <= 70 || Math.abs(Phaser.Math.Angle.Wrap(Math.atan2(dy, dx) - angle)) < halfArc;
         if (hits) {
           scene.hitBoss(damage);
-          this._spawnHitFX(scene, boss.x, boss.y);
+          this._spawnHitFX(scene, boss.x, boss.y, heavy);
         }
       }
     }
@@ -395,17 +409,52 @@ export class Player extends Phaser.GameObjects.Container {
     this.scene?.events?.emit('player_revived', { player: this });
   }
 
-  _spawnHitFX(scene, x, y) {
-    const fx = scene.add.sprite(x, y, 'explosion_01');
-    fx.setScale(0.8);
+  _spawnHitFX(scene, x, y, heavy = false) {
+    if (heavy) {
+      const key = 'vfx_yellow1', init = 'vfx_y1_1';
+      if (scene.anims?.exists(key) && scene.textures?.exists(init)) {
+        scene.add.sprite(x, y, init).setScale(1.1).setDepth(y + 10)
+          .play(key).once('animationcomplete', s => s.destroy());
+        return;
+      }
+    } else {
+      const idx  = Math.floor(Math.random() * 5) + 1;
+      const key  = `vfx_green${idx}`, init = `vfx_g${idx}_1`;
+      if (scene.anims?.exists(key) && scene.textures?.exists(init)) {
+        scene.add.sprite(x, y, init).setScale(0.85).setDepth(y + 10)
+          .play(key).once('animationcomplete', s => s.destroy());
+        return;
+      }
+    }
+    const fx = scene.add.sprite(x, y, 'explosion_01').setScale(heavy ? 1.1 : 0.8);
     if (scene.anims.exists('explosion_01_anim')) {
       fx.play('explosion_01_anim').once('animationcomplete', () => fx.destroy());
     } else {
-      scene.tweens.add({
-        targets: fx, alpha: 0, scaleX: 1.5, scaleY: 1.5,
-        duration: 200, onComplete: () => fx.destroy(),
-      });
+      scene.tweens.add({ targets: fx, alpha: 0, scaleX: 1.5, scaleY: 1.5, duration: 200, onComplete: () => fx.destroy() });
     }
+  }
+
+  _spawnAttackTrail(scene) {
+    for (let i = 0; i < 3; i++) {
+      const ghost = scene.add.sprite(this.x, this.y, this.sprite.texture.key, this.sprite.frame.name)
+        .setAlpha(0.38 - i * 0.1)
+        .setFlipX(this.sprite.flipX)
+        .setScale(this.sprite.scaleX, this.sprite.scaleY)
+        .setDepth(this.depth - i - 1);
+      scene.tweens.add({ targets: ghost, alpha: 0, duration: 180 + i * 65, onComplete: () => ghost.destroy() });
+    }
+  }
+
+  _spawnFootDust(scene) {
+    const n = Math.floor(Math.random() * 2) + 1;
+    const k = `vfx_smoke${n}`, fk = `vfx_s${n}_1`;
+    if (!scene.anims?.exists(k)) return;
+    const s = scene.add.sprite(
+      this.x + (Math.random() - 0.5) * 14,
+      this.y + 6, fk
+    ).setScale(0.35).setAlpha(0.28).setDepth(this.depth - 1).setTint(0xccaa88);
+    s.play(k);
+    s.once('animationcomplete', () => s.destroy());
   }
 
   _spawnDustFX(scene) {
@@ -489,6 +538,7 @@ export class Player extends Phaser.GameObjects.Container {
   applyBurn(scene, dpsPerTick, duration) {
     if (!this.alive || this.downed) return;
     if (this._burnTimer) { this._burnTimer.remove(); this._burnTimer = null; }
+    scene.events?.emit('status_flash', { color: 0xff7700, alpha: 0.18, duration: 350 });
     const ticks = Math.max(1, Math.floor(duration / 400));
     let count = 0;
     this._burnTimer = scene.time.addEvent({
@@ -508,6 +558,7 @@ export class Player extends Phaser.GameObjects.Container {
   applySlow(scene, duration) {
     if (!this.alive || this.downed) return;
     if (this._slowTimer) { this._slowTimer.remove(); this._slowTimer = null; }
+    scene.events?.emit('status_flash', { color: 0x4477ff, alpha: 0.16, duration: 320 });
     this._slowMult = 0.5;
     this.sprite.setTint(0x6699ff);
     this._slowTimer = scene.time.delayedCall(duration, () => {

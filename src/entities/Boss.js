@@ -26,6 +26,7 @@ export class Boss extends Phaser.GameObjects.Container {
     this._introActive  = false;
     this._sinWave      = 0;
     this._decoys       = null;
+    this._aura         = null;
 
     const texBase = cfg.textureBase;
     this.sprite = scene.add.sprite(0, cfg.visualOffsetY || 0, texBase + '_idle_01');
@@ -78,6 +79,17 @@ export class Boss extends Phaser.GameObjects.Container {
             this._active     = true;
             this._graceTimer = 2500;
             scene.events.emit('boss_entered', { boss: this });
+
+            // Pulsing floor aura
+            this._aura = scene.add.circle(this.x, this.y, 80 * this.cfg.scale, this.cfg.tint || 0xff4400, 0.13);
+            this._aura.setDepth(this.y - 2);
+            scene.tweens.add({
+              targets: this._aura,
+              alpha:  { from: 0.07, to: 0.22 },
+              scaleX: { from: 0.82, to: 1.18 },
+              scaleY: { from: 0.82, to: 1.18 },
+              duration: 1400, yoyo: true, repeat: -1, ease: 'Sine.easeInOut',
+            });
           });
         },
       });
@@ -93,6 +105,7 @@ export class Boss extends Phaser.GameObjects.Container {
     if (!this.alive || !this._active) return;
     if (this._introActive) return;
     this.setDepth(this.y);
+    if (this._aura) { this._aura.setPosition(this.x, this.y); this._aura.setDepth(this.y - 2); }
 
     if (this._graceTimer > 0) { this._graceTimer -= delta; return; }
 
@@ -565,10 +578,55 @@ export class Boss extends Phaser.GameObjects.Container {
     if (this.body) this.body.enable = false;
     this._playAnim('dead');
     this._dismissDecoys(scene);
+    if (this._aura) { this._aura.destroy(); this._aura = null; }
 
     scene.cameras.main.shake(700, 0.025);
     scene.audio?.victory?.();
     scene.events.emit('boss_killed', { bossKey: this.bossKey, boss: this });
+
+    const cx = this.x, cy = this.y;
+
+    // Wave 1: lightning cross burst
+    for (let i = 0; i < 4; i++) {
+      const k = `vfx_lightning${(i % 6) + 1}`, fk = `vfx_l${(i % 6) + 1}_1`;
+      if (!scene.anims?.exists(k)) continue;
+      const ang = (Math.PI / 2) * i;
+      const s = scene.add.sprite(cx + Math.cos(ang) * 50, cy + Math.sin(ang) * 50, fk)
+        .setScale(1.6).setDepth(cy + 60).setAlpha(0.9);
+      s.play(k).once('animationcomplete', () => s.destroy());
+    }
+
+    // Wave 2 (t=350ms): fireball ring + shake
+    scene.time.delayedCall(350, () => {
+      if (!scene.scene?.isActive?.()) return;
+      const bossColor = this.cfg.tint || 0xff4400;
+      for (let i = 0; i < 8; i++) {
+        const a = (Math.PI * 2 / 8) * i;
+        scene.events.emit('spawn_projectile', {
+          x: cx, y: cy, angle: a,
+          damage: 0, fromEnemy: false,
+          key: 'fire_01', speed: 190, tint: bossColor,
+        });
+      }
+      scene.cameras.main.shake(380, 0.016);
+    });
+
+    // Wave 3 (t=700ms): smoke burst
+    scene.time.delayedCall(700, () => {
+      if (!scene.scene?.isActive?.()) return;
+      for (let i = 0; i < 6; i++) {
+        const ox = Phaser.Math.Between(-80, 80), oy = Phaser.Math.Between(-60, 28);
+        const n  = (i % 4) + 1;
+        const sk = `vfx_smoke${n}`, fk = `vfx_s${n}_1`;
+        if (!scene.anims?.exists(sk)) continue;
+        scene.time.delayedCall(i * 80, () => {
+          if (!scene.scene?.isActive?.()) return;
+          const s = scene.add.sprite(cx + ox, cy + oy, fk)
+            .setScale(1.4).setDepth(cy + 80).setAlpha(0.75);
+          s.play(sk).once('animationcomplete', () => s.destroy());
+        });
+      }
+    });
 
     scene.time.delayedCall(1800, () => {
       scene.tweens.add({

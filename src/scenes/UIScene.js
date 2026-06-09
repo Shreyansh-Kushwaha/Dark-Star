@@ -72,6 +72,8 @@ export class UIScene extends Phaser.Scene {
     gs.events.on('revival_prompt',     this._onRevivalPrompt,  this);
     gs.events.on('revival_progress',   this._onRevivalProgress, this);
     gs.events.on('level_up_available', this._onLevelUpAvailable, this);
+    gs.events.on('kill_combo',         this._onKillCombo,       this);
+    gs.events.on('status_flash',       this._onStatusFlash,     this);
 
     // Cache lore fragment data for the lore tab
     import('/src/data/quests.js').then(m => { this._loreFragCache = m.LORE_FRAGMENTS; });
@@ -245,7 +247,7 @@ export class UIScene extends Phaser.Scene {
       stroke: '#000', strokeThickness: 4,
     }).setOrigin(0.5, 0.5);
     this._regionSubText = this.add.text(0, 16, '', {
-      fontSize: '14px', color: '#ddaa66', fontFamily: 'serif',
+      fontSize: '9px', color: '#ddaa66', fontFamily: "'Silkscreen', monospace",
     }).setOrigin(0.5, 0.5);
     this._regionTitle.add([bg, this._regionTitleText, this._regionSubText]);
   }
@@ -263,7 +265,8 @@ export class UIScene extends Phaser.Scene {
       const bg     = this.add.rectangle(x, y, 48, 48, 0x111111, 0.85).setOrigin(0.5);
       const border = this.add.rectangle(x, y, 48, 48, colors[i], 0.5).setOrigin(0.5).setStrokeStyle(2, colors[i]);
       this.add.text(x, y - 14, labels[i], {
-        fontSize: '13px', fontStyle: 'bold', color: '#' + colors[i].toString(16).padStart(6, '0'), fontFamily: 'monospace',
+        fontSize: '11px', fontStyle: 'bold', color: '#' + colors[i].toString(16).padStart(6, '0'),
+        fontFamily: "'Silkscreen', monospace",
       }).setOrigin(0.5);
       const cd = this.add.text(x, y, '–', { fontSize: '12px', color: '#ccc', fontFamily: 'monospace' }).setOrigin(0.5);
       this._abilityIcons.push({ bg, border, cd, x, y, cdLeft: 0, cdMax: 1 });
@@ -1096,12 +1099,48 @@ export class UIScene extends Phaser.Scene {
     this._cheatBadge.setText(badges.join('\n'));
   }
 
+  _onKillCombo({ count }) {
+    if (this._comboText) { this._comboText.destroy(); this._comboText = null; }
+    if (this._comboTween) { this._comboTween.stop(); this._comboTween = null; }
+
+    const palette = ['#ffffff', '#ffff44', '#ffbb22', '#ff7700', '#ff3300'];
+    const color   = palette[Math.min(count - 2, palette.length - 1)];
+    const size    = 10 + Math.min(count - 2, 5);
+
+    this._comboText = this.add.text(GAME_W / 2, GAME_H / 2 + 90, `×${count} COMBO!`, {
+      fontSize: `${size}px`, color,
+      fontFamily: "'Silkscreen', monospace",
+      stroke: '#000', strokeThickness: 3,
+    }).setOrigin(0.5).setDepth(9960).setAlpha(0).setScale(1.5);
+
+    this._comboTween = this.tweens.add({
+      targets: this._comboText, alpha: 1, scaleX: 1, scaleY: 1,
+      duration: 150, ease: 'Back.Out',
+      onComplete: () => {
+        this.time.delayedCall(1100, () => {
+          if (!this._comboText) return;
+          this.tweens.add({
+            targets: this._comboText, alpha: 0, y: this._comboText.y - 24,
+            duration: 380,
+            onComplete: () => { this._comboText?.destroy(); this._comboText = null; },
+          });
+        });
+      },
+    });
+  }
+
+  _onStatusFlash({ color, alpha, duration }) {
+    const flash = this.add.rectangle(GAME_W / 2, GAME_H / 2, GAME_W, GAME_H, color, alpha)
+      .setOrigin(0.5).setDepth(9972);
+    this.tweens.add({ targets: flash, alpha: 0, duration, onComplete: () => flash.destroy() });
+  }
+
   // ── Toast utility ──────────────────────────────────────────────────────────
 
   toast(text, color = '#ffffff', duration = 1500) {
     const t = this.add.text(0, 0, text, {
-      fontSize: '18px', color, fontFamily: 'serif',
-      stroke: '#000', strokeThickness: 4,
+      fontSize: '11px', color, fontFamily: "'Silkscreen', monospace",
+      stroke: '#000', strokeThickness: 3,
     }).setOrigin(0.5, 0.5);
     const offsetY = -30 * this._toasts.length;
     t.setPosition(GAME_W / 2, GAME_H / 2 - 40 + offsetY);
