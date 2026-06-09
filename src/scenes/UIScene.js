@@ -34,6 +34,9 @@ export class UIScene extends Phaser.Scene {
     this._invVisible = false;
 
     this._createCheatConsole();
+    this._createVignette();
+
+    this._statTiers = {};
 
     this._keyEsc = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
     this._keyU   = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.U);
@@ -66,6 +69,9 @@ export class UIScene extends Phaser.Scene {
     gs.events.on('show_inventory',     this._showInventory,    this);
     gs.events.on('game_over',          this._onGameOver,       this);
     gs.events.on('lore_collected',     this._onLoreCollected,  this);
+    gs.events.on('revival_prompt',     this._onRevivalPrompt,  this);
+    gs.events.on('revival_progress',   this._onRevivalProgress, this);
+    gs.events.on('level_up_available', this._onLevelUpAvailable, this);
 
     // Cache lore fragment data for the lore tab
     import('/src/data/quests.js').then(m => { this._loreFragCache = m.LORE_FRAGMENTS; });
@@ -381,6 +387,21 @@ export class UIScene extends Phaser.Scene {
     if (Phaser.Input.Keyboard.JustDown(this._keyF11)) {
       this._toggleFullscreen();
     }
+
+    // Low-HP vignette pulse
+    const localP = gs?.players?.find(p => p?.isLocal) || gs?.players?.[0];
+    if (localP && localP.alive && this._hpVignette) {
+      const hpPct = localP.hp / localP.maxHp;
+      if (hpPct < 0.3) {
+        this._vigPulse = (this._vigPulse || 0) + delta * 0.0028;
+        const pulse = Math.abs(Math.sin(this._vigPulse));
+        const base  = (0.3 - hpPct) * 0.85;
+        this._hpVignette.setAlpha(base * (0.35 + pulse * 0.65));
+      } else {
+        this._hpVignette.setAlpha(0);
+        this._vigPulse = 0;
+      }
+    }
   }
 
   _toggleFullscreen() {
@@ -688,7 +709,7 @@ export class UIScene extends Phaser.Scene {
 
   _onPlayerDowned(data) {
     const name = (data.player?.charKey || (data.player?.isP1 ? 'dhruva' : 'tara')).toUpperCase();
-    this.toast(`${name} IS DOWN! (12s)`, '#ff4444', 3000);
+    this.toast(`${name} IS DOWN!  Hold [F] to revive`, '#ff4444', 4000);
   }
 
   _onPlayerRevived(data) {
@@ -698,6 +719,122 @@ export class UIScene extends Phaser.Scene {
 
   _onPerfectDodge() {
     this.toast('PERFECT DODGE!', '#ffff44', 1200);
+    const flash = this.add.rectangle(GAME_W / 2, GAME_H / 2, GAME_W, GAME_H, 0x00ffff, 0.22)
+      .setOrigin(0.5).setDepth(9975);
+    this.tweens.add({ targets: flash, alpha: 0, duration: 280, onComplete: () => flash.destroy() });
+  }
+
+  _onRevivalPrompt(data) {
+    if (!this._revivalPromptText) {
+      this._revivalPromptText = this.add.text(GAME_W / 2, GAME_H - 158, 'Hold [F] to revive ally', {
+        fontSize: '15px', color: '#88ff88', fontFamily: 'monospace',
+        stroke: '#000', strokeThickness: 3,
+      }).setOrigin(0.5).setDepth(9900).setVisible(false);
+    }
+    this._revivalPromptText.setVisible(!!data?.show);
+  }
+
+  _onRevivalProgress(data) {
+    const progress = data?.progress ?? 0;
+    if (!this._revivalBarBg) {
+      const bw = 200;
+      this._revivalBarBg   = this.add.rectangle(GAME_W / 2, GAME_H - 140, bw, 10, 0x333333)
+        .setOrigin(0.5).setDepth(9901).setVisible(false);
+      this._revivalBarFill = this.add.rectangle(GAME_W / 2 - bw / 2, GAME_H - 140, bw, 10, 0x44ff88)
+        .setOrigin(0, 0.5).setDepth(9902).setVisible(false);
+    }
+    const show = progress > 0;
+    this._revivalBarBg.setVisible(show);
+    this._revivalBarFill.setVisible(show);
+    if (show) this._revivalBarFill.scaleX = progress;
+    if (!show && this._revivalPromptText) this._revivalPromptText.setVisible(false);
+  }
+
+  _onLevelUpAvailable(data) {
+    const gs = this.scene.get('GameScene');
+    if (!gs) return;
+
+    gs._paused = true;
+    gs.physics?.pause();
+
+    const depth = 9993;
+    const choices = [
+      { key: '1', stat: 'maxHp',     label: 'VITALITY',   desc: '+25% Max HP' },
+      { key: '2', stat: 'stamina',   label: 'ENDURANCE',  desc: '+25% Stamina' },
+      { key: '3', stat: 'abilityPow', label: 'POWER',     desc: '+25% Ability Power' },
+    ];
+
+    const veil = this.add.rectangle(0, 0, GAME_W, GAME_H, 0x000000, 0).setOrigin(0).setDepth(depth);
+    this.tweens.add({ targets: veil, alpha: 0.78, duration: 400 });
+
+    const title = this.add.text(GAME_W / 2, GAME_H / 2 - 118, '⚔  LEVEL UP', {
+      fontSize: '36px', color: '#ffd700', fontFamily: 'serif',
+      stroke: '#000', strokeThickness: 6, letterSpacing: 6,
+    }).setOrigin(0.5).setDepth(depth + 1).setAlpha(0);
+    this.tweens.add({ targets: title, alpha: 1, duration: 320, delay: 300 });
+
+    const sub = this.add.text(GAME_W / 2, GAME_H / 2 - 74, 'Choose your boon', {
+      fontSize: '14px', color: '#ddaa66', fontFamily: 'serif',
+    }).setOrigin(0.5).setDepth(depth + 1).setAlpha(0);
+    this.tweens.add({ targets: sub, alpha: 1, duration: 320, delay: 400 });
+
+    const cardObjs = [];
+    for (let i = 0; i < 3; i++) {
+      const c  = choices[i];
+      const cx = GAME_W / 2 + (i - 1) * 224;
+      const cy = GAME_H / 2 + 14;
+
+      const bg  = this.add.rectangle(cx, cy, 186, 130, 0x1a1000, 0.92)
+        .setDepth(depth + 1).setAlpha(0).setStrokeStyle(2, 0x886633);
+      const num = this.add.text(cx, cy - 46, `[${c.key}]`, {
+        fontSize: '22px', color: '#ffd700', fontFamily: 'monospace',
+      }).setOrigin(0.5).setDepth(depth + 2).setAlpha(0);
+      const lbl = this.add.text(cx, cy - 8, c.label, {
+        fontSize: '18px', color: '#ffffff', fontFamily: 'serif', fontStyle: 'bold',
+      }).setOrigin(0.5).setDepth(depth + 2).setAlpha(0);
+      const desc = this.add.text(cx, cy + 24, c.desc, {
+        fontSize: '13px', color: '#ccaa77', fontFamily: 'monospace',
+      }).setOrigin(0.5).setDepth(depth + 2).setAlpha(0);
+
+      const delay = 500 + i * 110;
+      this.tweens.add({ targets: [bg, num, lbl, desc], alpha: 1, duration: 280, delay });
+      cardObjs.push({ bg, num, lbl, desc });
+    }
+
+    const allObjs = [veil, title, sub, ...cardObjs.flatMap(c => [c.bg, c.num, c.lbl, c.desc])];
+
+    const applyChoice = (idx) => {
+      k1.off('down'); k2.off('down'); k3.off('down');
+      k1.destroy(); k2.destroy(); k3.destroy();
+
+      const c   = choices[idx];
+      const tier = ((this._statTiers?.[c.stat] || 0) + 1);
+      this._statTiers[c.stat] = tier;
+      gs.players?.forEach(p => p?.applyStat?.(c.stat, tier));
+
+      this.tweens.add({
+        targets: cardObjs[idx].bg, alpha: 0.5, duration: 60, yoyo: true, repeat: 2,
+      });
+      this.time.delayedCall(380, () => {
+        this.tweens.add({
+          targets: allObjs, alpha: 0, duration: 300,
+          onComplete: () => {
+            allObjs.forEach(o => { try { o.destroy(); } catch {} });
+            gs._paused = false;
+            gs.physics?.resume();
+          },
+        });
+      });
+    };
+
+    const k1 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ONE);
+    const k2 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.TWO);
+    const k3 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.THREE);
+    this.time.delayedCall(700, () => {
+      k1.once('down', () => applyChoice(0));
+      k2.once('down', () => applyChoice(1));
+      k3.once('down', () => applyChoice(2));
+    });
   }
 
   _onQuestStarted(data) {
@@ -855,6 +992,14 @@ export class UIScene extends Phaser.Scene {
         });
       });
     });
+  }
+
+  // ── Low-HP vignette ────────────────────────────────────────────────────────
+
+  _createVignette() {
+    this._hpVignette = this.add.rectangle(GAME_W / 2, GAME_H / 2, GAME_W, GAME_H, 0xff0000, 0)
+      .setDepth(9968).setScrollFactor(0);
+    this._vigPulse = 0;
   }
 
   // ── Cheat console ──────────────────────────────────────────────────────────

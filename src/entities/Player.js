@@ -46,6 +46,9 @@ export class Player extends Phaser.GameObjects.Container {
     this._questKillCount     = 0;
     this._agniShieldTimer = 0;
     this._agniShieldFx    = null;
+    this._slowMult   = 1.0;
+    this._burnTimer  = null;
+    this._slowTimer  = null;
 
     this.godMode     = false;
     this.oneShotMode = false;
@@ -178,6 +181,10 @@ export class Player extends Phaser.GameObjects.Container {
 
     // Normalize diagonal
     if (vx !== 0 && vy !== 0) { vx *= 0.707; vy *= 0.707; }
+
+    // Apply slow status effect
+    const sm = this._slowMult ?? 1;
+    vx *= sm; vy *= sm;
 
     this.body.setVelocity(vx, vy);
 
@@ -477,6 +484,37 @@ export class Player extends Phaser.GameObjects.Container {
         }
       });
     }
+  }
+
+  applyBurn(scene, dpsPerTick, duration) {
+    if (!this.alive || this.downed) return;
+    if (this._burnTimer) { this._burnTimer.remove(); this._burnTimer = null; }
+    const ticks = Math.max(1, Math.floor(duration / 400));
+    let count = 0;
+    this._burnTimer = scene.time.addEvent({
+      delay: 400, repeat: ticks - 1,
+      callback: () => {
+        if (!this.alive || this.downed) { this._burnTimer = null; return; }
+        this.hp = Math.max(0, this.hp - dpsPerTick);
+        this._updateHpBar();
+        this.sprite.setTint(0xff6600);
+        scene.time.delayedCall(100, () => { if (this.alive) this.sprite.clearTint(); });
+        if (++count >= ticks) this._burnTimer = null;
+        if (this.hp <= 0) this._goDown(scene);
+      },
+    });
+  }
+
+  applySlow(scene, duration) {
+    if (!this.alive || this.downed) return;
+    if (this._slowTimer) { this._slowTimer.remove(); this._slowTimer = null; }
+    this._slowMult = 0.5;
+    this.sprite.setTint(0x6699ff);
+    this._slowTimer = scene.time.delayedCall(duration, () => {
+      this._slowMult = 1.0;
+      this._slowTimer = null;
+      if (this.alive) this.sprite.clearTint();
+    });
   }
 
   applyStat(stat, tier) {

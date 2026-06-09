@@ -43,29 +43,44 @@ export class Boss extends Phaser.GameObjects.Container {
   enter(scene) {
     this.state   = STATE.ENTER;
     this._active = false;
+    this.setAlpha(0);
+    this.sprite.setScale(0.05);
 
     const cam = scene.cameras.main;
-    cam.pan(this.x, this.y, 1200, 'Power2');
+    cam.pan(this.x, this.y, 1000, 'Power2');
 
-    scene.tweens.add({
-      targets: this, alpha: 1, duration: 600,
-      onComplete: () => {
-        this._playAnim('idle');
+    // Dramatic scale-up entrance after camera pans in
+    scene.time.delayedCall(420, () => {
+      scene.tweens.add({ targets: this, alpha: 1, duration: 180 });
+      scene.tweens.add({
+        targets: this.sprite,
+        scaleX: this.cfg.scale * 1.22, scaleY: this.cfg.scale * 1.22,
+        duration: 580, ease: 'Back.Out',
+        onComplete: () => {
+          // Rebound to true size
+          scene.tweens.add({
+            targets: this.sprite,
+            scaleX: this.cfg.scale, scaleY: this.cfg.scale,
+            duration: 300, ease: 'Power2.Out',
+          });
+          cam.shake(550, 0.016);
+          this._playAnim('idle');
 
-        if (this.cfg.introLine) {
-          this._introActive = true;
-          scene.events.emit('boss_intro', { lines: [this.cfg.introLine], boss: this });
-          scene.time.delayedCall(3200, () => { this._introActive = false; });
-        }
+          if (this.cfg.introLine) {
+            this._introActive = true;
+            scene.events.emit('boss_intro', { lines: [this.cfg.introLine], boss: this });
+            scene.time.delayedCall(3200, () => { this._introActive = false; });
+          }
 
-        scene.time.delayedCall(1200, () => {
-          cam.startFollow(scene.players[0], true, 0.1, 0.1);
-          this.state       = STATE.FIGHT;
-          this._active     = true;
-          this._graceTimer = 2500;
-          scene.events.emit('boss_entered', { boss: this });
-        });
-      },
+          scene.time.delayedCall(1300, () => {
+            cam.startFollow(scene.players[0], true, 0.1, 0.1);
+            this.state       = STATE.FIGHT;
+            this._active     = true;
+            this._graceTimer = 2500;
+            scene.events.emit('boss_entered', { boss: this });
+          });
+        },
+      });
     });
   }
 
@@ -360,7 +375,10 @@ export class Boss extends Phaser.GameObjects.Container {
         scene.time.delayedCall(400, () => {
           if (!this.alive || !target.alive) return;
           const d = Phaser.Math.Distance.Between(this.x, this.y, target.x, target.y);
-          if (d <= 130) target.takeDamage(this.cfg.maxHp * 0.06, this, scene);
+          if (d <= 130) {
+            target.takeDamage(this.cfg.maxHp * 0.06, this, scene);
+            if (pattern === 'void_slash' || pattern === 'wind_slash') target.applySlow?.(scene, 2200);
+          }
         });
         break;
       }
@@ -372,6 +390,8 @@ export class Boss extends Phaser.GameObjects.Container {
           if (!p?.alive || p.downed) continue;
           if (Phaser.Math.Distance.Between(this.x, this.y, p.x, p.y) <= r) {
             p.takeDamage(this.cfg.maxHp * 0.04, this, scene);
+            if (pattern === 'root' || pattern === 'gust') p.applySlow?.(scene, 2500);
+            if (pattern === 'vine_lash') p.applyPoison?.(scene, this.cfg.maxHp * 0.003, 3000);
           }
         }
         break;
@@ -381,12 +401,14 @@ export class Boss extends Phaser.GameObjects.Container {
         const angle  = Math.atan2(target.y - this.y, target.x - this.x);
         const spread = pattern === 'despair_wave' ? 5 : 3;
         const step   = pattern === 'despair_wave' ? 0.25 : 0.32;
+        const slowProj = pattern === 'cyclone' || pattern === 'shockwave';
         for (let i = 0; i < spread; i++) {
           const off = (i - Math.floor(spread / 2)) * step;
           scene.events.emit('spawn_projectile', {
             x: this.x, y: this.y, angle: angle + off,
             damage: this.cfg.maxHp * 0.035, fromEnemy: true,
             key: 'fire_01', speed: 230, tint: this.cfg.tint || 0xff4444,
+            slowOnHit: slowProj,
           });
         }
         break;
@@ -395,12 +417,14 @@ export class Boss extends Phaser.GameObjects.Container {
       case 'rock_storm': case 'tornado': case 'annihilation': case 'severance': {
         scene.cameras.main.shake(350, 0.014);
         const count = pattern === 'annihilation' ? 12 : 8;
+        const burnProj = pattern === 'rage_slam' || pattern === 'frenzy' || pattern === 'rock_storm';
         for (let i = 0; i < count; i++) {
           const a = (Math.PI * 2 / count) * i;
           scene.events.emit('spawn_projectile', {
             x: this.x, y: this.y, angle: a,
             damage: this.cfg.maxHp * 0.045, fromEnemy: true,
             key: 'fire_01', speed: 210, tint: this.cfg.tint || 0xff2200,
+            burnOnHit: burnProj,
           });
         }
         break;
@@ -447,9 +471,23 @@ export class Boss extends Phaser.GameObjects.Container {
     this._decoys = [];
   }
 
+  _spawnDamageNumber(scene, amount) {
+    if (!scene) return;
+    const heavy = amount >= 40;
+    const txt = scene.add.text(
+      this.x + Phaser.Math.Between(-15, 15), this.y - 55,
+      Math.ceil(amount).toString(),
+      { fontSize: heavy ? '22px' : '16px', color: heavy ? '#ff6666' : '#ffcc44',
+        fontFamily: 'monospace', stroke: '#000', strokeThickness: 4 }
+    ).setOrigin(0.5, 1).setDepth(this.depth + 100);
+    scene.tweens.add({ targets: txt, y: txt.y - 45, alpha: 0, duration: 900, ease: 'Power1',
+      onComplete: () => txt.destroy() });
+  }
+
   takeDamage(amount, scene) {
     if (!this.alive || this._invincible || this.state === STATE.STAGGER || this.state === STATE.DEAD) return;
     this.hp = Math.max(0, this.hp - amount);
+    this._spawnDamageNumber(scene, amount);
 
     this.posture = Math.min(this.maxPosture, this.posture + amount * 0.4);
     if (this.posture >= this.maxPosture) this._triggerStagger(scene);

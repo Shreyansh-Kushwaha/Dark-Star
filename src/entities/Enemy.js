@@ -259,10 +259,24 @@ export class Enemy extends Phaser.GameObjects.Container {
     }
   }
 
+  _spawnDamageNumber(scene, amount) {
+    if (!scene) return;
+    const heavy = amount >= 20;
+    const txt = scene.add.text(
+      this.x + Phaser.Math.Between(-10, 10), this.y - 40,
+      Math.ceil(amount).toString(),
+      { fontSize: heavy ? '18px' : '13px', color: heavy ? '#ff5555' : '#ffcc44',
+        fontFamily: 'monospace', stroke: '#000', strokeThickness: 3 }
+    ).setOrigin(0.5, 1).setDepth(this.depth + 100);
+    scene.tweens.add({ targets: txt, y: txt.y - 36, alpha: 0, duration: 700, ease: 'Power1',
+      onComplete: () => txt.destroy() });
+  }
+
   takeDamage(amount, source, scene) {
     if (!this.alive) return;
     this.hp = Math.max(0, this.hp - amount);
     this._updateHpBar();
+    this._spawnDamageNumber(scene, amount);
 
     this.sprite.setTint(0xff8888);
     scene.time.delayedCall(100, () => {
@@ -295,8 +309,29 @@ export class Enemy extends Phaser.GameObjects.Container {
     scene?.audio?.enemyDeath?.();
     scene?.events?.emit('enemy_killed', { enemy: this });
 
-    // Death smoke puff
     if (scene) {
+      // White flash on death
+      this.sprite.setTint(0xffffff);
+
+      // Particle burst
+      const colors = [0xff4444, 0xffaa33, 0xff6600];
+      for (let i = 0; i < 7; i++) {
+        const a = (Math.PI * 2 / 7) * i;
+        const d = 22 + Math.random() * 18;
+        const dot = scene.add.circle(
+          this.x + Math.cos(a) * d, this.y + Math.sin(a) * d,
+          3 + Math.random() * 3, colors[i % 3], 0.9
+        ).setDepth(this.depth + 2);
+        scene.tweens.add({
+          targets: dot,
+          x: dot.x + Math.cos(a) * 28, y: dot.y + Math.sin(a) * 28,
+          alpha: 0, scaleX: 0.1, scaleY: 0.1,
+          duration: 380 + Math.random() * 200,
+          onComplete: () => dot.destroy(),
+        });
+      }
+
+      // Smoke puff
       const idx = Phaser.Math.Between(1, 2);
       const smokeKey  = `vfx_smoke${idx}`;
       const initFrame = `vfx_s${idx}_1`;
@@ -307,9 +342,9 @@ export class Enemy extends Phaser.GameObjects.Container {
       }
     }
 
-    this.scene.time.delayedCall(800, () => {
+    this.scene.time.delayedCall(700, () => {
       this.scene.tweens.add({
-        targets: this, alpha: 0, duration: 600,
+        targets: this, alpha: 0, duration: 500,
         onComplete: () => this.destroy(),
       });
     });

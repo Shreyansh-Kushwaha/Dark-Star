@@ -99,7 +99,7 @@ export class GameScene extends Phaser.Scene {
 
   create() {
     const data = this._initData;
-    const saveData = SaveManager.load() || SaveManager.defaults();
+    const saveData = SaveManager.defaults();
     this._save = saveData;
     const regionIndex = data.regionIndex ?? saveData.regionIndex ?? 0;
     this._regionIndex = regionIndex;
@@ -163,7 +163,6 @@ export class GameScene extends Phaser.Scene {
       // Client: apply enemy states broadcast by host
       if (this.network.isClient()) {
         const onRegionChange = ({ newIndex }) => {
-          this._saveProgress(newIndex);
           this.audio.portal();
           this._fadeAndTransition(newIndex);
         };
@@ -240,6 +239,7 @@ export class GameScene extends Phaser.Scene {
     this._firedEchoes = new Set();
     this._worldFragmentObjects = [];
     this._bossIntroActive = false;
+    this._arenaHazards = [];
     this._netTimer = 0;
     this._uiThrottleCounter = 0;
     this._slowTickCounter   = 0;
@@ -1049,6 +1049,12 @@ export class GameScene extends Phaser.Scene {
       if (p?.alive && p.x > 900) this._showTutorial();
     }
 
+    // ── Revival hold mechanic ─────────────────────────────────────
+    this._updateRevival(delta);
+
+    // ── Arena hazards ─────────────────────────────────────────────
+    if (this._arenaHazards.length) this._updateArenaHazards(time, delta);
+
     // ── Throttle counters ─────────────────────────────────────────
     this._uiThrottleCounter++;
     this._slowTickCounter++;
@@ -1127,6 +1133,11 @@ export class GameScene extends Phaser.Scene {
             const dps = (this._boss?.cfg.maxHp || 2000) * 0.004;
             p.applyPoison?.(this, dps, 3000);
           }
+          if (proj.burnOnHit) {
+            const dps = (this._boss?.cfg.maxHp || 2000) * 0.006;
+            p.applyBurn?.(this, dps, 2200);
+          }
+          if (proj.slowOnHit) p.applySlow?.(this, 2500);
           proj.hit();
           return;
         }
@@ -1263,45 +1274,48 @@ export class GameScene extends Phaser.Scene {
     this._fadeAndTransition(newIndex);
   }
 
-  _saveProgress(newIndex) {
-    const localPlayer = this.players.find(p => p.isLocal) || this.players[0];
-    const saveData = {
-      regionIndex: newIndex,
-      playerStats: {
-        maxHp: localPlayer?.maxHp || 200,
-        maxStamina: localPlayer?.maxStamina || 100,
-        abilityPow: localPlayer?.abilityPow || 1.0,
-      },
-      statTiers: this._save?.statTiers || {},
-      completedQuests: this.questManager.getCompletedArray(),
-      inventory: this._save?.inventory || [],
-      collectedLoreIds: this.loreManager.toArray(),
-      bossKills: this._save?.bossKills || [],
-    };
-    SaveManager.save(saveData);
+  _saveProgress(_newIndex) {
+    // Save removed — session-only progress
   }
 
   _fadeAndTransition(newIndex) {
-    this.cameras.main.fadeOut(500, 0, 0, 0);
-    this.cameras.main.once('camerafadeoutcomplete', () => {
-      // Reset timescales
-      this.physics.world.timeScale = 1;
-      this.time.timeScale = 1;
-      this.scene.stop('UIScene');
-      // Preserve network connection across region transitions
-      if (this.network?.connected) {
-        this.registry.set('network', this.network);
-      }
-      this.scene.restart({
-        regionIndex: newIndex,
-        coop: this._isCoop,
-        p1Char: this._p1Char,
-        p2Char: this._p2Char,
-      });
+    // White flash then fade to black for a dramatic portal effect
+    const flash = this.add.rectangle(0, 0, GAME_W, GAME_H, 0xffffff, 0)
+      .setOrigin(0, 0).setScrollFactor(0).setDepth(99999);
+    this.tweens.add({
+      targets: flash, alpha: 0.88,
+      duration: 130, yoyo: true, hold: 55,
+      onComplete: () => {
+        flash.destroy();
+        this.cameras.main.fadeOut(460, 0, 0, 0);
+        this.cameras.main.once('camerafadeoutcomplete', () => {
+          this.physics.world.timeScale = 1;
+          this.time.timeScale = 1;
+          this.scene.stop('UIScene');
+          if (this.network?.connected) {
+            this.registry.set('network', this.network);
+          }
+          this.scene.restart({
+            regionIndex: newIndex,
+            coop: this._isCoop,
+            p1Char: this._p1Char,
+            p2Char: this._p2Char,
+          });
+        });
+      },
     });
   }
 
   _handleInteract() {
+    // Revival takes priority: F held near downed ally is handled in _updateRevival
+    for (const player of this.players) {
+      if (!player?.alive || player.downed || !player.isLocal) continue;
+      for (const ally of this.players) {
+        if (ally === player || !ally?.downed) continue;
+        if (Phaser.Math.Distance.Between(player.x, player.y, ally.x, ally.y) < 70) return;
+      }
+    }
+
     if (this._dialogueActive) {
       this._dialogueActive = false;
       this.events.emit('hide_dialogue');
@@ -1368,10 +1382,7 @@ export class GameScene extends Phaser.Scene {
   }
 
   _saveCollectedLore() {
-    if (this._save) {
-      this._save.collectedLoreIds = this.loreManager.toArray();
-      SaveManager.save(this._save);
-    }
+    // Save removed — session-only lore tracking
   }
 
   _enforceTether() {
@@ -1566,6 +1577,13 @@ export class GameScene extends Phaser.Scene {
         });
       }
     }
+
+    // Spawn rotating arena hazards from phase 2 onward
+    if (data.phaseIndex >= 1) {
+      this.time.delayedCall(1600, () => {
+        if (this._boss?.alive) this._spawnArenaHazards(this._boss, data.phaseIndex);
+      });
+    }
   }
 
   _onBossKilled(data) {
@@ -1573,12 +1591,9 @@ export class GameScene extends Phaser.Scene {
     this.questManager.onBossKill(bossKey, this._regionIndex);
     this.audio.victory();
 
-    // Save boss kill
-    const save = this._save;
-    if (save && !save.bossKills.includes(bossKey)) {
-      save.bossKills.push(bossKey);
-      SaveManager.save(save);
-    }
+    // Clear arena hazards
+    for (const h of this._arenaHazards) h.gfx?.destroy();
+    this._arenaHazards = [];
 
     // Collect boss lore fragment
     const bossFragId = data.boss?.cfg?.loreFragment;
@@ -1597,6 +1612,10 @@ export class GameScene extends Phaser.Scene {
           this.time.delayedCall(5000, () => this.events.emit('hide_dialogue'));
         });
       }
+      // Level-up selection after lore clears
+      this.time.delayedCall(3800, () => {
+        this.events.emit('level_up_available', { bossKey });
+      });
     }
 
     // Final boss: UIScene handles defeat speech; we transition after 8s
@@ -1687,6 +1706,95 @@ export class GameScene extends Phaser.Scene {
     };
     // Delay to let the boss name-card overlay finish (~2.8s in UIScene)
     this.time.delayedCall(3200, showNext);
+  }
+
+  _updateRevival(delta) {
+    if (this.network?.connected) return; // Co-op: rely on auto-revive
+    let revivalPossible = false;
+    for (const player of this.players) {
+      if (!player?.alive || player.downed || !player.isLocal) continue;
+      for (const ally of this.players) {
+        if (ally === player || !ally?.downed) continue;
+        const d = Phaser.Math.Distance.Between(player.x, player.y, ally.x, ally.y);
+        if (d < 70) {
+          revivalPossible = true;
+          if (this._keys.F.isDown) {
+            player._revivalTimer = (player._revivalTimer || 0) + delta;
+            const progress = Math.min(1, player._revivalTimer / 1800);
+            this.events.emit('revival_progress', { progress });
+            this.events.emit('revival_prompt', { show: false });
+            if (player._revivalTimer >= 1800) {
+              player._revivalTimer = 0;
+              ally.revive();
+              this.audio?.interact?.();
+              this.events.emit('revival_progress', { progress: 0 });
+            }
+          } else {
+            player._revivalTimer = 0;
+            this.events.emit('revival_prompt', { show: true });
+            this.events.emit('revival_progress', { progress: 0 });
+          }
+          return;
+        }
+      }
+    }
+    if (!revivalPossible) {
+      for (const p of this.players) { if (p) p._revivalTimer = 0; }
+      this.events.emit('revival_prompt', { show: false });
+      this.events.emit('revival_progress', { progress: 0 });
+    }
+  }
+
+  _spawnArenaHazards(boss, phase) {
+    for (const h of this._arenaHazards) h.gfx?.destroy();
+    this._arenaHazards = [];
+
+    const count  = phase === 1 ? 3 : 5;
+    const radius = 165 + phase * 15;
+    const speed  = phase === 1 ? 0.00115 : 0.00185;
+
+    for (let i = 0; i < count; i++) {
+      const startAngle = (Math.PI * 2 / count) * i;
+      const wx = boss.x + Math.cos(startAngle) * radius;
+      const wy = boss.y + Math.sin(startAngle) * radius;
+
+      const warn = this.add.circle(wx, wy, 26, 0xff4400, 0.2).setDepth(10);
+      warn.setStrokeStyle(2, 0xff6600);
+      this.tweens.add({ targets: warn, alpha: { from: 0.1, to: 0.55 }, duration: 230, yoyo: true, repeat: 4 });
+
+      this.time.delayedCall(1400, () => {
+        if (!boss.alive || !warn.active) { warn.destroy(); return; }
+        warn.setFillStyle(0xff2200, 0.45);
+        this._arenaHazards.push({ gfx: warn, dist: radius, angle: startAngle, speed, boss, lastDmgTime: 0 });
+      });
+    }
+  }
+
+  _updateArenaHazards(time, delta) {
+    for (let i = this._arenaHazards.length - 1; i >= 0; i--) {
+      const h = this._arenaHazards[i];
+      if (!h.gfx?.active || !h.boss?.alive) {
+        h.gfx?.destroy();
+        this._arenaHazards.splice(i, 1);
+        continue;
+      }
+      h.angle += h.speed * delta;
+      const hx = h.boss.x + Math.cos(h.angle) * h.dist;
+      const hy = h.boss.y + Math.sin(h.angle) * h.dist;
+      h.gfx.setPosition(hx, hy);
+      h.gfx.setDepth(hy + 5);
+
+      if (time - h.lastDmgTime > 550) {
+        for (const p of this.players) {
+          if (!p?.alive || p.downed) continue;
+          if (Phaser.Math.Distance.Between(hx, hy, p.x, p.y) < 34) {
+            p.takeDamage(h.boss.cfg.maxHp * 0.016, h.boss, this);
+            h.lastDmgTime = time;
+            break;
+          }
+        }
+      }
+    }
   }
 
   togglePause() {
