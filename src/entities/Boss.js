@@ -122,7 +122,7 @@ export class Boss extends Phaser.GameObjects.Container {
         this._playAnim('idle');
         if (this._decoys?.length) {
           this._decoys.forEach(d => {
-            if (d?.active) scene.tweens.add({ targets: d, alpha: 0.8, duration: 300 });
+            if (d?.active) scene.tweens.add({ targets: d, alpha: 1.0, duration: 300 });
           });
         }
       }
@@ -186,16 +186,38 @@ export class Boss extends Phaser.GameObjects.Container {
       this._doAttack(phaseCfg, target, scene);
     }
 
-    // Decoy tracking loops
+    // Illusion AI: each decoy chases and attacks the player independently
     if (this._decoys?.length) {
-      this._decoys.forEach((d, i) => {
+      const pCfg = this.cfg.phases[this.phase];
+      const illusionTarget = this._nearestPlayer(players);
+      this._decoys.forEach(d => {
         if (!d?.active) return;
-        const offset  = (i === 0 ? -1 : 1) * 165;
-        const targetX = this.x + offset;
-        const targetY = this.y + 22 * Math.sin(this._sinWave * 0.65 + i * Math.PI);
-        d.x += (targetX - d.x) * 0.04;
-        d.y += (targetY - d.y) * 0.04;
-        d.setDepth(d.y);
+        d._atkTimer = (d._atkTimer || 0) - delta;
+        if (!illusionTarget) return;
+        const ddx  = illusionTarget.x - d.x;
+        const ddy  = illusionTarget.y - d.y;
+        const dist = Math.sqrt(ddx * ddx + ddy * ddy);
+        d.setFlipX(this.cfg.mirrorSprite ? ddx > 0 : ddx < 0);
+        if (dist > 85) {
+          const spd = pCfg.speed * 0.85;
+          d.x += (ddx / dist) * spd * delta / 1000;
+          d.y += (ddy / dist) * spd * delta / 1000;
+          d.setDepth(d.y);
+          const runKey = this.cfg.textureBase + '_run';
+          if (scene.anims.exists(runKey) && d.anims.currentAnim?.key !== runKey) d.play(runKey, true);
+        } else {
+          const idleKey = this.cfg.textureBase + '_idle';
+          if (scene.anims.exists(idleKey) && d.anims.currentAnim?.key !== idleKey) d.play(idleKey, true);
+          if (d._atkTimer <= 0) {
+            d._atkTimer = pCfg.attackCd * 1.5;
+            const angle = Math.atan2(illusionTarget.y - d.y, illusionTarget.x - d.x);
+            scene.events.emit('spawn_projectile', {
+              x: d.x, y: d.y, angle,
+              damage: this.cfg.maxHp * 0.025, fromEnemy: true,
+              key: 'fire_01', speed: 200, tint: 0x00ff88, poisonOnHit: true,
+            });
+          }
+        }
       });
     }
   }
@@ -452,13 +474,14 @@ export class Boss extends Phaser.GameObjects.Container {
       const offset = (i === 0 ? -1 : 1) * 165;
       const decoy  = scene.add.sprite(this.x + offset, this.y, this.cfg.textureBase + '_idle_01');
       decoy.setScale(this.sprite.scaleX);
-      decoy.setTint(this.cfg.tint || 0x1a6633);
+      if (this.cfg.tint) decoy.setTint(this.cfg.tint); else decoy.clearTint();
       decoy.setAlpha(0);
       decoy.setDepth(this.y - 1);
+      decoy._atkTimer = 2000 + i * 600;
       if (scene.anims.exists(this.cfg.textureBase + '_idle')) {
         decoy.play(this.cfg.textureBase + '_idle', true);
       }
-      scene.tweens.add({ targets: decoy, alpha: 0.8, duration: 450 });
+      scene.tweens.add({ targets: decoy, alpha: 1.0, duration: 450 });
       this._decoys.push(decoy);
     }
   }
@@ -468,7 +491,8 @@ export class Boss extends Phaser.GameObjects.Container {
     this._decoys.forEach(d => {
       if (!d?.active) return;
       d.setScale(this.sprite.scaleX);
-      scene.tweens.add({ targets: d, alpha: 0.8, duration: 300 });
+      if (this.cfg.tint) d.setTint(this.cfg.tint); else d.clearTint();
+      scene.tweens.add({ targets: d, alpha: 1.0, duration: 300 });
     });
   }
 
