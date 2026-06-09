@@ -83,6 +83,18 @@ button.orange.active{background:#ff883322;border-color:#ffaa55}
 #crop-hint{font-size:10px;color:#888}
 #crop-footer{display:flex;gap:8px;align-items:center}
 #crop-name{flex:1;background:#0a0010;border:1px solid #333;color:#ccc;padding:3px 6px;font-size:10px;border-radius:2px;font-family:monospace}
+/* ── Enemy / Boss tiles in tray ── */
+.entity-tile{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;min-width:68px;max-width:68px;padding:6px 4px;border-radius:4px;border:1px solid #333;background:#1a0028}
+.entity-tile:hover{background:#2a0020}
+.entity-tile.selected{border-color:#ffd700;background:#2a1800}
+.entity-icon{font-size:22px;line-height:1}
+.entity-label{font-size:8px;color:#aaa;text-align:center;line-height:1.3;max-width:68px}
+button.enemy-btn{border-color:#ff4455;color:#ff8899}button.enemy-btn:hover{background:#2a0010}
+button.enemy-btn.active{background:#ff445522;border-color:#ff8899}
+button.boss-btn{border-color:#ffd700;color:#ffd700}button.boss-btn:hover{background:#1a1200}
+button.boss-btn.active{background:#ffd70022;border-color:#ffd700}
+.tab.enemy-tab.active{color:#ff8899;border-bottom-color:#ff4455;background:#ff445511}
+.tab.boss-tab.active{color:#ffd700;border-bottom-color:#ffd700;background:#ffd70011}
 </style>
 </head>
 <body>
@@ -120,6 +132,8 @@ button.orange.active{background:#ff883322;border-color:#ffaa55}
     <button id="draw-eraser" title="Eraser" style="padding:2px 8px;font-size:12px;line-height:1">⌫ Eraser</button>
   </div>
   <button class="orange" id="btn-nowalk">⛔ No-Walk Zone</button>
+  <button class="enemy-btn" id="btn-enemy-tab">👾 Enemies</button>
+  <button class="boss-btn"  id="btn-boss-tab">👑 Boss</button>
   <div class="sep"></div>
   <button class="purple" id="btn-upload-asset">⬆ Upload Asset</button>
   <input type="file" id="file-upload-asset" accept="image/*" multiple style="display:none">
@@ -228,6 +242,27 @@ button.orange.active{background:#ff883322;border-color:#ffaa55}
 'use strict';
 const WORLD_W = 3200, WORLD_H = 2000;
 
+const EDITOR_ENEMY_TYPES = [
+  { type: 'melee',  label: 'Forest Raksha',   color: '#ff4444', icon: '⚔️' },
+  { type: 'ranged', label: 'Shadara Archer',  color: '#ff8844', icon: '🏹' },
+  { type: 'orc',    label: 'Vana Raksha',     color: '#44cc44', icon: '🪓' },
+  { type: 'elite',  label: 'Mahavir Raksha',  color: '#cc44ff', icon: '🛡️' },
+  { type: 'flying', label: 'Vayu Bhuta',      color: '#44ccff', icon: '🦅' },
+  { type: 'bat',    label: 'Vayu Pakshi',     color: '#8855ff', icon: '🦇' },
+  { type: 'rat',    label: 'Kshetra Mooshak', color: '#ffaa44', icon: '🐀' },
+  { type: 'slimem', label: 'Vikrit Kshira',   color: '#44ff88', icon: '🫧' },
+  { type: 'mimic',  label: 'Mayavi Peti',     color: '#ff44aa', icon: '📦' },
+];
+
+const EDITOR_BOSS_TYPES = [
+  { key: 'vanaraksha',     label: 'Vanaraksha',     color: '#2d8b1e', icon: '🌲' },
+  { key: 'vanasur',        label: 'Vanasur',        color: '#8b5c1e', icon: '🌳' },
+  { key: 'nagraj_kaliya',  label: 'Nagraj Kaliya',  color: '#0891b2', icon: '🐍' },
+  { key: 'pashana_daitya', label: 'Pashana Daitya', color: '#b27a40', icon: '🪨' },
+  { key: 'vayu_rakshasa',  label: 'Vayu Rakshasa',  color: '#6b8cff', icon: '💨' },
+  { key: 'viyogasur',      label: 'Viyogasur',      color: '#cc44ff', icon: '💀' },
+];
+
 // ── State ──────────────────────────────────────────────────────────────────
 const S = {
   stage: null,
@@ -264,6 +299,13 @@ const S = {
   noWalkDrag: { active: false, startX: 0, startY: 0, previewRect: null },
   noWalkZones: [], // [{ id, x, y, w, h, konvaRect, konvaLabel }]
   redoStack: [],
+  // ── Entity placement ──────────────────────────────────────────────────────
+  markerLayer: null,
+  activeTrayTab: 'assets',       // 'assets' | 'enemies' | 'boss'
+  placingEnemyType: null,        // enemy type string while arming placement
+  placingBossKey: null,          // boss key string while arming placement
+  placedEnemies: [],             // [{ id, type, x, y, group }]
+  placedBoss: null,              // { key, x, y, group } | null
 };
 
 // ── Utility ────────────────────────────────────────────────────────────────
@@ -306,9 +348,10 @@ function initStage() {
   S.drawLayer   = new Konva.Layer();
   S.belowLayer  = new Konva.Layer(); // below player
   S.aboveLayer  = new Konva.Layer(); // above player
+  S.markerLayer = new Konva.Layer(); // enemy/boss markers
   S.noWalkLayer = new Konva.Layer(); // no-walk zones
   S.selLayer    = new Konva.Layer();
-  S.stage.add(S.bgLayer, S.drawLayer, S.belowLayer, S.aboveLayer, S.noWalkLayer, S.selLayer);
+  S.stage.add(S.bgLayer, S.drawLayer, S.belowLayer, S.aboveLayer, S.markerLayer, S.noWalkLayer, S.selLayer);
 
   S.bgRect = new Konva.Rect({ x:0, y:0, width:WORLD_W, height:WORLD_H, fill:'#2d5c28', listening:false });
   S.bgLayer.add(S.bgRect);
@@ -332,6 +375,7 @@ function initStage() {
   bindToolbar();
   bindCropModal();
   bindRandModal();
+  bindEntityPlacing();
   pushHistory();
 }
 
@@ -440,7 +484,7 @@ function bindDrawing() {
 
 function updateCursor() {
   const cc = document.getElementById('canvas-container');
-  if (S.placingAsset)                   cc.style.cursor = 'crosshair';
+  if (S.placingAsset || S.placingEnemyType || S.placingBossKey) cc.style.cursor = 'crosshair';
   else if (S.panMode)                   cc.style.cursor = 'grab';
   else if (S.deleteMode)                cc.style.cursor = 'not-allowed';
   else if (S.noWalkMode)                cc.style.cursor = 'cell';
@@ -483,16 +527,31 @@ function bindStageClick() {
     if (e.evt.button === 2) return;
     if (S.panMode || S.noWalkMode) return;
     const target = e.target;
-    if (S.placingAsset && (target === S.stage || target === S.bgRect || target === S.bgImage)) {
+    const onBg = target === S.stage || target === S.bgRect || target === S.bgImage;
+    if (S.placingAsset && onBg) {
       const pos = S.stage.getPointerPosition();
-      const worldX = (pos.x - S.stage.x()) / S.stage.scaleX();
-      const worldY = (pos.y - S.stage.y()) / S.stage.scaleY();
-      placeSprite(S.placingAsset, worldX, worldY);
+      placeSprite(S.placingAsset,
+        (pos.x - S.stage.x()) / S.stage.scaleX(),
+        (pos.y - S.stage.y()) / S.stage.scaleY());
       return;
     }
-    if (target === S.stage || target === S.bgRect || target === S.bgImage) {
-      deselectAll();
+    if (S.placingEnemyType && onBg) {
+      const pos = S.stage.getPointerPosition();
+      addEnemyMarker(S.placingEnemyType,
+        (pos.x - S.stage.x()) / S.stage.scaleX(),
+        (pos.y - S.stage.y()) / S.stage.scaleY());
+      pushHistory();
+      return;
     }
+    if (S.placingBossKey && onBg) {
+      const pos = S.stage.getPointerPosition();
+      addBossMarker(S.placingBossKey,
+        (pos.x - S.stage.x()) / S.stage.scaleX(),
+        (pos.y - S.stage.y()) / S.stage.scaleY());
+      pushHistory();
+      return;
+    }
+    if (onBg) { deselectAll(); }
   });
   S.stage.on('contextmenu', e => { e.evt.preventDefault(); });
 }
@@ -546,6 +605,8 @@ function bindToolbar() {
     updateCursor();
     setStatus(S.drawEraser ? 'Eraser mode' : 'Draw mode');
   };
+  document.getElementById('btn-enemy-tab').onclick = () => switchTrayTab('enemies');
+  document.getElementById('btn-boss-tab').onclick  = () => switchTrayTab('boss');
   document.getElementById('btn-upload-asset').onclick = () => document.getElementById('file-upload-asset').click();
   document.getElementById('file-upload-asset').onchange = e => uploadAssets(e.target.files);
   document.getElementById('btn-share').onclick = shareRoom;
@@ -589,18 +650,48 @@ function loadBgImage(file) {
 }
 
 // ── Tray rendering ─────────────────────────────────────────────────────────
+function switchTrayTab(tab) {
+  S.activeTrayTab = tab;
+  cancelPlacing();
+  renderTray();
+  document.getElementById('btn-enemy-tab').classList.toggle('active', tab === 'enemies');
+  document.getElementById('btn-boss-tab').classList.toggle('active',  tab === 'boss');
+}
+
 function renderTray() {
   if (!S.assets) return;
   const cats = S.assets.categories;
   const tabsEl = document.getElementById('tray-tabs');
   tabsEl.innerHTML = '';
+
+  // Fixed special tabs first
+  const enemyTab = document.createElement('div');
+  enemyTab.className = 'tab enemy-tab' + (S.activeTrayTab === 'enemies' ? ' active' : '');
+  enemyTab.textContent = '👾 Enemies';
+  enemyTab.onclick = () => switchTrayTab('enemies');
+  tabsEl.appendChild(enemyTab);
+
+  const bossTab = document.createElement('div');
+  bossTab.className = 'tab boss-tab' + (S.activeTrayTab === 'boss' ? ' active' : '');
+  bossTab.textContent = '👑 Boss';
+  bossTab.onclick = () => switchTrayTab('boss');
+  tabsEl.appendChild(bossTab);
+
+  // Asset category tabs
   cats.forEach((cat, i) => {
     const t = document.createElement('div');
-    t.className = 'tab' + (i === S.activeCat ? ' active' : '');
+    t.className = 'tab' + (S.activeTrayTab === 'assets' && i === S.activeCat ? ' active' : '');
     t.textContent = cat.name;
-    t.onclick = () => { S.activeCat = i; S.activeGrp = null; renderTray(); };
+    t.onclick = () => { S.activeTrayTab = 'assets'; S.activeCat = i; S.activeGrp = null;
+      document.getElementById('btn-enemy-tab').classList.remove('active');
+      document.getElementById('btn-boss-tab').classList.remove('active');
+      renderTray(); };
     tabsEl.appendChild(t);
   });
+
+  if (S.activeTrayTab === 'enemies') { renderEntityTray('enemies'); return; }
+  if (S.activeTrayTab === 'boss')    { renderEntityTray('boss');    return; }
+
   const cat = cats[S.activeCat];
   if (!cat) return;
   const subEl = document.getElementById('tray-sub');
@@ -623,6 +714,40 @@ function renderTray() {
   srch.oninput = e => { S.searchQ = e.target.value.toLowerCase(); renderTrayGrid(); };
   subEl.appendChild(srch);
   renderTrayGrid();
+}
+
+function renderEntityTray(tab) {
+  const subEl = document.getElementById('tray-sub');
+  subEl.innerHTML = '';
+  if (tab === 'enemies') {
+    const lbl = document.createElement('span');
+    lbl.style.cssText = 'font-size:10px;color:#ff8899;padding:2px 4px';
+    lbl.textContent = 'Click a type, then click the map to place. Click a marker to delete it.';
+    subEl.appendChild(lbl);
+  } else {
+    const lbl = document.createElement('span');
+    lbl.style.cssText = 'font-size:10px;color:#ffd700;padding:2px 4px';
+    lbl.textContent = 'Pick a boss — only one per map. Click the marker to move it.';
+    subEl.appendChild(lbl);
+  }
+
+  const grid = document.getElementById('tray-grid');
+  grid.innerHTML = '';
+  const list = tab === 'enemies' ? EDITOR_ENEMY_TYPES : EDITOR_BOSS_TYPES;
+  const selectKey = tab === 'enemies' ? S.placingEnemyType : S.placingBossKey;
+
+  for (const entry of list) {
+    const key = tab === 'enemies' ? entry.type : entry.key;
+    const tile = document.createElement('div');
+    tile.className = 'entity-tile' + (selectKey === key ? ' selected' : '');
+    tile.style.borderColor = selectKey === key ? entry.color : '#333';
+    tile.innerHTML = `<div class="entity-icon">${entry.icon}</div><div class="entity-label" style="color:${entry.color}">${entry.label}</div>`;
+    tile.onclick = () => {
+      if (tab === 'enemies') startPlacingEnemy(entry.type);
+      else                   startPlacingBoss(entry.key);
+    };
+    grid.appendChild(tile);
+  }
 }
 
 function renderTrayGrid() {
@@ -656,6 +781,102 @@ function startPlacing(asset) {
   updateCursor();
   setStatus('Placing: ' + asset.name + ' — click canvas or Esc to cancel');
   renderTrayGrid();
+}
+
+// ── Entity (enemy/boss) placement ─────────────────────────────────────────
+function startPlacingEnemy(type) {
+  cancelPlacing();
+  S.placingEnemyType = type;
+  updateCursor();
+  const cfg = EDITOR_ENEMY_TYPES.find(e => e.type === type);
+  setStatus('Placing: ' + (cfg?.label || type) + ' — click map to place, Esc to cancel');
+  renderEntityTray('enemies');
+}
+
+function startPlacingBoss(key) {
+  cancelPlacing();
+  S.placingBossKey = key;
+  updateCursor();
+  const cfg = EDITOR_BOSS_TYPES.find(b => b.key === key);
+  setStatus('Placing boss: ' + (cfg?.label || key) + ' — click map to place, Esc to cancel');
+  renderEntityTray('boss');
+}
+
+function genMarkerId() {
+  return 'm_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6);
+}
+
+function addEnemyMarker(type, x, y, id) {
+  const cfg = EDITOR_ENEMY_TYPES.find(e => e.type === type) || { color: '#ff4444', icon: '⚔️', label: type };
+  const markerId = id || genMarkerId();
+
+  const group = new Konva.Group({ x, y, draggable: true, id: markerId });
+  group.add(new Konva.Circle({ radius: 18, fill: cfg.color + '33', stroke: cfg.color, strokeWidth: 2 }));
+  group.add(new Konva.Text({ text: cfg.icon, fontSize: 14, x: -8, y: -9, fill: '#fff', listening: false }));
+  group.add(new Konva.Text({ text: cfg.label, fontSize: 7, x: -28, y: 20, width: 56, align: 'center', fill: cfg.color, listening: false }));
+  S.markerLayer.add(group);
+  S.markerLayer.batchDraw();
+
+  group.on('dragend', () => {
+    const e = S.placedEnemies.find(e => e.id === markerId);
+    if (e) { e.x = group.x(); e.y = group.y(); }
+    pushHistory();
+  });
+  group.on('click tap', e => {
+    e.cancelBubble = true;
+    removeEnemyMarker(markerId);
+    pushHistory();
+    setStatus('Enemy removed — Ctrl+Z to undo');
+  });
+
+  S.placedEnemies.push({ id: markerId, type, x, y, group });
+  setStatus('Placed ' + cfg.label + ' — click marker to delete, Esc to stop placing');
+}
+
+function removeEnemyMarker(id) {
+  const idx = S.placedEnemies.findIndex(e => e.id === id);
+  if (idx < 0) return;
+  S.placedEnemies[idx].group.destroy();
+  S.placedEnemies.splice(idx, 1);
+  S.markerLayer.batchDraw();
+}
+
+function addBossMarker(key, x, y) {
+  if (S.placedBoss) removeBossMarker();
+  const cfg = EDITOR_BOSS_TYPES.find(b => b.key === key) || { color: '#ffd700', icon: '💀', label: key };
+
+  const group = new Konva.Group({ x, y, draggable: true });
+  group.add(new Konva.RegularPolygon({ sides: 4, radius: 24, rotation: 45, fill: cfg.color + '33', stroke: cfg.color, strokeWidth: 2.5 }));
+  group.add(new Konva.Text({ text: cfg.icon, fontSize: 16, x: -9, y: -10, fill: '#fff', listening: false }));
+  group.add(new Konva.Text({ text: '☠ ' + cfg.label, fontSize: 7, x: -34, y: 26, width: 68, align: 'center', fill: cfg.color, listening: false }));
+  S.markerLayer.add(group);
+  S.markerLayer.batchDraw();
+
+  group.on('dragend', () => {
+    if (S.placedBoss) { S.placedBoss.x = group.x(); S.placedBoss.y = group.y(); }
+    pushHistory();
+  });
+  group.on('click tap', e => {
+    e.cancelBubble = true;
+    removeBossMarker();
+    pushHistory();
+    setStatus('Boss marker removed — Ctrl+Z to undo');
+  });
+
+  S.placedBoss = { key, x, y, group };
+  setStatus('Boss placed: ' + cfg.label + ' — drag to reposition, click to remove');
+}
+
+function removeBossMarker() {
+  if (!S.placedBoss) return;
+  S.placedBoss.group.destroy();
+  S.placedBoss = null;
+  S.markerLayer.batchDraw();
+}
+
+function bindEntityPlacing() {
+  // Markers are draggable by default; nothing extra needed here.
+  // Canvas background click is handled in bindStageClick.
 }
 
 // ── Sprite placement ───────────────────────────────────────────────────────
@@ -694,6 +915,8 @@ async function placeSprite(asset, x, y, spriteId, layerAttr) {
 
 function cancelPlacing() {
   S.placingAsset = null;
+  S.placingEnemyType = null;
+  S.placingBossKey = null;
   updateCursor();
   setStatus('');
   renderTrayGrid();
@@ -937,18 +1160,47 @@ function serializeNoWalkZones() {
   return S.noWalkZones.map(z => ({ id: z.id, x: z.x, y: z.y, w: z.w, h: z.h }));
 }
 
+function serializeEnemies() {
+  return S.placedEnemies.map(e => ({ id: e.id, type: e.type, x: Math.round(e.group.x()), y: Math.round(e.group.y()) }));
+}
+
+function serializeBoss() {
+  if (!S.placedBoss) return null;
+  return { key: S.placedBoss.key, x: Math.round(S.placedBoss.group.x()), y: Math.round(S.placedBoss.group.y()) };
+}
+
+function restoreEnemyMarkers(list) {
+  [...S.placedEnemies].forEach(e => removeEnemyMarker(e.id));
+  for (const e of (list || [])) addEnemyMarker(e.type, e.x, e.y, e.id);
+}
+
+function restoreBossMarker(boss) {
+  removeBossMarker();
+  if (boss) addBossMarker(boss.key, boss.x, boss.y);
+}
+
 function pushHistory() {
   S.redoStack = [];
-  S.history.push(JSON.stringify({ sprites: serializeSprites(), noWalkZones: serializeNoWalkZones() }));
+  S.history.push(JSON.stringify({
+    sprites:     serializeSprites(),
+    noWalkZones: serializeNoWalkZones(),
+    enemies:     serializeEnemies(),
+    boss:        serializeBoss(),
+  }));
   if (S.history.length > 20) S.history.shift();
+}
+
+function applySnapshot(snap) {
+  restoreSprites(snap.sprites);
+  restoreNoWalkZones(snap.noWalkZones || []);
+  restoreEnemyMarkers(snap.enemies || []);
+  restoreBossMarker(snap.boss || null);
 }
 
 function undo() {
   if (S.history.length < 2) { setStatus('Nothing to undo'); return; }
   S.redoStack.push(S.history.pop());
-  const prev = JSON.parse(S.history[S.history.length - 1]);
-  restoreSprites(prev.sprites);
-  restoreNoWalkZones(prev.noWalkZones || []);
+  applySnapshot(JSON.parse(S.history[S.history.length - 1]));
   setStatus('Undone');
 }
 
@@ -956,9 +1208,7 @@ function redo() {
   if (S.redoStack.length === 0) { setStatus('Nothing to redo'); return; }
   const next = S.redoStack.pop();
   S.history.push(next);
-  const state = JSON.parse(next);
-  restoreSprites(state.sprites);
-  restoreNoWalkZones(state.noWalkZones || []);
+  applySnapshot(JSON.parse(next));
   setStatus('Redone');
 }
 
@@ -1123,15 +1373,21 @@ function bindNoWalkZone() {
 }
 
 // ── Save / Load JSON ───────────────────────────────────────────────────────
-function saveJSON() {
-  const data = {
+function buildMapData() {
+  return {
     version: 1,
     background: S.bgImage
       ? { type: 'image', value: null }
       : { type: 'color', value: document.getElementById('bg-color').value },
-    sprites: serializeSprites(),
+    sprites:     serializeSprites(),
     noWalkZones: serializeNoWalkZones(),
+    enemies:     serializeEnemies(),
+    boss:        serializeBoss(),
   };
+}
+
+function saveJSON() {
+  const data = buildMapData();
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
@@ -1153,9 +1409,13 @@ function loadJSON(file) {
     }
     await restoreSprites(data.sprites);
     restoreNoWalkZones(data.noWalkZones || []);
+    restoreEnemyMarkers(data.enemies || []);
+    restoreBossMarker(data.boss || null);
     S.history = [];
     pushHistory();
-    setStatus('Loaded: ' + file.name + ' (' + data.sprites.length + ' items, ' + (data.noWalkZones?.length || 0) + ' no-walk zones)');
+    const enemyCount = (data.enemies || []).length;
+    const bossInfo   = data.boss ? ', boss: ' + data.boss.key : '';
+    setStatus('Loaded: ' + file.name + ' (' + data.sprites.length + ' sprites, ' + (data.noWalkZones?.length || 0) + ' zones, ' + enemyCount + ' enemies' + bossInfo + ')');
   };
   reader.readAsText(file);
 }
@@ -1175,14 +1435,7 @@ document.getElementById('region-modal').addEventListener('click', e => {
 document.getElementById('btn-region-confirm').onclick = async () => {
   const regionIndex = parseInt(document.getElementById('region-index-input').value, 10);
   if (isNaN(regionIndex) || regionIndex < 0) { setStatus('⚠ Invalid region index'); return; }
-  const data = {
-    version: 1,
-    background: S.bgImage
-      ? { type: 'image', value: null }
-      : { type: 'color', value: document.getElementById('bg-color').value },
-    sprites: serializeSprites(),
-    noWalkZones: serializeNoWalkZones(),
-  };
+  const data = buildMapData();
   document.getElementById('region-modal').style.display = 'none';
   try {
     const res = await fetch('/api/regions/save', {
@@ -1209,7 +1462,8 @@ function exportPNG() {
   S.stage.scale({ x: 1, y: 1 });
   S.stage.position({ x: 0, y: 0 });
   S.stage.size({ width: WORLD_W, height: WORLD_H });
-  S.noWalkLayer.visible(false); // hide zones in the export
+  S.noWalkLayer.visible(false);
+  S.markerLayer.visible(false); // hide markers in the export
   setTimeout(() => {
     const dataURL = S.stage.toDataURL({ mimeType: 'image/png', pixelRatio: 1 });
     const a = document.createElement('a');
@@ -1218,6 +1472,7 @@ function exportPNG() {
     S.stage.position({ x: savedX, y: savedY });
     S.stage.size({ width: savedW, height: savedH });
     S.noWalkLayer.visible(true);
+    S.markerLayer.visible(true);
     if (wasSelected) selectNode(wasSelected);
     setStatus('Exported: region_map.png (3200×2000)');
   }, 60);

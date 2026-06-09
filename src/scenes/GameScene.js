@@ -114,6 +114,9 @@ export class GameScene extends Phaser.Scene {
     this.network = this.registry.get('network') || new NetworkManager();
     this.registry.remove('network');
 
+    this._region = region;
+    this._mapBossOverride = null;
+
     // Look up map-editor layout for this region
     const _regionMaps = this.registry.get('regionMaps') || [];
     this._mapData = _regionMaps.find(e => e.regionIndex === regionIndex)?.data || null;
@@ -259,6 +262,11 @@ export class GameScene extends Phaser.Scene {
     this._createSpawners(region);
     this._createPortals(region);
     this._createPressurePlates(region);
+    // Apply map-editor entity overrides before arena/spawner setup
+    if (this._mapData?.boss) {
+      this._mapBossOverride = this._mapData.boss;
+    }
+
     this._createBossArena(region);
 
     if (this._mapData) {
@@ -649,10 +657,13 @@ export class GameScene extends Phaser.Scene {
   }
 
   _createBossArena(region) {
-    if (!region.bossKey) return;
-    const bp = region.bossPos;
+    // Map editor boss override takes precedence; fall back to region config
+    const bossKey = this._mapBossOverride?.key || region.bossKey;
+    if (!bossKey) return;
+    const bp = this._mapBossOverride
+      ? { x: this._mapBossOverride.x, y: this._mapBossOverride.y }
+      : region.bossPos;
 
-    // Arena circle
     const arena = this.add.graphics();
     arena.lineStyle(2, 0x882222, 0.5);
     arena.strokeCircle(bp.x, bp.y, BOSS_TRIGGER_DIST);
@@ -757,7 +768,6 @@ export class GameScene extends Phaser.Scene {
         const img = this.add.image(sp.x, sp.y, key)
           .setScale(sp.scaleX ?? 1, sp.scaleY ?? 1)
           .setDepth(depth);
-        // Adjust origin to match map editor (offsetX/Y is the centre offset from top-left)
         if (sp.offsetX != null && sp.offsetY != null) {
           const tex = this.textures.get(key);
           const w = tex.getSourceImage()?.width || sp.offsetX * 2;
@@ -765,6 +775,18 @@ export class GameScene extends Phaser.Scene {
           img.setOrigin(sp.offsetX / w, sp.offsetY / h);
         }
       }
+
+      // Spawn enemies placed in the map editor
+      const mapEnemies = mapData.enemies || [];
+      if (mapEnemies.length > 0) {
+        const difficulty = (this._region || {}).difficulty ?? 1.0;
+        for (const e of mapEnemies) {
+          const enemy = new Enemy(this, e.x, e.y, e.type, difficulty);
+          this._enemies.push(enemy);
+        }
+      }
+
+      // _mapBossOverride already set synchronously before _createBossArena was called
     };
 
     if (missing.length > 0) {
@@ -1297,7 +1319,8 @@ export class GameScene extends Phaser.Scene {
   }
 
   _checkBossTrigger() {
-    if (!this._bossArenaPos || !REGIONS[this._regionIndex].bossKey) return;
+    const bossKey = this._mapBossOverride?.key || REGIONS[this._regionIndex].bossKey;
+    if (!this._bossArenaPos || !bossKey) return;
     for (const p of this.players) {
       if (!p?.alive) continue;
       const d = Phaser.Math.Distance.Between(p.x, p.y, this._bossArenaPos.x, this._bossArenaPos.y);
@@ -1312,13 +1335,17 @@ export class GameScene extends Phaser.Scene {
     if (this._bossTriggered) return;
     this._bossTriggered = true;
     const region = REGIONS[this._regionIndex];
-    if (!region.bossKey) return;
+    // Map editor override takes precedence for both key and position
+    const bossKey = this._mapBossOverride?.key || region.bossKey;
+    if (!bossKey) return;
 
     this._bossArenaGfx?.setVisible(false);
     this._bossArenaLabel?.setVisible(false);
 
-    const { bossPos } = region;
-    const boss = new Boss(this, bossPos.x, bossPos.y, region.bossKey);
+    const bossPos = this._mapBossOverride
+      ? { x: this._mapBossOverride.x, y: this._mapBossOverride.y }
+      : region.bossPos;
+    const boss = new Boss(this, bossPos.x, bossPos.y, bossKey);
     boss.enablePhysics(this);
     this._boss = boss;
 
