@@ -18,9 +18,15 @@ export const BOSSES = {
     textureBase: 'tree_boss', scale: 2.5, tint: 0x5c3d1e,
     maxHp: 1600, maxPosture: 100, postureRegen: 4,
     phases: [
-      { hpThreshold: 1.0, speed: 150,  attackCd: 1800, patterns: ['slam', 'vine_lash'] },
-      { hpThreshold: 0.5, speed: 190, attackCd: 1400, patterns: ['slam', 'vine_lash', 'seed_bomb'] },
-      { hpThreshold: 0.3, speed: 220, attackCd: 1100, patterns: ['slam', 'vine_lash', 'seed_bomb', 'frenzy'] },
+      { hpThreshold: 1.0, speed: 140,  attackCd: 1600, patterns: ['slam', 'vine_lash', 'vine_trap'] },
+      { hpThreshold: 0.5, speed: 185,  attackCd: 1200, patterns: ['slam', 'vine_lash', 'vine_trap', 'vine_trap', 'seed_bomb'] },
+      { hpThreshold: 0.3, speed: 235,  attackCd: 850,  patterns: ['slam', 'vine_trap', 'vine_trap', 'seed_bomb', 'vine_berserk', 'vine_berserk'] },
+    ],
+    introLines: [
+      '⟨Vanasur⟩ "The grove recognizes you. Prey."',
+      '⟨Vanasur⟩ "A thousand warriors\' strength flows through these roots."',
+      '⟨Vanasur⟩ "You reek of dead stone. Of temples. Of false gods."',
+      '⟨Vanasur⟩ "Let me show you what a living god devours."',
     ],
     phaseLines: ['', 'You cannot burn what is already hunger.', 'The grove feeds me. You cannot starve a demon.'],
     rewardItem: 'ashram_blessing', loreFragment: 'lore_vanasur_kill',

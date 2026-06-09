@@ -464,6 +464,77 @@ export class Boss extends Phaser.GameObjects.Container {
         }
         break;
       }
+
+      case 'vine_trap': {
+        // Plant warning markers at/near the player — they erupt after 1.3s
+        const trapCount = this.phase === 2 ? 4 : 2;
+        for (let i = 0; i < trapCount; i++) {
+          const ox = Phaser.Math.Between(-75, 75);
+          const oy = Phaser.Math.Between(-75, 75);
+          const wx = target.x + ox;
+          const wy = target.y + oy;
+          const warn = scene.add.circle(wx, wy, 48, 0x33bb11, 0.2).setDepth(wy + 1);
+          warn.setStrokeStyle(2, 0x88ff44);
+          scene.tweens.add({ targets: warn, alpha: { from: 0.1, to: 0.55 }, duration: 190, yoyo: true, repeat: 3 });
+          scene.time.delayedCall(1300, () => {
+            if (!warn.active) return;
+            warn.destroy();
+            if (!this.alive) return;
+            const burst = scene.add.circle(wx, wy, 55, 0x88ff44, 0.65).setDepth(wy + 2);
+            scene.tweens.add({ targets: burst, alpha: 0, scaleX: 1.6, scaleY: 1.6, duration: 320, onComplete: () => burst.destroy() });
+            scene.cameras.main.shake(110, 0.004);
+            for (const p of scene.players) {
+              if (!p?.alive || p.downed) continue;
+              if (Phaser.Math.Distance.Between(wx, wy, p.x, p.y) < 55) {
+                p.takeDamage(this.cfg.maxHp * 0.05, this, scene);
+                p.applyPoison?.(scene, this.cfg.maxHp * 0.002, 2500);
+              }
+            }
+            // Phase 3: eruptions leave lingering poison pools
+            if (this.phase === 2) scene.events.emit('ability_fx', { type: 'venom_pool', x: wx, y: wy });
+          });
+        }
+        return;
+      }
+
+      case 'vine_berserk': {
+        // Phase 3 berserk: 5 vine traps scattered around the arena + radial poison burst
+        scene.cameras.main.shake(400, 0.016);
+        for (let i = 0; i < 5; i++) {
+          const ang = (Math.PI * 2 / 5) * i + Phaser.Math.FloatBetween(-0.4, 0.4);
+          const rad = Phaser.Math.Between(90, 210);
+          const wx  = this.x + Math.cos(ang) * rad;
+          const wy  = this.y + Math.sin(ang) * rad;
+          const warn = scene.add.circle(wx, wy, 52, 0x33bb11, 0.2).setDepth(wy + 1);
+          warn.setStrokeStyle(2, 0x88ff44);
+          scene.tweens.add({ targets: warn, alpha: { from: 0.1, to: 0.6 }, duration: 150, yoyo: true, repeat: 3 });
+          scene.time.delayedCall(1200, () => {
+            if (!warn.active) return;
+            warn.destroy();
+            if (!this.alive) return;
+            const burst = scene.add.circle(wx, wy, 62, 0x88ff44, 0.7).setDepth(wy + 2);
+            scene.tweens.add({ targets: burst, alpha: 0, scaleX: 1.7, scaleY: 1.7, duration: 340, onComplete: () => burst.destroy() });
+            for (const p of scene.players) {
+              if (!p?.alive || p.downed) continue;
+              if (Phaser.Math.Distance.Between(wx, wy, p.x, p.y) < 62) {
+                p.takeDamage(this.cfg.maxHp * 0.055, this, scene);
+                p.applyPoison?.(scene, this.cfg.maxHp * 0.003, 3000);
+              }
+            }
+            scene.events.emit('ability_fx', { type: 'venom_pool', x: wx, y: wy });
+          });
+        }
+        for (let i = 0; i < 10; i++) {
+          const a = (Math.PI * 2 / 10) * i;
+          scene.events.emit('spawn_projectile', {
+            x: this.x, y: this.y, angle: a,
+            damage: this.cfg.maxHp * 0.04, fromEnemy: true,
+            key: 'fire_01', speed: 190, tint: 0x55ff22,
+            poisonOnHit: true,
+          });
+        }
+        return;
+      }
     }
   }
 
