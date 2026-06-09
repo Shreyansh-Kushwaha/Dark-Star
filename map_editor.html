@@ -263,6 +263,7 @@ const S = {
   dragSel: { active: false, startX: 0, startY: 0, rect: null },
   noWalkDrag: { active: false, startX: 0, startY: 0, previewRect: null },
   noWalkZones: [], // [{ id, x, y, w, h, konvaRect, konvaLabel }]
+  redoStack: [],
 };
 
 // ── Utility ────────────────────────────────────────────────────────────────
@@ -503,6 +504,8 @@ function bindKeyboard() {
     if (e.key === 'Escape') { cancelPlacing(); deselectAll(); setMode('none'); }
     if ((e.key === 'Delete' || e.key === 'Backspace') && S.selectedNode) deleteSelected();
     if (e.ctrlKey && e.key === 'z') { e.preventDefault(); undo(); }
+    if (e.ctrlKey && (e.key === 'y' || (e.shiftKey && e.key === 'Z'))) { e.preventDefault(); redo(); }
+    if (e.ctrlKey && e.key === 'd') { e.preventDefault(); duplicateSelected(); }
   });
 }
 
@@ -784,6 +787,46 @@ function deleteSelected() {
   pushHistory();
 }
 
+async function duplicateSelected() {
+  if (!S.selectedNode) return;
+  const node = S.selectedNode;
+  const asset = {
+    dir:      node.getAttr('assetDir'),
+    frames:   node.getAttr('assetFrames'),
+    name:     node.getAttr('assetName'),
+    animated: node.getAttr('assetAnimated'),
+  };
+  const layerAttr = node.getAttr('spriteLayer') || 'below';
+  const url = assetURL(asset.dir, asset.frames[0]);
+  let img;
+  try { img = await getImg(url); } catch { return; }
+  const id = genSpriteId();
+  const newNode = new Konva.Image({
+    x: node.x() + 20, y: node.y() + 20, image: img,
+    offsetX: node.offsetX(), offsetY: node.offsetY(),
+    scaleX: node.scaleX(), scaleY: node.scaleY(),
+    draggable: !S.panMode && !S.deleteMode && !S.noWalkMode,
+  });
+  newNode.setAttr('assetDir',     asset.dir);
+  newNode.setAttr('assetFrames',  asset.frames);
+  newNode.setAttr('assetName',    asset.name);
+  newNode.setAttr('assetAnimated',asset.animated);
+  newNode.setAttr('currentFrame', 0);
+  newNode.setAttr('spriteId',     id);
+  newNode.setAttr('spriteLayer',  layerAttr);
+  konvaLayerFor(layerAttr).add(newNode);
+  bindSpriteEvents(newNode);
+  konvaLayerFor(layerAttr).batchDraw();
+  selectNode(newNode);
+  broadcast({ type: 'SPRITE_ADD', spriteId: id, dir: asset.dir, frames: asset.frames,
+    name: asset.name, animated: asset.animated,
+    x: newNode.x(), y: newNode.y(),
+    offsetX: newNode.offsetX(), offsetY: newNode.offsetY(),
+    scaleX: newNode.scaleX(), scaleY: newNode.scaleY(), spriteLayer: layerAttr });
+  pushHistory();
+  setStatus('Duplicated: ' + asset.name + ' — Ctrl+Z to undo');
+}
+
 function bindPropsPanel() {
   function applyProp() {
     if (!S.selectedNode) return;
@@ -895,16 +938,28 @@ function serializeNoWalkZones() {
 }
 
 function pushHistory() {
+  S.redoStack = [];
   S.history.push(JSON.stringify({ sprites: serializeSprites(), noWalkZones: serializeNoWalkZones() }));
   if (S.history.length > 20) S.history.shift();
 }
 
 function undo() {
   if (S.history.length < 2) { setStatus('Nothing to undo'); return; }
-  S.history.pop();
+  S.redoStack.push(S.history.pop());
   const prev = JSON.parse(S.history[S.history.length - 1]);
   restoreSprites(prev.sprites);
   restoreNoWalkZones(prev.noWalkZones || []);
+  setStatus('Undone');
+}
+
+function redo() {
+  if (S.redoStack.length === 0) { setStatus('Nothing to redo'); return; }
+  const next = S.redoStack.pop();
+  S.history.push(next);
+  const state = JSON.parse(next);
+  restoreSprites(state.sprites);
+  restoreNoWalkZones(state.noWalkZones || []);
+  setStatus('Redone');
 }
 
 async function restoreSprites(list) {
