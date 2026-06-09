@@ -491,9 +491,18 @@ export class MainMenuScene extends Phaser.Scene {
       if (!myChar || !partnerChar) return;
       const p1Char = isHost ? myChar : partnerChar;
       const p2Char = isHost ? partnerChar : myChar;
-      statusTxt.setText('Both ready!  Starting...').setStyle({ color: '#ffdd00' });
-      this.registry.set('network', net);
-      this.time.delayedCall(800, () => this._startGame(true, 0, { p1Char, p2Char }));
+      statusTxt.setText('Both ready!').setStyle({ color: '#ffdd00' });
+
+      if (isHost) {
+        // Host picks the starting region; client waits
+        this.time.delayedCall(400, () => this._showCoopRegionSelect(net, p1Char, p2Char, D));
+      } else {
+        statusTxt.setText('Waiting for host to select region...');
+        net.on('REGION_SELECT', ({ regionIndex }) => {
+          this.registry.set('network', net);
+          this._startGame(true, regionIndex, { p1Char, p2Char });
+        });
+      }
     };
 
     const selectChar = (char) => {
@@ -523,6 +532,47 @@ export class MainMenuScene extends Phaser.Scene {
       zone.on('pointerover', () => { if (!myChar) borders[char].setStrokeStyle(2, col[char]); });
       zone.on('pointerout',  () => { if (!myChar) borders[char].setStrokeStyle(2, 0x334466); });
       zone.on('pointerdown', () => selectChar(char));
+    });
+  }
+
+  _showCoopRegionSelect(net, p1Char, p2Char, D) {
+    const cx = GAME_W / 2;
+    const panelY = GAME_H / 2;
+    const panelW = 680, panelH = 340;
+
+    this.add.rectangle(cx, panelY, panelW, panelH, 0x04040f, 0.96).setDepth(D + 5);
+    this.add.rectangle(cx, panelY, panelW, panelH).setStrokeStyle(2, 0x4444dd).setDepth(D + 6);
+
+    this.add.text(cx, panelY - 140, 'SELECT STARTING REGION', {
+      fontSize: '20px', fontFamily: 'monospace', color: '#ffdd00',
+      stroke: '#000', strokeThickness: 3,
+    }).setOrigin(0.5).setDepth(D + 7);
+
+    const cols = 4;
+    const btnW = 148, btnH = 44, gapX = 12, gapY = 10;
+    const startX = cx - ((cols * btnW + (cols - 1) * gapX) / 2) + btnW / 2;
+    const startY = panelY - 90;
+
+    REGION_NAMES.forEach((name, i) => {
+      const col = i % cols;
+      const row = Math.floor(i / cols);
+      const bx = startX + col * (btnW + gapX);
+      const by = startY + row * (btnH + gapY);
+
+      const bg = this.add.rectangle(bx, by, btnW, btnH, 0x0c0c28).setDepth(D + 7).setInteractive({ useHandCursor: true });
+      const border = this.add.rectangle(bx, by, btnW, btnH).setStrokeStyle(1, 0x334466).setDepth(D + 8);
+      const label = name.split(' — ')[0];
+      const txt = this.add.text(bx, by, label, {
+        fontSize: '11px', fontFamily: 'monospace', color: '#cccccc',
+      }).setOrigin(0.5).setDepth(D + 9);
+
+      bg.on('pointerover', () => { border.setStrokeStyle(2, 0xffdd00); txt.setStyle({ color: '#ffdd00' }); });
+      bg.on('pointerout',  () => { border.setStrokeStyle(1, 0x334466); txt.setStyle({ color: '#cccccc' }); });
+      bg.on('pointerdown', () => {
+        net.send('REGION_SELECT', { regionIndex: i });
+        this.registry.set('network', net);
+        this._startGame(true, i, { p1Char, p2Char });
+      });
     });
   }
 

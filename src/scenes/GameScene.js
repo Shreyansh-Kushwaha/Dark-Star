@@ -127,6 +127,9 @@ export class GameScene extends Phaser.Scene {
     const isClient = this.network.connected && this.network.isClient();
     const p1Char   = data.p1Char || 'dhruva';
     const p2Char   = data.p2Char || 'tara';
+    this._p1Char = p1Char;
+    this._p2Char = p2Char;
+    this._isCoop = !!(data.coop || this.network.connected);
     const p1 = new Player(this, spawnPos.x, spawnPos.y, true, saveData, p1Char);
     p1.isLocal = !isClient;
     this.players.push(p1);
@@ -149,6 +152,12 @@ export class GameScene extends Phaser.Scene {
 
       // Client: apply enemy states broadcast by host
       if (this.network.isClient()) {
+        this.network.on('REGION_CHANGE', ({ newIndex }) => {
+          this._saveProgress(newIndex);
+          this.audio.portal();
+          this._fadeAndTransition(newIndex);
+        });
+
         this._remoteEnemyMap = new Map();
         this.network.on('ENEMY_SYNC', ({ enemies }) => {
           if (!enemies) return;
@@ -1121,6 +1130,8 @@ export class GameScene extends Phaser.Scene {
   }
 
   _checkPortals() {
+    // In co-op, only the host triggers portal transitions; client follows via REGION_CHANGE
+    if (this.network?.connected && this.network.isClient()) return;
     const check = (portal, isNext) => {
       if (!portal || portal.locked) return;
       for (const p of this.players) {
@@ -1144,7 +1155,11 @@ export class GameScene extends Phaser.Scene {
 
     if (newIndex < 0 || newIndex >= REGIONS.length) return;
 
-    // Save progress
+    // In co-op, host broadcasts region change so client transitions simultaneously
+    if (this.network?.connected && this.network.isHost()) {
+      this.network.send('REGION_CHANGE', { newIndex });
+    }
+
     this._saveProgress(newIndex);
     this.audio.portal();
     this._fadeAndTransition(newIndex);
@@ -1174,7 +1189,16 @@ export class GameScene extends Phaser.Scene {
       this.physics.world.timeScale = 1;
       this.time.timeScale = 1;
       this.scene.stop('UIScene');
-      this.scene.restart({ regionIndex: newIndex });
+      // Preserve network connection across region transitions
+      if (this.network?.connected) {
+        this.registry.set('network', this.network);
+      }
+      this.scene.restart({
+        regionIndex: newIndex,
+        coop: this._isCoop,
+        p1Char: this._p1Char,
+        p2Char: this._p2Char,
+      });
     });
   }
 
