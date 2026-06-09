@@ -1,5 +1,6 @@
 import { WORLD_W, WORLD_H, GAME_W, GAME_H, NET_INTERVAL, TETHER_DIST, TETHER_SPEED, BOSS_TRIGGER_DIST } from '../constants.js';
 import { REGIONS } from '../data/regions.js';
+import { _mapSpriteKey } from './PreloadScene.js';
 import { QUESTS, NPC_DIALOGUE, LORE_FRAGMENTS } from '../data/quests.js';
 import { LoreManager } from '../systems/LoreManager.js';
 import { Player } from '../entities/Player.js';
@@ -112,6 +113,10 @@ export class GameScene extends Phaser.Scene {
     this.loreManager.load(saveData.collectedLoreIds || []);
     this.network = this.registry.get('network') || new NetworkManager();
     this.registry.remove('network');
+
+    // Look up map-editor layout for this region
+    const _regionMaps = this.registry.get('regionMaps') || [];
+    this._mapData = _regionMaps.find(e => e.regionIndex === regionIndex)?.data || null;
 
     // Physics world
     this.physics.world.setBounds(0, 0, WORLD_W, WORLD_H);
@@ -250,9 +255,15 @@ export class GameScene extends Phaser.Scene {
     this._createPressurePlates(region);
     this._createBossArena(region);
 
-    if (region.denseForest) this._buildDenseForest(region);
-    else if (region.serpentRealm) this._buildSerpentRealm(region);
-    else this._buildRegionDecorations(region, regionIndex);
+    if (this._mapData) {
+      this._buildFromMapData(this._mapData);
+    } else if (region.denseForest) {
+      this._buildDenseForest(region);
+    } else if (region.serpentRealm) {
+      this._buildSerpentRealm(region);
+    } else {
+      this._buildRegionDecorations(region, regionIndex);
+    }
 
     this._spawnRabbitDecoration(regionIndex);
 
@@ -315,12 +326,21 @@ export class GameScene extends Phaser.Scene {
   _setupWorld(region) {
     const g = this.add.graphics().setDepth(-10);
 
+    // Use map-editor background color if available
+    let bgColor  = region.bgColor;
+    let bgColor2 = region.bgColor2;
+    if (this._mapData?.background?.type === 'color' && this._mapData.background.value) {
+      const hex = parseInt(this._mapData.background.value.replace('#', ''), 16);
+      bgColor  = hex;
+      bgColor2 = hex;
+    }
+
     // Base ground fill
-    g.fillStyle(region.bgColor, 1);
+    g.fillStyle(bgColor, 1);
     g.fillRect(0, 0, WORLD_W, WORLD_H);
 
     // Subtle variation: scatter darker/lighter patches using a seeded pattern
-    g.fillStyle(region.bgColor2, 0.5);
+    g.fillStyle(bgColor2, 0.5);
     const PATCH = 120;
     const cols = Math.ceil(WORLD_W / PATCH);
     const rows = Math.ceil(WORLD_H / PATCH);
@@ -587,6 +607,44 @@ export class GameScene extends Phaser.Scene {
         const key = Math.random() < 0.5 ? 'cloud1' : 'cloud2';
         this.add.image(x, y, key).setScale(2 + Math.random()).setAlpha(0.4).setDepth(-8);
       }
+    }
+  }
+
+  _buildFromMapData(mapData) {
+    const sprites = mapData.sprites || [];
+    const missing = [];
+
+    for (const sp of sprites) {
+      const framesToLoad = (sp.animated && sp.frames.length > 1) ? sp.frames : [sp.frames[0]];
+      for (const frame of framesToLoad) {
+        const key = _mapSpriteKey(sp.dir, frame);
+        if (!this.textures.exists(key)) missing.push({ key, url: sp.dir + '/' + frame });
+      }
+    }
+
+    const place = () => {
+      for (const sp of sprites) {
+        const key = _mapSpriteKey(sp.dir, sp.frames[0]);
+        const depth = sp.spriteLayer === 'above' ? sp.y + 1 : sp.y - 1;
+        const img = this.add.image(sp.x, sp.y, key)
+          .setScale(sp.scaleX ?? 1, sp.scaleY ?? 1)
+          .setDepth(depth);
+        // Adjust origin to match map editor (offsetX/Y is the centre offset from top-left)
+        if (sp.offsetX != null && sp.offsetY != null) {
+          const tex = this.textures.get(key);
+          const w = tex.getSourceImage()?.width || sp.offsetX * 2;
+          const h = tex.getSourceImage()?.height || sp.offsetY * 2;
+          img.setOrigin(sp.offsetX / w, sp.offsetY / h);
+        }
+      }
+    };
+
+    if (missing.length > 0) {
+      missing.forEach(({ key, url }) => this.load.image(key, url));
+      this.load.once('complete', place);
+      this.load.start();
+    } else {
+      place();
     }
   }
 

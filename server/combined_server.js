@@ -106,6 +106,17 @@ const ASSET_GROUPS = [
   { cat:'Resources', grp:'Wood',           rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood' },
   { cat:'Resources', grp:'Tools',          rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Tools' },
   { cat:'FX',        grp:'Particle FX',    rel:'Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Particle FX' },
+  { cat:'Assets3',   grp:'Food',           rel:'assets3/food' },
+  { cat:'Assets3',   grp:'Monsters/Bat',   rel:'assets3/monsters/bat' },
+  { cat:'Assets3',   grp:'Monsters/Mimic', rel:'assets3/monsters/mimic' },
+  { cat:'Assets3',   grp:'Monsters/Rat',   rel:'assets3/monsters/rat' },
+  { cat:'Assets3',   grp:'Monsters/Slime', rel:'assets3/monsters/slime' },
+  { cat:'Assets3',   grp:'VFX/Fireball',   rel:'assets3/vfx/fireball' },
+  { cat:'Assets3',   grp:'VFX/Frost',      rel:'assets3/vfx/frost' },
+  { cat:'Assets3',   grp:'VFX/Green',      rel:'assets3/vfx/green' },
+  { cat:'Assets3',   grp:'VFX/Lightning',  rel:'assets3/vfx/lightning' },
+  { cat:'Assets3',   grp:'VFX/Smoke',      rel:'assets3/vfx/smoke' },
+  { cat:'Assets3',   grp:'VFX/Yellow',     rel:'assets3/vfx/yellow' },
   { cat:'Cropped',   grp:'My Crops',       rel:'cropped' },
   { cat:'Uploads',   grp:'My Assets',      rel:'uploads' },
 ];
@@ -123,7 +134,50 @@ function buildManifest() {
 
 // ─────────────────────────────────────────────────────────────────────────────
 
+const REGIONS_DIR = path.join(GAME_ROOT, 'regions');
+if (!fs.existsSync(REGIONS_DIR)) fs.mkdirSync(REGIONS_DIR, { recursive: true });
+
 const server = http.createServer((req, res) => {
+  // ── Region map list ────────────────────────────────────────────────────────
+  if (req.method === 'GET' && req.url === '/api/regions') {
+    const files = fs.readdirSync(REGIONS_DIR).filter(f => f.endsWith('.json'));
+    const result = [];
+    for (const file of files) {
+      try {
+        const raw = fs.readFileSync(path.join(REGIONS_DIR, file), 'utf8');
+        const data = JSON.parse(raw);
+        // Derive regionIndex from filename (region_N.json) or from data field
+        const match = file.match(/region_(\d+)\.json$/i);
+        const regionIndex = data.regionIndex ?? (match ? parseInt(match[1], 10) : null);
+        result.push({ filename: file, regionIndex, data });
+      } catch {}
+    }
+    res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' });
+    res.end(JSON.stringify(result));
+    return;
+  }
+
+  // ── Save region map ────────────────────────────────────────────────────────
+  if (req.method === 'POST' && req.url === '/api/regions/save') {
+    let body = '';
+    req.on('data', chunk => body += chunk);
+    req.on('end', () => {
+      try {
+        const { regionIndex, data } = JSON.parse(body);
+        if (typeof regionIndex !== 'number') throw new Error('regionIndex required');
+        data.regionIndex = regionIndex;
+        const filename = `region_${regionIndex}.json`;
+        fs.writeFileSync(path.join(REGIONS_DIR, filename), JSON.stringify(data, null, 2));
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: true, filename }));
+      } catch (e) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: false, error: e.message }));
+      }
+    });
+    return;
+  }
+
   if (req.url === '/api/assets') {
     const manifest = buildManifest();
     res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' });

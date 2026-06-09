@@ -92,6 +92,7 @@ button.orange.active{background:#ff883322;border-color:#ffaa55}
   <div class="sep"></div>
   <button id="btn-open">📂 Open</button>
   <button id="btn-save">💾 Save JSON</button>
+  <button class="orange" id="btn-save-region">🗂 Save to Region</button>
   <button class="green" id="btn-export">🖼️ Export PNG</button>
   <div class="sep"></div>
   <label style="font-size:10px;color:#888">BG:</label>
@@ -189,6 +190,22 @@ button.orange.active{background:#ff883322;border-color:#ffaa55}
     <div id="rand-footer">
       <button class="green" id="btn-rand-go">🎲 Randomize</button>
       <button id="btn-rand-cancel">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<div id="region-modal" style="position:fixed;inset:0;background:#000c;display:none;z-index:1000;align-items:center;justify-content:center">
+  <div style="background:#12001c;border:1px solid #ff8833;border-radius:6px;padding:20px;min-width:300px;display:flex;flex-direction:column;gap:12px">
+    <div style="color:#ffaa55;font-size:13px;font-weight:bold">🗂 Save to Region</div>
+    <div style="font-size:10px;color:#888">This will save the map as <code style="color:#ffcc88">regions/region_N.json</code> on the server so the game loads it automatically.</div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <label style="font-size:11px;color:#ccc">Region Index:</label>
+      <input type="number" id="region-index-input" value="0" min="0" max="20" style="width:60px;background:#0a0010;border:1px solid #ff8833;color:#ffcc88;padding:3px 6px;font-size:12px;border-radius:3px;font-family:monospace">
+      <span style="font-size:10px;color:#666">(0=Gramavana, 1=Mahāvana, …)</span>
+    </div>
+    <div style="display:flex;gap:8px;justify-content:flex-end">
+      <button class="orange" id="btn-region-confirm">💾 Save</button>
+      <button id="btn-region-cancel">Cancel</button>
     </div>
   </div>
 </div>
@@ -1087,6 +1104,44 @@ function loadJSON(file) {
   };
   reader.readAsText(file);
 }
+
+// ── Save to Region ─────────────────────────────────────────────────────────
+function openSaveRegionModal() {
+  document.getElementById('region-modal').style.display = 'flex';
+}
+document.getElementById('btn-save-region').onclick = openSaveRegionModal;
+document.getElementById('btn-region-cancel').onclick = () => {
+  document.getElementById('region-modal').style.display = 'none';
+};
+document.getElementById('region-modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('region-modal'))
+    document.getElementById('region-modal').style.display = 'none';
+});
+document.getElementById('btn-region-confirm').onclick = async () => {
+  const regionIndex = parseInt(document.getElementById('region-index-input').value, 10);
+  if (isNaN(regionIndex) || regionIndex < 0) { setStatus('⚠ Invalid region index'); return; }
+  const data = {
+    version: 1,
+    background: S.bgImage
+      ? { type: 'image', value: null }
+      : { type: 'color', value: document.getElementById('bg-color').value },
+    sprites: serializeSprites(),
+    noWalkZones: serializeNoWalkZones(),
+  };
+  document.getElementById('region-modal').style.display = 'none';
+  try {
+    const res = await fetch('/api/regions/save', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ regionIndex, data }),
+    });
+    const json = await res.json();
+    if (json.ok) setStatus(`Saved to regions/${json.filename} — reload the game to apply`);
+    else setStatus('⚠ Server error: ' + json.error);
+  } catch (e) {
+    setStatus('⚠ Save failed: ' + e.message);
+  }
+};
 
 // ── Export PNG ─────────────────────────────────────────────────────────────
 function exportPNG() {

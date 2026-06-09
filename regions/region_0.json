@@ -1,0 +1,5314 @@
+{
+  "version": 1,
+  "background": {
+    "type": "color",
+    "value": "#2d5c28"
+  },
+  "sprites": [
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987010327_6adsw",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3060.8205745020427,
+      "y": 1904.5286810073455,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987010330_czw36",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 559.9953351001567,
+      "y": 1609.0214429392727,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987010331_sdqg8",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3038.905361506635,
+      "y": 1975.974263637977,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987010331_v2n0e",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1075.0417142214435,
+      "y": 1323.2975039205473,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987010331_uvu80",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2912.014424192489,
+      "y": 689.8141148127892,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987010332_jxnxc",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2058.9714348912476,
+      "y": 1518.902598499838,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987010332_5uiql",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2706.581399369326,
+      "y": 1279.0521917426245,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987010332_xn6k7",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1552.0702467964313,
+      "y": 48.42826135824097,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987010333_wf7lp",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 714.5844507150788,
+      "y": 141.2401618886594,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987010333_hhckz",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1892.5639098115478,
+      "y": 1429.8816197170345,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987010333_essor",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2308.4001910752745,
+      "y": 1879.6629898228234,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987010334_fj0k9",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 75.09395809052997,
+      "y": 734.7785612378955,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987010334_fqqn4",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 613.0384102929166,
+      "y": 1378.599374976967,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987010334_ze4aw",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2581.8452119043145,
+      "y": 1770.2290084530905,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987010335_v4o13",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1423.724505300087,
+      "y": 813.0104498843283,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987010335_alosu",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1976.8064615413691,
+      "y": 1530.203392647446,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987010335_kdd61",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 992.7418031860622,
+      "y": 1906.0045473792823,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987010335_qnw30",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 718.6414806243107,
+      "y": 1115.1784101547862,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987010336_5aaue",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2577.4980454741735,
+      "y": 689.7475950118552,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987010336_vwb51",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1255.179193713867,
+      "y": 946.092193226453,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987141412_bt707",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1347.3569840956031,
+      "y": 1270.1578725746629,
+      "scaleX": 1.4334529545991321,
+      "scaleY": 1.4334529545991321,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987141413_c657m",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1062.767668618228,
+      "y": 1537.8595017422422,
+      "scaleX": 1.3298746408076878,
+      "scaleY": 1.3298746408076878,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987141413_xru12",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 368.70595907526183,
+      "y": 160.33835442099775,
+      "scaleX": 1.4573473844001648,
+      "scaleY": 1.4573473844001648,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987141414_gxp5g",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 831.9890193046585,
+      "y": 521.91950824903,
+      "scaleX": 1.365639757383274,
+      "scaleY": 1.365639757383274,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987141414_g9egy",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2899.0722293827102,
+      "y": 1103.630103524425,
+      "scaleX": 1.0152615797635203,
+      "scaleY": 1.0152615797635203,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987141414_zgjcx",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1159.8984575230706,
+      "y": 206.4706793924169,
+      "scaleX": 1.2457929056016737,
+      "scaleY": 1.2457929056016737,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987141415_eg2dt",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 695.3199163493149,
+      "y": 1580.7304155052623,
+      "scaleX": 1.234811739546795,
+      "scaleY": 1.234811739546795,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987141415_w62fv",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1104.5179928274745,
+      "y": 1043.790123961965,
+      "scaleX": 1.7817490570195826,
+      "scaleY": 1.7817490570195826,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987141416_b1mv8",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2870.217216527449,
+      "y": 387.3742386410408,
+      "scaleX": 1.0918457021567198,
+      "scaleY": 1.0918457021567198,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987141416_96s4n",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2656.5624245295758,
+      "y": 639.646936952395,
+      "scaleX": 1.1055851757055692,
+      "scaleY": 1.1055851757055692,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987141417_1ms4a",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1776.500337241618,
+      "y": 1938.2913483742775,
+      "scaleX": 1.1825582056888906,
+      "scaleY": 1.1825582056888906,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987141417_fkcm9",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1937.9037817601645,
+      "y": 1959.9701578284355,
+      "scaleX": 1.4011952531020693,
+      "scaleY": 1.4011952531020693,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987141418_d2t9n",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2673.0013672213317,
+      "y": 556.425429937822,
+      "scaleX": 1.1127287383815192,
+      "scaleY": 1.1127287383815192,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987141418_st1gl",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2311.844316295004,
+      "y": 984.2108508473797,
+      "scaleX": 1.165691589216764,
+      "scaleY": 1.165691589216764,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987141418_sc8pv",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2626.304279377516,
+      "y": 1398.0038436773843,
+      "scaleX": 1.2874517230464884,
+      "scaleY": 1.2874517230464884,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987141419_prakd",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2782.91234714723,
+      "y": 1196.1235900285585,
+      "scaleX": 1.0773868413207839,
+      "scaleY": 1.0773868413207839,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987141419_hk6iu",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1769.2172202349632,
+      "y": 1250.143219337495,
+      "scaleX": 1.5739513415891524,
+      "scaleY": 1.5739513415891524,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987295942_vj9u9",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree1.png"
+      ],
+      "name": "middle_lane_tree1",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1306.3471951701285,
+      "y": 1142.6810627646203,
+      "scaleX": 2.2183502058190827,
+      "scaleY": 2.2183502058190845,
+      "offsetX": 165,
+      "offsetY": 64
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987347542_4d2b7",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "birch_1.png",
+        "fir_tree_1.png",
+        "jungle_tree_1.png",
+        "winter_conifer_tree_1.png",
+        "winter_tree_1.png",
+        "birch_2.png",
+        "fir_tree_2.png",
+        "jungle_tree_2.png",
+        "winter_conifer_tree_2.png",
+        "winter_tree_2.png",
+        "birch_3.png",
+        "fir_tree_3.png",
+        "jungle_tree_3.png",
+        "winter_conifer_tree_3.png",
+        "winter_tree_3.png",
+        "birch_4.png",
+        "fir_tree_4.png",
+        "jungle_tree_4.png",
+        "winter_conifer_tree_4.png",
+        "winter_tree_4.png",
+        "birch_5.png",
+        "fir_tree_5.png",
+        "jungle_tree_5.png",
+        "winter_conifer_tree_5.png",
+        "winter_tree_5.png",
+        "birch_6.png",
+        "fir_tree_6.png",
+        "jungle_tree_6.png",
+        "winter_conifer_tree_6.png",
+        "winter_tree_6.png",
+        "birch_7.png",
+        "fir_tree_7.png",
+        "jungle_tree_7.png",
+        "winter_conifer_tree_7.png",
+        "winter_tree_7.png",
+        "birch_8.png",
+        "fir_tree_8.png",
+        "jungle_tree_8.png",
+        "winter_conifer_tree_8.png",
+        "winter_tree_8.png",
+        "birch_9.png",
+        "fir_tree_9.png",
+        "jungle_tree_9.png",
+        "winter_conifer_tree_9.png",
+        "winter_tree_9.png",
+        "birch_10.png",
+        "fir_tree_10.png",
+        "jungle_tree_10.png",
+        "winter_conifer_tree_10.png",
+        "winter_tree_10.png",
+        "birch_11.png",
+        "fir_tree_11.png",
+        "jungle_tree_11.png",
+        "winter_conifer_tree_11.png",
+        "birch_12.png",
+        "jungle_tree_12.png",
+        "winter_conifer_tree_12.png",
+        "jungle_tree_13.png",
+        "jungle_tree_14.png"
+      ],
+      "name": "trees",
+      "animated": true,
+      "spriteLayer": "below",
+      "x": 460.858141131813,
+      "y": 1109.5694258042938,
+      "scaleX": 2.0828607068013665,
+      "scaleY": 2.082860706801367,
+      "offsetX": 89,
+      "offsetY": 103
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987395749_pbqps",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree10.png"
+      ],
+      "name": "middle_lane_tree10",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2065.491999254752,
+      "y": 1192.0780352066365,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 13.5,
+      "offsetY": 35
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987472732_4ba8l",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "birch_1.png",
+        "fir_tree_1.png",
+        "jungle_tree_1.png",
+        "winter_conifer_tree_1.png",
+        "winter_tree_1.png",
+        "birch_2.png",
+        "fir_tree_2.png",
+        "jungle_tree_2.png",
+        "winter_conifer_tree_2.png",
+        "winter_tree_2.png",
+        "birch_3.png",
+        "fir_tree_3.png",
+        "jungle_tree_3.png",
+        "winter_conifer_tree_3.png",
+        "winter_tree_3.png",
+        "birch_4.png",
+        "fir_tree_4.png",
+        "jungle_tree_4.png",
+        "winter_conifer_tree_4.png",
+        "winter_tree_4.png",
+        "birch_5.png",
+        "fir_tree_5.png",
+        "jungle_tree_5.png",
+        "winter_conifer_tree_5.png",
+        "winter_tree_5.png",
+        "birch_6.png",
+        "fir_tree_6.png",
+        "jungle_tree_6.png",
+        "winter_conifer_tree_6.png",
+        "winter_tree_6.png",
+        "birch_7.png",
+        "fir_tree_7.png",
+        "jungle_tree_7.png",
+        "winter_conifer_tree_7.png",
+        "winter_tree_7.png",
+        "birch_8.png",
+        "fir_tree_8.png",
+        "jungle_tree_8.png",
+        "winter_conifer_tree_8.png",
+        "winter_tree_8.png",
+        "birch_9.png",
+        "fir_tree_9.png",
+        "jungle_tree_9.png",
+        "winter_conifer_tree_9.png",
+        "winter_tree_9.png",
+        "birch_10.png",
+        "fir_tree_10.png",
+        "jungle_tree_10.png",
+        "winter_conifer_tree_10.png",
+        "winter_tree_10.png",
+        "birch_11.png",
+        "fir_tree_11.png",
+        "jungle_tree_11.png",
+        "winter_conifer_tree_11.png",
+        "birch_12.png",
+        "jungle_tree_12.png",
+        "winter_conifer_tree_12.png",
+        "jungle_tree_13.png",
+        "jungle_tree_14.png"
+      ],
+      "name": "trees",
+      "animated": true,
+      "spriteLayer": "below",
+      "x": 2921.664970695876,
+      "y": 1444.328020595703,
+      "scaleX": 2.0666007806007833,
+      "scaleY": 2.0666007806007833,
+      "offsetX": 89,
+      "offsetY": 103
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987472733_60yeg",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "birch_1.png",
+        "fir_tree_1.png",
+        "jungle_tree_1.png",
+        "winter_conifer_tree_1.png",
+        "winter_tree_1.png",
+        "birch_2.png",
+        "fir_tree_2.png",
+        "jungle_tree_2.png",
+        "winter_conifer_tree_2.png",
+        "winter_tree_2.png",
+        "birch_3.png",
+        "fir_tree_3.png",
+        "jungle_tree_3.png",
+        "winter_conifer_tree_3.png",
+        "winter_tree_3.png",
+        "birch_4.png",
+        "fir_tree_4.png",
+        "jungle_tree_4.png",
+        "winter_conifer_tree_4.png",
+        "winter_tree_4.png",
+        "birch_5.png",
+        "fir_tree_5.png",
+        "jungle_tree_5.png",
+        "winter_conifer_tree_5.png",
+        "winter_tree_5.png",
+        "birch_6.png",
+        "fir_tree_6.png",
+        "jungle_tree_6.png",
+        "winter_conifer_tree_6.png",
+        "winter_tree_6.png",
+        "birch_7.png",
+        "fir_tree_7.png",
+        "jungle_tree_7.png",
+        "winter_conifer_tree_7.png",
+        "winter_tree_7.png",
+        "birch_8.png",
+        "fir_tree_8.png",
+        "jungle_tree_8.png",
+        "winter_conifer_tree_8.png",
+        "winter_tree_8.png",
+        "birch_9.png",
+        "fir_tree_9.png",
+        "jungle_tree_9.png",
+        "winter_conifer_tree_9.png",
+        "winter_tree_9.png",
+        "birch_10.png",
+        "fir_tree_10.png",
+        "jungle_tree_10.png",
+        "winter_conifer_tree_10.png",
+        "winter_tree_10.png",
+        "birch_11.png",
+        "fir_tree_11.png",
+        "jungle_tree_11.png",
+        "winter_conifer_tree_11.png",
+        "birch_12.png",
+        "jungle_tree_12.png",
+        "winter_conifer_tree_12.png",
+        "jungle_tree_13.png",
+        "jungle_tree_14.png"
+      ],
+      "name": "trees",
+      "animated": true,
+      "spriteLayer": "below",
+      "x": 1269.3360163373586,
+      "y": 396.3105528732536,
+      "scaleX": 1.980965862996451,
+      "scaleY": 1.980965862996451,
+      "offsetX": 89,
+      "offsetY": 103
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987472733_pf62w",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "birch_1.png",
+        "fir_tree_1.png",
+        "jungle_tree_1.png",
+        "winter_conifer_tree_1.png",
+        "winter_tree_1.png",
+        "birch_2.png",
+        "fir_tree_2.png",
+        "jungle_tree_2.png",
+        "winter_conifer_tree_2.png",
+        "winter_tree_2.png",
+        "birch_3.png",
+        "fir_tree_3.png",
+        "jungle_tree_3.png",
+        "winter_conifer_tree_3.png",
+        "winter_tree_3.png",
+        "birch_4.png",
+        "fir_tree_4.png",
+        "jungle_tree_4.png",
+        "winter_conifer_tree_4.png",
+        "winter_tree_4.png",
+        "birch_5.png",
+        "fir_tree_5.png",
+        "jungle_tree_5.png",
+        "winter_conifer_tree_5.png",
+        "winter_tree_5.png",
+        "birch_6.png",
+        "fir_tree_6.png",
+        "jungle_tree_6.png",
+        "winter_conifer_tree_6.png",
+        "winter_tree_6.png",
+        "birch_7.png",
+        "fir_tree_7.png",
+        "jungle_tree_7.png",
+        "winter_conifer_tree_7.png",
+        "winter_tree_7.png",
+        "birch_8.png",
+        "fir_tree_8.png",
+        "jungle_tree_8.png",
+        "winter_conifer_tree_8.png",
+        "winter_tree_8.png",
+        "birch_9.png",
+        "fir_tree_9.png",
+        "jungle_tree_9.png",
+        "winter_conifer_tree_9.png",
+        "winter_tree_9.png",
+        "birch_10.png",
+        "fir_tree_10.png",
+        "jungle_tree_10.png",
+        "winter_conifer_tree_10.png",
+        "winter_tree_10.png",
+        "birch_11.png",
+        "fir_tree_11.png",
+        "jungle_tree_11.png",
+        "winter_conifer_tree_11.png",
+        "birch_12.png",
+        "jungle_tree_12.png",
+        "winter_conifer_tree_12.png",
+        "jungle_tree_13.png",
+        "jungle_tree_14.png"
+      ],
+      "name": "trees",
+      "animated": true,
+      "spriteLayer": "below",
+      "x": 771.9060299447772,
+      "y": 952.5436430321489,
+      "scaleX": 1.9832346835352659,
+      "scaleY": 1.9832346835352659,
+      "offsetX": 89,
+      "offsetY": 103
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987472733_uurqi",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "birch_1.png",
+        "fir_tree_1.png",
+        "jungle_tree_1.png",
+        "winter_conifer_tree_1.png",
+        "winter_tree_1.png",
+        "birch_2.png",
+        "fir_tree_2.png",
+        "jungle_tree_2.png",
+        "winter_conifer_tree_2.png",
+        "winter_tree_2.png",
+        "birch_3.png",
+        "fir_tree_3.png",
+        "jungle_tree_3.png",
+        "winter_conifer_tree_3.png",
+        "winter_tree_3.png",
+        "birch_4.png",
+        "fir_tree_4.png",
+        "jungle_tree_4.png",
+        "winter_conifer_tree_4.png",
+        "winter_tree_4.png",
+        "birch_5.png",
+        "fir_tree_5.png",
+        "jungle_tree_5.png",
+        "winter_conifer_tree_5.png",
+        "winter_tree_5.png",
+        "birch_6.png",
+        "fir_tree_6.png",
+        "jungle_tree_6.png",
+        "winter_conifer_tree_6.png",
+        "winter_tree_6.png",
+        "birch_7.png",
+        "fir_tree_7.png",
+        "jungle_tree_7.png",
+        "winter_conifer_tree_7.png",
+        "winter_tree_7.png",
+        "birch_8.png",
+        "fir_tree_8.png",
+        "jungle_tree_8.png",
+        "winter_conifer_tree_8.png",
+        "winter_tree_8.png",
+        "birch_9.png",
+        "fir_tree_9.png",
+        "jungle_tree_9.png",
+        "winter_conifer_tree_9.png",
+        "winter_tree_9.png",
+        "birch_10.png",
+        "fir_tree_10.png",
+        "jungle_tree_10.png",
+        "winter_conifer_tree_10.png",
+        "winter_tree_10.png",
+        "birch_11.png",
+        "fir_tree_11.png",
+        "jungle_tree_11.png",
+        "winter_conifer_tree_11.png",
+        "birch_12.png",
+        "jungle_tree_12.png",
+        "winter_conifer_tree_12.png",
+        "jungle_tree_13.png",
+        "jungle_tree_14.png"
+      ],
+      "name": "trees",
+      "animated": true,
+      "spriteLayer": "below",
+      "x": 172.19477284016534,
+      "y": 170.31601137391527,
+      "scaleX": 2.0653675403767577,
+      "scaleY": 2.0653675403767577,
+      "offsetX": 89,
+      "offsetY": 103
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987472733_xqr7l",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "birch_1.png",
+        "fir_tree_1.png",
+        "jungle_tree_1.png",
+        "winter_conifer_tree_1.png",
+        "winter_tree_1.png",
+        "birch_2.png",
+        "fir_tree_2.png",
+        "jungle_tree_2.png",
+        "winter_conifer_tree_2.png",
+        "winter_tree_2.png",
+        "birch_3.png",
+        "fir_tree_3.png",
+        "jungle_tree_3.png",
+        "winter_conifer_tree_3.png",
+        "winter_tree_3.png",
+        "birch_4.png",
+        "fir_tree_4.png",
+        "jungle_tree_4.png",
+        "winter_conifer_tree_4.png",
+        "winter_tree_4.png",
+        "birch_5.png",
+        "fir_tree_5.png",
+        "jungle_tree_5.png",
+        "winter_conifer_tree_5.png",
+        "winter_tree_5.png",
+        "birch_6.png",
+        "fir_tree_6.png",
+        "jungle_tree_6.png",
+        "winter_conifer_tree_6.png",
+        "winter_tree_6.png",
+        "birch_7.png",
+        "fir_tree_7.png",
+        "jungle_tree_7.png",
+        "winter_conifer_tree_7.png",
+        "winter_tree_7.png",
+        "birch_8.png",
+        "fir_tree_8.png",
+        "jungle_tree_8.png",
+        "winter_conifer_tree_8.png",
+        "winter_tree_8.png",
+        "birch_9.png",
+        "fir_tree_9.png",
+        "jungle_tree_9.png",
+        "winter_conifer_tree_9.png",
+        "winter_tree_9.png",
+        "birch_10.png",
+        "fir_tree_10.png",
+        "jungle_tree_10.png",
+        "winter_conifer_tree_10.png",
+        "winter_tree_10.png",
+        "birch_11.png",
+        "fir_tree_11.png",
+        "jungle_tree_11.png",
+        "winter_conifer_tree_11.png",
+        "birch_12.png",
+        "jungle_tree_12.png",
+        "winter_conifer_tree_12.png",
+        "jungle_tree_13.png",
+        "jungle_tree_14.png"
+      ],
+      "name": "trees",
+      "animated": true,
+      "spriteLayer": "below",
+      "x": 2728.628393322446,
+      "y": 561.5057219529971,
+      "scaleX": 1.9825288945898936,
+      "scaleY": 1.9825288945898936,
+      "offsetX": 89,
+      "offsetY": 103
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987560083_ov1fh",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree10.png"
+      ],
+      "name": "middle_lane_tree10",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2467.868098785268,
+      "y": 1528.2147116737883,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 13.5,
+      "offsetY": 35
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987572988_i7i22",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Buildings/Black Buildings",
+      "frames": [
+        "House1.png"
+      ],
+      "name": "House1",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2931.6573568601048,
+      "y": 710.581063014252,
+      "scaleX": 1.4011113564504982,
+      "scaleY": 1.4011113564504982,
+      "offsetX": 64,
+      "offsetY": 96
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987614714_ra0gq",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree10.png"
+      ],
+      "name": "middle_lane_tree10",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2808.247509680071,
+      "y": 936.915046239789,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 13.5,
+      "offsetY": 35
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987637819_ohlq0",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree8.png"
+      ],
+      "name": "middle_lane_tree8",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3063.965197773316,
+      "y": 739.060484649395,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 25,
+      "offsetY": 14.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987639666_f8y84",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree8.png"
+      ],
+      "name": "middle_lane_tree8",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3133.0276390831705,
+      "y": 658.798728532537,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 25,
+      "offsetY": 14.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987640842_g23v4",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree8.png"
+      ],
+      "name": "middle_lane_tree8",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3024.7675959488042,
+      "y": 565.4711051408416,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 25,
+      "offsetY": 14.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987643739_bc3a0",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree9.png"
+      ],
+      "name": "middle_lane_tree9",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3032.0942008851584,
+      "y": 638.8019958820905,
+      "scaleX": 1.2979007592808771,
+      "scaleY": 1.2979007592808767,
+      "offsetX": 13,
+      "offsetY": 17
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987648154_bf2uh",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree9.png"
+      ],
+      "name": "middle_lane_tree9",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3175.3449055518176,
+      "y": 570.8649641888122,
+      "scaleX": 1.307376396210869,
+      "scaleY": 1.3073763962108669,
+      "offsetX": 13,
+      "offsetY": 17
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987664035_rfbbd",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Wood Resource",
+      "frames": [
+        "Wood Resource.png"
+      ],
+      "name": "Wood Resource",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3091.963817730976,
+      "y": 859.0667015860006,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987678986_55q0v",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Wood Resource",
+      "frames": [
+        "Wood Resource.png"
+      ],
+      "name": "Wood Resource",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3105.605496604998,
+      "y": 867.2517089104135,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987686377_9eqxu",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Wood Resource",
+      "frames": [
+        "Wood Resource.png"
+      ],
+      "name": "Wood Resource",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3105.6054966049983,
+      "y": 848.153358486783,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987691442_6dlm1",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Wood Resource",
+      "frames": [
+        "Wood Resource.png"
+      ],
+      "name": "Wood Resource",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3120.6113433664223,
+      "y": 876.8008841222288,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987696770_l5ol1",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Wood Resource",
+      "frames": [
+        "Wood Resource.png"
+      ],
+      "name": "Wood Resource",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3123.339679141226,
+      "y": 856.338365811196,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987704801_ccgv1",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Wood Resource",
+      "frames": [
+        "Wood Resource.png"
+      ],
+      "name": "Wood Resource",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3136.9813580152486,
+      "y": 889.0783951088483,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987716282_8x4bp",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees",
+      "frames": [
+        "Stump 1.png"
+      ],
+      "name": "Stump 1",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3041.4896058970958,
+      "y": 1048.6860379349039,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 96,
+      "offsetY": 128
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987719137_jn61p",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees",
+      "frames": [
+        "Stump 1.png"
+      ],
+      "name": "Stump 1",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2869.6044520844207,
+      "y": 857.7025336985982,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 96,
+      "offsetY": 128
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987722090_6dq75",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees",
+      "frames": [
+        "Stump 2.png"
+      ],
+      "name": "Stump 2",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2596.7708746039843,
+      "y": 804.4999860899131,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 96,
+      "offsetY": 128
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987727996_unbve",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees",
+      "frames": [
+        "Stump 4.png"
+      ],
+      "name": "Stump 4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2791.353460075138,
+      "y": 1132.7129748291447,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 96,
+      "offsetY": 128
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987728777_v6nit",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees",
+      "frames": [
+        "Stump 4.png"
+      ],
+      "name": "Stump 4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2850.8543998448076,
+      "y": 939.6977311860699,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 96,
+      "offsetY": 128
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987731737_8ugme",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees",
+      "frames": [
+        "Stump 4.png"
+      ],
+      "name": "Stump 4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3117.8830075916176,
+      "y": 878.7455489829938,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 96,
+      "offsetY": 128
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987739249_4nz7k",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees",
+      "frames": [
+        "Stump 4.png"
+      ],
+      "name": "Stump 4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2932.123976115576,
+      "y": 449.1777886946468,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 96,
+      "offsetY": 128
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987739977_fafgp",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees",
+      "frames": [
+        "Stump 4.png"
+      ],
+      "name": "Stump 4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3159.969038160409,
+      "y": 379.518151891131,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 96,
+      "offsetY": 128
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987790728_heevk",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees",
+      "frames": [
+        "Stump 4.png"
+      ],
+      "name": "Stump 4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1624.5564705974155,
+      "y": 845.4341750517082,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 96,
+      "offsetY": 128
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987801914_7a06a",
+      "dir": "cropped",
+      "frames": [
+        "Sheep_Idle_crop.png"
+      ],
+      "name": "Sheep_Idle_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 69.91474084886366,
+      "y": 1764.410756495722,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 29.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987802496_goumy",
+      "dir": "cropped",
+      "frames": [
+        "Sheep_Idle_crop.png"
+      ],
+      "name": "Sheep_Idle_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 117.53010776306127,
+      "y": 1842.976111904148,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 29.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987803049_2qp49",
+      "dir": "cropped",
+      "frames": [
+        "Sheep_Idle_crop.png"
+      ],
+      "name": "Sheep_Idle_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 27.06091062608582,
+      "y": 1854.8799536326974,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 29.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987803529_j00eq",
+      "dir": "cropped",
+      "frames": [
+        "Sheep_Idle_crop.png"
+      ],
+      "name": "Sheep_Idle_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 155.62240129441935,
+      "y": 1738.2223046929132,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 29.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987804179_3bviq",
+      "dir": "cropped",
+      "frames": [
+        "Sheep_Idle_crop.png"
+      ],
+      "name": "Sheep_Idle_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 260.37620850565406,
+      "y": 1831.0722701755985,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 29.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987804617_s22pp",
+      "dir": "cropped",
+      "frames": [
+        "Sheep_Idle_crop.png"
+      ],
+      "name": "Sheep_Idle_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 391.3184675196975,
+      "y": 1752.5069147671725,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 29.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987805266_7lwse",
+      "dir": "cropped",
+      "frames": [
+        "Sheep_Idle_crop.png"
+      ],
+      "name": "Sheep_Idle_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 338.9415639140801,
+      "y": 1923.9222356582839,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 29.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987806272_wang2",
+      "dir": "cropped",
+      "frames": [
+        "Sheep_Idle_crop.png"
+      ],
+      "name": "Sheep_Idle_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 460.360749545284,
+      "y": 1828.6915018298887,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 29.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987806696_zplb9",
+      "dir": "cropped",
+      "frames": [
+        "Sheep_Idle_crop.png"
+      ],
+      "name": "Sheep_Idle_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 303.2300387284319,
+      "y": 1750.1261464214626,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 29.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987807088_kzzjc",
+      "dir": "cropped",
+      "frames": [
+        "Sheep_Idle_crop.png"
+      ],
+      "name": "Sheep_Idle_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 531.7837999165804,
+      "y": 1738.2223046929132,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 29.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987807433_v1jqi",
+      "dir": "cropped",
+      "frames": [
+        "Sheep_Idle_crop.png"
+      ],
+      "name": "Sheep_Idle_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 355.6069423340493,
+      "y": 1876.3068687440862,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 29.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987808040_lzb26",
+      "dir": "cropped",
+      "frames": [
+        "Sheep_Idle_crop.png"
+      ],
+      "name": "Sheep_Idle_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 474.6453596195433,
+      "y": 1902.4953205468948,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 29.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987808769_4pc7d",
+      "dir": "cropped",
+      "frames": [
+        "Sheep_Idle_crop.png"
+      ],
+      "name": "Sheep_Idle_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 300.849270382722,
+      "y": 1992.9645176838703,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 29.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987815120_xrili",
+      "dir": "cropped",
+      "frames": [
+        "Sheep_Idle_crop.png"
+      ],
+      "name": "Sheep_Idle_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1669.791069165903,
+      "y": 1759.6492198043022,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 29.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987815550_xbg55",
+      "dir": "cropped",
+      "frames": [
+        "Sheep_Idle_crop.png"
+      ],
+      "name": "Sheep_Idle_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1634.0795439802548,
+      "y": 1833.4530385213084,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 29.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987816873_a6km4",
+      "dir": "cropped",
+      "frames": [
+        "Sheep_Idle_crop.png"
+      ],
+      "name": "Sheep_Idle_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1719.7872044258106,
+      "y": 1814.4068917556294,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 29.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987824273_3pavi",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1779.3064130685575,
+      "y": 1835.8338068670182,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987830688_n2zrk",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1293.6296705437421,
+      "y": 2066.7683364008767,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987841474_s663s",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Buildings/Black Buildings",
+      "frames": [
+        "House3.png"
+      ],
+      "name": "House3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 250.5161280631561,
+      "y": 1496.0688070138758,
+      "scaleX": 1.6376573271363701,
+      "scaleY": 1.6376573271363712,
+      "offsetX": 64,
+      "offsetY": 96
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987909928_d3ij2",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 507.03605634034636,
+      "y": 1317.383517182109,
+      "scaleX": 1.6349457501679154,
+      "scaleY": 1.6349457501679157,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987959000_28ea7",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree7.png"
+      ],
+      "name": "middle_lane_tree7",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2312.5289193065414,
+      "y": 546.1148475022329,
+      "scaleX": 2.0093589352969037,
+      "scaleY": 2.0093589352969037,
+      "offsetX": 36.5,
+      "offsetY": 40.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780988044792_5xn8q",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+      "frames": [
+        "Gold Stone 5.png"
+      ],
+      "name": "Gold Stone 5",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2985.8107200256136,
+      "y": 1926.4499004440336,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 64,
+      "offsetY": 64
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234525_ulzoy",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2974.4979036311656,
+      "y": 387.4707772763679,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234526_ahkor",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1449.4765037218372,
+      "y": 1415.5924239890385,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234526_xe98q",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1504.5729616344602,
+      "y": 733.5390006609699,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234526_ze6qg",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2918.091125481784,
+      "y": 1975.004978807964,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234527_iw2i4",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 79.13821327233101,
+      "y": 1158.6731512476993,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234527_yx8x9",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 977.3491251490593,
+      "y": 811.5323506976285,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234527_sogrf",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2311.2697578250454,
+      "y": 1264.8378445133696,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234527_g345u",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 58.39962612925973,
+      "y": 1959.8358567510415,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234527_7n2bj",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2623.0505902400373,
+      "y": 719.5338972400704,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234527_pfxj0",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1821.928433304112,
+      "y": 644.6381978754747,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234528_8k3y4",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 879.0014342582193,
+      "y": 1584.5701377885732,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234528_gb3t5",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1290.0640770450227,
+      "y": 171.4563590519242,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234528_42xs3",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2031.593272293215,
+      "y": 834.0980576445085,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234528_4dmch",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1255.2946748718905,
+      "y": 683.102214476847,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234528_kogtt",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1641.7696719342327,
+      "y": 1573.5011373781706,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234528_zxvib",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 594.4631184550129,
+      "y": 181.84159847442638,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234528_jsnox",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1877.0693523951668,
+      "y": 184.5017885260205,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234529_vef9l",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1700.827803690225,
+      "y": 374.20503833177634,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234529_ga05j",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 134.5381456777396,
+      "y": 1962.2326679775833,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234529_w61iz",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1177.5899504442893,
+      "y": 54.905565543062366,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234529_kat3c",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1179.0442310159774,
+      "y": 1299.5422087821635,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234529_rgpo1",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1086.0961554362825,
+      "y": 1073.5442943266598,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234530_7s0gz",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 585.5400056996232,
+      "y": 497.6331206747873,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234530_plpic",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2796.7532379095232,
+      "y": 21.07760565256833,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234530_yu17h",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2150.167633663892,
+      "y": 527.6617829075795,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234530_fb86i",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1540.4829333792297,
+      "y": 1944.014013170363,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234530_xg1s2",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 359.12335042581645,
+      "y": 25.44464104064665,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234530_b9c8y",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 12.409606924656202,
+      "y": 447.2511277773181,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234530_vhb5g",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 7.679834012854059,
+      "y": 654.6243228091282,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234531_q74sc",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 448.38082870151015,
+      "y": 128.84983459097944,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234531_6rb82",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1888.925034912398,
+      "y": 1759.5554351367869,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234531_4h76r",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 541.995378537651,
+      "y": 1501.7230607231702,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234531_fu0z1",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 628.7997620748367,
+      "y": 639.9952504962674,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234531_og2fh",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2443.108226105106,
+      "y": 220.01446661534473,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234531_7ll40",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 328.5914496654751,
+      "y": 430.42926627344616,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234532_7b8oj",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 162.742281455645,
+      "y": 559.7759464075385,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234532_yogu1",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1451.8670059992364,
+      "y": 186.52370979764132,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234532_0ub94",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1636.240340956921,
+      "y": 1221.1093989141548,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234532_ap6ul",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1870.921532850973,
+      "y": 214.5204717099596,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234532_ifyxq",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 526.6352250716195,
+      "y": 1963.69929058145,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234532_v7osu",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1349.195957152388,
+      "y": 596.0826782000568,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234533_zqg5u",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2358.095760962648,
+      "y": 435.4512173523071,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234533_cbxvp",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 963.8484090728642,
+      "y": 1304.995266420191,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234533_w0sqn",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2484.0504358094972,
+      "y": 1674.1439625371638,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234533_zz957",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 3109.283411951507,
+      "y": 283.52714585639546,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234533_vho6x",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1858.0708627684803,
+      "y": 1877.7306682567078,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234533_z2mn9",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 475.14238803944016,
+      "y": 1405.653094609248,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234534_itsrt",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 3023.7662532360127,
+      "y": 1644.217554455374,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234534_jrmhk",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2988.815913893486,
+      "y": 1651.0966759494324,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987234534_lqyhk",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2380.6276690940194,
+      "y": 1981.9592254369518,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236741_0c78h",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1617.85193387394,
+      "y": 1489.298792612463,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236742_k400e",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 516.6153290810068,
+      "y": 1626.275367906126,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236742_sf5aa",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2691.4444657811705,
+      "y": 64.2440461093552,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236743_c75fw",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1175.856210990081,
+      "y": 1800.3956529859336,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236743_mmsty",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2552.9741113910973,
+      "y": 1115.2233229368537,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236743_uihhr",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2662.3194076071723,
+      "y": 165.71648368679237,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236743_k6kl0",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 25.885297593703513,
+      "y": 296.362455477633,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236743_9xto4",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2795.880579712311,
+      "y": 771.1207609738155,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236743_4gj5m",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1749.2416709136244,
+      "y": 1117.6432180715146,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236743_9fvck",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1752.075017737927,
+      "y": 313.6842651378817,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236744_3hy0f",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1077.7644905523327,
+      "y": 1324.713430885268,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236744_3kad0",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 405.6322190639425,
+      "y": 50.88980797821132,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236744_yq303",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2076.2812226388655,
+      "y": 1326.336391842212,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236744_jtdnd",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2136.5591603558146,
+      "y": 1587.895818440152,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236744_cx2bj",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1017.4183618748966,
+      "y": 470.02712455659037,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236744_veij0",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 958.4747819274927,
+      "y": 473.3834975182527,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236744_k9f4h",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1230.399349826096,
+      "y": 885.8955349875474,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236744_oqu8o",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1427.136756668031,
+      "y": 482.81913857410564,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236745_8zerb",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 3161.3055035553803,
+      "y": 201.48011378825004,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236745_ne23m",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2092.42792470065,
+      "y": 573.047630456893,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236745_w0o5e",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1273.5391793718336,
+      "y": 1667.5593795117904,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236745_jqvpy",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1988.1813758819765,
+      "y": 502.6599617783456,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236745_0t33g",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1501.0913572887634,
+      "y": 145.21435912705005,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236745_tzhqq",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 596.1770135078552,
+      "y": 1802.9970786859044,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236745_piy9u",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1247.8575388745621,
+      "y": 554.3097890307811,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236745_fvucp",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1250.3037469558606,
+      "y": 1512.8893585203632,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236746_tsvog",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2800.8217896386936,
+      "y": 315.99117235228016,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236746_sqpyx",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2425.960937802863,
+      "y": 1841.0272614836033,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236746_c8r4x",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2955.1200000433137,
+      "y": 355.9191620472859,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236746_8b976",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 471.4271132873119,
+      "y": 1369.6467051359032,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236746_g4ux7",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 3022.023956693355,
+      "y": 1302.8769421766417,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236746_dbfzv",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 482.3915266485596,
+      "y": 1651.980715947752,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236747_y7oxo",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 3060.9676376195807,
+      "y": 1020.0537787951603,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236747_j6kzz",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2921.965646280328,
+      "y": 972.1405722663659,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236747_6ue8q",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2009.891589568717,
+      "y": 928.3229508097493,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236747_kzy08",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2614.8258316684432,
+      "y": 940.0965866286294,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236747_3nc0t",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2295.53150962236,
+      "y": 1687.0544180288844,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236747_jod15",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 3057.6029133902744,
+      "y": 1345.3339481244136,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236747_55ptv",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1059.810275401567,
+      "y": 1741.593157959743,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236748_0376d",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2492.5915916242934,
+      "y": 1306.9254744827012,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236748_lhxl2",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 918.2877202964743,
+      "y": 561.9584711454797,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236748_b8ldj",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2713.528763583598,
+      "y": 1880.108459257761,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236748_u85w4",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 653.8719624116691,
+      "y": 1794.3976235350315,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236748_dfqv3",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 119.85887358466698,
+      "y": 363.89631281858794,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236748_a6kgg",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2777.679433233386,
+      "y": 335.0209838371205,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236748_pal5z",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1895.6567338689383,
+      "y": 1397.2568657480608,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236748_yyuyo",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2563.323558020502,
+      "y": 1201.0967493560518,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236749_50em9",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 871.2761180403116,
+      "y": 483.28921368443247,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236749_mej5w",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1009.0078187250072,
+      "y": 820.7233452702696,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987236749_nf1xv",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1914.9517682145306,
+      "y": 1013.253593088139,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242185_u1ptq",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2494.075803750527,
+      "y": 647.836673634959,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242186_bgza6",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2744.1338924280067,
+      "y": 1790.8545608869003,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242186_t5e80",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2185.6149917708094,
+      "y": 853.7588479375744,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242186_pq1jp",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 197.56843494722318,
+      "y": 1931.658645893289,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242186_gwd2n",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1839.7023851270685,
+      "y": 418.77086643932125,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242186_mzopv",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1169.565956525658,
+      "y": 1344.9875750894307,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242186_h5w7u",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 855.4083672731366,
+      "y": 229.17388852390584,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242186_3egxo",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 822.7767633433385,
+      "y": 1151.8184425215939,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242187_rfy55",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 450.2792139785436,
+      "y": 216.50527273430532,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242187_xm1f1",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 742.6643900413353,
+      "y": 623.3545482419718,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242187_alsnr",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1696.4149282632447,
+      "y": 1916.7190167788624,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242187_4whlv",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2629.0354262281553,
+      "y": 1833.7289818522759,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242187_f7gfj",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1392.9841392981014,
+      "y": 921.4050622801177,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242187_e5cdt",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2579.6969724874934,
+      "y": 1955.8106081420474,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242187_bi724",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2890.413217266966,
+      "y": 368.905829600092,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242187_t35f7",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1375.345477488384,
+      "y": 1166.2003588623977,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242188_dzhvi",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 3029.6558515996694,
+      "y": 293.3736467534878,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242188_p1mo2",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 649.1870466455279,
+      "y": 1488.7825631976045,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242188_m1ymq",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2049.1291740056186,
+      "y": 1351.1745199102872,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242188_lanz8",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 3054.8438958727143,
+      "y": 1559.1925671461959,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242188_qq3wu",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 622.9049714612532,
+      "y": 1451.1564522745534,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242188_opvaf",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 3186.865792569743,
+      "y": 1045.6666374383362,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242189_1ulzn",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 3060.4727029633923,
+      "y": 192.27514562358206,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242189_uyeme",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 3081.9820802923423,
+      "y": 487.4131236628676,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242189_n8eoo",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2396.0531104486336,
+      "y": 1900.3335545421928,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242189_nk8ua",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1188.9518911850423,
+      "y": 1932.0186036044602,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242189_wyh5a",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2770.8394854984444,
+      "y": 1922.7156313034843,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242189_5m0gi",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1000.3757952639833,
+      "y": 1126.1370616218649,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242190_yda2w",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2954.8035147170312,
+      "y": 203.541377862549,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242190_3qw0h",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2475.4833942648875,
+      "y": 1239.1036177245667,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242190_7ewyv",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2194.226823904214,
+      "y": 929.9934563211887,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242190_h55vg",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 3164.4505108028957,
+      "y": 1223.4573575840634,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242190_j5lc5",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1799.4521830770566,
+      "y": 1410.231985082492,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242190_75lzr",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1982.7818481833287,
+      "y": 723.9793452551418,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242190_ia4lm",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1732.663072136807,
+      "y": 371.2294043059601,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242191_vdios",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2316.442913236548,
+      "y": 1225.9867286551382,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242191_7n24z",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1315.5110545476941,
+      "y": 1754.3518742255676,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242191_qs1yu",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 929.4802723959453,
+      "y": 1434.2229638771319,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242191_0sq8h",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2750.5756881374327,
+      "y": 1670.2732428271217,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242191_9pdep",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1217.9471622207352,
+      "y": 1450.3705622697962,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242191_xxbu1",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 228.08919655167836,
+      "y": 964.0085431780908,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242191_j0an3",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1014.2045749346048,
+      "y": 865.6809852889138,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242192_c0xvp",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2243.376899702818,
+      "y": 842.3778183240033,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242192_bwsjq",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 372.9537091984049,
+      "y": 403.397863409499,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242192_vsts8",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1300.3777571430878,
+      "y": 588.2599575694659,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242192_cxhsz",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1364.7877746895904,
+      "y": 1429.8285492847542,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242192_wtvdw",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 442.6315207223404,
+      "y": 1410.4855367005587,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242192_eyyyr",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 201.17856261616396,
+      "y": 1168.5793856403475,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242192_fg31i",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2221.706468151749,
+      "y": 1889.9793231477645,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987242193_zvnbk",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1543.6982082700438,
+      "y": 1903.2858545351198,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246049_em3o0",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1089.5749626265713,
+      "y": 834.7262297017493,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246050_5ourv",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1758.4462109532276,
+      "y": 1505.8140301452406,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246050_r63ok",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2432.5086810369785,
+      "y": 24.962187827265225,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246050_xkgny",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1794.5416662399869,
+      "y": 547.75805281465,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246051_3p6oi",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 226.4087134063722,
+      "y": 1113.4571680081474,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246051_n0q4e",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2503.615696468313,
+      "y": 331.4047871556989,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246051_yr65b",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2180.626792194242,
+      "y": 14.35339991558382,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246051_cm5c2",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2130.031975743993,
+      "y": 1758.6041192152832,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246051_5l9x6",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2895.0037671687423,
+      "y": 380.86109445545225,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246052_xn0t0",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1661.6841609968603,
+      "y": 1486.468563247469,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246052_f8gwu",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 537.752177839318,
+      "y": 616.946663452398,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246052_45tgx",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 401.4939395920905,
+      "y": 660.4476519249855,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246052_e2tzx",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 680.5947346946173,
+      "y": 1517.0013018294064,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246053_45dtr",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1966.5116921874649,
+      "y": 740.1187436304331,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246053_0lalw",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1925.623074003613,
+      "y": 1224.3624553357006,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246053_w8fnz",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2818.568765787511,
+      "y": 172.61133699411536,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246053_ojx3v",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2308.8322875144554,
+      "y": 1387.4981693993368,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246053_cnr44",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1140.1467593115906,
+      "y": 1963.6302161669614,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246053_xecnj",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 868.0551707033524,
+      "y": 1148.0677885415148,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246053_kjl8o",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1491.5503474641866,
+      "y": 910.9844046477418,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246054_c2smy",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 883.8246427326137,
+      "y": 1796.29250593793,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246054_k267l",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1491.7331040761176,
+      "y": 1675.866667388132,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246054_nswz6",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2761.230791175454,
+      "y": 762.6190584132489,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246054_b3nzm",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 775.6388656272794,
+      "y": 68.15153798159935,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246054_iixjx",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2477.359367187803,
+      "y": 175.1482122427841,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246055_0xein",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1942.951695928762,
+      "y": 1751.0124269376397,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246055_zf8hi",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2931.5042760893207,
+      "y": 1784.3993385700844,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246055_l09ar",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1093.185533529036,
+      "y": 1552.8763438041644,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246055_uaf2u",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2450.9518164810916,
+      "y": 624.0075094881703,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246055_163g4",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2150.5777747509806,
+      "y": 385.2817317228456,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246055_85wzb",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2885.0484799100327,
+      "y": 324.9702438156059,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246055_yt219",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1217.6306459827622,
+      "y": 684.5939451065843,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246056_nna1f",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2070.4889586796344,
+      "y": 1594.8753935800014,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246056_4rnfq",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 817.2695769399063,
+      "y": 184.77621198587224,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246056_8ravf",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2447.8876427952664,
+      "y": 1066.6516693104693,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246056_fpsxi",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2746.9331988927306,
+      "y": 1706.6563453796148,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246056_0pat5",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1997.4977947671478,
+      "y": 1213.7560536032113,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246056_368z8",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1514.0565835839898,
+      "y": 514.6063897894526,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246057_hbgmp",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 449.9721933043013,
+      "y": 1974.0656898936682,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246057_ttr5o",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2179.8429268528816,
+      "y": 361.49680291666766,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246057_0fhq9",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1882.3711733340626,
+      "y": 1474.5297473210792,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246057_ny5ic",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1002.647963339357,
+      "y": 56.989889360373084,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246057_frtpq",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 2694.155313011597,
+      "y": 925.6908062320377,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246057_vlmqi",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 720.8708172575733,
+      "y": 592.8778687563971,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246058_drkxu",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1479.2240204214982,
+      "y": 644.5699773783545,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246058_6vmqn",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 196.96660151050844,
+      "y": 385.6997870641623,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246058_hiags",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 202.15390778122367,
+      "y": 995.2567926913714,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246058_95e2i",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1481.2256249722132,
+      "y": 1624.9744329065697,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1780987246058_gz1e7",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "above",
+      "x": 1471.0211935363723,
+      "y": 1302.414444174972,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    }
+  ],
+  "noWalkZones": [
+    {
+      "id": "z_1780988210981_okbc",
+      "x": -0.2641899201178086,
+      "y": 1984.9265573639473,
+      "w": 3211.871632317771,
+      "h": 16.981194430683217
+    },
+    {
+      "id": "z_1780988243532_8guj",
+      "x": -9.967729594793854,
+      "y": 0.5526938926960018,
+      "w": 3209.4457473991024,
+      "h": 31.53650394269715
+    },
+    {
+      "id": "z_1780988418753_moid",
+      "x": 2858.415585674637,
+      "y": 615.7712562785749,
+      "w": 147.55410642558354,
+      "h": 197.83790805664842
+    },
+    {
+      "id": "z_1780988431129_1crx",
+      "x": 3076.2072347175153,
+      "y": 844.944517470794,
+      "w": 66.5,
+      "h": 28.5
+    },
+    {
+      "id": "z_1780988434337_y6d6",
+      "x": 3103.7072347175153,
+      "y": 879.944517470794,
+      "w": 54,
+      "h": 13.5
+    },
+    {
+      "id": "z_1780988470128_teje",
+      "x": 146.7960498856656,
+      "y": 1393.9893257418669,
+      "w": 206.4197912406033,
+      "h": 226.25051354319385
+    }
+  ]
+}

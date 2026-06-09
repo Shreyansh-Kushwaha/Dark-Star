@@ -3,6 +3,10 @@ const PK  = "THE PACK/Monsters";
 const CP  = "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees";
 const A3  = "assets3";
 
+export function _mapSpriteKey(dir, frame) {
+  return 'ms_' + (dir + '/' + frame).replace(/[^a-zA-Z0-9]/g, '_');
+}
+
 // Warrior: 192×192 frames
 const W = 192;
 // Lancer: 320×320 frames
@@ -269,7 +273,40 @@ export class PreloadScene extends Phaser.Scene {
 
   create() {
     this._defineAnimations();
-    this.scene.start('MainMenuScene');
+    this._loadRegionMaps();
+  }
+
+  _loadRegionMaps() {
+    fetch('/api/regions')
+      .then(r => r.json())
+      .then(list => {
+        // Collect unique sprite URLs to preload
+        const toLoad = new Map(); // key -> url
+        for (const entry of list) {
+          for (const sp of entry.data?.sprites || []) {
+            const key = _mapSpriteKey(sp.dir, sp.frames[0]);
+            if (!this.textures.exists(key)) {
+              toLoad.set(key, sp.dir + '/' + sp.frames[0]);
+            }
+            // For animated sprites, preload all frames
+            if (sp.animated && sp.frames.length > 1) {
+              for (const frame of sp.frames) {
+                const fkey = _mapSpriteKey(sp.dir, frame);
+                if (!this.textures.exists(fkey)) toLoad.set(fkey, sp.dir + '/' + frame);
+              }
+            }
+          }
+        }
+        this.registry.set('regionMaps', list);
+        if (toLoad.size === 0) { this.scene.start('MainMenuScene'); return; }
+        toLoad.forEach((url, key) => this.load.image(key, url));
+        this.load.once('complete', () => this.scene.start('MainMenuScene'));
+        this.load.start();
+      })
+      .catch(() => {
+        this.registry.set('regionMaps', []);
+        this.scene.start('MainMenuScene');
+      });
   }
 
   _defineAnimations() {
