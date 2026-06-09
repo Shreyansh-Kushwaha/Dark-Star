@@ -26,6 +26,7 @@ export class Boss extends Phaser.GameObjects.Container {
     this._introActive  = false;
     this._sinWave      = 0;
     this._decoys       = null;
+    this._windCorridors = [];
     this._aura         = null;
 
     const texBase = cfg.textureBase;
@@ -220,6 +221,8 @@ export class Boss extends Phaser.GameObjects.Container {
         }
       });
     }
+
+    if (this._windCorridors?.length) this._updateWindCorridors(delta, players, scene);
   }
 
   _nearestPlayer(players) {
@@ -465,6 +468,99 @@ export class Boss extends Phaser.GameObjects.Container {
         break;
       }
 
+      case 'wind_corridor': {
+        // Glowing wind lane across the arena — slows players who stand in it
+        const horiz = Math.random() < 0.5;
+        const span  = 400;
+        const thick = 88;
+        const hw = horiz ? span : thick / 2;
+        const hh = horiz ? thick / 2 : span;
+        const cx = target.x + (horiz ? 0 : Phaser.Math.Between(-40, 40));
+        const cy = target.y + (horiz ? Phaser.Math.Between(-40, 40) : 0);
+
+        const gfx = scene.add.graphics().setDepth(cy + 3).setAlpha(0.5);
+        gfx.fillStyle(0x88ccff, 0.22);
+        gfx.fillRect(cx - hw, cy - hh, hw * 2, hh * 2);
+        gfx.lineStyle(2, 0xaaddff, 0.9);
+        gfx.strokeRect(cx - hw, cy - hh, hw * 2, hh * 2);
+        scene.tweens.add({ targets: gfx, alpha: { from: 0.3, to: 0.85 }, duration: 210, yoyo: true, repeat: 3 });
+
+        const corridor = { gfx, cx, cy, hw, hh, active: false, timer: 3200 };
+        scene.time.delayedCall(1000, () => {
+          if (!gfx.active) return;
+          gfx.clear();
+          gfx.fillStyle(0xaaddff, 0.38);
+          gfx.fillRect(cx - hw, cy - hh, hw * 2, hh * 2);
+          gfx.lineStyle(2, 0xffffff, 0.5);
+          gfx.strokeRect(cx - hw, cy - hh, hw * 2, hh * 2);
+          gfx.setAlpha(1);
+          corridor.active = true;
+          scene.cameras.main.shake(150, 0.005);
+        });
+        this._windCorridors.push(corridor);
+        return;
+      }
+
+      case 'frost_breath': {
+        // 5 slow frost projectiles in a spread + frost VFX at boss
+        const angle = Math.atan2(target.y - this.y, target.x - this.x);
+        for (let i = 0; i < 5; i++) {
+          const off = (i - 2) * 0.28;
+          scene.events.emit('spawn_projectile', {
+            x: this.x, y: this.y, angle: angle + off,
+            damage: this.cfg.maxHp * 0.03, fromEnemy: true,
+            key: 'fire_01', speed: 155, tint: 0x88ddff,
+            slowOnHit: true,
+          });
+        }
+        if (scene.anims?.exists('vfx_frost2')) {
+          const s = scene.add.sprite(this.x, this.y - 20, 'vfx_fr2_1')
+            .setScale(1.3).setDepth(this.y + 5).setAlpha(0.9).setTint(0xaaddff);
+          s.play('vfx_frost2');
+          s.once('animationcomplete', () => s.destroy());
+        }
+        return;
+      }
+
+      case 'ice_storm': {
+        // Phase 3 ultimate: 12 frost projectiles + frost burst at player's position = freeze
+        scene.cameras.main.shake(380, 0.015);
+        for (let i = 0; i < 12; i++) {
+          const a = (Math.PI * 2 / 12) * i;
+          scene.events.emit('spawn_projectile', {
+            x: this.x, y: this.y, angle: a,
+            damage: this.cfg.maxHp * 0.038, fromEnemy: true,
+            key: 'fire_01', speed: 135, tint: 0x88ddff,
+            slowOnHit: true,
+          });
+        }
+        // Frost burst erupts at target position after 0.55s
+        const tx = target.x, ty = target.y;
+        scene.time.delayedCall(550, () => {
+          if (!this.alive) return;
+          ['vfx_frost1', 'vfx_frost2', 'vfx_frost3'].forEach((key, idx) => {
+            if (!scene.anims?.exists(key)) return;
+            scene.time.delayedCall(idx * 90, () => {
+              if (!scene.scene?.isActive?.()) return;
+              const ox = Phaser.Math.Between(-40, 40), oy = Phaser.Math.Between(-30, 30);
+              const s = scene.add.sprite(tx + ox, ty + oy, `vfx_fr${idx + 1}_1`)
+                .setScale(1.4).setDepth(ty + 10).setAlpha(0.92);
+              s.play(key);
+              s.once('animationcomplete', () => scene.tweens.add({ targets: s, alpha: 0, duration: 200, onComplete: () => s.destroy() }));
+            });
+          });
+          // Freeze (heavy slow) anyone near the burst point
+          for (const p of scene.players) {
+            if (!p?.alive || p.downed) continue;
+            if (Phaser.Math.Distance.Between(tx, ty, p.x, p.y) < 75) {
+              p.takeDamage(this.cfg.maxHp * 0.055, this, scene);
+              p.applySlow?.(scene, 2800);
+            }
+          }
+        });
+        return;
+      }
+
       case 'vine_trap': {
         // Plant warning markers at/near the player — they erupt after 1.3s
         const trapCount = this.phase === 2 ? 4 : 2;
@@ -579,6 +675,26 @@ export class Boss extends Phaser.GameObjects.Container {
     this._decoys = [];
   }
 
+  _updateWindCorridors(delta, players, scene) {
+    for (let i = this._windCorridors.length - 1; i >= 0; i--) {
+      const c = this._windCorridors[i];
+      if (!c.gfx?.active) { this._windCorridors.splice(i, 1); continue; }
+      if (!c.active) continue;
+      c.timer -= delta;
+      if (c.timer <= 0) {
+        scene.tweens.add({ targets: c.gfx, alpha: 0, duration: 380, onComplete: () => { try { c.gfx.destroy(); } catch {} } });
+        this._windCorridors.splice(i, 1);
+        continue;
+      }
+      for (const p of players) {
+        if (!p?.alive || p.downed) continue;
+        if (Math.abs(p.x - c.cx) <= c.hw && Math.abs(p.y - c.cy) <= c.hh) {
+          p.applySlow?.(scene, 380);
+        }
+      }
+    }
+  }
+
   _spawnDamageNumber(scene, amount) {
     if (!scene) return;
     const heavy = amount >= 40;
@@ -673,6 +789,8 @@ export class Boss extends Phaser.GameObjects.Container {
     if (this.body) this.body.enable = false;
     this._playAnim('dead');
     this._dismissDecoys(scene);
+    for (const c of this._windCorridors) { try { c.gfx?.destroy(); } catch {} }
+    this._windCorridors = [];
     if (this._aura) { this._aura.destroy(); this._aura = null; }
 
     scene.cameras.main.shake(700, 0.025);

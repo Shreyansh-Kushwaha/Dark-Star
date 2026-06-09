@@ -67,9 +67,15 @@ export const BOSSES = {
     textureBase: 'frost', scale: 2.2, tint: 0x88ccff,
     maxHp: 2800, maxPosture: 100, postureRegen: 6,
     phases: [
-      { hpThreshold: 1.0, speed: 120, attackCd: 1400, patterns: ['wind_slash', 'gust'] },
-      { hpThreshold: 0.5, speed: 155, attackCd: 1100, patterns: ['wind_slash', 'gust', 'cyclone'] },
-      { hpThreshold: 0.3, speed: 190, attackCd: 900,  patterns: ['wind_slash', 'gust', 'cyclone', 'tornado'] },
+      { hpThreshold: 1.0, speed: 125, attackCd: 1400, patterns: ['wind_slash', 'gust', 'wind_corridor'] },
+      { hpThreshold: 0.5, speed: 162, attackCd: 1100, patterns: ['wind_slash', 'gust', 'wind_corridor', 'wind_corridor', 'cyclone', 'frost_breath'] },
+      { hpThreshold: 0.3, speed: 205, attackCd: 850,  patterns: ['wind_slash', 'wind_corridor', 'wind_corridor', 'frost_breath', 'frost_breath', 'cyclone', 'ice_storm', 'ice_storm'] },
+    ],
+    introLines: [
+      '⟨Vayu Rakshasa⟩ "The sky does not welcome you."',
+      '⟨Vayu Rakshasa⟩ "The truth you seek is carved into wind. It cannot be read by mortal eyes."',
+      '⟨Vayu Rakshasa⟩ "They asked me to guard the inscriptions. I chose to bury them instead."',
+      '⟨Vayu Rakshasa⟩ "The storm does not negotiate."',
     ],
     phaseLines: ['', 'The sky obeys no master.', 'You fight the storm itself.'],
     rewardItem: 'vayu_note', loreFragment: 'lore_vayu_kill',
