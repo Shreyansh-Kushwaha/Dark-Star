@@ -178,6 +178,23 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  // ── Delete region map ──────────────────────────────────────────────────────
+  if (req.method === 'DELETE' && req.url.startsWith('/api/regions/')) {
+    try {
+      const filename = path.basename(req.url.slice('/api/regions/'.length));
+      if (!filename.endsWith('.json')) throw new Error('Invalid filename');
+      const filepath = path.join(REGIONS_DIR, filename);
+      if (!fs.existsSync(filepath)) throw new Error('File not found');
+      fs.unlinkSync(filepath);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: true }));
+    } catch (e) {
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: false, error: e.message }));
+    }
+    return;
+  }
+
   if (req.url === '/api/assets') {
     const manifest = buildManifest();
     res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' });

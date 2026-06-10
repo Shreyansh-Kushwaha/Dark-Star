@@ -1467,6 +1467,11 @@ async function openLoadRegionModal() {
   const listEl = document.getElementById('load-region-list');
   listEl.innerHTML = '<div style="font-size:10px;color:#888">Loading…</div>';
   document.getElementById('load-region-modal').style.display = 'flex';
+  await refreshLoadRegionList();
+}
+
+async function refreshLoadRegionList() {
+  const listEl = document.getElementById('load-region-list');
   try {
     const res = await fetch('/api/regions');
     const regions = await res.json();
@@ -1477,22 +1482,44 @@ async function openLoadRegionModal() {
     }
     regions.sort((a, b) => (a.regionIndex ?? 99) - (b.regionIndex ?? 99));
     for (const r of regions) {
-      const btn = document.createElement('button');
       const spriteCount = (r.data.sprites || []).length;
       const enemyCount  = (r.data.enemies || []).length;
-      const bossInfo    = r.data.boss ? ', boss: ' + r.data.boss.key : '';
-      btn.className = 'orange';
-      btn.style.cssText = 'text-align:left;padding:6px 10px;font-size:11px;width:100%';
-      btn.textContent = `Region ${r.regionIndex ?? '?'} — ${r.filename}  (${spriteCount} sprites, ${enemyCount} enemies${bossInfo})`;
-      btn.onclick = () => loadRegionData(r.data, r.filename);
-      listEl.appendChild(btn);
+      const bossInfo    = r.data.boss ? ' · boss: ' + r.data.boss.key : '';
+      const row = document.createElement('div');
+      row.style.cssText = 'display:flex;align-items:center;gap:6px;background:#1a0028;border:1px solid #ff8833;border-radius:4px;padding:7px 10px';
+      const info = document.createElement('div');
+      info.style.cssText = 'flex:1;font-size:11px;color:#ffcc88;min-width:0';
+      info.innerHTML = `<span style="color:#ff8833;font-weight:bold">Region ${r.regionIndex ?? '?'}</span> <span style="color:#888;font-size:10px">${r.filename}</span><br><span style="color:#666;font-size:9px">${spriteCount} sprites · ${enemyCount} enemies${bossInfo}</span>`;
+      const editBtn = document.createElement('button');
+      editBtn.className = 'orange';
+      editBtn.style.cssText = 'flex-shrink:0;padding:4px 10px;font-size:11px';
+      editBtn.textContent = '✏️ Edit';
+      editBtn.onclick = () => loadRegionData(r.data, r.filename, r.regionIndex);
+      const delBtn = document.createElement('button');
+      delBtn.className = 'red';
+      delBtn.style.cssText = 'flex-shrink:0;padding:4px 8px;font-size:11px';
+      delBtn.textContent = '🗑';
+      delBtn.title = 'Delete this region file';
+      delBtn.onclick = async () => {
+        if (!confirm('Delete ' + r.filename + '? This cannot be undone.')) return;
+        try {
+          const dr = await fetch('/api/regions/' + r.filename, { method: 'DELETE' });
+          const dj = await dr.json();
+          if (dj.ok) { setStatus('Deleted: ' + r.filename); await refreshLoadRegionList(); }
+          else setStatus('⚠ Delete failed: ' + dj.error);
+        } catch (e) { setStatus('⚠ Delete error: ' + e.message); }
+      };
+      row.appendChild(info);
+      row.appendChild(editBtn);
+      row.appendChild(delBtn);
+      listEl.appendChild(row);
     }
   } catch (e) {
     listEl.innerHTML = '<div style="font-size:10px;color:#ff8888">⚠ Failed to load regions: ' + e.message + '</div>';
   }
 }
 
-async function loadRegionData(data, filename) {
+async function loadRegionData(data, filename, regionIndex) {
   document.getElementById('load-region-modal').style.display = 'none';
   if (!data.version || !Array.isArray(data.sprites)) { setStatus('⚠ Unrecognised format in ' + filename); return; }
   if (data.background?.type === 'color' && data.background.value) {
@@ -1503,11 +1530,13 @@ async function loadRegionData(data, filename) {
   restoreNoWalkZones(data.noWalkZones || []);
   restoreEnemyMarkers(data.enemies || []);
   restoreBossMarker(data.boss || null);
+  // Pre-fill the region index in the Save modal so saving overwrites the same region
+  if (regionIndex != null) document.getElementById('region-index-input').value = regionIndex;
   S.history = [];
   pushHistory();
   const enemyCount = (data.enemies || []).length;
   const bossInfo   = data.boss ? ', boss: ' + data.boss.key : '';
-  setStatus('Loaded region: ' + filename + ' (' + data.sprites.length + ' sprites, ' + (data.noWalkZones?.length || 0) + ' zones, ' + enemyCount + ' enemies' + bossInfo + ')');
+  setStatus('Editing region ' + (regionIndex ?? '?') + ': ' + filename + ' (' + data.sprites.length + ' sprites, ' + (data.noWalkZones?.length || 0) + ' zones, ' + enemyCount + ' enemies' + bossInfo + ')');
 }
 
 document.getElementById('btn-load-region').onclick = openLoadRegionModal;
