@@ -284,7 +284,6 @@ export class GameScene extends Phaser.Scene {
 
     if (regionIndex === 0 || (regionIndex === 1 && region.villageZone)) {
       this._buildVillage(region);
-      this._tutorialShown = false;
     }
 
     // ── UI scene (overlay) ────────────────────────────────────────
@@ -1041,53 +1040,6 @@ export class GameScene extends Phaser.Scene {
     }).setDepth(10);
   }
 
-  _showTutorial() {
-    this._tutorialShown = true;
-
-    // Camera-space UI card — attached to camera so it stays on screen
-    const cam = this.cameras.main;
-    const card = this.add.graphics().setScrollFactor(0).setDepth(200);
-    const cx = GAME_W / 2, cy = GAME_H / 2;
-    const cw = 560, ch = 220;
-
-    card.fillStyle(0x0a120a, 0.88);
-    card.fillRoundedRect(cx - cw / 2, cy - ch / 2, cw, ch, 14);
-    card.lineStyle(2, 0x66cc44, 0.9);
-    card.strokeRoundedRect(cx - cw / 2, cy - ch / 2, cw, ch, 14);
-
-    const title = this.add.text(cx, cy - ch / 2 + 22, '⚔  Forest Combat — Controls', {
-      fontSize: '16px', color: '#aaffaa', fontFamily: 'serif', fontStyle: 'bold',
-    }).setOrigin(0.5).setScrollFactor(0).setDepth(201);
-
-    const lines = [
-      'WASD / Arrow keys    Move',
-      'J                   Light Attack',
-      'K                   Heavy Attack',
-      'Shift               Dodge  (time perfectly → slow-motion!)',
-      'Q / E / R           Special Abilities',
-      'F                   Talk to NPCs / Interact',
-      'Esc                 Pause',
-    ].join('\n');
-
-    const body = this.add.text(cx, cy + 10, lines, {
-      fontSize: '13px', color: '#ccffcc', fontFamily: 'monospace',
-      align: 'center', lineSpacing: 6,
-    }).setOrigin(0.5).setScrollFactor(0).setDepth(201);
-
-    const hint = this.add.text(cx, cy + ch / 2 - 22, 'Tutorial enemies ahead — they are weak. Good luck!', {
-      fontSize: '11px', color: '#88cc55', fontFamily: 'serif', fontStyle: 'italic',
-    }).setOrigin(0.5).setScrollFactor(0).setDepth(201);
-
-    // Fade out after 6 seconds
-    this.time.delayedCall(6000, () => {
-      this.tweens.add({
-        targets: [card, title, body, hint], alpha: 0,
-        duration: 800,
-        onComplete: () => { card.destroy(); title.destroy(); body.destroy(); hint.destroy(); },
-      });
-    });
-  }
-
   _updateOcclusionAlpha() {
     if (!this._treePositions.length) return;
     const entities = [
@@ -1165,12 +1117,6 @@ export class GameScene extends Phaser.Scene {
       this._checkBossProjectileHit();
     } else if (!this._bossTriggered && this._bossArenaPos) {
       this._checkBossTrigger();
-    }
-
-    // ── Tutorial trigger (region 0 only) ─────────────────────────
-    if (this._regionIndex === 0 && !this._tutorialShown) {
-      const p = this.players[0];
-      if (p?.alive && p.x > 900) this._showTutorial();
     }
 
     // ── Revival hold mechanic ─────────────────────────────────────
