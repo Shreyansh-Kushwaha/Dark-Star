@@ -37,6 +37,7 @@ export class UIScene extends Phaser.Scene {
     this._createVignette();
 
     this._statTiers = {};
+    this._levelUpActive = false;
 
     this._keyEsc  = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
     this._keyHome = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.HOME);
@@ -387,12 +388,12 @@ export class UIScene extends Phaser.Scene {
     if (escDown) {
       if (this._questVisible) { this._questPanel.setVisible(false); this._questVisible = false; }
       else if (this._invVisible) { this._invPanel.setVisible(false); this._invVisible = false; }
-      else this.scene.get('GameScene')?.togglePause();
+      else if (!this._levelUpActive) this.scene.get('GameScene')?.togglePause();
     }
     if (homeDown) {
       if (this._questVisible) { this._questPanel.setVisible(false); this._questVisible = false; }
       else if (this._invVisible) { this._invPanel.setVisible(false); this._invVisible = false; }
-      else this.scene.get('GameScene')?.togglePause();
+      else if (!this._levelUpActive) this.scene.get('GameScene')?.togglePause();
     }
     if (Phaser.Input.Keyboard.JustDown(this._keyU)) {
       this._questVisible = !this._questVisible;
@@ -782,6 +783,8 @@ export class UIScene extends Phaser.Scene {
   _onLevelUpAvailable(data) {
     const gs = this.scene.get('GameScene');
     if (!gs) return;
+    if (this._levelUpActive) return;
+    this._levelUpActive = true;
 
     // Show a quick toast so the player immediately knows what's happening,
     // then pause physics after one frame so the toast renders first.
@@ -872,6 +875,7 @@ export class UIScene extends Phaser.Scene {
           targets: allObjs, alpha: 0, duration: 200,
           onComplete: () => {
             allObjs.forEach(o => { try { o.destroy(); } catch {} });
+            this._levelUpActive = false;
             gs._paused = false;
             gs.physics?.resume();
           },

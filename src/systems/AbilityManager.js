@@ -71,7 +71,6 @@ export class AbilityManager {
       const d = Phaser.Math.Distance.Between(player.x, player.y, e.x, e.y);
       if (d <= r) {
         e.takeDamage(dmg, player, scene);
-        e._hitstopTimer = 300;
         // Small yellow burst on each hit enemy
         _vfxPlay(scene, 'vfx_yellow1', e.x, e.y - 20, 0.7, e.depth + 2);
       }
