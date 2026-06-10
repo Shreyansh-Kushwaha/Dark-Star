@@ -783,8 +783,13 @@ export class UIScene extends Phaser.Scene {
     const gs = this.scene.get('GameScene');
     if (!gs) return;
 
-    gs._paused = true;
-    gs.physics?.pause();
+    // Show a quick toast so the player immediately knows what's happening,
+    // then pause physics after one frame so the toast renders first.
+    this.toast('⚔  LEVEL UP!  Choose your boon below', '#ffd700', 1800);
+    this.time.delayedCall(16, () => {
+      gs._paused = true;
+      gs.physics?.pause();
+    });
 
     const depth = 9993;
     const choices = [
@@ -793,24 +798,26 @@ export class UIScene extends Phaser.Scene {
       { key: '3', stat: 'abilityPow', label: 'POWER',     desc: '+25% Ability Power' },
     ];
 
+    // Veil fades in quickly so the screen dims before the UI is drawn
     const veil = this.add.rectangle(0, 0, GAME_W, GAME_H, 0x000000, 0).setOrigin(0).setDepth(depth);
-    this.tweens.add({ targets: veil, alpha: 0.78, duration: 400 });
+    this.tweens.add({ targets: veil, alpha: 0.82, duration: 120 });
 
+    // Title and all cards appear almost instantly
     const title = this.add.text(GAME_W / 2, GAME_H / 2 - 118, '⚔  LEVEL UP', {
       fontSize: '36px', color: '#ffd700', fontFamily: 'serif',
       stroke: '#000', strokeThickness: 6, letterSpacing: 6,
     }).setOrigin(0.5).setDepth(depth + 1).setAlpha(0);
-    this.tweens.add({ targets: title, alpha: 1, duration: 320, delay: 300 });
+    this.tweens.add({ targets: title, alpha: 1, duration: 150, delay: 80 });
 
     const sub = this.add.text(GAME_W / 2, GAME_H / 2 - 74, 'Choose your boon', {
       fontSize: '14px', color: '#ddaa66', fontFamily: 'serif',
     }).setOrigin(0.5).setDepth(depth + 1).setAlpha(0);
-    this.tweens.add({ targets: sub, alpha: 1, duration: 320, delay: 400 });
+    this.tweens.add({ targets: sub, alpha: 1, duration: 150, delay: 100 });
 
     const hint = this.add.text(GAME_W / 2, GAME_H / 2 + 92, 'Click a card  —  or press  1 / 2 / 3', {
       fontSize: '12px', color: '#aa8855', fontFamily: 'monospace',
     }).setOrigin(0.5).setDepth(depth + 1).setAlpha(0);
-    this.tweens.add({ targets: hint, alpha: 1, duration: 280, delay: 720 });
+    this.tweens.add({ targets: hint, alpha: 1, duration: 150, delay: 120 });
 
     let _chosen = false;
     const cardObjs = [];
@@ -837,8 +844,9 @@ export class UIScene extends Phaser.Scene {
       bg.on('pointerout',  () => bg.setStrokeStyle(2, 0x886633));
       bg.on('pointerdown', () => applyChoice(cardIdx));
 
-      const delay = 500 + i * 110;
-      this.tweens.add({ targets: [bg, num, lbl, desc], alpha: 1, duration: 280, delay });
+      // All three cards appear together quickly
+      const delay = 120 + i * 40;
+      this.tweens.add({ targets: [bg, num, lbl, desc], alpha: 1, duration: 180, delay });
       cardObjs.push({ bg, num, lbl, desc });
     }
 
@@ -859,9 +867,9 @@ export class UIScene extends Phaser.Scene {
       this.tweens.add({
         targets: cardObjs[idx].bg, alpha: 0.5, duration: 60, yoyo: true, repeat: 2,
       });
-      this.time.delayedCall(380, () => {
+      this.time.delayedCall(280, () => {
         this.tweens.add({
-          targets: allObjs, alpha: 0, duration: 300,
+          targets: allObjs, alpha: 0, duration: 200,
           onComplete: () => {
             allObjs.forEach(o => { try { o.destroy(); } catch {} });
             gs._paused = false;
@@ -874,7 +882,8 @@ export class UIScene extends Phaser.Scene {
     const k1 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ONE);
     const k2 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.TWO);
     const k3 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.THREE);
-    this.time.delayedCall(600, () => {
+    // Keys active immediately — no artificial delay
+    this.time.delayedCall(200, () => {
       k1.once('down', () => applyChoice(0));
       k2.once('down', () => applyChoice(1));
       k3.once('down', () => applyChoice(2));
