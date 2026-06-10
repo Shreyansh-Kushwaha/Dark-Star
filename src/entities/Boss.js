@@ -200,6 +200,29 @@ export class Boss extends Phaser.GameObjects.Container {
         const ddy  = illusionTarget.y - d.y;
         const dist = Math.sqrt(ddx * ddx + ddy * ddy);
         d.setFlipX(this.cfg.mirrorSprite ? ddx > 0 : ddx < 0);
+
+        // Separation from boss — keep at least 150px away
+        const bx = d.x - this.x, by = d.y - this.y;
+        const bd = Math.sqrt(bx * bx + by * by);
+        if (bd < 150 && bd > 0) {
+          const push = (150 - bd) / 150;
+          d.x += (bx / bd) * push * 90 * delta / 1000;
+          d.y += (by / bd) * push * 90 * delta / 1000;
+        }
+
+        // Separation between decoys — keep at least 120px apart
+        this._decoys.forEach(other => {
+          if (other === d || !other?.active) return;
+          const ox = d.x - other.x, oy = d.y - other.y;
+          const od = Math.sqrt(ox * ox + oy * oy);
+          if (od < 120 && od > 0) {
+            const push = (120 - od) / 120;
+            d.x += (ox / od) * push * 60 * delta / 1000;
+            d.y += (oy / od) * push * 60 * delta / 1000;
+          }
+        });
+
+        // Chase if not in stop range
         if (dist > 85) {
           const spd = pCfg.speed * 0.85;
           d.x += (ddx / dist) * spd * delta / 1000;
@@ -210,15 +233,17 @@ export class Boss extends Phaser.GameObjects.Container {
         } else {
           const idleKey = this.cfg.textureBase + '_idle';
           if (scene.anims.exists(idleKey) && d.anims.currentAnim?.key !== idleKey) d.play(idleKey, true);
-          if (d._atkTimer <= 0) {
-            d._atkTimer = pCfg.attackCd * 1.5;
-            const angle = Math.atan2(illusionTarget.y - d.y, illusionTarget.x - d.x);
-            scene.events.emit('spawn_projectile', {
-              x: d.x, y: d.y, angle,
-              damage: this.cfg.maxHp * 0.025, fromEnemy: true,
-              key: 'fire_01', speed: 200, tint: 0x00ff88, poisonOnHit: true,
-            });
-          }
+        }
+
+        // Ranged attack — fire from up to 320px so player speed can't prevent it
+        if (d._atkTimer <= 0 && dist <= 320) {
+          d._atkTimer = pCfg.attackCd * 1.5;
+          const angle = Math.atan2(illusionTarget.y - d.y, illusionTarget.x - d.x);
+          scene.events.emit('spawn_projectile', {
+            x: d.x, y: d.y, angle,
+            damage: this.cfg.maxHp * 0.025, fromEnemy: true,
+            key: 'fire_01', speed: 200, tint: 0x00ff88, poisonOnHit: true,
+          });
         }
       });
     }
