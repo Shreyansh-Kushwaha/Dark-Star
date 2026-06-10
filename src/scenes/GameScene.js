@@ -612,7 +612,7 @@ export class GameScene extends Phaser.Scene {
       duration: 800, yoyo: true, repeat: -1,
     });
 
-    const portal = { x, y, color, label, unlocked, visual: gfx, text };
+    const portal = { x, y, color, label, unlocked, visual: gfx, text, glowRing };
     return portal;
   }
 
@@ -787,6 +787,23 @@ export class GameScene extends Phaser.Scene {
 
       // _mapBossOverride already set synchronously before _createBossArena was called
     };
+
+    // Override portals from map-editor placement (runs synchronously, before async place())
+    const mapPortals = mapData.portals || [];
+    if (mapPortals.length > 0) {
+      ['back', 'next'].forEach(dir => {
+        const p = this._portals?.[dir];
+        if (p) { p.visual.destroy(); p.text.destroy(); p.glowRing?.destroy(); }
+      });
+      this._portals = {};
+      for (const p of mapPortals) {
+        const isBack = p.direction === 'back';
+        const portal = this._makePortal(p.x, p.y, isBack ? 0x44aaff : 0xffaa44, isBack ? 'BACK' : 'NEXT', true);
+        portal.targetRegion = (p.targetRegion != null) ? p.targetRegion : null;
+        if (isBack) this._portals.back = portal;
+        else        this._portals.next = portal;
+      }
+    }
 
     if (missing.length > 0) {
       missing.forEach(({ key, url }) => this.load.image(key, url));
@@ -1272,7 +1289,10 @@ export class GameScene extends Phaser.Scene {
 
   _usePortal(isNext) {
     this._portalCooldown = this.time.now + 3000;
-    const newIndex = isNext ? this._regionIndex + 1 : Math.max(0, this._regionIndex - 1);
+    const portal = isNext ? this._portals?.next : this._portals?.back;
+    const newIndex = portal?.targetRegion != null
+      ? portal.targetRegion
+      : (isNext ? this._regionIndex + 1 : Math.max(0, this._regionIndex - 1));
 
     if (newIndex < 0 || newIndex >= REGIONS.length) return;
 

@@ -1810,6 +1810,7 @@ function buildMapData() {
     enemies:     serializeEnemies(),
     boss:        serializeBoss(),
     npcs:        serializeNpcs(),
+    portals:     serializePortals(),
   };
 }
 
@@ -1839,12 +1840,14 @@ function loadJSON(file) {
     restoreEnemyMarkers(data.enemies || []);
     restoreBossMarker(data.boss || null);
     restoreNpcMarkers(data.npcs || []);
+    restorePortals(data.portals || []);
     S.history = [];
     pushHistory();
-    const enemyCount = (data.enemies || []).length;
-    const npcCount   = (data.npcs || []).length;
-    const bossInfo   = data.boss ? ', boss: ' + data.boss.key : '';
-    setStatus('Loaded: ' + file.name + ' (' + data.sprites.length + ' sprites, ' + (data.noWalkZones?.length || 0) + ' zones, ' + enemyCount + ' enemies' + (npcCount ? ', ' + npcCount + ' NPCs' : '') + bossInfo + ')');
+    const enemyCount  = (data.enemies || []).length;
+    const npcCount    = (data.npcs || []).length;
+    const portalCount = (data.portals || []).length;
+    const bossInfo    = data.boss ? ', boss: ' + data.boss.key : '';
+    setStatus('Loaded: ' + file.name + ' (' + data.sprites.length + ' sprites, ' + (data.noWalkZones?.length || 0) + ' zones, ' + enemyCount + ' enemies' + (npcCount ? ', ' + npcCount + ' NPCs' : '') + (portalCount ? ', ' + portalCount + ' portals' : '') + bossInfo + ')');
   };
   reader.readAsText(file);
 }
@@ -1949,14 +1952,16 @@ async function loadRegionData(data, filename, regionIndex) {
   restoreEnemyMarkers(data.enemies || []);
   restoreBossMarker(data.boss || null);
   restoreNpcMarkers(data.npcs || []);
+  restorePortals(data.portals || []);
   // Pre-fill the region index in the Save modal so saving overwrites the same region
   if (regionIndex != null) document.getElementById('region-index-input').value = regionIndex;
   S.history = [];
   pushHistory();
-  const enemyCount = (data.enemies || []).length;
-  const npcCount   = (data.npcs || []).length;
-  const bossInfo   = data.boss ? ', boss: ' + data.boss.key : '';
-  setStatus('Editing region ' + (regionIndex ?? '?') + ': ' + filename + ' (' + data.sprites.length + ' sprites, ' + (data.noWalkZones?.length || 0) + ' zones, ' + enemyCount + ' enemies' + (npcCount ? ', ' + npcCount + ' NPCs' : '') + bossInfo + ')');
+  const enemyCount  = (data.enemies || []).length;
+  const npcCount    = (data.npcs || []).length;
+  const portalCount = (data.portals || []).length;
+  const bossInfo    = data.boss ? ', boss: ' + data.boss.key : '';
+  setStatus('Editing region ' + (regionIndex ?? '?') + ': ' + filename + ' (' + data.sprites.length + ' sprites, ' + (data.noWalkZones?.length || 0) + ' zones, ' + enemyCount + ' enemies' + (npcCount ? ', ' + npcCount + ' NPCs' : '') + (portalCount ? ', ' + portalCount + ' portals' : '') + bossInfo + ')');
 }
 
 document.getElementById('btn-load-region').onclick = openLoadRegionModal;
