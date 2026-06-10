@@ -313,10 +313,6 @@ export class GameScene extends Phaser.Scene {
         this.events.emit('item_acquired', { itemId: reward.item, name: def?.name || reward.name });
       }
     });
-    this.questManager.addEventListener('boss_killed', () => {
-      this._unlockPortalNext();
-    });
-
     // ── Region title ──────────────────────────────────────────────
     this.time.delayedCall(500, () => {
       this.events.emit('region_title', { name: region.name, subtitle: region.subtitle });
@@ -597,12 +593,7 @@ export class GameScene extends Phaser.Scene {
       this._portals.back = this._makePortal(region.portalBack.x, region.portalBack.y, 0x44aaff, 'BACK', true);
     }
     if (region.portalNext) {
-      this._portals.next = this._makePortal(region.portalNext.x, region.portalNext.y, 0xffaa44, 'NEXT', this._regionIndex === 0);
-      if (this._regionIndex > 0) {
-        // Locked until boss killed
-        this._portals.next.locked = true;
-        this._portals.next.visual.setAlpha(0.3);
-      }
+      this._portals.next = this._makePortal(region.portalNext.x, region.portalNext.y, 0xffaa44, 'NEXT', true);
     }
   }
 
@@ -1483,10 +1474,6 @@ export class GameScene extends Phaser.Scene {
     if (this._dialogueActive) {
       this._dialogueActive = false;
       this.events.emit('hide_dialogue');
-      if (this._pendingPortalUnlock) {
-        this._pendingPortalUnlock = false;
-        this._unlockPortalNext();
-      }
       return;
     }
 
@@ -1534,12 +1521,6 @@ export class GameScene extends Phaser.Scene {
           this.events.emit('lore_collected', { count: this.loreManager.count(), total: this.loreManager.total() });
         }
 
-        // Queue portal unlock to fire after player dismisses this dialogue
-        const region = REGIONS[this._regionIndex];
-        const unlockKey = `npc_talk:${npc.npcId}`;
-        if (npc.npcId === 'elder_mahesh' || region.portalUnlock === unlockKey) {
-          this._pendingPortalUnlock = true;
-        }
       }
       return;
     }
@@ -1715,14 +1696,6 @@ export class GameScene extends Phaser.Scene {
       }
     }
 
-    const region = REGIONS[this._regionIndex];
-    if (region.portalUnlock === 'kill_all' && this._fixedEnemyMode) {
-      this._anyEnemyKilled = true;
-      if (this.enemies.filter(e => e.alive).length === 0) {
-        this._unlockPortalNext();
-        this.events.emit('toast', { text: 'The grove is cleansed — the path opens.' });
-      }
-    }
   }
 
   _applyPassiveItem(def) {
