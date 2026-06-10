@@ -105,6 +105,7 @@ button.boss-btn.active{background:#ffd70022;border-color:#ffd700}
   <button id="btn-open">📂 Open</button>
   <button id="btn-save">💾 Save JSON</button>
   <button class="orange" id="btn-save-region">🗂 Save to Region</button>
+  <button class="orange" id="btn-load-region">📂 Load Region</button>
   <button class="green" id="btn-export">🖼️ Export PNG</button>
   <div class="sep"></div>
   <label style="font-size:10px;color:#888">BG:</label>
@@ -220,6 +221,16 @@ button.boss-btn.active{background:#ffd70022;border-color:#ffd700}
     <div style="display:flex;gap:8px;justify-content:flex-end">
       <button class="orange" id="btn-region-confirm">💾 Save</button>
       <button id="btn-region-cancel">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<div id="load-region-modal" style="position:fixed;inset:0;background:#000c;display:none;z-index:1000;align-items:center;justify-content:center">
+  <div style="background:#12001c;border:1px solid #ff8833;border-radius:6px;padding:20px;min-width:340px;max-width:480px;display:flex;flex-direction:column;gap:12px">
+    <div style="color:#ffaa55;font-size:13px;font-weight:bold">📂 Load Region</div>
+    <div id="load-region-list" style="display:flex;flex-direction:column;gap:6px;max-height:300px;overflow-y:auto"></div>
+    <div style="display:flex;gap:8px;justify-content:flex-end">
+      <button id="btn-load-region-cancel">Cancel</button>
     </div>
   </div>
 </div>
@@ -1450,6 +1461,63 @@ document.getElementById('btn-region-confirm').onclick = async () => {
     setStatus('⚠ Save failed: ' + e.message);
   }
 };
+
+// ── Load Region ────────────────────────────────────────────────────────────
+async function openLoadRegionModal() {
+  const listEl = document.getElementById('load-region-list');
+  listEl.innerHTML = '<div style="font-size:10px;color:#888">Loading…</div>';
+  document.getElementById('load-region-modal').style.display = 'flex';
+  try {
+    const res = await fetch('/api/regions');
+    const regions = await res.json();
+    listEl.innerHTML = '';
+    if (regions.length === 0) {
+      listEl.innerHTML = '<div style="font-size:10px;color:#888">No saved regions found.</div>';
+      return;
+    }
+    regions.sort((a, b) => (a.regionIndex ?? 99) - (b.regionIndex ?? 99));
+    for (const r of regions) {
+      const btn = document.createElement('button');
+      const spriteCount = (r.data.sprites || []).length;
+      const enemyCount  = (r.data.enemies || []).length;
+      const bossInfo    = r.data.boss ? ', boss: ' + r.data.boss.key : '';
+      btn.className = 'orange';
+      btn.style.cssText = 'text-align:left;padding:6px 10px;font-size:11px;width:100%';
+      btn.textContent = `Region ${r.regionIndex ?? '?'} — ${r.filename}  (${spriteCount} sprites, ${enemyCount} enemies${bossInfo})`;
+      btn.onclick = () => loadRegionData(r.data, r.filename);
+      listEl.appendChild(btn);
+    }
+  } catch (e) {
+    listEl.innerHTML = '<div style="font-size:10px;color:#ff8888">⚠ Failed to load regions: ' + e.message + '</div>';
+  }
+}
+
+async function loadRegionData(data, filename) {
+  document.getElementById('load-region-modal').style.display = 'none';
+  if (!data.version || !Array.isArray(data.sprites)) { setStatus('⚠ Unrecognised format in ' + filename); return; }
+  if (data.background?.type === 'color' && data.background.value) {
+    document.getElementById('bg-color').value = data.background.value;
+    setBgColor(data.background.value);
+  }
+  await restoreSprites(data.sprites);
+  restoreNoWalkZones(data.noWalkZones || []);
+  restoreEnemyMarkers(data.enemies || []);
+  restoreBossMarker(data.boss || null);
+  S.history = [];
+  pushHistory();
+  const enemyCount = (data.enemies || []).length;
+  const bossInfo   = data.boss ? ', boss: ' + data.boss.key : '';
+  setStatus('Loaded region: ' + filename + ' (' + data.sprites.length + ' sprites, ' + (data.noWalkZones?.length || 0) + ' zones, ' + enemyCount + ' enemies' + bossInfo + ')');
+}
+
+document.getElementById('btn-load-region').onclick = openLoadRegionModal;
+document.getElementById('btn-load-region-cancel').onclick = () => {
+  document.getElementById('load-region-modal').style.display = 'none';
+};
+document.getElementById('load-region-modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('load-region-modal'))
+    document.getElementById('load-region-modal').style.display = 'none';
+});
 
 // ── Export PNG ─────────────────────────────────────────────────────────────
 function exportPNG() {
