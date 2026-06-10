@@ -117,7 +117,7 @@ export const ENEMY_TYPES = {
     attackDmg: 14,
     attackCd: 1400,
     xpValue: 10,
-    scale: 0.55,
+    scale: 2.75,
     tint: null,
     physics: false,
     label: 'Vikrit Kshira',
