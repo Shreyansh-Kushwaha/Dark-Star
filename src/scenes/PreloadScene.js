@@ -266,7 +266,23 @@ export class PreloadScene extends Phaser.Scene {
 
   create() {
     this._defineAnimations();
+    this._loadNpcDialogue();
     this._loadRegionMaps();
+  }
+
+  _loadNpcDialogue() {
+    fetch('/api/npc-dialogue')
+      .then(r => r.json())
+      .then(list => {
+        const mapObj = {};
+        for (const entry of list) {
+          if (entry.id) mapObj[entry.id] = entry;
+        }
+        this.registry.set('npcDialogue', mapObj);
+      })
+      .catch(() => {
+        this.registry.set('npcDialogue', {});
+      });
   }
 
   _loadRegionMaps() {

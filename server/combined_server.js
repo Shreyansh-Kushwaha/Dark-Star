@@ -137,6 +137,9 @@ function buildManifest() {
 const REGIONS_DIR = path.join(GAME_ROOT, 'regions');
 if (!fs.existsSync(REGIONS_DIR)) fs.mkdirSync(REGIONS_DIR, { recursive: true });
 
+const NPC_DIALOGUE_DIR = path.join(GAME_ROOT, 'npc_dialogue');
+if (!fs.existsSync(NPC_DIALOGUE_DIR)) fs.mkdirSync(NPC_DIALOGUE_DIR, { recursive: true });
+
 const server = http.createServer((req, res) => {
   // ── Region map list ────────────────────────────────────────────────────────
   if (req.method === 'GET' && req.url === '/api/regions') {
@@ -184,6 +187,58 @@ const server = http.createServer((req, res) => {
       const filename = path.basename(req.url.slice('/api/regions/'.length));
       if (!filename.endsWith('.json')) throw new Error('Invalid filename');
       const filepath = path.join(REGIONS_DIR, filename);
+      if (!fs.existsSync(filepath)) throw new Error('File not found');
+      fs.unlinkSync(filepath);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: true }));
+    } catch (e) {
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: false, error: e.message }));
+    }
+    return;
+  }
+
+  // ── NPC Dialogue list ──────────────────────────────────────────────────────
+  if (req.method === 'GET' && req.url === '/api/npc-dialogue') {
+    const files = fs.readdirSync(NPC_DIALOGUE_DIR).filter(f => f.endsWith('.json'));
+    const result = [];
+    for (const file of files) {
+      try {
+        const raw = fs.readFileSync(path.join(NPC_DIALOGUE_DIR, file), 'utf8');
+        result.push(JSON.parse(raw));
+      } catch {}
+    }
+    res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' });
+    res.end(JSON.stringify(result));
+    return;
+  }
+
+  // ── Save NPC dialogue ──────────────────────────────────────────────────────
+  if (req.method === 'POST' && req.url === '/api/npc-dialogue/save') {
+    let body = '';
+    req.on('data', chunk => body += chunk);
+    req.on('end', () => {
+      try {
+        const entry = JSON.parse(body);
+        if (!entry.id) throw new Error('id required');
+        const filename = entry.id + '.json';
+        fs.writeFileSync(path.join(NPC_DIALOGUE_DIR, filename), JSON.stringify(entry, null, 2));
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: true, filename }));
+      } catch (e) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: false, error: e.message }));
+      }
+    });
+    return;
+  }
+
+  // ── Delete NPC dialogue ────────────────────────────────────────────────────
+  if (req.method === 'DELETE' && req.url.startsWith('/api/npc-dialogue/')) {
+    try {
+      const id = path.basename(req.url.slice('/api/npc-dialogue/'.length));
+      if (!id) throw new Error('Invalid id');
+      const filepath = path.join(NPC_DIALOGUE_DIR, id + '.json');
       if (!fs.existsSync(filepath)) throw new Error('File not found');
       fs.unlinkSync(filepath);
       res.writeHead(200, { 'Content-Type': 'application/json' });

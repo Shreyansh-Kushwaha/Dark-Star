@@ -95,6 +95,13 @@ button.boss-btn{border-color:#ffd700;color:#ffd700}button.boss-btn:hover{backgro
 button.boss-btn.active{background:#ffd70022;border-color:#ffd700}
 .tab.enemy-tab.active{color:#ff8899;border-bottom-color:#ff4455;background:#ff445511}
 .tab.boss-tab.active{color:#ffd700;border-bottom-color:#ffd700;background:#ffd70011}
+button.npc-btn{border-color:#44ffcc;color:#88ffee}button.npc-btn:hover{background:#001a18}button.npc-btn.active{background:#44ffcc22;border-color:#88ffee}
+.tab.npc-tab.active{color:#88ffee;border-bottom-color:#44ffcc;background:#44ffcc11}
+button.portal-btn{border-color:#00ccff;color:#66eeff}button.portal-btn:hover{background:#001a28}button.portal-btn.active{background:#00ccff22;border-color:#66eeff}
+.tab.portal-tab.active{color:#66eeff;border-bottom-color:#00ccff;background:#00ccff11}
+.portal-card{display:flex;flex-direction:column;gap:5px;padding:8px 10px;background:#080018;border:1px solid #333;border-radius:4px;min-width:120px}
+.portal-card label{font-size:9px;color:#888}
+.portal-card select{background:#0a0010;border:1px solid #333;color:#ccc;padding:2px 4px;font-size:10px;border-radius:2px;font-family:monospace;width:100%}
 </style>
 </head>
 <body>
@@ -135,6 +142,8 @@ button.boss-btn.active{background:#ffd70022;border-color:#ffd700}
   <button class="orange" id="btn-nowalk">⛔ No-Walk Zone</button>
   <button class="enemy-btn" id="btn-enemy-tab">👾 Enemies</button>
   <button class="boss-btn"  id="btn-boss-tab">👑 Boss</button>
+  <button class="npc-btn"    id="btn-npc-tab">👤 NPC</button>
+  <button class="portal-btn" id="btn-portal-tab">🌀 Portals</button>
   <div class="sep"></div>
   <button class="purple" id="btn-upload-asset">⬆ Upload Asset</button>
   <input type="file" id="file-upload-asset" accept="image/*" multiple style="display:none">
@@ -235,6 +244,38 @@ button.boss-btn.active{background:#ffd70022;border-color:#ffd700}
   </div>
 </div>
 
+<div id="npc-modal" style="position:fixed;inset:0;background:#000c;display:none;z-index:1000;align-items:center;justify-content:center">
+  <div style="background:#12001c;border:1px solid #44ffcc;border-radius:6px;padding:20px;min-width:360px;max-width:480px;display:flex;flex-direction:column;gap:10px">
+    <div style="color:#88ffee;font-size:13px;font-weight:bold">👤 NPC Configuration</div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <label style="font-size:10px;color:#888;min-width:60px">NPC ID:</label>
+      <input type="text" id="npc-id" style="flex:1;background:#0a0010;border:1px solid #44ffcc;color:#88ffee;padding:3px 6px;font-size:11px;border-radius:3px;font-family:monospace" placeholder="e.g. village_elder">
+    </div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <label style="font-size:10px;color:#888;min-width:60px">Name:</label>
+      <input type="text" id="npc-name" style="flex:1;background:#0a0010;border:1px solid #333;color:#ccc;padding:3px 6px;font-size:11px;border-radius:3px;font-family:monospace" placeholder="Display name">
+    </div>
+    <div>
+      <label style="font-size:10px;color:#888">First dialogue:</label>
+      <textarea id="npc-first" rows="2" style="width:100%;margin-top:3px;background:#0a0010;border:1px solid #333;color:#ccc;padding:4px 6px;font-size:10px;border-radius:3px;font-family:monospace;resize:vertical" placeholder="What NPC says on first interaction"></textarea>
+    </div>
+    <div>
+      <label style="font-size:10px;color:#888">Active dialogue (quest in progress):</label>
+      <textarea id="npc-active" rows="2" style="width:100%;margin-top:3px;background:#0a0010;border:1px solid #333;color:#ccc;padding:4px 6px;font-size:10px;border-radius:3px;font-family:monospace;resize:vertical" placeholder="Optional — shown when a quest is active"></textarea>
+    </div>
+    <div>
+      <label style="font-size:10px;color:#888">Completed dialogue:</label>
+      <textarea id="npc-completed" rows="2" style="width:100%;margin-top:3px;background:#0a0010;border:1px solid #333;color:#ccc;padding:4px 6px;font-size:10px;border-radius:3px;font-family:monospace;resize:vertical" placeholder="Optional — shown when quest is done"></textarea>
+    </div>
+    <div id="npc-modal-status" style="font-size:9px;color:#666;min-height:13px"></div>
+    <div style="display:flex;gap:8px;justify-content:flex-end">
+      <button class="npc-btn" id="btn-npc-place">📍 Arm Placement</button>
+      <button class="green" id="btn-npc-save-dialogue">💾 Save Dialogue</button>
+      <button id="btn-npc-cancel">Cancel</button>
+    </div>
+  </div>
+</div>
+
 <div id="crop-modal">
   <div id="crop-box">
     <div id="crop-title">✂️ Crop Asset</div>
@@ -272,6 +313,11 @@ const EDITOR_BOSS_TYPES = [
   { key: 'pashana_daitya', label: 'Pashana Daitya', color: '#b27a40', icon: '🪨' },
   { key: 'vayu_rakshasa',  label: 'Vayu Rakshasa',  color: '#6b8cff', icon: '💨' },
   { key: 'viyogasur',      label: 'Viyogasur',      color: '#cc44ff', icon: '💀' },
+];
+
+const EDITOR_NPC_TYPES = [
+  { type: 'yellow', label: 'Village NPC',  color: '#ffcc44', icon: '👤' },
+  { type: 'blue',   label: 'Mystic NPC',   color: '#44aaff', icon: '🧙' },
 ];
 
 // ── State ──────────────────────────────────────────────────────────────────
@@ -312,11 +358,16 @@ const S = {
   redoStack: [],
   // ── Entity placement ──────────────────────────────────────────────────────
   markerLayer: null,
-  activeTrayTab: 'assets',       // 'assets' | 'enemies' | 'boss'
+  activeTrayTab: 'assets',       // 'assets' | 'enemies' | 'boss' | 'npcs'
   placingEnemyType: null,        // enemy type string while arming placement
   placingBossKey: null,          // boss key string while arming placement
   placedEnemies: [],             // [{ id, type, x, y, group }]
   placedBoss: null,              // { key, x, y, group } | null
+  placingNpcType: null,          // 'yellow' | 'blue' while arming placement
+  placingNpcType_config: null,   // config object while arming placement
+  placedNpcs: [],                // [{ id, type, x, y, group, config }]
+  placingPortal: null,           // { direction, targetRegion } while arming placement
+  placedPortals: [],             // [{ id, direction, targetRegion, x, y, group }]
 };
 
 // ── Utility ────────────────────────────────────────────────────────────────
@@ -495,7 +546,7 @@ function bindDrawing() {
 
 function updateCursor() {
   const cc = document.getElementById('canvas-container');
-  if (S.placingAsset || S.placingEnemyType || S.placingBossKey) cc.style.cursor = 'crosshair';
+  if (S.placingAsset || S.placingEnemyType || S.placingBossKey || S.placingNpcType || S.placingPortal) cc.style.cursor = 'crosshair';
   else if (S.panMode)                   cc.style.cursor = 'grab';
   else if (S.deleteMode)                cc.style.cursor = 'not-allowed';
   else if (S.noWalkMode)                cc.style.cursor = 'cell';
@@ -562,6 +613,24 @@ function bindStageClick() {
       pushHistory();
       return;
     }
+    if (S.placingNpcType && onBg) {
+      const pos = S.stage.getPointerPosition();
+      const config = S.placingNpcType_config || {};
+      addNpcMarker(S.placingNpcType,
+        (pos.x - S.stage.x()) / S.stage.scaleX(),
+        (pos.y - S.stage.y()) / S.stage.scaleY(),
+        null, config);
+      pushHistory();
+      return;
+    }
+    if (S.placingPortal && onBg) {
+      const pos = S.stage.getPointerPosition();
+      addPortalMarker(S.placingPortal.direction, S.placingPortal.targetRegion,
+        (pos.x - S.stage.x()) / S.stage.scaleX(),
+        (pos.y - S.stage.y()) / S.stage.scaleY());
+      pushHistory();
+      return;
+    }
     if (onBg) { deselectAll(); }
   });
   S.stage.on('contextmenu', e => { e.evt.preventDefault(); });
@@ -618,6 +687,39 @@ function bindToolbar() {
   };
   document.getElementById('btn-enemy-tab').onclick = () => switchTrayTab('enemies');
   document.getElementById('btn-boss-tab').onclick  = () => switchTrayTab('boss');
+  document.getElementById('btn-npc-tab').onclick    = () => switchTrayTab('npcs');
+  document.getElementById('btn-portal-tab').onclick = () => switchTrayTab('portals');
+
+  document.getElementById('btn-npc-place').onclick = () => {
+    const config = getNpcModalData();
+    if (!config.id) { document.getElementById('npc-modal-status').textContent = '⚠ NPC ID required'; return; }
+    const modal = document.getElementById('npc-modal');
+    modal.style.display = 'none';
+    S.placingNpcType = modal._defaultType || 'yellow';
+    S.placingNpcType_config = config;
+    updateCursor();
+    setStatus('Click on map to place NPC: ' + config.id + ' — Esc to cancel');
+  };
+
+  document.getElementById('btn-npc-save-dialogue').onclick = async () => {
+    const config = getNpcModalData();
+    await saveNpcDialogueToServer(config);
+    const modal = document.getElementById('npc-modal');
+    if (modal._editingNpc) {
+      modal._editingNpc.config = config;
+      pushHistory();
+    }
+  };
+
+  document.getElementById('btn-npc-cancel').onclick = () => {
+    document.getElementById('npc-modal').style.display = 'none';
+    S.placingNpcType = null;
+    updateCursor();
+  };
+  document.getElementById('npc-modal').addEventListener('click', e => {
+    if (e.target === document.getElementById('npc-modal')) document.getElementById('npc-modal').style.display = 'none';
+  });
+
   document.getElementById('btn-upload-asset').onclick = () => document.getElementById('file-upload-asset').click();
   document.getElementById('file-upload-asset').onchange = e => uploadAssets(e.target.files);
   document.getElementById('btn-share').onclick = shareRoom;
@@ -665,8 +767,10 @@ function switchTrayTab(tab) {
   S.activeTrayTab = tab;
   cancelPlacing();
   renderTray();
-  document.getElementById('btn-enemy-tab').classList.toggle('active', tab === 'enemies');
-  document.getElementById('btn-boss-tab').classList.toggle('active',  tab === 'boss');
+  document.getElementById('btn-enemy-tab').classList.toggle('active',  tab === 'enemies');
+  document.getElementById('btn-boss-tab').classList.toggle('active',   tab === 'boss');
+  document.getElementById('btn-npc-tab').classList.toggle('active',    tab === 'npcs');
+  document.getElementById('btn-portal-tab').classList.toggle('active', tab === 'portals');
 }
 
 function renderTray() {
@@ -688,6 +792,18 @@ function renderTray() {
   bossTab.onclick = () => switchTrayTab('boss');
   tabsEl.appendChild(bossTab);
 
+  const npcTab = document.createElement('div');
+  npcTab.className = 'tab npc-tab' + (S.activeTrayTab === 'npcs' ? ' active' : '');
+  npcTab.textContent = '👤 NPC';
+  npcTab.onclick = () => switchTrayTab('npcs');
+  tabsEl.appendChild(npcTab);
+
+  const portalTab = document.createElement('div');
+  portalTab.className = 'tab portal-tab' + (S.activeTrayTab === 'portals' ? ' active' : '');
+  portalTab.textContent = '🌀 Portals';
+  portalTab.onclick = () => switchTrayTab('portals');
+  tabsEl.appendChild(portalTab);
+
   // Asset category tabs
   cats.forEach((cat, i) => {
     const t = document.createElement('div');
@@ -696,12 +812,16 @@ function renderTray() {
     t.onclick = () => { S.activeTrayTab = 'assets'; S.activeCat = i; S.activeGrp = null;
       document.getElementById('btn-enemy-tab').classList.remove('active');
       document.getElementById('btn-boss-tab').classList.remove('active');
+      document.getElementById('btn-npc-tab').classList.remove('active');
+      document.getElementById('btn-portal-tab').classList.remove('active');
       renderTray(); };
     tabsEl.appendChild(t);
   });
 
   if (S.activeTrayTab === 'enemies') { renderEntityTray('enemies'); return; }
   if (S.activeTrayTab === 'boss')    { renderEntityTray('boss');    return; }
+  if (S.activeTrayTab === 'npcs')    { renderEntityTray('npcs');    return; }
+  if (S.activeTrayTab === 'portals') { renderPortalTray();          return; }
 
   const cat = cats[S.activeCat];
   if (!cat) return;
@@ -735,15 +855,37 @@ function renderEntityTray(tab) {
     lbl.style.cssText = 'font-size:10px;color:#ff8899;padding:2px 4px';
     lbl.textContent = 'Click a type, then click the map to place. Click a marker to delete it.';
     subEl.appendChild(lbl);
-  } else {
+  } else if (tab === 'boss') {
     const lbl = document.createElement('span');
     lbl.style.cssText = 'font-size:10px;color:#ffd700;padding:2px 4px';
     lbl.textContent = 'Pick a boss — only one per map. Click the marker to move it.';
+    subEl.appendChild(lbl);
+  } else {
+    const lbl = document.createElement('span');
+    lbl.style.cssText = 'font-size:10px;color:#88ffee;padding:2px 4px';
+    lbl.textContent = 'Pick NPC type — click to configure, then arm placement and click map.';
     subEl.appendChild(lbl);
   }
 
   const grid = document.getElementById('tray-grid');
   grid.innerHTML = '';
+
+  if (tab === 'npcs') {
+    for (const entry of EDITOR_NPC_TYPES) {
+      const tile = document.createElement('div');
+      tile.className = 'entity-tile' + (S.placingNpcType === entry.type ? ' selected' : '');
+      tile.style.borderColor = S.placingNpcType === entry.type ? entry.color : '#333';
+      tile.innerHTML = `<div class="entity-icon">${entry.icon}</div><div class="entity-label" style="color:${entry.color}">${entry.label}</div>`;
+      tile.onclick = () => startPlacingNpc(entry.type);
+      grid.appendChild(tile);
+    }
+    const lbl = document.createElement('div');
+    lbl.style.cssText = 'font-size:9px;color:#88ffee;padding:4px 8px;flex-shrink:0;align-self:center';
+    lbl.textContent = S.placedNpcs.length + ' NPC(s) placed — click marker to edit';
+    grid.appendChild(lbl);
+    return;
+  }
+
   const list = tab === 'enemies' ? EDITOR_ENEMY_TYPES : EDITOR_BOSS_TYPES;
   const selectKey = tab === 'enemies' ? S.placingEnemyType : S.placingBossKey;
 
@@ -885,9 +1027,275 @@ function removeBossMarker() {
   S.markerLayer.batchDraw();
 }
 
+// ── Portal placement ───────────────────────────────────────────────────────
+const PORTAL_REGION_NAMES = [
+  '0 — Gramavana', '1 — Mahāvana', '2 — Vrindavana',
+  '3 — Nāga Pātāl', '4 — Deva Mandira', '5 — Swarga Seema', '6 — Viyoga Durga',
+];
+
+function renderPortalTray() {
+  const subEl = document.getElementById('tray-sub');
+  subEl.innerHTML = '';
+  const lbl = document.createElement('span');
+  lbl.style.cssText = 'font-size:10px;color:#66eeff;padding:2px 4px';
+  lbl.textContent = 'Configure a portal type and target region, then click the map to place it.';
+  subEl.appendChild(lbl);
+
+  const grid = document.getElementById('tray-grid');
+  grid.innerHTML = '';
+
+  for (const direction of ['back', 'next']) {
+    const color    = direction === 'back' ? '#44aaff' : '#ffaa44';
+    const icon     = direction === 'back' ? '← BACK'  : 'NEXT →';
+    const defReg   = direction === 'back' ? 0 : 1;
+    const isActive = S.placingPortal?.direction === direction;
+
+    const card = document.createElement('div');
+    card.className = 'portal-card';
+    card.style.borderColor = isActive ? color : '#333';
+    card.style.background  = isActive ? color + '11' : '#080018';
+
+    const title = document.createElement('div');
+    title.style.cssText = `font-size:13px;font-weight:bold;color:${color};letter-spacing:1px`;
+    title.textContent = icon;
+    card.appendChild(title);
+
+    const regionLabel = document.createElement('label');
+    regionLabel.textContent = 'Goes to region:';
+    card.appendChild(regionLabel);
+
+    const sel = document.createElement('select');
+    sel.id = 'portal-target-' + direction;
+    PORTAL_REGION_NAMES.forEach((name, i) => {
+      const opt = document.createElement('option');
+      opt.value = i;
+      opt.textContent = name;
+      if (i === defReg) opt.selected = true;
+      sel.appendChild(opt);
+    });
+    if (S.placingPortal?.direction === direction) sel.value = S.placingPortal.targetRegion;
+    card.appendChild(sel);
+
+    const btn = document.createElement('button');
+    btn.className = 'portal-btn' + (isActive ? ' active' : '');
+    btn.style.cssText = 'font-size:10px;padding:3px 8px;margin-top:2px';
+    btn.textContent = isActive ? '✦ Placing — click map' : '📍 Arm Placement';
+    btn.onclick = () => {
+      const targetRegion = parseInt(sel.value, 10);
+      if (S.placingPortal?.direction === direction) {
+        S.placingPortal = null;
+        updateCursor();
+        setStatus('');
+      } else {
+        S.placingPortal = { direction, targetRegion };
+        updateCursor();
+        setStatus('Placing ' + icon + ' portal → Region ' + targetRegion + ' — click map, Esc to cancel');
+      }
+      renderPortalTray();
+    };
+    card.appendChild(btn);
+
+    grid.appendChild(card);
+  }
+
+  // List existing portals with delete buttons
+  if (S.placedPortals.length > 0) {
+    const sep = document.createElement('div');
+    sep.style.cssText = 'width:1px;background:#333;margin:0 4px;align-self:stretch';
+    grid.appendChild(sep);
+
+    for (const p of S.placedPortals) {
+      const color = p.direction === 'back' ? '#44aaff' : '#ffaa44';
+      const row = document.createElement('div');
+      row.style.cssText = `display:flex;flex-direction:column;gap:3px;padding:6px 8px;background:#080018;border:1px solid ${color}44;border-radius:4px;min-width:90px`;
+      row.innerHTML = `<span style="color:${color};font-size:11px">${p.direction === 'back' ? '← BACK' : 'NEXT →'}</span><span style="color:#888;font-size:9px">→ Region ${p.targetRegion}<br>x:${Math.round(p.x)} y:${Math.round(p.y)}</span>`;
+      const delBtn = document.createElement('button');
+      delBtn.className = 'red';
+      delBtn.style.cssText = 'font-size:9px;padding:2px 6px;margin-top:2px';
+      delBtn.textContent = '🗑 Remove';
+      delBtn.onclick = () => { removePortalMarker(p.id); pushHistory(); renderPortalTray(); };
+      row.appendChild(delBtn);
+      grid.appendChild(row);
+    }
+  }
+}
+
+function startPlacingPortal(direction, targetRegion) {
+  cancelPlacing();
+  S.placingPortal = { direction, targetRegion };
+  updateCursor();
+  const icon = direction === 'back' ? '← BACK' : 'NEXT →';
+  setStatus('Placing ' + icon + ' portal → Region ' + targetRegion + ' — click map, Esc to cancel');
+  renderPortalTray();
+}
+
+function genPortalId() {
+  return 'portal_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6);
+}
+
+function addPortalMarker(direction, targetRegion, x, y, id) {
+  const portalId = id || genPortalId();
+  const color    = direction === 'back' ? '#44aaff' : '#ffaa44';
+  const arrow    = direction === 'back' ? '←' : '→';
+  const label    = (direction === 'back' ? 'BACK' : 'NEXT') + '\nR' + targetRegion;
+
+  const group = new Konva.Group({ x, y, draggable: true, id: portalId });
+  group.add(new Konva.Circle({ radius: 24, fill: color + '22', stroke: color, strokeWidth: 2.5 }));
+  group.add(new Konva.Text({ text: arrow, fontSize: 20, x: -7, y: -12, fill: '#fff', listening: false }));
+  group.add(new Konva.Text({ text: label, fontSize: 7, x: -26, y: 26, width: 52, align: 'center', fill: color, listening: false }));
+  S.markerLayer.add(group);
+  S.markerLayer.batchDraw();
+
+  group.on('dragend', () => {
+    const p = S.placedPortals.find(p => p.id === portalId);
+    if (p) { p.x = group.x(); p.y = group.y(); }
+    pushHistory();
+  });
+  group.on('click tap', e => {
+    e.cancelBubble = true;
+    removePortalMarker(portalId);
+    pushHistory();
+    if (S.activeTrayTab === 'portals') renderPortalTray();
+    setStatus('Portal removed — Ctrl+Z to undo');
+  });
+
+  S.placedPortals.push({ id: portalId, direction, targetRegion, x, y, group });
+  setStatus('Placed ' + (direction === 'back' ? '← BACK' : 'NEXT →') + ' portal → Region ' + targetRegion + ' — click marker to delete');
+}
+
+function removePortalMarker(id) {
+  const idx = S.placedPortals.findIndex(p => p.id === id);
+  if (idx < 0) return;
+  S.placedPortals[idx].group.destroy();
+  S.placedPortals.splice(idx, 1);
+  S.markerLayer.batchDraw();
+}
+
+function serializePortals() {
+  return S.placedPortals.map(p => ({
+    id: p.id, direction: p.direction, targetRegion: p.targetRegion,
+    x: Math.round(p.group.x()), y: Math.round(p.group.y()),
+  }));
+}
+
+function restorePortals(list) {
+  [...S.placedPortals].forEach(p => removePortalMarker(p.id));
+  for (const p of (list || [])) addPortalMarker(p.direction, p.targetRegion, p.x, p.y, p.id);
+}
+
 function bindEntityPlacing() {
   // Markers are draggable by default; nothing extra needed here.
   // Canvas background click is handled in bindStageClick.
+}
+
+// ── NPC placement ──────────────────────────────────────────────────────────
+function startPlacingNpc(type) {
+  cancelPlacing();
+  S.placingNpcType = type;
+  updateCursor();
+  setStatus('NPC: configure then click "Arm Placement", then click map to place — Esc to cancel');
+  openNpcModal(null, type);
+  renderEntityTray('npcs');
+}
+
+function openNpcModal(existingNpc, defaultType) {
+  const modal = document.getElementById('npc-modal');
+  if (existingNpc) {
+    document.getElementById('npc-id').value = existingNpc.id || '';
+    document.getElementById('npc-name').value = existingNpc.config?.name || '';
+    document.getElementById('npc-first').value = existingNpc.config?.first || '';
+    document.getElementById('npc-active').value = existingNpc.config?.active || '';
+    document.getElementById('npc-completed').value = existingNpc.config?.completed || '';
+    modal._editingNpc = existingNpc;
+    modal._defaultType = existingNpc.type;
+  } else {
+    const autoId = 'npc_' + Math.random().toString(36).slice(2, 7);
+    document.getElementById('npc-id').value = autoId;
+    document.getElementById('npc-name').value = '';
+    document.getElementById('npc-first').value = '';
+    document.getElementById('npc-active').value = '';
+    document.getElementById('npc-completed').value = '';
+    modal._editingNpc = null;
+    modal._defaultType = defaultType || 'yellow';
+  }
+  document.getElementById('npc-modal-status').textContent = '';
+  modal.style.display = 'flex';
+}
+
+function getNpcModalData() {
+  return {
+    id:        document.getElementById('npc-id').value.trim(),
+    name:      document.getElementById('npc-name').value.trim(),
+    first:     document.getElementById('npc-first').value.trim(),
+    active:    document.getElementById('npc-active').value.trim(),
+    completed: document.getElementById('npc-completed').value.trim(),
+  };
+}
+
+async function saveNpcDialogueToServer(config) {
+  if (!config.id) { document.getElementById('npc-modal-status').textContent = '⚠ NPC ID required'; return false; }
+  try {
+    const res = await fetch('/api/npc-dialogue/save', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(config),
+    });
+    const json = await res.json();
+    if (json.ok) {
+      document.getElementById('npc-modal-status').textContent = '✓ Saved: ' + config.id + '.json';
+      return true;
+    }
+    document.getElementById('npc-modal-status').textContent = '⚠ ' + json.error;
+    return false;
+  } catch (e) {
+    document.getElementById('npc-modal-status').textContent = '⚠ ' + e.message;
+    return false;
+  }
+}
+
+function addNpcMarker(type, x, y, id, config) {
+  const cfg = EDITOR_NPC_TYPES.find(n => n.type === type) || { color: '#ffcc44', icon: '👤', label: 'NPC' };
+  const markerId = id || ('npc_m_' + Date.now() + '_' + Math.random().toString(36).slice(2,5));
+
+  const group = new Konva.Group({ x, y, draggable: true, id: markerId });
+  group.add(new Konva.Circle({ radius: 18, fill: cfg.color + '33', stroke: cfg.color, strokeWidth: 2 }));
+  group.add(new Konva.Text({ text: cfg.icon, fontSize: 14, x: -8, y: -9, fill: '#fff', listening: false }));
+  const shortId = (config?.id || markerId).slice(0, 12);
+  group.add(new Konva.Text({ text: shortId, fontSize: 6, x: -28, y: 20, width: 56, align: 'center', fill: cfg.color, listening: false }));
+  S.markerLayer.add(group);
+  S.markerLayer.batchDraw();
+
+  group.on('dragend', () => {
+    const n = S.placedNpcs.find(n => n.id === markerId);
+    if (n) { n.x = group.x(); n.y = group.y(); }
+    pushHistory();
+  });
+  group.on('click tap', e => {
+    e.cancelBubble = true;
+    const n = S.placedNpcs.find(n => n.id === markerId);
+    if (n) openNpcModal(n);
+    else { removeNpcMarker(markerId); pushHistory(); }
+  });
+
+  S.placedNpcs.push({ id: markerId, type, x, y, group, config: config || {} });
+  setStatus('NPC placed — click marker to edit dialogue, drag to reposition');
+}
+
+function removeNpcMarker(id) {
+  const idx = S.placedNpcs.findIndex(n => n.id === id);
+  if (idx < 0) return;
+  S.placedNpcs[idx].group.destroy();
+  S.placedNpcs.splice(idx, 1);
+  S.markerLayer.batchDraw();
+}
+
+function restoreNpcMarkers(list) {
+  [...S.placedNpcs].forEach(n => removeNpcMarker(n.id));
+  for (const n of (list || [])) addNpcMarker(n.type, n.x, n.y, n.id, n.config);
+}
+
+function serializeNpcs() {
+  return S.placedNpcs.map(n => ({ id: n.id, type: n.type, x: Math.round(n.group.x()), y: Math.round(n.group.y()), config: n.config }));
 }
 
 // ── Sprite placement ───────────────────────────────────────────────────────
@@ -928,6 +1336,9 @@ function cancelPlacing() {
   S.placingAsset = null;
   S.placingEnemyType = null;
   S.placingBossKey = null;
+  S.placingNpcType = null;
+  S.placingNpcType_config = null;
+  S.placingPortal = null;
   updateCursor();
   setStatus('');
   renderTrayGrid();
@@ -1197,6 +1608,8 @@ function pushHistory() {
     noWalkZones: serializeNoWalkZones(),
     enemies:     serializeEnemies(),
     boss:        serializeBoss(),
+    npcs:        serializeNpcs(),
+    portals:     serializePortals(),
   }));
   if (S.history.length > 20) S.history.shift();
 }
@@ -1206,6 +1619,8 @@ function applySnapshot(snap) {
   restoreNoWalkZones(snap.noWalkZones || []);
   restoreEnemyMarkers(snap.enemies || []);
   restoreBossMarker(snap.boss || null);
+  restoreNpcMarkers(snap.npcs || []);
+  restorePortals(snap.portals || []);
 }
 
 function undo() {
@@ -1394,6 +1809,7 @@ function buildMapData() {
     noWalkZones: serializeNoWalkZones(),
     enemies:     serializeEnemies(),
     boss:        serializeBoss(),
+    npcs:        serializeNpcs(),
   };
 }
 
@@ -1422,11 +1838,13 @@ function loadJSON(file) {
     restoreNoWalkZones(data.noWalkZones || []);
     restoreEnemyMarkers(data.enemies || []);
     restoreBossMarker(data.boss || null);
+    restoreNpcMarkers(data.npcs || []);
     S.history = [];
     pushHistory();
     const enemyCount = (data.enemies || []).length;
+    const npcCount   = (data.npcs || []).length;
     const bossInfo   = data.boss ? ', boss: ' + data.boss.key : '';
-    setStatus('Loaded: ' + file.name + ' (' + data.sprites.length + ' sprites, ' + (data.noWalkZones?.length || 0) + ' zones, ' + enemyCount + ' enemies' + bossInfo + ')');
+    setStatus('Loaded: ' + file.name + ' (' + data.sprites.length + ' sprites, ' + (data.noWalkZones?.length || 0) + ' zones, ' + enemyCount + ' enemies' + (npcCount ? ', ' + npcCount + ' NPCs' : '') + bossInfo + ')');
   };
   reader.readAsText(file);
 }
@@ -1530,13 +1948,15 @@ async function loadRegionData(data, filename, regionIndex) {
   restoreNoWalkZones(data.noWalkZones || []);
   restoreEnemyMarkers(data.enemies || []);
   restoreBossMarker(data.boss || null);
+  restoreNpcMarkers(data.npcs || []);
   // Pre-fill the region index in the Save modal so saving overwrites the same region
   if (regionIndex != null) document.getElementById('region-index-input').value = regionIndex;
   S.history = [];
   pushHistory();
   const enemyCount = (data.enemies || []).length;
+  const npcCount   = (data.npcs || []).length;
   const bossInfo   = data.boss ? ', boss: ' + data.boss.key : '';
-  setStatus('Editing region ' + (regionIndex ?? '?') + ': ' + filename + ' (' + data.sprites.length + ' sprites, ' + (data.noWalkZones?.length || 0) + ' zones, ' + enemyCount + ' enemies' + bossInfo + ')');
+  setStatus('Editing region ' + (regionIndex ?? '?') + ': ' + filename + ' (' + data.sprites.length + ' sprites, ' + (data.noWalkZones?.length || 0) + ' zones, ' + enemyCount + ' enemies' + (npcCount ? ', ' + npcCount + ' NPCs' : '') + bossInfo + ')');
 }
 
 document.getElementById('btn-load-region').onclick = openLoadRegionModal;

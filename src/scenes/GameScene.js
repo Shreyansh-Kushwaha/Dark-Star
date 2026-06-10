@@ -13,6 +13,7 @@ import { QuestManager } from '../systems/QuestManager.js';
 import { SaveManager } from '../systems/SaveManager.js';
 import { NetworkManager } from '../systems/NetworkManager.js';
 import { QualitySettings } from '../systems/QualitySettings.js';
+import { NPC } from '../entities/NPC.js';
 
 // Poisson-disk sampling (returns {x,y}[] within bounds avoiding exclusion zones)
 function poissonDisk(width, height, minDist, count, exclusions, seed = 42) {
@@ -231,6 +232,7 @@ export class GameScene extends Phaser.Scene {
 
     // ── Enemies ───────────────────────────────────────────────────
     this.enemies     = [];
+    this._mapNpcs    = [];
     this.projectiles = [];
     this.physics.add.collider(this.enemies, this._noWalkGroup);
     this._spawnerTimers = [];
@@ -772,8 +774,15 @@ export class GameScene extends Phaser.Scene {
         const difficulty = (this._region || {}).difficulty ?? 1.0;
         for (const e of mapEnemies) {
           const enemy = new Enemy(this, e.x, e.y, e.type, difficulty);
-          this._enemies.push(enemy);
+          this.enemies.push(enemy);
         }
+      }
+
+      // Spawn NPCs placed in the map editor
+      const mapNpcs = mapData.npcs || [];
+      for (const n of mapNpcs) {
+        const npc = new NPC(this, n.x, n.y, { id: n.id, type: n.type || 'yellow' });
+        this._mapNpcs.push(npc);
       }
 
       // _mapBossOverride already set synchronously before _createBossArena was called
@@ -1043,6 +1052,9 @@ export class GameScene extends Phaser.Scene {
     } else if (!this._bossTriggered && this._bossArenaPos) {
       this._checkBossTrigger();
     }
+
+    // ── Map-editor NPCs ───────────────────────────────────────────
+    for (const npc of this._mapNpcs) { if (npc?.active) npc.update(this.players); }
 
     // ── Revival hold mechanic ─────────────────────────────────────
     this._updateRevival(delta);
@@ -1319,6 +1331,17 @@ export class GameScene extends Phaser.Scene {
     if (this._dialogueActive) {
       this._dialogueActive = false;
       this.events.emit('hide_dialogue');
+      return;
+    }
+
+    // ── Map editor NPCs ───────────────────────────────────────────
+    const npcDialogueMap = this.registry.get('npcDialogue') || {};
+    for (const npc of (this._mapNpcs || [])) {
+      if (!npc?.active || !npc.isPlayerNear) continue;
+      const dlg = npcDialogueMap[npc.npcId];
+      const line = dlg?.first || '⟨NPC⟩ "..."';
+      this._dialogueActive = true;
+      this.events.emit('show_dialogue', { text: line });
       return;
     }
 
