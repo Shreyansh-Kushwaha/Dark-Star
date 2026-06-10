@@ -94,14 +94,23 @@ export class AbilityManager {
   static _agniShield(player, scene) {
     player._agniShieldTimer = 3000;
     if (player._agniShieldFx) { player._agniShieldFx.destroy(); player._agniShieldFx = null; }
-    const fx = scene.add.ellipse(player.x, player.y, 64, 64, 0xff6600, 0.22);
-    player._agniShieldFx = fx;
-    scene.tweens.add({
-      targets: fx, scaleX: 1.18, scaleY: 1.18, alpha: 0.38,
-      duration: 450, yoyo: true, repeat: -1,
+    if (player._agniShieldLoopTimer) { player._agniShieldLoopTimer.remove(false); player._agniShieldLoopTimer = null; }
+
+    // Invisible container as anchor so Player.js setPosition/destroy calls work
+    player._agniShieldFx = scene.add.container(player.x, player.y);
+
+    // Loop lightning VFX around the player for the 3-second shield duration
+    let tick = 0;
+    player._agniShieldLoopTimer = scene.time.addEvent({
+      delay: 280,
+      repeat: 10,
+      callback: () => {
+        if (!player.alive) return;
+        const lKey = tick++ % 2 === 0 ? 'vfx_lightning3' : 'vfx_lightning1';
+        _vfxPlay(scene, lKey, player.x, player.y - 20, 1.5, player.depth - 1);
+      },
     });
-    // Fire burst on activation
-    _vfxPlay(scene, 'vfx_fire1s', player.x, player.y - 20, 1.1, player.depth + 2);
+
     scene.audio.ability();
   }
 

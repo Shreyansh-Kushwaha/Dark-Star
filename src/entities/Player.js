@@ -46,8 +46,9 @@ export class Player extends Phaser.GameObjects.Container {
     this._dodgeTimer         = 0;
     this._guardStance        = false;
     this._questKillCount     = 0;
-    this._agniShieldTimer = 0;
-    this._agniShieldFx    = null;
+    this._agniShieldTimer     = 0;
+    this._agniShieldFx        = null;
+    this._agniShieldLoopTimer = null;
     this._slowMult   = 1.0;
     this._burnTimer  = null;
     this._slowTimer  = null;
@@ -156,6 +157,7 @@ export class Player extends Phaser.GameObjects.Container {
       if (this._agniShieldTimer <= 0) {
         this._agniShieldTimer = 0;
         if (this._agniShieldFx) { this._agniShieldFx.destroy(); this._agniShieldFx = null; }
+        if (this._agniShieldLoopTimer) { this._agniShieldLoopTimer.remove(false); this._agniShieldLoopTimer = null; }
       }
     }
   }
