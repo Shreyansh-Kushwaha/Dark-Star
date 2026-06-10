@@ -208,15 +208,6 @@ export class MainMenuScene extends Phaser.Scene {
     this._regionSelectPanel = null;
     this._regionSelectOpen  = false;
 
-    const hasSave = !!SaveManager.load();
-    if (hasSave) {
-      this._makeButton(cx - 95, 490, 'CONTINUE', () => this._continueGame(),
-        { bg: 0x0a1e0a, border: 0x33cc66, text: '#44ff88', w: 170 });
-      this._makeButton(cx + 95, 490, 'NEW GAME',
-        () => { SaveManager.clear(); this._startGame(false); },
-        { bg: 0x1e0a0a, border: 0xcc3333, text: '#ff6666', w: 170 });
-    }
-
     // Room input (hidden until needed)
     this._roomInput = this.add.text(cx, 600, '', {
       fontSize: '20px', fontFamily: 'monospace', color: '#ffdd00',
