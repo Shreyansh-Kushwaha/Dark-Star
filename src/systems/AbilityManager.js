@@ -12,14 +12,13 @@ const ABILITIES = {
 };
 
 // Plays a one-shot VFX sprite animation at (x, y) in scene.
-function _vfxPlay(scene, animKey, x, y, scale = 1, depth = 10) {
+function _vfxPlay(scene, animKey, x, y, scale = 1, depth = 10, timeScale = 1) {
   if (!scene?.anims?.exists(animKey)) return;
-  const firstFrameKey = animKey.replace('vfx_', 'vfx_').replace(/(\d+)$/, '') + '1';
-  // Derive a valid first-frame image key from the anim key pattern
   const framePrefix = _animToPrefix(animKey);
   if (!framePrefix) return;
   const s = scene.add.sprite(x, y, `${framePrefix}1`).setScale(scale).setDepth(depth).setAlpha(0.92);
   s.play(animKey);
+  if (timeScale !== 1) s.anims.timeScale = timeScale;
   s.once('animationcomplete', () => {
     scene.tweens.add({ targets: s, alpha: 0, duration: 120, onComplete: () => s.destroy() });
   });
@@ -107,7 +106,7 @@ export class AbilityManager {
       callback: () => {
         if (!player.alive) return;
         tick++;
-        _vfxPlay(scene, 'vfx_lightning5', player.x, player.y - 20, 1.5, player.depth - 1);
+        _vfxPlay(scene, 'vfx_lightning5', player.x, player.y - 20, 0.85, player.depth - 1, 0.5);
       },
     });
 
