@@ -106,8 +106,8 @@ export class AbilityManager {
       repeat: 10,
       callback: () => {
         if (!player.alive) return;
-        const lKey = tick++ % 2 === 0 ? 'vfx_lightning3' : 'vfx_lightning1';
-        _vfxPlay(scene, lKey, player.x, player.y - 20, 1.5, player.depth - 1);
+        tick++;
+        _vfxPlay(scene, 'vfx_lightning5', player.x, player.y - 20, 1.5, player.depth - 1);
       },
     });
 
