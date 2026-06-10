@@ -142,13 +142,6 @@ export class UIScene extends Phaser.Scene {
     // Starts off-screen below; slides up on boss_entered
     this._bossContainer = this.add.container(0, GAME_H + 200).setVisible(false);
 
-    // Dark semi-transparent panel behind everything
-    const panelBg = this.add.rectangle(GAME_W / 2, GAME_H - 60, GAME_W, 122, 0x000000, 0.90).setOrigin(0.5);
-
-    // Gold top border lines
-    const borderLine  = this.add.rectangle(GAME_W / 2, PANEL_TOP,     GAME_W, 2, 0xaa8833, 1).setOrigin(0.5, 0);
-    const borderLine2 = this.add.rectangle(GAME_W / 2, PANEL_TOP + 5, GAME_W, 1, 0x664400, 0.5).setOrigin(0.5, 0);
-
     // Boss name — centered, gold serif
     this._bossName = this.add.text(GAME_W / 2, nameY, '', {
       fontSize: '22px', color: '#ffd700', fontFamily: 'serif',
@@ -156,47 +149,37 @@ export class UIScene extends Phaser.Scene {
       letterSpacing: 8,
     }).setOrigin(0.5);
 
-    // Phase label — right side, fades in/out
+    // Phase label — kept for code compatibility, invisible
     this._bossPhaseLabel = this.add.text(GAME_W - 32, nameY, '', {
       fontSize: '13px', color: '#ff8888', fontFamily: 'monospace', fontStyle: 'bold',
       stroke: '#000', strokeThickness: 3,
     }).setOrigin(1, 0.5).setAlpha(0);
 
-    // HP bar stack (bg → ghost → fill, so fill renders on top)
-    const hpLabel      = this.add.text(30, hpY, 'HP', { fontSize: '9px', color: '#777', fontFamily: 'monospace' }).setOrigin(0, 0.5);
+    // HP bar stack (bg → ghost → fill)
     this._bossHpBg     = this.add.rectangle(BAR_L, hpY, BAR_W, barH, 0x1a0808).setOrigin(0, 0.5);
     this._bossHpDelay  = this.add.rectangle(BAR_L, hpY, BAR_W, barH, 0x882200).setOrigin(0, 0.5);
     this._bossHpFill   = this.add.rectangle(BAR_L, hpY, BAR_W, barH, 0xcc1111).setOrigin(0, 0.5);
 
-    // HP bar inner highlight (top edge glint)
-    const hpGlint = this.add.rectangle(BAR_L, hpY - barH / 2 + 2, BAR_W, 3, 0xff5555, 0.3).setOrigin(0, 0);
-
-    // Phase separator notches (at 50% and 30% of bar)
-    const notch50 = this.add.rectangle(BAR_L + BAR_W * 0.50, hpY, 3, barH + 8, 0xffd700, 0.9).setOrigin(0.5);
-    const notch30 = this.add.rectangle(BAR_L + BAR_W * 0.30, hpY, 3, barH + 8, 0xff6600, 0.9).setOrigin(0.5);
-
-    // HP number
+    // HP number — kept for code compatibility, invisible
     this._bossHpText = this.add.text(GAME_W - 32, hpY, '', {
       fontSize: '11px', color: '#cccccc', fontFamily: 'monospace',
-    }).setOrigin(1, 0.5);
+    }).setOrigin(1, 0.5).setVisible(false);
 
-    // Posture bar
-    const postLabel       = this.add.text(30, postY, 'POSTURE', { fontSize: '7px', color: '#555', fontFamily: 'monospace' }).setOrigin(0, 0.5);
-    this._bossPostureBg   = this.add.rectangle(POST_L, postY, POST_W, postH, 0x111111).setOrigin(0, 0.5);
-    this._bossPostureFill = this.add.rectangle(POST_L, postY, POST_W, postH, 0xff8800).setOrigin(0, 0.5);
+    // Posture bar — kept for code compatibility, invisible
+    this._bossPostureBg   = this.add.rectangle(POST_L, postY, POST_W, postH, 0x111111).setOrigin(0, 0.5).setVisible(false);
+    this._bossPostureFill = this.add.rectangle(POST_L, postY, POST_W, postH, 0xff8800).setOrigin(0, 0.5).setVisible(false);
 
-    // Stone armor bar (hidden until activated — pashana_daitya phase 2)
+    // Stone armor bar — kept for code compatibility, invisible
     const armorY = GAME_H - 30;
     this._bossArmorLabel = this.add.text(30, armorY, 'STONE ARMOR', { fontSize: '7px', color: '#aaaaaa', fontFamily: 'monospace' }).setOrigin(0, 0.5).setVisible(false);
     this._bossArmorBg    = this.add.rectangle(POST_L, armorY, POST_W, postH, 0x111111).setOrigin(0, 0.5).setVisible(false);
     this._bossArmorFill  = this.add.rectangle(POST_L, armorY, POST_W, postH, 0x999999).setOrigin(0, 0.5).setVisible(false);
 
     this._bossContainer.add([
-      panelBg, borderLine, borderLine2,
       this._bossName, this._bossPhaseLabel,
-      hpLabel, this._bossHpBg, this._bossHpDelay, this._bossHpFill,
-      hpGlint, notch50, notch30, this._bossHpText,
-      postLabel, this._bossPostureBg, this._bossPostureFill,
+      this._bossHpBg, this._bossHpDelay, this._bossHpFill,
+      this._bossHpText,
+      this._bossPostureBg, this._bossPostureFill,
       this._bossArmorLabel, this._bossArmorBg, this._bossArmorFill,
     ]);
 
