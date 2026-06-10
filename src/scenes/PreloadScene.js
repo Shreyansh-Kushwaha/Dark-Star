@@ -262,13 +262,6 @@ export class PreloadScene extends Phaser.Scene {
     this.load.spritesheet('mimic_ss_death',   `${A3}/monsters/mimic/death.png`,        { frameWidth: 146, frameHeight: 146 });
     this.load.spritesheet('mimic_ss_walk',    `${A3}/monsters/mimic/walk.png`,         { frameWidth: 146, frameHeight: 146 });
 
-    // ── Food pickups ───────────────────────────────────────────────
-    this.load.spritesheet('food_donut',  `${A3}/food/donut.png`,  { frameWidth: 32, frameHeight: 32 });
-    this.load.spritesheet('food_pizza',  `${A3}/food/pizza.png`,  { frameWidth: 32, frameHeight: 32 });
-    this.load.spritesheet('food_melon',  `${A3}/food/melon.png`,  { frameWidth: 32, frameHeight: 32 });
-    this.load.image('food_burger', `${A3}/food/burger.png`);
-    this.load.image('food_cookie', `${A3}/food/cookie.png`);
-    this.load.image('food_cherry', `${A3}/food/cherry.png`);
   }
 
   create() {
@@ -466,10 +459,6 @@ export class PreloadScene extends Phaser.Scene {
     anims.create({ key: 'mimic_hurt',      frames: anims.generateFrameNumbers('mimic_ss_hurt',      { start: 0, end: 2  }), frameRate: 12, repeat: 0  });
     anims.create({ key: 'mimic_dead',      frames: anims.generateFrameNumbers('mimic_ss_death',     { start: 0, end: 5  }), frameRate: 10, repeat: 0  });
 
-    // ── Food pickup animations ────────────────────────────────
-    anims.create({ key: 'food_donut_spin', frames: anims.generateFrameNumbers('food_donut', { start: 0, end: 8 }), frameRate: 8, repeat: -1 });
-    anims.create({ key: 'food_pizza_eat',  frames: anims.generateFrameNumbers('food_pizza', { start: 0, end: 4 }), frameRate: 10, repeat: -1 });
-    anims.create({ key: 'food_melon_spin', frames: anims.generateFrameNumbers('food_melon', { start: 0, end: 4 }), frameRate: 8, repeat: -1 });
   }
 
   _frames(prefix, nums) {

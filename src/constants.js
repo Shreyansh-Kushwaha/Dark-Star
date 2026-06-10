@@ -56,10 +56,7 @@ export const XP_THRESHOLDS = [100, 250, 450, 700, 1000, 1350, 1750, 2200, 2700, 
 // passive: auto-applied on pickup (permanent stat boost)
 // token: story/lore item with no mechanical effect
 export const ITEM_DEFS = {
-  healing_herb:    { name: 'Healing Herb',    type: 'consumable', effect: { stat: 'hp',       amount: 40  }, desc: 'Restores 40 HP' },
   forest_totem:    { name: 'Forest Totem',    type: 'consumable', effect: { stat: 'stamina',  amount: 50  }, desc: 'Restores 50 Stamina' },
-  spirit_fern:     { name: 'Spirit Fern',     type: 'consumable', effect: { stat: 'hp',       amount: 60  }, desc: 'Restores 60 HP' },
-  water_blessing:  { name: 'Water Blessing',  type: 'consumable', effect: { stat: 'hp',       amount: 80  }, desc: 'Restores 80 HP' },
   jal_tear:        { name: 'Jal Tear',        type: 'consumable', effect: { stat: 'stamina',  amount: 80  }, desc: 'Restores 80 Stamina' },
   prithvi_shard:   { name: 'Prithvi Shard',   type: 'passive',    effect: { stat: 'maxHp',    amount: 20  }, desc: '+20 Max HP (permanent)' },
   agni_ember:      { name: 'Agni Ember',      type: 'passive',    effect: { stat: 'abilityPow', amount: 0.1 }, desc: '+10% Ability Power (permanent)' },

@@ -49,7 +49,7 @@ export const QUESTS = {
     title: 'Healing Herbs',
     desc: 'Rukmini needs medicinal herbs — she says the oldest remedies carry memory alongside medicine. Defeat forest rakshasas to recover them.',
     trigger: 'npc_talk:gramavana_villager', complete: 'enemy_kills:5',
-    reward: { item: 'healing_herb', name: 'Healing Herb' },
+    reward: null,
   },
   gramavana_sq2: {
     id: 'gramavana_sq2', type: 'side',
@@ -70,7 +70,7 @@ export const QUESTS = {
     title: "The Scholar's Specimen",
     desc: 'Scholar Priya needs a spirit-fern whose roots may hold memory dust of the erased god.',
     trigger: 'npc_talk:forest_scholar', complete: 'enemy_kills:5',
-    reward: { item: 'spirit_fern', name: 'Spirit Fern' },
+    reward: null,
   },
   mahavana_sq3: {
     id: 'mahavana_sq3', type: 'side',
@@ -91,7 +91,7 @@ export const QUESTS = {
     title: 'Water of Life',
     desc: 'Dancer Ishani seeks pure water. She hears a hymn with six notes — the last note always missing.',
     trigger: 'npc_talk:vrindavana_dancer', complete: 'pressure_plate',
-    reward: { item: 'water_blessing', name: 'Water Blessing' },
+    reward: null,
   },
   nagapatal_sq1: {
     id: 'nagapatal_sq1', type: 'side',

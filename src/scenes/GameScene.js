@@ -1137,32 +1137,6 @@ export class GameScene extends Phaser.Scene {
       }
     }
 
-    // ── Food pickup collection ────────────────────────────────────
-    if (this.foodPickups?.length) {
-      for (let i = this.foodPickups.length - 1; i >= 0; i--) {
-        const fp = this.foodPickups[i];
-        if (fp.collected) { this.foodPickups.splice(i, 1); continue; }
-        for (const pl of this.players) {
-          if (!pl?.alive || pl.downed) continue;
-          if (Phaser.Math.Distance.Between(fp.x, fp.y, pl.x, pl.y) < 40) {
-            fp.collected = true;
-            pl.hp = Math.min(pl.maxHp, pl.hp + fp.healAmt);
-            pl._updateHpBar?.();
-            // Golden pickup flash
-            if (this.anims?.exists('vfx_yellow1')) {
-              const s = this.add.sprite(fp.x, fp.y - 10, 'vfx_y1_1').setScale(1.0).setDepth(fp.sprite.depth + 1).setAlpha(0.85);
-              s.play('vfx_yellow1');
-              s.once('animationcomplete', () => s.destroy());
-            }
-            this.tweens.add({ targets: fp.sprite, y: fp.sprite.y - 20, alpha: 0, duration: 300, onComplete: () => fp.sprite.destroy() });
-            this.foodPickups.splice(i, 1);
-            this.events.emit('toast', { text: `+${fp.healAmt} HP`, color: '#88ff88' });
-            break;
-          }
-        }
-      }
-    }
-
     // ── Projectiles ───────────────────────────────────────────────
     for (let i = this.projectiles.length - 1; i >= 0; i--) {
       const p = this.projectiles[i];
@@ -1661,20 +1635,8 @@ export class GameScene extends Phaser.Scene {
     this._comboTimer = this.time.delayedCall(3000, () => { this._comboCount = 0; this._comboTimer = null; });
     if (this._comboCount >= 2) this.events.emit('kill_combo', { count: this._comboCount });
 
-    // Food drop — 28% chance, elite/mimic drop better food
-    const e = data.enemy;
-    const roll = Math.random();
-    if (roll < 0.28) {
-      const isElite = e.typeKey === 'elite' || e.typeKey === 'mimic';
-      const isMid   = e.typeKey === 'orc' || e.typeKey === 'slimem' || e.typeKey === 'rat';
-      let foodType, healAmt;
-      if (isElite)      { foodType = 'food_donut';  healAmt = 50; }
-      else if (isMid)   { foodType = 'food_pizza';  healAmt = 35; }
-      else              { foodType = 'food_melon';  healAmt = 20; }
-      this._spawnFoodPickup(e.x, e.y, foodType, healAmt);
-    }
-
     // XP gain
+    const e = data.enemy;
     const xpGain = e.cfg?.xpValue ?? 10;
     const primaryPlayer = this.players?.find(p => p?.alive) || this.players?.[0];
     if (primaryPlayer?.gainXP) {
@@ -1714,31 +1676,6 @@ export class GameScene extends Phaser.Scene {
       if (def.effect.stat === 'maxHp') this._save.playerStats.maxHp = (this._save.playerStats.maxHp || 200) + def.effect.amount;
       if (def.effect.stat === 'abilityPow') this._save.playerStats.abilityPow = Math.round(((this._save.playerStats.abilityPow || 1.0) + def.effect.amount) * 100) / 100;
     }
-  }
-
-  _spawnFoodPickup(x, y, textureKey, healAmt) {
-    if (!this.foodPickups) this.foodPickups = [];
-    const animMap = { food_donut: 'food_donut_spin', food_pizza: 'food_pizza_eat', food_melon: 'food_melon_spin' };
-    const isAnimated = !!animMap[textureKey];
-    const sprite = isAnimated
-      ? this.add.sprite(x, y - 5, textureKey).play(animMap[textureKey])
-      : this.add.image(x, y - 5, textureKey);
-    sprite.setDepth(y + 5).setScale(isAnimated ? 2.5 : 2.0);
-
-    // Bob tween
-    this.tweens.add({ targets: sprite, y: sprite.y - 6, duration: 600, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
-
-    const pickup = { sprite, healAmt, textureKey, x, y, lifetime: 15000 };
-    this.foodPickups.push(pickup);
-
-    // Auto-despawn
-    this.time.delayedCall(15000, () => {
-      if (!pickup.collected) {
-        this.tweens.add({ targets: sprite, alpha: 0, duration: 400, onComplete: () => sprite.destroy() });
-        const i = this.foodPickups.indexOf(pickup);
-        if (i > -1) this.foodPickups.splice(i, 1);
-      }
-    });
   }
 
   _onBossPhaseChanged(data) {

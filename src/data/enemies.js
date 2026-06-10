@@ -12,7 +12,7 @@ export const ENEMY_TYPES = {
     tint: null,
     physics: false,
     label: 'Forest Raksha',
-    drops: [{ item: 'healing_herb', chance: 0.08 }],
+    drops: [],
   },
   ranged: {
     key: 'ranged',
@@ -27,7 +27,7 @@ export const ENEMY_TYPES = {
     tint: null,
     physics: false,
     label: 'Shadara Archer',
-    drops: [{ item: 'healing_herb', chance: 0.06 }],
+    drops: [],
   },
   flying: {
     key: 'flying',
@@ -42,7 +42,7 @@ export const ENEMY_TYPES = {
     tint: 0x0891b2,
     physics: true,
     label: 'Vayu Bhuta',
-    drops: [{ item: 'spirit_fern', chance: 0.07 }],
+    drops: [],
   },
   orc: {
     key: 'orc',
@@ -57,7 +57,7 @@ export const ENEMY_TYPES = {
     tint: null,
     physics: false,
     label: 'Vana Raksha',
-    drops: [{ item: 'healing_herb', chance: 0.12 }, { item: 'forest_totem', chance: 0.04 }],
+    drops: [{ item: 'forest_totem', chance: 0.04 }],
   },
   elite: {
     key: 'elite',
@@ -121,7 +121,7 @@ export const ENEMY_TYPES = {
     tint: null,
     physics: false,
     label: 'Vikrit Kshira',
-    drops: [{ item: 'water_blessing', chance: 0.05 }],
+    drops: [],
   },
   mimic: {
     key: 'mimic',
