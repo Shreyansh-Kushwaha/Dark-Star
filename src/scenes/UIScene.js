@@ -807,6 +807,12 @@ export class UIScene extends Phaser.Scene {
     }).setOrigin(0.5).setDepth(depth + 1).setAlpha(0);
     this.tweens.add({ targets: sub, alpha: 1, duration: 320, delay: 400 });
 
+    const hint = this.add.text(GAME_W / 2, GAME_H / 2 + 92, 'Click a card  —  or press  1 / 2 / 3', {
+      fontSize: '12px', color: '#aa8855', fontFamily: 'monospace',
+    }).setOrigin(0.5).setDepth(depth + 1).setAlpha(0);
+    this.tweens.add({ targets: hint, alpha: 1, duration: 280, delay: 720 });
+
+    let _chosen = false;
     const cardObjs = [];
     for (let i = 0; i < 3; i++) {
       const c  = choices[i];
@@ -814,7 +820,8 @@ export class UIScene extends Phaser.Scene {
       const cy = GAME_H / 2 + 14;
 
       const bg  = this.add.rectangle(cx, cy, 186, 130, 0x1a1000, 0.92)
-        .setDepth(depth + 1).setAlpha(0).setStrokeStyle(2, 0x886633);
+        .setDepth(depth + 1).setAlpha(0).setStrokeStyle(2, 0x886633)
+        .setInteractive({ useHandCursor: true });
       const num = this.add.text(cx, cy - 46, `[${c.key}]`, {
         fontSize: '22px', color: '#ffd700', fontFamily: 'monospace',
       }).setOrigin(0.5).setDepth(depth + 2).setAlpha(0);
@@ -825,16 +832,24 @@ export class UIScene extends Phaser.Scene {
         fontSize: '13px', color: '#ccaa77', fontFamily: 'monospace',
       }).setOrigin(0.5).setDepth(depth + 2).setAlpha(0);
 
+      const cardIdx = i;
+      bg.on('pointerover', () => bg.setStrokeStyle(3, 0xffd700));
+      bg.on('pointerout',  () => bg.setStrokeStyle(2, 0x886633));
+      bg.on('pointerdown', () => applyChoice(cardIdx));
+
       const delay = 500 + i * 110;
       this.tweens.add({ targets: [bg, num, lbl, desc], alpha: 1, duration: 280, delay });
       cardObjs.push({ bg, num, lbl, desc });
     }
 
-    const allObjs = [veil, title, sub, ...cardObjs.flatMap(c => [c.bg, c.num, c.lbl, c.desc])];
+    const allObjs = [veil, title, sub, hint, ...cardObjs.flatMap(c => [c.bg, c.num, c.lbl, c.desc])];
 
     const applyChoice = (idx) => {
+      if (_chosen) return;
+      _chosen = true;
       k1.off('down'); k2.off('down'); k3.off('down');
       k1.destroy(); k2.destroy(); k3.destroy();
+      cardObjs.forEach(c => c.bg.disableInteractive());
 
       const c   = choices[idx];
       const tier = ((this._statTiers?.[c.stat] || 0) + 1);
@@ -859,7 +874,7 @@ export class UIScene extends Phaser.Scene {
     const k1 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ONE);
     const k2 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.TWO);
     const k3 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.THREE);
-    this.time.delayedCall(700, () => {
+    this.time.delayedCall(600, () => {
       k1.once('down', () => applyChoice(0));
       k2.once('down', () => applyChoice(1));
       k3.once('down', () => applyChoice(2));

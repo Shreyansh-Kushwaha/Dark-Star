@@ -216,14 +216,14 @@ export class Player extends Phaser.GameObjects.Container {
     if (scene?.cheatConsoleOpen) return;
     if (keys.J?.isDown && this._lightCd <= 0 && !this.dodging) {
       this._lightCd = LIGHT_CD;
-      this._doAttack(LIGHT_DMG * this.abilityPow * this._nextAttackMult, 40, enemies, scene);
+      this._doAttack(LIGHT_DMG * this.abilityPow * this._nextAttackMult, 0, enemies, scene);
       this._nextAttackMult = 1;
       scene.audio.hit();
     }
 
     if (keys.K?.isDown && this._heavyCd <= 0 && !this.dodging) {
       this._heavyCd = HEAVY_CD;
-      this._doAttack(HEAVY_DMG * this.abilityPow * this._nextAttackMult, 80, enemies, scene);
+      this._doAttack(HEAVY_DMG * this.abilityPow * this._nextAttackMult, 0, enemies, scene);
       this._nextAttackMult = 1;
       scene.audio.heavyHit();
     }
@@ -365,7 +365,6 @@ export class Player extends Phaser.GameObjects.Container {
 
     if (scene?.audio) scene.audio.playerDamage();
 
-    this._hitstopTimer = 60;
     this.sprite.setTint(0xff6666);
     this.scene.time.delayedCall(150, () => this.sprite.clearTint());
 
