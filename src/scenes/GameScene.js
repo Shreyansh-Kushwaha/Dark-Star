@@ -124,6 +124,7 @@ export class GameScene extends Phaser.Scene {
 
     // Physics world
     this.physics.world.setBounds(0, 0, WORLD_W, WORLD_H);
+    this._noWalkGroup = this.physics.add.staticGroup();
 
     // ── World setup ────────────────────────────────────────────────
     this._setupWorld(region);
@@ -150,6 +151,7 @@ export class GameScene extends Phaser.Scene {
     const p2 = new Player(this, spawnPos.x + 60, spawnPos.y, false, saveData, p2Char);
     p2.isLocal = isClient;
     this.players.push(p2);
+    this.physics.add.collider(this.players, this._noWalkGroup);
 
     // Camera follows the local player
     const localPlayer = isClient ? p2 : p1;
@@ -232,6 +234,7 @@ export class GameScene extends Phaser.Scene {
     this.enemies     = [];
     this.projectiles = [];
     this.npcs        = [];
+    this.physics.add.collider(this.enemies, this._noWalkGroup);
     this._spawnerTimers = [];
     this._spawnerPositions = region.spawnerPositions || [];
     this._treePositions = [];
@@ -749,6 +752,15 @@ export class GameScene extends Phaser.Scene {
   }
 
   _buildFromMapData(mapData) {
+    // Build no-walk collision zones (invisible static physics bodies)
+    for (const z of (mapData.noWalkZones || [])) {
+      const rect = this.add.rectangle(z.x + z.w / 2, z.y + z.h / 2, z.w, z.h);
+      rect.setVisible(false);
+      this.physics.add.existing(rect, true);
+      this._noWalkGroup.add(rect);
+    }
+    if ((mapData.noWalkZones || []).length > 0) this._noWalkGroup.refresh();
+
     const sprites = mapData.sprites || [];
     const missing = [];
 
