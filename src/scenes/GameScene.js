@@ -306,8 +306,8 @@ export class GameScene extends Phaser.Scene {
       this.events.emit('quest_completed', e.detail);
       const reward = e.detail?.quest?.reward;
       if (reward?.item) {
-        SaveManager.addItem(this.saveData, reward.item);
-        SaveManager.save(this.saveData);
+        SaveManager.addItem(this._save, reward.item);
+        SaveManager.save(this._save);
         const def = ITEM_DEFS[reward.item];
         if (def?.type === 'passive') this._applyPassiveItem(def);
         this.events.emit('item_acquired', { itemId: reward.item, name: def?.name || reward.name });
@@ -1698,16 +1698,16 @@ export class GameScene extends Phaser.Scene {
     const primaryPlayer = this.players?.find(p => p?.alive) || this.players?.[0];
     if (primaryPlayer?.gainXP) {
       primaryPlayer.gainXP(xpGain);
-      this.saveData.playerXP = primaryPlayer.xp;
-      this.saveData.playerLevel = primaryPlayer.level;
+      this._save.playerXP = primaryPlayer.xp;
+      this._save.playerLevel = primaryPlayer.level;
     }
 
     // Item drop from enemy loot table
     const drops = e.cfg?.drops || [];
     for (const drop of drops) {
       if (Math.random() < drop.chance) {
-        SaveManager.addItem(this.saveData, drop.item);
-        SaveManager.save(this.saveData);
+        SaveManager.addItem(this._save, drop.item);
+        SaveManager.save(this._save);
         const def = ITEM_DEFS[drop.item];
         if (def?.type === 'passive') this._applyPassiveItem(def);
         this.events.emit('item_acquired', { itemId: drop.item, name: def?.name || drop.item });
@@ -1737,9 +1737,9 @@ export class GameScene extends Phaser.Scene {
         p.abilityPow = Math.round((p.abilityPow + def.effect.amount) * 100) / 100;
       }
     }
-    if (this.saveData?.playerStats) {
-      if (def.effect.stat === 'maxHp') this.saveData.playerStats.maxHp = (this.saveData.playerStats.maxHp || 200) + def.effect.amount;
-      if (def.effect.stat === 'abilityPow') this.saveData.playerStats.abilityPow = Math.round(((this.saveData.playerStats.abilityPow || 1.0) + def.effect.amount) * 100) / 100;
+    if (this._save?.playerStats) {
+      if (def.effect.stat === 'maxHp') this._save.playerStats.maxHp = (this._save.playerStats.maxHp || 200) + def.effect.amount;
+      if (def.effect.stat === 'abilityPow') this._save.playerStats.abilityPow = Math.round(((this._save.playerStats.abilityPow || 1.0) + def.effect.amount) * 100) / 100;
     }
   }
 
@@ -1810,15 +1810,15 @@ export class GameScene extends Phaser.Scene {
     const primaryPlayer = this.players?.find(p => p?.alive) || this.players?.[0];
     if (primaryPlayer?.gainXP) {
       primaryPlayer.gainXP(bossXp);
-      this.saveData.playerXP = primaryPlayer.xp;
-      this.saveData.playerLevel = primaryPlayer.level;
+      this._save.playerXP = primaryPlayer.xp;
+      this._save.playerLevel = primaryPlayer.level;
     }
 
     // Boss reward item
     const bossRewardItem = BOSSES[bossKey]?.rewardItem;
     if (bossRewardItem) {
-      SaveManager.addItem(this.saveData, bossRewardItem);
-      SaveManager.save(this.saveData);
+      SaveManager.addItem(this._save, bossRewardItem);
+      SaveManager.save(this._save);
       const def = ITEM_DEFS[bossRewardItem];
       this.events.emit('item_acquired', { itemId: bossRewardItem, name: def?.name || bossRewardItem });
     }
