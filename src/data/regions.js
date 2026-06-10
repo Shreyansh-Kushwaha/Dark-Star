@@ -12,27 +12,13 @@ export const REGIONS = [
     bgColor:     0x4a7c3f,
     bgColor2:    0x3d6a33,
     borderColor: 0x1e3d18,
-    difficulty: 0.4,           // tutorial difficulty — very easy
+    difficulty: 0.4,
     bossKey: null,
     spawnPos: { x: 380, y: CY },
     bossPos:  { x: 2800, y: CY },
     portalBack: { x: 120, y: CY },
     portalNext: { x: WORLD_W - 120, y: CY },
 
-    // Village zone: x 160–860, y 500–1500
-    // Forest / tutorial zone: x 900+
-    villageZone: { x: 160, y: 500, w: 700, h: 1000 },
-
-    // Five villagers clustered in the village
-    npcPositions: [
-      { x: 460, y: 900,  id: 'elder_mahesh',       type: 'yellow' },
-      { x: 340, y: 780,  id: 'gramavana_villager',  type: 'blue'   },
-      { x: 600, y: 780,  id: 'village_warrior',     type: 'yellow' },
-      { x: 340, y: 1150, id: 'village_child',       type: 'blue'   },
-      { x: 620, y: 1150, id: 'village_healer',      type: 'blue'   },
-    ],
-
-    // Spawners deep in the forest — well away from the village
     spawnerPositions: [
       { x: 1200, y: 700  },
       { x: 1600, y: 1350 },
@@ -53,7 +39,7 @@ export const REGIONS = [
     ambientKey: 0,
   },
 
-  // 1 — Mahāvana  (deep green, half-village half-dense-forest)
+  // 1 — Mahāvana  (deep green, dense forest)
   {
     index: 1,
     name: 'Mahāvana',
@@ -68,15 +54,6 @@ export const REGIONS = [
     portalBack: { x: 120, y: CY },
     portalNext: { x: WORLD_W - 120, y: CY },
 
-    villageZone: { x: 120, y: 500, w: 780, h: 1000 },
-    villageStyle: 'hermit',
-
-    npcPositions: [
-      { x: 520, y: 900,  id: 'mahavana_hermit',  type: 'blue'   },
-      { x: 360, y: 780,  id: 'forest_scholar',   type: 'yellow' },
-      { x: 640, y: 1100, id: 'lost_merchant',    type: 'blue'   },
-    ],
-
     enemySpawnMode: 'fixed',
     fixedEnemies: [
       { x: 1500, y: 750,  type: 'melee' },
@@ -90,7 +67,6 @@ export const REGIONS = [
     spawnerPositions: [],
     platePositions: [],
     enemyTypes: ['melee', 'rat'],
-    portalUnlock: 'npc_talk:mahavana_hermit',
     denseForest: true,
     echoTriggers: [
       { id: 'echo_mahavana_voice', x: 1800, y: 950, r: 220,
@@ -102,7 +78,7 @@ export const REGIONS = [
     ambientKey: 1,
   },
 
-  // 2 — Vrindavana  (bright green, full forest, kill-all unlock)
+  // 2 — Vrindavana  (bright green, full forest)
   {
     index: 2,
     name: 'Vrindavana',
@@ -116,11 +92,6 @@ export const REGIONS = [
     bossPos:  null,
     portalBack: { x: 120, y: CY },
     portalNext: { x: WORLD_W - 120, y: CY },
-
-    npcPositions: [
-      { x: 560, y: 900,  id: 'vrindavana_sage',    type: 'blue'   },
-      { x: 720, y: 1250, id: 'vrindavana_dancer',  type: 'yellow' },
-    ],
 
     enemySpawnMode: 'fixed',
     fixedEnemies: [
@@ -145,7 +116,6 @@ export const REGIONS = [
       { x: 1500, y: 1150 },
     ],
     enemyTypes: ['melee', 'ranged', 'orc', 'slimem'],
-    portalUnlock: 'kill_all',
     echoTriggers: [],
     worldFragments: [
       { fragmentId: 'lore_grove_mural', x: 1800, y: 900 },
@@ -168,11 +138,6 @@ export const REGIONS = [
     portalBack: { x: 120, y: CY },
     portalNext: { x: WORLD_W - 120, y: CY },
 
-    npcPositions: [
-      { x: 560, y: 900,  id: 'naga_oracle',   type: 'blue'   },
-      { x: 720, y: 1200, id: 'naga_merchant', type: 'yellow' },
-    ],
-
     enemySpawnMode: 'spawner',
     fixedEnemies: [
       { x: 700, y: 820,  type: 'melee'  },
@@ -189,8 +154,6 @@ export const REGIONS = [
     ],
     enemyTypes: ['orc', 'ranged', 'flying', 'bat', 'slimem'],
     serpentRealm: true,
-
-    portalUnlock: 'boss_kill',
     waterAmbient: true,
     echoTriggers: [
       { id: 'echo_nagapatal_prison', x: 1700, y: 1000, r: 200,
@@ -220,10 +183,6 @@ export const REGIONS = [
       { x: 900,  y: 700 },
       { x: 1500, y: CY },
       { x: 2100, y: 1300 },
-    ],
-    npcPositions: [
-      { x: 600, y: 900,  id: 'temple_priest', type: 'blue' },
-      { x: 700, y: 1200, id: 'deva_guardian', type: 'yellow' },
     ],
     platePositions: [
       { x: 1500, y: 800 },
@@ -259,10 +218,6 @@ export const REGIONS = [
       { x: 1500, y: 1300 },
       { x: 2100, y: CY },
     ],
-    npcPositions: [
-      { x: 600, y: 900,  id: 'apsara_guide', type: 'blue' },
-      { x: 750, y: 1200, id: 'deva_warrior', type: 'yellow' },
-    ],
     platePositions: [
       { x: 1600, y: 800 },
       { x: 1600, y: 1200 },
@@ -276,7 +231,6 @@ export const REGIONS = [
       { fragmentId: 'lore_cloud_inscription', x: 1600, y: 800 },
     ],
     ambientKey: 5,
-
   },
 
   // 6 — Viyoga Durga  (void black-purple)
@@ -299,9 +253,6 @@ export const REGIONS = [
       { x: 1500, y: CY },
       { x: 2100, y: 1300 },
     ],
-    npcPositions: [
-      { x: 600, y: 900, id: 'akhand_voice', type: 'blue' },
-    ],
     platePositions: [
       { x: 1500, y: 850 },
       { x: 1500, y: 1150 },
@@ -315,6 +266,5 @@ export const REGIONS = [
       { fragmentId: 'lore_prison_stone', x: 1500, y: 1100 },
     ],
     ambientKey: 6,
-
   },
 ];

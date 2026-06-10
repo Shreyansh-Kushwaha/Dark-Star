@@ -1,13 +1,12 @@
 import { WORLD_W, WORLD_H, GAME_W, GAME_H, NET_INTERVAL, TETHER_DIST, TETHER_SPEED, BOSS_TRIGGER_DIST, ITEM_DEFS } from '../constants.js';
 import { REGIONS } from '../data/regions.js';
 import { _mapSpriteKey } from './PreloadScene.js';
-import { QUESTS, NPC_DIALOGUE, LORE_FRAGMENTS } from '../data/quests.js';
+import { QUESTS, LORE_FRAGMENTS } from '../data/quests.js';
 import { LoreManager } from '../systems/LoreManager.js';
 import { Player } from '../entities/Player.js';
 import { Enemy  } from '../entities/Enemy.js';
 import { Boss   } from '../entities/Boss.js';
 import { BOSSES } from '../data/bosses.js';
-import { NPC    } from '../entities/NPC.js';
 import { Projectile } from '../entities/Projectile.js';
 import { AudioManager } from '../systems/AudioManager.js';
 import { QuestManager } from '../systems/QuestManager.js';
@@ -230,10 +229,9 @@ export class GameScene extends Phaser.Scene {
       SHIFT: Phaser.Input.Keyboard.KeyCodes.SHIFT,
     });
 
-    // ── Enemies & NPCs ────────────────────────────────────────────
+    // ── Enemies ───────────────────────────────────────────────────
     this.enemies     = [];
     this.projectiles = [];
-    this.npcs        = [];
     this.physics.add.collider(this.enemies, this._noWalkGroup);
     this._spawnerTimers = [];
     this._spawnerPositions = region.spawnerPositions || [];
@@ -261,7 +259,6 @@ export class GameScene extends Phaser.Scene {
     this._fixedEnemyMode = false;
     this._anyEnemyKilled = false;
 
-    this._createNPCs(region);
     this._createWorldFragments(region);
     this._createSpawners(region);
     this._createPortals(region);
@@ -284,10 +281,6 @@ export class GameScene extends Phaser.Scene {
     }
 
     this._spawnRabbitDecoration(regionIndex);
-
-    if (regionIndex === 0 || (regionIndex === 1 && region.villageZone)) {
-      this._buildVillage(region);
-    }
 
     // ── UI scene (overlay) ────────────────────────────────────────
     this.scene.launch('UIScene', { gameScene: this });
@@ -323,10 +316,10 @@ export class GameScene extends Phaser.Scene {
     // Start ambient audio
     this.audio.startAmbient(regionIndex);
 
-    // Auto-trigger region main quest (skip region 0 — triggered by NPC talk)
+    // Auto-trigger region main quest
     const QUEST_PREFIXES = ['gramavana','mahavana','vrindavana','nagapatal','devamandira','swargaseema','viyogadurga'];
     const mainQuestKey = QUEST_PREFIXES[regionIndex] + '_main';
-    if (regionIndex > 0 && QUESTS[mainQuestKey]) {
+    if (QUESTS[mainQuestKey]) {
       this.questManager.start(mainQuestKey, QUESTS[mainQuestKey]);
     }
 
@@ -504,20 +497,6 @@ export class GameScene extends Phaser.Scene {
     const borderGfx = this.add.graphics().setDepth(100);
     borderGfx.lineStyle(3, region.borderColor || 0x333333, 0.9);
     borderGfx.strokeRect(1, 1, WORLD_W - 2, WORLD_H - 2);
-  }
-
-  _createNPCs(region) {
-    for (const npcCfg of (region.npcPositions || [])) {
-      const npc = new NPC(this, npcCfg.x, npcCfg.y, npcCfg);
-      this.npcs.push(npc);
-      // Warm lantern glow under each NPC
-      const g = this.add.circle(npcCfg.x, npcCfg.y + 10, 44, 0xffcc44, 0.1)
-        .setDepth(npcCfg.y - 1);
-      this.tweens.add({
-        targets: g, alpha: { from: 0.06, to: 0.18 },
-        duration: 1600, yoyo: true, repeat: -1, ease: 'Sine.easeInOut',
-      });
-    }
   }
 
   _createWorldFragments(region) {
@@ -826,7 +805,6 @@ export class GameScene extends Phaser.Scene {
       ...(region.portalBack  ? [{ ...region.portalBack, r: 160 }] : []),
       ...(region.portalNext  ? [{ ...region.portalNext, r: 160 }] : []),
       ...(region.fixedEnemies || []).map(e => ({ x: e.x, y: e.y, r: 140 })),
-      ...(region.npcPositions || []).map(n => ({ x: n.x, y: n.y, r: 120 })),
       ...(region.platePositions || []).map(p => ({ x: p.x, y: p.y, r: 100 })),
     ];
 
@@ -990,68 +968,6 @@ export class GameScene extends Phaser.Scene {
     }
   }
 
-  _buildVillage(region) {
-    const vz = region.villageZone;
-    const isHermit = region.villageStyle === 'hermit';
-    const g = this.add.graphics().setDepth(-6);
-
-    g.fillStyle(isHermit ? 0x2a4a1a : 0x5a9448, isHermit ? 0.7 : 0.55);
-    g.fillRect(vz.x, vz.y, vz.w, vz.h);
-
-    g.lineStyle(4, isHermit ? 0x4a3010 : 0x8b5c2a, 0.85);
-    g.strokeRect(vz.x + 10, vz.y + 10, vz.w - 20, vz.h - 20);
-
-    g.fillStyle(isHermit ? 0x3a2010 : 0x7a4e20, 1);
-    for (let px = vz.x + 10; px < vz.x + vz.w - 10; px += 80) {
-      g.fillRect(px - 4, vz.y + 6, 8, 18);
-      g.fillRect(px - 4, vz.y + vz.h - 24, 8, 18);
-    }
-    for (let py = vz.y + 10; py < vz.y + vz.h - 10; py += 80) {
-      g.fillRect(vz.x + 6, py - 4, 18, 8);
-      g.fillRect(vz.x + vz.w - 24, py - 4, 18, 8);
-    }
-
-    // Gate opening on right side at CY
-    g.fillStyle(isHermit ? 0x2a4a1a : 0x5a9448, 1);
-    g.fillRect(vz.x + vz.w - 24, WORLD_H / 2 - 60, 30, 120);
-
-    g.fillStyle(isHermit ? 0x3a2010 : 0x5c3410, 1);
-    g.fillRect(vz.x + vz.w - 8, WORLD_H / 2 - 64, 12, 24);
-    g.fillRect(vz.x + vz.w - 8, WORLD_H / 2 + 40, 12, 24);
-
-    const hutColor = isHermit ? 0x5c4020 : 0xb8824a;
-    region.npcPositions.forEach(np => {
-      g.fillStyle(hutColor, isHermit ? 0.6 : 0.45);
-      g.fillCircle(np.x, np.y, 48);
-      g.lineStyle(3, isHermit ? 0x3a2010 : 0x8b5c2a, 0.8);
-      g.strokeCircle(np.x, np.y, 48);
-      g.fillStyle(0x2a1000, 0.9);
-      g.fillRect(np.x - 8, np.y + 30, 16, 20);
-    });
-
-    const cx = vz.x + vz.w * 0.5;
-    const cy = WORLD_H / 2;
-    if (isHermit) {
-      g.fillStyle(0x333333, 0.9); g.fillCircle(cx, cy, 16);
-      g.fillStyle(0xff6600, 0.9); g.fillCircle(cx, cy, 8);
-      g.fillStyle(0xffcc00, 0.8); g.fillCircle(cx, cy, 4);
-    } else {
-      g.fillStyle(0x6a6a6a, 0.9); g.fillCircle(cx, cy, 22);
-      g.fillStyle(0x2255aa, 0.8); g.fillCircle(cx, cy, 14);
-      g.lineStyle(3, 0x444444, 0.9); g.strokeCircle(cx, cy, 22);
-    }
-
-    const label = isHermit ? "Hermit's Camp" : 'Gramavana';
-    this.add.text(vz.x + vz.w - 100, WORLD_H / 2 - 90, label, {
-      fontSize: '13px', color: isHermit ? '#c8a060' : '#e8c87a',
-      fontFamily: 'serif', stroke: '#1a0a00', strokeThickness: 3,
-    }).setDepth(10);
-    this.add.text(vz.x + vz.w + 20, WORLD_H / 2 - 90, '⟶ Forest', {
-      fontSize: '13px', color: '#88cc55', fontFamily: 'serif',
-      stroke: '#0a2200', strokeThickness: 3,
-    }).setDepth(10);
-  }
-
   _updateOcclusionAlpha() {
     if (!this._treePositions.length) return;
     const entities = [
@@ -1108,9 +1024,6 @@ export class GameScene extends Phaser.Scene {
       p.update(time, delta);
       this._checkProjectileCollisions(p);
     }
-
-    // ── NPCs ──────────────────────────────────────────────────────
-    for (const npc of this.npcs) npc.update(this.players);
 
     // ── World fragment proximity prompts ──────────────────────────
     for (const wf of this._worldFragmentObjects) {
@@ -1435,27 +1348,6 @@ export class GameScene extends Phaser.Scene {
       return;
     }
 
-    // ── NPCs ─────────────────────────────────────────────────────
-    for (const npc of this.npcs) {
-      if (!npc.isPlayerNear) continue;
-      const questForNpc = Object.values(QUESTS).find(q => q.trigger === `npc_talk:${npc.npcId}`);
-      const line = npc.interact(this.questManager, questForNpc);
-      if (line) {
-        this._dialogueActive = true;
-        this.events.emit('show_dialogue', { text: line });
-        this.audio.interact();
-
-        // Collect NPC lore fragment on first talk (idempotent)
-        const npcFrag = LORE_FRAGMENTS.find(f => f.source === 'npc' && f.npcId === npc.npcId);
-        if (npcFrag && !this.loreManager.has(npcFrag.id)) {
-          this.loreManager.collect(npcFrag.id);
-          this._saveCollectedLore();
-          this.events.emit('lore_collected', { count: this.loreManager.count(), total: this.loreManager.total() });
-        }
-
-      }
-      return;
-    }
   }
 
   _saveCollectedLore() {
