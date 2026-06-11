@@ -65,7 +65,7 @@ def render(idx, overlay=False):
     canvas.convert("RGB").resize((800, 500)).save(f"/tmp/region_{idx}_thumb.png")
     anim = sum(1 for s in imgs if s.get("animated"))
     flag = "  ⚠ANIM>18" if anim > 18 else ""
-    print(f"R{idx:<2} '{data['regionName'][:38]:38}' sprites={len(data['sprites']):4} "
+    print(f"R{idx:<2} '{(data.get('regionName') or f'region {idx}')[:38]:38}' sprites={len(data['sprites']):4} "
           f"anim={anim:2}{flag} zones={len(data['noWalkZones']):2} "
           f"enemies={len(data['enemies']):2} npcs={len(data['npcs'])} "
           f"boss={data.get('boss') and data['boss']['key']} miss={len(missing)}")

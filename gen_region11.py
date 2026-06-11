@@ -323,8 +323,10 @@ npcs = [
 ]
 portals = [
     {"id": "portal11_back", "direction": "back", "targetRegion": 7, "x": 120, "y": 1000},
-    {"id": "portal11_next", "direction": "next", "targetRegion": 9, "x": 720, "y": 1742},
-    {"id": "portal11_lift", "targetRegion": 10, "x": 1332, "y": 1006},
+    {"id": "portal11_next", "direction": "next", "targetRegion": 14, "x": 720, "y": 1742},
+    {"id": "portal11_lift", "targetRegion": 31, "x": 1332, "y": 1006},      # lift -> the Sunless Deep
+    {"id": "portal11_fields", "targetRegion": 12, "x": 250, "y": 720},      # spur -> Famished Fields
+    {"id": "portal11_thicket", "targetRegion": 13, "x": 250, "y": 1300},    # spur -> Hunter's Thicket
 ]
 
 out = {

@@ -11390,9 +11390,17 @@
  ],
  "portals": [
   {
-   "id": "portal10_back",
-   "targetRegion": 9,
+   "id": "p10_back",
+   "direction": "back",
+   "targetRegion": 32,
    "x": 60,
+   "y": 1000
+  },
+  {
+   "id": "p10_next",
+   "direction": "next",
+   "targetRegion": 33,
+   "x": 3120,
    "y": 1000
   }
  ],

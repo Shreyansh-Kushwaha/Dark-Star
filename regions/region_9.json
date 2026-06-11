@@ -10423,8 +10423,9 @@
  ],
  "portals": [
   {
-   "id": "portal9_back",
-   "targetRegion": 8,
+   "id": "p9_back",
+   "direction": "back",
+   "targetRegion": 16,
    "x": 60,
    "y": 1000
   }
