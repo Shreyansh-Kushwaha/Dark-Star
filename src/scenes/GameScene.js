@@ -812,6 +812,30 @@ export class GameScene extends Phaser.Scene {
           continue;
         }
 
+        if (sp.animated && sp.frames.length > 1 && !sp.frameW) {
+          // Multi-frame sequence animation (separate image files per frame)
+          const animKey = key + '_seq';
+          if (!this.anims.exists(animKey)) {
+            this.anims.create({
+              key: animKey,
+              frames: sp.frames.map(f => ({ key: _mapSpriteKey(sp.dir, f) })),
+              frameRate: 8,
+              repeat: -1,
+            });
+          }
+          const spr = this.add.sprite(sp.x, sp.y, key)
+            .setScale(sp.scaleX ?? 1, sp.scaleY ?? 1)
+            .setDepth(depth)
+            .play(animKey);
+          if (sp.offsetX != null && sp.offsetY != null) {
+            const tex = this.textures.get(key);
+            const w = tex.getSourceImage()?.width || sp.offsetX * 2;
+            const h = tex.getSourceImage()?.height || sp.offsetY * 2;
+            spr.setOrigin(sp.offsetX / w, sp.offsetY / h);
+          }
+          continue;
+        }
+
         const img = this.add.image(sp.x, sp.y, key)
           .setScale(sp.scaleX ?? 1, sp.scaleY ?? 1)
           .setDepth(depth);

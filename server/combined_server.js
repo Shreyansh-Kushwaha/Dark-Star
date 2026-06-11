@@ -144,6 +144,8 @@ const ASSET_GROUPS = [
   { cat:'Assets3',   grp:'VFX/Lightning',  rel:'assets3/vfx/lightning' },
   { cat:'Assets3',   grp:'VFX/Smoke',      rel:'assets3/vfx/smoke' },
   { cat:'Assets3',   grp:'VFX/Yellow',     rel:'assets3/vfx/yellow' },
+  { cat:'Assets4',   grp:'Map Objects',    rel:'assest4/map_objects' },
+  { cat:'Assets4',   grp:'Next2',          rel:'assest4/next2' },
   { cat:'Cropped',   grp:'My Crops',       rel:'cropped' },
   { cat:'Uploads',   grp:'My Assets',      rel:'uploads' },
 ];
