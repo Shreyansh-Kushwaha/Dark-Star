@@ -1,0 +1,6365 @@
+{
+ "version": 1,
+ "regionName": "Asthinagara \u2014 The City of Bone",
+ "background": {
+  "type": "color",
+  "value": "#26221e"
+ },
+ "sprites": [
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0001",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -158.59,
+   "y": -114.7,
+   "scaleX": 3.012,
+   "scaleY": 3.012,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0002",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -16.79,
+   "y": -87.58,
+   "scaleX": 3.09,
+   "scaleY": 3.09,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0003",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 141.88,
+   "y": -93.42,
+   "scaleX": 2.725,
+   "scaleY": 2.725,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0004",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 237.29,
+   "y": -122.61,
+   "scaleX": 3.171,
+   "scaleY": 3.171,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0005",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 391.59,
+   "y": -132.52,
+   "scaleX": 2.75,
+   "scaleY": 2.75,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0006",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 544.15,
+   "y": -140.62,
+   "scaleX": 2.967,
+   "scaleY": 2.967,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0007",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 639.26,
+   "y": -110.1,
+   "scaleX": 2.798,
+   "scaleY": 2.798,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0008",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 816.31,
+   "y": -115.25,
+   "scaleX": 3.183,
+   "scaleY": 3.183,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0009",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 952.05,
+   "y": -111.39,
+   "scaleX": 3.183,
+   "scaleY": 3.183,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0010",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1074.14,
+   "y": -153.75,
+   "scaleX": 2.955,
+   "scaleY": 2.955,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0011",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1250.35,
+   "y": -120.27,
+   "scaleX": 2.997,
+   "scaleY": 2.997,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0012",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1378.4,
+   "y": -137.5,
+   "scaleX": 2.986,
+   "scaleY": 2.986,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0013",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1490.32,
+   "y": -151.24,
+   "scaleX": 3.142,
+   "scaleY": 3.142,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0014",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1663.08,
+   "y": -106.55,
+   "scaleX": 2.773,
+   "scaleY": 2.773,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0015",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1741.19,
+   "y": -115.98,
+   "scaleX": 2.929,
+   "scaleY": 2.929,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0016",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1893.15,
+   "y": -136.09,
+   "scaleX": 2.601,
+   "scaleY": 2.601,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0017",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2037.78,
+   "y": -104.55,
+   "scaleX": 2.576,
+   "scaleY": 2.576,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0018",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2198.1,
+   "y": -106.59,
+   "scaleX": 2.512,
+   "scaleY": 2.512,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0019",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2350.15,
+   "y": -105.87,
+   "scaleX": 2.448,
+   "scaleY": 2.448,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0020",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2481.93,
+   "y": -97.63,
+   "scaleX": 2.432,
+   "scaleY": 2.432,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0021",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2633.71,
+   "y": -98.7,
+   "scaleX": 2.967,
+   "scaleY": 2.967,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0022",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2734.45,
+   "y": -89.99,
+   "scaleX": 2.797,
+   "scaleY": 2.797,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0023",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2849.54,
+   "y": -98.01,
+   "scaleX": 2.833,
+   "scaleY": 2.833,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0024",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2997.92,
+   "y": -119.32,
+   "scaleX": 3.106,
+   "scaleY": 3.106,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0025",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3180.51,
+   "y": -126.44,
+   "scaleX": 2.993,
+   "scaleY": 2.993,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0026",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3259.37,
+   "y": -134.23,
+   "scaleX": 2.76,
+   "scaleY": 2.76,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0027",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -124.39,
+   "y": 46.0,
+   "scaleX": 2.425,
+   "scaleY": 2.425,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0028",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 67.26,
+   "y": 16.26,
+   "scaleX": 2.471,
+   "scaleY": 2.471,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0029",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 154.72,
+   "y": 4.42,
+   "scaleX": 2.573,
+   "scaleY": 2.573,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0030",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 341.94,
+   "y": 2.27,
+   "scaleX": 2.468,
+   "scaleY": 2.468,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0031",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 470.33,
+   "y": 13.52,
+   "scaleX": 2.498,
+   "scaleY": 2.498,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0032",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 632.62,
+   "y": 21.58,
+   "scaleX": 2.428,
+   "scaleY": 2.428,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0033",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 739.55,
+   "y": 21.41,
+   "scaleX": 2.719,
+   "scaleY": 2.719,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0034",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 850.21,
+   "y": 15.96,
+   "scaleX": 2.829,
+   "scaleY": 2.829,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0035",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1007.08,
+   "y": 22.12,
+   "scaleX": 2.662,
+   "scaleY": 2.662,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0036",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1176.6,
+   "y": 38.85,
+   "scaleX": 3.078,
+   "scaleY": 3.078,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0037",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1257.16,
+   "y": 41.92,
+   "scaleX": 2.893,
+   "scaleY": 2.893,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0038",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1457.2,
+   "y": 12.81,
+   "scaleX": 2.741,
+   "scaleY": 2.741,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0039",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1535.83,
+   "y": -1.72,
+   "scaleX": 2.981,
+   "scaleY": 2.981,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0040",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1707.57,
+   "y": 5.5,
+   "scaleX": 3.122,
+   "scaleY": 3.122,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0041",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1846.24,
+   "y": 36.2,
+   "scaleX": 3.047,
+   "scaleY": 3.047,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0042",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1971.84,
+   "y": 32.82,
+   "scaleX": 3.035,
+   "scaleY": 3.035,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0043",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2119.18,
+   "y": 50.97,
+   "scaleX": 2.893,
+   "scaleY": 2.893,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0044",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2255.66,
+   "y": 3.63,
+   "scaleX": 3.105,
+   "scaleY": 3.105,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0045",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2368.01,
+   "y": 46.43,
+   "scaleX": 3.103,
+   "scaleY": 3.103,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0046",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2507.32,
+   "y": 41.27,
+   "scaleX": 2.47,
+   "scaleY": 2.47,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0047",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2647.49,
+   "y": 48.05,
+   "scaleX": 2.52,
+   "scaleY": 2.52,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0048",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2779.46,
+   "y": 39.3,
+   "scaleX": 2.552,
+   "scaleY": 2.552,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0049",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2918.32,
+   "y": 42.36,
+   "scaleX": 2.487,
+   "scaleY": 2.487,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0050",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3072.21,
+   "y": 29.7,
+   "scaleX": 2.702,
+   "scaleY": 2.702,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0051",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3215.58,
+   "y": 2.6,
+   "scaleX": 2.45,
+   "scaleY": 2.45,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0052",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3368.58,
+   "y": 37.59,
+   "scaleX": 2.862,
+   "scaleY": 2.862,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0053",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -192.33,
+   "y": 136.99,
+   "scaleX": 3.041,
+   "scaleY": 3.041,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0054",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -11.51,
+   "y": 182.99,
+   "scaleX": 3.158,
+   "scaleY": 3.158,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0055",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 132.92,
+   "y": 136.46,
+   "scaleX": 2.521,
+   "scaleY": 2.521,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0056",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 232.78,
+   "y": 139.9,
+   "scaleX": 2.969,
+   "scaleY": 2.969,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0057",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 398.33,
+   "y": 126.83,
+   "scaleX": 3.097,
+   "scaleY": 3.097,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0058",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 547.34,
+   "y": 126.54,
+   "scaleX": 2.872,
+   "scaleY": 2.872,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0059",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 678.73,
+   "y": 183.56,
+   "scaleX": 3.178,
+   "scaleY": 3.178,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0060",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 817.85,
+   "y": 146.45,
+   "scaleX": 2.655,
+   "scaleY": 2.655,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0061",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 965.15,
+   "y": 135.88,
+   "scaleX": 2.484,
+   "scaleY": 2.484,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0062",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1095.29,
+   "y": 176.84,
+   "scaleX": 2.914,
+   "scaleY": 2.914,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0063",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1194.76,
+   "y": 142.28,
+   "scaleX": 3.154,
+   "scaleY": 3.154,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0064",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1329.54,
+   "y": 154.0,
+   "scaleX": 3.192,
+   "scaleY": 3.192,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0065",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1488.68,
+   "y": 161.91,
+   "scaleX": 2.672,
+   "scaleY": 2.672,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0066",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1654.38,
+   "y": 133.64,
+   "scaleX": 3.013,
+   "scaleY": 3.013,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0067",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1768.39,
+   "y": 137.53,
+   "scaleX": 3.127,
+   "scaleY": 3.127,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0068",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1928.47,
+   "y": 165.58,
+   "scaleX": 2.826,
+   "scaleY": 2.826,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0069",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2030.62,
+   "y": 181.34,
+   "scaleX": 2.44,
+   "scaleY": 2.44,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0070",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2165.17,
+   "y": 131.77,
+   "scaleX": 2.606,
+   "scaleY": 2.606,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0071",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2326.99,
+   "y": 137.08,
+   "scaleX": 2.443,
+   "scaleY": 2.443,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0072",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2467.68,
+   "y": 143.23,
+   "scaleX": 2.734,
+   "scaleY": 2.734,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0073",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2569.2,
+   "y": 144.78,
+   "scaleX": 2.857,
+   "scaleY": 2.857,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0074",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2736.44,
+   "y": 172.68,
+   "scaleX": 2.528,
+   "scaleY": 2.528,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0075",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2866.42,
+   "y": 178.39,
+   "scaleX": 2.957,
+   "scaleY": 2.957,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0076",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3009.66,
+   "y": 138.59,
+   "scaleX": 3.041,
+   "scaleY": 3.041,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0077",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3176.15,
+   "y": 170.46,
+   "scaleX": 3.177,
+   "scaleY": 3.177,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0078",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3309.6,
+   "y": 177.27,
+   "scaleX": 3.146,
+   "scaleY": 3.146,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0079",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -66.95,
+   "y": 275.45,
+   "scaleX": 2.445,
+   "scaleY": 2.445,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0080",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 13.86,
+   "y": 307.78,
+   "scaleX": 2.871,
+   "scaleY": 2.871,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0081",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 199.9,
+   "y": 303.13,
+   "scaleX": 3.139,
+   "scaleY": 3.139,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0082",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 298.89,
+   "y": 324.42,
+   "scaleX": 2.876,
+   "scaleY": 2.876,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0083",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 442.36,
+   "y": 293.45,
+   "scaleX": 2.56,
+   "scaleY": 2.56,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0084",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 603.23,
+   "y": 271.68,
+   "scaleX": 2.426,
+   "scaleY": 2.426,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0085",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 755.93,
+   "y": 323.22,
+   "scaleX": 2.602,
+   "scaleY": 2.602,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0086",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 843.68,
+   "y": 289.75,
+   "scaleX": 3.04,
+   "scaleY": 3.04,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0087",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1010.66,
+   "y": 311.22,
+   "scaleX": 2.558,
+   "scaleY": 2.558,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0088",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1184.85,
+   "y": 318.07,
+   "scaleX": 3.066,
+   "scaleY": 3.066,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0089",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1256.44,
+   "y": 308.83,
+   "scaleX": 2.895,
+   "scaleY": 2.895,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0090",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1403.59,
+   "y": 323.13,
+   "scaleX": 2.82,
+   "scaleY": 2.82,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0091",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1552.51,
+   "y": 302.0,
+   "scaleX": 2.853,
+   "scaleY": 2.853,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0092",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1732.1,
+   "y": 291.88,
+   "scaleX": 2.458,
+   "scaleY": 2.458,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0093",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1869.56,
+   "y": 279.17,
+   "scaleX": 1.441,
+   "scaleY": 1.441,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0094",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1967.83,
+   "y": 265.62,
+   "scaleX": 2.056,
+   "scaleY": 2.056,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0095",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2086.04,
+   "y": 322.8,
+   "scaleX": 1.758,
+   "scaleY": 1.758,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0096",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2261.78,
+   "y": 300.08,
+   "scaleX": 1.99,
+   "scaleY": 1.99,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0097",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2368.53,
+   "y": 261.36,
+   "scaleX": 1.416,
+   "scaleY": 1.416,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0098",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2554.08,
+   "y": 307.91,
+   "scaleX": 2.292,
+   "scaleY": 2.292,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0099",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2702.77,
+   "y": 308.1,
+   "scaleX": 1.481,
+   "scaleY": 1.481,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0100",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2834.76,
+   "y": 270.08,
+   "scaleX": 2.739,
+   "scaleY": 2.739,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0101",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2973.13,
+   "y": 271.75,
+   "scaleX": 3.115,
+   "scaleY": 3.115,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0102",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3073.89,
+   "y": 308.54,
+   "scaleX": 3.067,
+   "scaleY": 3.067,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0103",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3194.21,
+   "y": 261.74,
+   "scaleX": 2.547,
+   "scaleY": 2.547,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0104",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3331.03,
+   "y": 314.53,
+   "scaleX": 2.478,
+   "scaleY": 2.478,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0105",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -169.22,
+   "y": 437.02,
+   "scaleX": 2.555,
+   "scaleY": 2.555,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0106",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -31.21,
+   "y": 435.14,
+   "scaleX": 2.571,
+   "scaleY": 2.571,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0107",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 110.48,
+   "y": 461.28,
+   "scaleX": 2.357,
+   "scaleY": 2.357,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0108",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 260.55,
+   "y": 419.25,
+   "scaleX": 2.533,
+   "scaleY": 2.533,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0109",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 401.33,
+   "y": 435.81,
+   "scaleX": 2.518,
+   "scaleY": 2.518,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0110",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 501.99,
+   "y": 439.8,
+   "scaleX": 2.897,
+   "scaleY": 2.897,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0111",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 682.58,
+   "y": 419.64,
+   "scaleX": 2.896,
+   "scaleY": 2.896,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0112",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 824.27,
+   "y": 441.01,
+   "scaleX": 2.855,
+   "scaleY": 2.855,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0113",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 910.71,
+   "y": 463.41,
+   "scaleX": 1.546,
+   "scaleY": 1.546,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0114",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1097.4,
+   "y": 435.31,
+   "scaleX": 1.863,
+   "scaleY": 1.863,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0115",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1215.74,
+   "y": 464.63,
+   "scaleX": 1.639,
+   "scaleY": 1.639,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0116",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1346.99,
+   "y": 425.57,
+   "scaleX": 1.703,
+   "scaleY": 1.703,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0117",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1528.73,
+   "y": 417.78,
+   "scaleX": 2.447,
+   "scaleY": 2.447,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0118",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1647.21,
+   "y": 445.97,
+   "scaleX": 1.799,
+   "scaleY": 1.799,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0119",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1742.47,
+   "y": 403.17,
+   "scaleX": 1.731,
+   "scaleY": 1.731,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0120",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1927.05,
+   "y": 465.33,
+   "scaleX": 2.062,
+   "scaleY": 2.062,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0121",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2064.41,
+   "y": 446.34,
+   "scaleX": 1.611,
+   "scaleY": 1.611,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0122",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2212.83,
+   "y": 446.53,
+   "scaleX": 1.835,
+   "scaleY": 1.835,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0123",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2350.23,
+   "y": 464.42,
+   "scaleX": 2.593,
+   "scaleY": 2.593,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0124",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2481.04,
+   "y": 451.35,
+   "scaleX": 1.44,
+   "scaleY": 1.44,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0125",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2578.02,
+   "y": 403.17,
+   "scaleX": 1.83,
+   "scaleY": 1.83,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0126",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2709.58,
+   "y": 414.43,
+   "scaleX": 2.491,
+   "scaleY": 2.491,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0127",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2892.29,
+   "y": 432.78,
+   "scaleX": 1.847,
+   "scaleY": 1.847,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0128",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2988.61,
+   "y": 428.24,
+   "scaleX": 1.427,
+   "scaleY": 1.427,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0129",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3135.53,
+   "y": 462.31,
+   "scaleX": 1.678,
+   "scaleY": 1.678,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0130",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3309.27,
+   "y": 454.94,
+   "scaleX": 2.516,
+   "scaleY": 2.516,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0131",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -88.04,
+   "y": 559.44,
+   "scaleX": 2.156,
+   "scaleY": 2.156,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0132",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 63.08,
+   "y": 541.07,
+   "scaleX": 1.477,
+   "scaleY": 1.477,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0133",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 211.09,
+   "y": 544.78,
+   "scaleX": 1.505,
+   "scaleY": 1.505,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0134",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 301.33,
+   "y": 550.56,
+   "scaleX": 1.963,
+   "scaleY": 1.963,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0135",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 433.57,
+   "y": 550.0,
+   "scaleX": 1.62,
+   "scaleY": 1.62,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0136",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 628.8,
+   "y": 577.58,
+   "scaleX": 2.061,
+   "scaleY": 2.061,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0137",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 756.11,
+   "y": 560.01,
+   "scaleX": 2.475,
+   "scaleY": 2.475,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0138",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 869.57,
+   "y": 541.91,
+   "scaleX": 1.612,
+   "scaleY": 1.612,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0139",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1011.58,
+   "y": 554.52,
+   "scaleX": 1.873,
+   "scaleY": 1.873,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0140",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1166.78,
+   "y": 581.44,
+   "scaleX": 1.567,
+   "scaleY": 1.567,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0141",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1268.94,
+   "y": 600.47,
+   "scaleX": 2.22,
+   "scaleY": 2.22,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0142",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1441.86,
+   "y": 539.76,
+   "scaleX": 1.786,
+   "scaleY": 1.786,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0143",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3221.24,
+   "y": 569.9,
+   "scaleX": 2.524,
+   "scaleY": 2.524,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0144",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3380.57,
+   "y": 562.57,
+   "scaleX": 2.217,
+   "scaleY": 2.217,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0145",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 809.46,
+   "y": 677.16,
+   "scaleX": 2.143,
+   "scaleY": 2.143,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0146",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -60.32,
+   "y": 1430.84,
+   "scaleX": 1.959,
+   "scaleY": 1.959,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0147",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 72.87,
+   "y": 1422.63,
+   "scaleX": 2.389,
+   "scaleY": 2.389,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0148",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 193.23,
+   "y": 1416.79,
+   "scaleX": 2.311,
+   "scaleY": 2.311,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0149",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1998.64,
+   "y": 1415.51,
+   "scaleX": 1.427,
+   "scaleY": 1.427,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0150",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2138.38,
+   "y": 1407.76,
+   "scaleX": 1.673,
+   "scaleY": 1.673,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0151",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2250.65,
+   "y": 1427.72,
+   "scaleX": 1.559,
+   "scaleY": 1.559,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0152",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2378.13,
+   "y": 1379.88,
+   "scaleX": 2.15,
+   "scaleY": 2.15,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0153",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2508.81,
+   "y": 1392.57,
+   "scaleX": 1.788,
+   "scaleY": 1.788,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0154",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2673.96,
+   "y": 1372.74,
+   "scaleX": 2.412,
+   "scaleY": 2.412,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0155",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2838.02,
+   "y": 1425.76,
+   "scaleX": 1.737,
+   "scaleY": 1.737,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0156",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2957.93,
+   "y": 1419.42,
+   "scaleX": 2.394,
+   "scaleY": 2.394,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0157",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3067.64,
+   "y": 1424.33,
+   "scaleX": 2.201,
+   "scaleY": 2.201,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0158",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3204.07,
+   "y": 1413.11,
+   "scaleX": 2.205,
+   "scaleY": 2.205,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0159",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3347.46,
+   "y": 1387.72,
+   "scaleX": 1.511,
+   "scaleY": 1.511,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0160",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -139.63,
+   "y": 1542.21,
+   "scaleX": 2.541,
+   "scaleY": 2.541,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0161",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 10.13,
+   "y": 1565.28,
+   "scaleX": 1.916,
+   "scaleY": 1.916,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0162",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 149.75,
+   "y": 1540.79,
+   "scaleX": 2.423,
+   "scaleY": 2.423,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0163",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 273.4,
+   "y": 1534.3,
+   "scaleX": 1.491,
+   "scaleY": 1.491,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0164",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 363.29,
+   "y": 1560.07,
+   "scaleX": 1.727,
+   "scaleY": 1.727,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0165",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 555.69,
+   "y": 1544.28,
+   "scaleX": 2.486,
+   "scaleY": 2.486,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0166",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 643.1,
+   "y": 1539.68,
+   "scaleX": 1.845,
+   "scaleY": 1.845,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0167",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 793.21,
+   "y": 1553.99,
+   "scaleX": 2.487,
+   "scaleY": 2.487,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0168",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1488.19,
+   "y": 1549.67,
+   "scaleX": 2.363,
+   "scaleY": 2.363,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0169",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1605.48,
+   "y": 1535.34,
+   "scaleX": 1.907,
+   "scaleY": 1.907,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0170",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1759.95,
+   "y": 1505.89,
+   "scaleX": 2.367,
+   "scaleY": 2.367,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0171",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1937.77,
+   "y": 1507.79,
+   "scaleX": 1.465,
+   "scaleY": 1.465,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0172",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2075.64,
+   "y": 1545.93,
+   "scaleX": 2.431,
+   "scaleY": 2.431,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0173",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2190.75,
+   "y": 1521.49,
+   "scaleX": 1.764,
+   "scaleY": 1.764,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0174",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2331.42,
+   "y": 1504.06,
+   "scaleX": 2.039,
+   "scaleY": 2.039,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0175",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2465.49,
+   "y": 1509.73,
+   "scaleX": 1.806,
+   "scaleY": 1.806,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0176",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2572.19,
+   "y": 1505.34,
+   "scaleX": 2.324,
+   "scaleY": 2.324,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0177",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2725.35,
+   "y": 1538.78,
+   "scaleX": 2.524,
+   "scaleY": 2.524,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0178",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2886.2,
+   "y": 1515.65,
+   "scaleX": 2.412,
+   "scaleY": 2.412,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0179",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3002.5,
+   "y": 1518.55,
+   "scaleX": 2.498,
+   "scaleY": 2.498,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0180",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3147.94,
+   "y": 1521.02,
+   "scaleX": 2.011,
+   "scaleY": 2.011,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0181",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3304.51,
+   "y": 1503.89,
+   "scaleX": 1.727,
+   "scaleY": 1.727,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0182",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -119.35,
+   "y": 1647.65,
+   "scaleX": 2.903,
+   "scaleY": 2.903,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0183",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 44.09,
+   "y": 1704.21,
+   "scaleX": 3.157,
+   "scaleY": 3.157,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0184",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 201.82,
+   "y": 1687.51,
+   "scaleX": 3.016,
+   "scaleY": 3.016,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0185",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 346.17,
+   "y": 1654.65,
+   "scaleX": 2.448,
+   "scaleY": 2.448,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0186",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 475.69,
+   "y": 1641.33,
+   "scaleX": 1.758,
+   "scaleY": 1.758,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0187",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 573.85,
+   "y": 1659.76,
+   "scaleX": 1.97,
+   "scaleY": 1.97,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0188",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 761.01,
+   "y": 1684.75,
+   "scaleX": 1.883,
+   "scaleY": 1.883,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0189",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 894.6,
+   "y": 1703.02,
+   "scaleX": 1.692,
+   "scaleY": 1.692,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0190",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 989.15,
+   "y": 1705.08,
+   "scaleX": 2.174,
+   "scaleY": 2.174,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0191",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1161.06,
+   "y": 1706.89,
+   "scaleX": 1.493,
+   "scaleY": 1.493,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0192",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1287.9,
+   "y": 1683.13,
+   "scaleX": 1.597,
+   "scaleY": 1.597,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0193",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1430.71,
+   "y": 1679.74,
+   "scaleX": 1.763,
+   "scaleY": 1.763,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0194",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1588.19,
+   "y": 1686.04,
+   "scaleX": 2.154,
+   "scaleY": 2.154,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0195",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1734.15,
+   "y": 1685.98,
+   "scaleX": 2.388,
+   "scaleY": 2.388,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0196",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1874.13,
+   "y": 1672.18,
+   "scaleX": 2.365,
+   "scaleY": 2.365,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0197",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1973.05,
+   "y": 1659.04,
+   "scaleX": 1.978,
+   "scaleY": 1.978,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0198",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2112.63,
+   "y": 1675.34,
+   "scaleX": 3.049,
+   "scaleY": 3.049,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0199",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2269.58,
+   "y": 1683.6,
+   "scaleX": 3.073,
+   "scaleY": 3.073,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0200",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2395.01,
+   "y": 1650.34,
+   "scaleX": 2.594,
+   "scaleY": 2.594,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0201",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2556.72,
+   "y": 1679.47,
+   "scaleX": 2.618,
+   "scaleY": 2.618,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0202",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2655.79,
+   "y": 1691.76,
+   "scaleX": 3.082,
+   "scaleY": 3.082,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0203",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2793.4,
+   "y": 1648.27,
+   "scaleX": 2.892,
+   "scaleY": 2.892,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0204",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2961.37,
+   "y": 1672.01,
+   "scaleX": 2.497,
+   "scaleY": 2.497,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0205",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3079.19,
+   "y": 1676.26,
+   "scaleX": 2.843,
+   "scaleY": 2.843,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0206",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3239.58,
+   "y": 1706.98,
+   "scaleX": 3.055,
+   "scaleY": 3.055,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0207",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3387.83,
+   "y": 1648.79,
+   "scaleX": 2.506,
+   "scaleY": 2.506,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0208",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -138.88,
+   "y": 1823.93,
+   "scaleX": 3.122,
+   "scaleY": 3.122,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0209",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -31.73,
+   "y": 1778.03,
+   "scaleX": 2.553,
+   "scaleY": 2.553,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0210",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 123.26,
+   "y": 1820.65,
+   "scaleX": 3.156,
+   "scaleY": 3.156,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0211",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 220.81,
+   "y": 1794.94,
+   "scaleX": 2.878,
+   "scaleY": 2.878,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0212",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 392.16,
+   "y": 1796.83,
+   "scaleX": 3.096,
+   "scaleY": 3.096,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0213",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 497.5,
+   "y": 1822.51,
+   "scaleX": 2.472,
+   "scaleY": 2.472,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0214",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 644.03,
+   "y": 1797.57,
+   "scaleX": 3.029,
+   "scaleY": 3.029,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0215",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 801.06,
+   "y": 1826.97,
+   "scaleX": 2.928,
+   "scaleY": 2.928,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0216",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 969.31,
+   "y": 1837.68,
+   "scaleX": 2.557,
+   "scaleY": 2.557,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0217",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1058.83,
+   "y": 1838.62,
+   "scaleX": 2.45,
+   "scaleY": 2.45,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0218",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1214.41,
+   "y": 1800.85,
+   "scaleX": 3.184,
+   "scaleY": 3.184,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0219",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1333.79,
+   "y": 1786.39,
+   "scaleX": 2.879,
+   "scaleY": 2.879,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0220",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1508.18,
+   "y": 1784.17,
+   "scaleX": 3.176,
+   "scaleY": 3.176,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0221",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1631.75,
+   "y": 1790.2,
+   "scaleX": 2.607,
+   "scaleY": 2.607,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0222",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1804.55,
+   "y": 1782.63,
+   "scaleX": 3.048,
+   "scaleY": 3.048,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0223",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1894.97,
+   "y": 1834.19,
+   "scaleX": 2.6,
+   "scaleY": 2.6,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0224",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2018.95,
+   "y": 1830.37,
+   "scaleX": 2.509,
+   "scaleY": 2.509,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0225",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2173.31,
+   "y": 1815.03,
+   "scaleX": 2.649,
+   "scaleY": 2.649,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0226",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2354.1,
+   "y": 1834.46,
+   "scaleX": 2.518,
+   "scaleY": 2.518,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0227",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2486.49,
+   "y": 1834.52,
+   "scaleX": 2.812,
+   "scaleY": 2.812,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0228",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2621.59,
+   "y": 1841.05,
+   "scaleX": 3.131,
+   "scaleY": 3.131,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0229",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2744.23,
+   "y": 1795.15,
+   "scaleX": 2.48,
+   "scaleY": 2.48,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0230",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2868.46,
+   "y": 1790.1,
+   "scaleX": 2.434,
+   "scaleY": 2.434,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0231",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3010.9,
+   "y": 1801.01,
+   "scaleX": 3.014,
+   "scaleY": 3.014,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0232",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3144.86,
+   "y": 1806.2,
+   "scaleX": 2.779,
+   "scaleY": 2.779,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0233",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3316.07,
+   "y": 1810.2,
+   "scaleX": 2.457,
+   "scaleY": 2.457,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0234",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -85.11,
+   "y": 1965.7,
+   "scaleX": 2.478,
+   "scaleY": 2.478,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0235",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 53.28,
+   "y": 1974.96,
+   "scaleX": 2.625,
+   "scaleY": 2.625,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0236",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 211.77,
+   "y": 1944.43,
+   "scaleX": 3.182,
+   "scaleY": 3.182,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0237",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 334.1,
+   "y": 1981.55,
+   "scaleX": 2.866,
+   "scaleY": 2.866,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0238",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 436.05,
+   "y": 1962.24,
+   "scaleX": 2.755,
+   "scaleY": 2.755,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0239",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 585.88,
+   "y": 1956.3,
+   "scaleX": 2.631,
+   "scaleY": 2.631,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0240",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 765.32,
+   "y": 1920.16,
+   "scaleX": 2.822,
+   "scaleY": 2.822,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0241",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 853.29,
+   "y": 1963.82,
+   "scaleX": 2.732,
+   "scaleY": 2.732,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0242",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 981.06,
+   "y": 1967.16,
+   "scaleX": 3.123,
+   "scaleY": 3.123,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0243",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1131.44,
+   "y": 1963.88,
+   "scaleX": 2.414,
+   "scaleY": 2.414,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0244",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1316.42,
+   "y": 1971.17,
+   "scaleX": 2.678,
+   "scaleY": 2.678,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0245",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1436.87,
+   "y": 1933.33,
+   "scaleX": 3.041,
+   "scaleY": 3.041,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0246",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1539.53,
+   "y": 1975.75,
+   "scaleX": 2.42,
+   "scaleY": 2.42,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0247",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1681.35,
+   "y": 1936.29,
+   "scaleX": 2.688,
+   "scaleY": 2.688,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0248",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1860.21,
+   "y": 1983.46,
+   "scaleX": 2.838,
+   "scaleY": 2.838,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0249",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1986.57,
+   "y": 1976.79,
+   "scaleX": 3.075,
+   "scaleY": 3.075,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0250",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2142.58,
+   "y": 1925.82,
+   "scaleX": 3.081,
+   "scaleY": 3.081,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0251",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2265.95,
+   "y": 1981.25,
+   "scaleX": 3.153,
+   "scaleY": 3.153,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0252",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2415.43,
+   "y": 1962.1,
+   "scaleX": 3.095,
+   "scaleY": 3.095,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0253",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2540.19,
+   "y": 1942.52,
+   "scaleX": 2.602,
+   "scaleY": 2.602,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0254",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2688.29,
+   "y": 1937.4,
+   "scaleX": 2.467,
+   "scaleY": 2.467,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0255",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2831.59,
+   "y": 1925.0,
+   "scaleX": 3.084,
+   "scaleY": 3.084,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0256",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2940.18,
+   "y": 1947.15,
+   "scaleX": 2.522,
+   "scaleY": 2.522,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0257",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3052.54,
+   "y": 1944.61,
+   "scaleX": 2.609,
+   "scaleY": 2.609,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0258",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3221.39,
+   "y": 1966.4,
+   "scaleX": 3.042,
+   "scaleY": 3.042,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0259",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3337.94,
+   "y": 1938.23,
+   "scaleX": 2.659,
+   "scaleY": 2.659,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0260",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -176.14,
+   "y": 2076.21,
+   "scaleX": 3.071,
+   "scaleY": 3.071,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0261",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -52.89,
+   "y": 2100.38,
+   "scaleX": 2.642,
+   "scaleY": 2.642,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0262",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 147.68,
+   "y": 2062.14,
+   "scaleX": 2.449,
+   "scaleY": 2.449,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0263",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 234.83,
+   "y": 2085.43,
+   "scaleX": 2.595,
+   "scaleY": 2.595,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0264",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 405.83,
+   "y": 2082.55,
+   "scaleX": 3.018,
+   "scaleY": 3.018,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0265",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 508.86,
+   "y": 2099.53,
+   "scaleX": 2.657,
+   "scaleY": 2.657,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0266",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 635.8,
+   "y": 2115.45,
+   "scaleX": 2.45,
+   "scaleY": 2.45,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0267",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 779.35,
+   "y": 2117.68,
+   "scaleX": 2.811,
+   "scaleY": 2.811,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0268",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 948.57,
+   "y": 2085.81,
+   "scaleX": 2.993,
+   "scaleY": 2.993,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0269",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1106.4,
+   "y": 2078.59,
+   "scaleX": 2.8,
+   "scaleY": 2.8,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0270",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1191.29,
+   "y": 2073.49,
+   "scaleX": 2.914,
+   "scaleY": 2.914,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0271",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1388.54,
+   "y": 2119.77,
+   "scaleX": 2.513,
+   "scaleY": 2.513,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0272",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1462.69,
+   "y": 2096.54,
+   "scaleX": 3.095,
+   "scaleY": 3.095,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0273",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1631.39,
+   "y": 2108.83,
+   "scaleX": 2.828,
+   "scaleY": 2.828,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0274",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1751.74,
+   "y": 2060.97,
+   "scaleX": 2.61,
+   "scaleY": 2.61,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0275",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1888.74,
+   "y": 2081.27,
+   "scaleX": 2.749,
+   "scaleY": 2.749,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0276",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2057.77,
+   "y": 2110.64,
+   "scaleX": 2.512,
+   "scaleY": 2.512,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0277",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2171.31,
+   "y": 2055.16,
+   "scaleX": 2.622,
+   "scaleY": 2.622,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0278",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2350.14,
+   "y": 2104.49,
+   "scaleX": 3.16,
+   "scaleY": 3.16,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0279",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2457.13,
+   "y": 2084.83,
+   "scaleX": 2.807,
+   "scaleY": 2.807,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0280",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2602.64,
+   "y": 2108.67,
+   "scaleX": 2.661,
+   "scaleY": 2.661,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0281",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2705.29,
+   "y": 2060.89,
+   "scaleX": 2.986,
+   "scaleY": 2.986,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0282",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2891.02,
+   "y": 2092.6,
+   "scaleX": 3.082,
+   "scaleY": 3.082,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0283",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2982.16,
+   "y": 2072.46,
+   "scaleX": 2.861,
+   "scaleY": 2.861,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0284",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3134.02,
+   "y": 2119.51,
+   "scaleX": 2.808,
+   "scaleY": 2.808,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0285",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3292.86,
+   "y": 2098.47,
+   "scaleX": 2.549,
+   "scaleY": 2.549,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0286",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_arch.png"
+   ],
+   "name": "bone_arch",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 420,
+   "y": 845.36,
+   "scaleX": 1.059,
+   "scaleY": 1.059,
+   "offsetX": 64.0,
+   "offsetY": 155
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0287",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_arch.png"
+   ],
+   "name": "bone_arch",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 720,
+   "y": 851.74,
+   "scaleX": 1.123,
+   "scaleY": 1.123,
+   "offsetX": 64.0,
+   "offsetY": 155
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0288",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_arch.png"
+   ],
+   "name": "bone_arch",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1020,
+   "y": 819.09,
+   "scaleX": 1.231,
+   "scaleY": 1.231,
+   "offsetX": 64.0,
+   "offsetY": 155
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0289",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_arch.png"
+   ],
+   "name": "bone_arch",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1320,
+   "y": 759.34,
+   "scaleX": 1.099,
+   "scaleY": 1.099,
+   "offsetX": 64.0,
+   "offsetY": 155
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0290",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_arch.png"
+   ],
+   "name": "bone_arch",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1620,
+   "y": 697.14,
+   "scaleX": 1.097,
+   "scaleY": 1.097,
+   "offsetX": 64.0,
+   "offsetY": 155
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0291",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_arch.png"
+   ],
+   "name": "bone_arch",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1920,
+   "y": 653.83,
+   "scaleX": 1.186,
+   "scaleY": 1.186,
+   "offsetX": 64.0,
+   "offsetY": 155
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0292",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_arch.png"
+   ],
+   "name": "bone_arch",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2220,
+   "y": 636.59,
+   "scaleX": 1.072,
+   "scaleY": 1.072,
+   "offsetX": 64.0,
+   "offsetY": 155
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0293",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_arch.png"
+   ],
+   "name": "bone_arch",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2520,
+   "y": 642.56,
+   "scaleX": 1.196,
+   "scaleY": 1.196,
+   "offsetX": 64.0,
+   "offsetY": 155
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0294",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_arch.png"
+   ],
+   "name": "bone_arch",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2820,
+   "y": 668.39,
+   "scaleX": 1.236,
+   "scaleY": 1.236,
+   "offsetX": 64.0,
+   "offsetY": 155
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0295",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 360,
+   "y": 1382.18,
+   "scaleX": 1.059,
+   "scaleY": 1.059,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0296",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 720,
+   "y": 1449.39,
+   "scaleX": 1.216,
+   "scaleY": 1.216,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0297",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1080,
+   "y": 1487.45,
+   "scaleX": 1.221,
+   "scaleY": 1.221,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0298",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1440,
+   "y": 1475.44,
+   "scaleX": 1.143,
+   "scaleY": 1.143,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0299",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1800,
+   "y": 1405.93,
+   "scaleX": 1.128,
+   "scaleY": 1.128,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0300",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2160,
+   "y": 1307.64,
+   "scaleX": 1.242,
+   "scaleY": 1.242,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0301",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2520,
+   "y": 1232.38,
+   "scaleX": 1.26,
+   "scaleY": 1.26,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0302",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2880,
+   "y": 1214.28,
+   "scaleX": 1.038,
+   "scaleY": 1.038,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0303",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1600,
+   "y": 1030.87,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 70.0,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0304",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1738.65,
+   "y": 1010.82,
+   "scaleX": 1.439,
+   "scaleY": 1.439,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0305",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 500.2,
+   "y": 1152.86,
+   "scaleX": 1.341,
+   "scaleY": 1.341,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0306",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 594.85,
+   "y": 1215.7,
+   "scaleX": 1.133,
+   "scaleY": 1.133,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0307",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1700.04,
+   "y": 1394.79,
+   "scaleX": 1.475,
+   "scaleY": 1.475,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0308",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 405.93,
+   "y": 1092.38,
+   "scaleX": 1.599,
+   "scaleY": 1.599,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0309",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1067.17,
+   "y": 1451.46,
+   "scaleX": 1.46,
+   "scaleY": 1.46,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0310",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 665.15,
+   "y": 1161.77,
+   "scaleX": 1.363,
+   "scaleY": 1.363,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0311",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 808.5,
+   "y": 1267.6,
+   "scaleX": 1.445,
+   "scaleY": 1.445,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0312",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1861.62,
+   "y": 1214.0,
+   "scaleX": 1.064,
+   "scaleY": 1.064,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0313",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1884.15,
+   "y": 880.8,
+   "scaleX": 1.441,
+   "scaleY": 1.441,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0314",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1957.97,
+   "y": 693.57,
+   "scaleX": 1.028,
+   "scaleY": 1.028,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0315",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2187.46,
+   "y": 1156.88,
+   "scaleX": 1.221,
+   "scaleY": 1.221,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0316",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 596.27,
+   "y": 1052.3,
+   "scaleX": 1.26,
+   "scaleY": 1.26,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0317",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2389.58,
+   "y": 1270.95,
+   "scaleX": 1.244,
+   "scaleY": 1.244,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0318",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2459.06,
+   "y": 1105.25,
+   "scaleX": 1.398,
+   "scaleY": 1.398,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0319",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1982.86,
+   "y": 957.51,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0320",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 497.73,
+   "y": 867.63,
+   "scaleX": 1.21,
+   "scaleY": 1.21,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0321",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 548.54,
+   "y": 818.04,
+   "scaleX": 1.523,
+   "scaleY": 1.523,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0322",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2711.34,
+   "y": 891.78,
+   "scaleX": 1.356,
+   "scaleY": 1.356,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0323",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 916.36,
+   "y": 804.11,
+   "scaleX": 1.328,
+   "scaleY": 1.328,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0324",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1789.27,
+   "y": 556.28,
+   "scaleX": 1.468,
+   "scaleY": 1.468,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0325",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1737.66,
+   "y": 937.45,
+   "scaleX": 1.469,
+   "scaleY": 1.469,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0326",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1719.05,
+   "y": 1381.96,
+   "scaleX": 1.546,
+   "scaleY": 1.546,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0327",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2379.87,
+   "y": 520.61,
+   "scaleX": 1.674,
+   "scaleY": 1.674,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0328",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 919.06,
+   "y": 1094.89,
+   "scaleX": 1.397,
+   "scaleY": 1.397,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0329",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1310.73,
+   "y": 923.48,
+   "scaleX": 1.542,
+   "scaleY": 1.542,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0330",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1917.38,
+   "y": 934.88,
+   "scaleX": 1.893,
+   "scaleY": 1.893,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0331",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1463.08,
+   "y": 960.24,
+   "scaleX": 1.251,
+   "scaleY": 1.251,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0332",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1347.84,
+   "y": 654.02,
+   "scaleX": 1.552,
+   "scaleY": 1.552,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0333",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1617.28,
+   "y": 1334.36,
+   "scaleX": 1.872,
+   "scaleY": 1.872,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0334",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 817.87,
+   "y": 1150.08,
+   "scaleX": 1.448,
+   "scaleY": 1.448,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0335",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1865.87,
+   "y": 1387.54,
+   "scaleX": 1.599,
+   "scaleY": 1.599,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0336",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1977.74,
+   "y": 1107.74,
+   "scaleX": 1.812,
+   "scaleY": 1.812,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0337",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 871.7,
+   "y": 1427.47,
+   "scaleX": 1.403,
+   "scaleY": 1.403,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0338",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2827.59,
+   "y": 1177.87,
+   "scaleX": 1.309,
+   "scaleY": 1.309,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0339",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1187.57,
+   "y": 1090.27,
+   "scaleX": 1.899,
+   "scaleY": 1.899,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0340",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 348.23,
+   "y": 1400.03,
+   "scaleX": 1.869,
+   "scaleY": 1.869,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0341",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1386.76,
+   "y": 1154.69,
+   "scaleX": 1.614,
+   "scaleY": 1.614,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0342",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1471.95,
+   "y": 1326.02,
+   "scaleX": 1.306,
+   "scaleY": 1.306,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0343",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2306.94,
+   "y": 577.22,
+   "scaleX": 1.634,
+   "scaleY": 1.634,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0344",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1169.87,
+   "y": 1456.6,
+   "scaleX": 1.647,
+   "scaleY": 1.647,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0345",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 304.98,
+   "y": 780.41,
+   "scaleX": 1.787,
+   "scaleY": 1.787,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0346",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1412.6,
+   "y": 1385.96,
+   "scaleX": 1.871,
+   "scaleY": 1.871,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0347",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp1.png"
+   ],
+   "name": "Lamp1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 280,
+   "y": 730.29,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 10.0,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0348",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp2.png"
+   ],
+   "name": "Lamp2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 580,
+   "y": 753.62,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 5.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0349",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp1.png"
+   ],
+   "name": "Lamp1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 880,
+   "y": 738.86,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 10.0,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0350",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp2.png"
+   ],
+   "name": "Lamp2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1180,
+   "y": 689.16,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 5.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0351",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp1.png"
+   ],
+   "name": "Lamp1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1480,
+   "y": 624.84,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 10.0,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0352",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp1.png"
+   ],
+   "name": "Lamp1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1780,
+   "y": 570.89,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 10.0,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0353",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp3.png"
+   ],
+   "name": "Lamp3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2080,
+   "y": 541.47,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 6.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0354",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp3.png"
+   ],
+   "name": "Lamp3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2380,
+   "y": 537.16,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 6.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0355",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp1.png"
+   ],
+   "name": "Lamp1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2680,
+   "y": 553.98,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 10.0,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r33_0356",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp2.png"
+   ],
+   "name": "Lamp2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2980,
+   "y": 589.7,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 5.5,
+   "offsetY": 34
+  }
+ ],
+ "noWalkZones": [
+  {
+   "id": "z33_1",
+   "x": 0,
+   "y": -120,
+   "w": 202,
+   "h": 773.1
+  },
+  {
+   "id": "z33_2",
+   "x": 0,
+   "y": 1386.0,
+   "w": 202,
+   "h": 734.0
+  },
+  {
+   "id": "z33_3",
+   "x": 200,
+   "y": -120,
+   "w": 202,
+   "h": 802.8
+  },
+  {
+   "id": "z33_4",
+   "x": 200,
+   "y": 1429.5,
+   "w": 202,
+   "h": 690.5
+  },
+  {
+   "id": "z33_5",
+   "x": 400,
+   "y": -120,
+   "w": 202,
+   "h": 820.8
+  },
+  {
+   "id": "z33_6",
+   "x": 400,
+   "y": 1470.5,
+   "w": 202,
+   "h": 649.5
+  },
+  {
+   "id": "z33_7",
+   "x": 600,
+   "y": -120,
+   "w": 202,
+   "h": 822.5
+  },
+  {
+   "id": "z33_8",
+   "x": 600,
+   "y": 1506.2,
+   "w": 202,
+   "h": 613.8
+  },
+  {
+   "id": "z33_9",
+   "x": 800,
+   "y": -120,
+   "w": 202,
+   "h": 806.5
+  },
+  {
+   "id": "z33_10",
+   "x": 800,
+   "y": 1533.4,
+   "w": 202,
+   "h": 586.6
+  },
+  {
+   "id": "z33_11",
+   "x": 1000,
+   "y": -120,
+   "w": 202,
+   "h": 774.9
+  },
+  {
+   "id": "z33_12",
+   "x": 1000,
+   "y": 1548.3,
+   "w": 202,
+   "h": 571.7
+  },
+  {
+   "id": "z33_13",
+   "x": 1200,
+   "y": -120,
+   "w": 202,
+   "h": 733.7
+  },
+  {
+   "id": "z33_14",
+   "x": 1200,
+   "y": 1547.2,
+   "w": 202,
+   "h": 572.8
+  },
+  {
+   "id": "z33_15",
+   "x": 1400,
+   "y": -120,
+   "w": 202,
+   "h": 690.7
+  },
+  {
+   "id": "z33_16",
+   "x": 1400,
+   "y": 1527.6,
+   "w": 202,
+   "h": 592.4
+  },
+  {
+   "id": "z33_17",
+   "x": 1600,
+   "y": -120,
+   "w": 202,
+   "h": 653.2
+  },
+  {
+   "id": "z33_18",
+   "x": 1600,
+   "y": 1490.1,
+   "w": 202,
+   "h": 629.9
+  },
+  {
+   "id": "z33_19",
+   "x": 1800,
+   "y": -120,
+   "w": 202,
+   "h": 625.9
+  },
+  {
+   "id": "z33_20",
+   "x": 1800,
+   "y": 1439.4,
+   "w": 202,
+   "h": 680.6
+  },
+  {
+   "id": "z33_21",
+   "x": 2000,
+   "y": -120,
+   "w": 202,
+   "h": 610.4
+  },
+  {
+   "id": "z33_22",
+   "x": 2000,
+   "y": 1383.8,
+   "w": 202,
+   "h": 736.2
+  },
+  {
+   "id": "z33_23",
+   "x": 2200,
+   "y": -120,
+   "w": 202,
+   "h": 606.1
+  },
+  {
+   "id": "z33_24",
+   "x": 2200,
+   "y": 1333.0,
+   "w": 202,
+   "h": 787.0
+  },
+  {
+   "id": "z33_25",
+   "x": 2400,
+   "y": -120,
+   "w": 202,
+   "h": 611.5
+  },
+  {
+   "id": "z33_26",
+   "x": 2400,
+   "y": 1295.2,
+   "w": 202,
+   "h": 824.8
+  },
+  {
+   "id": "z33_27",
+   "x": 2600,
+   "y": -120,
+   "w": 202,
+   "h": 625.8
+  },
+  {
+   "id": "z33_28",
+   "x": 2600,
+   "y": 1275.5,
+   "w": 202,
+   "h": 844.5
+  },
+  {
+   "id": "z33_29",
+   "x": 2800,
+   "y": -120,
+   "w": 202,
+   "h": 648.4
+  },
+  {
+   "id": "z33_30",
+   "x": 2800,
+   "y": 1275.1,
+   "w": 202,
+   "h": 844.9
+  },
+  {
+   "id": "z33_31",
+   "x": 3000,
+   "y": -120,
+   "w": 202,
+   "h": 678.8
+  },
+  {
+   "id": "z33_32",
+   "x": 3000,
+   "y": 1291.7,
+   "w": 202,
+   "h": 828.3
+  }
+ ],
+ "enemies": [
+  {
+   "id": "e33_01",
+   "type": "melee",
+   "x": 680,
+   "y": 1103.0832379317599
+  },
+  {
+   "id": "e33_02",
+   "type": "ranged",
+   "x": 980,
+   "y": 1108.238454156133
+  },
+  {
+   "id": "e33_03",
+   "type": "melee",
+   "x": 1340,
+   "y": 1074.878430286093
+  },
+  {
+   "id": "e33_04",
+   "type": "ranged",
+   "x": 1700,
+   "y": 1011.6248724465681
+  },
+  {
+   "id": "e33_05",
+   "type": "melee",
+   "x": 2080,
+   "y": 940.3912882484655
+  },
+  {
+   "id": "e33_06",
+   "type": "elite",
+   "x": 2480,
+   "y": 894.4007220612484
+  }
+ ],
+ "boss": null,
+ "npcs": [
+  {
+   "id": "npc33_1",
+   "type": "yellow",
+   "x": 320,
+   "y": 1059.4917634694714,
+   "config": {
+    "id": "npc33_1",
+    "name": "Bone Speaker",
+    "first": "The_living_lie,_but_the_DEAD_remember._Every_skull_here_died_knowing_the_Sixth_was_real._Climb_the_tunnel_to_the_torn_land_when_you've_heard_enough_truth.",
+    "active": "",
+    "completed": ""
+   }
+  }
+ ],
+ "portals": [
+  {
+   "id": "portal33_back",
+   "direction": "back",
+   "targetRegion": 10,
+   "x": 120,
+   "y": 1023.3914487018502
+  },
+  {
+   "id": "portal33_next",
+   "direction": "next",
+   "targetRegion": 34,
+   "x": 3090,
+   "y": 923.794893745644
+  },
+  {
+   "id": "portal33_to35",
+   "targetRegion": 35,
+   "x": 760,
+   "y": 250
+  }
+ ],
+ "regionIndex": 33
+}

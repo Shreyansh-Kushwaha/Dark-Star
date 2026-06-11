@@ -765,6 +765,133 @@ def build_30():
 
 
 # ============================================================================
+# ACT V — THE SUNLESS DEEP (cave / underworld)
+# ============================================================================
+def cave(r, cy_fn, half_fn, wall_step=138, wall_max=3.6):
+    """Carve a walkable cavern band; fill the rock outside it and seal it."""
+    def in_cav(x, y): return abs(y - cy_fn(x)) < half_fn(x) or near_spawn(x, y, 260)
+    grid_fill(r, lambda x, y, s: r.rock(x, y, r.R.rng(2.4, wall_max) if abs(y-cy_fn(x)) > half_fn(x)+240 else r.R.rng(1.4, 2.6)),
+              in_cav, step=wall_step, chance=1.0)
+    SEG = 200; x = 0
+    while x < WORLD_W:
+        c = cy_fn(x+SEG/2); h = half_fn(x+SEG/2)
+        r.zone(x, -120, SEG+2, (c-h)+120); r.zone(x, c+h, SEG+2, WORLD_H-(c+h)+120); x += SEG
+    return in_cav
+
+@region(31)
+def build_31():
+    """Andhakupa — The Blind Well. A vast shaft descending into the dark, dug to
+    bury what the gods wanted gone. Entered by the lift from Setubandha."""
+    r = Region(31, "Andhakūpa — The Blind Well", "#15110f", 310031)
+    cy = lambda x: 1000 + 150*math.sin(x/520.0)
+    half = lambda x: 300 + 120*math.exp(-((x-700)**2)/(2*360.0**2))
+    in_cav = cave(r, cy, half)
+    # spiral ledges (rock steps), dripping roots (dead trees), lantern torches
+    for x in range(220, WORLD_W-160, 200):
+        r.lamp(x, cy(x)-half(x)+40, r.R.rng(2.8,3.4))
+        if r.R.chance(0.6): r.lamp(x+60, cy(x)+half(x)-40, r.R.rng(2.8,3.4))
+    r.scatter(lambda x,y,s: r.dead_tree(x,y,r.R.rng(0.5,0.8)), 12, (240, WORLD_W-200), (360, 1640),
+              avoid=lambda x,y: not in_cav(x,y))
+    r.scatter(r.rock, 30, (200, WORLD_W-160), (360, 1640), avoid=lambda x,y: not in_cav(x,y), smin=0.7, smax=1.5)
+    r.scatter(lambda x,y,s: r.crystal(x,y,r.R.rng(0.6,1.0),"cyan"), 10, (300, WORLD_W-200), (380, 1620),
+              avoid=lambda x,y: not in_cav(x,y))
+    r.lift(360, cy(360)+90, 1.1)     # the creaking cargo lift you arrived on
+    for (t, x) in [("bat",640),("bat",760),("rat",980),("bat",1320),("rat",1700),("bat",2100),("elite",2500)]:
+        r.enemy(t, x, cy(x))
+    r.npc("yellow", 320, cy(320), "Lantern Keeper",
+          "Down_and_down,_traveler._This_well_was_dug_for_one_purpose:_to_BURY_something_the_gods_could_not_kill._Keep_a_flame._The_dark_here_has_opinions.")
+    r.portal_back(11, 120, cy(120))     # lift back up to Setubandha
+    r.portal_next(32, WORLD_W-110, cy(WORLD_W-110))
+    return r.emit()
+
+@region(32)
+def build_32():
+    """Ratnaguha — The Gem Hollows. Glowing crystal caverns and old mine ruins;
+    the gems hold light from before the severing. Optional."""
+    r = Region(32, "Ratnaguha — The Gem Hollows", "#171420", 320032)
+    cy = lambda x: 1000 + 130*math.sin(x/470.0)
+    half = lambda x: 330 + 130*math.exp(-((x-1500)**2)/(2*520.0**2))
+    in_cav = cave(r, cy, half)
+    # crystal clusters everywhere (the glow)
+    for kind, n in [("cyan",22),("purple",16),("amber",12)]:
+        r.scatter(lambda x,y,s,k=kind: r.crystal(x,y,r.R.rng(0.7,1.6),k), n, (240, WORLD_W-180), (360, 1640),
+                  avoid=lambda x,y: not in_cav(x,y))
+    # underground pools + mine ruins (crates, fences, gold)
+    for (cx,cy2) in [(900,1000),(2100,1000)]: r.pool(cx,cy2,200,120,"#1c4f63","#2f7d97",150,80)
+    for (mx,my) in [(700,800),(1600,1180),(2300,820)]:
+        r.crate(mx,my,2.0); r.barrel(mx+50,my,1.6)
+    for fy in range(900,1100,24): r.fence(1200, fy, 2.0)
+    r.scatter(lambda x,y,s: r.gold(x,y,r.R.rng(0.7,1.2)), 16, (260, WORLD_W-180), (380, 1620),
+              avoid=lambda x,y: not in_cav(x,y))
+    for x in range(260, WORLD_W-180, 280): r.lamp(x, cy(x)-half(x)+40, 3.0)
+    for (t, x) in [("slimem",680),("mimic",1000),("slimem",1400),("bat",1700),("mimic",2050),("slimem",2400)]:
+        r.enemy(t, x, cy(x))
+    r.npc("yellow", 320, cy(320), "Lost Miner",
+          "Don't_touch_the_chests,_friend,_some_have_teeth._But_the_gems..._hold_one_up_and_you'll_see_light_from_BEFORE_the_Thread_broke._Proof_the_old_world_was_whole.")
+    r.portal_back(31, 120, cy(120))
+    r.portal_next(10, WORLD_W-110, cy(WORLD_W-110))   # -> Patala Guha (existing)
+    return r.emit()
+
+@region(33)
+def build_33():
+    """Asthinagara — The City of Bone. A buried ossuary-city whose dead testify
+    to the erasure unfiltered; a tunnel rises to the Torn Land."""
+    r = Region(33, "Asthinagara — The City of Bone", "#26221e", 330033)
+    cy = lambda x: 1000 + 110*math.sin(x/560.0)
+    half = lambda x: 360 + 120*math.exp(-((x-1600)**2)/(2*620.0**2))
+    in_cav = cave(r, cy, half, wall_max=3.2)
+    # bone arches lining an ossuary avenue + bone-clad pillar towers
+    for x in range(420, WORLD_W-300, 300):
+        r.bone_arch(x, cy(x)-half(x)+150, r.R.rng(1.0,1.3))
+    for px in range(360, WORLD_W-300, 360):
+        r.pillar(px, cy(px)+half(px)-60, r.R.rng(1.0,1.3))
+    # ancestor-shrine + sunken plaza of bones & skulls
+    r.mural(1600, cy(1600), 2.0)
+    r.scatter(r.bone, 34, (260, WORLD_W-200), (380, 1620), avoid=lambda x,y: not in_cav(x,y), smin=1.0, smax=1.7)
+    r.scatter(lambda x,y,s: r.skull(x,y,r.R.rng(1.2,2.0)), 22, (300, WORLD_W-220), (400, 1600),
+              avoid=lambda x,y: not in_cav(x,y))
+    for x in range(280, WORLD_W-200, 300): r.lamp(x, cy(x)-half(x)+50, 3.0)
+    for (t, x) in [("melee",680),("ranged",980),("melee",1340),("ranged",1700),("melee",2080),("elite",2480)]:
+        r.enemy(t, x, cy(x))
+    r.npc("yellow", 320, cy(320), "Bone Speaker",
+          "The_living_lie,_but_the_DEAD_remember._Every_skull_here_died_knowing_the_Sixth_was_real._Climb_the_tunnel_to_the_torn_land_when_you've_heard_enough_truth.")
+    r.portal_back(10, 120, cy(120))      # from Patala Guha
+    r.portal_next(34, WORLD_W-110, cy(WORLD_W-110))
+    r.portal_to(35, 760, 250)            # tunnel up -> Chidrabhumi (the Severance)
+    return r.emit()
+
+@region(34)
+def build_34():
+    """Vismrti Kupa — The Well of Forgetting. The drowned vault where the gods
+    sank every record of Ekatmadeva; a sealed sixth door waits for all the lore."""
+    r = Region(34, "Vismṛti Kūpa — The Well of Forgetting", "#0d0c10", 340034)
+    cy = lambda x: 1000 + 90*math.sin(x/600.0)
+    half = lambda x: 320 + 150*math.exp(-((x-1600)**2)/(2*560.0**2))
+    in_cav = cave(r, cy, half, wall_max=3.4)
+    # the black mirror-pool fills the central chamber
+    r.pool(1600, 1000, 320, 200, "#101826", "#1f3247", 220, 120)
+    # drowned archive: rows of leaning pillars + scattered murals (the sunk records)
+    for px in range(420, WORLD_W-300, 240):
+        if abs(px-1600) < 360: continue
+        r.pillar(px, cy(px)+half(px)-70, r.R.rng(0.9,1.2))
+    for (mx,my) in [(700,760),(1100,1200),(2100,760),(2500,1200)]: r.mural(mx,my,r.R.rng(1.0,1.3))
+    # the sealed Sixth Door (gate) on the far chamber wall + cold blue crystals
+    r.gate(2700, cy(2700)+80, 1.5)
+    r.scatter(lambda x,y,s: r.crystal(x,y,r.R.rng(0.7,1.3),"purple"), 16, (260, WORLD_W-200), (400, 1600),
+              avoid=lambda x,y: not in_cav(x,y) or (x-1600)**2/360**2+(y-1000)**2/220**2<1)
+    for x in range(280, WORLD_W-200, 320): r.lamp(x, cy(x)-half(x)+50, 2.8)
+    r.zone(1600-320*0.7, 1000-200*0.7, 320*1.4, 200*1.4, zid="z34_pool")
+    for (t, x) in [("ranged",680),("ranged",1000),("elite",1350),("ranged",2000),("elite",2450)]:
+        r.enemy(t, x, cy(x) - half(x) + 200)
+    r.npc("blue", 320, cy(320), "Voice in the Void",
+          "Here_they_DROWNED_him_—_not_his_body,_his_MEMORY._Every_scroll,_every_name,_sunk_in_this_black_water._Gather_all_the_truth_above_and_the_Sixth_Door_will_open_to_the_Erased_Path.")
+    r.portal_back(33, 120, cy(120))
+    r.portal_next(35, WORLD_W-110, cy(WORLD_W-110))
+    r.portal_to(39, 2700, cy(2700)+40)   # the Sixth Door -> Erased Path (Shashtha Dvara)
+    return r.emit()
+
+
+# ============================================================================
 def main():
     args = [int(a) for a in sys.argv[1:] if a.isdigit()]
     todo = args or sorted(REGISTRY)
