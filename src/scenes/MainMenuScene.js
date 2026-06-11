@@ -683,12 +683,12 @@ export class MainMenuScene extends Phaser.Scene {
   async _showCoopRegionSelect(net, p1Char, p2Char, D) {
     const cx = GAME_W / 2;
     const panelY = GAME_H / 2;
-    const panelW = 680, panelH = 340;
+    const panelW = 1240, panelH = 444;
 
     this.add.rectangle(cx, panelY, panelW, panelH, 0x04040f, 0.96).setDepth(D + 5);
     this.add.rectangle(cx, panelY, panelW, panelH).setStrokeStyle(2, 0x4444dd).setDepth(D + 6);
 
-    const titleTxt = this.add.text(cx, panelY - 140, 'SELECT STARTING REGION', {
+    const titleTxt = this.add.text(cx, panelY - 188, 'SELECT STARTING REGION', {
       fontSize: '20px', fontFamily: 'monospace', color: '#ffdd00',
       stroke: '#000', strokeThickness: 3,
     }).setOrigin(0.5).setDepth(D + 7);
@@ -729,10 +729,14 @@ export class MainMenuScene extends Phaser.Scene {
     loadingTxt.destroy();
     if (started) return; // disconnected while fetching
 
-    const cols = 4;
-    const btnW = 148, btnH = 44, gapX = 12, gapY = 10;
+    // Adaptive grid that fits every region inside the panel (more columns as needed)
+    const cols = Math.max(4, Math.ceil(entries.length / 7));
+    const rows = Math.ceil(entries.length / cols);
+    const gapX = 10, gapY = 8;
+    const btnW = Math.min(190, Math.floor((panelW - 56 - (cols - 1) * gapX) / cols));
+    const btnH = Math.min(44, Math.floor((panelH - 120 - (rows - 1) * gapY) / rows));
     const startX = cx - ((cols * btnW + (cols - 1) * gapX) / 2) + btnW / 2;
-    const startY = panelY - 90;
+    const startY = panelY - panelH / 2 + 96;
 
     entries.forEach((entry, slot) => {
       const col = slot % cols;
@@ -742,9 +746,10 @@ export class MainMenuScene extends Phaser.Scene {
 
       const bg = this.add.rectangle(bx, by, btnW, btnH, 0x0c0c28).setDepth(D + 7).setInteractive({ useHandCursor: true });
       const border = this.add.rectangle(bx, by, btnW, btnH).setStrokeStyle(1, 0x334466).setDepth(D + 8);
-      const label = String(entry.name).split(' — ')[0];
+      const label = `${entry.index} · ${String(entry.name).split(' — ')[0]}`;
       const txt = this.add.text(bx, by, label, {
-        fontSize: '11px', fontFamily: 'monospace', color: '#cccccc',
+        fontSize: '10px', fontFamily: 'monospace', color: '#cccccc',
+        align: 'center', wordWrap: { width: btnW - 8 },
       }).setOrigin(0.5).setDepth(D + 9);
 
       allBgs.push(bg);
