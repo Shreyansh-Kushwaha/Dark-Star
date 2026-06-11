@@ -205,8 +205,10 @@ export class MainMenuScene extends Phaser.Scene {
     this._fsBtn = addNav(cx, 535, this._fsLabel(), () => this._toggleFullscreen(),
       { bg: 0x0c1428, border: 0x334466, text: '#7799bb', w: 200 });
 
-    this._regionSelectPanel = null;
-    this._regionSelectOpen  = false;
+    this._regionSelectPanel  = null;
+    this._regionSelectOpen   = false;
+    this._regionSelectRows   = [];   // [{ drawRow, index }] for keyboard nav
+    this._regionCursor       = 0;
 
     // Room input (hidden until needed)
     this._roomInput = this.add.text(cx, 600, '', {
@@ -310,8 +312,14 @@ export class MainMenuScene extends Phaser.Scene {
         entries = REGION_NAMES.map((name, i) => ({ index: i, name }));
       }
       if (!this._regionSelectOpen) return; // closed while fetching
+      this._regionCursor = 0;
       this._regionSelectPanel = this._makeRegionSelect(entries);
+      this._highlightRegionRow(0);
     }
+  }
+
+  _highlightRegionRow(cursor) {
+    this._regionSelectRows.forEach(({ setHighlight }, i) => setHighlight(i === cursor));
   }
 
   _makeRegionSelect(entries) {
@@ -330,30 +338,35 @@ export class MainMenuScene extends Phaser.Scene {
     panelBg.strokeRect(cx - panelW / 2, startY - 6, panelW, totalH);
     objs.push(panelBg);
 
-    const hdr = this.add.text(cx, startY + 4, 'SELECT REGION', {
-      fontSize: '11px', fontFamily: 'monospace', color: '#8899ff',
+    const hdr = this.add.text(cx, startY + 4, 'SELECT REGION  [↑↓ navigate  Enter=select  Esc=close]', {
+      fontSize: '10px', fontFamily: 'monospace', color: '#8899ff',
     }).setOrigin(0.5, 0).setDepth(9);
     objs.push(hdr);
 
-    entries.forEach(({ index, name }, row) => {
-      const y     = startY + 22 + row * rowH;
-      const rowG  = this.add.graphics().setDepth(8);
-      const drawRow = (hover) => {
-        rowG.clear();
-        rowG.fillStyle(hover ? 0x1a1a55 : 0x0c0c28, 1);
-        rowG.fillRect(cx - panelW / 2 + 4, y - rowH / 2 + 2, panelW - 8, rowH - 4);
-      };
-      drawRow(false);
+    this._regionSelectRows = [];
 
-      const lbl = this.add.text(cx, y, `${index}  ${name}`, {
+    entries.forEach(({ index, name }, row) => {
+      const y    = startY + 22 + row * rowH;
+      const rowG = this.add.graphics().setDepth(8);
+      const lbl  = this.add.text(cx, y, `${index}  ${name}`, {
         fontSize: '13px', fontFamily: 'monospace', color: '#aabbcc',
       }).setOrigin(0.5).setDepth(9);
+
+      const setHighlight = (on) => {
+        rowG.clear();
+        rowG.fillStyle(on ? 0x1a1a55 : 0x0c0c28, 1);
+        rowG.fillRect(cx - panelW / 2 + 4, y - rowH / 2 + 2, panelW - 8, rowH - 4);
+        lbl.setColor(on ? '#ffdd00' : '#aabbcc');
+      };
+      setHighlight(false);
+
+      this._regionSelectRows.push({ setHighlight, index });
 
       const zone = this.add.zone(cx, y, panelW - 8, rowH - 4)
         .setInteractive({ useHandCursor: true }).setDepth(10);
       zone
-        .on('pointerover',  () => { drawRow(true);  lbl.setColor('#ffdd00'); })
-        .on('pointerout',   () => { drawRow(false); lbl.setColor('#aabbcc'); })
+        .on('pointerover',  () => { this._regionCursor = row; this._highlightRegionRow(row); })
+        .on('pointerout',   () => {})
         .on('pointerdown',  () => this._startGame(false, index));
 
       objs.push(rowG, lbl, zone);
@@ -415,6 +428,30 @@ export class MainMenuScene extends Phaser.Scene {
   }
 
   _onKey(e) {
+    // Region select panel steals keyboard focus while open
+    if (this._regionSelectOpen) {
+      const rows = this._regionSelectRows;
+      if (e.key === 'ArrowUp') {
+        this._regionCursor = (this._regionCursor - 1 + rows.length) % rows.length;
+        this._highlightRegionRow(this._regionCursor);
+        return;
+      }
+      if (e.key === 'ArrowDown') {
+        this._regionCursor = (this._regionCursor + 1) % rows.length;
+        this._highlightRegionRow(this._regionCursor);
+        return;
+      }
+      if (e.key === 'Enter' || e.key === ' ') {
+        const row = rows[this._regionCursor];
+        if (row) this._startGame(false, row.index);
+        return;
+      }
+      if (e.key === 'Escape') {
+        this._toggleRegionSelect();
+        return;
+      }
+      return;
+    }
     if (!this._joiningMode) {
       if (e.key === 'ArrowUp') {
         this._selIdx = (this._selIdx - 1 + this._navButtons.length) % this._navButtons.length;
