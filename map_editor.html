@@ -103,6 +103,27 @@ button.portal-btn{border-color:#00ccff;color:#66eeff}button.portal-btn:hover{bac
 .portal-card{display:flex;flex-direction:column;gap:5px;padding:8px 10px;background:#080018;border:1px solid #333;border-radius:4px;min-width:120px}
 .portal-card label{font-size:9px;color:#888}
 .portal-card select{background:#0a0010;border:1px solid #333;color:#ccc;padding:2px 4px;font-size:10px;border-radius:2px;font-family:monospace;width:100%}
+/* ── World View ── */
+#world-modal{position:fixed;inset:0;background:#030008;z-index:3000;flex-direction:column}
+#world-header{display:flex;align-items:center;gap:10px;padding:8px 16px;background:#12001c;border-bottom:1px solid #333;flex-shrink:0}
+#world-canvas-wrap{flex:1;position:relative;overflow:hidden}
+#world-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.wv-node{position:absolute;background:#1a0028;border:2px solid #4488ff;border-radius:8px;padding:10px 14px;cursor:grab;min-width:155px;user-select:none;z-index:1;transition:box-shadow .15s}
+.wv-node:hover{border-color:#88aaff;box-shadow:0 0 10px #4488ff44}
+.wv-node:active{cursor:grabbing}
+.wv-node.unbuilt{border-color:#333;opacity:.45;cursor:default}
+.wv-node.wv-dirty{border-color:#ffd700}
+.wv-node-idx{font-size:9px;color:#4488ff;font-weight:bold;letter-spacing:1px;margin-bottom:2px}
+.wv-node-name{font-size:13px;color:#ffd700;font-weight:bold;margin-bottom:3px}
+.wv-node-stats{font-size:9px;color:#666;margin-bottom:6px}
+.wv-node-btns{display:flex;gap:4px}
+#world-edge-popup,#world-add-popup{position:absolute;background:#12001c;border-radius:5px;padding:10px;min-width:190px;z-index:20;display:none;box-shadow:0 4px 20px #000a}
+#world-edge-popup{border:1px solid #4488ff}
+#world-add-popup{border:1px solid #44ffcc}
+.wep-row{display:flex;align-items:center;gap:6px;margin-bottom:5px}
+.wep-row label{font-size:9px;color:#888;min-width:52px}
+.wep-row select{flex:1;background:#0a0010;border:1px solid #333;color:#ccc;padding:2px 4px;font-size:10px;border-radius:2px;font-family:monospace}
+#world-legend{position:absolute;bottom:12px;left:12px;background:#0a001488;border:1px solid #333;border-radius:5px;padding:8px 12px;font-size:9px;color:#666;line-height:1.8;pointer-events:none}
 </style>
 </head>
 <body>
@@ -145,6 +166,7 @@ button.portal-btn{border-color:#00ccff;color:#66eeff}button.portal-btn:hover{bac
   <button class="boss-btn"  id="btn-boss-tab">👑 Boss</button>
   <button class="npc-btn"    id="btn-npc-tab">👤 NPC</button>
   <button class="portal-btn" id="btn-portal-tab">🌀 Portals</button>
+  <button style="border-color:#cc88ff;color:#cc88ff" id="btn-world-view">🌐 World</button>
   <div class="sep"></div>
   <button class="purple" id="btn-upload-asset">⬆ Upload Asset</button>
   <input type="file" id="file-upload-asset" accept="image/*" multiple style="display:none">
@@ -273,6 +295,72 @@ button.portal-btn{border-color:#00ccff;color:#66eeff}button.portal-btn:hover{bac
       <button class="npc-btn" id="btn-npc-place">📍 Arm Placement</button>
       <button class="green" id="btn-npc-save-dialogue">💾 Save Dialogue</button>
       <button id="btn-npc-cancel">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── World View Modal ─────────────────────────────────────────────────── -->
+<div id="world-modal" style="display:none">
+  <div id="world-header">
+    <span style="color:#cc88ff;font-weight:bold;font-size:13px">🌐 World View</span>
+    <span style="font-size:10px;color:#666;flex:1">Drag nodes to rearrange &nbsp;·&nbsp; Click arrow to edit &nbsp;·&nbsp; Click + Link to add connection</span>
+    <button id="btn-world-save-changes" class="green" style="display:none">💾 Save Changes</button>
+    <button id="btn-world-refresh" style="border-color:#888;color:#aaa">↻ Refresh</button>
+    <button id="btn-world-close" class="red">✕ Close</button>
+  </div>
+  <div id="world-canvas-wrap">
+    <svg id="world-svg">
+      <defs>
+        <marker id="wv-arrow-next" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#ffaa44"/></marker>
+        <marker id="wv-arrow-back" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#44aaff"/></marker>
+        <marker id="wv-arrow-sel"  markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#ffd700"/></marker>
+      </defs>
+    </svg>
+    <div id="world-nodes"></div>
+
+    <!-- Edge edit popup -->
+    <div id="world-edge-popup">
+      <div id="wep-title" style="font-size:11px;color:#88ccff;font-weight:bold;margin-bottom:8px"></div>
+      <div class="wep-row"><label>Direction</label>
+        <select id="wep-dir">
+          <option value="next">NEXT →</option>
+          <option value="back">← BACK</option>
+        </select>
+      </div>
+      <div class="wep-row"><label>Target</label>
+        <select id="wep-target"></select>
+      </div>
+      <div style="display:flex;gap:5px;margin-top:6px">
+        <button id="btn-wep-apply"  class="green" style="flex:1;font-size:10px;padding:3px 0">✓ Apply</button>
+        <button id="btn-wep-delete" class="red"   style="flex:1;font-size:10px;padding:3px 0">🗑 Delete</button>
+        <button id="btn-wep-cancel"               style="flex:1;font-size:10px;padding:3px 0">Cancel</button>
+      </div>
+    </div>
+
+    <!-- Add connection popup -->
+    <div id="world-add-popup">
+      <div style="font-size:11px;color:#44ffcc;font-weight:bold;margin-bottom:8px">+ Add Connection</div>
+      <div class="wep-row"><label>Direction</label>
+        <select id="wap-dir">
+          <option value="next">NEXT →</option>
+          <option value="back">← BACK</option>
+        </select>
+      </div>
+      <div class="wep-row"><label>Target</label>
+        <select id="wap-target"></select>
+      </div>
+      <div style="display:flex;gap:5px;margin-top:6px">
+        <button id="btn-wap-add"    class="green" style="flex:1;font-size:10px;padding:3px 0">+ Add</button>
+        <button id="btn-wap-cancel"               style="flex:1;font-size:10px;padding:3px 0">Cancel</button>
+      </div>
+    </div>
+
+    <div id="world-legend">
+      <span style="color:#ffaa44">━━▶</span> NEXT portal &nbsp;&nbsp;
+      <span style="color:#44aaff">━━▶</span> BACK portal &nbsp;&nbsp;
+      <span style="color:#ffd700">━━▶</span> selected &nbsp;&nbsp;
+      <span style="color:#4488ff;border:1px solid #4488ff;padding:0 3px">■</span> built &nbsp;
+      <span style="color:#555;border:1px solid #444;padding:0 3px">■</span> not built
     </div>
   </div>
 </div>
@@ -2495,6 +2583,336 @@ async function handleWsMsg(msg) {
   }
   else if (msg.type === 'BG_COLOR') { document.getElementById('bg-color').value = msg.value; setBgColor(msg.value, true); }
 }
+
+// ── World View ─────────────────────────────────────────────────────────────────
+const WV = {
+  regions: [],
+  nodes: {},       // regionIndex -> { x, y }
+  portals: {},     // regionIndex -> [portal, ...]  (in-memory, may differ from saved)
+  dirty: new Set(),
+  selectedEdge: null,   // { fromRegion, portalId }
+  addingFrom: null,
+  dragging: null,       // { idx, sx, sy, nx, ny }
+};
+
+const WV_NAMES = [
+  'Gramavana','Mahāvana','Vrindavana','Nāga Pātāl',
+  'Deva Mandira','Swarga Seema','Viyoga Durga',
+];
+function wvName(i){ return WV_NAMES[i] || 'Region '+i; }
+
+async function openWorldView(){
+  document.getElementById('world-modal').style.display = 'flex';
+  await wvRefresh();
+}
+function closeWorldView(){
+  document.getElementById('world-modal').style.display = 'none';
+}
+
+async function wvRefresh(){
+  try {
+    const res = await fetch('/api/regions');
+    WV.regions = await res.json();
+    WV.portals = {};
+    for(const r of WV.regions)
+      WV.portals[r.regionIndex] = JSON.parse(JSON.stringify(r.data.portals||[]));
+    WV.dirty.clear();
+    WV.selectedEdge = null;
+    document.getElementById('btn-world-save-changes').style.display = 'none';
+    wvRender();
+  } catch(e){ console.error('WV refresh',e); }
+}
+
+function wvGetLayout(){ try{ return JSON.parse(localStorage.getItem('wv_layout')||'{}'); }catch{ return {}; } }
+function wvPutLayout(){
+  const l={};
+  for(const [k,v] of Object.entries(WV.nodes)) l[k]={x:v.x,y:v.y};
+  localStorage.setItem('wv_layout',JSON.stringify(l));
+}
+function wvAutoLayout(indices){
+  const cols=Math.ceil(Math.sqrt(indices.length||1));
+  const W=175,H=120,gX=70,gY=50;
+  const l={};
+  indices.forEach((idx,i)=>{ l[idx]={x:60+(i%cols)*(W+gX), y:70+Math.floor(i/cols)*(H+gY)}; });
+  return l;
+}
+
+function wvRender(){
+  const svg=document.getElementById('world-svg');
+  const nodesEl=document.getElementById('world-nodes');
+  svg.innerHTML=`<defs>
+    <marker id="wv-arrow-next" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#ffaa44"/></marker>
+    <marker id="wv-arrow-back" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#44aaff"/></marker>
+    <marker id="wv-arrow-sel"  markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#ffd700"/></marker>
+  </defs>`;
+  nodesEl.innerHTML='';
+  WV.nodes={};
+
+  const built=new Set(WV.regions.map(r=>r.regionIndex));
+  const allIdx=[...new Set([...Array.from({length:7},(_,i)=>i),...built])].sort((a,b)=>a-b);
+
+  const saved=wvGetLayout();
+  const auto=wvAutoLayout(allIdx);
+  for(const idx of allIdx) WV.nodes[idx]=saved[idx]||auto[idx];
+
+  for(const idx of allIdx){
+    const isBuilt=built.has(idx);
+    const rd=WV.regions.find(r=>r.regionIndex===idx);
+    const sprites=rd?.data?.sprites?.length||0;
+    const enemies=rd?.data?.enemies?.length||0;
+    const boss=rd?.data?.boss?.key||null;
+    const portals=WV.portals[idx]||[];
+    const isDirty=WV.dirty.has(idx);
+
+    const el=document.createElement('div');
+    el.className='wv-node'+(isBuilt?'':' unbuilt')+(isDirty?' wv-dirty':'');
+    el.id='wv-node-'+idx;
+    el.style.left=WV.nodes[idx].x+'px';
+    el.style.top =WV.nodes[idx].y+'px';
+    el.innerHTML=`
+      <div class="wv-node-idx">REGION ${idx}</div>
+      <div class="wv-node-name">${wvName(idx)}</div>
+      <div class="wv-node-stats">${isBuilt
+        ? `${sprites} sprites · ${enemies} enemies${boss?' · boss':''} · ${portals.length} portals`
+        : '— not yet built —'}</div>
+      <div class="wv-node-btns">${isBuilt
+        ? `<button class="orange" style="font-size:9px;padding:2px 5px" onclick="wvOpenInEditor(${idx})">✏️ Edit</button>
+           <button class="portal-btn" style="font-size:9px;padding:2px 5px" onclick="wvStartAdd(${idx},event)">+ Link</button>`
+        : ''}</div>
+    `;
+    if(isBuilt){
+      el.addEventListener('mousedown', e=>{
+        if(e.target.tagName==='BUTTON'||e.target.tagName==='SELECT') return;
+        e.preventDefault();
+        WV.dragging={idx,sx:e.clientX,sy:e.clientY,nx:WV.nodes[idx].x,ny:WV.nodes[idx].y};
+      });
+    }
+    nodesEl.appendChild(el);
+  }
+
+  wvDrawEdges();
+
+  const wrap=document.getElementById('world-canvas-wrap');
+  wrap.onmousemove=e=>{
+    if(!WV.dragging) return;
+    const {idx,sx,sy,nx,ny}=WV.dragging;
+    WV.nodes[idx].x=nx+(e.clientX-sx);
+    WV.nodes[idx].y=ny+(e.clientY-sy);
+    const el=document.getElementById('wv-node-'+idx);
+    if(el){ el.style.left=WV.nodes[idx].x+'px'; el.style.top=WV.nodes[idx].y+'px'; }
+    wvDrawEdges();
+  };
+  wrap.onmouseup=()=>{ if(WV.dragging){ wvPutLayout(); WV.dragging=null; } };
+}
+
+function wvCenter(idx){
+  const el=document.getElementById('wv-node-'+idx);
+  if(!el) return null;
+  return { x:WV.nodes[idx].x+el.offsetWidth/2, y:WV.nodes[idx].y+el.offsetHeight/2 };
+}
+
+function wvDrawEdges(){
+  const svg=document.getElementById('world-svg');
+  [...svg.querySelectorAll('path,text')].forEach(e=>e.remove());
+
+  for(const [fromStr,portals] of Object.entries(WV.portals)){
+    const from=parseInt(fromStr,10);
+    const src=wvCenter(from);
+    if(!src) continue;
+    for(const p of portals){
+      const dst=wvCenter(p.targetRegion);
+      if(!dst) continue;
+      const isSel=WV.selectedEdge?.fromRegion===from&&WV.selectedEdge?.portalId===p.id;
+      const color=isSel?'#ffd700':(p.direction==='next'?'#ffaa44':'#44aaff');
+      const marker=isSel?'wv-arrow-sel':(p.direction==='next'?'wv-arrow-next':'wv-arrow-back');
+      const offset=p.direction==='next'?14:-14;
+      const dx=dst.x-src.x, dy=dst.y-src.y, len=Math.sqrt(dx*dx+dy*dy)||1;
+      const ox=-dy/len*offset, oy=dx/len*offset;
+      const x1=src.x+ox,y1=src.y+oy,x2=dst.x+ox,y2=dst.y+oy;
+      const cx=(x1+x2)/2+ox*1.5, cy=(y1+y2)/2+oy*1.5;
+      const d=`M${x1},${y1} Q${cx},${cy} ${x2},${y2}`;
+
+      const hit=document.createElementNS('http://www.w3.org/2000/svg','path');
+      hit.setAttribute('d',d); hit.setAttribute('stroke','transparent');
+      hit.setAttribute('stroke-width','14'); hit.setAttribute('fill','none');
+      hit.style.cursor='pointer';
+      hit.addEventListener('click',e=>{ e.stopPropagation(); wvSelectEdge(from,p.id,e); });
+      svg.appendChild(hit);
+
+      const path=document.createElementNS('http://www.w3.org/2000/svg','path');
+      path.setAttribute('d',d); path.setAttribute('stroke',color);
+      path.setAttribute('stroke-width',isSel?3:2); path.setAttribute('fill','none');
+      path.setAttribute('marker-end',`url(#${marker})`);
+      path.style.cursor='pointer';
+      path.addEventListener('click',e=>{ e.stopPropagation(); wvSelectEdge(from,p.id,e); });
+      svg.appendChild(path);
+
+      const lx=(x1+x2)/2+ox*2.2, ly=(y1+y2)/2+oy*2.2;
+      const txt=document.createElementNS('http://www.w3.org/2000/svg','text');
+      txt.setAttribute('x',lx); txt.setAttribute('y',ly);
+      txt.setAttribute('fill',color); txt.setAttribute('font-size','9');
+      txt.setAttribute('font-family','monospace'); txt.setAttribute('text-anchor','middle');
+      txt.setAttribute('dominant-baseline','central'); txt.setAttribute('pointer-events','none');
+      txt.textContent=p.direction==='next'?'NEXT':'BACK';
+      svg.appendChild(txt);
+    }
+  }
+}
+
+function wvSelectEdge(fromRegion,portalId,mouseEvent){
+  WV.selectedEdge={fromRegion,portalId};
+  wvDrawEdges();
+  const portal=(WV.portals[fromRegion]||[]).find(p=>p.id===portalId);
+  if(!portal) return;
+  document.getElementById('wep-title').textContent=`Region ${fromRegion} → ${portal.direction.toUpperCase()} → Region ${portal.targetRegion}`;
+  document.getElementById('wep-dir').value=portal.direction;
+  const sel=document.getElementById('wep-target');
+  sel.innerHTML='';
+  wvAllIndices().filter(i=>i!==fromRegion).forEach(i=>{
+    const o=document.createElement('option'); o.value=i; o.textContent=i+' — '+wvName(i); sel.appendChild(o);
+  });
+  sel.value=portal.targetRegion;
+  wvShowPopup('world-edge-popup',mouseEvent);
+}
+
+function wvApplyEdge(){
+  if(!WV.selectedEdge) return;
+  const {fromRegion,portalId}=WV.selectedEdge;
+  const portal=(WV.portals[fromRegion]||[]).find(p=>p.id===portalId);
+  if(!portal) return;
+  portal.direction=document.getElementById('wep-dir').value;
+  portal.targetRegion=parseInt(document.getElementById('wep-target').value,10);
+  wvMarkDirty(fromRegion);
+  document.getElementById('world-edge-popup').style.display='none';
+  WV.selectedEdge=null;
+  wvDrawEdges(); wvRefreshStats();
+}
+
+function wvDeleteEdge(){
+  if(!WV.selectedEdge) return;
+  const {fromRegion,portalId}=WV.selectedEdge;
+  WV.portals[fromRegion]=(WV.portals[fromRegion]||[]).filter(p=>p.id!==portalId);
+  wvMarkDirty(fromRegion);
+  document.getElementById('world-edge-popup').style.display='none';
+  WV.selectedEdge=null;
+  wvDrawEdges(); wvRefreshStats();
+}
+
+function wvStartAdd(fromRegion,event){
+  event.stopPropagation();
+  WV.addingFrom=fromRegion;
+  const sel=document.getElementById('wap-target');
+  sel.innerHTML='';
+  wvAllIndices().filter(i=>i!==fromRegion).forEach(i=>{
+    const o=document.createElement('option'); o.value=i; o.textContent=i+' — '+wvName(i); sel.appendChild(o);
+  });
+  wvShowPopup('world-add-popup',event,document.getElementById('wv-node-'+fromRegion));
+}
+
+function wvAddConnection(){
+  if(WV.addingFrom===null) return;
+  const dir=document.getElementById('wap-dir').value;
+  const tgt=parseInt(document.getElementById('wap-target').value,10);
+  const id='portal_'+Date.now()+'_'+Math.random().toString(36).slice(2,6);
+  if(!WV.portals[WV.addingFrom]) WV.portals[WV.addingFrom]=[];
+  WV.portals[WV.addingFrom].push({id,direction:dir,targetRegion:tgt,x:0,y:0});
+  wvMarkDirty(WV.addingFrom);
+  document.getElementById('world-add-popup').style.display='none';
+  WV.addingFrom=null;
+  wvDrawEdges(); wvRefreshStats();
+}
+
+function wvMarkDirty(idx){
+  WV.dirty.add(idx);
+  const el=document.getElementById('wv-node-'+idx);
+  if(el) el.classList.add('wv-dirty');
+  document.getElementById('btn-world-save-changes').style.display='';
+}
+
+function wvRefreshStats(){
+  for(const [idxStr] of Object.entries(WV.portals)){
+    const idx=parseInt(idxStr,10);
+    const el=document.getElementById('wv-node-'+idx);
+    if(!el) continue;
+    const statsEl=el.querySelector('.wv-node-stats');
+    if(!statsEl) continue;
+    const rd=WV.regions.find(r=>r.regionIndex===idx);
+    if(!rd) continue;
+    const sprites=rd.data.sprites?.length||0;
+    const enemies=rd.data.enemies?.length||0;
+    const boss=rd.data.boss?.key||null;
+    const pLen=(WV.portals[idx]||[]).length;
+    statsEl.textContent=`${sprites} sprites · ${enemies} enemies${boss?' · boss':''} · ${pLen} portals`;
+  }
+}
+
+async function wvSaveChanges(){
+  const btn=document.getElementById('btn-world-save-changes');
+  btn.textContent='⏳ Saving…'; btn.disabled=true;
+  let ok=0,fail=0;
+  for(const idx of WV.dirty){
+    const rd=WV.regions.find(r=>r.regionIndex===idx);
+    if(!rd) continue;
+    try{
+      const data={...rd.data, portals:WV.portals[idx]||[]};
+      const r=await fetch('/api/regions/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({regionIndex:idx,data})});
+      (await r.json()).ok ? ok++ : fail++;
+    } catch{ fail++; }
+  }
+  WV.dirty.clear();
+  btn.style.display='none'; btn.disabled=false; btn.textContent='💾 Save Changes';
+  document.querySelectorAll('.wv-dirty').forEach(e=>e.classList.remove('wv-dirty'));
+  setStatus(fail>0?`⚠ WorldView: ${ok} saved, ${fail} failed`:`✓ WorldView: ${ok} region${ok!==1?'s':''} saved`);
+}
+
+function wvOpenInEditor(idx){
+  const r=WV.regions.find(r=>r.regionIndex===idx);
+  if(!r) return;
+  closeWorldView();
+  loadRegionData(r.data,r.filename,r.regionIndex);
+}
+
+function wvAllIndices(){
+  const built=new Set(WV.regions.map(r=>r.regionIndex));
+  return [...new Set([...Array.from({length:7},(_,i)=>i),...built])].sort((a,b)=>a-b);
+}
+
+function wvShowPopup(id,event,anchorEl){
+  const popup=document.getElementById(id);
+  const wrap=document.getElementById('world-canvas-wrap');
+  const rect=wrap.getBoundingClientRect();
+  if(anchorEl){
+    const ar=anchorEl.getBoundingClientRect();
+    popup.style.left=(ar.right-rect.left+8)+'px';
+    popup.style.top =(ar.top -rect.top )+'px';
+  } else {
+    popup.style.left=Math.min(event.clientX-rect.left+10, rect.width-200)+'px';
+    popup.style.top =Math.min(event.clientY-rect.top-10,  rect.height-160)+'px';
+  }
+  popup.style.display='block';
+}
+
+document.getElementById('btn-world-view').onclick=openWorldView;
+document.getElementById('btn-world-close').onclick=closeWorldView;
+document.getElementById('btn-world-refresh').onclick=wvRefresh;
+document.getElementById('btn-world-save-changes').onclick=wvSaveChanges;
+document.getElementById('btn-wep-apply').onclick=wvApplyEdge;
+document.getElementById('btn-wep-delete').onclick=wvDeleteEdge;
+document.getElementById('btn-wep-cancel').onclick=()=>{
+  document.getElementById('world-edge-popup').style.display='none';
+  WV.selectedEdge=null; wvDrawEdges();
+};
+document.getElementById('btn-wap-add').onclick=wvAddConnection;
+document.getElementById('btn-wap-cancel').onclick=()=>{
+  document.getElementById('world-add-popup').style.display='none';
+  WV.addingFrom=null;
+};
+document.getElementById('world-canvas-wrap').addEventListener('click',()=>{
+  document.getElementById('world-edge-popup').style.display='none';
+  document.getElementById('world-add-popup').style.display='none';
+  if(WV.selectedEdge){ WV.selectedEdge=null; wvDrawEdges(); }
+  WV.addingFrom=null;
+});
 
 window.addEventListener('load', init);
 window.addEventListener('resize', () => { const w=document.getElementById('canvas-wrap'); S.stage.size({width:w.clientWidth,height:w.clientHeight}); });
