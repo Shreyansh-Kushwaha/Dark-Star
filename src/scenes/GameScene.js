@@ -600,6 +600,7 @@ export class GameScene extends Phaser.Scene {
 
   _createPortals(region) {
     this._portals = {};
+    this._portalList = [];
 
     if (region.portalBack) {
       this._portals.back = this._makePortal(region.portalBack.x, region.portalBack.y, 0x44aaff, 'BACK', true);
@@ -620,7 +621,7 @@ export class GameScene extends Phaser.Scene {
     };
     drawPortal(1);
 
-    const text = this.add.text(x, y - 44, label === 'BACK' ? '← BACK' : 'NEXT →', {
+    const text = this.add.text(x, y - 44, label === 'BACK' ? '← BACK' : label === 'NEXT' ? 'NEXT →' : label, {
       fontSize: '12px', color: '#' + color.toString(16).padStart(6,'0'),
       fontFamily: 'monospace', stroke: '#000', strokeThickness: 2,
     }).setOrigin(0.5, 0.5).setDepth(100);
@@ -872,15 +873,28 @@ export class GameScene extends Phaser.Scene {
     if (mapPortals.length > 0) {
       ['back', 'next'].forEach(dir => {
         const p = this._portals?.[dir];
-        if (p) { p.visual.destroy(); p.text.destroy(); p.glowRing?.destroy(); }
+        if (p) { p.visual.destroy(); p.text?.destroy(); p.glowRing?.destroy(); }
       });
+      for (const p of (this._portalList || [])) {
+        p.visual?.destroy(); p.text?.destroy(); p.glowRing?.destroy();
+      }
       this._portals = {};
+      this._portalList = [];
       for (const p of mapPortals) {
-        const isBack = p.direction === 'back';
-        const portal = this._makePortal(p.x, p.y, isBack ? 0x44aaff : 0xffaa44, isBack ? 'BACK' : 'NEXT', true);
-        portal.targetRegion = (p.targetRegion != null) ? p.targetRegion : null;
-        if (isBack) this._portals.back = portal;
-        else        this._portals.next = portal;
+        if (p.direction === 'back' || p.direction === 'next') {
+          // legacy directional portals — keep working as before
+          const isBack = p.direction === 'back';
+          const portal = this._makePortal(p.x, p.y, isBack ? 0x44aaff : 0xffaa44, isBack ? 'BACK' : 'NEXT', true);
+          portal.targetRegion = p.targetRegion ?? null;
+          if (isBack) this._portals.back = portal;
+          else        this._portals.next = portal;
+        } else {
+          // new direction-less portal — just teleports to targetRegion
+          const label = p.targetRegion != null ? '→ R' + p.targetRegion : 'PORTAL';
+          const portal = this._makePortal(p.x, p.y, 0x88ffee, label, true);
+          portal.targetRegion = p.targetRegion ?? null;
+          this._portalList.push(portal);
+        }
       }
     }
 
@@ -1366,7 +1380,27 @@ export class GameScene extends Phaser.Scene {
     if (!this._portalCooldown || this.time.now > this._portalCooldown) {
       check(this._portals?.back, false);
       check(this._portals?.next, true);
+      // direction-less portals
+      for (const portal of (this._portalList || [])) {
+        if (!portal || portal.locked) continue;
+        for (const p of this.players) {
+          if (!p?.alive || p.downed) continue;
+          if (Phaser.Math.Distance.Between(p.x, p.y, portal.x, portal.y) < 40) {
+            if (portal.targetRegion != null) this._usePortalDirect(portal.targetRegion);
+            return;
+          }
+        }
+      }
     }
+  }
+
+  _usePortalDirect(newIndex) {
+    this._portalCooldown = this.time.now + 3000;
+    if (newIndex < 0 || newIndex >= REGIONS.length) return;
+    if (this.network?.connected && this.network.isHost()) this.network.send('REGION_CHANGE', { newIndex });
+    this._saveProgress(newIndex);
+    this.audio.portal();
+    this._fadeAndTransition(newIndex);
   }
 
   _usePortal(isNext) {

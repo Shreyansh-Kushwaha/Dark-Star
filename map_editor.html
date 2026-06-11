@@ -122,8 +122,7 @@ button.portal-btn{border-color:#00ccff;color:#66eeff}button.portal-btn:hover{bac
 /* drag-to-connect handles */
 .wv-handle{position:absolute;width:16px;height:16px;border-radius:50%;cursor:crosshair;z-index:10;border:2px solid;top:50%;transform:translateY(-50%);transition:transform .1s,box-shadow .1s}
 .wv-handle:hover{transform:translateY(-50%) scale(1.35);box-shadow:0 0 8px currentColor}
-.wv-handle-next{right:-10px;background:#ffaa44;border-color:#ffd07a;color:#ffd07a}
-.wv-handle-back{left:-10px;background:#44aaff;border-color:#88ccff;color:#88ccff}
+.wv-handle-next{right:-10px;background:#88ffee;border-color:#aaffee;color:#aaffee}
 .wv-handle-label{position:absolute;font-size:7px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .1s;color:#aaa}
 .wv-handle-next .wv-handle-label{right:18px;top:50%;transform:translateY(-50%)}
 .wv-handle-back .wv-handle-label{left:18px;top:50%;transform:translateY(-50%)}
@@ -331,12 +330,6 @@ button.portal-btn{border-color:#00ccff;color:#66eeff}button.portal-btn:hover{bac
     <!-- Edge edit popup -->
     <div id="world-edge-popup">
       <div id="wep-title" style="font-size:11px;color:#88ccff;font-weight:bold;margin-bottom:8px"></div>
-      <div class="wep-row"><label>Direction</label>
-        <select id="wep-dir">
-          <option value="next">NEXT →</option>
-          <option value="back">← BACK</option>
-        </select>
-      </div>
       <div class="wep-row"><label>Target</label>
         <select id="wep-target"></select>
       </div>
@@ -350,11 +343,11 @@ button.portal-btn{border-color:#00ccff;color:#66eeff}button.portal-btn:hover{bac
     <div id="wv-connect-hint">🔗 Release over a node to connect — ESC to cancel</div>
 
     <div id="world-legend">
-      <span style="color:#ffaa44">━━▶</span> NEXT portal &nbsp;&nbsp;
-      <span style="color:#44aaff">━━▶</span> BACK portal &nbsp;&nbsp;
+      <span style="color:#88ffee">━━▶</span> portal &nbsp;&nbsp;
       <span style="color:#ffd700">━━▶</span> selected &nbsp;&nbsp;
       <span style="color:#4488ff;border:1px solid #4488ff;padding:0 3px">■</span> built &nbsp;
-      <span style="color:#555;border:1px solid #444;padding:0 3px">■</span> not built
+      <span style="color:#555;border:1px solid #444;padding:0 3px">■</span> not built &nbsp;&nbsp;
+      <span style="color:#88ffee">●</span> drag handle to connect
     </div>
   </div>
 </div>
@@ -450,7 +443,7 @@ const S = {
   placingNpcType: null,          // 'yellow' | 'blue' while arming placement
   placingNpcType_config: null,   // config object while arming placement
   placedNpcs: [],                // [{ id, type, x, y, group, config }]
-  placingPortal: null,           // { direction, targetRegion } while arming placement
+  placingPortal: null,           // { targetRegion } while arming placement
   placedPortals: [],             // [{ id, direction, targetRegion, x, y, group }]
 };
 
@@ -709,7 +702,7 @@ function bindStageClick() {
     }
     if (S.placingPortal && onBg) {
       const pos = S.stage.getPointerPosition();
-      addPortalMarker(S.placingPortal.direction, S.placingPortal.targetRegion,
+      addPortalMarker(S.placingPortal.targetRegion,
         (pos.x - S.stage.x()) / S.stage.scaleX(),
         (pos.y - S.stage.y()) / S.stage.scaleY());
       pushHistory();
@@ -1144,77 +1137,64 @@ function renderPortalTray() {
   subEl.innerHTML = '';
   const lbl = document.createElement('span');
   lbl.style.cssText = 'font-size:10px;color:#66eeff;padding:2px 4px';
-  lbl.textContent = 'Configure a portal type and target region, then click the map to place it.';
+  lbl.textContent = 'Pick a target region, arm placement, then click the map. Place as many as you need.';
   subEl.appendChild(lbl);
 
   const grid = document.getElementById('tray-grid');
   grid.innerHTML = '';
 
-  for (const direction of ['back', 'next']) {
-    const color    = direction === 'back' ? '#44aaff' : '#ffaa44';
-    const icon     = direction === 'back' ? '← BACK'  : 'NEXT →';
-    const defReg   = direction === 'back' ? 0 : 1;
-    const isActive = S.placingPortal?.direction === direction;
+  const isActive = !!S.placingPortal;
+  const card = document.createElement('div');
+  card.className = 'portal-card';
+  card.style.borderColor = isActive ? '#88ffee' : '#333';
+  card.style.background  = isActive ? '#88ffee11' : '#080018';
 
-    const card = document.createElement('div');
-    card.className = 'portal-card';
-    card.style.borderColor = isActive ? color : '#333';
-    card.style.background  = isActive ? color + '11' : '#080018';
+  const title = document.createElement('div');
+  title.style.cssText = 'font-size:13px;font-weight:bold;color:#88ffee;letter-spacing:1px';
+  title.textContent = '🌀 Portal';
+  card.appendChild(title);
 
-    const title = document.createElement('div');
-    title.style.cssText = `font-size:13px;font-weight:bold;color:${color};letter-spacing:1px`;
-    title.textContent = icon;
-    card.appendChild(title);
+  const regionLabel = document.createElement('label');
+  regionLabel.textContent = 'Goes to region:';
+  card.appendChild(regionLabel);
 
-    const regionLabel = document.createElement('label');
-    regionLabel.textContent = 'Goes to region:';
-    card.appendChild(regionLabel);
+  const sel = document.createElement('select');
+  sel.id = 'portal-target-sel';
+  PORTAL_REGION_NAMES.forEach((name, i) => {
+    const opt = document.createElement('option');
+    opt.value = i; opt.textContent = name;
+    if (i === (S.placingPortal?.targetRegion ?? 1)) opt.selected = true;
+    sel.appendChild(opt);
+  });
+  card.appendChild(sel);
 
-    const sel = document.createElement('select');
-    sel.id = 'portal-target-' + direction;
-    PORTAL_REGION_NAMES.forEach((name, i) => {
-      const opt = document.createElement('option');
-      opt.value = i;
-      opt.textContent = name;
-      if (i === defReg) opt.selected = true;
-      sel.appendChild(opt);
-    });
-    if (S.placingPortal?.direction === direction) sel.value = S.placingPortal.targetRegion;
-    card.appendChild(sel);
-
-    const btn = document.createElement('button');
-    btn.className = 'portal-btn' + (isActive ? ' active' : '');
-    btn.style.cssText = 'font-size:10px;padding:3px 8px;margin-top:2px';
-    btn.textContent = isActive ? '✦ Placing — click map' : '📍 Arm Placement';
-    btn.onclick = () => {
+  const btn = document.createElement('button');
+  btn.className = 'portal-btn' + (isActive ? ' active' : '');
+  btn.style.cssText = 'font-size:10px;padding:3px 8px;margin-top:2px';
+  btn.textContent = isActive ? '✦ Placing — click map' : '📍 Arm Placement';
+  btn.onclick = () => {
+    if (isActive) {
+      S.placingPortal = null; updateCursor(); setStatus('');
+    } else {
       const targetRegion = parseInt(sel.value, 10);
-      if (S.placingPortal?.direction === direction) {
-        S.placingPortal = null;
-        updateCursor();
-        setStatus('');
-      } else {
-        S.placingPortal = { direction, targetRegion };
-        updateCursor();
-        setStatus('Placing ' + icon + ' portal → Region ' + targetRegion + ' — click map, Esc to cancel');
-      }
-      renderPortalTray();
-    };
-    card.appendChild(btn);
+      S.placingPortal = { targetRegion };
+      updateCursor();
+      setStatus('Placing portal → Region ' + targetRegion + ' — click map, Esc to cancel');
+    }
+    renderPortalTray();
+  };
+  card.appendChild(btn);
+  grid.appendChild(card);
 
-    grid.appendChild(card);
-  }
-
-  // List existing portals with delete buttons
+  // List placed portals
   if (S.placedPortals.length > 0) {
     const sep = document.createElement('div');
     sep.style.cssText = 'width:1px;background:#333;margin:0 4px;align-self:stretch';
     grid.appendChild(sep);
-
     for (const p of S.placedPortals) {
-      const color = p.direction === 'back' ? '#44aaff' : '#ffaa44';
       const row = document.createElement('div');
-      row.style.cssText = `display:flex;flex-direction:column;gap:3px;padding:6px 8px;background:#080018;border:1px solid ${color}44;border-radius:4px;min-width:90px`;
-      row.innerHTML = `<span style="color:${color};font-size:11px">${p.direction === 'back' ? '← BACK' : 'NEXT →'}</span><span style="color:#888;font-size:9px">→ Region ${p.targetRegion}<br>x:${Math.round(p.x)} y:${Math.round(p.y)}</span>`;
+      row.style.cssText = 'display:flex;flex-direction:column;gap:3px;padding:6px 8px;background:#080018;border:1px solid #88ffee44;border-radius:4px;min-width:90px';
+      row.innerHTML = `<span style="color:#88ffee;font-size:11px">🌀 Portal</span><span style="color:#888;font-size:9px">→ Region ${p.targetRegion}<br>x:${Math.round(p.x)} y:${Math.round(p.y)}</span>`;
       const delBtn = document.createElement('button');
       delBtn.className = 'red';
       delBtn.style.cssText = 'font-size:9px;padding:2px 6px;margin-top:2px';
@@ -1226,12 +1206,11 @@ function renderPortalTray() {
   }
 }
 
-function startPlacingPortal(direction, targetRegion) {
+function startPlacingPortal(targetRegion) {
   cancelPlacing();
-  S.placingPortal = { direction, targetRegion };
+  S.placingPortal = { targetRegion };
   updateCursor();
-  const icon = direction === 'back' ? '← BACK' : 'NEXT →';
-  setStatus('Placing ' + icon + ' portal → Region ' + targetRegion + ' — click map, Esc to cancel');
+  setStatus('Placing portal → Region ' + targetRegion + ' — click map, Esc to cancel');
   renderPortalTray();
 }
 
@@ -1239,16 +1218,15 @@ function genPortalId() {
   return 'portal_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6);
 }
 
-function addPortalMarker(direction, targetRegion, x, y, id) {
+function addPortalMarker(targetRegion, x, y, id) {
   const portalId = id || genPortalId();
-  const color    = direction === 'back' ? '#44aaff' : '#ffaa44';
-  const arrow    = direction === 'back' ? '←' : '→';
-  const label    = (direction === 'back' ? 'BACK' : 'NEXT') + '\nR' + targetRegion;
+  const color = '#88ffee';
+  const label = 'R' + targetRegion;
 
   const group = new Konva.Group({ x, y, draggable: true, id: portalId });
-  group.add(new Konva.Circle({ radius: 24, fill: color + '22', stroke: color, strokeWidth: 2.5 }));
-  group.add(new Konva.Text({ text: arrow, fontSize: 20, x: -7, y: -12, fill: '#fff', listening: false }));
-  group.add(new Konva.Text({ text: label, fontSize: 7, x: -26, y: 26, width: 52, align: 'center', fill: color, listening: false }));
+  group.add(new Konva.Circle({ radius: 24, fill: '#88ffee22', stroke: color, strokeWidth: 2.5 }));
+  group.add(new Konva.Text({ text: '🌀', fontSize: 16, x: -9, y: -11, fill: '#fff', listening: false }));
+  group.add(new Konva.Text({ text: label, fontSize: 8, x: -20, y: 26, width: 40, align: 'center', fill: color, listening: false }));
   S.markerLayer.add(group);
   S.markerLayer.batchDraw();
 
@@ -1265,8 +1243,8 @@ function addPortalMarker(direction, targetRegion, x, y, id) {
     setStatus('Portal removed — Ctrl+Z to undo');
   });
 
-  S.placedPortals.push({ id: portalId, direction, targetRegion, x, y, group });
-  setStatus('Placed ' + (direction === 'back' ? '← BACK' : 'NEXT →') + ' portal → Region ' + targetRegion + ' — click marker to delete');
+  S.placedPortals.push({ id: portalId, targetRegion, x, y, group });
+  setStatus('Placed portal → Region ' + targetRegion + ' — click marker to delete');
 }
 
 function removePortalMarker(id) {
@@ -1279,14 +1257,18 @@ function removePortalMarker(id) {
 
 function serializePortals() {
   return S.placedPortals.map(p => ({
-    id: p.id, direction: p.direction, targetRegion: p.targetRegion,
+    id: p.id, targetRegion: p.targetRegion,
     x: Math.round(p.group.x()), y: Math.round(p.group.y()),
   }));
 }
 
 function restorePortals(list) {
   [...S.placedPortals].forEach(p => removePortalMarker(p.id));
-  for (const p of (list || [])) addPortalMarker(p.direction, p.targetRegion, p.x, p.y, p.id);
+  for (const p of (list || [])) {
+    // support legacy portals that still have a direction field
+    const target = p.targetRegion ?? (p.direction === 'back' ? 0 : 1);
+    addPortalMarker(target, p.x, p.y, p.id);
+  }
 }
 
 function bindEntityPlacing() {
@@ -2677,33 +2659,19 @@ function wvRender(){
         WV.dragging={idx,sx:e.clientX,sy:e.clientY,nx:WV.nodes[idx].x,ny:WV.nodes[idx].y};
       });
 
-      // NEXT handle (right edge, orange)
+      // Connect handle (right edge, teal)
       const nh=document.createElement('div');
       nh.className='wv-handle wv-handle-next';
-      nh.title='Drag to create NEXT portal';
+      nh.title='Drag to connect to another region';
       nh.addEventListener('mousedown', e=>{
         e.stopPropagation(); e.preventDefault();
         const wRect=wrap.getBoundingClientRect();
         const nRect=el.getBoundingClientRect();
-        WV.connecting={fromRegion:idx, direction:'next',
+        WV.connecting={fromRegion:idx, direction:'none',
           x1:nRect.right-wRect.left, y1:(nRect.top+nRect.bottom)/2-wRect.top};
         document.getElementById('wv-connect-hint').style.display='block';
       });
       el.appendChild(nh);
-
-      // BACK handle (left edge, blue)
-      const bh=document.createElement('div');
-      bh.className='wv-handle wv-handle-back';
-      bh.title='Drag to create BACK portal';
-      bh.addEventListener('mousedown', e=>{
-        e.stopPropagation(); e.preventDefault();
-        const wRect=wrap.getBoundingClientRect();
-        const nRect=el.getBoundingClientRect();
-        WV.connecting={fromRegion:idx, direction:'back',
-          x1:nRect.left-wRect.left, y1:(nRect.top+nRect.bottom)/2-wRect.top};
-        document.getElementById('wv-connect-hint').style.display='block';
-      });
-      el.appendChild(bh);
     }
     nodesEl.appendChild(el);
   }
@@ -2759,13 +2727,11 @@ function wvUpdateLiveWire(mx,my){
     wire.setAttribute('stroke-dasharray','7,4'); wire.setAttribute('pointer-events','none');
     svg.appendChild(wire);
   }
-  const{x1,y1,direction}=WV.connecting;
-  const color=direction==='next'?'#ffaa44':'#44aaff';
+  const{x1,y1}=WV.connecting;
   const cx=(x1+mx)/2, cy=(y1+my)/2 - Math.abs(mx-x1)*0.15;
-  wire.setAttribute('stroke',color); wire.setAttribute('stroke-width','2');
+  wire.setAttribute('stroke','#88ffee'); wire.setAttribute('stroke-width','2');
   wire.setAttribute('d',`M${x1},${y1} Q${cx},${cy} ${mx},${my}`);
-  const markerId=direction==='next'?'wv-arr-next':'wv-arr-back';
-  wire.setAttribute('marker-end',`url(#${markerId})`);
+  wire.setAttribute('marker-end','url(#wv-arr-back)');
 }
 
 function wvCancelConnect(){
@@ -2775,10 +2741,10 @@ function wvCancelConnect(){
   WV.connecting=null;
 }
 
-function wvCreateConnection(fromRegion,direction,targetRegion){
+function wvCreateConnection(fromRegion,_dir,targetRegion){
   const id='portal_'+Date.now()+'_'+Math.random().toString(36).slice(2,6);
   if(!WV.portals[fromRegion]) WV.portals[fromRegion]=[];
-  WV.portals[fromRegion].push({id,direction,targetRegion,x:0,y:0});
+  WV.portals[fromRegion].push({id,targetRegion,x:0,y:0});
   wvMarkDirty(fromRegion);
   wvDrawEdges(); wvRefreshStats();
 }
@@ -2799,9 +2765,10 @@ function wvDrawEdges(){
     for(const p of portals){
       const dst=wvCenter(p.targetRegion); if(!dst) continue;
       const isSel=WV.selectedEdge?.fromRegion===from&&WV.selectedEdge?.portalId===p.id;
-      const color=isSel?'#ffd700':(p.direction==='next'?'#ffaa44':'#44aaff');
-      const marker=isSel?'wv-arr-sel':(p.direction==='next'?'wv-arr-next':'wv-arr-back');
-      const off=p.direction==='next'?14:-14;
+      const dir=p.direction||'none';
+      const color=isSel?'#ffd700':(dir==='next'?'#ffaa44':dir==='back'?'#44aaff':'#88ffee');
+      const marker=isSel?'wv-arr-sel':(dir==='next'?'wv-arr-next':'wv-arr-back');
+      const off=dir==='back'?-14:14;
       const dx=dst.x-src.x,dy=dst.y-src.y,len=Math.sqrt(dx*dx+dy*dy)||1;
       const ox=-dy/len*off,oy=dx/len*off;
       const x1=src.x+ox,y1=src.y+oy,x2=dst.x+ox,y2=dst.y+oy;
@@ -2828,7 +2795,7 @@ function wvDrawEdges(){
       txt.setAttribute('fill',color); txt.setAttribute('font-size','9');
       txt.setAttribute('font-family','monospace'); txt.setAttribute('text-anchor','middle');
       txt.setAttribute('dominant-baseline','central'); txt.setAttribute('pointer-events','none');
-      txt.textContent=p.direction==='next'?'NEXT':'BACK';
+      txt.textContent=p.direction==='next'?'NEXT':p.direction==='back'?'BACK':('→R'+p.targetRegion);
       svg.insertBefore(txt,svg.querySelector('#wv-live-wire'));
     }
   }
@@ -2841,8 +2808,7 @@ function wvSelectEdge(fromRegion,portalId,mouseEvent){
   wvDrawEdges();
   const portal=(WV.portals[fromRegion]||[]).find(p=>p.id===portalId);
   if(!portal) return;
-  document.getElementById('wep-title').textContent=`Region ${fromRegion} → ${portal.direction.toUpperCase()} → Region ${portal.targetRegion}`;
-  document.getElementById('wep-dir').value=portal.direction;
+  document.getElementById('wep-title').textContent=`Region ${fromRegion} → Region ${portal.targetRegion}`;
   const sel=document.getElementById('wep-target');
   sel.innerHTML='';
   wvAllIdx().filter(i=>i!==fromRegion).forEach(i=>{
@@ -2862,7 +2828,6 @@ function wvApplyEdge(){
   const{fromRegion,portalId}=WV.selectedEdge;
   const portal=(WV.portals[fromRegion]||[]).find(p=>p.id===portalId);
   if(!portal) return;
-  portal.direction=document.getElementById('wep-dir').value;
   portal.targetRegion=parseInt(document.getElementById('wep-target').value,10);
   wvMarkDirty(fromRegion);
   document.getElementById('world-edge-popup').style.display='none';
