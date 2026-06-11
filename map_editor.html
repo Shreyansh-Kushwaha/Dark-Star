@@ -2431,7 +2431,10 @@ function bindRandModal() {
     try { img = await getImg(url); }
     catch { document.getElementById('rand-status').textContent = '⚠ Could not load image'; return; }
 
-    const hw = img.width / 2, hh = img.height / 2;
+    const fw = _randAsset.frameW, fh = _randAsset.frameH, fc = _randAsset.frameCount;
+    const isSheet = !!(fw && fh && fc > 1);
+    const hw = isSheet ? fw / 2 : img.width / 2;
+    const hh = isSheet ? fh / 2 : img.height / 2;
     const targetKonvaLayer = konvaLayerFor(layerAttr);
 
     let existingRects = avoid
@@ -2444,16 +2447,18 @@ function bindRandModal() {
     for (const { x, y } of positions) {
       const scale = scaleMin + Math.random() * (scaleMax - scaleMin);
       if (avoid) {
-        const nb = { x: x-hw*scale, y: y-hh*scale, width: img.width*scale, height: img.height*scale };
+        const nb = { x: x-hw*scale, y: y-hh*scale, width: (isSheet ? fw : img.width)*scale, height: (isSheet ? fh : img.height)*scale };
         if (existingRects.some(r => nb.x < r.x+r.width && nb.x+nb.width > r.x && nb.y < r.y+r.height && nb.y+nb.height > r.y)) continue;
         existingRects.push(nb);
       }
       const id = genSpriteId();
-      const node = new Konva.Image({
+      const nodeCfg = {
         x, y, image: img, offsetX: hw, offsetY: hh,
         scaleX: scale, scaleY: scale,
         draggable: !S.panMode && !S.deleteMode && !S.noWalkMode,
-      });
+      };
+      if (isSheet) { nodeCfg.width = fw; nodeCfg.height = fh; nodeCfg.crop = { x: 0, y: 0, width: fw, height: fh }; }
+      const node = new Konva.Image(nodeCfg);
       node.setAttr('assetDir',     _randAsset.dir);
       node.setAttr('assetFrames',  _randAsset.frames);
       node.setAttr('assetName',    _randAsset.name);
@@ -2461,11 +2466,16 @@ function bindRandModal() {
       node.setAttr('currentFrame', 0);
       node.setAttr('spriteId',     id);
       node.setAttr('spriteLayer',  layerAttr);
+      if (isSheet) {
+        node.setAttr('assetFrameW',     fw);
+        node.setAttr('assetFrameH',     fh);
+        node.setAttr('assetFrameCount', fc);
+      }
       targetKonvaLayer.add(node);
       bindSpriteEvents(node);
       broadcast({ type: 'SPRITE_ADD', spriteId: id, dir: _randAsset.dir, frames: _randAsset.frames,
         name: _randAsset.name, animated: _randAsset.animated, x, y, offsetX: hw, offsetY: hh,
-        scaleX: scale, scaleY: scale, spriteLayer: layerAttr });
+        scaleX: scale, scaleY: scale, spriteLayer: layerAttr, frameW: fw, frameH: fh, frameCount: fc });
       placed++;
     }
 
