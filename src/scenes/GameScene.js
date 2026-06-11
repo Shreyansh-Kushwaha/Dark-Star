@@ -812,7 +812,7 @@ export class GameScene extends Phaser.Scene {
           continue;
         }
 
-        if (sp.animated && sp.frames.length > 1 && !sp.frameW) {
+        if (sp.animated && sp.frames.length > 1 && !sp.frameW && sp.frames.every(f => /^\d+\.png$/i.test(f))) {
           // Multi-frame sequence animation (separate image files per frame)
           const animKey = key + '_seq';
           if (!this.anims.exists(animKey)) {
