@@ -593,7 +593,7 @@ export class GameScene extends Phaser.Scene {
     for (let i = 0; i < count; i++) {
       const x = pos.x + (Math.random() - 0.5) * 120;
       const y = pos.y + (Math.random() - 0.5) * 120;
-      const enemy = new Enemy(this, x, y, type, REGIONS[this._regionIndex].difficulty);
+      const enemy = new Enemy(this, x, y, type, this._region?.difficulty ?? 1.0);
       this.enemies.push(enemy);
     }
   }
@@ -1222,7 +1222,7 @@ export class GameScene extends Phaser.Scene {
   }
 
   _checkBossTrigger() {
-    const bossKey = this._mapBossOverride?.key || REGIONS[this._regionIndex].bossKey;
+    const bossKey = this._mapBossOverride?.key || this._region?.bossKey;
     if (!this._bossArenaPos || !bossKey) return;
     for (const p of this.players) {
       if (!p?.alive) continue;
@@ -1237,7 +1237,7 @@ export class GameScene extends Phaser.Scene {
   _triggerBoss() {
     if (this._bossTriggered) return;
     this._bossTriggered = true;
-    const region = REGIONS[this._regionIndex];
+    const region = this._region;
     // Map editor override takes precedence for both key and position
     const bossKey = this._mapBossOverride?.key || region.bossKey;
     if (!bossKey) return;
@@ -1693,8 +1693,8 @@ export class GameScene extends Phaser.Scene {
   }
 
   _checkEchoTriggers() {
-    const region = REGIONS[this._regionIndex];
-    if (!region.echoTriggers?.length) return;
+    const region = this._region;
+    if (!region?.echoTriggers?.length) return;
     for (const trigger of region.echoTriggers) {
       if (this._firedEchoes.has(trigger.id)) continue;
       for (const p of this.players) {
