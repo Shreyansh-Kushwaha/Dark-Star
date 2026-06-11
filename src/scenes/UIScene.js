@@ -39,8 +39,9 @@ export class UIScene extends Phaser.Scene {
     this._statTiers = {};
     this._levelUpActive = false;
 
-    this._keyEsc  = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
-    this._keyHome = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.HOME);
+    this._keyEsc       = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
+    this._keyHome      = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.HOME);
+    this._keyBackspace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.BACKSPACE);
     this._keyU    = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.U);
     this._keyI    = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.I);
     this._keyM    = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.M);
@@ -383,17 +384,13 @@ export class UIScene extends Phaser.Scene {
       }
     }
 
-    const escDown  = Phaser.Input.Keyboard.JustDown(this._keyEsc);
-    const homeDown = Phaser.Input.Keyboard.JustDown(this._keyHome);
-    if (escDown) {
+    const escDown       = Phaser.Input.Keyboard.JustDown(this._keyEsc);
+    const homeDown      = Phaser.Input.Keyboard.JustDown(this._keyHome);
+    const backspaceDown = Phaser.Input.Keyboard.JustDown(this._keyBackspace);
+    if (escDown || homeDown || backspaceDown) {
       if (this._questVisible) { this._questPanel.setVisible(false); this._questVisible = false; }
       else if (this._invVisible) { this._invPanel.setVisible(false); this._invVisible = false; }
-      else if (!this._levelUpActive) this.scene.get('GameScene')?.togglePause();
-    }
-    if (homeDown) {
-      if (this._questVisible) { this._questPanel.setVisible(false); this._questVisible = false; }
-      else if (this._invVisible) { this._invPanel.setVisible(false); this._invVisible = false; }
-      else if (!this._levelUpActive) this.scene.get('GameScene')?.togglePause();
+      else if (!this._levelUpActive && !backspaceDown) this.scene.get('GameScene')?.togglePause();
     }
     if (Phaser.Input.Keyboard.JustDown(this._keyU)) {
       this._questVisible = !this._questVisible;

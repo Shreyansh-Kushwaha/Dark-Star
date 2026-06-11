@@ -59,17 +59,18 @@ export class PauseScene extends Phaser.Scene {
     this._updateCursor();
 
     this.add.text(GAME_W / 2, GAME_H / 2 + 160,
-      '↑↓ Navigate   Enter / Space — Confirm   Esc — Resume', {
+      '↑↓ Navigate   Enter / Space — Confirm   Esc / Backspace — Back', {
         fontSize: '11px', color: '#555', fontFamily: 'monospace',
       }).setOrigin(0.5);
 
     const kb = this.input.keyboard;
-    kb.on('keydown-ESC',   () => this._onEsc());
-    kb.on('keydown-HOME',  () => this._resume());
-    kb.on('keydown-UP',    () => this._move(-1));
-    kb.on('keydown-DOWN',  () => this._move(1));
-    kb.on('keydown-ENTER', () => this._confirm());
-    kb.on('keydown-SPACE', () => this._confirm());
+    kb.on('keydown-ESC',       () => this._onEsc());
+    kb.on('keydown-BACKSPACE', () => this._onEsc());
+    kb.on('keydown-HOME',      () => this._resume());
+    kb.on('keydown-UP',        () => this._move(-1));
+    kb.on('keydown-DOWN',      () => this._move(1));
+    kb.on('keydown-ENTER',     () => this._confirm());
+    kb.on('keydown-SPACE',     () => this._confirm());
 
     this._bookOpen = false;
     this._bookObjs = [];
