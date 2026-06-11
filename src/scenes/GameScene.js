@@ -1443,12 +1443,18 @@ export class GameScene extends Phaser.Scene {
           if (this.network?.connected) {
             this.registry.set('network', this.network);
           }
-          this.scene.restart({
+          const doRestart = () => this.scene.restart({
             regionIndex: newIndex,
             coop: this._isCoop,
             p1Char: this._p1Char,
             p2Char: this._p2Char,
           });
+          // Refresh region maps from disk so editor-saved regions are always current
+          fetch('/api/regions')
+            .then(r => r.json())
+            .then(list => { this.registry.set('regionMaps', list); })
+            .catch(() => {})
+            .finally(doRestart);
         });
       },
     });
