@@ -92,23 +92,25 @@ export class AbilityManager {
 
   static _agniShield(player, scene) {
     player._agniShieldTimer = 3000;
-    if (player._agniShieldFx) { player._agniShieldFx.destroy(); player._agniShieldFx = null; }
+    // Clean up any prior instance
+    if (player._agniShieldFx) { player.remove(player._agniShieldFx, true); player._agniShieldFx = null; }
     if (player._agniShieldLoopTimer) { player._agniShieldLoopTimer.remove(false); player._agniShieldLoopTimer = null; }
 
-    // Invisible container as anchor so Player.js setPosition/destroy calls work
-    player._agniShieldFx = scene.add.container(player.x, player.y);
+    // Attach looping VFX as a child of the player container so it follows movement
+    if (scene.anims.exists('vfx_lightning5')) {
+      const fx = scene.add.sprite(0, -20, 'vfx_l5_1').setScale(0.85).setAlpha(0.9);
+      fx.play({ key: 'vfx_lightning5', repeat: -1 });
+      // Insert at index 1 — between shadow (0) and player sprite (2), so it renders under the player
+      player.addAt(fx, 1);
+      player._agniShieldFx = fx;
 
-    // Loop lightning VFX around the player for the 3-second shield duration
-    let tick = 0;
-    player._agniShieldLoopTimer = scene.time.addEvent({
-      delay: 280,
-      repeat: 10,
-      callback: () => {
-        if (!player.alive) return;
-        tick++;
-        _vfxPlay(scene, 'vfx_lightning5', player.x, player.y - 20, 0.85, player.depth - 1, 0.5);
-      },
-    });
+      scene.time.delayedCall(3000, () => {
+        if (player._agniShieldFx === fx) {
+          player.remove(fx, true);
+          player._agniShieldFx = null;
+        }
+      });
+    }
 
     scene.audio.ability();
   }
