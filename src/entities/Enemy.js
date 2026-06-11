@@ -33,6 +33,13 @@ export class Enemy extends Phaser.GameObjects.Container {
     this._roamTarget = null;
     this._roamTimer  = 0;
 
+    // Stuck detection
+    this._stuckCheckX     = x;
+    this._stuckCheckY     = y;
+    this._stuckCheckTimer = 0;
+    this._stuckDetourTimer = 0;
+    this._stuckDetourAngle = 0;
+
     // Build sprite — new spritesheet-based enemies have a spriteTexture override
     const baseKey  = cfg.textureBase;
     const initTex  = cfg.spriteTexture || (baseKey + '_idle_01');
@@ -149,6 +156,16 @@ export class Enemy extends Phaser.GameObjects.Container {
         this.body.setVelocity(dx / d * s, dy / d * s);
         this.sprite.setFlipX(dx < 0);
         this._playAnim('run');
+
+        // If roam target is blocked by a no-walk zone, pick a new one
+        this._stuckCheckTimer -= delta;
+        if (this._stuckCheckTimer <= 0) {
+          this._stuckCheckTimer = 300;
+          const moved = Phaser.Math.Distance.Between(this.x, this.y, this._stuckCheckX, this._stuckCheckY);
+          if (moved < 4) { this._roamTarget = null; this._roamTimer = 0; }
+          this._stuckCheckX = this.x;
+          this._stuckCheckY = this.y;
+        }
       } else {
         this.body.setVelocity(0, 0);
         this._playAnim('idle');
@@ -182,6 +199,26 @@ export class Enemy extends Phaser.GameObjects.Container {
         const cd  = Math.sqrt(cdx * cdx + cdy * cdy);
         if (cd > 10) { mx = cdx / cd; my = cdy / cd; }
       }
+    }
+
+    // Stuck detection: if barely moved in 300ms, steer perpendicular to slide around obstacle
+    this._stuckCheckTimer -= delta;
+    if (this._stuckCheckTimer <= 0) {
+      this._stuckCheckTimer = 300;
+      const moved = Phaser.Math.Distance.Between(this.x, this.y, this._stuckCheckX, this._stuckCheckY);
+      if (moved < 6 && this._stuckDetourTimer <= 0) {
+        const baseAngle = Math.atan2(my, mx);
+        const side = Math.random() < 0.5 ? 1 : -1;
+        this._stuckDetourAngle = baseAngle + side * (Math.PI * 0.5 + Math.random() * 0.4);
+        this._stuckDetourTimer = 500 + Math.random() * 400;
+      }
+      this._stuckCheckX = this.x;
+      this._stuckCheckY = this.y;
+    }
+    if (this._stuckDetourTimer > 0) {
+      this._stuckDetourTimer -= delta;
+      mx = Math.cos(this._stuckDetourAngle);
+      my = Math.sin(this._stuckDetourAngle);
     }
 
     this.body.setVelocity(mx * this.speed, my * this.speed);
