@@ -104,7 +104,40 @@ export class GameScene extends Phaser.Scene {
     this._save = saveData;
     const regionIndex = data.regionIndex ?? saveData.regionIndex ?? 0;
     this._regionIndex = regionIndex;
-    const region = REGIONS[regionIndex];
+
+    // Look up map-editor layout first so we can use it for the fallback region
+    const _regionMaps = this.registry.get('regionMaps') || [];
+    this._mapData = _regionMaps.find(e => e.regionIndex === regionIndex)?.data || null;
+
+    // Build a fallback region descriptor for editor-only regions (indices beyond REGIONS array)
+    const region = REGIONS[regionIndex] ?? (() => {
+      const md = this._mapData;
+      let bgColor = 0x2d5c28;
+      if (md?.background?.type === 'color' && md.background.value) {
+        bgColor = parseInt(md.background.value.replace('#', ''), 16);
+      }
+      return {
+        index: regionIndex,
+        name: `Region ${regionIndex}`,
+        subtitle: '',
+        bgColor,
+        bgColor2: bgColor,
+        borderColor: 0x111111,
+        difficulty: 1.0,
+        bossKey: null,
+        bossPos: null,
+        spawnPos: { x: 380, y: WORLD_H / 2 },
+        portalBack: null,
+        portalNext: null,
+        spawnerPositions: [],
+        platePositions: [],
+        fixedEnemies: [],
+        enemyTypes: ['melee'],
+        echoTriggers: [],
+        worldFragments: [],
+        ambientKey: 0,
+      };
+    })();
 
     // Systems
     this.audio  = new AudioManager();
@@ -117,10 +150,6 @@ export class GameScene extends Phaser.Scene {
 
     this._region = region;
     this._mapBossOverride = null;
-
-    // Look up map-editor layout for this region
-    const _regionMaps = this.registry.get('regionMaps') || [];
-    this._mapData = _regionMaps.find(e => e.regionIndex === regionIndex)?.data || null;
 
     // Physics world
     this.physics.world.setBounds(0, 0, WORLD_W, WORLD_H);
