@@ -251,13 +251,16 @@ button.portal-btn{border-color:#00ccff;color:#66eeff}button.portal-btn:hover{bac
 </div>
 
 <div id="region-modal" style="position:fixed;inset:0;background:#000c;display:none;z-index:1000;align-items:center;justify-content:center">
-  <div style="background:#12001c;border:1px solid #ff8833;border-radius:6px;padding:20px;min-width:300px;display:flex;flex-direction:column;gap:12px">
+  <div style="background:#12001c;border:1px solid #ff8833;border-radius:6px;padding:20px;min-width:320px;display:flex;flex-direction:column;gap:12px">
     <div style="color:#ffaa55;font-size:13px;font-weight:bold">🗂 Save to Region</div>
-    <div style="font-size:10px;color:#888">This will save the map as <code style="color:#ffcc88">regions/region_N.json</code> on the server so the game loads it automatically.</div>
+    <div style="font-size:10px;color:#888">Saves as <code style="color:#ffcc88">regions/region_N.json</code> on the server.</div>
     <div style="display:flex;align-items:center;gap:8px">
-      <label style="font-size:11px;color:#ccc">Region Index:</label>
+      <label style="font-size:11px;color:#ccc;min-width:100px">Region Index:</label>
       <input type="number" id="region-index-input" value="0" min="0" max="20" style="width:60px;background:#0a0010;border:1px solid #ff8833;color:#ffcc88;padding:3px 6px;font-size:12px;border-radius:3px;font-family:monospace">
-      <span style="font-size:10px;color:#666">(0=Gramavana, 1=Mahāvana, …)</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <label style="font-size:11px;color:#ccc;min-width:100px">Region Name:</label>
+      <input type="text" id="region-name-input" placeholder="e.g. Gramavana" style="flex:1;background:#0a0010;border:1px solid #ff8833;color:#ffcc88;padding:3px 6px;font-size:11px;border-radius:3px;font-family:monospace">
     </div>
     <div style="display:flex;gap:8px;justify-content:flex-end">
       <button class="orange" id="btn-region-confirm">💾 Save</button>
@@ -919,7 +922,7 @@ function renderTray() {
   if (S.activeTrayTab === 'enemies') { renderEntityTray('enemies'); return; }
   if (S.activeTrayTab === 'boss')    { renderEntityTray('boss');    return; }
   if (S.activeTrayTab === 'npcs')    { renderEntityTray('npcs');    return; }
-  if (S.activeTrayTab === 'portals') { renderPortalTray();          return; }
+  if (S.activeTrayTab === 'portals') { _fetchRegionNames().then(renderPortalTray); return; }
 
   const cat = cats[S.activeCat];
   if (!cat) return;
@@ -1127,17 +1130,30 @@ function removeBossMarker() {
 }
 
 // ── Portal placement ───────────────────────────────────────────────────────
-const PORTAL_REGION_NAMES = [
-  '0 — Gramavana', '1 — Mahāvana', '2 — Vrindavana',
-  '3 — Nāga Pātāl', '4 — Deva Mandira', '5 — Swarga Seema', '6 — Viyoga Durga',
-];
+// Cached region names fetched from server { regionIndex -> name }
+const _portalRegionNames = {};
+async function _fetchRegionNames() {
+  try {
+    const res = await fetch('/api/regions');
+    const list = await res.json();
+    for (const r of list) {
+      if (r.regionIndex != null) _portalRegionNames[r.regionIndex] = r.data.regionName || null;
+    }
+  } catch {}
+}
+_fetchRegionNames();
+
+function _regionLabel(idx) {
+  const name = _portalRegionNames[idx];
+  return name ? `${idx} — ${name}` : `Region ${idx}`;
+}
 
 function renderPortalTray() {
   const subEl = document.getElementById('tray-sub');
   subEl.innerHTML = '';
   const lbl = document.createElement('span');
   lbl.style.cssText = 'font-size:10px;color:#66eeff;padding:2px 4px';
-  lbl.textContent = 'Pick a target region, arm placement, then click the map. Place as many as you need.';
+  lbl.textContent = 'Set target region, arm placement, click the map. Place as many portals as you need.';
   subEl.appendChild(lbl);
 
   const grid = document.getElementById('tray-grid');
@@ -1155,18 +1171,24 @@ function renderPortalTray() {
   card.appendChild(title);
 
   const regionLabel = document.createElement('label');
-  regionLabel.textContent = 'Goes to region:';
+  regionLabel.textContent = 'Teleports to region:';
   card.appendChild(regionLabel);
 
-  const sel = document.createElement('select');
-  sel.id = 'portal-target-sel';
-  PORTAL_REGION_NAMES.forEach((name, i) => {
-    const opt = document.createElement('option');
-    opt.value = i; opt.textContent = name;
-    if (i === (S.placingPortal?.targetRegion ?? 1)) opt.selected = true;
-    sel.appendChild(opt);
-  });
-  card.appendChild(sel);
+  // Number input — supports any region index, not limited to a hardcoded list
+  const numWrap = document.createElement('div');
+  numWrap.style.cssText = 'display:flex;align-items:center;gap:5px';
+  const numInput = document.createElement('input');
+  numInput.type = 'number'; numInput.min = 0; numInput.max = 50; numInput.step = 1;
+  numInput.value = S.placingPortal?.targetRegion ?? 1;
+  numInput.id = 'portal-target-num';
+  numInput.style.cssText = 'width:52px;background:#0a0010;border:1px solid #336;color:#88ffee;padding:2px 5px;font-size:12px;border-radius:3px;font-family:monospace';
+  const numHint = document.createElement('span');
+  numHint.style.cssText = 'font-size:9px;color:#556;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px';
+  numHint.textContent = _regionLabel(numInput.value);
+  numInput.addEventListener('input', () => { numHint.textContent = _regionLabel(parseInt(numInput.value) || 0); });
+  numWrap.appendChild(numInput);
+  numWrap.appendChild(numHint);
+  card.appendChild(numWrap);
 
   const btn = document.createElement('button');
   btn.className = 'portal-btn' + (isActive ? ' active' : '');
@@ -1176,10 +1198,10 @@ function renderPortalTray() {
     if (isActive) {
       S.placingPortal = null; updateCursor(); setStatus('');
     } else {
-      const targetRegion = parseInt(sel.value, 10);
+      const targetRegion = parseInt(document.getElementById('portal-target-num')?.value ?? 1, 10);
       S.placingPortal = { targetRegion };
       updateCursor();
-      setStatus('Placing portal → Region ' + targetRegion + ' — click map, Esc to cancel');
+      setStatus('Placing portal → ' + _regionLabel(targetRegion) + ' — click map, Esc to cancel');
     }
     renderPortalTray();
   };
@@ -1194,7 +1216,7 @@ function renderPortalTray() {
     for (const p of S.placedPortals) {
       const row = document.createElement('div');
       row.style.cssText = 'display:flex;flex-direction:column;gap:3px;padding:6px 8px;background:#080018;border:1px solid #88ffee44;border-radius:4px;min-width:90px';
-      row.innerHTML = `<span style="color:#88ffee;font-size:11px">🌀 Portal</span><span style="color:#888;font-size:9px">→ Region ${p.targetRegion}<br>x:${Math.round(p.x)} y:${Math.round(p.y)}</span>`;
+      row.innerHTML = `<span style="color:#88ffee;font-size:11px">🌀 Portal</span><span style="color:#888;font-size:9px">→ ${_regionLabel(p.targetRegion)}<br>x:${Math.round(p.x)} y:${Math.round(p.y)}</span>`;
       const delBtn = document.createElement('button');
       delBtn.className = 'red';
       delBtn.style.cssText = 'font-size:9px;padding:2px 6px;margin-top:2px';
@@ -1981,8 +2003,10 @@ function bindNoWalkZone() {
 
 // ── Save / Load JSON ───────────────────────────────────────────────────────
 function buildMapData() {
+  const nameInput = document.getElementById('region-name-input');
   return {
     version: 1,
+    regionName: nameInput ? nameInput.value.trim() || undefined : undefined,
     background: S.bgImage
       ? { type: 'image', value: null }
       : { type: 'color', value: document.getElementById('bg-color').value },
@@ -2091,7 +2115,8 @@ async function refreshLoadRegionList() {
       row.style.cssText = 'display:flex;align-items:center;gap:6px;background:#1a0028;border:1px solid #ff8833;border-radius:4px;padding:7px 10px';
       const info = document.createElement('div');
       info.style.cssText = 'flex:1;font-size:11px;color:#ffcc88;min-width:0';
-      info.innerHTML = `<span style="color:#ff8833;font-weight:bold">Region ${r.regionIndex ?? '?'}</span> <span style="color:#888;font-size:10px">${r.filename}</span><br><span style="color:#666;font-size:9px">${spriteCount} sprites · ${enemyCount} enemies${bossInfo}</span>`;
+      const rName = r.data.regionName ? ` — ${r.data.regionName}` : '';
+      info.innerHTML = `<span style="color:#ff8833;font-weight:bold">Region ${r.regionIndex ?? '?'}${rName}</span> <span style="color:#888;font-size:10px">${r.filename}</span><br><span style="color:#666;font-size:9px">${spriteCount} sprites · ${enemyCount} enemies${bossInfo}</span>`;
       const editBtn = document.createElement('button');
       editBtn.className = 'orange';
       editBtn.style.cssText = 'flex-shrink:0;padding:4px 10px;font-size:11px';
@@ -2134,8 +2159,9 @@ async function loadRegionData(data, filename, regionIndex) {
   restoreBossMarker(data.boss || null);
   restoreNpcMarkers(data.npcs || []);
   restorePortals(data.portals || []);
-  // Pre-fill the region index in the Save modal so saving overwrites the same region
+  // Pre-fill index and name in Save modal so saving overwrites the same region
   if (regionIndex != null) document.getElementById('region-index-input').value = regionIndex;
+  document.getElementById('region-name-input').value = data.regionName || '';
   S.history = [];
   pushHistory();
   const enemyCount  = (data.enemies || []).length;
