@@ -592,7 +592,7 @@ function bindStageClick() {
     if (S.panMode || S.noWalkMode) return;
     const target = e.target;
     const onBg = target === S.stage || target === S.bgRect || target === S.bgImage;
-    if (S.placingAsset && onBg) {
+    if (S.placingAsset) {
       const pos = S.stage.getPointerPosition();
       placeSprite(S.placingAsset,
         (pos.x - S.stage.x()) / S.stage.scaleX(),
