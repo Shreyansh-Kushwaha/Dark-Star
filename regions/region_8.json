@@ -3084,7 +3084,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3104,7 +3105,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3124,7 +3126,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3144,7 +3147,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3164,7 +3168,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3184,7 +3189,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3204,7 +3210,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3224,7 +3231,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3244,7 +3252,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3264,7 +3273,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3284,7 +3294,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3304,7 +3315,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3324,7 +3336,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3344,7 +3357,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3364,7 +3378,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3384,7 +3399,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3404,7 +3420,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3424,7 +3441,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3444,7 +3462,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3464,7 +3483,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3484,7 +3504,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3504,7 +3525,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3524,7 +3546,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3544,7 +3567,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3564,7 +3588,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3584,7 +3609,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3604,7 +3630,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3624,7 +3651,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3644,7 +3672,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3664,7 +3693,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3684,7 +3714,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3704,7 +3735,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3724,7 +3756,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3744,7 +3777,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3764,7 +3798,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3784,7 +3819,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3804,7 +3840,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3824,7 +3861,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3844,7 +3882,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3864,7 +3903,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3884,7 +3924,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3904,7 +3945,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3924,7 +3966,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3944,7 +3987,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3964,7 +4008,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -3984,7 +4029,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4004,7 +4050,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4024,7 +4071,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4044,7 +4092,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4064,7 +4113,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4084,7 +4134,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4104,7 +4155,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4124,7 +4176,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4144,7 +4197,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4164,7 +4218,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4184,7 +4239,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4204,7 +4260,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4224,7 +4281,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4244,7 +4302,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4264,7 +4323,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4284,7 +4344,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4304,7 +4365,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4324,7 +4386,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4344,7 +4407,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4364,7 +4428,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4384,7 +4449,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4404,7 +4470,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4424,7 +4491,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4444,7 +4512,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4464,7 +4533,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4484,7 +4554,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4504,7 +4575,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4524,7 +4596,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4544,7 +4617,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4564,7 +4638,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4584,7 +4659,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4604,7 +4680,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4624,7 +4701,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4644,7 +4722,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4664,7 +4743,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4684,7 +4764,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4704,7 +4785,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4724,7 +4806,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4744,7 +4827,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4764,7 +4848,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4784,7 +4869,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4804,7 +4890,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4824,7 +4911,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4844,7 +4932,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4864,7 +4953,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4884,7 +4974,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4904,7 +4995,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4924,7 +5016,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4944,7 +5037,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4964,7 +5058,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -4984,7 +5079,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5004,7 +5100,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5024,7 +5121,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5044,7 +5142,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5064,7 +5163,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5084,7 +5184,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5104,7 +5205,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5124,7 +5226,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5144,7 +5247,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5164,7 +5268,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5184,7 +5289,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5204,7 +5310,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5224,7 +5331,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5244,7 +5352,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5264,7 +5373,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5284,7 +5394,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5304,7 +5415,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5324,7 +5436,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5344,7 +5457,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5364,7 +5478,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5384,7 +5499,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5404,7 +5520,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5424,7 +5541,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5444,7 +5562,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5464,7 +5583,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5484,7 +5604,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5504,7 +5625,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5524,7 +5646,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5544,7 +5667,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5564,7 +5688,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5584,7 +5709,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5604,7 +5730,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5624,7 +5751,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5644,7 +5772,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5664,7 +5793,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5684,7 +5814,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5704,7 +5835,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5724,7 +5856,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5744,7 +5877,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5764,7 +5898,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5784,7 +5919,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5804,7 +5940,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5824,7 +5961,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5844,7 +5982,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5864,7 +6003,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5884,7 +6024,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5904,7 +6045,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5924,7 +6066,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5944,7 +6087,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5964,7 +6108,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -5984,7 +6129,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6004,7 +6150,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6024,7 +6171,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6044,7 +6192,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6064,7 +6213,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6084,7 +6234,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6104,7 +6255,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6124,7 +6276,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6144,7 +6297,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6164,7 +6318,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6184,7 +6339,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6204,7 +6360,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6224,7 +6381,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6244,7 +6402,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6264,7 +6423,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6284,7 +6444,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6304,7 +6465,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6324,7 +6486,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6344,7 +6507,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6364,7 +6528,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6384,7 +6549,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6404,7 +6570,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6424,7 +6591,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6444,7 +6612,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6464,7 +6633,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6484,7 +6654,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6504,7 +6675,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6524,7 +6696,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6544,7 +6717,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6564,7 +6738,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6584,7 +6759,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6604,7 +6780,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6624,7 +6801,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6644,7 +6822,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6664,7 +6843,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6684,7 +6864,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6704,7 +6885,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6724,7 +6906,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6744,7 +6927,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6764,7 +6948,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6784,7 +6969,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6804,7 +6990,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6824,7 +7011,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6844,7 +7032,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6864,7 +7053,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6884,7 +7074,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6904,7 +7095,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6924,7 +7116,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6944,7 +7137,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6964,7 +7158,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -6984,7 +7179,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7004,7 +7200,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7024,7 +7221,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7044,7 +7242,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7064,7 +7263,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7084,7 +7284,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7104,7 +7305,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7124,7 +7326,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7144,7 +7347,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7164,7 +7368,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7184,7 +7389,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7204,7 +7410,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7224,7 +7431,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7244,7 +7452,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7264,7 +7473,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7284,7 +7494,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7304,7 +7515,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7324,7 +7536,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7344,7 +7557,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7364,7 +7578,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7384,7 +7599,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7404,7 +7620,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7424,7 +7641,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7444,7 +7662,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7464,7 +7683,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7484,7 +7704,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7504,7 +7725,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7524,7 +7746,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7544,7 +7767,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7564,7 +7788,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7584,7 +7809,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7604,7 +7830,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7624,7 +7851,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7644,7 +7872,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7664,7 +7893,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7684,7 +7914,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7704,7 +7935,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7724,7 +7956,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7744,7 +7977,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7764,7 +7998,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7784,7 +8019,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7804,7 +8040,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7824,7 +8061,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7844,7 +8082,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7864,7 +8103,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7884,7 +8124,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7904,7 +8145,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7924,7 +8166,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7944,7 +8187,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7964,7 +8208,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -7984,7 +8229,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8004,7 +8250,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8024,7 +8271,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8044,7 +8292,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8064,7 +8313,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8084,7 +8334,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8104,7 +8355,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8124,7 +8376,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8144,7 +8397,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8164,7 +8418,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8184,7 +8439,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8204,7 +8460,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8224,7 +8481,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8244,7 +8502,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8264,7 +8523,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8284,7 +8544,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8304,7 +8565,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8324,7 +8586,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8344,7 +8607,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8364,7 +8628,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8384,7 +8649,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8404,7 +8670,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8424,7 +8691,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8444,7 +8712,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8464,7 +8733,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8484,7 +8754,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8504,7 +8775,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8524,7 +8796,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8544,7 +8817,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8564,7 +8838,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8584,7 +8859,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8604,7 +8880,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8624,7 +8901,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8644,7 +8922,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8664,7 +8943,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8684,7 +8964,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8704,7 +8985,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8724,7 +9006,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8744,7 +9027,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8764,7 +9048,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8784,7 +9069,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8804,7 +9090,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8824,7 +9111,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8844,7 +9132,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8864,7 +9153,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8884,7 +9174,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8904,7 +9195,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8924,7 +9216,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8944,7 +9237,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8964,7 +9258,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -8984,7 +9279,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9004,7 +9300,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9024,7 +9321,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9044,7 +9342,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9064,7 +9363,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9084,7 +9384,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9104,7 +9405,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9124,7 +9426,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9144,7 +9447,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9164,7 +9468,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9184,7 +9489,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9204,7 +9510,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9224,7 +9531,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9244,7 +9552,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9264,7 +9573,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9284,7 +9594,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9304,7 +9615,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9324,7 +9636,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9344,7 +9657,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9364,7 +9678,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9384,7 +9699,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9404,7 +9720,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9424,7 +9741,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9444,7 +9762,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9464,7 +9783,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9484,7 +9804,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9504,7 +9825,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9524,7 +9846,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9544,7 +9867,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9564,7 +9888,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9584,7 +9909,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9604,7 +9930,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9624,7 +9951,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9644,7 +9972,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9664,7 +9993,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9684,7 +10014,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9704,7 +10035,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9724,7 +10056,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9744,7 +10077,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9764,7 +10098,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9784,7 +10119,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9804,7 +10140,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9824,7 +10161,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9844,7 +10182,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9864,7 +10203,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9884,7 +10224,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9904,7 +10245,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9924,7 +10266,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9944,7 +10287,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9964,7 +10308,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -9984,7 +10329,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10004,7 +10350,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10024,7 +10371,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10044,7 +10392,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10064,7 +10413,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10084,7 +10434,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10104,7 +10455,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10124,7 +10476,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10144,7 +10497,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10164,7 +10518,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10184,7 +10539,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10204,7 +10560,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10224,7 +10581,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10244,7 +10602,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10264,7 +10623,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10284,7 +10644,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10304,7 +10665,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10324,7 +10686,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10344,7 +10707,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10364,7 +10728,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10384,7 +10749,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10404,7 +10770,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10424,7 +10791,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10444,7 +10812,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10464,7 +10833,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10484,7 +10854,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10504,7 +10875,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10524,7 +10896,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10544,7 +10917,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10564,7 +10938,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10584,7 +10959,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10604,7 +10980,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10624,7 +11001,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10644,7 +11022,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10664,7 +11043,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10684,7 +11064,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10704,7 +11085,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10724,7 +11106,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10744,7 +11127,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10764,7 +11148,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10784,7 +11169,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10804,7 +11190,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10824,7 +11211,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10844,7 +11232,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10864,7 +11253,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10884,7 +11274,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10904,7 +11295,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10924,7 +11316,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10944,7 +11337,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10964,7 +11358,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -10984,7 +11379,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11004,7 +11400,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11024,7 +11421,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11044,7 +11442,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11064,7 +11463,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11084,7 +11484,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11104,7 +11505,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11124,7 +11526,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11144,7 +11547,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11164,7 +11568,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11184,7 +11589,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11204,7 +11610,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11224,7 +11631,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11244,7 +11652,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11264,7 +11673,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11284,7 +11694,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11304,7 +11715,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11324,7 +11736,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11344,7 +11757,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11364,7 +11778,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11384,7 +11799,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11404,7 +11820,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11424,7 +11841,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11444,7 +11862,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11464,7 +11883,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11484,7 +11904,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11504,7 +11925,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11524,7 +11946,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11544,7 +11967,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11564,7 +11988,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11584,7 +12009,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11604,7 +12030,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11624,7 +12051,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11644,7 +12072,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11664,7 +12093,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11684,7 +12114,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11704,7 +12135,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11724,7 +12156,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11744,7 +12177,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11764,7 +12198,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11784,7 +12219,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11804,7 +12240,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11824,7 +12261,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11844,7 +12282,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11864,7 +12303,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11884,7 +12324,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11904,7 +12345,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11924,7 +12366,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11944,7 +12387,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11964,7 +12408,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -11984,7 +12429,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12004,7 +12450,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12024,7 +12471,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12044,7 +12492,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12064,7 +12513,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12084,7 +12534,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12104,7 +12555,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12124,7 +12576,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12144,7 +12597,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12164,7 +12618,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12184,7 +12639,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12204,7 +12660,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12224,7 +12681,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12244,7 +12702,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12264,7 +12723,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12284,7 +12744,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12304,7 +12765,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12324,7 +12786,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12344,7 +12807,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12364,7 +12828,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12384,7 +12849,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12404,7 +12870,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12424,7 +12891,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12444,7 +12912,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12464,7 +12933,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12484,7 +12954,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12504,7 +12975,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12524,7 +12996,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12544,7 +13017,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12564,7 +13038,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12584,7 +13059,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12604,7 +13080,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12624,7 +13101,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12644,7 +13122,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12664,7 +13143,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12684,7 +13164,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12704,7 +13185,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12724,7 +13206,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12744,7 +13227,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12764,7 +13248,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12784,7 +13269,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12804,7 +13290,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12824,7 +13311,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12844,7 +13332,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12864,7 +13353,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12884,7 +13374,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12904,7 +13395,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12924,7 +13416,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12944,7 +13437,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12964,7 +13458,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -12984,7 +13479,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13004,7 +13500,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13024,7 +13521,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13044,7 +13542,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13064,7 +13563,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13084,7 +13584,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13104,7 +13605,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13124,7 +13626,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13144,7 +13647,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13164,7 +13668,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13184,7 +13689,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13204,7 +13710,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13224,7 +13731,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13244,7 +13752,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13264,7 +13773,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13284,7 +13794,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13304,7 +13815,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13324,7 +13836,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13344,7 +13857,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13364,7 +13878,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13384,7 +13899,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13404,7 +13920,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13424,7 +13941,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13444,7 +13962,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13464,7 +13983,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13484,7 +14004,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13504,7 +14025,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13524,7 +14046,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13544,7 +14067,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13564,7 +14088,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13584,7 +14109,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13604,7 +14130,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13624,7 +14151,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13644,7 +14172,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13664,7 +14193,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13684,7 +14214,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13704,7 +14235,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13724,7 +14256,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13744,7 +14277,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13764,7 +14298,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13784,7 +14319,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13804,7 +14340,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13824,7 +14361,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13844,7 +14382,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13864,7 +14403,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13884,7 +14424,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13904,7 +14445,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13924,7 +14466,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13944,7 +14487,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13964,7 +14508,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -13984,7 +14529,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14004,7 +14550,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14024,7 +14571,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14044,7 +14592,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14064,7 +14613,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14084,7 +14634,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14104,7 +14655,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14124,7 +14676,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14144,7 +14697,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14164,7 +14718,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14184,7 +14739,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14204,7 +14760,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14224,7 +14781,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14244,7 +14802,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14264,7 +14823,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14284,7 +14844,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14304,7 +14865,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14324,7 +14886,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14344,7 +14907,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14364,7 +14928,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14384,7 +14949,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14404,7 +14970,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14424,7 +14991,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14444,7 +15012,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14464,7 +15033,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14484,7 +15054,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14504,7 +15075,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14524,7 +15096,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14544,7 +15117,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14564,7 +15138,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14584,7 +15159,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14604,7 +15180,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14624,7 +15201,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14644,7 +15222,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14664,7 +15243,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14684,7 +15264,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14704,7 +15285,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14724,7 +15306,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14744,7 +15327,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14764,7 +15348,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14784,7 +15369,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14804,7 +15390,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14824,7 +15411,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14844,7 +15432,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14864,7 +15453,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14884,7 +15474,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14904,7 +15495,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14924,7 +15516,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14944,7 +15537,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14964,7 +15558,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -14984,7 +15579,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15004,7 +15600,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15024,7 +15621,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15044,7 +15642,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15064,7 +15663,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15084,7 +15684,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15104,7 +15705,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15124,7 +15726,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15144,7 +15747,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15164,7 +15768,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15184,7 +15789,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15204,7 +15810,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15224,7 +15831,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15244,7 +15852,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15264,7 +15873,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15284,7 +15894,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15304,7 +15915,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15324,7 +15936,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15344,7 +15957,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15364,7 +15978,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15384,7 +15999,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15404,7 +16020,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15424,7 +16041,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15444,7 +16062,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15464,7 +16083,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15484,7 +16104,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15504,7 +16125,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15524,7 +16146,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15544,7 +16167,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15564,7 +16188,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15584,7 +16209,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15604,7 +16230,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15624,7 +16251,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15644,7 +16272,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15664,7 +16293,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15684,7 +16314,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15704,7 +16335,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15724,7 +16356,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15744,7 +16377,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15764,7 +16398,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15784,7 +16419,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15804,7 +16440,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15824,7 +16461,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15844,7 +16482,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15864,7 +16503,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15884,7 +16524,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15904,7 +16545,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15924,7 +16566,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15944,7 +16587,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15964,7 +16608,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -15984,7 +16629,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16004,7 +16650,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16024,7 +16671,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16044,7 +16692,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16064,7 +16713,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16084,7 +16734,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16104,7 +16755,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16124,7 +16776,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16144,7 +16797,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16164,7 +16818,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16184,7 +16839,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16204,7 +16860,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16224,7 +16881,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16244,7 +16902,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16264,7 +16923,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16284,7 +16944,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16304,7 +16965,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16324,7 +16986,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16344,7 +17007,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16364,7 +17028,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16384,7 +17049,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16404,7 +17070,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16424,7 +17091,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16444,7 +17112,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16464,7 +17133,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16484,7 +17154,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16504,7 +17175,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16524,7 +17196,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16544,7 +17217,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16564,7 +17238,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16584,7 +17259,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16604,7 +17280,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16624,7 +17301,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16644,7 +17322,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16664,7 +17343,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16684,7 +17364,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16704,7 +17385,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16724,7 +17406,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16744,7 +17427,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16764,7 +17448,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16784,7 +17469,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16804,7 +17490,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16824,7 +17511,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16844,7 +17532,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16864,7 +17553,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16884,7 +17574,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16904,7 +17595,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16924,7 +17616,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16944,7 +17637,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16964,7 +17658,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -16984,7 +17679,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17004,7 +17700,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17024,7 +17721,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17044,7 +17742,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17064,7 +17763,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17084,7 +17784,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17104,7 +17805,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17124,7 +17826,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17144,7 +17847,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17164,7 +17868,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17184,7 +17889,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17204,7 +17910,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17224,7 +17931,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17244,7 +17952,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17264,7 +17973,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17284,7 +17994,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17304,7 +18015,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17324,7 +18036,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17344,7 +18057,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17364,7 +18078,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17384,7 +18099,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17404,7 +18120,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17424,7 +18141,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17444,7 +18162,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17464,7 +18183,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17484,7 +18204,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17504,7 +18225,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17524,7 +18246,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17544,7 +18267,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17564,7 +18288,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17584,7 +18309,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17604,7 +18330,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17624,7 +18351,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17644,7 +18372,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17664,7 +18393,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17684,7 +18414,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17704,7 +18435,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17724,7 +18456,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17744,7 +18477,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17764,7 +18498,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17784,7 +18519,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17804,7 +18540,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17824,7 +18561,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17844,7 +18582,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17864,7 +18603,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17884,7 +18624,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -17904,7 +18645,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18230,7 +18972,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18250,7 +18993,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18270,7 +19014,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18290,7 +19035,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18310,7 +19056,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18330,7 +19077,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18350,7 +19098,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18370,7 +19119,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18390,7 +19140,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18410,7 +19161,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18430,7 +19182,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18450,7 +19203,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18470,7 +19224,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18490,7 +19245,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18510,7 +19266,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18530,7 +19287,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18550,7 +19308,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18570,7 +19329,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18590,7 +19350,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18610,7 +19371,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18630,7 +19392,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18650,7 +19413,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18670,7 +19434,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18690,7 +19455,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18710,7 +19476,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18730,7 +19497,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18750,7 +19518,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18770,7 +19539,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18790,7 +19560,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18810,7 +19581,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18830,7 +19602,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18850,7 +19623,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18870,7 +19644,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18890,7 +19665,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18910,7 +19686,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18930,7 +19707,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18950,7 +19728,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18970,7 +19749,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -18990,7 +19770,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -19010,7 +19791,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -19030,7 +19812,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -19050,7 +19833,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -19070,7 +19854,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -19090,7 +19875,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -19110,7 +19896,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -19130,7 +19917,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -19150,7 +19938,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -19170,7 +19959,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -19190,7 +19980,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 8
+      "frameCount": 8,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -19210,7 +20001,8 @@
       "offsetY": 16,
       "frameW": 32,
       "frameH": 32,
-      "frameCount": 3
+      "frameCount": 3,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -19230,7 +20022,8 @@
       "offsetY": 16,
       "frameW": 32,
       "frameH": 32,
-      "frameCount": 3
+      "frameCount": 3,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -19250,7 +20043,8 @@
       "offsetY": 16,
       "frameW": 32,
       "frameH": 32,
-      "frameCount": 3
+      "frameCount": 3,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -19270,7 +20064,8 @@
       "offsetY": 16,
       "frameW": 32,
       "frameH": 32,
-      "frameCount": 3
+      "frameCount": 3,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -19290,7 +20085,8 @@
       "offsetY": 16,
       "frameW": 32,
       "frameH": 32,
-      "frameCount": 3
+      "frameCount": 3,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -19310,7 +20106,8 @@
       "offsetY": 16,
       "frameW": 32,
       "frameH": 32,
-      "frameCount": 3
+      "frameCount": 3,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -19330,7 +20127,8 @@
       "offsetY": 16,
       "frameW": 32,
       "frameH": 32,
-      "frameCount": 3
+      "frameCount": 3,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -19422,7 +20220,8 @@
       "offsetY": 64,
       "frameW": 128,
       "frameH": 128,
-      "frameCount": 6
+      "frameCount": 6,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -19442,7 +20241,8 @@
       "offsetY": 96,
       "frameW": 192,
       "frameH": 192,
-      "frameCount": 9
+      "frameCount": 9,
+      "frameRow": 0
     },
     {
       "type": "sprite",
@@ -19615,6 +20415,153 @@
       "scaleY": 1,
       "offsetX": 64,
       "offsetY": 64
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781192110123_i9oyk",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+      "frames": [
+        "Water Rocks_01.png"
+      ],
+      "name": "Water Rocks_01",
+      "animated": true,
+      "spriteLayer": "below",
+      "x": 1661.143158503369,
+      "y": 712.720190043619,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32,
+      "frameW": 64,
+      "frameH": 64,
+      "frameCount": 16,
+      "frameRow": 0
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781192113662_t6f7k",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+      "frames": [
+        "Water Rocks_01.png"
+      ],
+      "name": "Water Rocks_01",
+      "animated": true,
+      "spriteLayer": "below",
+      "x": 1577.4414402136163,
+      "y": 428.79442370910283,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32,
+      "frameW": 64,
+      "frameH": 64,
+      "frameCount": 16,
+      "frameRow": 0
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781192118206_vnbcn",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+      "frames": [
+        "Water Rocks_02.png"
+      ],
+      "name": "Water Rocks_02",
+      "animated": true,
+      "spriteLayer": "below",
+      "x": 1527.4406527085669,
+      "y": 802.4366721559264,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32,
+      "frameW": 64,
+      "frameH": 64,
+      "frameCount": 16,
+      "frameRow": 0
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781192122352_h00rr",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+      "frames": [
+        "Water Rocks_03.png"
+      ],
+      "name": "Water Rocks_03",
+      "animated": true,
+      "spriteLayer": "below",
+      "x": 1752.8987490949714,
+      "y": 1010.6217692224047,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32,
+      "frameW": 64,
+      "frameH": 64,
+      "frameCount": 16,
+      "frameRow": 0
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781192125677_vzj4w",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+      "frames": [
+        "Water Rocks_04.png"
+      ],
+      "name": "Water Rocks_04",
+      "animated": true,
+      "spriteLayer": "below",
+      "x": 1595.623544760907,
+      "y": 1200.6247617415925,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32,
+      "frameW": 64,
+      "frameH": 64,
+      "frameCount": 16,
+      "frameRow": 0
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781192134956_u0rwd",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+      "frames": [
+        "Water Rocks_02.png"
+      ],
+      "name": "Water Rocks_02",
+      "animated": true,
+      "spriteLayer": "below",
+      "x": 1784.82013782303,
+      "y": 1662.803857858666,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32,
+      "frameW": 64,
+      "frameH": 64,
+      "frameCount": 16,
+      "frameRow": 0
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781192137650_3du7h",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+      "frames": [
+        "Water Rocks_02.png"
+      ],
+      "name": "Water Rocks_02",
+      "animated": true,
+      "spriteLayer": "below",
+      "x": 1689.371155972704,
+      "y": 1431.6383549399075,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32,
+      "frameW": 64,
+      "frameH": 64,
+      "frameCount": 16,
+      "frameRow": 0
     }
   ],
   "noWalkZones": [
@@ -19730,9 +20677,9 @@
       "x": 251,
       "y": 1082,
       "config": {
-        "id": "npc_75o45",
+        "id": "npc_m_1781188398131_fvu",
         "name": "Injured Man",
-        "first": "Be..safe..traveler..further..lies..a..monster...who..took..my...sun...(dies)",
+        "first": "Be safe traveler ..further..lies..a..monster...who..took..my...sun...(dies)",
         "active": "",
         "completed": ""
       }

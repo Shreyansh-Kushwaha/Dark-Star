@@ -35,9 +35,27 @@ function readPNGDims(absPath) {
   } catch { return null; }
 }
 
+// Explicit spritesheet overrides for files that don't fit auto-detection
+// (e.g. square grids, non-power-of-two strips). Keyed by relative path from GAME_ROOT.
+// frameW/frameH = one frame size, frameCount = frames to cycle (single row), frameRow = 0-indexed row to read from.
+const EXPLICIT_SHEETS = {
+  'assest2/Monster Pack (Free)/Spritesheets/Updated Rabbit/Rabbit_Brown_Idle.png':    { frameW: 64, frameH: 64, frameCount: 8, frameRow: 1 },
+  'assest2/Monster Pack (Free)/Spritesheets/Updated Rabbit/Rabbit_Brown_Move.png':    { frameW: 64, frameH: 64, frameCount: 8, frameRow: 1 },
+  'assest2/Monster Pack (Free)/Spritesheets/Updated Rabbit Horned/Rabbit_Horned_Idle.png':   { frameW: 64, frameH: 64, frameCount: 8, frameRow: 1 },
+  'assest2/Monster Pack (Free)/Spritesheets/Updated Rabbit Horned/Rabbit_Horned_Move.png':   { frameW: 64, frameH: 64, frameCount: 8, frameRow: 1 },
+  'assest2/Monster Pack (Free)/Spritesheets/Updated Rabbit Horned/Rabbit_Horned_Attack.png': { frameW: 64, frameH: 64, frameCount: 8, frameRow: 1 },
+};
+
 // Returns { frameW, frameH, frameCount } if PNG is a horizontal spritesheet, else null.
 // A horizontal spritesheet has width = N × height exactly, N in [2..24], height in [8..512].
 function detectSpritesheet(absPath) {
+  // Check explicit overrides first
+  const rel = path.relative(GAME_ROOT, absPath).replace(/\\/g, '/');
+  if (EXPLICIT_SHEETS[rel]) {
+    const { frameW, frameH, frameCount, frameRow } = EXPLICIT_SHEETS[rel];
+    return { frameW, frameH, frameCount, frameRow: frameRow || 0 };
+  }
+
   const dims = readPNGDims(absPath);
   if (!dims) return null;
   const { w, h } = dims;
@@ -45,7 +63,7 @@ function detectSpritesheet(absPath) {
   if (w <= h) return null;
   const n = Math.round(w / h);
   if (n < 2 || n > 24 || w !== h * n) return null;
-  return { frameW: h, frameH: h, frameCount: n };
+  return { frameW: h, frameH: h, frameCount: n, frameRow: 0 };
 }
 
 function frameNum(name) {
@@ -69,8 +87,14 @@ function spritesFromDir(absDir, relDir) {
   const entries  = scanDir(absDir);
   const subDirs  = entries.filter(e => e.isDir);
   const pngs     = entries.filter(e => !e.isDir && e.name.toLowerCase().endsWith('.png'));
-  const frames   = pngs.filter(e => isAnimFrame(e.name)).sort((a,b) => frameNum(a.name) - frameNum(b.name));
-  const statics  = pngs.filter(e => !isAnimFrame(e.name));
+
+  // If every "animation frame" file is itself a horizontal spritesheet, treat each as a
+  // separate animated sprite rather than grouping all files into one multi-frame sequence.
+  const potentialFrames = pngs.filter(e => isAnimFrame(e.name));
+  const allAreSheets = potentialFrames.length > 0 && potentialFrames.every(e => detectSpritesheet(e.full) !== null);
+
+  const frames   = allAreSheets ? [] : potentialFrames.sort((a,b) => frameNum(a.name) - frameNum(b.name));
+  const statics  = allAreSheets ? pngs : pngs.filter(e => !isAnimFrame(e.name));
   const out      = [];
 
   if (subDirs.length > 0) {

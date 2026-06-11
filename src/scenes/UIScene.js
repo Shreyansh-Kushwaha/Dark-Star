@@ -478,7 +478,7 @@ export class UIScene extends Phaser.Scene {
 
     // Reset intro elements
     this._introName.setText(name).setAlpha(0).setX(GAME_W / 2 - 80);
-    this._introSub.setText(lore).setAlpha(0);
+    this._introSub.setText(boss.cfg.subtitle || lore).setAlpha(0);
     this._introLineTop.setAlpha(0).setScale(0, 1);
     this._introLineBot.setAlpha(0).setScale(0, 1);
     this._introFade.setAlpha(0);

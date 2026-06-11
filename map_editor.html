@@ -97,6 +97,7 @@ button.boss-btn.active{background:#ffd70022;border-color:#ffd700}
 .tab.enemy-tab.active{color:#ff8899;border-bottom-color:#ff4455;background:#ff445511}
 .tab.boss-tab.active{color:#ffd700;border-bottom-color:#ffd700;background:#ffd70011}
 button.npc-btn{border-color:#44ffcc;color:#88ffee}button.npc-btn:hover{background:#001a18}button.npc-btn.active{background:#44ffcc22;border-color:#88ffee}
+button.spawn-btn{border-color:#00ffcc;color:#00ffcc}button.spawn-btn:hover{background:#001a18}button.spawn-btn.active{background:#00ffcc22;border-color:#00ffcc}
 .tab.npc-tab.active{color:#88ffee;border-bottom-color:#44ffcc;background:#44ffcc11}
 button.portal-btn{border-color:#00ccff;color:#66eeff}button.portal-btn:hover{background:#001a28}button.portal-btn.active{background:#00ccff22;border-color:#66eeff}
 .tab.portal-tab.active{color:#66eeff;border-bottom-color:#00ccff;background:#00ccff11}
@@ -171,6 +172,7 @@ button.portal-btn{border-color:#00ccff;color:#66eeff}button.portal-btn:hover{bac
     <button id="draw-eraser" title="Eraser" style="padding:2px 8px;font-size:12px;line-height:1">⌫ Eraser</button>
   </div>
   <button class="orange" id="btn-nowalk">⛔ No-Walk Zone</button>
+  <button style="border-color:#00ffcc;color:#00ffcc" id="btn-spawn-point">🟢 Spawn</button>
   <button class="enemy-btn" id="btn-enemy-tab">👾 Enemies</button>
   <button class="boss-btn"  id="btn-boss-tab">👑 Boss</button>
   <button class="npc-btn"    id="btn-npc-tab">👤 NPC</button>
@@ -448,6 +450,8 @@ const S = {
   placedNpcs: [],                // [{ id, type, x, y, group, config }]
   placingPortal: null,           // { targetRegion } while arming placement
   placedPortals: [],             // [{ id, direction, targetRegion, x, y, group }]
+  spawnPoint: null,              // { x, y, group } | null — player spawn for this region
+  placingSpawn: false,
 };
 
 // ── Utility ────────────────────────────────────────────────────────────────
@@ -545,7 +549,7 @@ function bindZoomPan() {
   });
 
   let spaceDown = false, panStart = null, panOrigin = null;
-  window.addEventListener('keydown', e => { if (e.code === 'Space' && !e.target.matches('input')) { spaceDown = true; document.getElementById('canvas-container').style.cursor = 'grab'; e.preventDefault(); } });
+  window.addEventListener('keydown', e => { if (e.code === 'Space' && !e.target.matches('input, textarea')) { spaceDown = true; document.getElementById('canvas-container').style.cursor = 'grab'; e.preventDefault(); } });
   window.addEventListener('keyup',   e => { if (e.code === 'Space') { spaceDown = false; updateCursor(); } });
 
   const canvasEl = document.getElementById('canvas-container');
@@ -626,7 +630,7 @@ function bindDrawing() {
 
 function updateCursor() {
   const cc = document.getElementById('canvas-container');
-  if (S.placingAsset || S.placingEnemyType || S.placingBossKey || S.placingNpcType || S.placingPortal) cc.style.cursor = 'crosshair';
+  if (S.placingAsset || S.placingEnemyType || S.placingBossKey || S.placingNpcType || S.placingPortal || S.placingSpawn) cc.style.cursor = 'crosshair';
   else if (S.panMode)                   cc.style.cursor = 'grab';
   else if (S.deleteMode)                cc.style.cursor = 'not-allowed';
   else if (S.noWalkMode)                cc.style.cursor = 'cell';
@@ -711,6 +715,14 @@ function bindStageClick() {
       pushHistory();
       return;
     }
+    if (S.placingSpawn && onBg) {
+      const pos = S.stage.getPointerPosition();
+      setSpawnPoint(
+        (pos.x - S.stage.x()) / S.stage.scaleX(),
+        (pos.y - S.stage.y()) / S.stage.scaleY()
+      );
+      return;
+    }
     if (onBg) { deselectAll(); }
   });
   S.stage.on('contextmenu', e => { e.evt.preventDefault(); });
@@ -719,7 +731,7 @@ function bindStageClick() {
 // ── Keyboard ───────────────────────────────────────────────────────────────
 function bindKeyboard() {
   window.addEventListener('keydown', e => {
-    if (e.target.matches('input')) return;
+    if (e.target.matches('input, textarea')) return;
     if (e.key === 'Escape') { cancelPlacing(); deselectAll(); setMode('none'); }
     if ((e.key === 'Delete' || e.key === 'Backspace') && S.selectedNode) deleteSelected();
     if (e.ctrlKey && e.key === 'z') { e.preventDefault(); undo(); }
@@ -805,6 +817,13 @@ function bindToolbar() {
   document.getElementById('btn-upload-asset').onclick = () => document.getElementById('file-upload-asset').click();
   document.getElementById('file-upload-asset').onchange = e => uploadAssets(e.target.files);
   document.getElementById('btn-share').onclick = shareRoom;
+
+  document.getElementById('btn-spawn-point').onclick = () => {
+    S.placingSpawn = !S.placingSpawn;
+    document.getElementById('btn-spawn-point').classList.toggle('active', S.placingSpawn);
+    if (S.placingSpawn) { cancelPlacing(); S.placingSpawn = true; updateCursor(); setStatus('Click the map to place the player spawn point'); }
+    else { updateCursor(); setStatus(''); }
+  };
 }
 
 // ── Spritesheet auto-animation ─────────────────────────────────────────────
@@ -816,9 +835,10 @@ function startEditorAnimTicker() {
       if (!fc || fc <= 1) return;
       const fw = node.getAttr('assetFrameW');
       const fh = node.getAttr('assetFrameH');
+      const fr = node.getAttr('assetFrameRow') || 0;
       const cf = ((node.getAttr('currentFrame') || 0) + 1) % fc;
       node.setAttr('currentFrame', cf);
-      node.crop({ x: fw * cf, y: 0, width: fw, height: fh });
+      node.crop({ x: fw * cf, y: fr * fh, width: fw, height: fh });
       dirty = true;
     });
     if (dirty) { S.belowLayer.batchDraw(); S.aboveLayer.batchDraw(); }
@@ -1307,6 +1327,42 @@ function restorePortals(list) {
   }
 }
 
+// ── Spawn Point ─────────────────────────────────────────────────────────────
+function setSpawnPoint(x, y) {
+  if (S.spawnPoint) {
+    S.spawnPoint.group.destroy();
+    S.markerLayer.batchDraw();
+    S.spawnPoint = null;
+  }
+  const group = new Konva.Group({ x, y, draggable: true });
+  group.add(new Konva.Circle({ radius: 20, fill: '#00ffcc33', stroke: '#00ffcc', strokeWidth: 2 }));
+  group.add(new Konva.Text({ text: '🟢', fontSize: 16, x: -9, y: -11, listening: false }));
+  group.add(new Konva.Text({ text: 'SPAWN', fontSize: 7, x: -14, y: 14, width: 28, align: 'center', fill: '#00ffcc', listening: false }));
+  S.markerLayer.add(group);
+  S.markerLayer.batchDraw();
+  S.spawnPoint = { x, y, group };
+  group.on('dragend', () => { S.spawnPoint.x = Math.round(group.x()); S.spawnPoint.y = Math.round(group.y()); pushHistory(); });
+  group.on('dblclick dbltap', () => {
+    if (!confirm('Remove spawn point?')) return;
+    group.destroy(); S.markerLayer.batchDraw(); S.spawnPoint = null; pushHistory();
+  });
+  S.placingSpawn = false;
+  document.getElementById('btn-spawn-point').classList.remove('active');
+  updateCursor();
+  pushHistory();
+  setStatus('Spawn point placed — drag to move, double-click to remove');
+}
+
+function restoreSpawnPoint(data) {
+  if (S.spawnPoint) { S.spawnPoint.group.destroy(); S.spawnPoint = null; }
+  if (data) setSpawnPoint(data.x, data.y);
+}
+
+function serializeSpawnPoint() {
+  if (!S.spawnPoint) return null;
+  return { x: Math.round(S.spawnPoint.group.x()), y: Math.round(S.spawnPoint.group.y()) };
+}
+
 function bindEntityPlacing() {
   // Markers are draggable by default; nothing extra needed here.
   // Canvas background click is handled in bindStageClick.
@@ -1431,7 +1487,7 @@ async function placeSprite(asset, x, y, spriteId, layerAttr) {
 
   const layer  = layerAttr || 'below';
   const id     = spriteId || genSpriteId();
-  const fw     = asset.frameW, fh = asset.frameH, fc = asset.frameCount;
+  const fw     = asset.frameW, fh = asset.frameH, fc = asset.frameCount, fr = asset.frameRow || 0;
   const isSheet = !!(fw && fh && fc > 1);
   const offX   = isSheet ? fw / 2 : img.width / 2;
   const offY   = isSheet ? fh / 2 : img.height / 2;
@@ -1439,7 +1495,7 @@ async function placeSprite(asset, x, y, spriteId, layerAttr) {
   const nodeCfg = { x, y, image: img, offsetX: offX, offsetY: offY,
     draggable: !S.panMode && !S.deleteMode && !S.noWalkMode };
   if (isSheet) { nodeCfg.width = fw; nodeCfg.height = fh;
-    nodeCfg.crop = { x: 0, y: 0, width: fw, height: fh }; }
+    nodeCfg.crop = { x: 0, y: fr * fh, width: fw, height: fh }; }
 
   const node = new Konva.Image(nodeCfg);
   node.setAttr('assetDir',     asset.dir);
@@ -1453,6 +1509,7 @@ async function placeSprite(asset, x, y, spriteId, layerAttr) {
     node.setAttr('assetFrameW',     fw);
     node.setAttr('assetFrameH',     fh);
     node.setAttr('assetFrameCount', fc);
+    node.setAttr('assetFrameRow',   fr);
   }
 
   konvaLayerFor(layer).add(node);
@@ -1460,7 +1517,7 @@ async function placeSprite(asset, x, y, spriteId, layerAttr) {
   if (!spriteId) {
     broadcast({ type: 'SPRITE_ADD', spriteId: id, dir: asset.dir, frames: asset.frames,
       name: asset.name, animated: asset.animated, x, y, offsetX: offX, offsetY: offY,
-      scaleX: 1, scaleY: 1, spriteLayer: layer, frameW: fw, frameH: fh, frameCount: fc });
+      scaleX: 1, scaleY: 1, spriteLayer: layer, frameW: fw, frameH: fh, frameCount: fc, frameRow: fr });
     pushHistory();
     setStatus('Placed: ' + asset.name + ' [' + (layer === 'above' ? 'Above Player' : 'Below Player') + ']'
       + (isSheet ? ' ▶ animated' : ''));
@@ -1474,6 +1531,9 @@ function cancelPlacing() {
   S.placingNpcType = null;
   S.placingNpcType_config = null;
   S.placingPortal = null;
+  S.placingSpawn = false;
+  const spawnBtn = document.getElementById('btn-spawn-point');
+  if (spawnBtn) spawnBtn.classList.remove('active');
   updateCursor();
   setStatus('');
   renderTrayGrid();
@@ -1771,7 +1831,7 @@ function serializeSprites() {
     composite: n.globalCompositeOperation(),
   }));
   const sprites = getAllSpriteNodes().map(n => {
-    const fw = n.getAttr('assetFrameW'), fh = n.getAttr('assetFrameH'), fc = n.getAttr('assetFrameCount');
+    const fw = n.getAttr('assetFrameW'), fh = n.getAttr('assetFrameH'), fc = n.getAttr('assetFrameCount'), fr = n.getAttr('assetFrameRow');
     return {
       type: 'sprite',
       spriteId:    n.getAttr('spriteId'),
@@ -1783,7 +1843,7 @@ function serializeSprites() {
       x: n.x(), y: n.y(),
       scaleX: n.scaleX(), scaleY: n.scaleY(),
       offsetX: n.offsetX(), offsetY: n.offsetY(),
-      ...(fw ? { frameW: fw, frameH: fh, frameCount: fc } : {}),
+      ...(fw ? { frameW: fw, frameH: fh, frameCount: fc, frameRow: fr || 0 } : {}),
     };
   });
   return [...strokes, ...sprites];
@@ -1821,6 +1881,7 @@ function pushHistory() {
     boss:        serializeBoss(),
     npcs:        serializeNpcs(),
     portals:     serializePortals(),
+    spawnPos:    serializeSpawnPoint(),
   }));
   if (S.history.length > 20) S.history.shift();
 }
@@ -1832,6 +1893,7 @@ function applySnapshot(snap) {
   restoreBossMarker(snap.boss || null);
   restoreNpcMarkers(snap.npcs || []);
   restorePortals(snap.portals || []);
+  restoreSpawnPoint(snap.spawnPos || null);
 }
 
 function undo() {
@@ -1875,8 +1937,9 @@ async function restoreSprites(list) {
         offsetX: d.offsetX, offsetY: d.offsetY,
         draggable: !S.panMode && !S.deleteMode && !S.drawMode && !S.noWalkMode,
       };
+      const fr = d.frameRow || 0;
       if (isSheet) { restoreCfg.width = d.frameW; restoreCfg.height = d.frameH;
-        restoreCfg.crop = { x: 0, y: 0, width: d.frameW, height: d.frameH }; }
+        restoreCfg.crop = { x: 0, y: fr * d.frameH, width: d.frameW, height: d.frameH }; }
       const node = new Konva.Image(restoreCfg);
       node.setAttr('assetDir',     d.dir);
       node.setAttr('assetFrames',  d.frames);
@@ -1886,7 +1949,7 @@ async function restoreSprites(list) {
       node.setAttr('spriteId',     d.spriteId || genSpriteId());
       node.setAttr('spriteLayer',  la);
       if (isSheet) { node.setAttr('assetFrameW', d.frameW); node.setAttr('assetFrameH', d.frameH);
-        node.setAttr('assetFrameCount', d.frameCount); }
+        node.setAttr('assetFrameCount', d.frameCount); node.setAttr('assetFrameRow', fr); }
       konvaLayerFor(la).add(node);
       bindSpriteEvents(node);
     } catch { /* skip missing images */ }
@@ -2030,6 +2093,7 @@ function buildMapData() {
     boss:        serializeBoss(),
     npcs:        serializeNpcs(),
     portals:     serializePortals(),
+    spawnPos:    serializeSpawnPoint() || undefined,
   };
 }
 
@@ -2060,6 +2124,7 @@ function loadJSON(file) {
     restoreBossMarker(data.boss || null);
     restoreNpcMarkers(data.npcs || []);
     restorePortals(data.portals || []);
+    restoreSpawnPoint(data.spawnPos || null);
     S.history = [];
     pushHistory();
     const enemyCount  = (data.enemies || []).length;
@@ -2086,6 +2151,19 @@ document.getElementById('region-modal').addEventListener('click', e => {
 document.getElementById('btn-region-confirm').onclick = async () => {
   const regionIndex = parseInt(document.getElementById('region-index-input').value, 10);
   if (isNaN(regionIndex) || regionIndex < 0) { setStatus('⚠ Invalid region index'); return; }
+
+  // Check if a region with the same index already exists on the server
+  try {
+    const checkRes = await fetch('/api/regions');
+    const existing = await checkRes.json();
+    const conflict = existing.find(r => r.regionIndex === regionIndex);
+    if (conflict) {
+      const rName = conflict.data?.regionName ? ` "${conflict.data.regionName}"` : '';
+      const ok = confirm(`Region ${regionIndex}${rName} already exists (${conflict.filename}).\nOverwrite it?`);
+      if (!ok) return;
+    }
+  } catch { /* if check fails, proceed anyway */ }
+
   const data = buildMapData();
   document.getElementById('region-modal').style.display = 'none';
   try {
@@ -2173,6 +2251,7 @@ async function loadRegionData(data, filename, regionIndex) {
   restoreBossMarker(data.boss || null);
   restoreNpcMarkers(data.npcs || []);
   restorePortals(data.portals || []);
+  restoreSpawnPoint(data.spawnPos || null);
   // Pre-fill index and name in Save modal so saving overwrites the same region
   if (regionIndex != null) document.getElementById('region-index-input').value = regionIndex;
   document.getElementById('region-name-input').value = data.regionName || '';
@@ -2445,7 +2524,7 @@ function bindRandModal() {
     try { img = await getImg(url); }
     catch { document.getElementById('rand-status').textContent = '⚠ Could not load image'; return; }
 
-    const fw = _randAsset.frameW, fh = _randAsset.frameH, fc = _randAsset.frameCount;
+    const fw = _randAsset.frameW, fh = _randAsset.frameH, fc = _randAsset.frameCount, fr = _randAsset.frameRow || 0;
     const isSheet = !!(fw && fh && fc > 1);
     const hw = isSheet ? fw / 2 : img.width / 2;
     const hh = isSheet ? fh / 2 : img.height / 2;
@@ -2471,7 +2550,7 @@ function bindRandModal() {
         scaleX: scale, scaleY: scale,
         draggable: !S.panMode && !S.deleteMode && !S.noWalkMode,
       };
-      if (isSheet) { nodeCfg.width = fw; nodeCfg.height = fh; nodeCfg.crop = { x: 0, y: 0, width: fw, height: fh }; }
+      if (isSheet) { nodeCfg.width = fw; nodeCfg.height = fh; nodeCfg.crop = { x: 0, y: fr * fh, width: fw, height: fh }; }
       const node = new Konva.Image(nodeCfg);
       node.setAttr('assetDir',     _randAsset.dir);
       node.setAttr('assetFrames',  _randAsset.frames);
@@ -2484,12 +2563,13 @@ function bindRandModal() {
         node.setAttr('assetFrameW',     fw);
         node.setAttr('assetFrameH',     fh);
         node.setAttr('assetFrameCount', fc);
+        node.setAttr('assetFrameRow',   fr);
       }
       targetKonvaLayer.add(node);
       bindSpriteEvents(node);
       broadcast({ type: 'SPRITE_ADD', spriteId: id, dir: _randAsset.dir, frames: _randAsset.frames,
         name: _randAsset.name, animated: _randAsset.animated, x, y, offsetX: hw, offsetY: hh,
-        scaleX: scale, scaleY: scale, spriteLayer: layerAttr, frameW: fw, frameH: fh, frameCount: fc });
+        scaleX: scale, scaleY: scale, spriteLayer: layerAttr, frameW: fw, frameH: fh, frameCount: fc, frameRow: fr });
       placed++;
     }
 
@@ -2582,14 +2662,15 @@ async function handleWsMsg(msg) {
     const isSheet = !!(msg.frameW && msg.frameH && msg.frameCount > 1);
     const wsCfg = { x: msg.x, y: msg.y, image: img, offsetX: msg.offsetX, offsetY: msg.offsetY,
       scaleX: msg.scaleX, scaleY: msg.scaleY, draggable: !S.panMode && !S.deleteMode && !S.noWalkMode };
+    const wsFr = msg.frameRow || 0;
     if (isSheet) { wsCfg.width = msg.frameW; wsCfg.height = msg.frameH;
-      wsCfg.crop = { x: 0, y: 0, width: msg.frameW, height: msg.frameH }; }
+      wsCfg.crop = { x: 0, y: wsFr * msg.frameH, width: msg.frameW, height: msg.frameH }; }
     const node = new Konva.Image(wsCfg);
     node.setAttr('assetDir', msg.dir); node.setAttr('assetFrames', msg.frames);
     node.setAttr('assetName', msg.name); node.setAttr('assetAnimated', msg.animated);
     node.setAttr('currentFrame', 0); node.setAttr('spriteId', msg.spriteId); node.setAttr('spriteLayer', la);
     if (isSheet) { node.setAttr('assetFrameW', msg.frameW); node.setAttr('assetFrameH', msg.frameH);
-      node.setAttr('assetFrameCount', msg.frameCount); }
+      node.setAttr('assetFrameCount', msg.frameCount); node.setAttr('assetFrameRow', wsFr); }
     konvaLayerFor(la).add(node); bindSpriteEvents(node); konvaLayerFor(la).batchDraw();
   }
   else if (msg.type === 'SPRITE_MOVE') {
@@ -2697,7 +2778,7 @@ function wvRender(){
       <div class="wv-node-stats">${isBuilt
         ?`${sprites} sprites · ${enemies} enemies${boss?' · boss':''} · ${pLen} portals`
         :'— not yet built —'}</div>
-      ${isBuilt?`<div class="wv-node-btns"><button class="orange" style="font-size:9px;padding:2px 6px" onclick="wvOpenInEditor(${idx})">✏️ Edit</button></div>`:''}
+      ${isBuilt?`<div class="wv-node-btns"><button class="orange" style="font-size:9px;padding:2px 6px" onclick="wvOpenInEditor(${idx})">✏️ Edit</button><button style="font-size:9px;padding:2px 6px;border-color:#ff4444;color:#ff4444;background:transparent;cursor:pointer" onclick="wvDeleteRegion(${idx})">🗑 Delete</button></div>`:''}
     `;
 
     if(isBuilt){
@@ -2932,6 +3013,19 @@ async function wvSaveChanges(){
 function wvOpenInEditor(idx){
   const r=WV.regions.find(r=>r.regionIndex===idx); if(!r) return;
   closeWorldView(); loadRegionData(r.data,r.filename,r.regionIndex);
+}
+
+async function wvDeleteRegion(idx){
+  const rd=WV.regions.find(r=>r.regionIndex===idx); if(!rd) return;
+  const name=rd.data?.regionName?` "${rd.data.regionName}"`:'';
+  const ok=confirm(`Delete Region ${idx}${name}?\n\nFile: ${rd.filename}\n\nThis permanently removes the region file and cannot be undone.`);
+  if(!ok) return;
+  try{
+    const res=await fetch('/api/regions/'+rd.filename,{method:'DELETE'});
+    const json=await res.json();
+    if(json.ok){ setStatus('Deleted: '+rd.filename); await wvRefresh(); }
+    else setStatus('⚠ Delete failed: '+(json.error||'unknown error'));
+  }catch(e){ setStatus('⚠ Delete error: '+e.message); }
 }
 
 document.getElementById('btn-world-view').onclick=openWorldView;

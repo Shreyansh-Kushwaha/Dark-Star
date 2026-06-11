@@ -199,6 +199,15 @@ export class GameScene extends Phaser.Scene {
       this.network.on('PLAYER_STATE', onPlayerState);
       _netCleanup.push(['PLAYER_STATE', onPlayerState]);
 
+      // Damage dealt to a remote player is forwarded here so the owner applies
+      // it authoritatively to its own local player (HP, dodge, downed state).
+      const onPlayerDamage = ({ amount }) => {
+        const local = this.players.find(p => p?.isLocal);
+        if (local) local.takeDamage(amount, null, this);
+      };
+      this.network.on('PLAYER_DAMAGE', onPlayerDamage);
+      _netCleanup.push(['PLAYER_DAMAGE', onPlayerDamage]);
+
       // Client: apply enemy states broadcast by host
       if (this.network.isClient()) {
         const onRegionChange = ({ newIndex }) => {
@@ -877,9 +886,12 @@ export class GameScene extends Phaser.Scene {
         }
       }
 
-      // Spawn enemies placed in the map editor
+      // Spawn enemies placed in the map editor.
+      // In co-op only the host spawns/simulates enemies; the client receives
+      // them via ENEMY_SYNC. Spawning on both sides creates ghost duplicates.
       const mapEnemies = mapData.enemies || [];
-      if (mapEnemies.length > 0) {
+      const canSpawnEnemies = !this.network.connected || this.network.isHost();
+      if (mapEnemies.length > 0 && canSpawnEnemies) {
         const difficulty = (this._region || {}).difficulty ?? 1.0;
         for (const e of mapEnemies) {
           const enemy = new Enemy(this, e.x, e.y, e.type, difficulty);
@@ -890,7 +902,9 @@ export class GameScene extends Phaser.Scene {
       // Spawn NPCs placed in the map editor
       const mapNpcs = mapData.npcs || [];
       for (const n of mapNpcs) {
-        const npc = new NPC(this, n.x, n.y, { id: n.id, type: n.type || 'yellow' });
+        const dialogueId = n.config?.id || n.id;
+        const npc = new NPC(this, n.x, n.y, { id: dialogueId, type: n.type || 'yellow' });
+        npc._embeddedDialogue = n.config || null;
         this._mapNpcs.push(npc);
       }
 
@@ -1154,16 +1168,20 @@ export class GameScene extends Phaser.Scene {
     if (p2 && !p2.isLocal && !this.network.connected) this._taraAI(p1, p2, delta);
 
     // ── Enemies ───────────────────────────────────────────────────
-    const cam = this.cameras.main;
-    const camCX = cam.scrollX + GAME_W / 2;
-    const camCY = cam.scrollY + GAME_H / 2;
-    // Only host runs enemy AI; client receives positions via ENEMY_SYNC
+    // Only host runs enemy AI; client receives positions via ENEMY_SYNC.
+    // Cull AI by distance to the NEAREST active player (not just the host's
+    // camera) so enemies near the client's player still pursue and attack.
     if (!this.network.connected || this.network.isHost()) {
       for (let i = this.enemies.length - 1; i >= 0; i--) {
         const e = this.enemies[i];
         if (!e || !e.active) { this.enemies.splice(i, 1); continue; }
-        const dx = e.x - camCX, dy = e.y - camCY;
-        if (dx * dx + dy * dy > 640000) continue;
+        let nearAnyPlayer = false;
+        for (const pl of this.players) {
+          if (!pl?.active) continue;
+          const dx = e.x - pl.x, dy = e.y - pl.y;
+          if (dx * dx + dy * dy <= 640000) { nearAnyPlayer = true; break; }
+        }
+        if (!nearAnyPlayer) continue;
         e.update(time, delta, this.players, this._treePositions);
       }
     }
@@ -1351,7 +1369,23 @@ export class GameScene extends Phaser.Scene {
     boss.enter(this);
     this.audio.bossPhase();
 
-    if (boss.cfg.isFinal) {
+    // Subtle cinematic zoom — camera stays on player, just zooms in slightly
+    this.tweens.add({
+      targets: this.cameras.main,
+      zoom: 1.18,
+      duration: 600,
+      ease: 'Sine.easeInOut',
+    });
+    this.time.delayedCall(3400, () => {
+      this.tweens.add({
+        targets: this.cameras.main,
+        zoom: 1.0,
+        duration: 700,
+        ease: 'Sine.easeInOut',
+      });
+    });
+
+    if (boss.cfg.introLines?.length) {
       this._startBossIntro(boss);
     }
   }
@@ -1509,8 +1543,8 @@ export class GameScene extends Phaser.Scene {
     const npcDialogueMap = this.registry.get('npcDialogue') || {};
     for (const npc of (this._mapNpcs || [])) {
       if (!npc?.active || !npc.isPlayerNear) continue;
-      const dlg = npcDialogueMap[npc.npcId];
-      const line = dlg?.first || '⟨NPC⟩ "..."';
+      const dlg = npcDialogueMap[npc.npcId] || npc._embeddedDialogue || {};
+      const line = dlg.first || dlg.name && `⟨${dlg.name}⟩ "..."` || '⟨NPC⟩ "..."';
       this._dialogueActive = true;
       this.events.emit('show_dialogue', { text: line });
       return;

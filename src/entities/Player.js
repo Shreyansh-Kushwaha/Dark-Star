@@ -353,6 +353,17 @@ export class Player extends Phaser.GameObjects.Container {
 
   takeDamage(amount, source, scene) {
     if (!this.alive || this.downed) return;
+
+    // ── Co-op: a player's HP is authoritative on its owner ──────────────
+    // The host simulates enemies and may call takeDamage on its REMOTE copy
+    // of the client's player. Applying it here is futile — the owner's
+    // PLAYER_STATE broadcast would overwrite it. Instead forward the raw hit
+    // to the owner, who applies it with their own dodge/guard/shield logic.
+    if (!this.isLocal && scene?.network?.connected) {
+      scene.network.send('PLAYER_DAMAGE', { amount });
+      return;
+    }
+
     if (this.godMode) return;
     if (this.dodging && this.checkPerfectDodge(scene)) return;
     if (this._guardStance) amount *= 0.5;

@@ -651,7 +651,7 @@ export class MainMenuScene extends Phaser.Scene {
     });
   }
 
-  _showCoopRegionSelect(net, p1Char, p2Char, D) {
+  async _showCoopRegionSelect(net, p1Char, p2Char, D) {
     const cx = GAME_W / 2;
     const panelY = GAME_H / 2;
     const panelW = 680, panelH = 340;
@@ -664,23 +664,56 @@ export class MainMenuScene extends Phaser.Scene {
       stroke: '#000', strokeThickness: 3,
     }).setOrigin(0.5).setDepth(D + 7);
 
+    let started = false;
+    const allBgs = [];
+
+    // If connection drops while host is choosing, show error instead of launching solo silently
+    const onDisconnect = () => {
+      started = true;
+      allBgs.forEach(b => b.disableInteractive());
+      titleTxt.setText('PARTNER DISCONNECTED').setStyle({ color: '#ff4444', fontSize: '18px' });
+    };
+    net.on('disconnected', onDisconnect);
+
+    // Loading hint while we fetch the live region list
+    const loadingTxt = this.add.text(cx, panelY, 'Loading regions…', {
+      fontSize: '13px', fontFamily: 'monospace', color: '#8888aa',
+    }).setOrigin(0.5).setDepth(D + 7);
+
+    // Fetch the live region list from the server so editor-saved regions appear
+    let entries = [];
+    try {
+      const res = await fetch('/api/regions');
+      const list = await res.json();
+      list.sort((a, b) => (a.regionIndex ?? 999) - (b.regionIndex ?? 999));
+      entries = list
+        .filter(r => r.regionIndex != null)
+        .map(r => ({
+          index: r.regionIndex,
+          name: r.data?.regionName || REGION_NAMES[r.regionIndex] || `Region ${r.regionIndex}`,
+        }));
+    } catch (_) {
+      entries = REGION_NAMES.map((name, i) => ({ index: i, name }));
+    }
+    if (entries.length === 0) entries = REGION_NAMES.map((name, i) => ({ index: i, name }));
+
+    loadingTxt.destroy();
+    if (started) return; // disconnected while fetching
+
     const cols = 4;
     const btnW = 148, btnH = 44, gapX = 12, gapY = 10;
     const startX = cx - ((cols * btnW + (cols - 1) * gapX) / 2) + btnW / 2;
     const startY = panelY - 90;
 
-    let started = false;
-
-    const allBgs = [];
-    REGION_NAMES.forEach((name, i) => {
-      const col = i % cols;
-      const row = Math.floor(i / cols);
+    entries.forEach((entry, slot) => {
+      const col = slot % cols;
+      const row = Math.floor(slot / cols);
       const bx = startX + col * (btnW + gapX);
       const by = startY + row * (btnH + gapY);
 
       const bg = this.add.rectangle(bx, by, btnW, btnH, 0x0c0c28).setDepth(D + 7).setInteractive({ useHandCursor: true });
       const border = this.add.rectangle(bx, by, btnW, btnH).setStrokeStyle(1, 0x334466).setDepth(D + 8);
-      const label = name.split(' — ')[0];
+      const label = String(entry.name).split(' — ')[0];
       const txt = this.add.text(bx, by, label, {
         fontSize: '11px', fontFamily: 'monospace', color: '#cccccc',
       }).setOrigin(0.5).setDepth(D + 9);
@@ -692,19 +725,11 @@ export class MainMenuScene extends Phaser.Scene {
         if (started) return;
         started = true;
         allBgs.forEach(b => b.disableInteractive());
-        net.send('REGION_SELECT', { regionIndex: i });
+        net.send('REGION_SELECT', { regionIndex: entry.index });
         this.registry.set('network', net);
-        this._startGame(true, i, { p1Char, p2Char });
+        this._startGame(true, entry.index, { p1Char, p2Char });
       });
     });
-
-    // If connection drops while host is choosing, show error instead of launching solo silently
-    const onDisconnect = () => {
-      started = true;
-      allBgs.forEach(b => b.disableInteractive());
-      titleTxt.setText('PARTNER DISCONNECTED').setStyle({ color: '#ff4444', fontSize: '18px' });
-    };
-    net.on('disconnected', onDisconnect);
   }
 
   _qualityLabel() {
