@@ -118,7 +118,7 @@ export class GameScene extends Phaser.Scene {
       }
       return {
         index: regionIndex,
-        name: `Region ${regionIndex}`,
+        name: md?.regionName || `Region ${regionIndex}`,
         subtitle: '',
         bgColor,
         bgColor2: bgColor,
@@ -1396,7 +1396,7 @@ export class GameScene extends Phaser.Scene {
 
   _usePortalDirect(newIndex) {
     this._portalCooldown = this.time.now + 3000;
-    if (newIndex < 0 || newIndex >= REGIONS.length) return;
+    if (newIndex < 0) return;
     if (this.network?.connected && this.network.isHost()) this.network.send('REGION_CHANGE', { newIndex });
     this._saveProgress(newIndex);
     this.audio.portal();
@@ -1410,7 +1410,7 @@ export class GameScene extends Phaser.Scene {
       ? portal.targetRegion
       : (isNext ? this._regionIndex + 1 : Math.max(0, this._regionIndex - 1));
 
-    if (newIndex < 0 || newIndex >= REGIONS.length) return;
+    if (newIndex < 0) return;
 
     // In co-op, host broadcasts region change so client transitions simultaneously
     if (this.network?.connected && this.network.isHost()) {
