@@ -305,7 +305,7 @@ export class MainMenuScene extends Phaser.Scene {
         list.sort((a, b) => (a.regionIndex ?? 999) - (b.regionIndex ?? 999));
         entries = list.map(r => ({
           index: r.regionIndex,
-          name: REGION_NAMES[r.regionIndex] ?? `Region ${r.regionIndex}`,
+          name: r.data?.regionName || REGION_NAMES[r.regionIndex] || `Region ${r.regionIndex}`,
         }));
       } catch (_) {
         // Offline fallback: show hardcoded list
@@ -323,50 +323,68 @@ export class MainMenuScene extends Phaser.Scene {
   }
 
   _makeRegionSelect(entries) {
-    const cx     = GAME_W / 2 + 170;
-    const startY = 230;
-    const rowH   = 36;
-    const panelW = 440;
-    const objs   = [];
+    const objs = [];
+    const n    = entries.length;
+    // Lay the regions out as a centered multi-column grid so they all fit
+    // on screen at once (column-major fill). Columns grow with the count.
+    const cols      = Math.max(1, Math.min(4, Math.ceil(n / 16)));
+    const perCol    = Math.ceil(n / cols);
+    const colW      = cols >= 3 ? 372 : 420;
+    const rowH      = 30;
+    const cx        = GAME_W / 2;
+    const startY    = 150;
+    const headerH   = 28;
+    const gridTop   = startY + headerH;
+    const panelW    = cols * colW + 24;
+    const panelH    = headerH + perCol * rowH + 24;
+    const panelX    = cx - panelW / 2;
+
+    this._regionCols    = cols;
+    this._regionPerCol  = perCol;
 
     // Panel background
-    const totalH = entries.length * rowH + 12;
     const panelBg = this.add.graphics().setDepth(8);
     panelBg.fillStyle(0x05050f, 0.97);
-    panelBg.fillRect(cx - panelW / 2, startY - 6, panelW, totalH);
+    panelBg.fillRect(panelX, startY - 6, panelW, panelH);
     panelBg.lineStyle(3, 0x4444dd, 1);
-    panelBg.strokeRect(cx - panelW / 2, startY - 6, panelW, totalH);
+    panelBg.strokeRect(panelX, startY - 6, panelW, panelH);
     objs.push(panelBg);
 
-    const hdr = this.add.text(cx, startY + 4, 'SELECT REGION  [↑↓ navigate  Enter=select  Esc=close]', {
-      fontSize: '10px', fontFamily: 'monospace', color: '#8899ff',
-    }).setOrigin(0.5, 0).setDepth(9);
+    const hdr = this.add.text(cx, startY + 6,
+      `SELECT REGION — ${n} worlds   [↑↓←→ navigate · Enter=play · Esc=close]`, {
+        fontSize: '12px', fontFamily: 'monospace', color: '#8899ff',
+      }).setOrigin(0.5, 0).setDepth(9);
     objs.push(hdr);
 
     this._regionSelectRows = [];
 
-    entries.forEach(({ index, name }, row) => {
-      const y    = startY + 22 + row * rowH;
+    entries.forEach(({ index, name }, k) => {
+      const col  = Math.floor(k / perCol);
+      const row  = k % perCol;
+      const ccx  = panelX + 12 + col * colW + (colW - 12) / 2;
+      const y    = gridTop + 12 + row * rowH;
+      const label = `${String(index).padStart(2, ' ')}  ${name}`;
+      const shown = label.length > 40 ? label.slice(0, 39) + '…' : label;
+
       const rowG = this.add.graphics().setDepth(8);
-      const lbl  = this.add.text(cx, y, `${index}  ${name}`, {
-        fontSize: '13px', fontFamily: 'monospace', color: '#aabbcc',
+      const lbl  = this.add.text(ccx, y, shown, {
+        fontSize: '12px', fontFamily: 'monospace', color: '#aabbcc',
       }).setOrigin(0.5).setDepth(9);
 
       const setHighlight = (on) => {
         rowG.clear();
         rowG.fillStyle(on ? 0x1a1a55 : 0x0c0c28, 1);
-        rowG.fillRect(cx - panelW / 2 + 4, y - rowH / 2 + 2, panelW - 8, rowH - 4);
+        rowG.fillRect(ccx - (colW - 12) / 2, y - rowH / 2 + 1, colW - 14, rowH - 2);
         lbl.setColor(on ? '#ffdd00' : '#aabbcc');
       };
       setHighlight(false);
 
       this._regionSelectRows.push({ setHighlight, index });
 
-      const zone = this.add.zone(cx, y, panelW - 8, rowH - 4)
+      const zone = this.add.zone(ccx, y, colW - 14, rowH - 2)
         .setInteractive({ useHandCursor: true }).setDepth(10);
       zone
-        .on('pointerover',  () => { this._regionCursor = row; this._highlightRegionRow(row); })
-        .on('pointerout',   () => {})
+        .on('pointerover',  () => { this._regionCursor = k; this._highlightRegionRow(k); })
         .on('pointerdown',  () => this._startGame(false, index));
 
       objs.push(rowG, lbl, zone);
@@ -459,6 +477,7 @@ export class MainMenuScene extends Phaser.Scene {
     // Region select panel steals keyboard focus while open
     if (this._regionSelectOpen) {
       const rows = this._regionSelectRows;
+      const perCol = this._regionPerCol || rows.length;
       if (e.key === 'ArrowUp') {
         this._regionCursor = (this._regionCursor - 1 + rows.length) % rows.length;
         this._highlightRegionRow(this._regionCursor);
@@ -466,6 +485,16 @@ export class MainMenuScene extends Phaser.Scene {
       }
       if (e.key === 'ArrowDown') {
         this._regionCursor = (this._regionCursor + 1) % rows.length;
+        this._highlightRegionRow(this._regionCursor);
+        return;
+      }
+      if (e.key === 'ArrowLeft') {
+        this._regionCursor = (this._regionCursor - perCol + rows.length) % rows.length;
+        this._highlightRegionRow(this._regionCursor);
+        return;
+      }
+      if (e.key === 'ArrowRight') {
+        this._regionCursor = (this._regionCursor + perCol) % rows.length;
         this._highlightRegionRow(this._regionCursor);
         return;
       }
