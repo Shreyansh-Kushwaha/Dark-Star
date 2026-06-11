@@ -570,6 +570,201 @@ def build_24():
 
 
 # ============================================================================
+# ACT IV — THE SKYWARD CLIMB (sky / snow)
+# ============================================================================
+def sky_void(r, keep, cloud_n=26):
+    """Fill the off-path sky with drifting clouds (decorative, behind play)."""
+    for _ in range(cloud_n):
+        x = r.R.rng(-40, WORLD_W+40); y = r.R.rng(-40, WORLD_H+40)
+        if keep(x, y): continue
+        r.cloud(x, y, r.R.rng(0.45, 0.9))
+
+@region(25)
+def build_25():
+    """Meghasopana — The Cloud Stair. Floating stone stairs climbing through the
+    clouds toward the gods who 'ascended above judgment.'"""
+    r = Region(25, "Meghasopāna — The Cloud Stair", "#8fb4d6", 250025)
+    def stair_y(x): return 1380 - (x / WORLD_W) * 760 + 60*math.sin(x/300.0)  # rising path
+    HALF = 180
+    def on_stair(x, y): return abs(y - stair_y(x)) < HALF or near_spawn(x, y, 280)
+    sky_void(r, on_stair, 30)
+    # the cloud road + floating-stone steps
+    for x in range(120, WORLD_W-80, 150):
+        r.cloud_platform(x, stair_y(x), r.R.rng(0.9, 1.2))
+    for x in range(180, WORLD_W-120, 240):
+        r.rock(x, stair_y(x)+40, r.R.rng(1.4, 2.2));
+        if r.R.chance(0.5): r.pillar(x+60, stair_y(x)-20, r.R.rng(0.8, 1.0))
+    # prayer-bell lamps + updraft wisps (gold stones glints)
+    for x in range(260, WORLD_W-200, 300): r.lamp(x, stair_y(x)-120, 3.0)
+    r.scatter(lambda x,y,s: r.gold(x,y,r.R.rng(0.5,0.8)), 14, (200, WORLD_W-200), (200, 1700),
+              avoid=lambda x,y: not on_stair(x,y))
+    # seal the open sky above & below the climbing band
+    SEG=200; x=0
+    while x<WORLD_W:
+        c=stair_y(x+SEG/2); r.zone(x,-160,SEG+2,c-HALF+160); r.zone(x,c+HALF,SEG+2,WORLD_H-(c+HALF)+160); x+=SEG
+    for (t, x) in [("flying",760),("ranged",1180),("flying",1620),("ranged",2020),("flying",2400)]:
+        r.enemy(t, x, stair_y(x))
+    r.npc("yellow", 360, stair_y(360), "Sky Pilgrim",
+          "Each_step_climbs_toward_the_five_who_rose_above_all_judgment._Mind_the_updrafts._And_mind_that_'five'_—_there_should_be_six_thrones_at_the_top.")
+    r.portal_back(24, 120, stair_y(120))
+    r.portal_next(26, WORLD_W-110, stair_y(WORLD_W-110))
+    return r.emit()
+
+@region(26)
+def build_26():
+    """Vayupatha — The Windward Cliffs. Sheer cliffs and rope-bridges lashed by
+    crosswinds; a carving shows a god cast down."""
+    r = Region(26, "Vāyupatha — The Windward Cliffs", "#7a93ad", 260026)
+    def ledge_y(x): return 1000 + 150*math.sin(x/520.0)
+    HALF = 170
+    def on_ledge(x, y): return abs(y - ledge_y(x)) < HALF or near_spawn(x, y, 280)
+    sky_void(r, on_ledge, 26)
+    # cliff walls of rock above & below the ledge corridor
+    grid_fill(r, lambda x,y,s: r.rock(x,y,r.R.rng(1.6,3.2)),
+              lambda x,y: abs(y-ledge_y(x))<HALF+60 or near_spawn(x,y,300), step=132, chance=0.92)
+    # rope-bridges (custom deck) spanning gaps in the ledge
+    for x in range(420, WORLD_W-300, 520):
+        r.bridge_deck(x, ledge_y(x), 1.25); r.bridge_deck(x+150, ledge_y(x+150), 1.25)
+    r.stroke([(x, ledge_y(x)) for x in range(120, WORLD_W-120, 60)], "#6a6052", 110)
+    # the cast-down-god carving + wind-shrines
+    r.mural(1500, ledge_y(1500)-HALF+40, 1.6)
+    r.brazier(900, ledge_y(900)+90, 2.2); r.brazier(2100, ledge_y(2100)+90, 2.2)
+    r.scatter(r.rock, 20, (240, WORLD_W-240), (400, 1600),
+              avoid=lambda x,y: abs(y-ledge_y(x))>HALF-30, smin=0.6, smax=1.2)
+    SEG=200; x=0
+    while x<WORLD_W:
+        c=ledge_y(x+SEG/2); r.zone(x,-160,SEG+2,c-HALF+160); r.zone(x,c+HALF,SEG+2,WORLD_H-(c+HALF)+160); x+=SEG
+    for (t, x) in [("flying",760),("melee",1120),("flying",1560),("melee",1980),("flying",2360)]:
+        r.enemy(t, x, ledge_y(x))
+    r.npc("blue", 360, ledge_y(360), "Wind-Climber",
+          "Hold_fast_on_the_bridges_—_the_gusts_will_take_you._See_the_carving_in_the_rock?_A_winged_figure_falling._They_say_it's_the_god_they_threw_down.")
+    r.portal_back(25, 120, ledge_y(120))
+    r.portal_next(27, WORLD_W-110, ledge_y(WORLD_W-110))
+    return r.emit()
+
+@region(27)
+def build_27():
+    """Garudalaya — The Eyrie Sanctuary. The bird-folk's cliff-top refuge; they
+    kept uncensored records and can teach the erased god's true name. Hub."""
+    r = Region(27, "Garuḍālaya — The Eyrie Sanctuary", "#86a8c8", 270027)
+    sky_void(r, lambda x,y: 220<x<WORLD_W-220 and 300<y<WORLD_H-300, 22)
+    # a broad cloud terrace as the floor
+    for x in range(120, WORLD_W-80, 200):
+        for y in (560, 1000, 1440): r.cloud_platform(x, y, r.R.rng(0.8, 1.1))
+    # nest-towers (the roosts) + wind-shrines
+    r.building("Tower", "Blue", 470, 760, 1.3); r.building("Tower", "Blue", 1100, 720, 1.25)
+    r.building("Tower", "Blue", 760, 1340, 1.25); r.building("Monastery", "Blue", 2700, 820, 1.0)
+    r.pillar(1500, 980, 1.3); r.pillar(1700, 980, 1.3); r.brazier(1600, 1040, 2.6)   # the great roost shrine
+    for (sx,sy) in [(600,1050),(900,1080),(1250,1060)]: r.tent(sx,sy,1.6); r.crate(sx+44,sy,2.0)
+    r.flag(470, 560, 1.7); r.flag(1100, 520, 1.7); r.campfire(640, 1180, 1.6)
+    for lx in range(420, WORLD_W-300, 280): r.lamp(lx, 1000-70 if (lx//280)%2 else 1000+70, 3.0)
+    r.scatter(lambda x,y,s: r.gold(x,y,r.R.rng(0.6,1.0)), 14, (300, WORLD_W-300), (360, 1640),
+              avoid=lambda x,y: not (220<x<WORLD_W-220 and 300<y<WORLD_H-300))
+    r.frame_walls(top=240, bottom=240, left=190, right=180, left_gap=(900,1120), right_gap=(900,1120))
+    for (t, x, y) in [("flying",1900,760),("flying",2150,1200),("melee",1750,1000)]:
+        r.enemy(t, x, y)
+    r.npc("yellow", 360, 980, "Garuda Loremaster",
+          "We_birds_keep_what_the_temples_burned._The_Sixth_had_a_name:_EKATMADEVA,_the_One_Soul._Speak_it_at_heaven's_gate_and_the_clouds_will_part_for_you.")
+    r.npc("blue", 470, 1180, "Eyrie Healer",
+          "Rest_your_wings,_groundling._The_frostpeak_north_holds_a_pilgrim_frozen_mid-prayer_to_a_god_no_one_admits_existed.")
+    r.portal_back(26, 120, 1000)
+    r.portal_next(29, WORLD_W-110, 1000)
+    r.portal_to(28, 760, 250)    # spur -> Frostpeak
+    return r.emit()
+
+@region(28)
+def build_28():
+    """Himashikhara — The Frostpeak. A blizzard-wracked summit where a pilgrim
+    froze mid-prayer to the erased god. Optional spur off Garudalaya."""
+    r = Region(28, "Himashikhara — The Frostpeak", "#bcc8d4", 280028)
+    # snow drifts (pale wavy strokes)
+    for i, yy in enumerate(range(-40, WORLD_H+40, 84)):
+        r.stroke([(x, yy+30*math.sin(x/320.0+i)) for x in range(-60, WORLD_W+60, 70)],
+                 "#c6d2dd" if i%2 else "#d2dde6", 110)
+    def open_snow(x, y): return True
+    # snow-laden rocks, ice shards, frost crystals
+    r.scatter(lambda x,y,s: r.rock(x,y,r.R.rng(1.2,2.6)), 30, (240, WORLD_W-240), (320, 1700), avoid=near_spawn)
+    r.scatter(lambda x,y,s: r.ice(x,y,r.R.rng(0.8,1.6)), 30, (240, WORLD_W-240), (300, 1720), avoid=near_spawn)
+    r.scatter(lambda x,y,s: r.crystal(x,y,r.R.rng(0.7,1.2),"cyan"), 18, (260, WORLD_W-260), (340, 1680), avoid=near_spawn)
+    # the frozen pilgrim's shrine: ice-clad pillars + a mural
+    r.pillar(2500, 940, 1.0); r.pillar(2660, 940, 1.0); r.ice(2580, 1000, 2.0); r.mural(2580, 1110, 1.1)
+    r.scatter(lambda x,y,s: r.dead_tree(x,y,r.R.rng(0.6,0.9)), 12, (300, 2600), (360, 1640), avoid=near_spawn)
+    r.frame_walls(top=200, bottom=200, left=190, right=160, left_gap=(880,1120))
+    for (t, x, y) in [("ranged",760,920),("melee",1120,1080),("ranged",1520,940),
+                      ("melee",1920,1080),("elite",2360,1000)]:
+        r.enemy(t, x, y)
+    r.npc("blue", 320, 980, "Frozen Pilgrim",
+          "...c-cold..._I_climbed_to_pray_to_the_Sixth_where_no_priest_could_stop_me..._the_blizzard_took_me_mid-word..._say_his_name_for_me..._Ekatmadeva...")
+    r.portal_back(27, 120, 1000)
+    return r.emit()
+
+@region(29)
+def build_29():
+    """Swarga Seema — The Edge of Heaven. The pale rim of the five gods' realm —
+    the conspiracy's penthouse. Opens only to one who knows the Sixth's name."""
+    r = Region(29, "Swarga Seema — The Edge of Heaven", "#a8c4dc", 290029)
+    sky_void(r, lambda x,y: 200<x<WORLD_W-200 and 320<y<WORLD_H-320, 22)
+    # cloud terraces (the floor) + heavenly avenue
+    for x in range(120, WORLD_W-80, 190):
+        for y in (600, 1000, 1400): r.cloud_platform(x, y, r.R.rng(0.85, 1.15))
+    r.stroke([(x,1000) for x in range(80,WORLD_W-80,60)], "#c2d6e8", 150)
+    # golden colonnade + the heavenly gate + apsara fountains
+    for px in range(360, WORLD_W-300, 240):
+        r.pillar(px, 740, r.R.rng(1.1,1.3)); r.pillar(px, 1260, r.R.rng(1.1,1.3))
+    r.gate(1500, 1070, 1.6)
+    for (cx,cy) in [(820,1000),(2200,1000)]: r.pool(cx,cy,150,90,"#7fb0d0","#a9cfe6",120,60)
+    for bx in range(520, WORLD_W-400, 320): r.brazier(bx, 1100 if (bx//320)%2 else 900, 2.4)
+    r.flag(1500, 760, 1.9)
+    r.scatter(lambda x,y,s: r.gold(x,y,r.R.rng(0.7,1.1)), 16, (300, WORLD_W-300), (360, 1640),
+              avoid=lambda x,y: not (200<x<WORLD_W-200 and 320<y<WORLD_H-320))
+    r.frame_walls(top=240, bottom=240, left=190, right=170, left_gap=(900,1120), right_gap=(900,1120))
+    for (t, x, y) in [("melee",820,940),("ranged",1120,1060),("melee",1820,940),
+                      ("ranged",2120,1060),("flying",2000,760),("elite",2380,1000)]:
+        r.enemy(t, x, y)
+    r.npc("yellow", 360, 980, "Apsara Guide",
+          "So_you_know_the_name._Then_the_gate_opens._Beyond_it_sit_the_FIVE_who_remain_—_and_the_empty_sixth_throne_they_will_not_explain.")
+    r.portal_back(27, 120, 1000)
+    r.portal_next(30, WORLD_W-110, 1000)
+    return r.emit()
+
+@region(30)
+def build_30():
+    """Vayu Rakshasa's Tempest. The eye of a sky-storm guarding heaven's lie.
+    Act IV boss arena."""
+    r = Region(30, "Vāyu Rākṣasa's Tempest", "#5a6e84", 300030)
+    ARENA = (1700, 1000)
+    sky_void(r, lambda x,y: (x-ARENA[0])**2+(y-ARENA[1])**2 < 520**2 or near_spawn(x,y,280) or abs(y-1000)<150, 18)
+    # lightning arcs across the storm (jagged blue strokes)
+    for (lx, ly) in [(600,500),(2300,520),(900,1500),(2100,1480)]:
+        pts=[(lx+i*40+r.R.rng(-20,20), ly+i*30*(1 if i%2 else -1)) for i in range(0,8)]
+        r.stroke(pts, "#cfe0f5", 6); r.stroke(pts, "#8fb6e8", 3)
+    # the cloud-road in, and the eye of the storm (clear arena)
+    r.stroke([(x,1000) for x in range(80, 1300, 60)], "#c2d6e8", 150)
+    for x in range(140, 1300, 180): r.cloud_platform(x, 1000, r.R.rng(0.9,1.15))
+    # spinning debris ring + a torn banner of six gods
+    for k in range(16):
+        a=k/16*math.tau; r.rock(ARENA[0]+math.cos(a)*460, ARENA[1]+math.sin(a)*420, r.R.rng(1.0,2.0))
+    r.mural(ARENA[0], ARENA[1]-360, 1.6); r.flag(ARENA[0]-300, ARENA[1]-200, 1.6)
+    # seal everything except the entry road and the eye
+    def keep(x,y): return (x-ARENA[0])**2+(y-ARENA[1])**2<480**2 or (x<1300 and abs(y-1000)<160) or near_spawn(x,y,260)
+    SEG=180; x=0
+    while x<WORLD_W:
+        cx=x+SEG/2; yy=-160
+        while yy<WORLD_H:
+            if not keep(cx, yy+90): r.zone(x, yy, SEG+2, 184, zid=f"z30_{x}_{yy}")
+            yy+=180
+        x+=SEG
+    for (t, x, y) in [("flying",900,1000),("flying",1300,900),("flying",1300,1100)]:
+        r.enemy(t, x, y)
+    r.set_boss("vayu_rakshasa", ARENA[0], ARENA[1])
+    r.npc("yellow", 360, 1000, "Storm Herald",
+          "The_last_guardian_of_heaven's_lie_rides_this_storm._Strike_it_down_and_it_will_point_you_where_they_buried_him_—_down,_below_the_world.")
+    r.portal_back(29, 120, 1000)
+    r.portal_next(35, WORLD_W-110, 1000)
+    return r.emit()
+
+
+# ============================================================================
 def main():
     args = [int(a) for a in sys.argv[1:] if a.isdigit()]
     todo = args or sorted(REGISTRY)

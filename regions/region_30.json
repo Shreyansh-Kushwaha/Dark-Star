@@ -1,0 +1,2250 @@
+{
+ "version": 1,
+ "regionName": "V\u0101yu R\u0101k\u1e63asa's Tempest",
+ "background": {
+  "type": "color",
+  "value": "#5a6e84"
+ },
+ "sprites": [
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0001",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3214.89,
+   "y": 444.82,
+   "scaleX": 0.603,
+   "scaleY": 0.603,
+   "offsetX": 288.0,
+   "offsetY": 128.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0002",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 538.75,
+   "y": 1823.02,
+   "scaleX": 0.602,
+   "scaleY": 0.602,
+   "offsetX": 288.0,
+   "offsetY": 128.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0003",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1598.6,
+   "y": 283.78,
+   "scaleX": 0.53,
+   "scaleY": 0.53,
+   "offsetX": 288.0,
+   "offsetY": 128.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0004",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 839.41,
+   "y": 1499.68,
+   "scaleX": 0.523,
+   "scaleY": 0.523,
+   "offsetX": 288.0,
+   "offsetY": 128.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0005",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2555.8,
+   "y": 2019.91,
+   "scaleX": 0.82,
+   "scaleY": 0.82,
+   "offsetX": 288.0,
+   "offsetY": 128.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0006",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2626.38,
+   "y": 1873.63,
+   "scaleX": 0.715,
+   "scaleY": 0.715,
+   "offsetX": 288.0,
+   "offsetY": 128.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0007",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 514.39,
+   "y": 1553.22,
+   "scaleX": 0.63,
+   "scaleY": 0.63,
+   "offsetX": 288.0,
+   "offsetY": 128.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0008",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1144.78,
+   "y": 1991.77,
+   "scaleX": 0.642,
+   "scaleY": 0.642,
+   "offsetX": 288.0,
+   "offsetY": 128.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0009",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 868.44,
+   "y": 412.38,
+   "scaleX": 0.527,
+   "scaleY": 0.527,
+   "offsetX": 288.0,
+   "offsetY": 128.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0010",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2332.41,
+   "y": -16.82,
+   "scaleX": 0.791,
+   "scaleY": 0.791,
+   "offsetX": 288.0,
+   "offsetY": 128.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0011",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1065.59,
+   "y": 1905.02,
+   "scaleX": 0.54,
+   "scaleY": 0.54,
+   "offsetX": 288.0,
+   "offsetY": 128.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0012",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2311.0,
+   "y": 55.23,
+   "scaleX": 0.451,
+   "scaleY": 0.451,
+   "offsetX": 288.0,
+   "offsetY": 128.0
+  },
+  {
+   "type": "stroke",
+   "stroke": "#cfe0f5",
+   "strokeWidth": 6,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    593.72,
+    500,
+    653.55,
+    530,
+    694.06,
+    440,
+    723.66,
+    590,
+    771.05,
+    380,
+    807.7,
+    650,
+    856.18,
+    320,
+    871.09,
+    710
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#8fb6e8",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    593.72,
+    500,
+    653.55,
+    530,
+    694.06,
+    440,
+    723.66,
+    590,
+    771.05,
+    380,
+    807.7,
+    650,
+    856.18,
+    320,
+    871.09,
+    710
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#cfe0f5",
+   "strokeWidth": 6,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2297.03,
+    520,
+    2338.32,
+    550,
+    2394.35,
+    460,
+    2420.94,
+    610,
+    2465.33,
+    400,
+    2494.97,
+    670,
+    2544.94,
+    340,
+    2570.77,
+    730
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#8fb6e8",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2297.03,
+    520,
+    2338.32,
+    550,
+    2394.35,
+    460,
+    2420.94,
+    610,
+    2465.33,
+    400,
+    2494.97,
+    670,
+    2544.94,
+    340,
+    2570.77,
+    730
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#cfe0f5",
+   "strokeWidth": 6,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    896.78,
+    1500,
+    929.15,
+    1530,
+    993.62,
+    1440,
+    1006.35,
+    1590,
+    1075.21,
+    1380,
+    1115.03,
+    1650,
+    1137.0,
+    1320,
+    1196.37,
+    1710
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#8fb6e8",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    896.78,
+    1500,
+    929.15,
+    1530,
+    993.62,
+    1440,
+    1006.35,
+    1590,
+    1075.21,
+    1380,
+    1115.03,
+    1650,
+    1137.0,
+    1320,
+    1196.37,
+    1710
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#cfe0f5",
+   "strokeWidth": 6,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2106.8,
+    1480,
+    2122.4,
+    1510,
+    2167.25,
+    1420,
+    2204.43,
+    1570,
+    2272.97,
+    1360,
+    2309.72,
+    1630,
+    2344.48,
+    1300,
+    2373.06,
+    1690
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#8fb6e8",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2106.8,
+    1480,
+    2122.4,
+    1510,
+    2167.25,
+    1420,
+    2204.43,
+    1570,
+    2272.97,
+    1360,
+    2309.72,
+    1630,
+    2344.48,
+    1300,
+    2373.06,
+    1690
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d6e8",
+   "strokeWidth": 150,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    80,
+    1000,
+    140,
+    1000,
+    200,
+    1000,
+    260,
+    1000,
+    320,
+    1000,
+    380,
+    1000,
+    440,
+    1000,
+    500,
+    1000,
+    560,
+    1000,
+    620,
+    1000,
+    680,
+    1000,
+    740,
+    1000,
+    800,
+    1000,
+    860,
+    1000,
+    920,
+    1000,
+    980,
+    1000,
+    1040,
+    1000,
+    1100,
+    1000,
+    1160,
+    1000,
+    1220,
+    1000,
+    1280,
+    1000
+   ]
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0013",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 140,
+   "y": 1000,
+   "scaleX": 1.113,
+   "scaleY": 1.113,
+   "offsetX": 110.0,
+   "offsetY": 52.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0014",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 320,
+   "y": 1000,
+   "scaleX": 1.14,
+   "scaleY": 1.14,
+   "offsetX": 110.0,
+   "offsetY": 52.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0015",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 500,
+   "y": 1000,
+   "scaleX": 1.102,
+   "scaleY": 1.102,
+   "offsetX": 110.0,
+   "offsetY": 52.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0016",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 680,
+   "y": 1000,
+   "scaleX": 1.028,
+   "scaleY": 1.028,
+   "offsetX": 110.0,
+   "offsetY": 52.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0017",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 860,
+   "y": 1000,
+   "scaleX": 1.023,
+   "scaleY": 1.023,
+   "offsetX": 110.0,
+   "offsetY": 52.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0018",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1040,
+   "y": 1000,
+   "scaleX": 1.009,
+   "scaleY": 1.009,
+   "offsetX": 110.0,
+   "offsetY": 52.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0019",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1220,
+   "y": 1000,
+   "scaleX": 1.023,
+   "scaleY": 1.023,
+   "offsetX": 110.0,
+   "offsetY": 52.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0020",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2160.0,
+   "y": 1000.0,
+   "scaleX": 1.732,
+   "scaleY": 1.732,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0021",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2124.98,
+   "y": 1160.73,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0022",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2025.27,
+   "y": 1296.98,
+   "scaleX": 1.018,
+   "scaleY": 1.018,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0023",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1876.03,
+   "y": 1388.03,
+   "scaleX": 1.973,
+   "scaleY": 1.973,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0024",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1700.0,
+   "y": 1420.0,
+   "scaleX": 1.195,
+   "scaleY": 1.195,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0025",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1523.97,
+   "y": 1388.03,
+   "scaleX": 1.33,
+   "scaleY": 1.33,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0026",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1374.73,
+   "y": 1296.98,
+   "scaleX": 1.028,
+   "scaleY": 1.028,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0027",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1275.02,
+   "y": 1160.73,
+   "scaleX": 1.64,
+   "scaleY": 1.64,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0028",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1240.0,
+   "y": 1000.0,
+   "scaleX": 1.607,
+   "scaleY": 1.607,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0029",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1275.02,
+   "y": 839.27,
+   "scaleX": 1.473,
+   "scaleY": 1.473,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0030",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1374.73,
+   "y": 703.02,
+   "scaleX": 1.901,
+   "scaleY": 1.901,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0031",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1523.97,
+   "y": 611.97,
+   "scaleX": 1.406,
+   "scaleY": 1.406,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0032",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1700.0,
+   "y": 580.0,
+   "scaleX": 1.851,
+   "scaleY": 1.851,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0033",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1876.03,
+   "y": 611.97,
+   "scaleX": 1.474,
+   "scaleY": 1.474,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0034",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2025.27,
+   "y": 703.02,
+   "scaleX": 1.849,
+   "scaleY": 1.849,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0035",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2124.98,
+   "y": 839.27,
+   "scaleX": 1.029,
+   "scaleY": 1.029,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0036",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1700,
+   "y": 640,
+   "scaleX": 1.6,
+   "scaleY": 1.6,
+   "offsetX": 70.0,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r30_0037",
+   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
+   "frames": [
+    "1.png",
+    "2.png",
+    "3.png",
+    "4.png",
+    "5.png"
+   ],
+   "name": "1",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1400,
+   "y": 800,
+   "scaleX": 1.6,
+   "scaleY": 1.6,
+   "offsetX": 96.0,
+   "offsetY": 63
+  }
+ ],
+ "noWalkZones": [
+  {
+   "id": "z30_0_-160",
+   "x": 0,
+   "y": -160,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_0_20",
+   "x": 0,
+   "y": 20,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_0_200",
+   "x": 0,
+   "y": 200,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_0_380",
+   "x": 0,
+   "y": 380,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_0_560",
+   "x": 0,
+   "y": 560,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_0_740",
+   "x": 0,
+   "y": 740,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_0_1100",
+   "x": 0,
+   "y": 1100,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_0_1280",
+   "x": 0,
+   "y": 1280,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_0_1460",
+   "x": 0,
+   "y": 1460,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_0_1640",
+   "x": 0,
+   "y": 1640,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_0_1820",
+   "x": 0,
+   "y": 1820,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_180_-160",
+   "x": 180,
+   "y": -160,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_180_20",
+   "x": 180,
+   "y": 20,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_180_200",
+   "x": 180,
+   "y": 200,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_180_380",
+   "x": 180,
+   "y": 380,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_180_560",
+   "x": 180,
+   "y": 560,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_180_1280",
+   "x": 180,
+   "y": 1280,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_180_1460",
+   "x": 180,
+   "y": 1460,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_180_1640",
+   "x": 180,
+   "y": 1640,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_180_1820",
+   "x": 180,
+   "y": 1820,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_360_-160",
+   "x": 360,
+   "y": -160,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_360_20",
+   "x": 360,
+   "y": 20,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_360_200",
+   "x": 360,
+   "y": 200,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_360_380",
+   "x": 360,
+   "y": 380,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_360_560",
+   "x": 360,
+   "y": 560,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_360_1280",
+   "x": 360,
+   "y": 1280,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_360_1460",
+   "x": 360,
+   "y": 1460,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_360_1640",
+   "x": 360,
+   "y": 1640,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_360_1820",
+   "x": 360,
+   "y": 1820,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_540_-160",
+   "x": 540,
+   "y": -160,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_540_20",
+   "x": 540,
+   "y": 20,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_540_200",
+   "x": 540,
+   "y": 200,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_540_380",
+   "x": 540,
+   "y": 380,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_540_560",
+   "x": 540,
+   "y": 560,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_540_740",
+   "x": 540,
+   "y": 740,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_540_1100",
+   "x": 540,
+   "y": 1100,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_540_1280",
+   "x": 540,
+   "y": 1280,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_540_1460",
+   "x": 540,
+   "y": 1460,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_540_1640",
+   "x": 540,
+   "y": 1640,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_540_1820",
+   "x": 540,
+   "y": 1820,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_720_-160",
+   "x": 720,
+   "y": -160,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_720_20",
+   "x": 720,
+   "y": 20,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_720_200",
+   "x": 720,
+   "y": 200,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_720_380",
+   "x": 720,
+   "y": 380,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_720_560",
+   "x": 720,
+   "y": 560,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_720_740",
+   "x": 720,
+   "y": 740,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_720_1100",
+   "x": 720,
+   "y": 1100,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_720_1280",
+   "x": 720,
+   "y": 1280,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_720_1460",
+   "x": 720,
+   "y": 1460,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_720_1640",
+   "x": 720,
+   "y": 1640,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_720_1820",
+   "x": 720,
+   "y": 1820,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_900_-160",
+   "x": 900,
+   "y": -160,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_900_20",
+   "x": 900,
+   "y": 20,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_900_200",
+   "x": 900,
+   "y": 200,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_900_380",
+   "x": 900,
+   "y": 380,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_900_560",
+   "x": 900,
+   "y": 560,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_900_740",
+   "x": 900,
+   "y": 740,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_900_1100",
+   "x": 900,
+   "y": 1100,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_900_1280",
+   "x": 900,
+   "y": 1280,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_900_1460",
+   "x": 900,
+   "y": 1460,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_900_1640",
+   "x": 900,
+   "y": 1640,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_900_1820",
+   "x": 900,
+   "y": 1820,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1080_-160",
+   "x": 1080,
+   "y": -160,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1080_20",
+   "x": 1080,
+   "y": 20,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1080_200",
+   "x": 1080,
+   "y": 200,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1080_380",
+   "x": 1080,
+   "y": 380,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1080_560",
+   "x": 1080,
+   "y": 560,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1080_740",
+   "x": 1080,
+   "y": 740,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1080_1100",
+   "x": 1080,
+   "y": 1100,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1080_1280",
+   "x": 1080,
+   "y": 1280,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1080_1460",
+   "x": 1080,
+   "y": 1460,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1080_1640",
+   "x": 1080,
+   "y": 1640,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1080_1820",
+   "x": 1080,
+   "y": 1820,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1260_-160",
+   "x": 1260,
+   "y": -160,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1260_20",
+   "x": 1260,
+   "y": 20,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1260_200",
+   "x": 1260,
+   "y": 200,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1260_380",
+   "x": 1260,
+   "y": 380,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1260_560",
+   "x": 1260,
+   "y": 560,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1260_1280",
+   "x": 1260,
+   "y": 1280,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1260_1460",
+   "x": 1260,
+   "y": 1460,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1260_1640",
+   "x": 1260,
+   "y": 1640,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1260_1820",
+   "x": 1260,
+   "y": 1820,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1440_-160",
+   "x": 1440,
+   "y": -160,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1440_20",
+   "x": 1440,
+   "y": 20,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1440_200",
+   "x": 1440,
+   "y": 200,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1440_380",
+   "x": 1440,
+   "y": 380,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1440_1460",
+   "x": 1440,
+   "y": 1460,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1440_1640",
+   "x": 1440,
+   "y": 1640,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1440_1820",
+   "x": 1440,
+   "y": 1820,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1620_-160",
+   "x": 1620,
+   "y": -160,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1620_20",
+   "x": 1620,
+   "y": 20,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1620_200",
+   "x": 1620,
+   "y": 200,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1620_380",
+   "x": 1620,
+   "y": 380,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1620_1460",
+   "x": 1620,
+   "y": 1460,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1620_1640",
+   "x": 1620,
+   "y": 1640,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1620_1820",
+   "x": 1620,
+   "y": 1820,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1800_-160",
+   "x": 1800,
+   "y": -160,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1800_20",
+   "x": 1800,
+   "y": 20,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1800_200",
+   "x": 1800,
+   "y": 200,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1800_380",
+   "x": 1800,
+   "y": 380,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1800_1460",
+   "x": 1800,
+   "y": 1460,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1800_1640",
+   "x": 1800,
+   "y": 1640,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1800_1820",
+   "x": 1800,
+   "y": 1820,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1980_-160",
+   "x": 1980,
+   "y": -160,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1980_20",
+   "x": 1980,
+   "y": 20,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1980_200",
+   "x": 1980,
+   "y": 200,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1980_380",
+   "x": 1980,
+   "y": 380,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1980_560",
+   "x": 1980,
+   "y": 560,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1980_1280",
+   "x": 1980,
+   "y": 1280,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1980_1460",
+   "x": 1980,
+   "y": 1460,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1980_1640",
+   "x": 1980,
+   "y": 1640,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_1980_1820",
+   "x": 1980,
+   "y": 1820,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2160_-160",
+   "x": 2160,
+   "y": -160,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2160_20",
+   "x": 2160,
+   "y": 20,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2160_200",
+   "x": 2160,
+   "y": 200,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2160_380",
+   "x": 2160,
+   "y": 380,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2160_560",
+   "x": 2160,
+   "y": 560,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2160_740",
+   "x": 2160,
+   "y": 740,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2160_920",
+   "x": 2160,
+   "y": 920,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2160_1100",
+   "x": 2160,
+   "y": 1100,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2160_1280",
+   "x": 2160,
+   "y": 1280,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2160_1460",
+   "x": 2160,
+   "y": 1460,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2160_1640",
+   "x": 2160,
+   "y": 1640,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2160_1820",
+   "x": 2160,
+   "y": 1820,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2340_-160",
+   "x": 2340,
+   "y": -160,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2340_20",
+   "x": 2340,
+   "y": 20,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2340_200",
+   "x": 2340,
+   "y": 200,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2340_380",
+   "x": 2340,
+   "y": 380,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2340_560",
+   "x": 2340,
+   "y": 560,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2340_740",
+   "x": 2340,
+   "y": 740,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2340_920",
+   "x": 2340,
+   "y": 920,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2340_1100",
+   "x": 2340,
+   "y": 1100,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2340_1280",
+   "x": 2340,
+   "y": 1280,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2340_1460",
+   "x": 2340,
+   "y": 1460,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2340_1640",
+   "x": 2340,
+   "y": 1640,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2340_1820",
+   "x": 2340,
+   "y": 1820,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2520_-160",
+   "x": 2520,
+   "y": -160,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2520_20",
+   "x": 2520,
+   "y": 20,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2520_200",
+   "x": 2520,
+   "y": 200,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2520_380",
+   "x": 2520,
+   "y": 380,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2520_560",
+   "x": 2520,
+   "y": 560,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2520_740",
+   "x": 2520,
+   "y": 740,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2520_920",
+   "x": 2520,
+   "y": 920,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2520_1100",
+   "x": 2520,
+   "y": 1100,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2520_1280",
+   "x": 2520,
+   "y": 1280,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2520_1460",
+   "x": 2520,
+   "y": 1460,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2520_1640",
+   "x": 2520,
+   "y": 1640,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2520_1820",
+   "x": 2520,
+   "y": 1820,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2700_-160",
+   "x": 2700,
+   "y": -160,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2700_20",
+   "x": 2700,
+   "y": 20,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2700_200",
+   "x": 2700,
+   "y": 200,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2700_380",
+   "x": 2700,
+   "y": 380,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2700_560",
+   "x": 2700,
+   "y": 560,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2700_740",
+   "x": 2700,
+   "y": 740,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2700_920",
+   "x": 2700,
+   "y": 920,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2700_1100",
+   "x": 2700,
+   "y": 1100,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2700_1280",
+   "x": 2700,
+   "y": 1280,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2700_1460",
+   "x": 2700,
+   "y": 1460,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2700_1640",
+   "x": 2700,
+   "y": 1640,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2700_1820",
+   "x": 2700,
+   "y": 1820,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2880_-160",
+   "x": 2880,
+   "y": -160,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2880_20",
+   "x": 2880,
+   "y": 20,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2880_200",
+   "x": 2880,
+   "y": 200,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2880_380",
+   "x": 2880,
+   "y": 380,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2880_560",
+   "x": 2880,
+   "y": 560,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2880_740",
+   "x": 2880,
+   "y": 740,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2880_920",
+   "x": 2880,
+   "y": 920,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2880_1100",
+   "x": 2880,
+   "y": 1100,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2880_1280",
+   "x": 2880,
+   "y": 1280,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2880_1460",
+   "x": 2880,
+   "y": 1460,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2880_1640",
+   "x": 2880,
+   "y": 1640,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_2880_1820",
+   "x": 2880,
+   "y": 1820,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_3060_-160",
+   "x": 3060,
+   "y": -160,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_3060_20",
+   "x": 3060,
+   "y": 20,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_3060_200",
+   "x": 3060,
+   "y": 200,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_3060_380",
+   "x": 3060,
+   "y": 380,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_3060_560",
+   "x": 3060,
+   "y": 560,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_3060_740",
+   "x": 3060,
+   "y": 740,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_3060_920",
+   "x": 3060,
+   "y": 920,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_3060_1100",
+   "x": 3060,
+   "y": 1100,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_3060_1280",
+   "x": 3060,
+   "y": 1280,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_3060_1460",
+   "x": 3060,
+   "y": 1460,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_3060_1640",
+   "x": 3060,
+   "y": 1640,
+   "w": 182,
+   "h": 184
+  },
+  {
+   "id": "z30_3060_1820",
+   "x": 3060,
+   "y": 1820,
+   "w": 182,
+   "h": 184
+  }
+ ],
+ "enemies": [
+  {
+   "id": "e30_01",
+   "type": "flying",
+   "x": 900,
+   "y": 1000
+  },
+  {
+   "id": "e30_02",
+   "type": "flying",
+   "x": 1300,
+   "y": 900
+  },
+  {
+   "id": "e30_03",
+   "type": "flying",
+   "x": 1300,
+   "y": 1100
+  }
+ ],
+ "boss": {
+  "key": "vayu_rakshasa",
+  "x": 1700,
+  "y": 1000
+ },
+ "npcs": [
+  {
+   "id": "npc30_1",
+   "type": "yellow",
+   "x": 360,
+   "y": 1000,
+   "config": {
+    "id": "npc30_1",
+    "name": "Storm Herald",
+    "first": "The_last_guardian_of_heaven's_lie_rides_this_storm._Strike_it_down_and_it_will_point_you_where_they_buried_him_\u2014_down,_below_the_world.",
+    "active": "",
+    "completed": ""
+   }
+  }
+ ],
+ "portals": [
+  {
+   "id": "portal30_back",
+   "direction": "back",
+   "targetRegion": 29,
+   "x": 120,
+   "y": 1000
+  },
+  {
+   "id": "portal30_next",
+   "direction": "next",
+   "targetRegion": 35,
+   "x": 3090,
+   "y": 1000
+  }
+ ],
+ "regionIndex": 30
+}

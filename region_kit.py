@@ -156,6 +156,8 @@ class Region:
     def gate(self, x, y, s): self.prop("gate_arch", x, y, s)
     def lava_rock(self, x, y, s): self.prop("lava_rock", x, y, s)
     def crystal(self, x, y, s, kind="cyan"): self.prop(f"crystal_{kind}", x, y, s)
+    def bridge_deck(self, x, y, s): self.add(STRUCT, "bridge_deck.png", x, y, s, anchor="center")
+    def lift(self, x, y, s): self.add(STRUCT, "lift_platform.png", x, y, s)
 
     # ---- animated accents (keep total < 20) ---------------------------------
     def flag(self, x, y, s=1.5):
