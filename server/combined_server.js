@@ -23,6 +23,31 @@ function isAnimFrame(name) {
   return /^\d+\.png$/i.test(name) || /_\d+\.png$/i.test(name);
 }
 
+// Read PNG width/height from the 24-byte IHDR header (no external deps)
+function readPNGDims(absPath) {
+  try {
+    const buf = Buffer.alloc(24);
+    const fd = fs.openSync(absPath, 'r');
+    fs.readSync(fd, buf, 0, 24, 0);
+    fs.closeSync(fd);
+    if (buf[0] !== 0x89 || buf[1] !== 0x50) return null;
+    return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) };
+  } catch { return null; }
+}
+
+// Returns { frameW, frameH, frameCount } if PNG is a horizontal spritesheet, else null.
+// A horizontal spritesheet has width = N × height exactly, N in [2..24], height in [8..512].
+function detectSpritesheet(absPath) {
+  const dims = readPNGDims(absPath);
+  if (!dims) return null;
+  const { w, h } = dims;
+  if (h < 8 || h > 512) return null;
+  if (w <= h) return null;
+  const n = Math.round(w / h);
+  if (n < 2 || n > 24 || w !== h * n) return null;
+  return { frameW: h, frameH: h, frameCount: n };
+}
+
 function frameNum(name) {
   const m = name.match(/(\d+)\.png$/i);
   return m ? parseInt(m[1], 10) : 0;
@@ -65,7 +90,9 @@ function spritesFromDir(absDir, relDir) {
   }
 
   for (const png of statics) {
-    out.push({ name: png.name.replace(/\.png$/i, ''), dir: relDir, frames: [png.name], animated: false });
+    const sh = detectSpritesheet(png.full);
+    out.push({ name: png.name.replace(/\.png$/i, ''), dir: relDir, frames: [png.name],
+      animated: sh !== null, ...(sh || {}) });
   }
   return out;
 }

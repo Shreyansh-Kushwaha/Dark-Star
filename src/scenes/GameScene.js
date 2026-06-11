@@ -772,13 +772,18 @@ export class GameScene extends Phaser.Scene {
     if ((mapData.noWalkZones || []).length > 0) this._noWalkGroup.refresh();
 
     const sprites = mapData.sprites || [];
-    const missing = [];
+    const missing = []; // { key, url, isSheet?, frameW?, frameH? }
 
     for (const sp of sprites) {
-      const framesToLoad = (sp.animated && sp.frames.length > 1) ? sp.frames : [sp.frames[0]];
-      for (const frame of framesToLoad) {
-        const key = _mapSpriteKey(sp.dir, frame);
-        if (!this.textures.exists(key)) missing.push({ key, url: sp.dir + '/' + frame });
+      if (sp.frameW && sp.frameH) {
+        const key = _mapSpriteKey(sp.dir, sp.frames[0]);
+        if (!this.textures.exists(key)) missing.push({ key, url: sp.dir + '/' + sp.frames[0], isSheet: true, frameW: sp.frameW, frameH: sp.frameH });
+      } else {
+        const framesToLoad = (sp.animated && sp.frames.length > 1) ? sp.frames : [sp.frames[0]];
+        for (const frame of framesToLoad) {
+          const key = _mapSpriteKey(sp.dir, frame);
+          if (!this.textures.exists(key)) missing.push({ key, url: sp.dir + '/' + frame });
+        }
       }
     }
 
@@ -786,6 +791,27 @@ export class GameScene extends Phaser.Scene {
       for (const sp of sprites) {
         const key = _mapSpriteKey(sp.dir, sp.frames[0]);
         const depth = sp.spriteLayer === 'above' ? sp.y + 1 : sp.y - 1;
+
+        if (sp.frameW && sp.frameH && sp.frameCount > 1) {
+          // Spritesheet animation
+          const animKey = key + '_loop';
+          if (!this.anims.exists(animKey)) {
+            this.anims.create({
+              key: animKey,
+              frames: this.anims.generateFrameNumbers(key, { start: 0, end: sp.frameCount - 1 }),
+              frameRate: 8,
+              repeat: -1,
+            });
+          }
+          const spr = this.add.sprite(sp.x, sp.y, key)
+            .setScale(sp.scaleX ?? 1, sp.scaleY ?? 1)
+            .setDepth(depth)
+            .play(animKey);
+          if (sp.offsetX != null && sp.offsetY != null)
+            spr.setOrigin(sp.offsetX / sp.frameW, sp.offsetY / sp.frameH);
+          continue;
+        }
+
         const img = this.add.image(sp.x, sp.y, key)
           .setScale(sp.scaleX ?? 1, sp.scaleY ?? 1)
           .setDepth(depth);
@@ -835,7 +861,10 @@ export class GameScene extends Phaser.Scene {
     }
 
     if (missing.length > 0) {
-      missing.forEach(({ key, url }) => this.load.image(key, url));
+      missing.forEach(({ key, url, isSheet, frameW, frameH }) => {
+        if (isSheet) this.load.spritesheet(key, url, { frameWidth: frameW, frameHeight: frameH });
+        else this.load.image(key, url);
+      });
       this.load.once('complete', place);
       this.load.start();
     } else {

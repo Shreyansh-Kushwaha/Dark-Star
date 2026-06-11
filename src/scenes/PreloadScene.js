@@ -289,26 +289,33 @@ export class PreloadScene extends Phaser.Scene {
     fetch('/api/regions')
       .then(r => r.json())
       .then(list => {
-        // Collect unique sprite URLs to preload
-        const toLoad = new Map(); // key -> url
+        // Collect unique sprite URLs to preload — value is { url, isSheet?, frameW?, frameH? }
+        const toLoad = new Map();
         for (const entry of list) {
           for (const sp of entry.data?.sprites || []) {
             const key = _mapSpriteKey(sp.dir, sp.frames[0]);
             if (!this.textures.exists(key)) {
-              toLoad.set(key, sp.dir + '/' + sp.frames[0]);
+              if (sp.frameW && sp.frameH) {
+                toLoad.set(key, { url: sp.dir + '/' + sp.frames[0], isSheet: true, frameW: sp.frameW, frameH: sp.frameH });
+              } else {
+                toLoad.set(key, { url: sp.dir + '/' + sp.frames[0] });
+              }
             }
-            // For animated sprites, preload all frames
-            if (sp.animated && sp.frames.length > 1) {
+            // For multi-frame (numbered) animated sprites, preload all frames
+            if (sp.animated && sp.frames.length > 1 && !sp.frameW) {
               for (const frame of sp.frames) {
                 const fkey = _mapSpriteKey(sp.dir, frame);
-                if (!this.textures.exists(fkey)) toLoad.set(fkey, sp.dir + '/' + frame);
+                if (!this.textures.exists(fkey)) toLoad.set(fkey, { url: sp.dir + '/' + frame });
               }
             }
           }
         }
         this.registry.set('regionMaps', list);
         if (toLoad.size === 0) { this.scene.start('MainMenuScene'); return; }
-        toLoad.forEach((url, key) => this.load.image(key, url));
+        toLoad.forEach(({ url, isSheet, frameW, frameH }, key) => {
+          if (isSheet) this.load.spritesheet(key, url, { frameWidth: frameW, frameHeight: frameH });
+          else this.load.image(key, url);
+        });
         this.load.once('complete', () => this.scene.start('MainMenuScene'));
         this.load.start();
       })

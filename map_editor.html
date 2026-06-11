@@ -61,6 +61,7 @@ button.orange.active{background:#ff883322;border-color:#ffaa55}
 .asset-tile:hover .crop-btn{display:block}
 .rand-btn{position:absolute;top:0;right:0;display:none;padding:1px 4px;font-size:9px;background:#000d;border:1px solid #44ff88;color:#44ff88;cursor:pointer;border-radius:0 2px 0 2px;line-height:1.4;z-index:2}
 .asset-tile:hover .rand-btn{display:block}
+.anim-badge{position:absolute;bottom:0;left:0;font-size:8px;background:#00008866;color:#88ccff;padding:1px 3px;border-radius:0 2px 0 2px;pointer-events:none;line-height:1.4}
 /* ── Randomizer modal ── */
 #rand-modal{position:fixed;inset:0;background:#000c;display:none;z-index:1000;align-items:center;justify-content:center}
 #rand-modal.open{display:flex}
@@ -728,9 +729,28 @@ function bindToolbar() {
   document.getElementById('btn-share').onclick = shareRoom;
 }
 
+// ── Spritesheet auto-animation ─────────────────────────────────────────────
+function startEditorAnimTicker() {
+  setInterval(() => {
+    let dirty = false;
+    getAllSpriteNodes().forEach(node => {
+      const fc = node.getAttr('assetFrameCount');
+      if (!fc || fc <= 1) return;
+      const fw = node.getAttr('assetFrameW');
+      const fh = node.getAttr('assetFrameH');
+      const cf = ((node.getAttr('currentFrame') || 0) + 1) % fc;
+      node.setAttr('currentFrame', cf);
+      node.crop({ x: fw * cf, y: 0, width: fw, height: fh });
+      dirty = true;
+    });
+    if (dirty) { S.belowLayer.batchDraw(); S.aboveLayer.batchDraw(); }
+  }, 150);
+}
+
 // ── Init ───────────────────────────────────────────────────────────────────
 async function init() {
   initStage();
+  startEditorAnimTicker();
   try {
     const res = await fetch('/api/assets');
     S.assets = await res.json();
@@ -922,7 +942,8 @@ function renderTrayGrid() {
     const tile = document.createElement('div');
     tile.className = 'asset-tile' + (S.placingAsset === asset ? ' selected' : '');
     const url = assetURL(asset.dir, asset.frames[0]);
-    tile.innerHTML = `<div class="tile-img-wrap"><img src="${url}" loading="lazy" title="${asset.name}"><button class="crop-btn" title="Crop this asset">✂</button><button class="rand-btn" title="Randomize this asset">🎲</button></div><span>${asset.name}</span>`;
+    const animBadge = (asset.animated && asset.frameW) ? '<div class="anim-badge">▶ anim</div>' : '';
+    tile.innerHTML = `<div class="tile-img-wrap"><img src="${url}" loading="lazy" title="${asset.name}">${animBadge}<button class="crop-btn" title="Crop this asset">✂</button><button class="rand-btn" title="Randomize this asset">🎲</button></div><span>${asset.name}</span>`;
     tile.onclick = () => startPlacing(asset);
     tile.querySelector('.crop-btn').onclick = e => { e.stopPropagation(); openCropModal(asset); };
     tile.querySelector('.rand-btn').onclick = e => { e.stopPropagation(); openRandModal(asset); };
@@ -1308,13 +1329,19 @@ async function placeSprite(asset, x, y, spriteId, layerAttr) {
   try { img = await getImg(url); }
   catch { setStatus('⚠ Failed to load: ' + url); return; }
 
-  const layer = layerAttr || 'below';
-  const id = spriteId || genSpriteId();
-  const node = new Konva.Image({
-    x, y, image: img,
-    offsetX: img.width / 2, offsetY: img.height / 2,
-    draggable: !S.panMode && !S.deleteMode && !S.noWalkMode,
-  });
+  const layer  = layerAttr || 'below';
+  const id     = spriteId || genSpriteId();
+  const fw     = asset.frameW, fh = asset.frameH, fc = asset.frameCount;
+  const isSheet = !!(fw && fh && fc > 1);
+  const offX   = isSheet ? fw / 2 : img.width / 2;
+  const offY   = isSheet ? fh / 2 : img.height / 2;
+
+  const nodeCfg = { x, y, image: img, offsetX: offX, offsetY: offY,
+    draggable: !S.panMode && !S.deleteMode && !S.noWalkMode };
+  if (isSheet) { nodeCfg.width = fw; nodeCfg.height = fh;
+    nodeCfg.crop = { x: 0, y: 0, width: fw, height: fh }; }
+
+  const node = new Konva.Image(nodeCfg);
   node.setAttr('assetDir',     asset.dir);
   node.setAttr('assetFrames',  asset.frames);
   node.setAttr('assetName',    asset.name);
@@ -1322,16 +1349,21 @@ async function placeSprite(asset, x, y, spriteId, layerAttr) {
   node.setAttr('currentFrame', 0);
   node.setAttr('spriteId',     id);
   node.setAttr('spriteLayer',  layer);
+  if (isSheet) {
+    node.setAttr('assetFrameW',     fw);
+    node.setAttr('assetFrameH',     fh);
+    node.setAttr('assetFrameCount', fc);
+  }
 
   konvaLayerFor(layer).add(node);
   bindSpriteEvents(node);
   if (!spriteId) {
     broadcast({ type: 'SPRITE_ADD', spriteId: id, dir: asset.dir, frames: asset.frames,
-      name: asset.name, animated: asset.animated, x, y,
-      offsetX: img.width / 2, offsetY: img.height / 2, scaleX: 1, scaleY: 1,
-      spriteLayer: layer });
+      name: asset.name, animated: asset.animated, x, y, offsetX: offX, offsetY: offY,
+      scaleX: 1, scaleY: 1, spriteLayer: layer, frameW: fw, frameH: fh, frameCount: fc });
     pushHistory();
-    setStatus('Placed: ' + asset.name + ' [' + (layer === 'above' ? 'Above Player' : 'Below Player') + ']');
+    setStatus('Placed: ' + asset.name + ' [' + (layer === 'above' ? 'Above Player' : 'Below Player') + ']'
+      + (isSheet ? ' ▶ animated' : ''));
   }
 }
 
@@ -1438,23 +1470,23 @@ function deleteSelected() {
 async function duplicateSelected() {
   if (!S.selectedNode) return;
   const node = S.selectedNode;
-  const asset = {
-    dir:      node.getAttr('assetDir'),
-    frames:   node.getAttr('assetFrames'),
-    name:     node.getAttr('assetName'),
-    animated: node.getAttr('assetAnimated'),
-  };
+  const fw = node.getAttr('assetFrameW'), fh = node.getAttr('assetFrameH'), fc = node.getAttr('assetFrameCount');
+  const isSheet = !!(fw && fh && fc > 1);
+  const asset = { dir: node.getAttr('assetDir'), frames: node.getAttr('assetFrames'),
+    name: node.getAttr('assetName'), animated: node.getAttr('assetAnimated'),
+    frameW: fw, frameH: fh, frameCount: fc };
   const layerAttr = node.getAttr('spriteLayer') || 'below';
   const url = assetURL(asset.dir, asset.frames[0]);
   let img;
   try { img = await getImg(url); } catch { return; }
   const id = genSpriteId();
-  const newNode = new Konva.Image({
-    x: node.x() + 20, y: node.y() + 20, image: img,
+  const dupCfg = { x: node.x() + 20, y: node.y() + 20, image: img,
     offsetX: node.offsetX(), offsetY: node.offsetY(),
     scaleX: node.scaleX(), scaleY: node.scaleY(),
-    draggable: !S.panMode && !S.deleteMode && !S.noWalkMode,
-  });
+    draggable: !S.panMode && !S.deleteMode && !S.noWalkMode };
+  if (isSheet) { dupCfg.width = fw; dupCfg.height = fh;
+    dupCfg.crop = { x: 0, y: 0, width: fw, height: fh }; }
+  const newNode = new Konva.Image(dupCfg);
   newNode.setAttr('assetDir',     asset.dir);
   newNode.setAttr('assetFrames',  asset.frames);
   newNode.setAttr('assetName',    asset.name);
@@ -1462,15 +1494,17 @@ async function duplicateSelected() {
   newNode.setAttr('currentFrame', 0);
   newNode.setAttr('spriteId',     id);
   newNode.setAttr('spriteLayer',  layerAttr);
+  if (isSheet) { newNode.setAttr('assetFrameW', fw); newNode.setAttr('assetFrameH', fh);
+    newNode.setAttr('assetFrameCount', fc); }
   konvaLayerFor(layerAttr).add(newNode);
   bindSpriteEvents(newNode);
   konvaLayerFor(layerAttr).batchDraw();
   selectNode(newNode);
   broadcast({ type: 'SPRITE_ADD', spriteId: id, dir: asset.dir, frames: asset.frames,
     name: asset.name, animated: asset.animated,
-    x: newNode.x(), y: newNode.y(),
-    offsetX: newNode.offsetX(), offsetY: newNode.offsetY(),
-    scaleX: newNode.scaleX(), scaleY: newNode.scaleY(), spriteLayer: layerAttr });
+    x: newNode.x(), y: newNode.y(), offsetX: newNode.offsetX(), offsetY: newNode.offsetY(),
+    scaleX: newNode.scaleX(), scaleY: newNode.scaleY(), spriteLayer: layerAttr,
+    frameW: fw, frameH: fh, frameCount: fc });
   pushHistory();
   setStatus('Duplicated: ' + asset.name + ' — Ctrl+Z to undo');
 }
@@ -1478,16 +1512,20 @@ async function duplicateSelected() {
 function copySelected() {
   const nodes = S.transformer.nodes().filter(n => n instanceof Konva.Image);
   if (nodes.length === 0) return;
-  S.clipboard = nodes.map(n => ({
-    assetDir:      n.getAttr('assetDir'),
-    assetFrames:   n.getAttr('assetFrames'),
-    assetName:     n.getAttr('assetName'),
-    assetAnimated: n.getAttr('assetAnimated'),
-    spriteLayer:   n.getAttr('spriteLayer') || 'below',
-    x:       n.x(),       y:       n.y(),
-    scaleX:  n.scaleX(),  scaleY:  n.scaleY(),
-    offsetX: n.offsetX(), offsetY: n.offsetY(),
-  }));
+  S.clipboard = nodes.map(n => {
+    const fw = n.getAttr('assetFrameW'), fh = n.getAttr('assetFrameH'), fc = n.getAttr('assetFrameCount');
+    return {
+      assetDir:      n.getAttr('assetDir'),
+      assetFrames:   n.getAttr('assetFrames'),
+      assetName:     n.getAttr('assetName'),
+      assetAnimated: n.getAttr('assetAnimated'),
+      spriteLayer:   n.getAttr('spriteLayer') || 'below',
+      x:       n.x(),       y:       n.y(),
+      scaleX:  n.scaleX(),  scaleY:  n.scaleY(),
+      offsetX: n.offsetX(), offsetY: n.offsetY(),
+      ...(fw ? { assetFrameW: fw, assetFrameH: fh, assetFrameCount: fc } : {}),
+    };
+  });
   setStatus('Copied ' + S.clipboard.length + ' sprite(s) — Ctrl+V to paste');
 }
 
@@ -1500,12 +1538,14 @@ async function pasteClipboard() {
     let img;
     try { img = await getImg(url); } catch { continue; }
     const id = genSpriteId();
-    const node = new Konva.Image({
-      x: d.x + OFFSET, y: d.y + OFFSET, image: img,
-      offsetX: d.offsetX, offsetY: d.offsetY,
-      scaleX: d.scaleX, scaleY: d.scaleY,
-      draggable: !S.panMode && !S.deleteMode && !S.noWalkMode,
-    });
+    const fw = d.assetFrameW, fh = d.assetFrameH, fc = d.assetFrameCount;
+    const isSheet = !!(fw && fh && fc > 1);
+    const pasteCfg = { x: d.x + OFFSET, y: d.y + OFFSET, image: img,
+      offsetX: d.offsetX, offsetY: d.offsetY, scaleX: d.scaleX, scaleY: d.scaleY,
+      draggable: !S.panMode && !S.deleteMode && !S.noWalkMode };
+    if (isSheet) { pasteCfg.width = fw; pasteCfg.height = fh;
+      pasteCfg.crop = { x: 0, y: 0, width: fw, height: fh }; }
+    const node = new Konva.Image(pasteCfg);
     node.setAttr('assetDir',     d.assetDir);
     node.setAttr('assetFrames',  d.assetFrames);
     node.setAttr('assetName',    d.assetName);
@@ -1513,6 +1553,8 @@ async function pasteClipboard() {
     node.setAttr('currentFrame', 0);
     node.setAttr('spriteId',     id);
     node.setAttr('spriteLayer',  d.spriteLayer);
+    if (isSheet) { node.setAttr('assetFrameW', fw); node.setAttr('assetFrameH', fh);
+      node.setAttr('assetFrameCount', fc); }
     konvaLayerFor(d.spriteLayer).add(node);
     bindSpriteEvents(node);
     konvaLayerFor(d.spriteLayer).batchDraw();
@@ -1520,7 +1562,8 @@ async function pasteClipboard() {
     broadcast({ type: 'SPRITE_ADD', spriteId: id,
       dir: d.assetDir, frames: d.assetFrames, name: d.assetName, animated: d.assetAnimated,
       x: node.x(), y: node.y(), offsetX: d.offsetX, offsetY: d.offsetY,
-      scaleX: d.scaleX, scaleY: d.scaleY, spriteLayer: d.spriteLayer });
+      scaleX: d.scaleX, scaleY: d.scaleY, spriteLayer: d.spriteLayer,
+      frameW: fw, frameH: fh, frameCount: fc });
     // advance clipboard position so repeated pastes stagger
     d.x += OFFSET; d.y += OFFSET;
   }
@@ -1591,6 +1634,7 @@ function togglePreview() {
     S.previewInterval = null;
     btn.textContent = '▶ Preview';
     getAllSpriteNodes().forEach(node => {
+      if (node.getAttr('assetFrameCount') > 1) return; // spritesheet — auto-animating, don't reset
       const frames = node.getAttr('assetFrames');
       if (!frames || frames.length <= 1) return;
       node.setAttr('currentFrame', 0);
@@ -1602,6 +1646,7 @@ function togglePreview() {
   btn.textContent = '⏹ Stop';
   S.previewInterval = setInterval(() => {
     getAllSpriteNodes().forEach(node => {
+      if (node.getAttr('assetFrameCount') > 1) return; // spritesheet — already auto-animating
       const frames = node.getAttr('assetFrames');
       if (!frames || frames.length <= 1) return;
       const next = (node.getAttr('currentFrame') + 1) % frames.length;
@@ -1625,18 +1670,22 @@ function serializeSprites() {
     strokeWidth: n.strokeWidth(), lineCap: n.lineCap(), lineJoin: n.lineJoin(),
     composite: n.globalCompositeOperation(),
   }));
-  const sprites = getAllSpriteNodes().map(n => ({
-    type: 'sprite',
-    spriteId:    n.getAttr('spriteId'),
-    dir:         n.getAttr('assetDir'),
-    frames:      n.getAttr('assetFrames'),
-    name:        n.getAttr('assetName'),
-    animated:    n.getAttr('assetAnimated'),
-    spriteLayer: n.getAttr('spriteLayer') || 'below',
-    x: n.x(), y: n.y(),
-    scaleX: n.scaleX(), scaleY: n.scaleY(),
-    offsetX: n.offsetX(), offsetY: n.offsetY(),
-  }));
+  const sprites = getAllSpriteNodes().map(n => {
+    const fw = n.getAttr('assetFrameW'), fh = n.getAttr('assetFrameH'), fc = n.getAttr('assetFrameCount');
+    return {
+      type: 'sprite',
+      spriteId:    n.getAttr('spriteId'),
+      dir:         n.getAttr('assetDir'),
+      frames:      n.getAttr('assetFrames'),
+      name:        n.getAttr('assetName'),
+      animated:    n.getAttr('assetAnimated'),
+      spriteLayer: n.getAttr('spriteLayer') || 'below',
+      x: n.x(), y: n.y(),
+      scaleX: n.scaleX(), scaleY: n.scaleY(),
+      offsetX: n.offsetX(), offsetY: n.offsetY(),
+      ...(fw ? { frameW: fw, frameH: fh, frameCount: fc } : {}),
+    };
+  });
   return [...strokes, ...sprites];
 }
 
@@ -1719,12 +1768,16 @@ async function restoreSprites(list) {
     try {
       const img = await getImg(url);
       const la = d.spriteLayer || 'below';
-      const node = new Konva.Image({
+      const isSheet = !!(d.frameW && d.frameH && d.frameCount > 1);
+      const restoreCfg = {
         x: d.x, y: d.y, image: img,
         scaleX: d.scaleX, scaleY: d.scaleY,
         offsetX: d.offsetX, offsetY: d.offsetY,
         draggable: !S.panMode && !S.deleteMode && !S.drawMode && !S.noWalkMode,
-      });
+      };
+      if (isSheet) { restoreCfg.width = d.frameW; restoreCfg.height = d.frameH;
+        restoreCfg.crop = { x: 0, y: 0, width: d.frameW, height: d.frameH }; }
+      const node = new Konva.Image(restoreCfg);
       node.setAttr('assetDir',     d.dir);
       node.setAttr('assetFrames',  d.frames);
       node.setAttr('assetName',    d.name);
@@ -1732,6 +1785,8 @@ async function restoreSprites(list) {
       node.setAttr('currentFrame', 0);
       node.setAttr('spriteId',     d.spriteId || genSpriteId());
       node.setAttr('spriteLayer',  la);
+      if (isSheet) { node.setAttr('assetFrameW', d.frameW); node.setAttr('assetFrameH', d.frameH);
+        node.setAttr('assetFrameCount', d.frameCount); }
       konvaLayerFor(la).add(node);
       bindSpriteEvents(node);
     } catch { /* skip missing images */ }
@@ -2410,10 +2465,17 @@ async function handleWsMsg(msg) {
     const url = assetURL(msg.dir, msg.frames[0]);
     let img; try { img = await getImg(url); } catch { return; }
     const la = msg.spriteLayer || 'below';
-    const node = new Konva.Image({ x: msg.x, y: msg.y, image: img, offsetX: msg.offsetX, offsetY: msg.offsetY, scaleX: msg.scaleX, scaleY: msg.scaleY, draggable: !S.panMode && !S.deleteMode && !S.noWalkMode });
+    const isSheet = !!(msg.frameW && msg.frameH && msg.frameCount > 1);
+    const wsCfg = { x: msg.x, y: msg.y, image: img, offsetX: msg.offsetX, offsetY: msg.offsetY,
+      scaleX: msg.scaleX, scaleY: msg.scaleY, draggable: !S.panMode && !S.deleteMode && !S.noWalkMode };
+    if (isSheet) { wsCfg.width = msg.frameW; wsCfg.height = msg.frameH;
+      wsCfg.crop = { x: 0, y: 0, width: msg.frameW, height: msg.frameH }; }
+    const node = new Konva.Image(wsCfg);
     node.setAttr('assetDir', msg.dir); node.setAttr('assetFrames', msg.frames);
     node.setAttr('assetName', msg.name); node.setAttr('assetAnimated', msg.animated);
     node.setAttr('currentFrame', 0); node.setAttr('spriteId', msg.spriteId); node.setAttr('spriteLayer', la);
+    if (isSheet) { node.setAttr('assetFrameW', msg.frameW); node.setAttr('assetFrameH', msg.frameH);
+      node.setAttr('assetFrameCount', msg.frameCount); }
     konvaLayerFor(la).add(node); bindSpriteEvents(node); konvaLayerFor(la).batchDraw();
   }
   else if (msg.type === 'SPRITE_MOVE') {
