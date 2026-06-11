@@ -293,6 +293,7 @@ export class PreloadScene extends Phaser.Scene {
         const toLoad = new Map();
         for (const entry of list) {
           for (const sp of entry.data?.sprites || []) {
+            if (!sp.frames) continue; // skip non-image entries (e.g. strokes)
             const key = _mapSpriteKey(sp.dir, sp.frames[0]);
             if (!this.textures.exists(key)) {
               if (sp.frameW && sp.frameH) {

@@ -776,6 +776,7 @@ export class GameScene extends Phaser.Scene {
     const missing = []; // { key, url, isSheet?, frameW?, frameH? }
 
     for (const sp of sprites) {
+      if (!sp.frames) continue; // skip non-image entries (e.g. strokes)
       if (sp.frameW && sp.frameH) {
         const key = _mapSpriteKey(sp.dir, sp.frames[0]);
         if (!this.textures.exists(key)) missing.push({ key, url: sp.dir + '/' + sp.frames[0], isSheet: true, frameW: sp.frameW, frameH: sp.frameH });
@@ -790,6 +791,7 @@ export class GameScene extends Phaser.Scene {
 
     const place = () => {
       for (const sp of sprites) {
+        if (!sp.frames) continue; // skip non-image entries (e.g. strokes)
         const key = _mapSpriteKey(sp.dir, sp.frames[0]);
         const depth = sp.spriteLayer === 'above' ? sp.y + 1 : sp.y - 1;
 
