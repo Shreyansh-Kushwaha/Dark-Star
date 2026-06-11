@@ -118,7 +118,8 @@ def rubble(x, y, s=1.3):   add(STRUCT, "bridge_rubble.png", x, y, s, anchor="cen
 def lift(x, y, s=1.18):    add(STRUCT, "lift_platform.png", x, y, s, anchor="base")
 
 def campfire(x, y, s=1.6):
-    add(CAMP, "1.png", x, y, s, animated=True, frames=["1.png","2.png","3.png","4.png","5.png","6.png"])
+    add("assest4/map_objects/3 Animated Objects/2 Campfire", "1.png", x, y, s,
+        animated=True, frames=["1.png","2.png"])
 def flag(x, y, s=1.5):
     add("assest4/map_objects/3 Animated Objects/1 Flag", "1.png", x, y, s,
         anchor="base", animated=True, frames=["1.png","2.png","3.png","4.png","5.png"])

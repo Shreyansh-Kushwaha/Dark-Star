@@ -954,14 +954,10 @@
   {
    "type": "sprite",
    "spriteId": "s_region11_0022",
-   "dir": "assest4/map_objects/2 Objects/8 Camp",
+   "dir": "assest4/map_objects/3 Animated Objects/2 Campfire",
    "frames": [
     "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png",
-    "6.png"
+    "2.png"
    ],
    "name": "1",
    "animated": true,
@@ -970,8 +966,8 @@
    "y": 1175,
    "scaleX": 1.7,
    "scaleY": 1.7,
-   "offsetX": 28.5,
-   "offsetY": 35
+   "offsetX": 96.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
