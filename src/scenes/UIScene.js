@@ -160,10 +160,11 @@ export class UIScene extends Phaser.Scene {
     this._bossHpDelay  = this.add.rectangle(BAR_L, hpY, BAR_W, barH, 0x882200).setOrigin(0, 0.5);
     this._bossHpFill   = this.add.rectangle(BAR_L, hpY, BAR_W, barH, 0xcc1111).setOrigin(0, 0.5);
 
-    // HP number — kept for code compatibility, invisible
-    this._bossHpText = this.add.text(GAME_W - 32, hpY, '', {
-      fontSize: '11px', color: '#cccccc', fontFamily: 'monospace',
-    }).setOrigin(1, 0.5).setVisible(false);
+    // HP number shown centered on bar
+    this._bossHpText = this.add.text(GAME_W / 2, hpY, '', {
+      fontSize: '11px', color: '#ffffff', fontFamily: 'monospace',
+      stroke: '#000000', strokeThickness: 3,
+    }).setOrigin(0.5, 0.5).setDepth(1);
 
     // Posture bar — kept for code compatibility, invisible
     this._bossPostureBg   = this.add.rectangle(POST_L, postY, POST_W, postH, 0x111111).setOrigin(0, 0.5).setVisible(false);

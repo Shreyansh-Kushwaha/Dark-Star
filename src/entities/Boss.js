@@ -843,7 +843,7 @@ export class Boss extends Phaser.GameObjects.Container {
   }
 
   takeDamage(amount, scene) {
-    if (!this.alive || this._invincible || this.state === STATE.STAGGER || this.state === STATE.DEAD) return;
+    if (!this.alive || this._invincible || this.state === STATE.DEAD) return;
     this.hp = Math.max(0, this.hp - amount);
     this._spawnDamageNumber(scene, amount);
 
