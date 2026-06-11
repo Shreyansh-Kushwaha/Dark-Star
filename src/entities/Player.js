@@ -116,7 +116,6 @@ export class Player extends Phaser.GameObjects.Container {
     }
 
     this.setDepth(this.y);
-    if (this._agniShieldFx) this._agniShieldFx.setPosition(this.x, this.y);
 
     if (this.downed) {
       this._downTimer -= delta;
