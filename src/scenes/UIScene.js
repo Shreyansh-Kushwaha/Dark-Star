@@ -133,10 +133,11 @@ export class UIScene extends Phaser.Scene {
   // ── Boss bar (Dark Souls style) ────────────────────────────────────────────
 
   _createBossBar() {
-    const hpY   = GAME_H - 78;
+    const nameY = GAME_H - 108;
+    const loreY = GAME_H - 91;   // tight gap below name
+    const hpY   = GAME_H - 74;
     const postY = GAME_H - 46;
-    const nameY = GAME_H - 102;
-    const barH  = 26;
+    const barH  = 14;
     const postH = 12;
 
     // Starts off-screen below; slides up on boss_entered
@@ -144,9 +145,16 @@ export class UIScene extends Phaser.Scene {
 
     // Boss name — centered, gold serif
     this._bossName = this.add.text(GAME_W / 2, nameY, '', {
-      fontSize: '22px', color: '#ffd700', fontFamily: 'serif',
+      fontSize: '22px', color: '#f0d890', fontFamily: 'serif',
       stroke: '#000000', strokeThickness: 5,
       letterSpacing: 8,
+    }).setOrigin(0.5);
+
+    // Subtitle / lore tagline — small italic, tight below name
+    this._bossSubtitle = this.add.text(GAME_W / 2, loreY, '', {
+      fontSize: '11px', color: '#9a8a6a', fontFamily: 'serif', fontStyle: 'italic',
+      stroke: '#000000', strokeThickness: 3,
+      letterSpacing: 2,
     }).setOrigin(0.5);
 
     // Phase label — kept for code compatibility, invisible
@@ -155,14 +163,21 @@ export class UIScene extends Phaser.Scene {
       stroke: '#000', strokeThickness: 3,
     }).setOrigin(1, 0.5).setAlpha(0);
 
-    // HP bar stack (bg → ghost → fill)
-    this._bossHpBg     = this.add.rectangle(BAR_L, hpY, BAR_W, barH, 0x1a0808).setOrigin(0, 0.5);
-    this._bossHpDelay  = this.add.rectangle(BAR_L, hpY, BAR_W, barH, 0x882200).setOrigin(0, 0.5);
-    this._bossHpFill   = this.add.rectangle(BAR_L, hpY, BAR_W, barH, 0xcc1111).setOrigin(0, 0.5);
+    // Gold border behind bar (Elden Ring gold outline)
+    this._bossHpBorder = this.add.rectangle(BAR_L - 1, hpY, BAR_W + 2, barH + 2, 0x8a6a3a).setOrigin(0, 0.5);
 
-    // HP number shown centered on bar
+    // HP bar stack (bg → ghost → fill)
+    this._bossHpBg     = this.add.rectangle(BAR_L, hpY, BAR_W, barH, 0x150808).setOrigin(0, 0.5);
+    this._bossHpDelay  = this.add.rectangle(BAR_L, hpY, BAR_W, barH, 0x882200).setOrigin(0, 0.5);
+    this._bossHpFill   = this.add.rectangle(BAR_L, hpY, BAR_W, barH, 0xdd2020).setOrigin(0, 0.5);
+
+    // Gold diamond gems at each end of bar (Elden Ring style)
+    this._bossGemL = this.add.rectangle(BAR_L - 7,       hpY, 10, 10, 0xc8a96e).setRotation(Math.PI / 4);
+    this._bossGemR = this.add.rectangle(BAR_L + BAR_W + 7, hpY, 10, 10, 0xc8a96e).setRotation(Math.PI / 4);
+
+    // HP number centered on bar
     this._bossHpText = this.add.text(GAME_W / 2, hpY, '', {
-      fontSize: '11px', color: '#ffffff', fontFamily: 'monospace',
+      fontSize: '10px', color: '#ffffff', fontFamily: 'monospace',
       stroke: '#000000', strokeThickness: 3,
     }).setOrigin(0.5, 0.5).setDepth(1);
 
@@ -177,8 +192,9 @@ export class UIScene extends Phaser.Scene {
     this._bossArmorFill  = this.add.rectangle(POST_L, armorY, POST_W, postH, 0x999999).setOrigin(0, 0.5).setVisible(false);
 
     this._bossContainer.add([
-      this._bossName, this._bossPhaseLabel,
-      this._bossHpBg, this._bossHpDelay, this._bossHpFill,
+      this._bossName, this._bossSubtitle, this._bossPhaseLabel,
+      this._bossHpBorder, this._bossHpBg, this._bossHpDelay, this._bossHpFill,
+      this._bossGemL, this._bossGemR,
       this._bossHpText,
       this._bossPostureBg, this._bossPostureFill,
       this._bossArmorLabel, this._bossArmorBg, this._bossArmorFill,
@@ -508,6 +524,7 @@ export class UIScene extends Phaser.Scene {
 
   _showBossBar(boss) {
     this._bossName.setText(boss.cfg.name.toUpperCase());
+    this._bossSubtitle.setText(boss.cfg.subtitle || '');
     this._bossHpFill.scaleX  = 1;
     this._bossHpDelay.scaleX = 1;
     this._bossPostureFill.scaleX = 0;

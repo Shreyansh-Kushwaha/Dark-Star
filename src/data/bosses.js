@@ -1,6 +1,7 @@
 export const BOSSES = {
   vanaraksha: {
     key: 'vanaraksha', name: 'Vanaraksha',
+    subtitle: 'Guardian of the Forgotten Shrine',
     lore: 'Guardian of the great forest, corrupted by dark sap — yet still protecting the shrine of the forgotten sixth god.',
     textureBase: 'tree_boss', scale: 2.5, tint: 0x2d4a1e,
     maxHp: 1200, maxPosture: 100, postureRegen: 3,
@@ -14,6 +15,7 @@ export const BOSSES = {
   },
   vanasur: {
     key: 'vanasur', name: 'Vanasur',
+    subtitle: 'Devourer of Sacred Groves',
     lore: 'The demon who consumed sacred groves — drawn to the power still emanating from the defaced shrine of Ekatmadeva.',
     textureBase: 'tree_boss', scale: 2.5, tint: 0x5c3d1e,
     maxHp: 1600, maxPosture: 100, postureRegen: 4,
@@ -33,6 +35,7 @@ export const BOSSES = {
   },
   nagraj_kaliya: {
     key: 'nagraj_kaliya', name: 'Nagraj Kaliya',
+    subtitle: 'Serpent King of the Deep Waters',
     lore: 'Serpent king of the deep waters — guardian of the threshold that mortals were never meant to cross.',
     textureBase: 'tree_boss', scale: 2.8, tint: null,
     visualOffsetY: -70, // <-- ADDED: Fixes the shadow/floating issue so he visually stands upright while his hit box stays on the ground
@@ -49,6 +52,7 @@ export const BOSSES = {
   },
   pashana_daitya: {
     key: 'pashana_daitya', name: 'Pashana Daitya',
+    subtitle: 'The Lock Upon the Gods\' Vault',
     lore: 'The stone demon — a lock placed upon the vault where the gods buried their crime in gold.',
     textureBase: 'mino', scale: 2.5, tint: null, mirrorSprite: true,
     maxHp: 2400, maxPosture: 120, postureRegen: 5,
@@ -63,6 +67,7 @@ export const BOSSES = {
   },
   vayu_rakshasa: {
     key: 'vayu_rakshasa', name: 'Vayu Rakshasa',
+    subtitle: 'Keeper of the Buried Inscriptions',
     lore: 'Wind demon who defends the heavens — not from invaders, but from the inscriptions that tell the truth about the sky.',
     textureBase: 'frost', scale: 2.2, tint: 0x88ccff,
     maxHp: 2800, maxPosture: 100, postureRegen: 6,
@@ -82,6 +87,7 @@ export const BOSSES = {
   },
   viyogasur: {
     key: 'viyogasur', name: 'Viyogasur',
+    subtitle: 'The Demon of Separation',
     lore: 'The Demon of Separation. He who was renamed. Ekatmadeva — the god who refused to let the powerful own the bonds between all souls.',
     textureBase: 'dslime', scale: 2.8, tint: null,
     maxHp: 4000, maxPosture: 100, postureRegen: 4,
