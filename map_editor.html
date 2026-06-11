@@ -352,7 +352,8 @@ const S = {
   ws: null,
   roomCode: null,
   peerConnected: false,
-  dragSel: { active: false, startX: 0, startY: 0, rect: null },
+  dragSel: { active: false, startX: 0, startY: 0, rect: null, mode: null },
+  clipboard: [],
   noWalkDrag: { active: false, startX: 0, startY: 0, previewRect: null },
   noWalkZones: [], // [{ id, x, y, w, h, konvaRect, konvaLabel }]
   redoStack: [],
@@ -577,7 +578,7 @@ function setMode(mode) {
   updateCursor();
   if      (S.panMode)    setStatus('Pan mode — drag to scroll the map');
   else if (S.deleteMode) setStatus('Delete mode — click or drag to remove sprites');
-  else if (S.selectMode) setStatus('Select mode — click a sprite to select it');
+  else if (S.selectMode) setStatus('Select mode — click to select, drag on empty area to multi-select, Ctrl+C/V to copy/paste');
   else if (S.drawMode)   setStatus('Draw mode — drag to paint on the canvas');
   else if (S.noWalkMode) setStatus('No-Walk Zone — drag to paint blocked area, click a zone to delete it');
   else setStatus('');
@@ -645,6 +646,8 @@ function bindKeyboard() {
     if (e.ctrlKey && e.key === 'z') { e.preventDefault(); undo(); }
     if (e.ctrlKey && (e.key === 'y' || (e.shiftKey && e.key === 'Z'))) { e.preventDefault(); redo(); }
     if (e.ctrlKey && e.key === 'd') { e.preventDefault(); duplicateSelected(); }
+    if (e.ctrlKey && e.key === 'c') { e.preventDefault(); copySelected(); }
+    if (e.ctrlKey && e.key === 'v') { e.preventDefault(); pasteClipboard(); }
   });
 }
 
@@ -1472,6 +1475,65 @@ async function duplicateSelected() {
   setStatus('Duplicated: ' + asset.name + ' — Ctrl+Z to undo');
 }
 
+function copySelected() {
+  const nodes = S.transformer.nodes().filter(n => n instanceof Konva.Image);
+  if (nodes.length === 0) return;
+  S.clipboard = nodes.map(n => ({
+    assetDir:      n.getAttr('assetDir'),
+    assetFrames:   n.getAttr('assetFrames'),
+    assetName:     n.getAttr('assetName'),
+    assetAnimated: n.getAttr('assetAnimated'),
+    spriteLayer:   n.getAttr('spriteLayer') || 'below',
+    x:       n.x(),       y:       n.y(),
+    scaleX:  n.scaleX(),  scaleY:  n.scaleY(),
+    offsetX: n.offsetX(), offsetY: n.offsetY(),
+  }));
+  setStatus('Copied ' + S.clipboard.length + ' sprite(s) — Ctrl+V to paste');
+}
+
+async function pasteClipboard() {
+  if (S.clipboard.length === 0) { setStatus('Nothing to paste — use Ctrl+C first'); return; }
+  const OFFSET = 20;
+  const newNodes = [];
+  for (const d of S.clipboard) {
+    const url = assetURL(d.assetDir, d.assetFrames[0]);
+    let img;
+    try { img = await getImg(url); } catch { continue; }
+    const id = genSpriteId();
+    const node = new Konva.Image({
+      x: d.x + OFFSET, y: d.y + OFFSET, image: img,
+      offsetX: d.offsetX, offsetY: d.offsetY,
+      scaleX: d.scaleX, scaleY: d.scaleY,
+      draggable: !S.panMode && !S.deleteMode && !S.noWalkMode,
+    });
+    node.setAttr('assetDir',     d.assetDir);
+    node.setAttr('assetFrames',  d.assetFrames);
+    node.setAttr('assetName',    d.assetName);
+    node.setAttr('assetAnimated',d.assetAnimated);
+    node.setAttr('currentFrame', 0);
+    node.setAttr('spriteId',     id);
+    node.setAttr('spriteLayer',  d.spriteLayer);
+    konvaLayerFor(d.spriteLayer).add(node);
+    bindSpriteEvents(node);
+    konvaLayerFor(d.spriteLayer).batchDraw();
+    newNodes.push(node);
+    broadcast({ type: 'SPRITE_ADD', spriteId: id,
+      dir: d.assetDir, frames: d.assetFrames, name: d.assetName, animated: d.assetAnimated,
+      x: node.x(), y: node.y(), offsetX: d.offsetX, offsetY: d.offsetY,
+      scaleX: d.scaleX, scaleY: d.scaleY, spriteLayer: d.spriteLayer });
+    // advance clipboard position so repeated pastes stagger
+    d.x += OFFSET; d.y += OFFSET;
+  }
+  if (newNodes.length === 0) return;
+  S.transformer.nodes(newNodes);
+  S.selectedNode = newNodes[0];
+  S.selLayer.batchDraw();
+  document.getElementById('props').classList.add('visible');
+  updatePropsPanel(newNodes[0]);
+  pushHistory();
+  setStatus('Pasted ' + newNodes.length + ' sprite(s) — Ctrl+V to paste again, Ctrl+Z to undo');
+}
+
 function bindPropsPanel() {
   function applyProp() {
     if (!S.selectedNode) return;
@@ -2085,21 +2147,26 @@ async function saveCrop() {
   } catch (e) { setStatus('⚠ Save failed: ' + e.message); }
 }
 
-// ── Drag-select delete ────────────────────────────────────────────────────
+// ── Drag-select (delete & multi-select) ──────────────────────────────────
 function bindDeleteDrag() {
   const canvasEl = document.getElementById('canvas-container');
   canvasEl.addEventListener('mousedown', e => {
-    if (!S.deleteMode || e.button !== 0) return;
+    if (e.button !== 0) return;
+    if (!S.deleteMode && !S.selectMode) return;
     const pos = S.stage.getPointerPosition();
     if (!pos) return;
     const hit = S.stage.getIntersection(pos);
-    if (hit && hit !== S.bgRect && hit !== S.bgImage) return;
+    const onBg = !hit || hit === S.bgRect || hit === S.bgImage;
+    if (!onBg) return;
     e.preventDefault();
     const { x, y } = clientToWorld(e.clientX, e.clientY);
     S.dragSel.active = true; S.dragSel.startX = x; S.dragSel.startY = y;
+    S.dragSel.mode = S.deleteMode ? 'delete' : 'select';
+    const isDelete = S.dragSel.mode === 'delete';
     const rect = new Konva.Rect({
       x, y, width: 0, height: 0,
-      fill: 'rgba(255,50,50,0.15)', stroke: '#ff4444',
+      fill: isDelete ? 'rgba(255,50,50,0.15)' : 'rgba(68,136,255,0.12)',
+      stroke: isDelete ? '#ff4444' : '#4488ff',
       strokeWidth: 1/S.stage.scaleX(),
       dash: [6/S.stage.scaleX(), 3/S.stage.scaleX()],
       listening: false,
@@ -2118,23 +2185,36 @@ function bindDeleteDrag() {
     if (!S.dragSel.active) return;
     S.dragSel.active = false;
     const rect = S.dragSel.rect; S.dragSel.rect = null;
+    const mode = S.dragSel.mode; S.dragSel.mode = null;
     if (!rect) return;
     const rx = rect.x(), ry = rect.y(), rw = rect.width(), rh = rect.height();
     rect.destroy(); S.selLayer.batchDraw();
     if (rw < 4 || rh < 4) return;
-    const toDelete = getAllSpriteNodes().filter(n => {
+
+    const inRect = getAllSpriteNodes().filter(n => {
       const b = n.getClientRect({ relativeTo: konvaLayerFor(n.getAttr('spriteLayer')) });
       return b.x < rx+rw && b.x+b.width > rx && b.y < ry+rh && b.y+b.height > ry;
     });
-    if (toDelete.length === 0) return;
-    toDelete.forEach(n => {
-      if (S.selectedNode === n) { S.transformer.nodes([]); S.selectedNode = null; document.getElementById('props').classList.remove('visible'); }
-      broadcast({ type: 'SPRITE_DELETE', spriteId: n.getAttr('spriteId') });
-      n.destroy();
-    });
-    S.belowLayer.batchDraw(); S.aboveLayer.batchDraw(); S.selLayer.batchDraw();
-    pushHistory();
-    setStatus('Deleted ' + toDelete.length + ' sprite(s) — Ctrl+Z to undo');
+
+    if (mode === 'delete') {
+      if (inRect.length === 0) return;
+      inRect.forEach(n => {
+        if (S.selectedNode === n) { S.transformer.nodes([]); S.selectedNode = null; document.getElementById('props').classList.remove('visible'); }
+        broadcast({ type: 'SPRITE_DELETE', spriteId: n.getAttr('spriteId') });
+        n.destroy();
+      });
+      S.belowLayer.batchDraw(); S.aboveLayer.batchDraw(); S.selLayer.batchDraw();
+      pushHistory();
+      setStatus('Deleted ' + inRect.length + ' sprite(s) — Ctrl+Z to undo');
+    } else {
+      if (inRect.length === 0) { deselectAll(); return; }
+      S.transformer.nodes(inRect);
+      S.selectedNode = inRect[0];
+      S.selLayer.batchDraw();
+      document.getElementById('props').classList.add('visible');
+      updatePropsPanel(inRect[0]);
+      setStatus('Selected ' + inRect.length + ' sprite(s) — Ctrl+C to copy, Ctrl+V to paste');
+    }
   });
 }
 
