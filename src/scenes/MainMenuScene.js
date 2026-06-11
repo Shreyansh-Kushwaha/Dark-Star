@@ -285,7 +285,7 @@ export class MainMenuScene extends Phaser.Scene {
 
   // ── Region select panel ───────────────────────────────────────────────────
 
-  _toggleRegionSelect() {
+  async _toggleRegionSelect() {
     if (this._regionSelectOpen) {
       if (this._regionSelectPanel) {
         this._regionSelectPanel.forEach(o => o.destroy());
@@ -293,12 +293,28 @@ export class MainMenuScene extends Phaser.Scene {
       }
       this._regionSelectOpen = false;
     } else {
-      this._regionSelectPanel = this._makeRegionSelect();
-      this._regionSelectOpen  = true;
+      this._regionSelectOpen = true;
+      // Fetch the live region list from the server so editor-saved regions appear
+      let entries = [];
+      try {
+        const res = await fetch('/api/regions');
+        const list = await res.json();
+        // Sort by regionIndex ascending; fall back to filename order
+        list.sort((a, b) => (a.regionIndex ?? 999) - (b.regionIndex ?? 999));
+        entries = list.map(r => ({
+          index: r.regionIndex,
+          name: REGION_NAMES[r.regionIndex] ?? `Region ${r.regionIndex}`,
+        }));
+      } catch (_) {
+        // Offline fallback: show hardcoded list
+        entries = REGION_NAMES.map((name, i) => ({ index: i, name }));
+      }
+      if (!this._regionSelectOpen) return; // closed while fetching
+      this._regionSelectPanel = this._makeRegionSelect(entries);
     }
   }
 
-  _makeRegionSelect() {
+  _makeRegionSelect(entries) {
     const cx     = GAME_W / 2 + 170;
     const startY = 230;
     const rowH   = 36;
@@ -306,7 +322,7 @@ export class MainMenuScene extends Phaser.Scene {
     const objs   = [];
 
     // Panel background
-    const totalH = REGION_NAMES.length * rowH + 12;
+    const totalH = entries.length * rowH + 12;
     const panelBg = this.add.graphics().setDepth(8);
     panelBg.fillStyle(0x05050f, 0.97);
     panelBg.fillRect(cx - panelW / 2, startY - 6, panelW, totalH);
@@ -319,8 +335,8 @@ export class MainMenuScene extends Phaser.Scene {
     }).setOrigin(0.5, 0).setDepth(9);
     objs.push(hdr);
 
-    REGION_NAMES.forEach((name, i) => {
-      const y     = startY + 22 + i * rowH;
+    entries.forEach(({ index, name }, row) => {
+      const y     = startY + 22 + row * rowH;
       const rowG  = this.add.graphics().setDepth(8);
       const drawRow = (hover) => {
         rowG.clear();
@@ -329,7 +345,7 @@ export class MainMenuScene extends Phaser.Scene {
       };
       drawRow(false);
 
-      const lbl = this.add.text(cx, y, `${i}  ${name}`, {
+      const lbl = this.add.text(cx, y, `${index}  ${name}`, {
         fontSize: '13px', fontFamily: 'monospace', color: '#aabbcc',
       }).setOrigin(0.5).setDepth(9);
 
@@ -338,7 +354,7 @@ export class MainMenuScene extends Phaser.Scene {
       zone
         .on('pointerover',  () => { drawRow(true);  lbl.setColor('#ffdd00'); })
         .on('pointerout',   () => { drawRow(false); lbl.setColor('#aabbcc'); })
-        .on('pointerdown',  () => this._startGame(false, i));
+        .on('pointerdown',  () => this._startGame(false, index));
 
       objs.push(rowG, lbl, zone);
     });
