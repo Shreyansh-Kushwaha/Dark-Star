@@ -762,6 +762,31 @@ export class GameScene extends Phaser.Scene {
     }
   }
 
+  _renderMapStrokes(strokes) {
+    if (!strokes.length) return;
+    const TEX_KEY = '_map_strokes';
+    if (this.textures.exists(TEX_KEY)) this.textures.remove(TEX_KEY);
+    const canvasTex = this.textures.createCanvas(TEX_KEY, WORLD_W, WORLD_H);
+    const ctx = canvasTex.getContext();
+    for (const s of strokes) {
+      const pts = s.points;
+      if (!pts || pts.length < 4) continue;
+      ctx.save();
+      ctx.globalCompositeOperation = s.composite || 'source-over';
+      ctx.strokeStyle = s.stroke;
+      ctx.lineWidth = s.strokeWidth;
+      ctx.lineCap = s.lineCap || 'round';
+      ctx.lineJoin = s.lineJoin || 'round';
+      ctx.beginPath();
+      ctx.moveTo(pts[0], pts[1]);
+      for (let i = 2; i < pts.length; i += 2) ctx.lineTo(pts[i], pts[i + 1]);
+      ctx.stroke();
+      ctx.restore();
+    }
+    canvasTex.refresh();
+    this.add.image(WORLD_W / 2, WORLD_H / 2, TEX_KEY).setDepth(-5);
+  }
+
   _buildFromMapData(mapData) {
     // Build no-walk collision zones (invisible static physics bodies)
     for (const z of (mapData.noWalkZones || [])) {
@@ -790,6 +815,8 @@ export class GameScene extends Phaser.Scene {
     }
 
     const place = () => {
+      this._renderMapStrokes(sprites.filter(sp => !sp.frames));
+
       for (const sp of sprites) {
         if (!sp.frames) continue; // skip non-image entries (e.g. strokes)
         const key = _mapSpriteKey(sp.dir, sp.frames[0]);
