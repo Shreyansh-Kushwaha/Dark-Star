@@ -401,10 +401,12 @@ export class MainMenuScene extends Phaser.Scene {
   }
 
   async _hostCoop() {
-    this._roomPrompt.setText('CONNECTING...').setAlpha(1);
+    this._cancelCoopScreen();
+    this._roomPrompt.setText('CONNECTING...  [Backspace=cancel]').setAlpha(1);
     this._roomInput.setText('....').setAlpha(1);
     try {
       const net = new NetworkManager();
+      this._hostNet = net;
       await net.connect();
       net.createRoom();
       net.on('ROOM_READY', ({ code }) => {
@@ -423,8 +425,19 @@ export class MainMenuScene extends Phaser.Scene {
   _joinCoop() {
     this._joiningMode = true;
     this._joinCode    = '';
-    this._roomPrompt.setText('ENTER 4-LETTER ROOM CODE:').setAlpha(1);
+    this._roomPrompt.setText('ENTER 4-LETTER ROOM CODE:  [Backspace=cancel]').setAlpha(1);
     this._roomInput.setText('____').setAlpha(1);
+  }
+
+  _cancelCoopScreen() {
+    this._joiningMode = false;
+    this._joinCode    = '';
+    this._roomInput.setAlpha(0);
+    this._roomPrompt.setAlpha(0);
+    if (this._hostNet) {
+      try { this._hostNet.close?.(); } catch {}
+      this._hostNet = null;
+    }
   }
 
   _onKey(e) {
@@ -446,13 +459,18 @@ export class MainMenuScene extends Phaser.Scene {
         if (row) this._startGame(false, row.index);
         return;
       }
-      if (e.key === 'Escape') {
+      if (e.key === 'Escape' || e.key === 'Backspace') {
         this._toggleRegionSelect();
         return;
       }
       return;
     }
     if (!this._joiningMode) {
+      // Backspace / Escape cancels the host co-op waiting screen
+      if ((e.key === 'Backspace' || e.key === 'Escape') && this._roomPrompt.alpha > 0) {
+        this._cancelCoopScreen();
+        return;
+      }
       if (e.key === 'ArrowUp') {
         this._selIdx = (this._selIdx - 1 + this._navButtons.length) % this._navButtons.length;
         this._updateMenuCursor();
@@ -469,10 +487,9 @@ export class MainMenuScene extends Phaser.Scene {
       }
       return;
     }
-    if (e.key === 'Escape') {
-      this._joiningMode = false;
-      this._roomInput.setAlpha(0);
-      this._roomPrompt.setAlpha(0);
+    // ── Joining mode ────────────────────────────────────────────────────────
+    if (e.key === 'Escape' || (e.key === 'Backspace' && this._joinCode.length === 0)) {
+      this._cancelCoopScreen();
       return;
     }
     if (e.key === 'Enter' && this._joinCode.length === 4) {
