@@ -922,7 +922,7 @@ function renderTray() {
   if (S.activeTrayTab === 'enemies') { renderEntityTray('enemies'); return; }
   if (S.activeTrayTab === 'boss')    { renderEntityTray('boss');    return; }
   if (S.activeTrayTab === 'npcs')    { renderEntityTray('npcs');    return; }
-  if (S.activeTrayTab === 'portals') { _fetchRegionNames().then(renderPortalTray); return; }
+  if (S.activeTrayTab === 'portals') { renderPortalTray(); return; }
 
   const cat = cats[S.activeCat];
   if (!cat) return;
@@ -1130,30 +1130,38 @@ function removeBossMarker() {
 }
 
 // ── Portal placement ───────────────────────────────────────────────────────
-// Cached region names fetched from server { regionIndex -> name }
-const _portalRegionNames = {};
+// Cached sorted region list [{ regionIndex, label }] fetched from server
+let _portalRegionList = [];
 async function _fetchRegionNames() {
   try {
-    const res = await fetch('/api/regions');
+    const res  = await fetch('/api/regions');
     const list = await res.json();
-    for (const r of list) {
-      if (r.regionIndex != null) _portalRegionNames[r.regionIndex] = r.data.regionName || null;
-    }
+    _portalRegionList = list
+      .filter(r => r.regionIndex != null)
+      .sort((a, b) => a.regionIndex - b.regionIndex)
+      .map(r => ({
+        regionIndex: r.regionIndex,
+        label: r.data.regionName
+          ? `${r.regionIndex} — ${r.data.regionName}`
+          : `Region ${r.regionIndex}`,
+      }));
   } catch {}
 }
-_fetchRegionNames();
 
 function _regionLabel(idx) {
-  const name = _portalRegionNames[idx];
-  return name ? `${idx} — ${name}` : `Region ${idx}`;
+  const found = _portalRegionList.find(r => r.regionIndex === Number(idx));
+  return found ? found.label : `Region ${idx}`;
 }
 
-function renderPortalTray() {
+async function renderPortalTray() {
+  // Always refresh the region list so newly saved regions appear
+  await _fetchRegionNames();
+
   const subEl = document.getElementById('tray-sub');
   subEl.innerHTML = '';
   const lbl = document.createElement('span');
   lbl.style.cssText = 'font-size:10px;color:#66eeff;padding:2px 4px';
-  lbl.textContent = 'Set target region, arm placement, click the map. Place as many portals as you need.';
+  lbl.textContent = 'Pick a destination region, arm placement, then click the map. Place as many portals as you need.';
   subEl.appendChild(lbl);
 
   const grid = document.getElementById('tray-grid');
@@ -1171,34 +1179,40 @@ function renderPortalTray() {
   card.appendChild(title);
 
   const regionLabel = document.createElement('label');
-  regionLabel.textContent = 'Teleports to region:';
+  regionLabel.textContent = 'Teleports to:';
   card.appendChild(regionLabel);
 
-  // Number input — supports any region index, not limited to a hardcoded list
-  const numWrap = document.createElement('div');
-  numWrap.style.cssText = 'display:flex;align-items:center;gap:5px';
-  const numInput = document.createElement('input');
-  numInput.type = 'number'; numInput.min = 0; numInput.max = 50; numInput.step = 1;
-  numInput.value = S.placingPortal?.targetRegion ?? 1;
-  numInput.id = 'portal-target-num';
-  numInput.style.cssText = 'width:52px;background:#0a0010;border:1px solid #336;color:#88ffee;padding:2px 5px;font-size:12px;border-radius:3px;font-family:monospace';
-  const numHint = document.createElement('span');
-  numHint.style.cssText = 'font-size:9px;color:#556;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px';
-  numHint.textContent = _regionLabel(numInput.value);
-  numInput.addEventListener('input', () => { numHint.textContent = _regionLabel(parseInt(numInput.value) || 0); });
-  numWrap.appendChild(numInput);
-  numWrap.appendChild(numHint);
-  card.appendChild(numWrap);
+  const sel = document.createElement('select');
+  sel.id = 'portal-target-sel';
+  sel.style.cssText = 'background:#0a0010;border:1px solid #336;color:#88ffee;padding:3px 6px;font-size:11px;border-radius:3px;font-family:monospace;width:100%';
+
+  if (_portalRegionList.length === 0) {
+    const opt = document.createElement('option');
+    opt.value = ''; opt.textContent = '— no saved regions found —';
+    opt.disabled = true; opt.selected = true;
+    sel.appendChild(opt);
+  } else {
+    for (const r of _portalRegionList) {
+      const opt = document.createElement('option');
+      opt.value = r.regionIndex;
+      opt.textContent = r.label;
+      if (r.regionIndex === (S.placingPortal?.targetRegion ?? _portalRegionList[0]?.regionIndex)) opt.selected = true;
+      sel.appendChild(opt);
+    }
+  }
+  card.appendChild(sel);
 
   const btn = document.createElement('button');
   btn.className = 'portal-btn' + (isActive ? ' active' : '');
-  btn.style.cssText = 'font-size:10px;padding:3px 8px;margin-top:2px';
+  btn.style.cssText = 'font-size:10px;padding:3px 8px;margin-top:4px;width:100%';
   btn.textContent = isActive ? '✦ Placing — click map' : '📍 Arm Placement';
   btn.onclick = () => {
     if (isActive) {
       S.placingPortal = null; updateCursor(); setStatus('');
     } else {
-      const targetRegion = parseInt(document.getElementById('portal-target-num')?.value ?? 1, 10);
+      const val = document.getElementById('portal-target-sel')?.value;
+      if (val === '' || val == null) { setStatus('⚠ No regions available — save a region first'); return; }
+      const targetRegion = parseInt(val, 10);
       S.placingPortal = { targetRegion };
       updateCursor();
       setStatus('Placing portal → ' + _regionLabel(targetRegion) + ' — click map, Esc to cancel');
