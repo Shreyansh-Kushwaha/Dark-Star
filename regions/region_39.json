@@ -1,0 +1,1451 @@
+{
+ "version": 1,
+ "regionName": "\u1e62a\u1e63\u1e6dha Dv\u0101ra \u2014 The Sixth Gate",
+ "background": {
+  "type": "color",
+  "value": "#1a1408"
+ },
+ "sprites": [
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0001",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1402.95,
+   "y": 1754.44,
+   "scaleX": 0.996,
+   "scaleY": 0.996,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0002",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 940.41,
+   "y": 1727.07,
+   "scaleX": 1.022,
+   "scaleY": 1.022,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0003",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2001.83,
+   "y": 520.29,
+   "scaleX": 1.013,
+   "scaleY": 1.013,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0004",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2443.55,
+   "y": 80.28,
+   "scaleX": 0.934,
+   "scaleY": 0.934,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0005",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 856.27,
+   "y": 406.56,
+   "scaleX": 1.027,
+   "scaleY": 1.027,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0006",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3130.06,
+   "y": 49.75,
+   "scaleX": 1.231,
+   "scaleY": 1.231,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0007",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2012.04,
+   "y": 686.95,
+   "scaleX": 1.303,
+   "scaleY": 1.303,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0008",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2850.95,
+   "y": 91.88,
+   "scaleX": 1.022,
+   "scaleY": 1.022,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0009",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3193.61,
+   "y": 81.39,
+   "scaleX": 1.128,
+   "scaleY": 1.128,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0010",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2391.32,
+   "y": 1280.86,
+   "scaleX": 1.49,
+   "scaleY": 1.49,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0011",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 941.49,
+   "y": 502.96,
+   "scaleX": 1.362,
+   "scaleY": 1.362,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a16",
+   "strokeWidth": 14,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    120,
+    1011.68,
+    200,
+    1018.55,
+    280,
+    1024.11,
+    360,
+    1027.96,
+    440,
+    1029.84,
+    520,
+    1029.6,
+    600,
+    1027.28,
+    680,
+    1023.02,
+    760,
+    1017.14,
+    840,
+    1010.05,
+    920,
+    1002.25,
+    1000,
+    994.28,
+    1080,
+    986.72,
+    1160,
+    980.1,
+    1240,
+    974.89,
+    1320,
+    971.45,
+    1400,
+    970.03,
+    1480,
+    970.73,
+    1560,
+    973.5,
+    1640,
+    978.14,
+    1720,
+    984.32,
+    1800,
+    991.62,
+    1880,
+    999.5,
+    1960,
+    1007.43,
+    2040,
+    1014.82,
+    2120,
+    1021.17,
+    2200,
+    1026.02,
+    2280,
+    1029.04,
+    2360,
+    1030.0,
+    2440,
+    1028.84,
+    2520,
+    1025.64,
+    2600,
+    1020.63,
+    2680,
+    1014.16,
+    2760,
+    1006.69,
+    2840,
+    998.74,
+    2920,
+    990.89,
+    3000,
+    983.68,
+    3080,
+    977.62
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d8b24a",
+   "strokeWidth": 7,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    120,
+    1011.68,
+    200,
+    1018.55,
+    280,
+    1024.11,
+    360,
+    1027.96,
+    440,
+    1029.84,
+    520,
+    1029.6,
+    600,
+    1027.28,
+    680,
+    1023.02,
+    760,
+    1017.14,
+    840,
+    1010.05,
+    920,
+    1002.25,
+    1000,
+    994.28,
+    1080,
+    986.72,
+    1160,
+    980.1,
+    1240,
+    974.89,
+    1320,
+    971.45,
+    1400,
+    970.03,
+    1480,
+    970.73,
+    1560,
+    973.5,
+    1640,
+    978.14,
+    1720,
+    984.32,
+    1800,
+    991.62,
+    1880,
+    999.5,
+    1960,
+    1007.43,
+    2040,
+    1014.82,
+    2120,
+    1021.17,
+    2200,
+    1026.02,
+    2280,
+    1029.04,
+    2360,
+    1030.0,
+    2440,
+    1028.84,
+    2520,
+    1025.64,
+    2600,
+    1020.63,
+    2680,
+    1014.16,
+    2760,
+    1006.69,
+    2840,
+    998.74,
+    2920,
+    990.89,
+    3000,
+    983.68,
+    3080,
+    977.62
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#f4e08a",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    120,
+    1011.68,
+    200,
+    1018.55,
+    280,
+    1024.11,
+    360,
+    1027.96,
+    440,
+    1029.84,
+    520,
+    1029.6,
+    600,
+    1027.28,
+    680,
+    1023.02,
+    760,
+    1017.14,
+    840,
+    1010.05,
+    920,
+    1002.25,
+    1000,
+    994.28,
+    1080,
+    986.72,
+    1160,
+    980.1,
+    1240,
+    974.89,
+    1320,
+    971.45,
+    1400,
+    970.03,
+    1480,
+    970.73,
+    1560,
+    973.5,
+    1640,
+    978.14,
+    1720,
+    984.32,
+    1800,
+    991.62,
+    1880,
+    999.5,
+    1960,
+    1007.43,
+    2040,
+    1014.82,
+    2120,
+    1021.17,
+    2200,
+    1026.02,
+    2280,
+    1029.04,
+    2360,
+    1030.0,
+    2440,
+    1028.84,
+    2520,
+    1025.64,
+    2600,
+    1020.63,
+    2680,
+    1014.16,
+    2760,
+    1006.69,
+    2840,
+    998.74,
+    2920,
+    990.89,
+    3000,
+    983.68,
+    3080,
+    977.62
+   ]
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0012",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 160,
+   "y": 1000,
+   "scaleX": 1.19,
+   "scaleY": 1.19,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0013",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 360,
+   "y": 1000,
+   "scaleX": 1.049,
+   "scaleY": 1.049,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0014",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 560,
+   "y": 1000,
+   "scaleX": 1.107,
+   "scaleY": 1.107,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0015",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 760,
+   "y": 1000,
+   "scaleX": 1.157,
+   "scaleY": 1.157,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0016",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 960,
+   "y": 1000,
+   "scaleX": 1.062,
+   "scaleY": 1.062,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0017",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1160,
+   "y": 1000,
+   "scaleX": 1.093,
+   "scaleY": 1.093,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0018",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1360,
+   "y": 1000,
+   "scaleX": 1.189,
+   "scaleY": 1.189,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0019",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1560,
+   "y": 1000,
+   "scaleX": 1.23,
+   "scaleY": 1.23,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0020",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1760,
+   "y": 1000,
+   "scaleX": 1.088,
+   "scaleY": 1.088,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0021",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1960,
+   "y": 1000,
+   "scaleX": 1.241,
+   "scaleY": 1.241,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0022",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2160,
+   "y": 1000,
+   "scaleX": 1.101,
+   "scaleY": 1.101,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0023",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2360,
+   "y": 1000,
+   "scaleX": 1.243,
+   "scaleY": 1.243,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0024",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2560,
+   "y": 1000,
+   "scaleX": 1.032,
+   "scaleY": 1.032,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0025",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2760,
+   "y": 1000,
+   "scaleX": 1.085,
+   "scaleY": 1.085,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0026",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2960,
+   "y": 1000,
+   "scaleX": 1.083,
+   "scaleY": 1.083,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0027",
+   "dir": "assets_custom/props",
+   "frames": [
+    "gate_arch.png"
+   ],
+   "name": "gate_arch",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1500,
+   "y": 1090,
+   "scaleX": 1.8,
+   "scaleY": 1.8,
+   "offsetX": 118.0,
+   "offsetY": 223
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0028",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 500,
+   "y": 760,
+   "scaleX": 1.096,
+   "scaleY": 1.096,
+   "offsetX": 70.0,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0029",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 500,
+   "y": 1240,
+   "scaleX": 1.115,
+   "scaleY": 1.115,
+   "offsetX": 70.0,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0030",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 860,
+   "y": 760,
+   "scaleX": 1.037,
+   "scaleY": 1.037,
+   "offsetX": 70.0,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0031",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 860,
+   "y": 1240,
+   "scaleX": 1.175,
+   "scaleY": 1.175,
+   "offsetX": 70.0,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0032",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1220,
+   "y": 760,
+   "scaleX": 1.222,
+   "scaleY": 1.222,
+   "offsetX": 70.0,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0033",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1220,
+   "y": 1240,
+   "scaleX": 1.044,
+   "scaleY": 1.044,
+   "offsetX": 70.0,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0034",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1580,
+   "y": 760,
+   "scaleX": 1.002,
+   "scaleY": 1.002,
+   "offsetX": 70.0,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0035",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1580,
+   "y": 1240,
+   "scaleX": 1.146,
+   "scaleY": 1.146,
+   "offsetX": 70.0,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0036",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1940,
+   "y": 760,
+   "scaleX": 1.019,
+   "scaleY": 1.019,
+   "offsetX": 70.0,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0037",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1940,
+   "y": 1240,
+   "scaleX": 1.078,
+   "scaleY": 1.078,
+   "offsetX": 70.0,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0038",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2300,
+   "y": 760,
+   "scaleX": 1.125,
+   "scaleY": 1.125,
+   "offsetX": 70.0,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0039",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2300,
+   "y": 1240,
+   "scaleX": 1.25,
+   "scaleY": 1.25,
+   "offsetX": 70.0,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0040",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2660,
+   "y": 760,
+   "scaleX": 1.277,
+   "scaleY": 1.277,
+   "offsetX": 70.0,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0041",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2660,
+   "y": 1240,
+   "scaleX": 1.278,
+   "scaleY": 1.278,
+   "offsetX": 70.0,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0042",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 5.png"
+   ],
+   "name": "Gold Stone 5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2989.3,
+   "y": 817.31,
+   "scaleX": 0.835,
+   "scaleY": 0.835,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0043",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 4.png"
+   ],
+   "name": "Gold Stone 4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2442.41,
+   "y": 897.37,
+   "scaleX": 0.828,
+   "scaleY": 0.828,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0044",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 2.png"
+   ],
+   "name": "Gold Stone 2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1064.57,
+   "y": 1162.78,
+   "scaleX": 0.757,
+   "scaleY": 0.757,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0045",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 1.png"
+   ],
+   "name": "Gold Stone 1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2832.67,
+   "y": 1161.23,
+   "scaleX": 0.739,
+   "scaleY": 0.739,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0046",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 5.png"
+   ],
+   "name": "Gold Stone 5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2348.24,
+   "y": 840.39,
+   "scaleX": 1.132,
+   "scaleY": 1.132,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0047",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 3.png"
+   ],
+   "name": "Gold Stone 3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1830.97,
+   "y": 1097.4,
+   "scaleX": 0.937,
+   "scaleY": 0.937,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0048",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 4.png"
+   ],
+   "name": "Gold Stone 4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 286.59,
+   "y": 1021.19,
+   "scaleX": 1.073,
+   "scaleY": 1.073,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0049",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 3.png"
+   ],
+   "name": "Gold Stone 3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2492.3,
+   "y": 790.23,
+   "scaleX": 0.891,
+   "scaleY": 0.891,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0050",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 4.png"
+   ],
+   "name": "Gold Stone 4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 292.12,
+   "y": 1034.4,
+   "scaleX": 1.014,
+   "scaleY": 1.014,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0051",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 4.png"
+   ],
+   "name": "Gold Stone 4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2711.42,
+   "y": 849.88,
+   "scaleX": 1.043,
+   "scaleY": 1.043,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0052",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2652.5,
+   "y": 997.64,
+   "scaleX": 0.92,
+   "scaleY": 0.92,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0053",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1653.86,
+   "y": 905.86,
+   "scaleX": 0.776,
+   "scaleY": 0.776,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0054",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 565.88,
+   "y": 758.59,
+   "scaleX": 0.884,
+   "scaleY": 0.884,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0055",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1140.9,
+   "y": 781.34,
+   "scaleX": 0.995,
+   "scaleY": 0.995,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0056",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1565.82,
+   "y": 1241.74,
+   "scaleX": 1.177,
+   "scaleY": 1.177,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0057",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 655.34,
+   "y": 1065.63,
+   "scaleX": 0.802,
+   "scaleY": 0.802,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0058",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 520,
+   "y": 880,
+   "scaleX": 2.2,
+   "scaleY": 2.2,
+   "offsetX": 22.0,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0059",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 840,
+   "y": 1120,
+   "scaleX": 2.2,
+   "scaleY": 2.2,
+   "offsetX": 22.0,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0060",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1160,
+   "y": 880,
+   "scaleX": 2.2,
+   "scaleY": 2.2,
+   "offsetX": 22.0,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0061",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1480,
+   "y": 1120,
+   "scaleX": 2.2,
+   "scaleY": 2.2,
+   "offsetX": 22.0,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0062",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1800,
+   "y": 880,
+   "scaleX": 2.2,
+   "scaleY": 2.2,
+   "offsetX": 22.0,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0063",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2120,
+   "y": 1120,
+   "scaleX": 2.2,
+   "scaleY": 2.2,
+   "offsetX": 22.0,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0064",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2440,
+   "y": 880,
+   "scaleX": 2.2,
+   "scaleY": 2.2,
+   "offsetX": 22.0,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r39_0065",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2760,
+   "y": 1120,
+   "scaleX": 2.2,
+   "scaleY": 2.2,
+   "offsetX": 22.0,
+   "offsetY": 77
+  }
+ ],
+ "noWalkZones": [
+  {
+   "id": "z39_1",
+   "x": -80,
+   "y": -80,
+   "w": 3360,
+   "h": 300
+  },
+  {
+   "id": "z39_2",
+   "x": -80,
+   "y": 1780,
+   "w": 3360,
+   "h": 300
+  },
+  {
+   "id": "z39_3",
+   "x": -80,
+   "y": -80,
+   "w": 200,
+   "h": 980
+  },
+  {
+   "id": "z39_4",
+   "x": -80,
+   "y": 1120,
+   "w": 200,
+   "h": 960
+  },
+  {
+   "id": "z39_5",
+   "x": 3100,
+   "y": -80,
+   "w": 180,
+   "h": 980
+  },
+  {
+   "id": "z39_6",
+   "x": 3100,
+   "y": 1120,
+   "w": 180,
+   "h": 960
+  }
+ ],
+ "enemies": [],
+ "boss": null,
+ "npcs": [
+  {
+   "id": "npc39_1",
+   "type": "yellow",
+   "x": 360,
+   "y": 1000,
+   "config": {
+    "id": "npc39_1",
+    "name": "Guardian of Memory",
+    "first": "You_know_the_name,_so_you_may_pass._Step_through_and_the_world_REMEMBERS_him_again:_Ekatmadeva,_the_One_Soul,_the_Sixth_they_tried_to_erase.",
+    "active": "",
+    "completed": ""
+   }
+  }
+ ],
+ "portals": [
+  {
+   "id": "portal39_back",
+   "direction": "back",
+   "targetRegion": 34,
+   "x": 120,
+   "y": 1000
+  },
+  {
+   "id": "portal39_next",
+   "direction": "next",
+   "targetRegion": 40,
+   "x": 3090,
+   "y": 1000
+  }
+ ],
+ "regionIndex": 39
+}

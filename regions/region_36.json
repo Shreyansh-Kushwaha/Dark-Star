@@ -1,0 +1,1350 @@
+{
+ "version": 1,
+ "regionName": "Antar\u0101la \u2014 The Between-Place",
+ "background": {
+  "type": "color",
+  "value": "#2a2730"
+ },
+ "sprites": [
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0001",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2756.99,
+   "y": -11.65,
+   "scaleX": 0.991,
+   "scaleY": 0.991,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0002",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1002.51,
+   "y": 1876.29,
+   "scaleX": 0.996,
+   "scaleY": 0.996,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0003",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1103.63,
+   "y": 1761.71,
+   "scaleX": 0.861,
+   "scaleY": 0.861,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0004",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 917.82,
+   "y": 1757.07,
+   "scaleX": 0.772,
+   "scaleY": 0.772,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0005",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2483.13,
+   "y": 314.35,
+   "scaleX": 1.338,
+   "scaleY": 1.338,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0006",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1776.66,
+   "y": 189.02,
+   "scaleX": 1.282,
+   "scaleY": 1.282,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0007",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 373.07,
+   "y": 313.98,
+   "scaleX": 1.154,
+   "scaleY": 1.154,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0008",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3100.37,
+   "y": 893.56,
+   "scaleX": 1.172,
+   "scaleY": 1.172,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0009",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3169.18,
+   "y": 1132.59,
+   "scaleX": 1.233,
+   "scaleY": 1.233,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0010",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2484.94,
+   "y": 336.06,
+   "scaleX": 1.14,
+   "scaleY": 1.14,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0011",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2181.16,
+   "y": 341.33,
+   "scaleX": 1.04,
+   "scaleY": 1.04,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0012",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1331.13,
+   "y": 45.45,
+   "scaleX": 1.093,
+   "scaleY": 1.093,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0013",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 160,
+   "y": 640,
+   "scaleX": 1.08,
+   "scaleY": 1.08,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0014",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 160,
+   "y": 1000,
+   "scaleX": 0.965,
+   "scaleY": 0.965,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0015",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 160,
+   "y": 1360,
+   "scaleX": 1.051,
+   "scaleY": 1.051,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0016",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 380,
+   "y": 640,
+   "scaleX": 1.199,
+   "scaleY": 1.199,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0017",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 380,
+   "y": 1000,
+   "scaleX": 0.96,
+   "scaleY": 0.96,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0018",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 380,
+   "y": 1360,
+   "scaleX": 1.104,
+   "scaleY": 1.104,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0019",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 600,
+   "y": 640,
+   "scaleX": 1.001,
+   "scaleY": 1.001,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0020",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 600,
+   "y": 1000,
+   "scaleX": 0.939,
+   "scaleY": 0.939,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0021",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 600,
+   "y": 1360,
+   "scaleX": 1.114,
+   "scaleY": 1.114,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0022",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 820,
+   "y": 640,
+   "scaleX": 1.137,
+   "scaleY": 1.137,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0023",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 820,
+   "y": 1000,
+   "scaleX": 0.905,
+   "scaleY": 0.905,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0024",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 820,
+   "y": 1360,
+   "scaleX": 1.027,
+   "scaleY": 1.027,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0025",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1040,
+   "y": 640,
+   "scaleX": 1.05,
+   "scaleY": 1.05,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0026",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1040,
+   "y": 1000,
+   "scaleX": 0.917,
+   "scaleY": 0.917,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0027",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1040,
+   "y": 1360,
+   "scaleX": 1.142,
+   "scaleY": 1.142,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0028",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1260,
+   "y": 640,
+   "scaleX": 0.982,
+   "scaleY": 0.982,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0029",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1260,
+   "y": 1000,
+   "scaleX": 1.035,
+   "scaleY": 1.035,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0030",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1260,
+   "y": 1360,
+   "scaleX": 1.172,
+   "scaleY": 1.172,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0031",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1480,
+   "y": 640,
+   "scaleX": 1.149,
+   "scaleY": 1.149,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0032",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1480,
+   "y": 1000,
+   "scaleX": 0.91,
+   "scaleY": 0.91,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0033",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1480,
+   "y": 1360,
+   "scaleX": 1.172,
+   "scaleY": 1.172,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0034",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1700,
+   "y": 640,
+   "scaleX": 0.987,
+   "scaleY": 0.987,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0035",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1700,
+   "y": 1000,
+   "scaleX": 1.124,
+   "scaleY": 1.124,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0036",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1700,
+   "y": 1360,
+   "scaleX": 1.169,
+   "scaleY": 1.169,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0037",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1920,
+   "y": 640,
+   "scaleX": 1.106,
+   "scaleY": 1.106,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0038",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1920,
+   "y": 1000,
+   "scaleX": 0.988,
+   "scaleY": 0.988,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0039",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1920,
+   "y": 1360,
+   "scaleX": 0.935,
+   "scaleY": 0.935,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0040",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2140,
+   "y": 640,
+   "scaleX": 1.15,
+   "scaleY": 1.15,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0041",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2140,
+   "y": 1000,
+   "scaleX": 1.01,
+   "scaleY": 1.01,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0042",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2140,
+   "y": 1360,
+   "scaleX": 1.183,
+   "scaleY": 1.183,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0043",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2360,
+   "y": 640,
+   "scaleX": 1.198,
+   "scaleY": 1.198,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0044",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2360,
+   "y": 1000,
+   "scaleX": 0.955,
+   "scaleY": 0.955,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0045",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2360,
+   "y": 1360,
+   "scaleX": 0.932,
+   "scaleY": 0.932,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0046",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2580,
+   "y": 640,
+   "scaleX": 1.173,
+   "scaleY": 1.173,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0047",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2580,
+   "y": 1000,
+   "scaleX": 0.958,
+   "scaleY": 0.958,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0048",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2580,
+   "y": 1360,
+   "scaleX": 1.162,
+   "scaleY": 1.162,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0049",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2800,
+   "y": 640,
+   "scaleX": 0.921,
+   "scaleY": 0.921,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0050",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2800,
+   "y": 1000,
+   "scaleX": 0.978,
+   "scaleY": 0.978,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0051",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2800,
+   "y": 1360,
+   "scaleX": 1.188,
+   "scaleY": 1.188,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0052",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3020,
+   "y": 640,
+   "scaleX": 1.155,
+   "scaleY": 1.155,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0053",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3020,
+   "y": 1000,
+   "scaleX": 1.176,
+   "scaleY": 1.176,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0054",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3020,
+   "y": 1360,
+   "scaleX": 1.063,
+   "scaleY": 1.063,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0055",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1500,
+   "y": 940,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0056",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1700,
+   "y": 940,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0057",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1600,
+   "y": 1000,
+   "scaleX": 2.8,
+   "scaleY": 2.8,
+   "offsetX": 22.0,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0058",
+   "dir": "assest4/map_objects/3 Animated Objects/2 Campfire",
+   "frames": [
+    "1.png",
+    "2.png"
+   ],
+   "name": "1",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1000,
+   "y": 1040,
+   "scaleX": 1.8,
+   "scaleY": 1.8,
+   "offsetX": 96.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0059",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Log1.png"
+   ],
+   "name": "Log1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 940,
+   "y": 1110,
+   "scaleX": 1.7,
+   "scaleY": 1.7,
+   "offsetX": 17.0,
+   "offsetY": 20
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0060",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Log2.png"
+   ],
+   "name": "Log2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1060,
+   "y": 1110,
+   "scaleX": 1.7,
+   "scaleY": 1.7,
+   "offsetX": 16.5,
+   "offsetY": 31
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a16",
+   "strokeWidth": 14,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    200,
+    1180,
+    700,
+    1140,
+    1200,
+    1180,
+    1600,
+    1120
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d8b24a",
+   "strokeWidth": 7,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    200,
+    1180,
+    700,
+    1140,
+    1200,
+    1180,
+    1600,
+    1120
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#f4e08a",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    200,
+    1180,
+    700,
+    1140,
+    1200,
+    1180,
+    1600,
+    1120
+   ]
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0061",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1600,
+   "y": 1130,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 70.0,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0062",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 371.35,
+   "y": 553.7,
+   "scaleX": 0.854,
+   "scaleY": 0.854,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0063",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 306.24,
+   "y": 866.59,
+   "scaleX": 0.731,
+   "scaleY": 0.731,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0064",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2695.74,
+   "y": 1382.0,
+   "scaleX": 0.875,
+   "scaleY": 0.875,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0065",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1154.99,
+   "y": 990.34,
+   "scaleX": 0.702,
+   "scaleY": 0.702,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0066",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2774.56,
+   "y": 1509.57,
+   "scaleX": 0.928,
+   "scaleY": 0.928,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0067",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1304.47,
+   "y": 994.54,
+   "scaleX": 0.742,
+   "scaleY": 0.742,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0068",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2082.74,
+   "y": 509.84,
+   "scaleX": 0.916,
+   "scaleY": 0.916,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0069",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 798.29,
+   "y": 561.61,
+   "scaleX": 0.716,
+   "scaleY": 0.716,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0070",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 342.29,
+   "y": 761.82,
+   "scaleX": 0.664,
+   "scaleY": 0.664,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r36_0071",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1449.81,
+   "y": 724.67,
+   "scaleX": 0.634,
+   "scaleY": 0.634,
+   "offsetX": 32.0,
+   "offsetY": 115
+  }
+ ],
+ "noWalkZones": [
+  {
+   "id": "z36_1",
+   "x": -80,
+   "y": -80,
+   "w": 3360,
+   "h": 260
+  },
+  {
+   "id": "z36_2",
+   "x": -80,
+   "y": 1820,
+   "w": 3360,
+   "h": 260
+  },
+  {
+   "id": "z36_3",
+   "x": -80,
+   "y": -80,
+   "w": 200,
+   "h": 980
+  },
+  {
+   "id": "z36_4",
+   "x": -80,
+   "y": 1120,
+   "w": 200,
+   "h": 960
+  },
+  {
+   "id": "z36_5",
+   "x": 3100,
+   "y": -80,
+   "w": 180,
+   "h": 980
+  },
+  {
+   "id": "z36_6",
+   "x": 3100,
+   "y": 1120,
+   "w": 180,
+   "h": 960
+  }
+ ],
+ "enemies": [],
+ "boss": null,
+ "npcs": [
+  {
+   "id": "npc36_1",
+   "type": "yellow",
+   "x": 360,
+   "y": 1000,
+   "config": {
+    "id": "npc36_1",
+    "name": "Keeper of the Pause",
+    "first": "Rest_here,_warriors._Beyond_lies_the_fortress_and_the_severing-place_itself._If_you_carry_all_the_truth,_a_sixth_road_will_have_opened_below._Choose_well.",
+    "active": "",
+    "completed": ""
+   }
+  }
+ ],
+ "portals": [
+  {
+   "id": "portal36_back",
+   "direction": "back",
+   "targetRegion": 35,
+   "x": 120,
+   "y": 1000
+  },
+  {
+   "id": "portal36_next",
+   "direction": "next",
+   "targetRegion": 37,
+   "x": 3090,
+   "y": 1000
+  }
+ ],
+ "regionIndex": 36
+}

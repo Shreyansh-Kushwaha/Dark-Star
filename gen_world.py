@@ -892,6 +892,223 @@ def build_34():
 
 
 # ============================================================================
+# ACT VI — THE SEVERANCE (void)  +  HIDDEN — THE ERASED PATH
+# ============================================================================
+def thread(r, pts, cut_at=None):
+    """Draw the golden Akhand Sutra. If cut_at=(lo,hi) given, leave a gap (severed)."""
+    if cut_at:
+        a = [p for p in pts if p[0] < cut_at[0]]; b = [p for p in pts if p[0] > cut_at[1]]
+        for seg in (a, b):
+            if len(seg) >= 2:
+                r.stroke(seg, "#7a5a16", 14); r.stroke(seg, "#d8b24a", 7); r.stroke(seg, "#f4e08a", 3)
+    else:
+        r.stroke(pts, "#7a5a16", 14); r.stroke(pts, "#d8b24a", 7); r.stroke(pts, "#f4e08a", 3)
+
+def void_floor(r, keep, shard_n=24, crystal_n=14):
+    """Floating shards along the path + decorative shards drifting in the void."""
+    for _ in range(shard_n):
+        x = r.R.rng(-40, WORLD_W+40); y = r.R.rng(-40, WORLD_H+40)
+        if keep(x, y): continue
+        r.void_shard(x, y, r.R.rng(0.7, 1.5))
+
+@region(35)
+def build_35():
+    """Chidrabhumi — The Torn Land. Reality fractured into floating shards over
+    the void; you walk the actual severance scar."""
+    r = Region(35, "Chidrabhūmi — The Torn Land", "#12080a", 350035)
+    def road_y(x): return 1000 + 140*math.sin(x/520.0)
+    HALF = 190
+    def on_road(x, y): return abs(y-road_y(x)) < HALF or near_spawn(x, y, 280)
+    void_floor(r, on_road, 26)
+    # the path of shards
+    for x in range(120, WORLD_W-80, 150): r.void_shard(x, road_y(x), r.R.rng(1.0, 1.5))
+    # snapped golden threads dangling from the tears
+    for (tx, ty) in [(700,520),(1500,520),(2300,520),(1100,1480),(1900,1480)]:
+        thread(r, [(tx-120, ty),(tx-40, ty+60),(tx+30, ty+40)], cut_at=(tx-10, tx+10))
+    r.scatter(lambda x,y,s: r.crystal(x,y,r.R.rng(0.7,1.3),"purple"), 16, (240, WORLD_W-200), (380, 1620),
+              avoid=lambda x,y: not on_road(x,y))
+    r.scatter(r.rock, 18, (240, WORLD_W-200), (400, 1600), avoid=lambda x,y: not on_road(x,y), smin=0.7, smax=1.4)
+    SEG=200; x=0
+    while x<WORLD_W:
+        c=road_y(x+SEG/2); r.zone(x,-160,SEG+2,c-HALF+160); r.zone(x,c+HALF,SEG+2,WORLD_H-(c+HALF)+160); x+=SEG
+    for (t, x) in [("melee",700),("ranged",1040),("melee",1420),("ranged",1800),("melee",2160),("elite",2520)]:
+        r.enemy(t, x, road_y(x))
+    r.npc("blue", 340, road_y(340), "Severed Soul",
+          "This_is_the_WOUND_itself,_where_the_Thread_was_cut._Feel_how_nothing_holds_to_anything?_That_is_what_he_did_—_or_what_they_blamed_on_him.")
+    r.portal_back(30, 120, road_y(120))
+    r.portal_next(36, WORLD_W-110, road_y(WORLD_W-110))
+    return r.emit()
+
+@region(36)
+def build_36():
+    """Antarala — The Between-Place. A still grey limbo, the last island of calm
+    before the end; the frayed end of the Sutra rests here. No enemies."""
+    r = Region(36, "Antarāla — The Between-Place", "#2a2730", 360036)
+    void_floor(r, lambda x,y: 240<x<WORLD_W-240 and 360<y<WORLD_H-360, 18)
+    for x in range(160, WORLD_W-120, 220):
+        for y in (640, 1000, 1360): r.void_shard(x, y, r.R.rng(0.9, 1.2))
+    # a single shrine, a campfire, the frayed thread coming to rest
+    r.pillar(1500, 940, 1.2); r.pillar(1700, 940, 1.2); r.brazier(1600, 1000, 2.8)
+    r.campfire(1000, 1040, 1.8); r.log(940,1110,1.7); r.log(1060,1110,1.7)
+    thread(r, [(200,1180),(700,1140),(1200,1180),(1600,1120)], cut_at=(1620,1700))
+    r.mural(1600, 1130, 1.4)
+    r.scatter(lambda x,y,s: r.crystal(x,y,r.R.rng(0.6,1.0),"cyan"), 10, (300, WORLD_W-300), (400, 1600),
+              avoid=lambda x,y: not (240<x<WORLD_W-240 and 360<y<WORLD_H-360))
+    r.frame_walls(top=260, bottom=260, left=200, right=180, left_gap=(900,1120), right_gap=(900,1120))
+    r.npc("yellow", 360, 1000, "Keeper of the Pause",
+          "Rest_here,_warriors._Beyond_lies_the_fortress_and_the_severing-place_itself._If_you_carry_all_the_truth,_a_sixth_road_will_have_opened_below._Choose_well.")
+    r.portal_back(35, 120, 1000)
+    r.portal_next(37, WORLD_W-110, 1000)
+    return r.emit()
+
+@region(37)
+def build_37():
+    """Viyoga Durga — The Fortress of Separation. Viyogasur's obsidian seat and
+    the prison where the gods chained the 'Demon of Separation.' Boss: Vanasur."""
+    r = Region(37, "Viyoga Durga — The Fortress of Separation", "#12080a", 370037)
+    ARENA = (2680, 1000)
+    def road_y(x): return 1000 + 90*math.sin(x/560.0)
+    HALF = 200
+    def keep(x, y): return abs(y-road_y(x))<HALF or near_spawn(x,y,280) or (x-ARENA[0])**2+(y-ARENA[1])**2<420**2
+    void_floor(r, keep, 22)
+    # obsidian ramparts (dark rock walls) + broken thread-bridges + judgment thrones
+    grid_fill(r, lambda x,y,s: r.rock(x,y,r.R.rng(1.6,3.2)),
+              lambda x,y: keep(x,y), step=140, chance=0.9)
+    for x in range(420, 2300, 300): r.bridge_deck(x, road_y(x), 1.2)
+    for px in range(500, 2300, 360):
+        r.pillar(px, road_y(px)-HALF+40, r.R.rng(1.1,1.4)); r.pillar(px, road_y(px)+HALF-30, r.R.rng(1.1,1.4))
+    thread(r, [(200,road_y(200)),(900,road_y(900)),(1600,road_y(1600))], cut_at=(1620,1720))
+    # the throne arena (Vanasur, the chained guardian)
+    for k in range(14):
+        a=k/14*math.tau; r.rock(ARENA[0]+math.cos(a)*400, ARENA[1]+math.sin(a)*360, r.R.rng(1.2,2.2))
+    r.mural(ARENA[0], ARENA[1]-300, 1.6)
+    SEG=200; x=0
+    while x<WORLD_W:
+        c=road_y(x+SEG/2)
+        if x < 2200:
+            r.zone(x,-160,SEG+2,c-HALF+160); r.zone(x,c+HALF,SEG+2,WORLD_H-(c+HALF)+160)
+        x+=SEG
+    for (t, x) in [("ranged",760),("melee",1120),("elite",1560),("ranged",1980)]:
+        r.enemy(t, x, road_y(x))
+    r.set_boss("vanasur", ARENA[0], ARENA[1])
+    r.npc("blue", 340, road_y(340), "Voice in the Void",
+          "They_called_HIM_the_Demon_of_Separation_and_chained_him_in_this_fortress._But_ask_yourself,_warrior:_who_truly_cut_the_Thread_—_the_one_blamed,_or_the_five_who_did_the_blaming?")
+    r.portal_back(36, 120, road_y(120))
+    r.portal_next(38, WORLD_W-110, road_y(WORLD_W-110))
+    return r.emit()
+
+@region(38)
+def build_38():
+    """Sutracheda — The Place of the Severing. The exact point where the Thread
+    was cut; six thrones, one empty. Final boss: Viyogasur."""
+    r = Region(38, "Sūtracheda — The Place of the Severing", "#0a0608", 380038)
+    ARENA = (1700, 1000)
+    void_floor(r, lambda x,y: (x-ARENA[0])**2+(y-ARENA[1])**2<560**2 or near_spawn(x,y,280) or abs(y-1000)<160, 20)
+    # the severed Sutra: two golden ends reaching for a central gap (the cut)
+    thread(r, [(120,1000),(700,1000),(1200,1000),(1640,1000),(1760,1000),(2200,1000),(2700,1000),(3080,1000)],
+           cut_at=(1620, 1780))
+    # the cosmic loom + six thrones around the arena (one throne left empty)
+    for k in range(6):
+        a = -math.pi/2 + k/6*math.tau
+        tx = ARENA[0]+math.cos(a)*440; ty = ARENA[1]+math.sin(a)*380
+        r.pillar(tx, ty, 1.3)
+        if k != 5: r.brazier(tx, ty-60, 2.0)        # five lit, the sixth dark/empty
+    r.mural(ARENA[0], ARENA[1]-360, 1.8)
+    for x in range(160, 1300, 180): r.void_shard(x, 1000, r.R.rng(1.0,1.4))
+    r.scatter(lambda x,y,s: r.crystal(x,y,r.R.rng(0.8,1.4),"purple"), 14, (240, WORLD_W-200), (420, 1580),
+              avoid=lambda x,y: (x-ARENA[0])**2+(y-ARENA[1])**2<520**2 or abs(y-1000)<170)
+    # seal all but the entry road and the arena eye
+    def keep(x,y): return (x-ARENA[0])**2+(y-ARENA[1])**2<520**2 or (x<1300 and abs(y-1000)<170) or near_spawn(x,y,260)
+    SEG=180; x=0
+    while x<WORLD_W:
+        cx=x+SEG/2; yy=-160
+        while yy<WORLD_H:
+            if not keep(cx, yy+90): r.zone(x, yy, SEG+2, 184, zid=f"z38_{x}_{yy}")
+            yy+=180
+        x+=SEG
+    for (t, x, y) in [("ranged",900,1000),("elite",1280,920),("elite",1280,1080)]:
+        r.enemy(t, x, y)
+    r.set_boss("viyogasur", ARENA[0], ARENA[1])
+    r.npc("blue", 360, 1000, "Echo of the Sixth",
+          "This_is_where_the_Thread_was_cut._Restore_it_as_it_was,_or_let_it_fall_—_unless_you_walked_the_Erased_Path._Then,_and_only_then,_can_you_REWEAVE_it_from_the_truth.")
+    r.portal_back(37, 120, 1000)
+    return r.emit()
+
+@region(39)
+def build_39():
+    """Shashtha Dvara — The Sixth Gate. A radiant doorway that 'shouldn't exist';
+    crossing it restores Ekatmadeva to the world's records. Secret."""
+    r = Region(39, "Ṣaṣṭha Dvāra — The Sixth Gate", "#1a1408", 390039)
+    void_floor(r, lambda x,y: abs(y-1000)<220 or near_spawn(x,y,280), 16)
+    # a golden avenue of living thread leading to the gate
+    thread(r, [(x,1000+30*math.sin(x/300.0)) for x in range(120, WORLD_W-80, 80)])
+    for x in range(160, WORLD_W-120, 200): r.void_shard(x, 1000, r.R.rng(1.0,1.3))
+    r.gate(1500, 1090, 1.8)                         # the radiant Sixth Gate
+    # names reappearing on the walls (murals) + gold glints + warm crystals
+    for mx in range(500, WORLD_W-400, 360): r.mural(mx, 760, r.R.rng(1.0,1.3)); r.mural(mx, 1240, r.R.rng(1.0,1.3))
+    r.scatter(lambda x,y,s: r.gold(x,y,r.R.rng(0.7,1.2)), 18, (240, WORLD_W-200), (420, 1580),
+              avoid=lambda x,y: not (abs(y-1000)<220))
+    r.scatter(lambda x,y,s: r.crystal(x,y,r.R.rng(0.7,1.2),"amber"), 12, (260, WORLD_W-220), (440, 1560),
+              avoid=lambda x,y: not (abs(y-1000)<260))
+    for bx in range(520, WORLD_W-400, 320): r.brazier(bx, 880 if (bx//320)%2 else 1120, 2.2)
+    r.frame_walls(top=300, bottom=300, left=200, right=180, left_gap=(900,1120), right_gap=(900,1120))
+    r.npc("yellow", 360, 1000, "Guardian of Memory",
+          "You_know_the_name,_so_you_may_pass._Step_through_and_the_world_REMEMBERS_him_again:_Ekatmadeva,_the_One_Soul,_the_Sixth_they_tried_to_erase.")
+    r.portal_back(34, 120, 1000)
+    r.portal_next(40, WORLD_W-110, 1000)
+    return r.emit()
+
+@region(40)
+def build_40():
+    """Ekatmalaya — The Sanctum of the One Soul. The erased god's temple, rebuilt
+    by your remembering — whole and warm; six intact halos, an unbroken Sutra."""
+    r = Region(40, "Ekātmālaya — The Sanctum of the One Soul", "#3a2e14", 400040)
+    r.stroke([(x,1000) for x in range(80,WORLD_W-80,60)], "#6e5a2a", 200)
+    r.stroke([(x,1000) for x in range(80,WORLD_W-80,60)], "#8c7440", 110)
+    # the UNBROKEN Sutra runs the whole length (no cut)
+    thread(r, [(x,1000) for x in range(80, WORLD_W-60, 70)])
+    # golden colonnade + six intact halo-murals + a living tree at the heart
+    for px in range(360, WORLD_W-300, 240):
+        r.pillar(px, 740, r.R.rng(1.1,1.3)); r.pillar(px, 1260, r.R.rng(1.1,1.3))
+    for i, mx in enumerate(range(600, WORLD_W-400, 360)): r.mural(mx, 820, 1.4)
+    r.canopy(1600, 1180, 1.6, kind="middle_lane_tree2")   # the living world-tree
+    r.canopy(1600, 1230, 1.2, kind="middle_lane_tree3")
+    r.building("Monastery", "Yellow", 1500, 640, 1.2)
+    for bx in range(520, WORLD_W-400, 300): r.brazier(bx, 1120 if (bx//300)%2 else 880, 2.4)
+    r.scatter(lambda x,y,s: r.gold(x,y,r.R.rng(0.8,1.3)), 20, (300, WORLD_W-300), (380, 1620),
+              avoid=lambda x,y: abs(y-1000)<150)
+    r.flag(1500, 400, 1.9)
+    r.frame_walls(top=220, bottom=220, left=190, right=180, left_gap=(900,1120), right_gap=(900,1120))
+    r.npc("yellow", 360, 1000, "Ekatmadeva, the One Soul",
+          "You_found_me,_where_no_record_survived._Hear_the_truth:_Viyogasur_did_not_sever_the_Thread_—_he_REFUSED_to_let_the_five_own_the_bonds_between_souls,_so_they_cut_it_and_named_him_for_their_crime.")
+    r.portal_back(39, 120, 1000)
+    r.portal_next(41, WORLD_W-110, 1000)
+    return r.emit()
+
+@region(41)
+def build_41():
+    """Maunamandira — The Silent Shrine. A tiny shrine outside time; the whole
+    thread coiled at rest. The epilogue beat — no combat."""
+    r = Region(41, "Maunamandira — The Silent Shrine", "#241e2a", 410041)
+    void_floor(r, lambda x,y: 320<x<WORLD_W-320 and 420<y<WORLD_H-420, 14)
+    for x in range(220, WORLD_W-160, 240):
+        for y in (700, 1000, 1300): r.void_shard(x, y, r.R.rng(0.85, 1.1))
+    # the whole Sutra coiled at rest (a golden spiral) + a single candle + two seats
+    spiral = [(1600 + (260 - 0.16*t)*math.cos(t/22.0), 1000 + (200 - 0.12*t)*math.sin(t/22.0)) for t in range(0, 360)]
+    thread(r, spiral)
+    r.brazier(1600, 1000, 2.2)                  # the single candle
+    r.log(1440, 1080, 1.9); r.log(1760, 1080, 1.9)   # two seats
+    r.mural(1600, 720, 1.5)
+    r.scatter(lambda x,y,s: r.crystal(x,y,r.R.rng(0.6,1.0),"cyan"), 10, (380, WORLD_W-380), (480, 1520),
+              avoid=lambda x,y: not (320<x<WORLD_W-320 and 420<y<WORLD_H-420))
+    r.frame_walls(top=300, bottom=300, left=240, right=240, left_gap=(900,1120))
+    r.npc("yellow", 420, 1000, "The Unbroken Thread",
+          "Sit_a_moment._The_thread_is_whole_now,_woven_from_what_truly_happened._Not_restored_to_the_old_lie,_not_left_broken_—_but_REMADE,_true._Rest._It_is_done.")
+    r.portal_back(40, 120, 1000)
+    return r.emit()
+
+
+# ============================================================================
 def main():
     args = [int(a) for a in sys.argv[1:] if a.isdigit()]
     todo = args or sorted(REGISTRY)

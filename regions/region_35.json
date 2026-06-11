@@ -1,0 +1,1367 @@
+{
+ "version": 1,
+ "regionName": "Chidrabh\u016bmi \u2014 The Torn Land",
+ "background": {
+  "type": "color",
+  "value": "#12080a"
+ },
+ "sprites": [
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0001",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3124.85,
+   "y": 1854.46,
+   "scaleX": 1.169,
+   "scaleY": 1.169,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0002",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1721.23,
+   "y": 1476.78,
+   "scaleX": 1.087,
+   "scaleY": 1.087,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0003",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 241.95,
+   "y": 622.05,
+   "scaleX": 1.301,
+   "scaleY": 1.301,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0004",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1075.06,
+   "y": 1397.17,
+   "scaleX": 0.753,
+   "scaleY": 0.753,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0005",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2588.98,
+   "y": 1517.55,
+   "scaleX": 1.452,
+   "scaleY": 1.452,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0006",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1190.77,
+   "y": 1952.56,
+   "scaleX": 1.104,
+   "scaleY": 1.104,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0007",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2887.54,
+   "y": 1354.36,
+   "scaleX": 0.823,
+   "scaleY": 0.823,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0008",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 155.86,
+   "y": 289.81,
+   "scaleX": 1.317,
+   "scaleY": 1.317,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0009",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2628.05,
+   "y": 265.35,
+   "scaleX": 1.122,
+   "scaleY": 1.122,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0010",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1842.77,
+   "y": 1567.03,
+   "scaleX": 1.421,
+   "scaleY": 1.421,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0011",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2273.78,
+   "y": 642.54,
+   "scaleX": 0.752,
+   "scaleY": 0.752,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0012",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1250.11,
+   "y": 1498.76,
+   "scaleX": 1.304,
+   "scaleY": 1.304,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0013",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 987.37,
+   "y": 472.5,
+   "scaleX": 0.741,
+   "scaleY": 0.741,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0014",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2106.52,
+   "y": 1184.42,
+   "scaleX": 1.297,
+   "scaleY": 1.297,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0015",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1411.32,
+   "y": 1528.41,
+   "scaleX": 1.357,
+   "scaleY": 1.357,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0016",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1411.24,
+   "y": 797.65,
+   "scaleX": 0.791,
+   "scaleY": 0.791,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0017",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1711.55,
+   "y": 1788.29,
+   "scaleX": 1.307,
+   "scaleY": 1.307,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0018",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1464.11,
+   "y": 274.54,
+   "scaleX": 0.79,
+   "scaleY": 0.79,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0019",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2786.58,
+   "y": -1.68,
+   "scaleX": 1.128,
+   "scaleY": 1.128,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0020",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 120,
+   "y": 1032.02,
+   "scaleX": 1.212,
+   "scaleY": 1.212,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0021",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 270,
+   "y": 1069.47,
+   "scaleX": 1.011,
+   "scaleY": 1.011,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0022",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 420,
+   "y": 1101.18,
+   "scaleX": 1.059,
+   "scaleY": 1.059,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0023",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 570,
+   "y": 1124.52,
+   "scaleX": 1.238,
+   "scaleY": 1.238,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0024",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 720,
+   "y": 1137.58,
+   "scaleX": 1.498,
+   "scaleY": 1.498,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0025",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 870,
+   "y": 1139.27,
+   "scaleX": 1.308,
+   "scaleY": 1.308,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0026",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1020,
+   "y": 1129.45,
+   "scaleX": 1.439,
+   "scaleY": 1.439,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0027",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1170,
+   "y": 1108.93,
+   "scaleX": 1.329,
+   "scaleY": 1.329,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0028",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1320,
+   "y": 1079.41,
+   "scaleX": 1.14,
+   "scaleY": 1.14,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0029",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1470,
+   "y": 1043.33,
+   "scaleX": 1.332,
+   "scaleY": 1.332,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0030",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1620,
+   "y": 1003.67,
+   "scaleX": 1.179,
+   "scaleY": 1.179,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0031",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1770,
+   "y": 963.7,
+   "scaleX": 1.206,
+   "scaleY": 1.206,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0032",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1920,
+   "y": 926.74,
+   "scaleX": 1.433,
+   "scaleY": 1.433,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0033",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2070,
+   "y": 895.83,
+   "scaleX": 1.495,
+   "scaleY": 1.495,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0034",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2220,
+   "y": 873.52,
+   "scaleX": 1.127,
+   "scaleY": 1.127,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0035",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2370,
+   "y": 861.67,
+   "scaleX": 1.012,
+   "scaleY": 1.012,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0036",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2520,
+   "y": 861.25,
+   "scaleX": 1.114,
+   "scaleY": 1.114,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0037",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2670,
+   "y": 872.29,
+   "scaleX": 1.36,
+   "scaleY": 1.36,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0038",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2820,
+   "y": 893.89,
+   "scaleX": 1.336,
+   "scaleY": 1.336,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0039",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2970,
+   "y": 924.26,
+   "scaleX": 1.11,
+   "scaleY": 1.11,
+   "offsetX": 60.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a16",
+   "strokeWidth": 14,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    580,
+    520,
+    660,
+    580
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d8b24a",
+   "strokeWidth": 7,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    580,
+    520,
+    660,
+    580
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#f4e08a",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    580,
+    520,
+    660,
+    580
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a16",
+   "strokeWidth": 14,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1380,
+    520,
+    1460,
+    580
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d8b24a",
+   "strokeWidth": 7,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1380,
+    520,
+    1460,
+    580
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#f4e08a",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1380,
+    520,
+    1460,
+    580
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a16",
+   "strokeWidth": 14,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2180,
+    520,
+    2260,
+    580
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d8b24a",
+   "strokeWidth": 7,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2180,
+    520,
+    2260,
+    580
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#f4e08a",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2180,
+    520,
+    2260,
+    580
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a16",
+   "strokeWidth": 14,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    980,
+    1480,
+    1060,
+    1540
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d8b24a",
+   "strokeWidth": 7,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    980,
+    1480,
+    1060,
+    1540
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#f4e08a",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    980,
+    1480,
+    1060,
+    1540
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a16",
+   "strokeWidth": 14,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1780,
+    1480,
+    1860,
+    1540
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d8b24a",
+   "strokeWidth": 7,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1780,
+    1480,
+    1860,
+    1540
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#f4e08a",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1780,
+    1480,
+    1860,
+    1540
+   ]
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0040",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_purple.png"
+   ],
+   "name": "crystal_purple",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1518.36,
+   "y": 858.02,
+   "scaleX": 0.763,
+   "scaleY": 0.763,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0041",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_purple.png"
+   ],
+   "name": "crystal_purple",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 374.26,
+   "y": 812.26,
+   "scaleX": 1.168,
+   "scaleY": 1.168,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0042",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_purple.png"
+   ],
+   "name": "crystal_purple",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1526.77,
+   "y": 987.56,
+   "scaleX": 1.072,
+   "scaleY": 1.072,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0043",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_purple.png"
+   ],
+   "name": "crystal_purple",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2962.36,
+   "y": 1032.41,
+   "scaleX": 1.051,
+   "scaleY": 1.051,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0044",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2845.63,
+   "y": 816.46,
+   "scaleX": 1.005,
+   "scaleY": 1.005,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0045",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1986.03,
+   "y": 811.42,
+   "scaleX": 0.818,
+   "scaleY": 0.818,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0046",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2841.18,
+   "y": 979.54,
+   "scaleX": 0.979,
+   "scaleY": 0.979,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0047",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 944.94,
+   "y": 1024.27,
+   "scaleX": 0.781,
+   "scaleY": 0.781,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0048",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 599.03,
+   "y": 832.36,
+   "scaleX": 1.349,
+   "scaleY": 1.349,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0049",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2636.82,
+   "y": 832.93,
+   "scaleX": 1.137,
+   "scaleY": 1.137,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r35_0050",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2680.2,
+   "y": 872.39,
+   "scaleX": 0.953,
+   "scaleY": 0.953,
+   "offsetX": 32.0,
+   "offsetY": 63
+  }
+ ],
+ "noWalkZones": [
+  {
+   "id": "z35_1",
+   "x": 0,
+   "y": -160,
+   "w": 202,
+   "h": 996.8
+  },
+  {
+   "id": "z35_2",
+   "x": 0,
+   "y": 1216.8,
+   "w": 202,
+   "h": 943.2
+  },
+  {
+   "id": "z35_3",
+   "x": 200,
+   "y": -160,
+   "w": 202,
+   "h": 1046.4
+  },
+  {
+   "id": "z35_4",
+   "x": 200,
+   "y": 1266.4,
+   "w": 202,
+   "h": 893.6
+  },
+  {
+   "id": "z35_5",
+   "x": 400,
+   "y": -160,
+   "w": 202,
+   "h": 1084.8
+  },
+  {
+   "id": "z35_6",
+   "x": 400,
+   "y": 1304.8,
+   "w": 202,
+   "h": 855.2
+  },
+  {
+   "id": "z35_7",
+   "x": 600,
+   "y": -160,
+   "w": 202,
+   "h": 1106.5
+  },
+  {
+   "id": "z35_8",
+   "x": 600,
+   "y": 1326.5,
+   "w": 202,
+   "h": 833.5
+  },
+  {
+   "id": "z35_9",
+   "x": 800,
+   "y": -160,
+   "w": 202,
+   "h": 1108.2
+  },
+  {
+   "id": "z35_10",
+   "x": 800,
+   "y": 1328.2,
+   "w": 202,
+   "h": 831.8
+  },
+  {
+   "id": "z35_11",
+   "x": 1000,
+   "y": -160,
+   "w": 202,
+   "h": 1089.7
+  },
+  {
+   "id": "z35_12",
+   "x": 1000,
+   "y": 1309.7,
+   "w": 202,
+   "h": 850.3
+  },
+  {
+   "id": "z35_13",
+   "x": 1200,
+   "y": -160,
+   "w": 202,
+   "h": 1053.8
+  },
+  {
+   "id": "z35_14",
+   "x": 1200,
+   "y": 1273.8,
+   "w": 202,
+   "h": 886.2
+  },
+  {
+   "id": "z35_15",
+   "x": 1400,
+   "y": -160,
+   "w": 202,
+   "h": 1005.6
+  },
+  {
+   "id": "z35_16",
+   "x": 1400,
+   "y": 1225.6,
+   "w": 202,
+   "h": 934.4
+  },
+  {
+   "id": "z35_17",
+   "x": 1600,
+   "y": -160,
+   "w": 202,
+   "h": 952.2
+  },
+  {
+   "id": "z35_18",
+   "x": 1600,
+   "y": 1172.2,
+   "w": 202,
+   "h": 987.8
+  },
+  {
+   "id": "z35_19",
+   "x": 1800,
+   "y": -160,
+   "w": 202,
+   "h": 901.4
+  },
+  {
+   "id": "z35_20",
+   "x": 1800,
+   "y": 1121.4,
+   "w": 202,
+   "h": 1038.6
+  },
+  {
+   "id": "z35_21",
+   "x": 2000,
+   "y": -160,
+   "w": 202,
+   "h": 860.6
+  },
+  {
+   "id": "z35_22",
+   "x": 2000,
+   "y": 1080.6,
+   "w": 202,
+   "h": 1079.4
+  },
+  {
+   "id": "z35_23",
+   "x": 2200,
+   "y": -160,
+   "w": 202,
+   "h": 835.8
+  },
+  {
+   "id": "z35_24",
+   "x": 2200,
+   "y": 1055.8,
+   "w": 202,
+   "h": 1104.2
+  },
+  {
+   "id": "z35_25",
+   "x": 2400,
+   "y": -160,
+   "w": 202,
+   "h": 830.6
+  },
+  {
+   "id": "z35_26",
+   "x": 2400,
+   "y": 1050.6,
+   "w": 202,
+   "h": 1109.4
+  },
+  {
+   "id": "z35_27",
+   "x": 2600,
+   "y": -160,
+   "w": 202,
+   "h": 845.8
+  },
+  {
+   "id": "z35_28",
+   "x": 2600,
+   "y": 1065.8,
+   "w": 202,
+   "h": 1094.2
+  },
+  {
+   "id": "z35_29",
+   "x": 2800,
+   "y": -160,
+   "w": 202,
+   "h": 879.1
+  },
+  {
+   "id": "z35_30",
+   "x": 2800,
+   "y": 1099.1,
+   "w": 202,
+   "h": 1060.9
+  },
+  {
+   "id": "z35_31",
+   "x": 3000,
+   "y": -160,
+   "w": 202,
+   "h": 925.7
+  },
+  {
+   "id": "z35_32",
+   "x": 3000,
+   "y": 1145.7,
+   "w": 202,
+   "h": 1014.3
+  }
+ ],
+ "enemies": [
+  {
+   "id": "e35_01",
+   "type": "melee",
+   "x": 700,
+   "y": 1136.4823333456345
+  },
+  {
+   "id": "e35_02",
+   "type": "ranged",
+   "x": 1040,
+   "y": 1127.3016397555955
+  },
+  {
+   "id": "e35_03",
+   "type": "melee",
+   "x": 1420,
+   "y": 1055.9110119372335
+  },
+  {
+   "id": "e35_04",
+   "type": "ranged",
+   "x": 1800,
+   "y": 955.9678833204372
+  },
+  {
+   "id": "e35_05",
+   "type": "melee",
+   "x": 2160,
+   "y": 881.2760461677564
+  },
+  {
+   "id": "e35_06",
+   "type": "elite",
+   "x": 2520,
+   "y": 861.2506462605526
+  }
+ ],
+ "boss": null,
+ "npcs": [
+  {
+   "id": "npc35_1",
+   "type": "blue",
+   "x": 340,
+   "y": 1085.154129581561,
+   "config": {
+    "id": "npc35_1",
+    "name": "Severed Soul",
+    "first": "This_is_the_WOUND_itself,_where_the_Thread_was_cut._Feel_how_nothing_holds_to_anything?_That_is_what_he_did_\u2014_or_what_they_blamed_on_him.",
+    "active": "",
+    "completed": ""
+   }
+  }
+ ],
+ "portals": [
+  {
+   "id": "portal35_back",
+   "direction": "back",
+   "targetRegion": 30,
+   "x": 120,
+   "y": 1032.0217002227305
+  },
+  {
+   "id": "portal35_next",
+   "direction": "next",
+   "targetRegion": 36,
+   "x": 3090,
+   "y": 953.1959925228585
+  }
+ ],
+ "regionIndex": 35
+}
