@@ -357,6 +357,219 @@ def build_18():
 
 
 # ============================================================================
+# ACT III — THE EMBERWASTES (desert / fire / temple)
+# ============================================================================
+def dunes(r, c0, c1, y0=-40, y1=WORLD_H+40, step=78, amp=40, width=120):
+    for i, yy in enumerate(range(y0, y1, step)):
+        r.stroke([(x, yy + amp*math.sin(x/300.0 + i*0.6)) for x in range(-60, WORLD_W+60, 70)],
+                 c0 if i % 2 else c1, width)
+
+@region(19)
+def build_19():
+    """Bhasmabhumi — The Ashen Flats. A scorched grey plain where the gods burned
+    the sixth god's temples; the ash never settles."""
+    r = Region(19, "Bhasmabhūmi — The Ashen Flats", "#48423b", 190019)
+    dunes(r, "#4f483f", "#544c42", amp=34, width=120)
+    # smoking fissures (dark cracks with ember seams)
+    for (fx0, fy) in [(500, 760), (1300, 1180), (2100, 720), (2500, 1240)]:
+        pts = [(fx0 + t, fy + 60*math.sin(t/120.0)) for t in range(0, 600, 50)]
+        r.stroke(pts, "#1c1512", 30); r.stroke(pts, "#7a2c12", 12)
+    # the burned temples: toppled colonnades half-sunk in ash (clustered ruins)
+    for (rx, ry, n, ang) in [(820, 760, 5, 0.15), (1500, 1240, 6, -0.1),
+                             (2150, 760, 5, 0.2), (2550, 1240, 4, 0.0)]:
+        for k in range(n):
+            r.pillar(rx + k*78, ry + k*14*math.sin(ang) + r.R.rng(-12, 12), r.R.rng(0.7, 1.05))
+        if r.R.chance(0.8): r.mural(rx + 30, ry + 130, r.R.rng(0.9, 1.2))
+    # charred dead trees + ash drifts + rubble
+    r.scatter(lambda x,y,s: r.dead_tree(x,y,r.R.rng(0.7,1.1)), 40, (240, WORLD_W-240), (320, 1700), avoid=near_spawn)
+    r.scatter(r.rock, 54, (220, WORLD_W-220), (320, 1700), avoid=near_spawn, smin=0.7, smax=1.8)
+    r.scatter(r.bone, 22, (300, WORLD_W-300), (360, 1660), avoid=near_spawn, smin=1.0, smax=1.6)
+    r.scatter(lambda x,y,s: r.skull(x,y,r.R.rng(1.2,1.8)), 14, (400, WORLD_W-300), (400, 1600), avoid=near_spawn)
+    r.scatter(r.dirt, 50, (220, WORLD_W-220), (340, 1680), smin=1.8, smax=3.0)
+    r.scatter(lambda x,y,s: r.bush(x,y,r.R.rng(0.6,0.9)), 16, (260, WORLD_W-260), (360, 1660), avoid=near_spawn)
+    # a few brittle gold-stone cinders glowing in the ash
+    r.scatter(lambda x,y,s: r.gold(x,y,r.R.rng(0.5,0.8)), 16, (400, 2600), (420, 1580), avoid=near_spawn)
+    r.frame_walls(top=190, bottom=190, left=180, right=160, left_gap=(880,1120), right_gap=(880,1120))
+    for (t, x, y) in [("ranged",760,900),("slimem",1100,1080),("ranged",1480,940),
+                      ("slimem",1820,1080),("ranged",2160,960),("elite",2520,1000)]:
+        r.enemy(t, x, y)
+    r.npc("yellow", 320, 980, "Ash Pilgrim",
+          "This_is_where_they_BURNED_him_out_of_the_world_—_temple_by_temple,_name_by_name._Breathe_shallow._The_ash_you_taste_was_once_holy.")
+    r.portal_back(8, 120, 1000)
+    r.portal_next(20, WORLD_W-110, 1000)
+    return r.emit()
+
+@region(20)
+def build_20():
+    """Tamrapura — The Copper Bazaar. A sandstone desert trade-city; a relic
+    dealer here sells a coin bearing the erased god's face. Act III hub."""
+    r = Region(20, "Tāmrapura — The Copper Bazaar", "#7a5d36", 200020)
+    dunes(r, "#7d6038", "#866741", amp=26, width=110)
+    # sandstone roads through the bazaar
+    r.stroke(meander(120, WORLD_W-120, 1000, 60, 520), "#8a6d42", 150)
+    r.stroke(meander(120, WORLD_W-120, 1000, 60, 520), "#9c7d4e", 74)
+    r.stroke([(820, y) for y in range(1000, 1780, 40)], "#8a6d42", 110)
+    # copper-domed buildings (yellow = golden) on both sides of the avenue
+    r.building("Castle", "Yellow", 470, 760, 1.0)       # caravanserai
+    r.building("House1", "Yellow", 760, 700, 1.2); r.building("House3", "Yellow", 1020, 720, 1.18)
+    r.building("Tower", "Yellow", 1260, 760, 1.25); r.building("Monastery", "Yellow", 320, 1320, 0.95)
+    r.building("House2", "Yellow", 640, 1340, 1.2); r.building("Barracks", "Yellow", 1080, 1340, 1.0)
+    # the great furnace-forge (brazier cluster) + cistern
+    for (bx,by) in [(1500,980),(1560,1040),(1620,980)]: r.brazier(bx, by, 2.2)
+    r.pool(1500, 1300, 150, 90, "#256a73", "#4aa0ad", 120, 60)   # cistern shrine
+    # market stalls, crates, barrels, banners, lamps
+    for (sx,sy) in [(560,1010),(900,1060),(1140,1010),(1360,1070)]:
+        r.tent(sx, sy, 1.7); r.crate(sx+44, sy, 2.1);
+        if r.R.chance(0.6): r.barrel(sx-44, sy, 1.7)
+    r.flag(1260, 540, 1.7); r.flag(902, 1064, 1.2); r.campfire(1500, 1130, 1.6)
+    for lx in range(420, 1500, 240): r.lamp(lx, 1000-70 if (lx//240)%2 else 1000+70, 3.0)
+    r.scatter(r.cactus, 14, (1700, WORLD_W-260), (360, 1700), avoid=near_spawn, smin=1.0, smax=1.6)
+    r.scatter(r.rock, 16, (1700, WORLD_W-240), (360, 1700), smin=0.7, smax=1.4)
+    r.frame_walls(top=200, bottom=200, left=180, right=180, left_gap=(900,1120), right_gap=(900,1120))
+    for (t, x, y) in [("melee",1800,940),("ranged",2100,1060),("rat",1950,1500)]:
+        r.enemy(t, x, y)
+    r.npc("yellow", 320, 980, "Coppersmith Deva",
+          "Genuine_relics,_friend!_This_coin_—_see_the_face?_No_temple_will_say_whose._I_call_him_the_Sixth._Worth_more_than_gold_to_the_right_pilgrim.")
+    r.npc("blue", 430, 1180, "Relic Dealer",
+          "Heatward_charms,_two_for_a_song._You'll_want_one_before_the_caldera_road._The_fire_there_was_lit_to_forge_weapons_against_a_god.")
+    r.portal_back(19, 120, 1000)
+    r.portal_next(22, WORLD_W-110, 1000)
+    r.portal_to(21, 820, 1740)     # spur -> Glass Desert
+    return r.emit()
+
+@region(21)
+def build_21():
+    """Marusthala — The Glass Desert. Dunes fused to glass by old fire; mirages
+    and a buried caravan. Optional spur off Tamrapura."""
+    r = Region(21, "Marusthala — The Glass Desert", "#9a7e4d", 210021)
+    dunes(r, "#9c8050", "#a98c5b", amp=44, width=130)
+    # glass spires (cyan crystals) catching the sun
+    r.scatter(lambda x,y,s: r.crystal(x,y,r.R.rng(0.8,1.6),"cyan"), 22, (260, WORLD_W-260), (320, 1700), avoid=near_spawn)
+    # mirage pools (faint shimmer) + a sun-bleached idol + buried caravan
+    for (cx,cy) in [(900,760),(1700,1200),(2300,760)]:
+        r.pool(cx,cy,200,120,"#7fa6a0","#a9c8c2",120,60)
+    r.pillar(1500, 980, 1.2); r.mural(1500, 1110, 1.2)
+    for (cx,cy) in [(2050,1000),(2120,1060)]: r.crate(cx,cy,2.2)
+    r.barrel(1980, 1040, 1.7); r.bone(2180, 980, 1.4)
+    r.scatter(r.cactus, 18, (260, WORLD_W-260), (320, 1700), avoid=near_spawn, smin=1.0, smax=1.7)
+    r.scatter(r.rock, 18, (260, WORLD_W-260), (320, 1700), smin=0.7, smax=1.4)
+    r.scatter(lambda x,y,s: r.skull(x,y,r.R.rng(1.2,1.8)), 8, (400, 2600), (400, 1600), avoid=near_spawn)
+    r.frame_walls(top=190, bottom=190, left=180, right=160, left_gap=(880,1120))
+    for (t, x, y) in [("melee",760,940),("ranged",1180,1060),("melee",1620,940),
+                      ("ranged",2020,1060),("elite",2480,1000)]:
+        r.enemy(t, x, y)
+    r.npc("yellow", 320, 980, "Parched Wanderer",
+          "Don't_trust_the_water_here;_it's_glass_and_lies._But_the_mirage_by_the_idol_replays_a_true_thing:_five_gods,_a_chisel,_and_a_sixth_face_scraped_from_the_stone.")
+    r.portal_back(20, 120, 1000)
+    return r.emit()
+
+@region(22)
+def build_22():
+    """Agnikunda — The Firepit Caldera. Lava channels and basalt; the forge of
+    the gods, where the weapons used against the sixth god were made."""
+    r = Region(22, "Agnikuṇḍa — The Firepit Caldera", "#2d201b", 220022)
+    def lava(x): return 1000 + 150*math.sin(x/430.0) + 70*math.sin(x/170.0)
+    # lava rivers (layered glowing strokes)
+    r.stroke([(x, lava(x)) for x in range(-40, WORLD_W+40, 50)], "#7a1e08", 150)
+    r.stroke([(x, lava(x)) for x in range(-40, WORLD_W+40, 50)], "#d4641e", 100)
+    r.stroke([(x, lava(x)) for x in range(-40, WORLD_W+40, 50)], "#f2b038", 44)
+    for (cx,cy,rx,ry) in [(900,560,230,140),(2200,1420,250,150),(1700,640,200,120)]:
+        r.stroke([(cx+math.cos(math.radians(t))*rx*0.6, cy+math.sin(math.radians(t))*ry*0.6) for t in range(0,372,18)], "#7a1e08", 150)
+        r.stroke([(cx+math.cos(math.radians(t))*rx*0.6, cy+math.sin(math.radians(t))*ry*0.6) for t in range(0,372,18)], "#e07a22", 70)
+    def open_floor(x, y): return abs(y - lava(x)) > 130 or near_spawn(x, y, 280)
+    # basalt fields + cooled lava rocks
+    grid_fill(r, lambda x,y,s: r.rock(x,y,r.R.rng(1.4,3.0) if abs(y-lava(x))>360 else r.R.rng(1.0,1.8)),
+              lambda x,y: abs(y-lava(x))<200 or near_spawn(x,y,300), step=140, chance=0.85)
+    r.scatter(lambda x,y,s: r.lava_rock(x,y,r.R.rng(1.0,1.8)), 30, (240, WORLD_W-240), (320, 1700),
+              avoid=lambda x,y: abs(y-lava(x))<150, )
+    # the anvil-altar (pillars + brazier) on a basalt island
+    r.pillar(2600, 940, 1.1); r.pillar(2760, 940, 1.1); r.brazier(2680, 1000, 2.6)
+    r.scatter(lambda x,y,s: r.gold(x,y,r.R.rng(0.6,1.0)), 12, (300, 2600), (360, 1640),
+              avoid=lambda x,y: abs(y-lava(x))<170)
+    # lava channel is lethal no-walk (stepwise band)
+    SEG=200; x=0
+    while x<WORLD_W:
+        c=lava(x+SEG/2); r.zone(x, c-130, SEG+2, 260, zid=f"z22_lava{x}"); x+=SEG
+    r.frame_walls(top=170, bottom=170, left=180, right=160, left_gap=(880,1120), right_gap=(880,1120))
+    for (t, x, y) in [("ranged",760,760),("elite",1180,1240),("ranged",1620,760),
+                      ("melee",2020,1240),("elite",2400,1000)]:
+        r.enemy(t, x, y)
+    r.npc("yellow", 320, 760, "Cinder Smith",
+          "Every_blade_that_struck_the_Sixth_was_born_in_this_pit._I_stoke_the_fire_still,_god_help_me._Bring_a_Heatward_Charm_or_the_floor_will_cook_you.")
+    r.portal_back(20, 120, 1000)
+    r.portal_next(23, WORLD_W-110, 1000)
+    return r.emit()
+
+@region(23)
+def build_23():
+    """Deva Mandira — The Temple of the Gods. The conspirators' golden seat; the
+    Great Mural shows six halos with one scraped away."""
+    r = Region(23, "Deva Mandira — The Temple of the Gods", "#7a5a28", 230023)
+    # marble avenue up the middle
+    r.stroke([(x, 1000) for x in range(80, WORLD_W-80, 60)], "#9a7d44", 200)
+    r.stroke([(x, 1000) for x in range(80, WORLD_W-80, 60)], "#b49a5e", 110)
+    r.stroke([(x, 1000) for x in range(80, WORLD_W-80, 60)], "#cab37a", 50)
+    # colonnade: pillar rows flanking the avenue
+    for px in range(360, WORLD_W-300, 230):
+        r.pillar(px, 760, r.R.rng(1.1, 1.3)); r.pillar(px, 1240, r.R.rng(1.1, 1.3))
+    # grand temple buildings (golden)
+    r.building("Monastery", "Yellow", 520, 640, 1.1); r.building("Castle", "Yellow", 2700, 760, 1.05)
+    r.building("Tower", "Yellow", 1500, 600, 1.3)
+    # the Great Mural — front and centre on the temple steps
+    r.mural(1500, 900, 2.4)
+    # braziers lighting the avenue + banners
+    for bx in range(500, WORLD_W-400, 300): r.brazier(bx, 1100 if (bx//300)%2 else 900, 2.4)
+    r.flag(1500, 360, 1.9); r.flag(520, 470, 1.5)
+    r.scatter(lambda x,y,s: r.gold(x,y,r.R.rng(0.7,1.1)), 16, (300, WORLD_W-300), (360, 1640),
+              avoid=lambda x,y: abs(y-1000)<150, )
+    r.frame_walls(top=200, bottom=200, left=180, right=170, left_gap=(900,1120), right_gap=(900,1120))
+    for (t, x, y) in [("melee",820,940),("ranged",1120,1060),("melee",1820,940),
+                      ("ranged",2120,1060),("elite",2400,1000),("melee",2000,760)]:
+        r.enemy(t, x, y)
+    r.npc("yellow", 320, 980, "Temple Priest",
+          "There_were_always_FIVE_great_gods,_pilgrim._Five._Pay_no_mind_to_the_sixth_niche_in_the_mural;_the_mason_erred,_nothing_more._Now_kneel_and_ask_no_questions.")
+    r.npc("blue", 430, 1140, "Doubting Acolyte",
+          "Five,_he_says._Then_why_does_the_mural_have_six_halos,_and_why_was_one_chiselled_to_nothing?_I_say_the_Sixth_was_real,_and_they_un-made_him.")
+    r.portal_back(22, 120, 1000)
+    r.portal_next(24, WORLD_W-110, 1000)
+    return r.emit()
+
+@region(24)
+def build_24():
+    """Pashana Daitya's Forge. The inner forge-sanctum; the stone-and-fire demon
+    built to guard the lie. Act III boss arena."""
+    r = Region(24, "Pāṣāṇa Daitya's Forge", "#3a2a22", 240024)
+    ARENA = (2680, 1000)
+    def lava(x): return 1000 + 90*math.sin(x/380.0)
+    r.stroke([(x, lava(x)) for x in range(-40, 2300, 50)], "#7a1e08", 130)
+    r.stroke([(x, lava(x)) for x in range(-40, 2300, 50)], "#d4641e", 80)
+    r.stroke([(x, lava(x)) for x in range(-40, 2300, 50)], "#f2b038", 36)
+    def open_floor(x, y): return abs(y-lava(x))>120 or near_spawn(x,y,280) or (x-ARENA[0])**2+(y-ARENA[1])**2<460**2
+    grid_fill(r, lambda x,y,s: r.rock(x,y,r.R.rng(1.4,3.0)),
+              lambda x,y: open_floor(x,y), step=138, chance=0.9)
+    r.scatter(lambda x,y,s: r.lava_rock(x,y,r.R.rng(1.0,1.8)), 22, (240, 2300), (320, 1700),
+              avoid=lambda x,y: abs(y-lava(x))<140 or (x-ARENA[0])**2+(y-ARENA[1])**2<460**2)
+    # bellows, slag heaps, a half-finished colossus (pillars + brazier) near the arena
+    r.pillar(2380, 820, 1.2); r.pillar(2380, 1180, 1.2); r.brazier(2360, 1000, 2.8)
+    for k in range(12):
+        a=k/12*math.tau; r.rock(ARENA[0]+math.cos(a)*420, ARENA[1]+math.sin(a)*360, r.R.rng(1.2,2.2))
+    r.scatter(lambda x,y,s: r.gold(x,y,r.R.rng(0.7,1.1)), 10, (2400,3000),(640,1360),
+              avoid=lambda x,y:(x-ARENA[0])**2+(y-ARENA[1])**2<420**2)
+    SEG=200; x=0
+    while x<2300:
+        c=lava(x+SEG/2); r.zone(x,c-120,SEG+2,240,zid=f"z24_lava{x}"); x+=SEG
+    r.frame_walls(top=180, bottom=180, left=180, right=150, left_gap=(880,1120))
+    for (t, x, y) in [("ranged",820,820),("melee",1120,1180),("elite",1700,1000),("ranged",2050,820)]:
+        r.enemy(t, x, y)
+    r.set_boss("pashana_daitya", ARENA[0], ARENA[1])
+    r.npc("yellow", 320, 1000, "Forge-Bound Shade",
+          "It_is_not_alive,_what_waits_in_the_forge._They_BUILT_it_from_stone_and_oath_to_keep_the_lie_standing._Break_it,_and_the_temple's_word_cracks_with_it.")
+    r.portal_back(23, 120, 1000)
+    r.portal_next(25, WORLD_W-110, 1000)
+    return r.emit()
+
+
+# ============================================================================
 def main():
     args = [int(a) for a in sys.argv[1:] if a.isdigit()]
     todo = args or sorted(REGISTRY)
