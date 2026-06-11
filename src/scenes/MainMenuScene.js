@@ -378,25 +378,40 @@ export class MainMenuScene extends Phaser.Scene {
   // ── Game start / co-op ────────────────────────────────────────────────────
 
   _startGame(isCoop, regionIndex = 0, charData = {}) {
+    // Refresh region maps in parallel with the fade so editor-saved data is current
+    const mapsPromise = fetch('/api/regions')
+      .then(r => r.json())
+      .then(list => { this.registry.set('regionMaps', list); })
+      .catch(() => {});
     this.cameras.main.fadeOut(400, 0, 0, 0);
     this.cameras.main.once('camerafadeoutcomplete', () => {
       this.scene.stop('MainMenuScene');
-      // Show prologue only on fresh solo new games (co-op skips to keep both players in sync)
       const hasSave = !!SaveManager.load();
-      if (!hasSave && regionIndex === 0 && !isCoop) {
-        this.scene.start('PrologueScene', { regionIndex, coop: isCoop, ...charData });
-      } else {
-        this.scene.start('GameScene', { regionIndex, coop: isCoop, ...charData });
-      }
+      const doStart = () => {
+        // Show prologue only on fresh solo new games (co-op skips to keep both players in sync)
+        if (!hasSave && regionIndex === 0 && !isCoop) {
+          this.scene.start('PrologueScene', { regionIndex, coop: isCoop, ...charData });
+        } else {
+          this.scene.start('GameScene', { regionIndex, coop: isCoop, ...charData });
+        }
+      };
+      mapsPromise.then(doStart).catch(doStart);
     });
   }
 
   _continueGame() {
     const save = SaveManager.load();
+    const regionIndex = save?.regionIndex || 0;
+    // Refresh region maps in parallel with the fade so editor-saved data is current
+    const mapsPromise = fetch('/api/regions')
+      .then(r => r.json())
+      .then(list => { this.registry.set('regionMaps', list); })
+      .catch(() => {});
     this.cameras.main.fadeOut(400, 0, 0, 0);
     this.cameras.main.once('camerafadeoutcomplete', () => {
       this.scene.stop('MainMenuScene');
-      this.scene.start('GameScene', { regionIndex: save?.regionIndex || 0 });
+      const doStart = () => this.scene.start('GameScene', { regionIndex });
+      mapsPromise.then(doStart).catch(doStart);
     });
   }
 
