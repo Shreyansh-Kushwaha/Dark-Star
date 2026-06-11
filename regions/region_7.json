@@ -1,0 +1,6193 @@
+{
+  "version": 1,
+  "background": {
+    "type": "color",
+    "value": "#2d5c28"
+  },
+  "sprites": [
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518382_zbpg9",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3024.3354348877024,
+      "y": 907.9518570746305,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518385_a96f8",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1907.9025706523041,
+      "y": 332.20333426939305,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518385_cfyz0",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1508.9129605485873,
+      "y": 1958.5484643565153,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518386_1nmoh",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1894.70980999085,
+      "y": 232.40052220860963,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518386_36fj9",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2235.7567681984997,
+      "y": 163.93535919090806,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518387_xbq4l",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 201.9827694592433,
+      "y": 1705.7363675225727,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518387_hp56x",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 809.8951499430949,
+      "y": 863.0380527155824,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518388_z1le0",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 533.7974608329138,
+      "y": 465.7145732217236,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518389_kyapd",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2743.1322966321636,
+      "y": 1074.2856212398376,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518390_qhnc8",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2903.1107825166528,
+      "y": 1217.243189411115,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518391_oov7u",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1109.5984944433462,
+      "y": 134.95261137016382,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518391_1aofz",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 417.3351887520667,
+      "y": 116.40369415456364,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518392_31jr8",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 141.55050045640502,
+      "y": 1478.2587816123832,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518392_ffuat",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2565.0096485076974,
+      "y": 500.04122045085467,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518392_mcjz8",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 712.2519340864955,
+      "y": 1682.1202483996778,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518393_bd54j",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 677.8693580063283,
+      "y": 838.4355401099028,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518394_fdfp7",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 270.9950995620357,
+      "y": 511.9634579493679,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518394_adk3j",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2945.762538239875,
+      "y": 810.1093299367086,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518395_y1q7o",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1291.0274197399563,
+      "y": 1619.2307022698699,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518395_vhzcc",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 193.15668266070105,
+      "y": 353.0473532225225,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518395_x12di",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1013.304691500283,
+      "y": 938.6475123664181,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518395_dv1zw",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2443.014875456123,
+      "y": 208.1610280445576,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518396_b0p6z",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1755.8137262387575,
+      "y": 1787.7874594261896,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518396_npl48",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2240.955620047493,
+      "y": 1304.918274834013,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518396_ach28",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 612.3619626999417,
+      "y": 1199.4760171020043,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518397_78nyn",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3102.6209385112916,
+      "y": 641.2584071049037,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518397_l7gul",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1130.1202005743153,
+      "y": 136.49459161564116,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518398_t5ss3",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3050.552699703165,
+      "y": 283.97670012190537,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518399_lc0y4",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1720.0807603659307,
+      "y": 1719.7566998195368,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518400_xq4l1",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1826.6531690045767,
+      "y": 196.7996704099715,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518401_bpewk",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 315.9658705342448,
+      "y": 590.9455528684869,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518401_68ls2",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2398.583193124501,
+      "y": 345.4663385588068,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518402_nwxf9",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2870.6174708710337,
+      "y": 885.7685858337567,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518402_8jkiy",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 577.3562356300449,
+      "y": 542.0837646368506,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518403_k18hu",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2343.9425719000915,
+      "y": 1068.4038308753848,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518403_hklpt",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1483.105191445117,
+      "y": 1063.0494267350862,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518403_dwtbv",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1038.9803613175961,
+      "y": 1003.4364121844214,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518404_q0wtg",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1432.4755221124,
+      "y": 661.0378385124963,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518404_v2kze",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3002.041945118815,
+      "y": 1116.6565812745093,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518405_urpt3",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2114.662873624163,
+      "y": 864.5480362874966,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121518405_w4wja",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+      "frames": [
+        "Rock4.png"
+      ],
+      "name": "Rock4",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2521.4897367970243,
+      "y": 665.2285924354944,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 32,
+      "offsetY": 32
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538249_wa5ln",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2563.6077148812556,
+      "y": 251.1797049047413,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538250_pzse4",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2302.7551010723455,
+      "y": 505.80521731423534,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538250_3bvbc",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1652.1394680136311,
+      "y": 367.7367289225164,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538250_350pq",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2166.181728811248,
+      "y": 86.31313716829747,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538251_7myoj",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2205.756411251031,
+      "y": 1600.9951751497945,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538251_7loia",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1306.4667047744156,
+      "y": 1079.6778633799804,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538251_n4yxy",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3189.213224628229,
+      "y": 1321.4652204916804,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538251_kvf6b",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 714.1397225171307,
+      "y": 1335.0704264869237,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538252_kky6f",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3034.7661510708717,
+      "y": 1400.233487661826,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538252_1uaf0",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1521.7392806881364,
+      "y": 365.67685407492246,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538252_x7xd9",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1522.4162017235933,
+      "y": 270.1509504672499,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538253_1stds",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 340.1207930108793,
+      "y": 1788.757530361174,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538253_l37sk",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 393.59431378027523,
+      "y": 1252.461280535798,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538253_imlcw",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2375.370790318602,
+      "y": 1218.714361697106,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538253_gppdb",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2579.8331910490565,
+      "y": 1192.8886893896292,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538254_wahz4",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1573.2487366440484,
+      "y": 1368.2375646264395,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538254_29dq8",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 116.96810073704285,
+      "y": 1878.4948196671207,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538255_bo3p7",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1169.6581434218608,
+      "y": 1699.84518406565,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538255_o7lnq",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 630.7505465322031,
+      "y": 72.57148872013963,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538258_gfq2j",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2393.096124873584,
+      "y": 1616.6187388153007,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538258_4j6x3",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1532.481400708088,
+      "y": 764.9638258096086,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538258_1yofk",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1786.7678009112115,
+      "y": 1112.8390742619831,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538259_m1gp5",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2471.121509652994,
+      "y": 1514.2117832457352,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538259_iwo22",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1865.6566522288385,
+      "y": 439.6356430431909,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538259_u4rnm",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 535.7725260406227,
+      "y": 172.15133138374927,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538259_nxwh7",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 934.7047657898546,
+      "y": 946.6152544093922,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538260_rx663",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2573.5206575008006,
+      "y": 868.9992091968339,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538260_7rkq4",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1136.6033303872357,
+      "y": 1865.2929598942608,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538261_r40lg",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1076.3461622846596,
+      "y": 1591.3035805608947,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538261_bm0d6",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 355.85218312822417,
+      "y": 242.55556690485136,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538262_9ppuy",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3006.7762975072887,
+      "y": 639.6008827048139,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538262_okxse",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2340.819588438053,
+      "y": 1785.8011853271926,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538262_bog77",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1677.9258160683248,
+      "y": 1192.0762008341394,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538262_vmzdd",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2706.79732284704,
+      "y": 1735.129503556429,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538262_o35cf",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1017.3016904960917,
+      "y": 1334.203039985403,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538263_4lpmt",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2553.4287331813503,
+      "y": 352.1280992560172,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538263_y9wi8",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 472.45321962454483,
+      "y": 1477.5163436064825,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538263_6bqh9",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2586.5033481229157,
+      "y": 1656.8385734268425,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538263_etfdv",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 473.9857659902743,
+      "y": 1844.7897712252652,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538263_kax1a",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1464.3481208744079,
+      "y": 894.3490791043591,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121538264_00a5y",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1732.8886240622983,
+      "y": 32.446858461347986,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543554_bilds",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2740.8626800170946,
+      "y": 285.9946940019797,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543555_kddjz",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 799.3065662978634,
+      "y": 254.71727395325365,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543555_pf6ty",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 285.1147948992825,
+      "y": 245.20858472928177,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543556_d14y4",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1485.0240698118391,
+      "y": 1495.1185796509656,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543556_5sxqk",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1356.1316099990763,
+      "y": 1501.6062438128774,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543556_y3aor",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2415.541239776567,
+      "y": 1779.1382993460666,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543556_s5i6d",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1583.953231874531,
+      "y": 1037.2202636735583,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543556_qexkd",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1663.0445472875504,
+      "y": 458.48017503156035,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543557_axwl9",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2121.149096015903,
+      "y": 478.12144288406876,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543557_cl02x",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1446.1528408532317,
+      "y": 298.473217256644,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543557_7j92q",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 413.5831662653626,
+      "y": 110.92091451012732,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543557_etxt5",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 50.13014547428689,
+      "y": 1843.4874729987685,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543557_j7chd",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3054.8508101543207,
+      "y": 340.9401820044464,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543557_74fv1",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2364.1463529267876,
+      "y": 1199.9485633204379,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543558_2mkl9",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 183.84253086604934,
+      "y": 1023.1476033376614,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543558_ze0vt",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1159.2772737036707,
+      "y": 878.5812093348381,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543558_9vl55",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2366.0945348915916,
+      "y": 1497.0655986303043,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543559_9vhyr",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2246.235158135139,
+      "y": 361.108811651937,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543559_z8igq",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 413.1503053426641,
+      "y": 559.7084244400354,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543559_15nvb",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2101.975557962241,
+      "y": 594.4866273372276,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543559_5ebyn",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2658.112026134192,
+      "y": 142.98189706264486,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543560_d1csp",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2364.730256463166,
+      "y": 1277.1084421275757,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543560_g8e4p",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2204.4081420619177,
+      "y": 682.3146980753228,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543560_697rz",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 528.774567329307,
+      "y": 135.11143281427417,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543561_7rx7t",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3029.358210224139,
+      "y": 997.551825587433,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543561_xo2qn",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1506.4235530171036,
+      "y": 431.9076988778252,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543561_q2eb8",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1587.9238855312906,
+      "y": 1941.1274643738261,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543561_qa32o",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2030.0095157270512,
+      "y": 624.9168123365241,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543561_j6eyj",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1165.4619941895785,
+      "y": 1504.8393778250443,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543561_wmm1b",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 146.51397184313808,
+      "y": 1184.3303113648692,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543562_csakk",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 515.1236371445698,
+      "y": 43.88635903831029,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543562_yf6nx",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1907.310372952159,
+      "y": 755.4833867771615,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543562_qboa3",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1093.0554681269084,
+      "y": 212.64269344687642,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543562_v9p8a",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 408.29816624407226,
+      "y": 438.1030275704343,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543562_xqrdv",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2752.7171202795466,
+      "y": 298.6091991070714,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543562_b5f1n",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3136.8190780108534,
+      "y": 1543.3356997335454,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543563_ka4lp",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1075.9050032858663,
+      "y": 1157.7513289519914,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543563_etpj1",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 295.17472646526244,
+      "y": 284.03917696862237,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543563_tc5kc",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1710.6299327679715,
+      "y": 515.8684090910343,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543563_9yf6p",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2683.0563015934313,
+      "y": 1470.5918213552395,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543563_15fak",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 62.62795865804556,
+      "y": 739.443756263652,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543563_p5wtr",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3089.9817177470945,
+      "y": 1422.56668164274,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543564_hb7oj",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2687.937769553877,
+      "y": 1309.259122745518,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543564_zt4ry",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1283.3870265096018,
+      "y": 414.4666259034329,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543564_b87vm",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2742.2358347926197,
+      "y": 1356.572691153259,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543564_avk6m",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 864.6910590083805,
+      "y": 161.49974547290836,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543564_bxvg9",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1694.1114511732635,
+      "y": 992.7832393582561,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543564_pngm3",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2279.710505838163,
+      "y": 1705.8496653728703,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121543565_vtdoa",
+      "dir": "cropped",
+      "frames": [
+        "Bushe1_crop.png"
+      ],
+      "name": "Bushe1_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1139.1024048339443,
+      "y": -146.66113357636107,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 40,
+      "offsetY": 36.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548311_62bul",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2459.4927547145794,
+      "y": 1395.1835627224912,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548312_56xtb",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2817.0027122555107,
+      "y": 88.87990625651886,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548312_4g0tp",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2943.399812682685,
+      "y": 1632.3512055975712,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548312_iwez6",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1712.4274067037038,
+      "y": 1401.4379786535324,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548312_qn5b2",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2778.8280096991593,
+      "y": 1538.9813574196,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548313_b78jp",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 700.0896970911004,
+      "y": 1637.9051630869872,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548313_aymvn",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2697.001359459421,
+      "y": 216.10691938646332,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548313_aqje4",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3058.2703482531547,
+      "y": 984.3377051827931,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548314_vropd",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1577.0393244813033,
+      "y": 359.1659499148161,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548314_ofvoz",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1992.700118913212,
+      "y": 289.45030982034604,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548314_bcuin",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1608.210079084983,
+      "y": 167.79844543874535,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548315_jejz1",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 902.7553050453264,
+      "y": 1697.6774968764996,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548315_h7357",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 119.31251435814936,
+      "y": 1011.3826558897325,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548315_7gasa",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3068.8295327046308,
+      "y": 712.2238128185962,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548315_yk4w0",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 993.0270699485877,
+      "y": 1253.1494388683595,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548315_o30il",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 751.239293542955,
+      "y": 671.5766771650444,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548316_7xlze",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3031.469130449599,
+      "y": 761.853640575303,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548316_b95rf",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2447.959257420244,
+      "y": 194.52470047737714,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548316_zc00b",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2454.5002451886025,
+      "y": 1061.5800277871808,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548316_snyfy",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 976.0791982279311,
+      "y": 1023.1185657982112,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548316_rcwr0",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 682.633582500538,
+      "y": 1569.872256921622,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548316_mhi43",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2270.8123382618533,
+      "y": 1238.8069366958398,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548317_98pj8",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1187.5551048327907,
+      "y": 1260.161490050467,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548317_1sl2j",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1821.5944051271429,
+      "y": 657.7337726712149,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548317_mt3w0",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 651.136758352985,
+      "y": 1703.8585490076948,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548318_o4a6e",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2639.1987758569453,
+      "y": 520.9394205190163,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548318_4rwn4",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2427.941256299405,
+      "y": 1041.3880402863392,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548318_dp442",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 771.9790325711608,
+      "y": 120.68612540551842,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548318_105ql",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2365.4352897455105,
+      "y": 1006.4879492629733,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548318_nc83k",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1939.2420393136056,
+      "y": 1070.2566085713472,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548319_h6wk8",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 469.0197800753999,
+      "y": 1277.7536054730642,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548319_804gs",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 927.5616568659281,
+      "y": 1524.2601871639135,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548319_vqol5",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2813.7475612997873,
+      "y": 1177.2627129244552,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548319_gtc2e",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2037.6387904160738,
+      "y": 538.5466677739546,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548320_gu7x4",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 498.4255793649293,
+      "y": 1176.8512628765263,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548322_ffi57",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 718.9607753929494,
+      "y": 1181.906991113281,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548322_t8ibx",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 694.7309871708753,
+      "y": 986.5169214129226,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548322_2v1bl",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1344.421056469633,
+      "y": 1928.7678926858512,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548323_an31w",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1845.6512671596347,
+      "y": 1407.9987569651137,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548323_fjz5k",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1801.6417380317123,
+      "y": 1963.2236653202617,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548323_a7as7",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 755.4719315569845,
+      "y": 1024.6127286085316,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548323_am2vb",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 125.52440965338896,
+      "y": 543.5134887143664,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548323_0s0mp",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2267.657844645938,
+      "y": 648.7268544205374,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548323_61eg1",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1937.523456481436,
+      "y": 570.5152759901553,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548323_afw22",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 685.4148459852951,
+      "y": 926.5763846119517,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548324_swmib",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1543.4689450389574,
+      "y": 1477.503702971744,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548324_wykkp",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2722.5052351620025,
+      "y": 702.0124677428619,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548324_vn78m",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 620.0103470168428,
+      "y": 1446.0734886620114,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121548324_n0g9y",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 853.094787511635,
+      "y": 1508.0462062045506,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550487_4h5ac",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1759.4274370029484,
+      "y": 1810.4458320638146,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550488_g75gw",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 350.1191966230152,
+      "y": 584.951565953989,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550489_m8i22",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2751.3082664875105,
+      "y": 43.321269850764786,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550489_qv764",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2734.434514213785,
+      "y": 53.6040902030237,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550489_klk00",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1267.1337555034181,
+      "y": 1780.4149823516173,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550489_7828c",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1708.9271754772678,
+      "y": 1213.2251114552325,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550490_zlkux",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1119.2677653784515,
+      "y": 1881.487893015537,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550490_yjjjh",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 186.91278648146118,
+      "y": 1455.3402107541258,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550490_p4585",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1105.1479053820099,
+      "y": 1122.3414964384879,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550490_rwski",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2796.0922366829623,
+      "y": 935.4179275577037,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550491_82r9s",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2697.249030809387,
+      "y": 183.93938985329083,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550491_9f1mp",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2825.4368338990835,
+      "y": 813.8567485718639,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550491_z5atl",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1936.271310982291,
+      "y": 1516.583965006109,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550491_w0ldq",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 449.18727142969533,
+      "y": 1933.9235038297643,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550491_zkkhy",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2350.8100158849634,
+      "y": 581.3379305880788,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550492_2jpxu",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2150.8511936803934,
+      "y": 1908.0941847213853,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550492_3v8v6",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3113.452007239265,
+      "y": 1558.5522151730563,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550492_7f7pc",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 36.939329801126775,
+      "y": 246.693816709874,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550492_ldqjg",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2377.2436625922364,
+      "y": 1021.3637678026302,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550492_9d5w5",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2726.927910317923,
+      "y": 778.7957742868842,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550492_08xu6",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 513.7476214280074,
+      "y": 1449.3939757358287,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550493_y83gn",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 563.200660900517,
+      "y": 109.4266423392567,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550493_k2qxl",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1619.9957409319393,
+      "y": 606.6216847309831,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550493_j3r01",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 351.7153980152994,
+      "y": 1037.4874670912573,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550493_2g3nv",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 361.90090792200243,
+      "y": 387.1409089270217,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550493_alrs8",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 682.0363844289978,
+      "y": 1856.763313154176,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550494_61guo",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2374.301682108082,
+      "y": 1194.5197067614797,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550494_310l6",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2539.038822102297,
+      "y": 1404.7906102260051,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550494_5wlb8",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1149.690274018339,
+      "y": 794.3263641814117,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550494_d8yj2",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 124.01970635014088,
+      "y": 1806.072362332056,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550494_y7c5s",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2192.697241416561,
+      "y": 585.6297041277629,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550494_4jpz7",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1863.4931334046705,
+      "y": 1002.028077504854,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550495_xqe4l",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 61.586406427590035,
+      "y": 1320.5683656528686,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550495_ayrqb",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3042.6343419376303,
+      "y": 1544.7141228663786,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550495_s4pw8",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1061.223748639534,
+      "y": 1111.664562572109,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550495_8nv1d",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 389.67429028234653,
+      "y": 1908.6316574021648,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550495_robvc",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1215.086570882746,
+      "y": 1604.6822891676666,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550496_1lnvj",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 24.670287475848696,
+      "y": 1814.453636177517,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550496_z9pqn",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1108.1419723104905,
+      "y": 1056.2191529491417,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550496_cep0g",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2258.0438303782144,
+      "y": 350.9323890241287,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550496_y8jkg",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1594.0253850656752,
+      "y": 585.1197480656709,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550496_hsecy",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2079.6907708084395,
+      "y": 1096.4878507544104,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550497_15ajm",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2488.5886865666407,
+      "y": 681.0052659310302,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550497_b3sz0",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1269.1280211936828,
+      "y": 832.2444783205777,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550497_w2n9r",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1897.5614917423159,
+      "y": 872.8622374528377,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550497_txewc",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2210.2303633816664,
+      "y": 645.6939110576229,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121550497_ylxvd",
+      "dir": "cropped",
+      "frames": [
+        "Bushe4_crop.png"
+      ],
+      "name": "Bushe4_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3008.9270458658552,
+      "y": 570.720352134078,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 33.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552912_eghvd",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 149.94555317011304,
+      "y": 481.746806693472,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552912_eb425",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1012.5875105547149,
+      "y": 1871.5220719098593,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552913_emmio",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1914.6710032825233,
+      "y": 1924.0182646481007,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552913_1mg5k",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1925.7373651803202,
+      "y": 1364.7634414720276,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552913_emk9t",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1335.675189488089,
+      "y": 918.3184373001503,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552914_h7muh",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 871.0683271209032,
+      "y": 1119.019924750726,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552914_2u66q",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 484.1556253411334,
+      "y": 1869.66664235983,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552914_1lzvn",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1302.621319700639,
+      "y": 1141.1714753675185,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552914_5dksg",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2861.236236629438,
+      "y": 1240.2124184028837,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552915_b09ut",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2487.456412092424,
+      "y": 418.137652588376,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552915_ijcmy",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2644.413806448263,
+      "y": 1951.6506491048003,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552915_mi6sw",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 636.6490928894323,
+      "y": 1219.8304258969292,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552915_k20c9",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2824.602626604572,
+      "y": 1926.1061059010005,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552916_w5hyg",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 385.54574499449006,
+      "y": 542.3039619021844,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552916_hzpyh",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1706.2293347113864,
+      "y": 1662.0037794683694,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552916_zccch",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2202.7431204629943,
+      "y": 1691.8758713144227,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552916_u8yr0",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2454.139967098026,
+      "y": 1262.547430817037,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552916_oltlo",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2259.9707857003364,
+      "y": 1778.1567487899918,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552916_x2grv",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1572.8901542865408,
+      "y": 946.2456473291538,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552916_gjtjl",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2225.0956398183584,
+      "y": 1958.1573472674645,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552917_1a3nl",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 633.8365466439332,
+      "y": 1789.612262169082,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552917_izshh",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1980.3568014996315,
+      "y": 1592.925951450359,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552917_yakjv",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2064.5873794557565,
+      "y": 365.83620320674436,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552917_0iboo",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1817.0532623539343,
+      "y": 371.1117655555036,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552917_amg4e",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1803.8185813681632,
+      "y": 519.0613248792781,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552917_6o582",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1923.3102021949942,
+      "y": 1764.78176777094,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552917_e1f6e",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1225.4185113216622,
+      "y": 1473.3026618837898,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552917_ahubx",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1041.9232265921285,
+      "y": 93.20007157129643,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552918_rirqf",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 709.9230877323205,
+      "y": 147.22912442958747,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552918_vn3y9",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 876.8807576059352,
+      "y": 1577.3543741232481,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552918_6mmcf",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 535.0805834754176,
+      "y": 1011.1044368364272,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552918_3f985",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3018.3564585751988,
+      "y": 1205.355147209127,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552918_u26si",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1747.3907008088893,
+      "y": 238.67465468153037,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552918_wm40c",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3112.611931960683,
+      "y": 1054.9851362852392,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552918_vosjc",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1420.786308695122,
+      "y": 660.2174361544091,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552919_4gpvg",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1108.0503427392869,
+      "y": 1048.8008354796345,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552919_dg7eh",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1699.8937031630746,
+      "y": 207.08658850016536,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552919_1sehb",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2116.1911788852267,
+      "y": 576.2724820864718,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552919_twggk",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2923.630919187186,
+      "y": 755.7963734616677,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552919_cax1h",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2252.294631957997,
+      "y": 1193.9585919057124,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552920_5irm3",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 535.4328247303944,
+      "y": 1355.2696998200934,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552920_u5a3e",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2375.9285833662884,
+      "y": 685.1385280930538,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552920_5ru1p",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1867.0190766301578,
+      "y": 160.3891462212139,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552920_h4ybx",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2680.433404004249,
+      "y": 88.86046122372892,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552920_ap025",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2429.9965371769667,
+      "y": 208.8861051204367,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552920_vjwff",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1727.8474135364224,
+      "y": 1425.8444663311873,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552921_4mpza",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1210.1979678992875,
+      "y": 1370.6973727153297,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552921_abusm",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2016.471265180267,
+      "y": 489.1725040484609,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121552921_f2f2e",
+      "dir": "cropped",
+      "frames": [
+        "Bushe2_crop.png"
+      ],
+      "name": "Bushe2_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2741.861445581841,
+      "y": 186.0096324644167,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 38.5,
+      "offsetY": 25.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555395_r9p0t",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2356.4596290111017,
+      "y": 709.4845085561993,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555396_yn899",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1573.803561478517,
+      "y": 1050.6264281498632,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555396_telam",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2534.109951785603,
+      "y": 340.5314454242008,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555396_ayu6g",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1021.2576636997553,
+      "y": 1619.1958686254359,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555396_hvzox",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2111.0905499312407,
+      "y": 1995.425843432767,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555396_nfm54",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1538.6482903650399,
+      "y": 1849.8891375091034,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555397_gjrzc",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2067.185667908489,
+      "y": 1223.4251099281719,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555397_1cd5q",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2183.1735959377997,
+      "y": 737.4032552960359,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555397_t4z6k",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 854.4634649489786,
+      "y": 1033.9705034911547,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555397_0el06",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2048.9564477032372,
+      "y": 1904.2653628180465,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555397_xybrg",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2105.3839337713766,
+      "y": 1766.1811038306112,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555397_cposy",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2734.000993916052,
+      "y": 1365.176579057909,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555397_a8tey",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3182.2565236298756,
+      "y": 371.1007830373336,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555398_nre7h",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1146.0657279684365,
+      "y": 923.6693401676621,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555398_m6y21",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 88.44534535263762,
+      "y": 863.7152012945672,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555398_hcbdc",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2910.4986210023467,
+      "y": 834.0170202733636,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555398_gi4c5",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 337.43766681825423,
+      "y": 359.0308109238589,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555398_k0p9m",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1208.389031338917,
+      "y": 1846.2521145654289,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555398_e0ff3",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 880.8398404037742,
+      "y": 1049.5441373833437,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555398_gghqi",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 91.45308649445809,
+      "y": 84.80704935650252,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555399_ysuc7",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2284.583180108283,
+      "y": 773.5294989467432,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555399_97myl",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2841.8289998517675,
+      "y": 1882.3898887851149,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555399_j4kbb",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2620.2311548685175,
+      "y": 1031.7553630918137,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555399_tbrxo",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1783.2927154793108,
+      "y": 1093.765332834948,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555399_kbr55",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 5.892224536409074,
+      "y": 731.770949273613,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555399_8uv61",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2271.9005228175934,
+      "y": 480.67446604875033,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555399_rdbf9",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 690.9281715767328,
+      "y": 1969.4151792983566,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555400_l0rx1",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2865.9264297557306,
+      "y": 1866.5189665989146,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555400_leoqh",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 975.6775939945971,
+      "y": 1339.858065737176,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555400_f7at7",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1756.3462869035588,
+      "y": 303.8015383187285,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555400_2zfuh",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 57.15510687943386,
+      "y": 1081.1347142553018,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555400_kaf7n",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3188.9627246980513,
+      "y": 1136.6264559461708,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555400_jxuuu",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2115.071021518763,
+      "y": 1702.1391108572109,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555400_kg1fv",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2328.1474272450305,
+      "y": 88.8441584567572,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555401_alfjv",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 3089.970121052585,
+      "y": 889.3011936207997,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555401_7s5x2",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 6.014070830905283,
+      "y": 1623.4571322674715,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555401_gjeoq",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 233.4552244928119,
+      "y": 1942.8222531507831,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555401_6x3yv",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 491.0037238440811,
+      "y": 1772.5315662522737,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555401_49gde",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1971.904123419784,
+      "y": 301.629150028927,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555401_iizq2",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 530.1653164600001,
+      "y": 1214.4009093880584,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555401_hg0hh",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2963.712447882974,
+      "y": 75.74999319238019,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555402_nhmaz",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 158.81611126259827,
+      "y": 271.49585613648065,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555402_pvwov",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2447.2095216748917,
+      "y": 590.9189383017184,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555402_orcpx",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 533.3853286581394,
+      "y": 1142.1985507304196,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555402_b79bb",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 11.110199218858696,
+      "y": 568.340266527461,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555402_qzvus",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 756.6331199047833,
+      "y": 708.8124536348104,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555402_yhsrm",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 211.50453643394727,
+      "y": 1877.3333391168876,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555402_ufhja",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1064.3880501879644,
+      "y": 247.80046894735074,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121555403_ejm48",
+      "dir": "cropped",
+      "frames": [
+        "Bushe3_crop.png"
+      ],
+      "name": "Bushe3_crop",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 2272.138045034632,
+      "y": 249.6768924396553,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 48,
+      "offsetY": 44.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781121657007_is1f1",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Buildings/Black Buildings",
+      "frames": [
+        "Castle.png"
+      ],
+      "name": "Castle",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 314.80891434838026,
+      "y": 276.01681091953094,
+      "scaleX": 2.0661336852726806,
+      "scaleY": 2.06613368527268,
+      "offsetX": 160,
+      "offsetY": 128
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781157961747_razz4",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree3.png"
+      ],
+      "name": "middle_lane_tree3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 768.3618622364395,
+      "y": 49.234650200852144,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 93.5,
+      "offsetY": 128.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781157987729_e58zp",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree3.png"
+      ],
+      "name": "middle_lane_tree3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 996.6186811441371,
+      "y": 34.96859901912076,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 93.5,
+      "offsetY": 128.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781157988832_ucf5l",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree3.png"
+      ],
+      "name": "middle_lane_tree3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 876.783851217594,
+      "y": 49.234650200852144,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 93.5,
+      "offsetY": 128.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781157989908_cd4vt",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree3.png"
+      ],
+      "name": "middle_lane_tree3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1099.3342496526006,
+      "y": 29.262178546428757,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 93.5,
+      "offsetY": 128.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781158036133_thdv5",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree3.png"
+      ],
+      "name": "middle_lane_tree3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 768.3893905820146,
+      "y": 137.7116958731615,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 93.5,
+      "offsetY": 128.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781158036134_s5wss",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree3.png"
+      ],
+      "name": "middle_lane_tree3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 988.0865787806749,
+      "y": 129.1520651641224,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 93.5,
+      "offsetY": 128.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781158036135_owiym",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree3.png"
+      ],
+      "name": "middle_lane_tree3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 868.2517488541321,
+      "y": 143.41811634585395,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 93.5,
+      "offsetY": 128.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781158036135_s527c",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree3.png"
+      ],
+      "name": "middle_lane_tree3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1099.3617779981782,
+      "y": 129.15206516412272,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 93.5,
+      "offsetY": 128.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781158041389_dbz4r",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree3.png"
+      ],
+      "name": "middle_lane_tree3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 762.7104984548996,
+      "y": 211.9226903637404,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 93.5,
+      "offsetY": 128.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781158041391_bwkum",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree3.png"
+      ],
+      "name": "middle_lane_tree3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 982.40768665356,
+      "y": 203.3630596547012,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 93.5,
+      "offsetY": 128.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781158041391_opu9l",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree3.png"
+      ],
+      "name": "middle_lane_tree3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 862.572856727018,
+      "y": 217.62911083643235,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 93.5,
+      "offsetY": 128.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781158041391_pw1md",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree3.png"
+      ],
+      "name": "middle_lane_tree3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1093.6828858710614,
+      "y": 203.36305965470103,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 93.5,
+      "offsetY": 128.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781158104965_610yv",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree3.png"
+      ],
+      "name": "middle_lane_tree3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 761.3750612952023,
+      "y": 341.40913502348326,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 93.5,
+      "offsetY": 128.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781158104967_85php",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree3.png"
+      ],
+      "name": "middle_lane_tree3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 981.0722494938623,
+      "y": 332.84950431444395,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 93.5,
+      "offsetY": 128.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781158104967_5d2bd",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree3.png"
+      ],
+      "name": "middle_lane_tree3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 861.2374195673193,
+      "y": 347.11555549617526,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 93.5,
+      "offsetY": 128.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781158104968_ku9wb",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree3.png"
+      ],
+      "name": "middle_lane_tree3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1103.153180426089,
+      "y": 319.34233967103785,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 93.5,
+      "offsetY": 128.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781158104968_siypd",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree3.png"
+      ],
+      "name": "middle_lane_tree3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 755.6961691680866,
+      "y": 415.6201295140616,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 93.5,
+      "offsetY": 128.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781158104969_6u4s8",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree3.png"
+      ],
+      "name": "middle_lane_tree3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 975.3933573667472,
+      "y": 407.06049880502223,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 93.5,
+      "offsetY": 128.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781158104969_skxg9",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree3.png"
+      ],
+      "name": "middle_lane_tree3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 855.5585274402051,
+      "y": 421.3265499867543,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 93.5,
+      "offsetY": 128.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781158104970_agbub",
+      "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+      "frames": [
+        "middle_lane_tree3.png"
+      ],
+      "name": "middle_lane_tree3",
+      "animated": false,
+      "spriteLayer": "below",
+      "x": 1086.6685565842486,
+      "y": 407.06049880502223,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 93.5,
+      "offsetY": 128.5
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781160211942_140eu",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Meat/Sheep",
+      "frames": [
+        "Sheep_Move.png"
+      ],
+      "name": "Sheep_Move",
+      "animated": true,
+      "spriteLayer": "below",
+      "x": 330.2879891386669,
+      "y": 1296.5409459976054,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 64,
+      "offsetY": 64,
+      "frameW": 128,
+      "frameH": 128,
+      "frameCount": 4
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781160212243_63l15",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Meat/Sheep",
+      "frames": [
+        "Sheep_Move.png"
+      ],
+      "name": "Sheep_Move",
+      "animated": true,
+      "spriteLayer": "below",
+      "x": 358.7877977988893,
+      "y": 1151.3276352050436,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 64,
+      "offsetY": 64,
+      "frameW": 128,
+      "frameH": 128,
+      "frameCount": 4
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781160217728_zj7zv",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Meat/Sheep",
+      "frames": [
+        "Sheep_Idle.png"
+      ],
+      "name": "Sheep_Idle",
+      "animated": true,
+      "spriteLayer": "below",
+      "x": 419.8588163565087,
+      "y": 1196.1130488139645,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 64,
+      "offsetY": 64,
+      "frameW": 128,
+      "frameH": 128,
+      "frameCount": 6
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781160220325_0ow9s",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Meat/Sheep",
+      "frames": [
+        "Sheep_Grass.png"
+      ],
+      "name": "Sheep_Grass",
+      "animated": true,
+      "spriteLayer": "below",
+      "x": 504.00110859145104,
+      "y": 996.6143881924078,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 64,
+      "offsetY": 64,
+      "frameW": 128,
+      "frameH": 128,
+      "frameCount": 12
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781160244512_s9vaw",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+      "frames": [
+        "Gold Stone 5_Highlight.png"
+      ],
+      "name": "Gold Stone 5_Highlight",
+      "animated": true,
+      "spriteLayer": "below",
+      "x": 278.7169068011217,
+      "y": 1969.6792838771441,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 64,
+      "offsetY": 64,
+      "frameW": 128,
+      "frameH": 128,
+      "frameCount": 6
+    },
+    {
+      "type": "sprite",
+      "spriteId": "s_1781160289287_x115j",
+      "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees",
+      "frames": [
+        "Tree3.png"
+      ],
+      "name": "Tree3",
+      "animated": true,
+      "spriteLayer": "below",
+      "x": 178.9212945503828,
+      "y": 790.6884068532112,
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 96,
+      "offsetY": 96,
+      "frameW": 192,
+      "frameH": 192,
+      "frameCount": 8
+    }
+  ],
+  "noWalkZones": [
+    {
+      "id": "z_1781121682287_kf6v",
+      "x": -58.23089901180999,
+      "y": -14.702337912749977,
+      "w": 723.0657989877078,
+      "h": 578.4526391901662
+    },
+    {
+      "id": "z_1781158179886_3x7n",
+      "x": 688.3785700993399,
+      "y": 0.057277972234669745,
+      "w": 486.085912822268,
+      "h": 491.5475522921813
+    }
+  ],
+  "enemies": [
+    {
+      "id": "m_1781121581220_eln4",
+      "type": "melee",
+      "x": 1412,
+      "y": 144
+    },
+    {
+      "id": "m_1781121582924_owfa",
+      "type": "melee",
+      "x": 1301,
+      "y": 173
+    },
+    {
+      "id": "m_1781121586900_sipj",
+      "type": "ranged",
+      "x": 1373,
+      "y": 776
+    },
+    {
+      "id": "m_1781121587771_3728",
+      "type": "ranged",
+      "x": 1402,
+      "y": 858
+    },
+    {
+      "id": "m_1781121591164_2df5",
+      "type": "orc",
+      "x": 1465,
+      "y": 1591
+    },
+    {
+      "id": "m_1781121591853_ywk1",
+      "type": "orc",
+      "x": 1373,
+      "y": 1644
+    },
+    {
+      "id": "m_1781121592411_z70h",
+      "type": "orc",
+      "x": 1508,
+      "y": 1644
+    },
+    {
+      "id": "m_1781121597531_xz87",
+      "type": "elite",
+      "x": 342,
+      "y": 1942
+    },
+    {
+      "id": "m_1781121598731_8e8x",
+      "type": "elite",
+      "x": 429,
+      "y": 1981
+    },
+    {
+      "id": "m_1781121600283_t41w",
+      "type": "elite",
+      "x": 525,
+      "y": 1952
+    },
+    {
+      "id": "m_1781121604166_3jug",
+      "type": "flying",
+      "x": 2154,
+      "y": 154
+    },
+    {
+      "id": "m_1781121604854_5h3g",
+      "type": "flying",
+      "x": 2207,
+      "y": 164
+    },
+    {
+      "id": "m_1781121616412_c1sx",
+      "type": "bat",
+      "x": 2506,
+      "y": 1913
+    },
+    {
+      "id": "m_1781121617718_9c2q",
+      "type": "bat",
+      "x": 2313,
+      "y": 1875
+    },
+    {
+      "id": "m_1781121618444_f81x",
+      "type": "bat",
+      "x": 2275,
+      "y": 1938
+    },
+    {
+      "id": "m_1781121622539_gcw3",
+      "type": "rat",
+      "x": 2034,
+      "y": 785
+    },
+    {
+      "id": "m_1781121625622_58zl",
+      "type": "rat",
+      "x": 2125,
+      "y": 757
+    },
+    {
+      "id": "m_1781121629852_uddy",
+      "type": "slimem",
+      "x": 3090,
+      "y": 130
+    },
+    {
+      "id": "m_1781121630836_zmrl",
+      "type": "slimem",
+      "x": 3114,
+      "y": 250
+    },
+    {
+      "id": "m_1781121633140_17hj",
+      "type": "slimem",
+      "x": 2998,
+      "y": 197
+    },
+    {
+      "id": "m_1781121635492_gp9o",
+      "type": "mimic",
+      "x": 3070,
+      "y": 1909
+    },
+    {
+      "id": "m_1781121636380_ioj7",
+      "type": "mimic",
+      "x": 2916,
+      "y": 1788
+    },
+    {
+      "id": "m_1781121637020_f8og",
+      "type": "mimic",
+      "x": 3099,
+      "y": 1721
+    }
+  ],
+  "boss": null,
+  "npcs": [],
+  "portals": [
+    {
+      "id": "portal_1781157232648_dawo",
+      "direction": "next",
+      "targetRegion": 0,
+      "x": 3133,
+      "y": 1065
+    },
+    {
+      "id": "portal_1781157247149_ezvv",
+      "direction": "back",
+      "targetRegion": 0,
+      "x": 29,
+      "y": 1171
+    },
+    {
+      "id": "portal_1781163547850_4oij",
+      "direction": "next",
+      "targetRegion": 1,
+      "x": 1190,
+      "y": 1962
+    }
+  ],
+  "regionIndex": 7
+}
