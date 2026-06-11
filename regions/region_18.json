@@ -1,0 +1,5877 @@
+{
+ "version": 1,
+ "regionName": "N\u0101gak\u1e63etra \u2014 The Serpent Marsh",
+ "background": {
+  "type": "color",
+  "value": "#3a4a30"
+ },
+ "sprites": [
+  {
+   "type": "stroke",
+   "stroke": "#7a5a24",
+   "strokeWidth": 150,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    956.29,
+    -60,
+    975.12,
+    -34,
+    994.13,
+    -8,
+    1013.19,
+    18,
+    1032.15,
+    44,
+    1050.87,
+    70,
+    1069.2,
+    96,
+    1087.02,
+    122,
+    1104.18,
+    148,
+    1120.57,
+    174,
+    1136.04,
+    200,
+    1150.5,
+    226,
+    1163.82,
+    252,
+    1175.92,
+    278,
+    1186.69,
+    304,
+    1196.07,
+    330,
+    1203.97,
+    356,
+    1210.34,
+    382,
+    1215.13,
+    408,
+    1218.31,
+    434,
+    1219.85,
+    460,
+    1219.73,
+    486,
+    1217.97,
+    512,
+    1214.57,
+    538,
+    1209.57,
+    564,
+    1202.99,
+    590,
+    1194.88,
+    616,
+    1185.31,
+    642,
+    1174.35,
+    668,
+    1162.09,
+    694,
+    1148.6,
+    720,
+    1134.0,
+    746,
+    1118.4,
+    772,
+    1101.9,
+    798,
+    1084.64,
+    824,
+    1066.75,
+    850,
+    1048.35,
+    876,
+    1029.59,
+    902,
+    1010.61,
+    928,
+    991.55,
+    954,
+    972.56,
+    980,
+    953.76,
+    1006,
+    935.32,
+    1032,
+    917.36,
+    1058,
+    900.02,
+    1084,
+    883.44,
+    1110,
+    867.72,
+    1136,
+    853.0,
+    1162,
+    839.39,
+    1188,
+    826.98,
+    1214,
+    815.86,
+    1240,
+    806.13,
+    1266,
+    797.86,
+    1292,
+    791.1,
+    1318,
+    785.91,
+    1344,
+    782.33,
+    1370,
+    780.38,
+    1396,
+    780.08,
+    1422,
+    781.43,
+    1448,
+    784.43,
+    1474,
+    789.04,
+    1500,
+    795.23,
+    1526,
+    802.96,
+    1552,
+    812.17,
+    1578,
+    822.79,
+    1604,
+    834.74,
+    1630,
+    847.93,
+    1656,
+    862.26,
+    1682,
+    877.63,
+    1708,
+    893.91,
+    1734,
+    910.99,
+    1760,
+    928.74,
+    1786,
+    947.03,
+    1812,
+    965.71,
+    1838,
+    984.65,
+    1864,
+    1003.7,
+    1890,
+    1022.73,
+    1916,
+    1041.58,
+    1942,
+    1060.12,
+    1968,
+    1078.22,
+    1994,
+    1095.72,
+    2020,
+    1112.51,
+    2046
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#a07a30",
+   "strokeWidth": 64,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    956.29,
+    -60,
+    975.12,
+    -34,
+    994.13,
+    -8,
+    1013.19,
+    18,
+    1032.15,
+    44,
+    1050.87,
+    70,
+    1069.2,
+    96,
+    1087.02,
+    122,
+    1104.18,
+    148,
+    1120.57,
+    174,
+    1136.04,
+    200,
+    1150.5,
+    226,
+    1163.82,
+    252,
+    1175.92,
+    278,
+    1186.69,
+    304,
+    1196.07,
+    330,
+    1203.97,
+    356,
+    1210.34,
+    382,
+    1215.13,
+    408,
+    1218.31,
+    434,
+    1219.85,
+    460,
+    1219.73,
+    486,
+    1217.97,
+    512,
+    1214.57,
+    538,
+    1209.57,
+    564,
+    1202.99,
+    590,
+    1194.88,
+    616,
+    1185.31,
+    642,
+    1174.35,
+    668,
+    1162.09,
+    694,
+    1148.6,
+    720,
+    1134.0,
+    746,
+    1118.4,
+    772,
+    1101.9,
+    798,
+    1084.64,
+    824,
+    1066.75,
+    850,
+    1048.35,
+    876,
+    1029.59,
+    902,
+    1010.61,
+    928,
+    991.55,
+    954,
+    972.56,
+    980,
+    953.76,
+    1006,
+    935.32,
+    1032,
+    917.36,
+    1058,
+    900.02,
+    1084,
+    883.44,
+    1110,
+    867.72,
+    1136,
+    853.0,
+    1162,
+    839.39,
+    1188,
+    826.98,
+    1214,
+    815.86,
+    1240,
+    806.13,
+    1266,
+    797.86,
+    1292,
+    791.1,
+    1318,
+    785.91,
+    1344,
+    782.33,
+    1370,
+    780.38,
+    1396,
+    780.08,
+    1422,
+    781.43,
+    1448,
+    784.43,
+    1474,
+    789.04,
+    1500,
+    795.23,
+    1526,
+    802.96,
+    1552,
+    812.17,
+    1578,
+    822.79,
+    1604,
+    834.74,
+    1630,
+    847.93,
+    1656,
+    862.26,
+    1682,
+    877.63,
+    1708,
+    893.91,
+    1734,
+    910.99,
+    1760,
+    928.74,
+    1786,
+    947.03,
+    1812,
+    965.71,
+    1838,
+    984.65,
+    1864,
+    1003.7,
+    1890,
+    1022.73,
+    1916,
+    1041.58,
+    1942,
+    1060.12,
+    1968,
+    1078.22,
+    1994,
+    1095.72,
+    2020,
+    1112.51,
+    2046
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#6f5520",
+   "strokeWidth": 110,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1449.7,
+    -60,
+    1479.89,
+    -34,
+    1510.53,
+    -8,
+    1541.28,
+    18,
+    1571.79,
+    44,
+    1601.73,
+    70,
+    1630.76,
+    96,
+    1658.58,
+    122,
+    1684.87,
+    148,
+    1709.35,
+    174,
+    1731.77,
+    200,
+    1751.89,
+    226,
+    1769.51,
+    252,
+    1784.45,
+    278,
+    1796.58,
+    304,
+    1805.78,
+    330,
+    1812.01,
+    356,
+    1815.21,
+    382,
+    1815.4,
+    408,
+    1812.63,
+    434,
+    1806.96,
+    460,
+    1798.51,
+    486,
+    1787.41,
+    512,
+    1773.85,
+    538,
+    1758.01,
+    564,
+    1740.12,
+    590,
+    1720.42,
+    616,
+    1699.16,
+    642,
+    1676.61,
+    668,
+    1653.06,
+    694,
+    1628.78,
+    720,
+    1604.05,
+    746,
+    1579.16,
+    772,
+    1554.38,
+    798,
+    1529.98,
+    824,
+    1506.2,
+    850,
+    1483.28,
+    876,
+    1461.43,
+    902,
+    1440.85,
+    928,
+    1421.7,
+    954,
+    1404.13,
+    980,
+    1388.27,
+    1006,
+    1374.19,
+    1032,
+    1361.96,
+    1058,
+    1351.63,
+    1084,
+    1343.2,
+    1110,
+    1336.67,
+    1136,
+    1331.99,
+    1162,
+    1329.1,
+    1188,
+    1327.93,
+    1214,
+    1328.39,
+    1240,
+    1330.35,
+    1266,
+    1333.69,
+    1292,
+    1338.29,
+    1318,
+    1343.99,
+    1344,
+    1350.66,
+    1370,
+    1358.14,
+    1396,
+    1366.3,
+    1422,
+    1375.0,
+    1448,
+    1384.09,
+    1474,
+    1393.46,
+    1500,
+    1402.98,
+    1526,
+    1412.56,
+    1552,
+    1422.11,
+    1578,
+    1431.55,
+    1604,
+    1440.83,
+    1630,
+    1449.89,
+    1656,
+    1458.7,
+    1682,
+    1467.27,
+    1708,
+    1475.57,
+    1734,
+    1483.64,
+    1760,
+    1491.48,
+    1786,
+    1499.13,
+    1812,
+    1506.64,
+    1838,
+    1514.06,
+    1864,
+    1521.43,
+    1890,
+    1528.81,
+    1916,
+    1536.26,
+    1942,
+    1543.82,
+    1968,
+    1551.54,
+    1994,
+    1559.47,
+    2020,
+    1567.62,
+    2046
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#946e2a",
+   "strokeWidth": 48,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1449.7,
+    -60,
+    1479.89,
+    -34,
+    1510.53,
+    -8,
+    1541.28,
+    18,
+    1571.79,
+    44,
+    1601.73,
+    70,
+    1630.76,
+    96,
+    1658.58,
+    122,
+    1684.87,
+    148,
+    1709.35,
+    174,
+    1731.77,
+    200,
+    1751.89,
+    226,
+    1769.51,
+    252,
+    1784.45,
+    278,
+    1796.58,
+    304,
+    1805.78,
+    330,
+    1812.01,
+    356,
+    1815.21,
+    382,
+    1815.4,
+    408,
+    1812.63,
+    434,
+    1806.96,
+    460,
+    1798.51,
+    486,
+    1787.41,
+    512,
+    1773.85,
+    538,
+    1758.01,
+    564,
+    1740.12,
+    590,
+    1720.42,
+    616,
+    1699.16,
+    642,
+    1676.61,
+    668,
+    1653.06,
+    694,
+    1628.78,
+    720,
+    1604.05,
+    746,
+    1579.16,
+    772,
+    1554.38,
+    798,
+    1529.98,
+    824,
+    1506.2,
+    850,
+    1483.28,
+    876,
+    1461.43,
+    902,
+    1440.85,
+    928,
+    1421.7,
+    954,
+    1404.13,
+    980,
+    1388.27,
+    1006,
+    1374.19,
+    1032,
+    1361.96,
+    1058,
+    1351.63,
+    1084,
+    1343.2,
+    1110,
+    1336.67,
+    1136,
+    1331.99,
+    1162,
+    1329.1,
+    1188,
+    1327.93,
+    1214,
+    1328.39,
+    1240,
+    1330.35,
+    1266,
+    1333.69,
+    1292,
+    1338.29,
+    1318,
+    1343.99,
+    1344,
+    1350.66,
+    1370,
+    1358.14,
+    1396,
+    1366.3,
+    1422,
+    1375.0,
+    1448,
+    1384.09,
+    1474,
+    1393.46,
+    1500,
+    1402.98,
+    1526,
+    1412.56,
+    1552,
+    1422.11,
+    1578,
+    1431.55,
+    1604,
+    1440.83,
+    1630,
+    1449.89,
+    1656,
+    1458.7,
+    1682,
+    1467.27,
+    1708,
+    1475.57,
+    1734,
+    1483.64,
+    1760,
+    1491.48,
+    1786,
+    1499.13,
+    1812,
+    1506.64,
+    1838,
+    1514.06,
+    1864,
+    1521.43,
+    1890,
+    1528.81,
+    1916,
+    1536.26,
+    1942,
+    1543.82,
+    1968,
+    1551.54,
+    1994,
+    1559.47,
+    2020,
+    1567.62,
+    2046
+   ]
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0001",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_01.png"
+   ],
+   "name": "Water Rocks_01",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1109.17,
+   "y": 140,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0002",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_01.png"
+   ],
+   "name": "Water Rocks_01",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1237.57,
+   "y": 390,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0003",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_04.png"
+   ],
+   "name": "Water Rocks_04",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1211.49,
+   "y": 640,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0004",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_04.png"
+   ],
+   "name": "Water Rocks_04",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1010.56,
+   "y": 890,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0005",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_02.png"
+   ],
+   "name": "Water Rocks_02",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 892.33,
+   "y": 1140,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0006",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_04.png"
+   ],
+   "name": "Water Rocks_04",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 781.51,
+   "y": 1390,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0007",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_01.png"
+   ],
+   "name": "Water Rocks_01",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 820.57,
+   "y": 1640,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0008",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_03.png"
+   ],
+   "name": "Water Rocks_03",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1009.82,
+   "y": 1890,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "stroke",
+   "stroke": "#6a5320",
+   "strokeWidth": 190,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1644.0,
+    700.0,
+    1636.95,
+    727.81,
+    1616.5,
+    752.9,
+    1584.64,
+    772.81,
+    1544.5,
+    785.6,
+    1500.0,
+    790.0,
+    1455.5,
+    785.6,
+    1415.36,
+    772.81,
+    1383.5,
+    752.9,
+    1363.05,
+    727.81,
+    1356.0,
+    700.0,
+    1363.05,
+    672.19,
+    1383.5,
+    647.1,
+    1415.36,
+    627.19,
+    1455.5,
+    614.4,
+    1500.0,
+    610.0,
+    1544.5,
+    614.4,
+    1584.64,
+    627.19,
+    1616.5,
+    647.1,
+    1636.95,
+    672.19,
+    1644.0,
+    700.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#9a7a2e",
+   "strokeWidth": 100,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1644.0,
+    700.0,
+    1636.95,
+    727.81,
+    1616.5,
+    752.9,
+    1584.64,
+    772.81,
+    1544.5,
+    785.6,
+    1500.0,
+    790.0,
+    1455.5,
+    785.6,
+    1415.36,
+    772.81,
+    1383.5,
+    752.9,
+    1363.05,
+    727.81,
+    1356.0,
+    700.0,
+    1363.05,
+    672.19,
+    1383.5,
+    647.1,
+    1415.36,
+    627.19,
+    1455.5,
+    614.4,
+    1500.0,
+    610.0,
+    1544.5,
+    614.4,
+    1584.64,
+    627.19,
+    1616.5,
+    647.1,
+    1636.95,
+    672.19,
+    1644.0,
+    700.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#6a5320",
+   "strokeWidth": 190,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2150.0,
+    1300.0,
+    2142.66,
+    1329.67,
+    2121.35,
+    1356.43,
+    2088.17,
+    1377.67,
+    2046.35,
+    1391.3,
+    2000.0,
+    1396.0,
+    1953.65,
+    1391.3,
+    1911.83,
+    1377.67,
+    1878.65,
+    1356.43,
+    1857.34,
+    1329.67,
+    1850.0,
+    1300.0,
+    1857.34,
+    1270.33,
+    1878.65,
+    1243.57,
+    1911.83,
+    1222.33,
+    1953.65,
+    1208.7,
+    2000.0,
+    1204.0,
+    2046.35,
+    1208.7,
+    2088.17,
+    1222.33,
+    2121.35,
+    1243.57,
+    2142.66,
+    1270.33,
+    2150.0,
+    1300.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#9a7a2e",
+   "strokeWidth": 100,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2150.0,
+    1300.0,
+    2142.66,
+    1329.67,
+    2121.35,
+    1356.43,
+    2088.17,
+    1377.67,
+    2046.35,
+    1391.3,
+    2000.0,
+    1396.0,
+    1953.65,
+    1391.3,
+    1911.83,
+    1377.67,
+    1878.65,
+    1356.43,
+    1857.34,
+    1329.67,
+    1850.0,
+    1300.0,
+    1857.34,
+    1270.33,
+    1878.65,
+    1243.57,
+    1911.83,
+    1222.33,
+    1953.65,
+    1208.7,
+    2000.0,
+    1204.0,
+    2046.35,
+    1208.7,
+    2088.17,
+    1222.33,
+    2121.35,
+    1243.57,
+    2142.66,
+    1270.33,
+    2150.0,
+    1300.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#6a5320",
+   "strokeWidth": 190,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2632.0,
+    800.0,
+    2625.54,
+    825.96,
+    2606.79,
+    849.37,
+    2577.59,
+    867.96,
+    2540.79,
+    879.89,
+    2500.0,
+    884.0,
+    2459.21,
+    879.89,
+    2422.41,
+    867.96,
+    2393.21,
+    849.37,
+    2374.46,
+    825.96,
+    2368.0,
+    800.0,
+    2374.46,
+    774.04,
+    2393.21,
+    750.63,
+    2422.41,
+    732.04,
+    2459.21,
+    720.11,
+    2500.0,
+    716.0,
+    2540.79,
+    720.11,
+    2577.59,
+    732.04,
+    2606.79,
+    750.63,
+    2625.54,
+    774.04,
+    2632.0,
+    800.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#9a7a2e",
+   "strokeWidth": 100,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2632.0,
+    800.0,
+    2625.54,
+    825.96,
+    2606.79,
+    849.37,
+    2577.59,
+    867.96,
+    2540.79,
+    879.89,
+    2500.0,
+    884.0,
+    2459.21,
+    879.89,
+    2422.41,
+    867.96,
+    2393.21,
+    849.37,
+    2374.46,
+    825.96,
+    2368.0,
+    800.0,
+    2374.46,
+    774.04,
+    2393.21,
+    750.63,
+    2422.41,
+    732.04,
+    2459.21,
+    720.11,
+    2500.0,
+    716.0,
+    2540.79,
+    720.11,
+    2577.59,
+    732.04,
+    2606.79,
+    750.63,
+    2625.54,
+    774.04,
+    2632.0,
+    800.0
+   ]
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0009",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -187.51,
+   "y": -114.22,
+   "scaleX": 1.099,
+   "scaleY": 1.099,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0010",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -28.46,
+   "y": -130.63,
+   "scaleX": 1.129,
+   "scaleY": 1.129,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0011",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 147.18,
+   "y": -143.93,
+   "scaleX": 1.039,
+   "scaleY": 1.039,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0012",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 299.43,
+   "y": -101.02,
+   "scaleX": 1.151,
+   "scaleY": 1.151,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0013",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 444.97,
+   "y": -99.23,
+   "scaleX": 0.905,
+   "scaleY": 0.905,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0014",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 561.73,
+   "y": -144.05,
+   "scaleX": 1.045,
+   "scaleY": 1.045,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0015",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 753.79,
+   "y": -99.4,
+   "scaleX": 0.858,
+   "scaleY": 0.858,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0016",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 912.88,
+   "y": -89.37,
+   "scaleX": 0.988,
+   "scaleY": 0.988,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0017",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1027.73,
+   "y": -138.45,
+   "scaleX": 1.064,
+   "scaleY": 1.064,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0018",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1174.04,
+   "y": -150.78,
+   "scaleX": 0.99,
+   "scaleY": 0.99,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0019",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1472.41,
+   "y": -94.64,
+   "scaleX": 1.087,
+   "scaleY": 1.087,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0020",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1651.23,
+   "y": -108.86,
+   "scaleX": 1.035,
+   "scaleY": 1.035,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0021",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1799.84,
+   "y": -120.83,
+   "scaleX": 0.988,
+   "scaleY": 0.988,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0022",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2253.32,
+   "y": -119.27,
+   "scaleX": 1.108,
+   "scaleY": 1.108,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0023",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2415.64,
+   "y": -138.32,
+   "scaleX": 1.189,
+   "scaleY": 1.189,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0024",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2573.27,
+   "y": -95.98,
+   "scaleX": 1.008,
+   "scaleY": 1.008,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0025",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2706.92,
+   "y": -129.52,
+   "scaleX": 0.819,
+   "scaleY": 0.819,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0026",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3154.5,
+   "y": -111.1,
+   "scaleX": 1.054,
+   "scaleY": 1.054,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0027",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3300.2,
+   "y": -106.56,
+   "scaleX": 1.055,
+   "scaleY": 1.055,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0028",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -70.04,
+   "y": 11.47,
+   "scaleX": 0.941,
+   "scaleY": 0.941,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0029",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 379.83,
+   "y": 18.63,
+   "scaleX": 1.04,
+   "scaleY": 1.04,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0030",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 527.95,
+   "y": 5.17,
+   "scaleX": 0.949,
+   "scaleY": 0.949,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0031",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 636.22,
+   "y": 24.72,
+   "scaleX": 0.975,
+   "scaleY": 0.975,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0032",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 956.37,
+   "y": 52.52,
+   "scaleX": 1.118,
+   "scaleY": 1.118,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0033",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1112.54,
+   "y": 36.82,
+   "scaleX": 1.001,
+   "scaleY": 1.001,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0034",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1414.43,
+   "y": 4.28,
+   "scaleX": 0.887,
+   "scaleY": 0.887,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0035",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1596.02,
+   "y": 25.48,
+   "scaleX": 0.99,
+   "scaleY": 0.99,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0036",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1727.78,
+   "y": 5.78,
+   "scaleX": 0.975,
+   "scaleY": 0.975,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0037",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1981.81,
+   "y": 7.57,
+   "scaleX": 0.971,
+   "scaleY": 0.971,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0038",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2136.26,
+   "y": 22.62,
+   "scaleX": 1.009,
+   "scaleY": 1.009,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0039",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2300.62,
+   "y": 12.36,
+   "scaleX": 0.935,
+   "scaleY": 0.935,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0040",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2614.54,
+   "y": 12.81,
+   "scaleX": 0.964,
+   "scaleY": 0.964,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0041",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2946.41,
+   "y": 19.99,
+   "scaleX": 1.02,
+   "scaleY": 1.02,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0042",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3089.3,
+   "y": 34.93,
+   "scaleX": 1.156,
+   "scaleY": 1.156,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0043",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3368.91,
+   "y": 7.19,
+   "scaleX": 1.093,
+   "scaleY": 1.093,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0044",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -193.78,
+   "y": 188.91,
+   "scaleX": 1.166,
+   "scaleY": 1.166,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0045",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 112.47,
+   "y": 171.15,
+   "scaleX": 0.915,
+   "scaleY": 0.915,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0046",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 316.96,
+   "y": 195.5,
+   "scaleX": 0.881,
+   "scaleY": 0.881,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0047",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 442.67,
+   "y": 157.68,
+   "scaleX": 0.935,
+   "scaleY": 0.935,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0048",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 562.99,
+   "y": 201.58,
+   "scaleX": 0.948,
+   "scaleY": 0.948,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0049",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 762.74,
+   "y": 164.69,
+   "scaleX": 0.975,
+   "scaleY": 0.975,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0050",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 892.68,
+   "y": 168.37,
+   "scaleX": 0.853,
+   "scaleY": 0.853,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0051",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1051.28,
+   "y": 186.95,
+   "scaleX": 1.121,
+   "scaleY": 1.121,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0052",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1221.72,
+   "y": 169.5,
+   "scaleX": 1.092,
+   "scaleY": 1.092,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0053",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1346.07,
+   "y": 198.74,
+   "scaleX": 0.876,
+   "scaleY": 0.876,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0054",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1507.81,
+   "y": 152.91,
+   "scaleX": 0.869,
+   "scaleY": 0.869,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0055",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1616.15,
+   "y": 189.36,
+   "scaleX": 0.811,
+   "scaleY": 0.811,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0056",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2107.59,
+   "y": 192.72,
+   "scaleX": 0.857,
+   "scaleY": 0.857,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0057",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2707.7,
+   "y": 174.71,
+   "scaleX": 1.192,
+   "scaleY": 1.192,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0058",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2823.42,
+   "y": 199.46,
+   "scaleX": 0.985,
+   "scaleY": 0.985,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0059",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2999.99,
+   "y": 185.72,
+   "scaleX": 1.162,
+   "scaleY": 1.162,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0060",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3300.54,
+   "y": 172.91,
+   "scaleX": 0.873,
+   "scaleY": 0.873,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0061",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 33.79,
+   "y": 314.38,
+   "scaleX": 1.185,
+   "scaleY": 1.185,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0062",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 380.74,
+   "y": 298.67,
+   "scaleX": 0.822,
+   "scaleY": 0.822,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0063",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 517.56,
+   "y": 301.09,
+   "scaleX": 1.002,
+   "scaleY": 1.002,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0064",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 653.23,
+   "y": 356.44,
+   "scaleX": 0.892,
+   "scaleY": 0.892,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0065",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 847.98,
+   "y": 349.41,
+   "scaleX": 0.811,
+   "scaleY": 0.811,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0066",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 948.33,
+   "y": 305.48,
+   "scaleX": 1.196,
+   "scaleY": 1.196,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0067",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1298.06,
+   "y": 329.28,
+   "scaleX": 0.951,
+   "scaleY": 0.951,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0068",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1533.98,
+   "y": 315.96,
+   "scaleX": 0.87,
+   "scaleY": 0.87,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0069",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1884.12,
+   "y": 310.69,
+   "scaleX": 1.166,
+   "scaleY": 1.166,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0070",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2471.13,
+   "y": 330.91,
+   "scaleX": 0.849,
+   "scaleY": 0.849,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0071",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3062.42,
+   "y": 303.74,
+   "scaleX": 1.055,
+   "scaleY": 1.055,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0072",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3225.84,
+   "y": 334.18,
+   "scaleX": 1.033,
+   "scaleY": 1.033,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0073",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3380.68,
+   "y": 308.76,
+   "scaleX": 1.171,
+   "scaleY": 1.171,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0074",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 266.8,
+   "y": 497.25,
+   "scaleX": 0.862,
+   "scaleY": 0.862,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0075",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 455.85,
+   "y": 492.15,
+   "scaleX": 1.148,
+   "scaleY": 1.148,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0076",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 563.22,
+   "y": 476.22,
+   "scaleX": 1.167,
+   "scaleY": 1.167,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0077",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 756.64,
+   "y": 503.79,
+   "scaleX": 1.088,
+   "scaleY": 1.088,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0078",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1360.85,
+   "y": 479.54,
+   "scaleX": 1.131,
+   "scaleY": 1.131,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0079",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1495.86,
+   "y": 455.7,
+   "scaleX": 1.127,
+   "scaleY": 1.127,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0080",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1636.17,
+   "y": 447.97,
+   "scaleX": 0.881,
+   "scaleY": 0.881,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0081",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2059.31,
+   "y": 459.22,
+   "scaleX": 1.113,
+   "scaleY": 1.113,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0082",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2228.19,
+   "y": 457.42,
+   "scaleX": 1.005,
+   "scaleY": 1.005,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0083",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2388.58,
+   "y": 487.94,
+   "scaleX": 1.134,
+   "scaleY": 1.134,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0084",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2563.21,
+   "y": 448.95,
+   "scaleX": 0.907,
+   "scaleY": 0.907,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0085",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2664.19,
+   "y": 490.56,
+   "scaleX": 0.867,
+   "scaleY": 0.867,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0086",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3160.06,
+   "y": 490.6,
+   "scaleX": 0.983,
+   "scaleY": 0.983,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0087",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3276.16,
+   "y": 448.16,
+   "scaleX": 1.166,
+   "scaleY": 1.166,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0088",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -71.34,
+   "y": 606.39,
+   "scaleX": 0.967,
+   "scaleY": 0.967,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0089",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 349.46,
+   "y": 620.53,
+   "scaleX": 0.93,
+   "scaleY": 0.93,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0090",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 512.56,
+   "y": 643.5,
+   "scaleX": 1.174,
+   "scaleY": 1.174,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0091",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 663.44,
+   "y": 649.18,
+   "scaleX": 0.936,
+   "scaleY": 0.936,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0092",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 840.87,
+   "y": 632.85,
+   "scaleX": 0.867,
+   "scaleY": 0.867,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0093",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 987.62,
+   "y": 610.43,
+   "scaleX": 1.192,
+   "scaleY": 1.192,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0094",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1091.96,
+   "y": 652.15,
+   "scaleX": 1.104,
+   "scaleY": 1.104,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0095",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1275.31,
+   "y": 643.34,
+   "scaleX": 0.989,
+   "scaleY": 0.989,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0096",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1416.58,
+   "y": 619.83,
+   "scaleX": 0.836,
+   "scaleY": 0.836,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0097",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1552.81,
+   "y": 596.93,
+   "scaleX": 0.923,
+   "scaleY": 0.923,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0098",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1865.39,
+   "y": 621.33,
+   "scaleX": 0.993,
+   "scaleY": 0.993,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0099",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2005.7,
+   "y": 626.62,
+   "scaleX": 1.036,
+   "scaleY": 1.036,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0100",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2601.17,
+   "y": 619.65,
+   "scaleX": 1.139,
+   "scaleY": 1.139,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0101",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2932.87,
+   "y": 600.93,
+   "scaleX": 0.83,
+   "scaleY": 0.83,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0102",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3043.01,
+   "y": 645.66,
+   "scaleX": 0.817,
+   "scaleY": 0.817,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0103",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3219.55,
+   "y": 633.02,
+   "scaleX": 0.883,
+   "scaleY": 0.883,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0104",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3393.87,
+   "y": 638.22,
+   "scaleX": 0.804,
+   "scaleY": 0.804,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0105",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 744.53,
+   "y": 806.33,
+   "scaleX": 1.191,
+   "scaleY": 1.191,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0106",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 880.79,
+   "y": 810.26,
+   "scaleX": 1.049,
+   "scaleY": 1.049,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0107",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1032.66,
+   "y": 759.94,
+   "scaleX": 0.806,
+   "scaleY": 0.806,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0108",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1323.41,
+   "y": 790.63,
+   "scaleX": 1.166,
+   "scaleY": 1.166,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0109",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2016.77,
+   "y": 1223.07,
+   "scaleX": 0.891,
+   "scaleY": 0.891,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0110",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2188.68,
+   "y": 1223.89,
+   "scaleX": 0.974,
+   "scaleY": 0.974,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0111",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2480.44,
+   "y": 1203.75,
+   "scaleX": 0.939,
+   "scaleY": 0.939,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0112",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2614.14,
+   "y": 1229.19,
+   "scaleX": 1.119,
+   "scaleY": 1.119,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0113",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2905.57,
+   "y": 1219.22,
+   "scaleX": 0.903,
+   "scaleY": 0.903,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0114",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3059.27,
+   "y": 1219.4,
+   "scaleX": 0.87,
+   "scaleY": 0.87,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0115",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -129.93,
+   "y": 1407.96,
+   "scaleX": 0.969,
+   "scaleY": 0.969,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0116",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 12.97,
+   "y": 1389.18,
+   "scaleX": 0.805,
+   "scaleY": 0.805,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0117",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 155.69,
+   "y": 1400.82,
+   "scaleX": 0.846,
+   "scaleY": 0.846,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0118",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 281.37,
+   "y": 1380.53,
+   "scaleX": 1.088,
+   "scaleY": 1.088,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0119",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 455.08,
+   "y": 1395.04,
+   "scaleX": 0.848,
+   "scaleY": 0.848,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0120",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 578.98,
+   "y": 1389.95,
+   "scaleX": 1.057,
+   "scaleY": 1.057,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0121",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1060.32,
+   "y": 1369.36,
+   "scaleX": 0.983,
+   "scaleY": 0.983,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0122",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1186.65,
+   "y": 1371.02,
+   "scaleX": 0.888,
+   "scaleY": 0.888,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0123",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1321.36,
+   "y": 1365.29,
+   "scaleX": 1.01,
+   "scaleY": 1.01,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0124",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1475.18,
+   "y": 1391.36,
+   "scaleX": 1.128,
+   "scaleY": 1.128,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0125",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1811.7,
+   "y": 1403.29,
+   "scaleX": 0.89,
+   "scaleY": 0.89,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0126",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1949.94,
+   "y": 1379.23,
+   "scaleX": 1.162,
+   "scaleY": 1.162,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0127",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2230.47,
+   "y": 1401.65,
+   "scaleX": 0.944,
+   "scaleY": 0.944,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0128",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2403.14,
+   "y": 1373.38,
+   "scaleX": 0.954,
+   "scaleY": 0.954,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0129",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2684.93,
+   "y": 1409.45,
+   "scaleX": 0.906,
+   "scaleY": 0.906,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0130",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2861.65,
+   "y": 1410.07,
+   "scaleX": 1.124,
+   "scaleY": 1.124,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0131",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3132.39,
+   "y": 1365.68,
+   "scaleX": 1.061,
+   "scaleY": 1.061,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0132",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3302.93,
+   "y": 1361.23,
+   "scaleX": 0.854,
+   "scaleY": 0.854,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0133",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -97.11,
+   "y": 1544.76,
+   "scaleX": 1.127,
+   "scaleY": 1.127,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0134",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 32.35,
+   "y": 1532.56,
+   "scaleX": 1.163,
+   "scaleY": 1.163,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0135",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 226.71,
+   "y": 1521.74,
+   "scaleX": 0.939,
+   "scaleY": 0.939,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0136",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 371.33,
+   "y": 1528.8,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0137",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 481.15,
+   "y": 1517.05,
+   "scaleX": 0.91,
+   "scaleY": 0.91,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0138",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 683.34,
+   "y": 1543.79,
+   "scaleX": 0.991,
+   "scaleY": 0.991,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0139",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 785.83,
+   "y": 1515.08,
+   "scaleX": 1.112,
+   "scaleY": 1.112,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0140",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 932.75,
+   "y": 1511.57,
+   "scaleX": 1.049,
+   "scaleY": 1.049,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0141",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1135.74,
+   "y": 1518.03,
+   "scaleX": 0.816,
+   "scaleY": 0.816,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0142",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1427.48,
+   "y": 1513.56,
+   "scaleX": 0.864,
+   "scaleY": 0.864,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0143",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1573.22,
+   "y": 1499.62,
+   "scaleX": 0.93,
+   "scaleY": 0.93,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0144",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1686.51,
+   "y": 1552.65,
+   "scaleX": 1.068,
+   "scaleY": 1.068,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0145",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1859.11,
+   "y": 1543.91,
+   "scaleX": 0.922,
+   "scaleY": 0.922,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0146",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2345.46,
+   "y": 1523.09,
+   "scaleX": 0.867,
+   "scaleY": 0.867,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0147",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2773.78,
+   "y": 1536.95,
+   "scaleX": 0.974,
+   "scaleY": 0.974,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0148",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2896.85,
+   "y": 1515.13,
+   "scaleX": 0.96,
+   "scaleY": 0.96,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0149",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3226.29,
+   "y": 1527.73,
+   "scaleX": 0.938,
+   "scaleY": 0.938,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0150",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3360.52,
+   "y": 1530.0,
+   "scaleX": 0.988,
+   "scaleY": 0.988,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0151",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -2.13,
+   "y": 1688.34,
+   "scaleX": 0.817,
+   "scaleY": 0.817,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0152",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 170.15,
+   "y": 1667.09,
+   "scaleX": 1.105,
+   "scaleY": 1.105,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0153",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 282.72,
+   "y": 1691.37,
+   "scaleX": 1.065,
+   "scaleY": 1.065,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0154",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 422.98,
+   "y": 1697.12,
+   "scaleX": 1.161,
+   "scaleY": 1.161,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0155",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 623.6,
+   "y": 1682.51,
+   "scaleX": 0.926,
+   "scaleY": 0.926,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0156",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 742.21,
+   "y": 1651.49,
+   "scaleX": 0.929,
+   "scaleY": 0.929,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0157",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 873.22,
+   "y": 1676.79,
+   "scaleX": 1.12,
+   "scaleY": 1.12,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0158",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1072.15,
+   "y": 1689.57,
+   "scaleX": 0.849,
+   "scaleY": 0.849,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0159",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1357.18,
+   "y": 1711.84,
+   "scaleX": 1.098,
+   "scaleY": 1.098,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0160",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1506.53,
+   "y": 1708.58,
+   "scaleX": 0.86,
+   "scaleY": 0.86,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0161",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2112.96,
+   "y": 1660.26,
+   "scaleX": 1.02,
+   "scaleY": 1.02,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0162",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2235.64,
+   "y": 1679.06,
+   "scaleX": 0.81,
+   "scaleY": 0.81,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0163",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2375.12,
+   "y": 1657.95,
+   "scaleX": 1.098,
+   "scaleY": 1.098,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0164",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2807.74,
+   "y": 1709.09,
+   "scaleX": 0.966,
+   "scaleY": 0.966,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0165",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -103.7,
+   "y": 1853.68,
+   "scaleX": 1.131,
+   "scaleY": 1.131,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0166",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 538.98,
+   "y": 1825.27,
+   "scaleX": 1.103,
+   "scaleY": 1.103,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0167",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 637.59,
+   "y": 1815.18,
+   "scaleX": 1.026,
+   "scaleY": 1.026,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0168",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 831.36,
+   "y": 1819.01,
+   "scaleX": 0.994,
+   "scaleY": 0.994,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0169",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 937.0,
+   "y": 1841.98,
+   "scaleX": 1.009,
+   "scaleY": 1.009,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0170",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1126.38,
+   "y": 1834.76,
+   "scaleX": 0.806,
+   "scaleY": 0.806,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0171",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1293.66,
+   "y": 1853.7,
+   "scaleX": 0.854,
+   "scaleY": 0.854,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0172",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1430.24,
+   "y": 1827.47,
+   "scaleX": 0.952,
+   "scaleY": 0.952,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0173",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2009.4,
+   "y": 1856.34,
+   "scaleX": 0.976,
+   "scaleY": 0.976,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0174",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2172.58,
+   "y": 1803.66,
+   "scaleX": 1.004,
+   "scaleY": 1.004,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0175",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2338.76,
+   "y": 1831.22,
+   "scaleX": 1.078,
+   "scaleY": 1.078,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0176",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2467.78,
+   "y": 1823.75,
+   "scaleX": 1.194,
+   "scaleY": 1.194,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0177",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2772.62,
+   "y": 1852.38,
+   "scaleX": 1.183,
+   "scaleY": 1.183,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0178",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2923.49,
+   "y": 1836.43,
+   "scaleX": 1.056,
+   "scaleY": 1.056,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0179",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3098.91,
+   "y": 1856.81,
+   "scaleX": 0.917,
+   "scaleY": 0.917,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0180",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -178.7,
+   "y": 1954.05,
+   "scaleX": 1.077,
+   "scaleY": 1.077,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0181",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -0.55,
+   "y": 1956.81,
+   "scaleX": 0.875,
+   "scaleY": 0.875,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0182",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 305.63,
+   "y": 2013.29,
+   "scaleX": 0.83,
+   "scaleY": 0.83,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0183",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 460.63,
+   "y": 2004.28,
+   "scaleX": 1.089,
+   "scaleY": 1.089,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0184",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 595.2,
+   "y": 1990.02,
+   "scaleX": 0.894,
+   "scaleY": 0.894,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0185",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 749.63,
+   "y": 1981.8,
+   "scaleX": 1.107,
+   "scaleY": 1.107,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0186",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1061.55,
+   "y": 1976.55,
+   "scaleX": 1.14,
+   "scaleY": 1.14,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0187",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1168.93,
+   "y": 2011.13,
+   "scaleX": 0.973,
+   "scaleY": 0.973,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0188",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1351.36,
+   "y": 1983.56,
+   "scaleX": 1.09,
+   "scaleY": 1.09,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0189",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1496.86,
+   "y": 1962.63,
+   "scaleX": 0.955,
+   "scaleY": 0.955,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0190",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1757.15,
+   "y": 1967.85,
+   "scaleX": 0.891,
+   "scaleY": 0.891,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0191",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1942.98,
+   "y": 1947.37,
+   "scaleX": 0.819,
+   "scaleY": 0.819,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0192",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2080.14,
+   "y": 1953.58,
+   "scaleX": 0.853,
+   "scaleY": 0.853,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0193",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2221.57,
+   "y": 1968.37,
+   "scaleX": 0.912,
+   "scaleY": 0.912,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0194",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2394.8,
+   "y": 1951.49,
+   "scaleX": 1.19,
+   "scaleY": 1.19,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0195",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2530.34,
+   "y": 1956.93,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0196",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2713.77,
+   "y": 1978.44,
+   "scaleX": 0.933,
+   "scaleY": 0.933,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0197",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3161.6,
+   "y": 1985.89,
+   "scaleX": 1.193,
+   "scaleY": 1.193,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0198",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -117.67,
+   "y": 2148.84,
+   "scaleX": 0.822,
+   "scaleY": 0.822,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0199",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 245.89,
+   "y": 2150.56,
+   "scaleX": 1.176,
+   "scaleY": 1.176,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0200",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 513.9,
+   "y": 2122.78,
+   "scaleX": 1.059,
+   "scaleY": 1.059,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0201",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 634.14,
+   "y": 2156.04,
+   "scaleX": 0.894,
+   "scaleY": 0.894,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0202",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 799.51,
+   "y": 2122.75,
+   "scaleX": 0.808,
+   "scaleY": 0.808,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0203",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 935.81,
+   "y": 2107.22,
+   "scaleX": 0.897,
+   "scaleY": 0.897,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0204",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1243.93,
+   "y": 2118.37,
+   "scaleX": 1.059,
+   "scaleY": 1.059,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0205",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1443.53,
+   "y": 2150.88,
+   "scaleX": 0.943,
+   "scaleY": 0.943,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0206",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1554.39,
+   "y": 2121.48,
+   "scaleX": 1.157,
+   "scaleY": 1.157,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0207",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1831.37,
+   "y": 2145.98,
+   "scaleX": 1.126,
+   "scaleY": 1.126,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0208",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2006.24,
+   "y": 2108.55,
+   "scaleX": 0.882,
+   "scaleY": 0.882,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0209",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2133.37,
+   "y": 2127.5,
+   "scaleX": 0.875,
+   "scaleY": 0.875,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0210",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2314.6,
+   "y": 2159.9,
+   "scaleX": 0.813,
+   "scaleY": 0.813,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0211",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2482.18,
+   "y": 2105.65,
+   "scaleX": 0.862,
+   "scaleY": 0.862,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0212",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2595.23,
+   "y": 2100.8,
+   "scaleX": 1.15,
+   "scaleY": 1.15,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0213",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2742.64,
+   "y": 2123.92,
+   "scaleX": 1.198,
+   "scaleY": 1.198,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0214",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2899.72,
+   "y": 2100.79,
+   "scaleX": 1.185,
+   "scaleY": 1.185,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0215",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3205.39,
+   "y": 2141.71,
+   "scaleX": 0.883,
+   "scaleY": 0.883,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0216",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3339.83,
+   "y": 2153.46,
+   "scaleX": 1.022,
+   "scaleY": 1.022,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0217",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 338.1,
+   "y": 772.61,
+   "scaleX": 2.292,
+   "scaleY": 2.292,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0218",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2408.39,
+   "y": 498.77,
+   "scaleX": 2.022,
+   "scaleY": 2.022,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0219",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 206.22,
+   "y": 1636.85,
+   "scaleX": 1.637,
+   "scaleY": 1.637,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0220",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1241.64,
+   "y": 1384.83,
+   "scaleX": 2.016,
+   "scaleY": 2.016,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0221",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1736.96,
+   "y": 918.8,
+   "scaleX": 2.437,
+   "scaleY": 2.437,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0222",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1717.73,
+   "y": 1339.51,
+   "scaleX": 2.069,
+   "scaleY": 2.069,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0223",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 945.15,
+   "y": 840.37,
+   "scaleX": 2.168,
+   "scaleY": 2.168,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0224",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2311.81,
+   "y": 1108.47,
+   "scaleX": 1.751,
+   "scaleY": 1.751,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0225",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2969.22,
+   "y": 689.05,
+   "scaleX": 1.904,
+   "scaleY": 1.904,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0226",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 942.08,
+   "y": 1099.23,
+   "scaleX": 2.247,
+   "scaleY": 2.247,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0227",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1094.27,
+   "y": 1727.42,
+   "scaleX": 2.504,
+   "scaleY": 2.504,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0228",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 479.67,
+   "y": 1208.12,
+   "scaleX": 1.724,
+   "scaleY": 1.724,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0229",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2783.66,
+   "y": 829.22,
+   "scaleX": 1.976,
+   "scaleY": 1.976,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0230",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1742.71,
+   "y": 1108.47,
+   "scaleX": 2.323,
+   "scaleY": 2.323,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0231",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1309.3,
+   "y": 1315.76,
+   "scaleX": 1.985,
+   "scaleY": 1.985,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0232",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 418.54,
+   "y": 652.16,
+   "scaleX": 2.578,
+   "scaleY": 2.578,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0233",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2995.22,
+   "y": 1216.49,
+   "scaleX": 2.346,
+   "scaleY": 2.346,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0234",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1492.89,
+   "y": 473.28,
+   "scaleX": 1.804,
+   "scaleY": 1.804,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0235",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2842.15,
+   "y": 1176.49,
+   "scaleX": 2.443,
+   "scaleY": 2.443,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0236",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1900.47,
+   "y": 1157.47,
+   "scaleX": 2.055,
+   "scaleY": 2.055,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0237",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1275.16,
+   "y": 620.81,
+   "scaleX": 2.172,
+   "scaleY": 2.172,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0238",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1289.58,
+   "y": 838.85,
+   "scaleX": 1.794,
+   "scaleY": 1.794,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0239",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2011.84,
+   "y": 609.08,
+   "scaleX": 1.841,
+   "scaleY": 1.841,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0240",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1128.12,
+   "y": 1608.55,
+   "scaleX": 2.091,
+   "scaleY": 2.091,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0241",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2319.45,
+   "y": 1522.05,
+   "scaleX": 2.103,
+   "scaleY": 2.103,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0242",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1463.44,
+   "y": 1693.55,
+   "scaleX": 1.767,
+   "scaleY": 1.767,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0243",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1490.65,
+   "y": 1682.43,
+   "scaleX": 2.515,
+   "scaleY": 2.515,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0244",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1057.61,
+   "y": 747.81,
+   "scaleX": 1.777,
+   "scaleY": 1.777,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0245",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2113.73,
+   "y": 1306.78,
+   "scaleX": 1.823,
+   "scaleY": 1.823,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0246",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 237.46,
+   "y": 446.3,
+   "scaleX": 2.481,
+   "scaleY": 2.481,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0247",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1768.83,
+   "y": 1735.71,
+   "scaleX": 1.957,
+   "scaleY": 1.957,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0248",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1851.92,
+   "y": 1462.98,
+   "scaleX": 2.043,
+   "scaleY": 2.043,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0249",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2325.19,
+   "y": 1133.41,
+   "scaleX": 1.894,
+   "scaleY": 1.894,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0250",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1249.37,
+   "y": 618.88,
+   "scaleX": 1.611,
+   "scaleY": 1.611,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0251",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1975.46,
+   "y": 736.38,
+   "scaleX": 1.84,
+   "scaleY": 1.84,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0252",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2531.91,
+   "y": 341.61,
+   "scaleX": 1.75,
+   "scaleY": 1.75,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0253",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2753.53,
+   "y": 1188.18,
+   "scaleX": 2.339,
+   "scaleY": 2.339,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0254",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2124.84,
+   "y": 1751.48,
+   "scaleX": 2.545,
+   "scaleY": 2.545,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0255",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2803.71,
+   "y": 1351.76,
+   "scaleX": 2.092,
+   "scaleY": 2.092,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0256",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2149.29,
+   "y": 368.44,
+   "scaleX": 2.218,
+   "scaleY": 2.218,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0257",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2704.13,
+   "y": 906.24,
+   "scaleX": 2.351,
+   "scaleY": 2.351,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0258",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1211.96,
+   "y": 930.59,
+   "scaleX": 2.359,
+   "scaleY": 2.359,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0259",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 900,
+   "y": 760,
+   "scaleX": 1.031,
+   "scaleY": 1.031,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0260",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1400,
+   "y": 1240,
+   "scaleX": 1.057,
+   "scaleY": 1.057,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0261",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1900,
+   "y": 720,
+   "scaleX": 1.171,
+   "scaleY": 1.171,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0262",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2400,
+   "y": 1240,
+   "scaleX": 1.129,
+   "scaleY": 1.129,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0263",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2700,
+   "y": 980,
+   "scaleX": 1.041,
+   "scaleY": 1.041,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0264",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2500,
+   "y": 1000,
+   "scaleX": 1.204,
+   "scaleY": 1.204,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0265",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2650,
+   "y": 920,
+   "scaleX": 1.285,
+   "scaleY": 1.285,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0266",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2700,
+   "y": 1080,
+   "scaleX": 1.207,
+   "scaleY": 1.207,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0267",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2598.82,
+   "y": 1621.71,
+   "scaleX": 1.38,
+   "scaleY": 1.38,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0268",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1141.76,
+   "y": 554.75,
+   "scaleX": 1.063,
+   "scaleY": 1.063,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0269",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1098.84,
+   "y": 1048.02,
+   "scaleX": 1.294,
+   "scaleY": 1.294,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0270",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1981.68,
+   "y": 1118.71,
+   "scaleX": 1.121,
+   "scaleY": 1.121,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0271",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1063.81,
+   "y": 1515.48,
+   "scaleX": 1.38,
+   "scaleY": 1.38,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0272",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 936.61,
+   "y": 698.29,
+   "scaleX": 1.203,
+   "scaleY": 1.203,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0273",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1328.56,
+   "y": 756.66,
+   "scaleX": 1.086,
+   "scaleY": 1.086,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0274",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1267.84,
+   "y": 1199.74,
+   "scaleX": 1.025,
+   "scaleY": 1.025,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0275",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1362.13,
+   "y": 445.18,
+   "scaleX": 1.162,
+   "scaleY": 1.162,
+   "offsetX": 38.0,
+   "offsetY": 53
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r18_0276",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 664.2,
+   "y": 1110.13,
+   "scaleX": 1.282,
+   "scaleY": 1.282,
+   "offsetX": 38.0,
+   "offsetY": 53
+  }
+ ],
+ "noWalkZones": [
+  {
+   "id": "z18_pool0",
+   "x": 1332.0,
+   "y": 595.0,
+   "w": 336.0,
+   "h": 210.0
+  },
+  {
+   "id": "z18_pool1",
+   "x": 1825.0,
+   "y": 1188.0,
+   "w": 350.0,
+   "h": 224.0
+  },
+  {
+   "id": "z18_pool2",
+   "x": 2346.0,
+   "y": 702.0,
+   "w": 308.0,
+   "h": 196.0
+  },
+  {
+   "id": "z18_4",
+   "x": -80,
+   "y": -80,
+   "w": 3360,
+   "h": 200
+  },
+  {
+   "id": "z18_5",
+   "x": -80,
+   "y": 1880,
+   "w": 3360,
+   "h": 200
+  },
+  {
+   "id": "z18_6",
+   "x": -80,
+   "y": -80,
+   "w": 190,
+   "h": 960
+  },
+  {
+   "id": "z18_7",
+   "x": -80,
+   "y": 1120,
+   "w": 190,
+   "h": 960
+  },
+  {
+   "id": "z18_8",
+   "x": 3130,
+   "y": -80,
+   "w": 150,
+   "h": 2160
+  }
+ ],
+ "enemies": [
+  {
+   "id": "e18_01",
+   "type": "melee",
+   "x": 780,
+   "y": 920
+  },
+  {
+   "id": "e18_02",
+   "type": "ranged",
+   "x": 1080,
+   "y": 1080
+  },
+  {
+   "id": "e18_03",
+   "type": "melee",
+   "x": 1480,
+   "y": 940
+  },
+  {
+   "id": "e18_04",
+   "type": "ranged",
+   "x": 1780,
+   "y": 1060
+  },
+  {
+   "id": "e18_05",
+   "type": "melee",
+   "x": 2120,
+   "y": 940
+  },
+  {
+   "id": "e18_06",
+   "type": "ranged",
+   "x": 2420,
+   "y": 1040
+  },
+  {
+   "id": "e18_07",
+   "type": "elite",
+   "x": 2640,
+   "y": 1000
+  }
+ ],
+ "boss": null,
+ "npcs": [
+  {
+   "id": "npc18_1",
+   "type": "yellow",
+   "x": 300,
+   "y": 920,
+   "config": {
+    "id": "npc18_1",
+    "name": "Naga Acolyte",
+    "first": "Turn_back,_landwalker._Beyond_the_marsh_coils_Nagaraja_Kaliya._We_Naga_remember_our_lost_patron_when_no_one_else_dares..._we_guard_his_name_in_our_fangs.",
+    "active": "",
+    "completed": ""
+   }
+  }
+ ],
+ "portals": [
+  {
+   "id": "portal18_back",
+   "direction": "back",
+   "targetRegion": 16,
+   "x": 120,
+   "y": 1000
+  },
+  {
+   "id": "portal18_next",
+   "direction": "next",
+   "targetRegion": 8,
+   "x": 3090,
+   "y": 1000
+  }
+ ],
+ "regionIndex": 18
+}

@@ -1,0 +1,2049 @@
+{
+ "version": 1,
+ "regionName": "Nadit\u012bra \u2014 The River-Ferry Village",
+ "background": {
+  "type": "color",
+  "value": "#39594d"
+ },
+ "sprites": [
+  {
+   "type": "stroke",
+   "stroke": "#2f7d97",
+   "strokeWidth": 150,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1622.68,
+    -60,
+    1630.12,
+    -34,
+    1637.67,
+    -8,
+    1645.25,
+    18,
+    1652.76,
+    44,
+    1660.13,
+    70,
+    1667.26,
+    96,
+    1674.07,
+    122,
+    1680.48,
+    148,
+    1686.42,
+    174,
+    1691.81,
+    200,
+    1696.6,
+    226,
+    1700.72,
+    252,
+    1704.13,
+    278,
+    1706.79,
+    304,
+    1708.66,
+    330,
+    1709.73,
+    356,
+    1709.98,
+    382,
+    1709.42,
+    408,
+    1708.03,
+    434,
+    1705.85,
+    460,
+    1702.9,
+    486,
+    1699.21,
+    512,
+    1694.83,
+    538,
+    1689.8,
+    564,
+    1684.19,
+    590,
+    1678.06,
+    616,
+    1671.49,
+    642,
+    1664.55,
+    668,
+    1657.31,
+    694,
+    1649.88,
+    720,
+    1642.33,
+    746,
+    1634.75,
+    772,
+    1627.23,
+    798,
+    1619.87,
+    824,
+    1612.74,
+    850,
+    1605.92,
+    876,
+    1599.51,
+    902,
+    1593.58,
+    928,
+    1588.18,
+    954,
+    1583.4,
+    980,
+    1579.28,
+    1006,
+    1575.87,
+    1032,
+    1573.21,
+    1058,
+    1571.34,
+    1084,
+    1570.27,
+    1110,
+    1570.02,
+    1136,
+    1570.58,
+    1162,
+    1571.97,
+    1188,
+    1574.15,
+    1214,
+    1577.1,
+    1240,
+    1580.79,
+    1266,
+    1585.17,
+    1292,
+    1590.2,
+    1318,
+    1595.81,
+    1344,
+    1601.94,
+    1370,
+    1608.52,
+    1396,
+    1615.46,
+    1422,
+    1622.69,
+    1448,
+    1630.13,
+    1474,
+    1637.68,
+    1500,
+    1645.26,
+    1526,
+    1652.77,
+    1552,
+    1660.14,
+    1578,
+    1667.27,
+    1604,
+    1674.08,
+    1630,
+    1680.49,
+    1656,
+    1686.43,
+    1682,
+    1691.82,
+    1708,
+    1696.6,
+    1734,
+    1700.72,
+    1760,
+    1704.13,
+    1786,
+    1706.79,
+    1812,
+    1708.66,
+    1838,
+    1709.73,
+    1864,
+    1709.98,
+    1890,
+    1709.42,
+    1916,
+    1708.03,
+    1942,
+    1705.85,
+    1968,
+    1702.9,
+    1994,
+    1699.21,
+    2020,
+    1694.82,
+    2046
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#62b6d4",
+   "strokeWidth": 70,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1622.68,
+    -60,
+    1630.12,
+    -34,
+    1637.67,
+    -8,
+    1645.25,
+    18,
+    1652.76,
+    44,
+    1660.13,
+    70,
+    1667.26,
+    96,
+    1674.07,
+    122,
+    1680.48,
+    148,
+    1686.42,
+    174,
+    1691.81,
+    200,
+    1696.6,
+    226,
+    1700.72,
+    252,
+    1704.13,
+    278,
+    1706.79,
+    304,
+    1708.66,
+    330,
+    1709.73,
+    356,
+    1709.98,
+    382,
+    1709.42,
+    408,
+    1708.03,
+    434,
+    1705.85,
+    460,
+    1702.9,
+    486,
+    1699.21,
+    512,
+    1694.83,
+    538,
+    1689.8,
+    564,
+    1684.19,
+    590,
+    1678.06,
+    616,
+    1671.49,
+    642,
+    1664.55,
+    668,
+    1657.31,
+    694,
+    1649.88,
+    720,
+    1642.33,
+    746,
+    1634.75,
+    772,
+    1627.23,
+    798,
+    1619.87,
+    824,
+    1612.74,
+    850,
+    1605.92,
+    876,
+    1599.51,
+    902,
+    1593.58,
+    928,
+    1588.18,
+    954,
+    1583.4,
+    980,
+    1579.28,
+    1006,
+    1575.87,
+    1032,
+    1573.21,
+    1058,
+    1571.34,
+    1084,
+    1570.27,
+    1110,
+    1570.02,
+    1136,
+    1570.58,
+    1162,
+    1571.97,
+    1188,
+    1574.15,
+    1214,
+    1577.1,
+    1240,
+    1580.79,
+    1266,
+    1585.17,
+    1292,
+    1590.2,
+    1318,
+    1595.81,
+    1344,
+    1601.94,
+    1370,
+    1608.52,
+    1396,
+    1615.46,
+    1422,
+    1622.69,
+    1448,
+    1630.13,
+    1474,
+    1637.68,
+    1500,
+    1645.26,
+    1526,
+    1652.77,
+    1552,
+    1660.14,
+    1578,
+    1667.27,
+    1604,
+    1674.08,
+    1630,
+    1680.49,
+    1656,
+    1686.43,
+    1682,
+    1691.82,
+    1708,
+    1696.6,
+    1734,
+    1700.72,
+    1760,
+    1704.13,
+    1786,
+    1706.79,
+    1812,
+    1708.66,
+    1838,
+    1709.73,
+    1864,
+    1709.98,
+    1890,
+    1709.42,
+    1916,
+    1708.03,
+    1942,
+    1705.85,
+    1968,
+    1702.9,
+    1994,
+    1699.21,
+    2020,
+    1694.82,
+    2046
+   ]
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0001",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_04.png"
+   ],
+   "name": "Water Rocks_04",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1675.94,
+   "y": 120,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0002",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_03.png"
+   ],
+   "name": "Water Rocks_03",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1685.17,
+   "y": 360,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0003",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_04.png"
+   ],
+   "name": "Water Rocks_04",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1691.9,
+   "y": 600,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0004",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_01.png"
+   ],
+   "name": "Water Rocks_01",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1597.26,
+   "y": 840,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0005",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_04.png"
+   ],
+   "name": "Water Rocks_04",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1548.38,
+   "y": 1080,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0006",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_02.png"
+   ],
+   "name": "Water Rocks_02",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1605.6,
+   "y": 1320,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0007",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_02.png"
+   ],
+   "name": "Water Rocks_02",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1646.12,
+   "y": 1560,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0008",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_04.png"
+   ],
+   "name": "Water Rocks_04",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1705.22,
+   "y": 1800,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0009",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_04.png"
+   ],
+   "name": "Water Rocks_04",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1591.02,
+   "y": 940,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0010",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_04.png"
+   ],
+   "name": "Water Rocks_04",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1583.4,
+   "y": 980,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0011",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_03.png"
+   ],
+   "name": "Water Rocks_03",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1577.09,
+   "y": 1022,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0012",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_03.png"
+   ],
+   "name": "Water Rocks_03",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1573.04,
+   "y": 1060,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0013",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Particle FX",
+   "frames": [
+    "Water Splash.png"
+   ],
+   "name": "Water Splash",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1655.61,
+   "y": 700,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 96,
+   "offsetY": 96,
+   "frameW": 192,
+   "frameH": 192,
+   "frameCount": 9,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0014",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Particle FX",
+   "frames": [
+    "Water Splash.png"
+   ],
+   "name": "Water Splash",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1637.68,
+   "y": 1500,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 96,
+   "offsetY": 96,
+   "frameW": 192,
+   "frameH": 192,
+   "frameCount": 9,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0015",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Buildings/Blue Buildings",
+   "frames": [
+    "House1.png"
+   ],
+   "name": "House1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 430,
+   "y": 760,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 64.0,
+   "offsetY": 191
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0016",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Buildings/Blue Buildings",
+   "frames": [
+    "House3.png"
+   ],
+   "name": "House3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 700,
+   "y": 720,
+   "scaleX": 1.18,
+   "scaleY": 1.18,
+   "offsetX": 64.0,
+   "offsetY": 191
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0017",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Buildings/Blue Buildings",
+   "frames": [
+    "House2.png"
+   ],
+   "name": "House2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 360,
+   "y": 1300,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 64.0,
+   "offsetY": 191
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0018",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Buildings/Blue Buildings",
+   "frames": [
+    "Tower.png"
+   ],
+   "name": "Tower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 980,
+   "y": 760,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 64.0,
+   "offsetY": 255
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0019",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Buildings/Blue Buildings",
+   "frames": [
+    "House1.png"
+   ],
+   "name": "House1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 760,
+   "y": 1340,
+   "scaleX": 1.16,
+   "scaleY": 1.16,
+   "offsetX": 64.0,
+   "offsetY": 191
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0020",
+   "dir": "assest4/next2/2 Objects/6 Tent",
+   "frames": [
+    "3.png"
+   ],
+   "name": "3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 560,
+   "y": 1010,
+   "scaleX": 1.7,
+   "scaleY": 1.7,
+   "offsetX": 32.5,
+   "offsetY": 61
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0021",
+   "dir": "assest4/next2/2 Objects/4 Box",
+   "frames": [
+    "1.png"
+   ],
+   "name": "1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 604,
+   "y": 1010,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 10.0,
+   "offsetY": 21
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0022",
+   "dir": "assest4/next2/2 Objects/6 Tent",
+   "frames": [
+    "3.png"
+   ],
+   "name": "3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 820,
+   "y": 1060,
+   "scaleX": 1.7,
+   "scaleY": 1.7,
+   "offsetX": 32.5,
+   "offsetY": 61
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0023",
+   "dir": "assest4/next2/2 Objects/4 Box",
+   "frames": [
+    "1.png"
+   ],
+   "name": "1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 864,
+   "y": 1060,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 10.0,
+   "offsetY": 21
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0024",
+   "dir": "assest4/next2/2 Objects/6 Tent",
+   "frames": [
+    "4.png"
+   ],
+   "name": "4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 980,
+   "y": 1080,
+   "scaleX": 1.7,
+   "scaleY": 1.7,
+   "offsetX": 32.0,
+   "offsetY": 70
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0025",
+   "dir": "assest4/next2/2 Objects/4 Box",
+   "frames": [
+    "1.png"
+   ],
+   "name": "1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1024,
+   "y": 1080,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 10.0,
+   "offsetY": 21
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0026",
+   "dir": "assest4/map_objects/3 Animated Objects/2 Campfire",
+   "frames": [
+    "1.png",
+    "2.png"
+   ],
+   "name": "1",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 620,
+   "y": 1180,
+   "scaleX": 1.6,
+   "scaleY": 1.6,
+   "offsetX": 96.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0027",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Log2.png"
+   ],
+   "name": "Log2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 560,
+   "y": 1120,
+   "scaleX": 1.7,
+   "scaleY": 1.7,
+   "offsetX": 16.5,
+   "offsetY": 31
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0028",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Log3.png"
+   ],
+   "name": "Log3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 700,
+   "y": 1130,
+   "scaleX": 1.7,
+   "scaleY": 1.7,
+   "offsetX": 22.5,
+   "offsetY": 13
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0029",
+   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
+   "frames": [
+    "1.png",
+    "2.png",
+    "3.png",
+    "4.png",
+    "5.png"
+   ],
+   "name": "1",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 980,
+   "y": 540,
+   "scaleX": 1.6,
+   "scaleY": 1.6,
+   "offsetX": 96.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0030",
+   "dir": "assest4/map_objects/2 Objects/2 Fence",
+   "frames": [
+    "3.png"
+   ],
+   "name": "3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1180,
+   "y": 900,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 13.0,
+   "offsetY": 15
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0031",
+   "dir": "assest4/map_objects/2 Objects/2 Fence",
+   "frames": [
+    "1.png"
+   ],
+   "name": "1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1180,
+   "y": 922,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 13.5,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0032",
+   "dir": "assest4/map_objects/2 Objects/2 Fence",
+   "frames": [
+    "1.png"
+   ],
+   "name": "1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1180,
+   "y": 944,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 13.5,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0033",
+   "dir": "assest4/map_objects/2 Objects/2 Fence",
+   "frames": [
+    "2.png"
+   ],
+   "name": "2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1180,
+   "y": 966,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 12.5,
+   "offsetY": 18
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0034",
+   "dir": "assest4/map_objects/2 Objects/2 Fence",
+   "frames": [
+    "4.png"
+   ],
+   "name": "4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1180,
+   "y": 988,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 12.0,
+   "offsetY": 17
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0035",
+   "dir": "assest4/map_objects/2 Objects/2 Fence",
+   "frames": [
+    "3.png"
+   ],
+   "name": "3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1180,
+   "y": 1010,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 13.0,
+   "offsetY": 15
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0036",
+   "dir": "assest4/map_objects/2 Objects/2 Fence",
+   "frames": [
+    "4.png"
+   ],
+   "name": "4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1180,
+   "y": 1032,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 12.0,
+   "offsetY": 17
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0037",
+   "dir": "assest4/map_objects/2 Objects/2 Fence",
+   "frames": [
+    "4.png"
+   ],
+   "name": "4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1180,
+   "y": 1054,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 12.0,
+   "offsetY": 17
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0038",
+   "dir": "assest4/map_objects/2 Objects/2 Fence",
+   "frames": [
+    "1.png"
+   ],
+   "name": "1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1180,
+   "y": 1076,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 13.5,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0039",
+   "dir": "assest4/map_objects/2 Objects/2 Fence",
+   "frames": [
+    "1.png"
+   ],
+   "name": "1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1180,
+   "y": 1098,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 13.5,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0040",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Buildings/Yellow Buildings",
+   "frames": [
+    "House2.png"
+   ],
+   "name": "House2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2300,
+   "y": 820,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 64.0,
+   "offsetY": 191
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0041",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Buildings/Yellow Buildings",
+   "frames": [
+    "House1.png"
+   ],
+   "name": "House1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2620,
+   "y": 1240,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 64.0,
+   "offsetY": 191
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0042",
+   "dir": "assest4/next2/2 Objects/6 Tent",
+   "frames": [
+    "3.png"
+   ],
+   "name": "3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2480,
+   "y": 1020,
+   "scaleX": 1.6,
+   "scaleY": 1.6,
+   "offsetX": 32.5,
+   "offsetY": 61
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0043",
+   "dir": "assest4/next2/2 Objects/3 Decor",
+   "frames": [
+    "8.png"
+   ],
+   "name": "8",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2380,
+   "y": 1100,
+   "scaleX": 1.7,
+   "scaleY": 1.7,
+   "offsetX": 14.0,
+   "offsetY": 41
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0044",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp3.png"
+   ],
+   "name": "Lamp3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 480,
+   "y": 930,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 6.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0045",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp2.png"
+   ],
+   "name": "Lamp2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 840,
+   "y": 930,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 5.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0046",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp1.png"
+   ],
+   "name": "Lamp1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1180,
+   "y": 930,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 10.0,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0047",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp3.png"
+   ],
+   "name": "Lamp3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2200,
+   "y": 930,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 6.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0048",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp1.png"
+   ],
+   "name": "Lamp1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2600,
+   "y": 930,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 10.0,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0049",
+   "dir": "cropped",
+   "frames": [
+    "Bushe1_crop.png"
+   ],
+   "name": "Bushe1_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1209.79,
+   "y": 1351.99,
+   "scaleX": 1.002,
+   "scaleY": 1.002,
+   "offsetX": 40.0,
+   "offsetY": 72
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0050",
+   "dir": "cropped",
+   "frames": [
+    "Bushe3_crop.png"
+   ],
+   "name": "Bushe3_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1330.5,
+   "y": 922.49,
+   "scaleX": 1.074,
+   "scaleY": 1.074,
+   "offsetX": 48.0,
+   "offsetY": 88
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0051",
+   "dir": "cropped",
+   "frames": [
+    "Bushe1_crop.png"
+   ],
+   "name": "Bushe1_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1976.54,
+   "y": 1617.22,
+   "scaleX": 0.961,
+   "scaleY": 0.961,
+   "offsetX": 40.0,
+   "offsetY": 72
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0052",
+   "dir": "cropped",
+   "frames": [
+    "Bushe3_crop.png"
+   ],
+   "name": "Bushe3_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1239.61,
+   "y": 913.74,
+   "scaleX": 0.875,
+   "scaleY": 0.875,
+   "offsetX": 48.0,
+   "offsetY": 88
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0053",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "Bushe2_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2543.57,
+   "y": 409.6,
+   "scaleX": 0.822,
+   "scaleY": 0.822,
+   "offsetX": 38.5,
+   "offsetY": 50
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0054",
+   "dir": "cropped",
+   "frames": [
+    "Bushe4_crop.png"
+   ],
+   "name": "Bushe4_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1380.17,
+   "y": 1000.45,
+   "scaleX": 0.906,
+   "scaleY": 0.906,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0055",
+   "dir": "cropped",
+   "frames": [
+    "Bushe3_crop.png"
+   ],
+   "name": "Bushe3_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2639.97,
+   "y": 800.44,
+   "scaleX": 1.017,
+   "scaleY": 1.017,
+   "offsetX": 48.0,
+   "offsetY": 88
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0056",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "Bushe2_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 301.39,
+   "y": 1595.39,
+   "scaleX": 0.88,
+   "scaleY": 0.88,
+   "offsetX": 38.5,
+   "offsetY": 50
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0057",
+   "dir": "cropped",
+   "frames": [
+    "Bushe3_crop.png"
+   ],
+   "name": "Bushe3_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 407.89,
+   "y": 1026.1,
+   "scaleX": 0.942,
+   "scaleY": 0.942,
+   "offsetX": 48.0,
+   "offsetY": 88
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0058",
+   "dir": "cropped",
+   "frames": [
+    "Bushe4_crop.png"
+   ],
+   "name": "Bushe4_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2880.18,
+   "y": 1525.96,
+   "scaleX": 1.022,
+   "scaleY": 1.022,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0059",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "Bushe2_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 657.17,
+   "y": 494.22,
+   "scaleX": 0.996,
+   "scaleY": 0.996,
+   "offsetX": 38.5,
+   "offsetY": 50
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0060",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "Bushe2_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 539.05,
+   "y": 695.84,
+   "scaleX": 0.926,
+   "scaleY": 0.926,
+   "offsetX": 38.5,
+   "offsetY": 50
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0061",
+   "dir": "cropped",
+   "frames": [
+    "Bushe1_crop.png"
+   ],
+   "name": "Bushe1_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2107.96,
+   "y": 483.25,
+   "scaleX": 0.905,
+   "scaleY": 0.905,
+   "offsetX": 40.0,
+   "offsetY": 72
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0062",
+   "dir": "cropped",
+   "frames": [
+    "Bushe3_crop.png"
+   ],
+   "name": "Bushe3_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1025.71,
+   "y": 553.05,
+   "scaleX": 0.868,
+   "scaleY": 0.868,
+   "offsetX": 48.0,
+   "offsetY": 88
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0063",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "Bushe2_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 583.67,
+   "y": 972.9,
+   "scaleX": 0.863,
+   "scaleY": 0.863,
+   "offsetX": 38.5,
+   "offsetY": 50
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0064",
+   "dir": "cropped",
+   "frames": [
+    "Bushe1_crop.png"
+   ],
+   "name": "Bushe1_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1859.76,
+   "y": 823.49,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 40.0,
+   "offsetY": 72
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0065",
+   "dir": "cropped",
+   "frames": [
+    "Bushe1_crop.png"
+   ],
+   "name": "Bushe1_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1908.73,
+   "y": 1615.93,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 40.0,
+   "offsetY": 72
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0066",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1762.73,
+   "y": 967.52,
+   "scaleX": 1.773,
+   "scaleY": 1.773,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0067",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1534.94,
+   "y": 530.14,
+   "scaleX": 1.75,
+   "scaleY": 1.75,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0068",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1710.79,
+   "y": 880.26,
+   "scaleX": 1.753,
+   "scaleY": 1.753,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0069",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1535.72,
+   "y": 325.4,
+   "scaleX": 1.544,
+   "scaleY": 1.544,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0070",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "6.png"
+   ],
+   "name": "6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1011.57,
+   "y": 568.01,
+   "scaleX": 2.059,
+   "scaleY": 2.059,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0071",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "12.png"
+   ],
+   "name": "12",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1165.42,
+   "y": 619.13,
+   "scaleX": 1.74,
+   "scaleY": 1.74,
+   "offsetX": 4.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0072",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "7.png"
+   ],
+   "name": "7",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 682.45,
+   "y": 676.75,
+   "scaleX": 1.946,
+   "scaleY": 1.946,
+   "offsetX": 4.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0073",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "7.png"
+   ],
+   "name": "7",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 304.56,
+   "y": 612.49,
+   "scaleX": 2.17,
+   "scaleY": 2.17,
+   "offsetX": 4.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0074",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "12.png"
+   ],
+   "name": "12",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 915.51,
+   "y": 764.25,
+   "scaleX": 2.013,
+   "scaleY": 2.013,
+   "offsetX": 4.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0075",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "6.png"
+   ],
+   "name": "6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1165.55,
+   "y": 1754.94,
+   "scaleX": 2.09,
+   "scaleY": 2.09,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0076",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "6.png"
+   ],
+   "name": "6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 892.99,
+   "y": 1434.11,
+   "scaleX": 2.085,
+   "scaleY": 2.085,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0077",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "3.png"
+   ],
+   "name": "3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 432.64,
+   "y": 555.85,
+   "scaleX": 2.102,
+   "scaleY": 2.102,
+   "offsetX": 2.5,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0078",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "3.png"
+   ],
+   "name": "3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1160.44,
+   "y": 857.61,
+   "scaleX": 1.843,
+   "scaleY": 1.843,
+   "offsetX": 2.5,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0079",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "7.png"
+   ],
+   "name": "7",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 604.23,
+   "y": 1395.95,
+   "scaleX": 1.698,
+   "scaleY": 1.698,
+   "offsetX": 4.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0080",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "11.png"
+   ],
+   "name": "11",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 433.93,
+   "y": 1522.72,
+   "scaleX": 1.977,
+   "scaleY": 1.977,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0081",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "7.png"
+   ],
+   "name": "7",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 410.1,
+   "y": 1639.26,
+   "scaleX": 1.71,
+   "scaleY": 1.71,
+   "offsetX": 4.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0082",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "2.png"
+   ],
+   "name": "2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 878.4,
+   "y": 307.26,
+   "scaleX": 2.123,
+   "scaleY": 2.123,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0083",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "12.png"
+   ],
+   "name": "12",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 351.89,
+   "y": 1728.46,
+   "scaleX": 1.874,
+   "scaleY": 1.874,
+   "offsetX": 4.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0084",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "9.png"
+   ],
+   "name": "9",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 379.8,
+   "y": 681.91,
+   "scaleX": 1.732,
+   "scaleY": 1.732,
+   "offsetX": 4.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0085",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "2.png"
+   ],
+   "name": "2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 203.68,
+   "y": 1435.26,
+   "scaleX": 1.729,
+   "scaleY": 1.729,
+   "offsetX": 3.0,
+   "offsetY": 4
+  }
+ ],
+ "noWalkZones": [
+  {
+   "id": "z16_1",
+   "x": 387.8,
+   "y": 682,
+   "w": 84.5,
+   "h": 78
+  },
+  {
+   "id": "z16_2",
+   "x": 658.5,
+   "y": 642,
+   "w": 83.1,
+   "h": 78
+  },
+  {
+   "id": "z16_3",
+   "x": 317.8,
+   "y": 1222,
+   "w": 84.5,
+   "h": 78
+  },
+  {
+   "id": "z16_4",
+   "x": 937.8,
+   "y": 682,
+   "w": 84.5,
+   "h": 78
+  },
+  {
+   "id": "z16_5",
+   "x": 719.2,
+   "y": 1262,
+   "w": 81.7,
+   "h": 78
+  },
+  {
+   "id": "z16_6",
+   "x": 2261.3,
+   "y": 742,
+   "w": 77.4,
+   "h": 78
+  },
+  {
+   "id": "z16_7",
+   "x": 2581.3,
+   "y": 1162,
+   "w": 77.4,
+   "h": 78
+  },
+  {
+   "id": "z16_8",
+   "x": 1611.0,
+   "y": -80,
+   "w": 180,
+   "h": 920
+  },
+  {
+   "id": "z16_9",
+   "x": 1547.7,
+   "y": 1080,
+   "w": 180,
+   "h": 1000
+  },
+  {
+   "id": "z16_10",
+   "x": -80,
+   "y": -80,
+   "w": 3360,
+   "h": 200
+  },
+  {
+   "id": "z16_11",
+   "x": -80,
+   "y": 1880,
+   "w": 3360,
+   "h": 200
+  },
+  {
+   "id": "z16_12",
+   "x": -80,
+   "y": -80,
+   "w": 180,
+   "h": 980
+  },
+  {
+   "id": "z16_13",
+   "x": -80,
+   "y": 1120,
+   "w": 180,
+   "h": 960
+  },
+  {
+   "id": "z16_14",
+   "x": 3100,
+   "y": -80,
+   "w": 180,
+   "h": 980
+  },
+  {
+   "id": "z16_15",
+   "x": 3100,
+   "y": 1120,
+   "w": 180,
+   "h": 960
+  }
+ ],
+ "enemies": [
+  {
+   "id": "e16_01",
+   "type": "rat",
+   "x": 900,
+   "y": 1500
+  },
+  {
+   "id": "e16_02",
+   "type": "melee",
+   "x": 1300,
+   "y": 1500
+  },
+  {
+   "id": "e16_03",
+   "type": "bat",
+   "x": 2300,
+   "y": 600
+  }
+ ],
+ "boss": null,
+ "npcs": [
+  {
+   "id": "npc16_1",
+   "type": "yellow",
+   "x": 320,
+   "y": 980,
+   "config": {
+    "id": "npc16_1",
+    "name": "Ferryman Setu",
+    "first": "Welcome_to_Naditira._The_ferry_runs_three_ways:_the_serpent_marsh_east,_the_whispering_mire,_and_the_quiet_vale_of_stones._A_god_once_paid_my_toll_for_every_soul..._until_they_struck_his_coin_from_the_mint.",
+    "active": "",
+    "completed": ""
+   }
+  },
+  {
+   "id": "npc16_2",
+   "type": "blue",
+   "x": 430,
+   "y": 1180,
+   "config": {
+    "id": "npc16_2",
+    "name": "Fishwife Mina",
+    "first": "Strange_catch_these_days_friend._Scales_that_aren't_fish._Keep_to_the_ford;_the_deep_water_pulls.",
+    "active": "",
+    "completed": ""
+   }
+  }
+ ],
+ "portals": [
+  {
+   "id": "portal16_back",
+   "direction": "back",
+   "targetRegion": 15,
+   "x": 120,
+   "y": 1000
+  },
+  {
+   "id": "portal16_next",
+   "direction": "next",
+   "targetRegion": 18,
+   "x": 3090,
+   "y": 1000
+  },
+  {
+   "id": "portal16_to17",
+   "targetRegion": 17,
+   "x": 760,
+   "y": 1740
+  },
+  {
+   "id": "portal16_to9",
+   "targetRegion": 9,
+   "x": 760,
+   "y": 250
+  }
+ ],
+ "regionIndex": 16
+}
