@@ -39,7 +39,7 @@ export const ENEMY_TYPES = {
     attackCd: 1000,
     xpValue: 15,
     scale: 1.3,
-    tint: 0x0891b2,
+    tint: null,
     physics: true,
     label: 'Vayu Bhuta',
     drops: [],
