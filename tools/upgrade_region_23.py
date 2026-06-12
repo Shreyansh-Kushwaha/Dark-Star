@@ -37,6 +37,19 @@ OFF = {  # (offsetX, offsetY) per frame
     "middle_lane_tree4.png": (78, 275), "middle_lane_tree5.png": (99.5, 246),
 }
 
+TENT    = "assest4/next2/2 Objects/6 Tent"
+DECORO  = "assest4/next2/2 Objects/3 Decor"
+FENCE   = "assest4/map_objects/2 Objects/2 Fence"
+POINTER = "assest4/map_objects/2 Objects/3 Pointer"
+# NOTE: numeric frame names (1.png, 2.png, ...) are shared across grass/box/tent/
+# decor/fence, so their offsets are ALWAYS passed explicitly at the call site —
+# never added to OFF (that would corrupt grass origins, which also use 1-6.png).
+TENT_OFF  = {"1.png": (36.5, 64), "2.png": (32, 60), "4.png": (32, 70)}
+BOX_OFF   = {"1.png": (10, 21), "2.png": (10, 21), "3.png": (8, 20), "4.png": (8, 21)}
+DECOR_OFF = {"2.png": (20.5, 37), "9.png": (8, 39), "10.png": (8.5, 39), "11.png": (10.5, 39)}
+FENCE_OFF = {"1.png": (13.5, 14), "2.png": (12.5, 18), "3.png": (13, 15), "4.png": (12, 17), "8.png": (8.5, 23)}
+GRASS_OFF = (3, 6)
+
 _id = 0
 sprites = []
 
@@ -203,14 +216,14 @@ def field_point(allow_path=False, avoid_buildings=True, pad=0.0):
         return x, y
     return x, y
 
-def cluster(dir_, frame_pick, n, sx_range, off_jit=70, **fp):
+def cluster(dir_, frame_pick, n, sx_range, off_jit=70, off=None, **fp):
     """Place a small clump so decor reads as natural, not noise."""
     cx, cy = field_point(**fp)
     for _ in range(n):
         frame = frame_pick()
         sprite(dir_, frame, cx + rng.uniform(-off_jit, off_jit),
                cy + rng.uniform(-off_jit, off_jit), rng.uniform(*sx_range),
-               name=frame.rsplit('.', 1)[0])
+               name=frame.rsplit('.', 1)[0], off=off)
 
 GRASS_F = lambda: rng.choice(["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"])
 DIRT_F  = lambda: rng.choice(["Dirt1.png", "Dirt2.png", "Dirt3.png", "Dirt6.png"])
@@ -221,10 +234,10 @@ TREE_F  = lambda: rng.choice(["middle_lane_tree2.png", "middle_lane_tree3.png",
 
 # Grass — dense, in small clumps across the whole field (+ along path edges).
 for _ in range(26):
-    cluster(GRASS, GRASS_F, rng.randint(2, 4), (2.3, 3.2))
+    cluster(GRASS, GRASS_F, rng.randint(2, 4), (2.3, 3.2), off=GRASS_OFF)
 for _ in range(12):                              # path-edge tufts
     x = rng.uniform(180, 3020); y = rng.choice([rng.uniform(845, 882), rng.uniform(1108, 1148)])
-    f = GRASS_F(); sprite(GRASS, f, x, y, rng.uniform(2.4, 3.1), name=f[:-4])
+    f = GRASS_F(); sprite(GRASS, f, x, y, rng.uniform(2.4, 3.1), name=f[:-4], off=GRASS_OFF)
 
 # Dirt patches scattered everywhere (including under the path band for wear).
 for _ in range(24):
@@ -248,14 +261,64 @@ for _ in range(16):
         x, y = field_point()
     f = BUSH_F(); sprite(CROPPED, f, x, y, rng.uniform(0.82, 1.08), name=f[:-4])
 
-# Trees framing the perimeter — corners plus along the top and bottom edges.
+# Trees framing the perimeter — corners + dense rows along top and bottom edges.
 tree_spots = [(175, 300), (175, 1770), (3030, 300), (3030, 1775),
-              (700, 250), (1150, 230), (1900, 235), (2400, 255),
-              (520, 1810), (1050, 1820), (2050, 1815), (2560, 1805)]
+              (480, 250), (820, 235), (1150, 250), (1620, 235), (1900, 250),
+              (2200, 235), (2480, 255), (2820, 245),
+              (380, 1800), (760, 1815), (1080, 1820), (1420, 1810),
+              (1760, 1820), (2080, 1815), (2400, 1810), (2740, 1805),
+              (300, 1080), (3000, 1080)]   # a couple flanking the path ends
 for x, y in tree_spots:
     if near_building(x, y, pad=60):  # nudge off any building it lands on
         x += 180
-    f = TREE_F(); sprite(TREES, f, x, y, rng.uniform(0.68, 0.86), name=f[:-4])
+    f = TREE_F(); sprite(TREES, f, x, y, rng.uniform(0.66, 0.88), name=f[:-4])
+# Small interior groves to break up the open field.
+for _ in range(5):
+    cx, cy = field_point(pad=120)
+    for _ in range(rng.randint(2, 4)):
+        f = TREE_F()
+        sprite(TREES, f, cx + rng.uniform(-110, 110), cy + rng.uniform(-70, 70),
+               rng.uniform(0.62, 0.80), name=f[:-4])
+
+# ── 11. SETTLEMENT OBJECTS: pilgrim camps, crates, fences, signposts ──────────
+def obj(dir_, frame, x, y, s, off_map):
+    sprite(dir_, frame, x, y, s, name=frame[:-4], off=off_map[frame])
+
+# Two pilgrim camps (tents + crates + a warm campfire) in open ground.
+for cx, cy in [(640, 1560), (2560, 1480)]:
+    obj(TENT, rng.choice(["1.png", "2.png", "4.png"]), cx, cy, rng.uniform(1.7, 1.9), TENT_OFF)
+    obj(TENT, rng.choice(["1.png", "2.png", "4.png"]), cx + rng.uniform(150, 220), cy + rng.uniform(-30, 40),
+        rng.uniform(1.6, 1.85), TENT_OFF)
+    for _ in range(rng.randint(2, 3)):
+        obj(BOX, rng.choice(["1.png", "2.png", "3.png", "4.png"]),
+            cx + rng.uniform(-90, 90), cy + rng.uniform(60, 130), rng.uniform(2.0, 2.5), BOX_OFF)
+    sprite(CAMPF, "1.png", cx + rng.uniform(60, 120), cy + rng.uniform(70, 120), 1.6,
+           name="1", animated=True, frames=["1.png", "2.png"], off=(96, 63))
+
+# Scattered crates & misc decor (barrels/pots) near buildings and the field.
+for _ in range(10):
+    if rng.random() < 0.5:
+        obj(BOX, rng.choice(["1.png", "2.png", "3.png", "4.png"]),
+            *field_point(pad=40), rng.uniform(2.0, 2.5), BOX_OFF)
+    else:
+        obj(DECORO, rng.choice(["2.png", "9.png", "10.png", "11.png"]),
+            *field_point(pad=40), rng.uniform(1.6, 1.9), DECOR_OFF)
+
+# Low fencing enclosing plots beside the colonnade (horizontal post runs).
+def fence_run(x0, x1, y, step=58):
+    x = x0
+    while x <= x1:
+        obj(FENCE, rng.choice(["1.png", "2.png", "3.png", "4.png", "8.png"]),
+            x, y + rng.uniform(-4, 4), 2.0, FENCE_OFF)
+        x += step
+fence_run(360, 760, 560)      # behind the top colonnade, left
+fence_run(2360, 2760, 560)    # behind the top colonnade, right
+fence_run(420, 760, 1470)     # in front of bottom colonnade, left
+fence_run(2360, 2700, 1470)   # in front of bottom colonnade, right
+
+# Signposts pointing pilgrims along the processional.
+for x, y in [(300, 1140), (3000, 1140)]:
+    sprite(POINTER, "1.png", x, y, 2.4, name="1", off=(10, 35))
 
 # ── WRITE ─────────────────────────────────────────────────────────────────────
 data = json.load(open(PATH))
