@@ -1935,6 +1935,7 @@ async function restoreSprites(list) {
         x: d.x, y: d.y, image: img,
         scaleX: d.scaleX, scaleY: d.scaleY,
         offsetX: d.offsetX, offsetY: d.offsetY,
+        opacity: d.alpha != null ? d.alpha : 1,
         draggable: !S.panMode && !S.deleteMode && !S.drawMode && !S.noWalkMode,
       };
       const fr = d.frameRow || 0;

@@ -1200,6 +1200,7 @@ export class GameScene extends Phaser.Scene {
           const spr = this.add.sprite(sp.x, sp.y, key)
             .setScale(sp.scaleX ?? 1, sp.scaleY ?? 1)
             .setDepth(depth)
+            .setAlpha(sp.alpha ?? 1)
             .play(animKey);
           if (sp.offsetX != null && sp.offsetY != null)
             spr.setOrigin(sp.offsetX / sp.frameW, sp.offsetY / sp.frameH);
@@ -1221,6 +1222,7 @@ export class GameScene extends Phaser.Scene {
           const spr = this.add.sprite(sp.x, sp.y, key)
             .setScale(sp.scaleX ?? 1, sp.scaleY ?? 1)
             .setDepth(depth)
+            .setAlpha(sp.alpha ?? 1)
             .play(animKey);
           if (sp.offsetX != null && sp.offsetY != null) {
             const tex = this.textures.get(key);
@@ -1234,7 +1236,8 @@ export class GameScene extends Phaser.Scene {
 
         const img = this.add.image(sp.x, sp.y, key)
           .setScale(sp.scaleX ?? 1, sp.scaleY ?? 1)
-          .setDepth(depth);
+          .setDepth(depth)
+          .setAlpha(sp.alpha ?? 1);
         if (sp.offsetX != null && sp.offsetY != null) {
           const tex = this.textures.get(key);
           const w = tex.getSourceImage()?.width || sp.offsetX * 2;

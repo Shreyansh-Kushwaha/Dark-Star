@@ -1,7 +1,7 @@
 {
  "version": 1,
  "regionName": "Cloud Stair",
- "regionSubtitle": "Meghasop\u0101na",
+ "regionSubtitle": "Meghasopāna",
  "background": {
   "type": "color",
   "value": "#8fb4d6"
@@ -17,12 +17,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 687.88,
-   "y": 297.98,
-   "scaleX": 0.671,
-   "scaleY": 0.671,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 2952.78,
+   "y": 351.35,
+   "scaleX": 1.201,
+   "scaleY": 1.201,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.161
   },
   {
    "type": "sprite",
@@ -34,12 +35,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 946.1,
-   "y": 505.63,
-   "scaleX": 0.641,
-   "scaleY": 0.641,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 3112.43,
+   "y": 630.28,
+   "scaleX": 1.13,
+   "scaleY": 1.13,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.166
   },
   {
    "type": "sprite",
@@ -51,12 +53,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 994.38,
-   "y": 542.91,
-   "scaleX": 0.651,
-   "scaleY": 0.651,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 2525.08,
+   "y": 121.52,
+   "scaleX": 1.744,
+   "scaleY": 1.744,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.172
   },
   {
    "type": "sprite",
@@ -68,12 +71,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2174.02,
-   "y": 543.6,
-   "scaleX": 0.499,
-   "scaleY": 0.499,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 2485.96,
+   "y": 184.08,
+   "scaleX": 1.548,
+   "scaleY": 1.548,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.134
   },
   {
    "type": "sprite",
@@ -85,12 +89,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1791.01,
-   "y": 643.0,
-   "scaleX": 0.88,
-   "scaleY": 0.88,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 3056.27,
+   "y": 130.0,
+   "scaleX": 1.886,
+   "scaleY": 1.886,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.105
   },
   {
    "type": "sprite",
@@ -102,12 +107,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2892.71,
-   "y": 897.14,
-   "scaleX": 0.875,
-   "scaleY": 0.875,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 2900.71,
+   "y": 287.23,
+   "scaleX": 1.594,
+   "scaleY": 1.594,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.124
   },
   {
    "type": "sprite",
@@ -119,12 +125,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 989.34,
-   "y": 688.99,
-   "scaleX": 0.509,
-   "scaleY": 0.509,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 3087.25,
+   "y": 283.61,
+   "scaleX": 1.88,
+   "scaleY": 1.88,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.176
   },
   {
    "type": "sprite",
@@ -136,12 +143,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 201.16,
-   "y": 708.32,
-   "scaleX": 0.811,
-   "scaleY": 0.811,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 2978.73,
+   "y": 277.29,
+   "scaleX": 1.242,
+   "scaleY": 1.242,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.152
   },
   {
    "type": "sprite",
@@ -153,12 +161,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1704.69,
-   "y": 307.79,
-   "scaleX": 0.711,
-   "scaleY": 0.711,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 747.84,
+   "y": 305.35,
+   "scaleX": 1.285,
+   "scaleY": 1.285,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.095
   },
   {
    "type": "sprite",
@@ -170,12 +179,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2247.82,
-   "y": 337.43,
-   "scaleX": 0.856,
-   "scaleY": 0.856,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 715.97,
+   "y": 322.78,
+   "scaleX": 0.999,
+   "scaleY": 0.999,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.134
   },
   {
    "type": "sprite",
@@ -187,12 +197,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1420.17,
-   "y": 1533.44,
-   "scaleX": 0.599,
-   "scaleY": 0.599,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 2569.85,
+   "y": 98.41,
+   "scaleX": 1.154,
+   "scaleY": 1.154,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.158
   },
   {
    "type": "sprite",
@@ -204,12 +215,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1998.83,
-   "y": 302.54,
-   "scaleX": 0.471,
-   "scaleY": 0.471,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 2052.73,
+   "y": 83.4,
+   "scaleX": 1.192,
+   "scaleY": 1.192,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.102
   },
   {
    "type": "sprite",
@@ -221,12 +233,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2775.52,
-   "y": 1263.03,
-   "scaleX": 0.494,
-   "scaleY": 0.494,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 1529.68,
+   "y": 411.28,
+   "scaleX": 1.104,
+   "scaleY": 1.104,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.177
   },
   {
    "type": "sprite",
@@ -238,12 +251,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1457.46,
-   "y": 1628.33,
-   "scaleX": 0.486,
-   "scaleY": 0.486,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 615.59,
+   "y": 161.96,
+   "scaleX": 0.805,
+   "scaleY": 0.805,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.148
   },
   {
    "type": "sprite",
@@ -255,12 +269,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 119.25,
-   "y": 1824.42,
-   "scaleX": 0.623,
-   "scaleY": 0.623,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 1496.77,
+   "y": 126.28,
+   "scaleX": 0.928,
+   "scaleY": 0.928,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.111
   },
   {
    "type": "sprite",
@@ -272,12 +287,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1549.74,
-   "y": 1773.08,
-   "scaleX": 0.479,
-   "scaleY": 0.479,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 677.4,
+   "y": 281.15,
+   "scaleX": 0.84,
+   "scaleY": 0.84,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.13
   },
   {
    "type": "sprite",
@@ -289,12 +305,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 424.65,
-   "y": 442.73,
-   "scaleX": 0.897,
-   "scaleY": 0.897,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 545.74,
+   "y": 1051.54,
+   "scaleX": 0.331,
+   "scaleY": 0.331,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.509
   },
   {
    "type": "sprite",
@@ -306,12 +323,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2959.28,
-   "y": 319.5,
-   "scaleX": 0.466,
-   "scaleY": 0.466,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 41.54,
+   "y": 574.78,
+   "scaleX": 0.386,
+   "scaleY": 0.386,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.31
   },
   {
    "type": "sprite",
@@ -323,12 +341,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 563.66,
-   "y": 1551.48,
-   "scaleX": 0.738,
-   "scaleY": 0.738,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 1257.68,
+   "y": 798.9,
+   "scaleX": 0.279,
+   "scaleY": 0.279,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.405
   },
   {
    "type": "sprite",
@@ -340,12 +359,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2093.69,
-   "y": 5.36,
-   "scaleX": 0.599,
-   "scaleY": 0.599,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 1192.64,
+   "y": 278.07,
+   "scaleX": 0.396,
+   "scaleY": 0.396,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.448
   },
   {
    "type": "sprite",
@@ -357,12 +377,13 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 747.66,
-   "y": 561.03,
-   "scaleX": 0.697,
-   "scaleY": 0.697,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 334.93,
+   "y": 947.36,
+   "scaleX": 0.345,
+   "scaleY": 0.345,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.446
   },
   {
    "type": "sprite",
@@ -374,339 +395,917 @@
    "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1489.39,
-   "y": 697.15,
-   "scaleX": 0.792,
-   "scaleY": 0.792,
-   "offsetX": 288.0,
-   "offsetY": 128.0
+   "x": 766.11,
+   "y": 272.49,
+   "scaleX": 0.221,
+   "scaleY": 0.221,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.424
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0023",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "cloud_platform.png"
+    "Clouds_01.png"
    ],
-   "name": "cloud_platform",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 120,
-   "y": 1374.87,
-   "scaleX": 0.981,
-   "scaleY": 0.981,
-   "offsetX": 110.0,
-   "offsetY": 52.0
+   "x": 2881.25,
+   "y": 531.7,
+   "scaleX": 0.224,
+   "scaleY": 0.224,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.392
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0024",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "cloud_platform.png"
+    "Clouds_01.png"
    ],
-   "name": "cloud_platform",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 270,
-   "y": 1362.87,
-   "scaleX": 1.058,
-   "scaleY": 1.058,
-   "offsetX": 110.0,
-   "offsetY": 52.0
+   "x": 2340.4,
+   "y": 328.56,
+   "scaleX": 0.397,
+   "scaleY": 0.397,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.444
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0025",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "cloud_platform.png"
+    "Clouds_01.png"
    ],
-   "name": "cloud_platform",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 420,
-   "y": 1339.38,
-   "scaleX": 0.982,
-   "scaleY": 0.982,
-   "offsetX": 110.0,
-   "offsetY": 52.0
+   "x": 1748.33,
+   "y": 901.19,
+   "scaleX": 0.34,
+   "scaleY": 0.34,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.313
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0026",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "cloud_platform.png"
+    "Clouds_01.png"
    ],
-   "name": "cloud_platform",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 570,
-   "y": 1301.4,
-   "scaleX": 1.103,
-   "scaleY": 1.103,
-   "offsetX": 110.0,
-   "offsetY": 52.0
+   "x": 1681.53,
+   "y": 438.13,
+   "scaleX": 0.329,
+   "scaleY": 0.329,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.332
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0027",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "cloud_platform.png"
+    "Clouds_01.png"
    ],
-   "name": "cloud_platform",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 720,
-   "y": 1249.53,
-   "scaleX": 0.905,
-   "scaleY": 0.905,
-   "offsetX": 110.0,
-   "offsetY": 52.0
+   "x": 92.81,
+   "y": 691.47,
+   "scaleX": 0.35,
+   "scaleY": 0.35,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.361
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0028",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "cloud_platform.png"
+    "Clouds_01.png"
    ],
-   "name": "cloud_platform",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 870,
-   "y": 1187.73,
-   "scaleX": 1.031,
-   "scaleY": 1.031,
-   "offsetX": 110.0,
-   "offsetY": 52.0
+   "x": 2160.82,
+   "y": 269.22,
+   "scaleX": 0.35,
+   "scaleY": 0.35,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.454
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0029",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "cloud_platform.png"
+    "Clouds_01.png"
    ],
-   "name": "cloud_platform",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1020,
-   "y": 1122.42,
-   "scaleX": 0.928,
-   "scaleY": 0.928,
-   "offsetX": 110.0,
-   "offsetY": 52.0
+   "x": 2305.92,
+   "y": 401.58,
+   "scaleX": 0.223,
+   "scaleY": 0.223,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.507
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0030",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "cloud_platform.png"
+    "Clouds_01.png"
    ],
-   "name": "cloud_platform",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1170,
-   "y": 1060.86,
-   "scaleX": 0.965,
-   "scaleY": 0.965,
-   "offsetX": 110.0,
-   "offsetY": 52.0
+   "x": 1049.56,
+   "y": 399.19,
+   "scaleX": 0.399,
+   "scaleY": 0.399,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.31
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0031",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "cloud_platform.png"
+    "Clouds_01.png"
    ],
-   "name": "cloud_platform",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1320,
-   "y": 1009.4,
-   "scaleX": 1.157,
-   "scaleY": 1.157,
-   "offsetX": 110.0,
-   "offsetY": 52.0
+   "x": 1959.77,
+   "y": 642.74,
+   "scaleX": 0.366,
+   "scaleY": 0.366,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.304
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0032",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "cloud_platform.png"
+    "Clouds_01.png"
    ],
-   "name": "cloud_platform",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1470,
-   "y": 971.93,
-   "scaleX": 0.935,
-   "scaleY": 0.935,
-   "offsetX": 110.0,
-   "offsetY": 52.0
+   "x": 2474.92,
+   "y": 705.08,
+   "scaleX": 0.409,
+   "scaleY": 0.409,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.412
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0033",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "cloud_platform.png"
+    "Clouds_01.png"
    ],
-   "name": "cloud_platform",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1620,
-   "y": 948.88,
-   "scaleX": 1.067,
-   "scaleY": 1.067,
-   "offsetX": 110.0,
-   "offsetY": 52.0
+   "x": 1692.8,
+   "y": 327.06,
+   "scaleX": 0.275,
+   "scaleY": 0.275,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.515
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0034",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "cloud_platform.png"
+    "Clouds_01.png"
    ],
-   "name": "cloud_platform",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1770,
-   "y": 937.19,
-   "scaleX": 0.968,
-   "scaleY": 0.968,
-   "offsetX": 110.0,
-   "offsetY": 52.0
+   "x": 1809.44,
+   "y": 453.96,
+   "scaleX": 0.252,
+   "scaleY": 0.252,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.466
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0035",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "cloud_platform.png"
+    "Clouds_01.png"
    ],
-   "name": "cloud_platform",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1920,
-   "y": 930.99,
-   "scaleX": 1.031,
-   "scaleY": 1.031,
-   "offsetX": 110.0,
-   "offsetY": 52.0
+   "x": 2911.15,
+   "y": 180.06,
+   "scaleX": 0.395,
+   "scaleY": 0.395,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.386
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0036",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "cloud_platform.png"
+    "Clouds_01.png"
    ],
-   "name": "cloud_platform",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2070,
-   "y": 923.08,
-   "scaleX": 1.019,
-   "scaleY": 1.019,
-   "offsetX": 110.0,
-   "offsetY": 52.0
+   "x": 1221.3,
+   "y": 437.08,
+   "scaleX": 0.41,
+   "scaleY": 0.41,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.548
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0037",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "cloud_platform.png"
+    "Clouds_01.png"
    ],
-   "name": "cloud_platform",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2220,
-   "y": 906.67,
-   "scaleX": 0.922,
-   "scaleY": 0.922,
-   "offsetX": 110.0,
-   "offsetY": 52.0
+   "x": 3038.56,
+   "y": 524.14,
+   "scaleX": 0.314,
+   "scaleY": 0.314,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.445
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0038",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "cloud_platform.png"
+    "Clouds_01.png"
    ],
-   "name": "cloud_platform",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2370,
-   "y": 877.06,
-   "scaleX": 1.143,
-   "scaleY": 1.143,
-   "offsetX": 110.0,
-   "offsetY": 52.0
+   "x": 242.85,
+   "y": 132.92,
+   "scaleX": 0.272,
+   "scaleY": 0.272,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.531
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0039",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "cloud_platform.png"
+    "Clouds_01.png"
    ],
-   "name": "cloud_platform",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2520,
-   "y": 832.78,
-   "scaleX": 1.126,
-   "scaleY": 1.126,
-   "offsetX": 110.0,
-   "offsetY": 52.0
+   "x": 266.88,
+   "y": 923.14,
+   "scaleX": 0.328,
+   "scaleY": 0.328,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.52
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0040",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "cloud_platform.png"
+    "Clouds_01.png"
    ],
-   "name": "cloud_platform",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2670,
-   "y": 775.94,
-   "scaleX": 1.005,
-   "scaleY": 1.005,
-   "offsetX": 110.0,
-   "offsetY": 52.0
+   "x": 135.03,
+   "y": 1098.39,
+   "scaleX": 0.394,
+   "scaleY": 0.394,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.478
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0041",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "cloud_platform.png"
+    "Clouds_01.png"
    ],
-   "name": "cloud_platform",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2820,
-   "y": 711.74,
-   "scaleX": 1.15,
-   "scaleY": 1.15,
-   "offsetX": 110.0,
-   "offsetY": 52.0
+   "x": 413.25,
+   "y": 640.62,
+   "scaleX": 0.273,
+   "scaleY": 0.273,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.435
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0042",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1996.36,
+   "y": 584.86,
+   "scaleX": 0.291,
+   "scaleY": 0.291,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0043",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 595.42,
+   "y": 420.45,
+   "scaleX": 0.46,
+   "scaleY": 0.46,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.643
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0044",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1825.57,
+   "y": 986.39,
+   "scaleX": 0.716,
+   "scaleY": 0.716,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.747
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0045",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1001.16,
+   "y": 1010.31,
+   "scaleX": 0.591,
+   "scaleY": 0.591,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.697
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0046",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1278.28,
+   "y": 605.06,
+   "scaleX": 0.565,
+   "scaleY": 0.565,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.635
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0047",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1907.89,
+   "y": 486.16,
+   "scaleX": 0.46,
+   "scaleY": 0.46,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.551
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0048",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2374.65,
+   "y": 325.52,
+   "scaleX": 0.667,
+   "scaleY": 0.667,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.606
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0049",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2501.02,
+   "y": 789.09,
+   "scaleX": 0.676,
+   "scaleY": 0.676,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.571
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0050",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2897.01,
+   "y": 576.89,
+   "scaleX": 0.707,
+   "scaleY": 0.707,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.799
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0051",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 231.35,
+   "y": 1091.97,
+   "scaleX": 0.508,
+   "scaleY": 0.508,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.632
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0052",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2002.55,
+   "y": 1563.95,
+   "scaleX": 0.648,
+   "scaleY": 0.648,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.553
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0053",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1537.94,
+   "y": 475.6,
+   "scaleX": 0.663,
+   "scaleY": 0.663,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.625
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0054",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2330.52,
+   "y": 962.5,
+   "scaleX": 0.65,
+   "scaleY": 0.65,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.597
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0055",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 302.81,
+   "y": 972.54,
+   "scaleX": 0.65,
+   "scaleY": 0.65,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.621
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0056",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2941.91,
+   "y": 1428.48,
+   "scaleX": 0.652,
+   "scaleY": 0.652,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.558
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0057",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2827.11,
+   "y": 1660.19,
+   "scaleX": 0.655,
+   "scaleY": 0.655,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.648
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0058",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 943.55,
+   "y": 633.19,
+   "scaleX": 0.483,
+   "scaleY": 0.483,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.56
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0059",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2569.16,
+   "y": 1340.34,
+   "scaleX": 0.654,
+   "scaleY": 0.654,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.761
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0060",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1995.03,
+   "y": 1810.08,
+   "scaleX": 0.661,
+   "scaleY": 0.661,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.696
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0061",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 283.02,
+   "y": 1030.27,
+   "scaleX": 0.696,
+   "scaleY": 0.696,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.652
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0062",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1965.53,
+   "y": 415.67,
+   "scaleX": 0.493,
+   "scaleY": 0.493,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.615
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0063",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1845.84,
+   "y": 190.85,
+   "scaleX": 0.956,
+   "scaleY": 0.956,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.817
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0064",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1300.96,
+   "y": 195.2,
+   "scaleX": 0.934,
+   "scaleY": 0.934,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.94
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0065",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 120.51,
+   "y": 151.32,
+   "scaleX": 1.164,
+   "scaleY": 1.164,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.803
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0066",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 665.19,
+   "y": 187.56,
+   "scaleX": 1.058,
+   "scaleY": 1.058,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.868
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0067",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2744.16,
+   "y": 1863.81,
+   "scaleX": 0.961,
+   "scaleY": 0.961,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.933
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0068",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2919.71,
+   "y": 195.9,
+   "scaleX": 1.175,
+   "scaleY": 1.175,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.92
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0069",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2641.04,
+   "y": 1823.92,
+   "scaleX": 0.978,
+   "scaleY": 0.978,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.88
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0070",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2609.92,
+   "y": 234.57,
+   "scaleX": 1.182,
+   "scaleY": 1.182,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.923
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0071",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2332.58,
+   "y": 1671.9,
+   "scaleX": 1.123,
+   "scaleY": 1.123,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.906
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0072",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1960.61,
+   "y": 1715.04,
+   "scaleX": 0.921,
+   "scaleY": 0.921,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.834
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0073",
    "dir": "assets_custom/props",
    "frames": [
     "cloud_platform.png"
@@ -714,560 +1313,2306 @@
    "name": "cloud_platform",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2970,
-   "y": 647.17,
-   "scaleX": 1.098,
-   "scaleY": 1.098,
-   "offsetX": 110.0,
-   "offsetY": 52.0
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0043",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 180,
-   "y": 1411.13,
-   "scaleX": 1.415,
-   "scaleY": 1.415,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0044",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 420,
-   "y": 1379.38,
-   "scaleX": 1.927,
-   "scaleY": 1.927,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0045",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 660,
-   "y": 1311.76,
-   "scaleX": 1.65,
-   "scaleY": 1.65,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0046",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 900,
-   "y": 1214.72,
-   "scaleX": 1.995,
-   "scaleY": 1.995,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0047",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1140,
-   "y": 1112.54,
-   "scaleX": 1.871,
-   "scaleY": 1.871,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0048",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1380,
-   "y": 1032.63,
-   "scaleX": 1.565,
-   "scaleY": 1.565,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0049",
-   "dir": "assets_custom/props",
-   "frames": [
-    "pillar.png"
-   ],
-   "name": "pillar",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1440,
-   "y": 972.63,
-   "scaleX": 0.962,
-   "scaleY": 0.962,
-   "offsetX": 30.0,
-   "offsetY": 195
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0050",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1620,
-   "y": 988.88,
-   "scaleX": 1.692,
-   "scaleY": 1.692,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0051",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1860,
-   "y": 973.26,
-   "scaleX": 1.833,
-   "scaleY": 1.833,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0052",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2100,
-   "y": 960.67,
-   "scaleX": 2.07,
-   "scaleY": 2.07,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0053",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2340,
-   "y": 924.16,
-   "scaleX": 1.594,
-   "scaleY": 1.594,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0054",
-   "dir": "assets_custom/props",
-   "frames": [
-    "pillar.png"
-   ],
-   "name": "pillar",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2400,
-   "y": 864.16,
-   "scaleX": 0.823,
-   "scaleY": 0.823,
-   "offsetX": 30.0,
-   "offsetY": 195
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0055",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2580,
-   "y": 851.31,
-   "scaleX": 1.448,
-   "scaleY": 1.448,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0056",
-   "dir": "assets_custom/props",
-   "frames": [
-    "pillar.png"
-   ],
-   "name": "pillar",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2640,
-   "y": 791.31,
-   "scaleX": 0.871,
-   "scaleY": 0.871,
-   "offsetX": 30.0,
-   "offsetY": 195
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0057",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2820,
-   "y": 751.74,
-   "scaleX": 1.93,
-   "scaleY": 1.93,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0058",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 3060,
-   "y": 651.26,
-   "scaleX": 2.015,
-   "scaleY": 2.015,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0059",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
-   "frames": [
-    "Lamp1.png"
-   ],
-   "name": "Lamp1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 260,
-   "y": 1243.98,
-   "scaleX": 3.0,
-   "scaleY": 3.0,
-   "offsetX": 10.0,
-   "offsetY": 34
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0060",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
-   "frames": [
-    "Lamp1.png"
-   ],
-   "name": "Lamp1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 560,
-   "y": 1184.39,
-   "scaleX": 3.0,
-   "scaleY": 3.0,
-   "offsetX": 10.0,
-   "offsetY": 34
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0061",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
-   "frames": [
-    "Lamp3.png"
-   ],
-   "name": "Lamp3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 860,
-   "y": 1072.04,
-   "scaleX": 3.0,
-   "scaleY": 3.0,
-   "offsetX": 6.5,
-   "offsetY": 34
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0062",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
-   "frames": [
-    "Lamp1.png"
-   ],
-   "name": "Lamp1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1160,
-   "y": 944.71,
-   "scaleX": 3.0,
-   "scaleY": 3.0,
-   "offsetX": 10.0,
-   "offsetY": 34
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0063",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
-   "frames": [
-    "Lamp2.png"
-   ],
-   "name": "Lamp2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1460,
-   "y": 853.96,
-   "scaleX": 3.0,
-   "scaleY": 3.0,
-   "offsetX": 5.5,
-   "offsetY": 34
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0064",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
-   "frames": [
-    "Lamp2.png"
-   ],
-   "name": "Lamp2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1760,
-   "y": 817.73,
-   "scaleX": 3.0,
-   "scaleY": 3.0,
-   "offsetX": 5.5,
-   "offsetY": 34
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0065",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
-   "frames": [
-    "Lamp2.png"
-   ],
-   "name": "Lamp2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2060,
-   "y": 803.81,
-   "scaleX": 3.0,
-   "scaleY": 3.0,
-   "offsetX": 5.5,
-   "offsetY": 34
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0066",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
-   "frames": [
-    "Lamp2.png"
-   ],
-   "name": "Lamp2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2360,
-   "y": 759.5,
-   "scaleX": 3.0,
-   "scaleY": 3.0,
-   "offsetX": 5.5,
-   "offsetY": 34
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0067",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
-   "frames": [
-    "Lamp3.png"
-   ],
-   "name": "Lamp3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2660,
-   "y": 660.03,
-   "scaleX": 3.0,
-   "scaleY": 3.0,
-   "offsetX": 6.5,
-   "offsetY": 34
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0068",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
-   "frames": [
-    "Lamp3.png"
-   ],
-   "name": "Lamp3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2960,
-   "y": 531.34,
-   "scaleX": 3.0,
-   "scaleY": 3.0,
-   "offsetX": 6.5,
-   "offsetY": 34
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0069",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
-   "frames": [
-    "Gold Stone 1.png"
-   ],
-   "name": "Gold Stone 1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 486.09,
-   "y": 1281.23,
-   "scaleX": 0.8,
-   "scaleY": 0.8,
-   "offsetX": 64.0,
-   "offsetY": 127
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0070",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
-   "frames": [
-    "Gold Stone 5.png"
-   ],
-   "name": "Gold Stone 5",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 613.52,
-   "y": 1208.61,
-   "scaleX": 0.647,
-   "scaleY": 0.647,
-   "offsetX": 64.0,
-   "offsetY": 127
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0071",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
-   "frames": [
-    "Gold Stone 5.png"
-   ],
-   "name": "Gold Stone 5",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1403.52,
-   "y": 984.6,
-   "scaleX": 0.55,
-   "scaleY": 0.55,
-   "offsetX": 64.0,
-   "offsetY": 127
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0072",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
-   "frames": [
-    "Gold Stone 5.png"
-   ],
-   "name": "Gold Stone 5",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1054.26,
-   "y": 1196.81,
-   "scaleX": 0.69,
-   "scaleY": 0.69,
-   "offsetX": 64.0,
-   "offsetY": 127
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r25_0073",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
-   "frames": [
-    "Gold Stone 4.png"
-   ],
-   "name": "Gold Stone 4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2395.33,
-   "y": 841.15,
-   "scaleX": 0.647,
-   "scaleY": 0.647,
-   "offsetX": 64.0,
-   "offsetY": 127
+   "x": 120.0,
+   "y": 1374.0,
+   "scaleX": 1.021,
+   "scaleY": 1.021,
+   "offsetX": 110,
+   "offsetY": 52
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0074",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Gold Stone 4.png"
+    "Clouds_01.png"
    ],
-   "name": "Gold Stone 4",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2467.64,
-   "y": 680.32,
-   "scaleX": 0.628,
-   "scaleY": 0.628,
-   "offsetX": 64.0,
-   "offsetY": 127
+   "x": 170.47,
+   "y": 1364.1,
+   "scaleX": 0.566,
+   "scaleY": 0.566,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.711
   },
   {
    "type": "sprite",
    "spriteId": "s_r25_0075",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 80.19,
+   "y": 1381.59,
+   "scaleX": 0.433,
+   "scaleY": 0.433,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.841
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0076",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 146.2,
+   "y": 1436.52,
+   "scaleX": 0.477,
+   "scaleY": 0.477,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.396
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0077",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 249.13,
+   "y": 1355.52,
+   "scaleX": 1.018,
+   "scaleY": 1.018,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0078",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 288.3,
+   "y": 1356.73,
+   "scaleX": 0.419,
+   "scaleY": 0.419,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.727
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0079",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 271.97,
+   "y": 1383.69,
+   "scaleX": 0.418,
+   "scaleY": 0.418,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.843
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0080",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 251.19,
+   "y": 1426.07,
+   "scaleX": 0.309,
+   "scaleY": 0.309,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.375
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0081",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 378.26,
+   "y": 1336.33,
+   "scaleX": 1.268,
+   "scaleY": 1.268,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0082",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 332.97,
+   "y": 1337.92,
+   "scaleX": 0.503,
+   "scaleY": 0.503,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.729
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0083",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 383.56,
+   "y": 1340.95,
+   "scaleX": 0.449,
+   "scaleY": 0.449,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.835
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0084",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 507.39,
+   "y": 1315.72,
+   "scaleX": 1.044,
+   "scaleY": 1.044,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0085",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 447.72,
+   "y": 1326.08,
+   "scaleX": 0.544,
+   "scaleY": 0.544,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.859
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0086",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 456.94,
+   "y": 1341.74,
+   "scaleX": 0.482,
+   "scaleY": 0.482,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.911
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0087",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 527.35,
+   "y": 1415.22,
+   "scaleX": 0.314,
+   "scaleY": 0.314,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.423
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0088",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 636.52,
+   "y": 1293.08,
+   "scaleX": 1.115,
+   "scaleY": 1.115,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0089",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 631.37,
+   "y": 1322.22,
+   "scaleX": 0.47,
+   "scaleY": 0.47,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.702
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0090",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 633.81,
+   "y": 1299.6,
+   "scaleX": 0.583,
+   "scaleY": 0.583,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.707
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0091",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 765.65,
+   "y": 1267.89,
+   "scaleX": 1.12,
+   "scaleY": 1.12,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0092",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 716.49,
+   "y": 1284.26,
+   "scaleX": 0.443,
+   "scaleY": 0.443,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.901
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0093",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 826.0,
+   "y": 1259.77,
+   "scaleX": 0.616,
+   "scaleY": 0.616,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.74
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0094",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 894.78,
+   "y": 1239.74,
+   "scaleX": 1.204,
+   "scaleY": 1.204,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0095",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 951.05,
+   "y": 1262.01,
+   "scaleX": 0.581,
+   "scaleY": 0.581,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.751
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0096",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 882.63,
+   "y": 1234.62,
+   "scaleX": 0.519,
+   "scaleY": 0.519,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.747
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0097",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 861.29,
+   "y": 1314.51,
+   "scaleX": 0.492,
+   "scaleY": 0.492,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.405
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0098",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1023.91,
+   "y": 1208.38,
+   "scaleX": 1.274,
+   "scaleY": 1.274,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0099",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1077.01,
+   "y": 1215.71,
+   "scaleX": 0.447,
+   "scaleY": 0.447,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.826
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0100",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 982.25,
+   "y": 1223.7,
+   "scaleX": 0.573,
+   "scaleY": 0.573,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.739
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0101",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1028.58,
+   "y": 1277.54,
+   "scaleX": 0.429,
+   "scaleY": 0.429,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.453
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0102",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1153.04,
+   "y": 1173.68,
+   "scaleX": 1.037,
+   "scaleY": 1.037,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0103",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1156.71,
+   "y": 1199.65,
+   "scaleX": 0.594,
+   "scaleY": 0.594,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.898
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0104",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1094.56,
+   "y": 1189.4,
+   "scaleX": 0.493,
+   "scaleY": 0.493,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.883
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0105",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1282.17,
+   "y": 1135.71,
+   "scaleX": 1.089,
+   "scaleY": 1.089,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0106",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1255.98,
+   "y": 1131.44,
+   "scaleX": 0.524,
+   "scaleY": 0.524,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.879
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0107",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1259.57,
+   "y": 1133.9,
+   "scaleX": 0.424,
+   "scaleY": 0.424,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.902
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0108",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1267.43,
+   "y": 1246.79,
+   "scaleX": 0.404,
+   "scaleY": 0.404,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.463
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0109",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1411.3,
+   "y": 1094.67,
+   "scaleX": 1.051,
+   "scaleY": 1.051,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0110",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1405.68,
+   "y": 1115.06,
+   "scaleX": 0.438,
+   "scaleY": 0.438,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.871
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0111",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1395.02,
+   "y": 1087.75,
+   "scaleX": 0.499,
+   "scaleY": 0.499,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.749
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0112",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1540.43,
+   "y": 1050.9,
+   "scaleX": 1.06,
+   "scaleY": 1.06,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0113",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1576.14,
+   "y": 1042.79,
+   "scaleX": 0.542,
+   "scaleY": 0.542,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.812
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0114",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1584.11,
+   "y": 1044.08,
+   "scaleX": 0.461,
+   "scaleY": 0.461,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.802
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0115",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1669.57,
+   "y": 1004.9,
+   "scaleX": 1.035,
+   "scaleY": 1.035,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0116",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1698.48,
+   "y": 1003.91,
+   "scaleX": 0.452,
+   "scaleY": 0.452,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.909
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0117",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1655.48,
+   "y": 1023.28,
+   "scaleX": 0.572,
+   "scaleY": 0.572,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.84
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0118",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1798.7,
+   "y": 957.24,
+   "scaleX": 1.028,
+   "scaleY": 1.028,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0119",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1765.77,
+   "y": 974.03,
+   "scaleX": 0.479,
+   "scaleY": 0.479,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.867
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0120",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1822.39,
+   "y": 971.69,
+   "scaleX": 0.512,
+   "scaleY": 0.512,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.75
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0121",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1927.83,
+   "y": 908.6,
+   "scaleX": 1.026,
+   "scaleY": 1.026,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0122",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1876.02,
+   "y": 925.22,
+   "scaleX": 0.446,
+   "scaleY": 0.446,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.779
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0123",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1907.6,
+   "y": 899.65,
+   "scaleX": 0.466,
+   "scaleY": 0.466,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.851
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0124",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2056.96,
+   "y": 859.69,
+   "scaleX": 0.987,
+   "scaleY": 0.987,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0125",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2069.58,
+   "y": 882.53,
+   "scaleX": 0.45,
+   "scaleY": 0.45,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.723
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0126",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2111.11,
+   "y": 880.63,
+   "scaleX": 0.594,
+   "scaleY": 0.594,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.92
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0127",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2186.09,
+   "y": 811.22,
+   "scaleX": 1.185,
+   "scaleY": 1.185,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0128",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2142.23,
+   "y": 818.14,
+   "scaleX": 0.605,
+   "scaleY": 0.605,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.823
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0129",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2127.05,
+   "y": 835.44,
+   "scaleX": 0.441,
+   "scaleY": 0.441,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.737
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0130",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2162.45,
+   "y": 879.15,
+   "scaleX": 0.443,
+   "scaleY": 0.443,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.394
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0131",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2315.22,
+   "y": 763.92,
+   "scaleX": 0.97,
+   "scaleY": 0.97,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0132",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2246.13,
+   "y": 787.53,
+   "scaleX": 0.613,
+   "scaleY": 0.613,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.8
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0133",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2296.68,
+   "y": 754.38,
+   "scaleX": 0.566,
+   "scaleY": 0.566,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.896
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0134",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2318.34,
+   "y": 868.97,
+   "scaleX": 0.471,
+   "scaleY": 0.471,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.473
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0135",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2444.35,
+   "y": 718.43,
+   "scaleX": 0.998,
+   "scaleY": 0.998,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0136",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2488.47,
+   "y": 709.03,
+   "scaleX": 0.445,
+   "scaleY": 0.445,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.72
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0137",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2442.74,
+   "y": 722.5,
+   "scaleX": 0.582,
+   "scaleY": 0.582,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.715
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0138",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2405.84,
+   "y": 801.06,
+   "scaleX": 0.497,
+   "scaleY": 0.497,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.526
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0139",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2573.48,
+   "y": 675.3,
+   "scaleX": 1.135,
+   "scaleY": 1.135,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0140",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2566.66,
+   "y": 678.23,
+   "scaleX": 0.55,
+   "scaleY": 0.55,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.854
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0141",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2521.75,
+   "y": 686.47,
+   "scaleX": 0.547,
+   "scaleY": 0.547,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.828
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0142",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2583.85,
+   "y": 760.22,
+   "scaleX": 0.465,
+   "scaleY": 0.465,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.357
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0143",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2702.61,
+   "y": 635.0,
+   "scaleX": 1.145,
+   "scaleY": 1.145,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0144",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2717.62,
+   "y": 657.89,
+   "scaleX": 0.53,
+   "scaleY": 0.53,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.886
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0145",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2694.31,
+   "y": 626.89,
+   "scaleX": 0.502,
+   "scaleY": 0.502,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.835
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0146",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2696.16,
+   "y": 716.59,
+   "scaleX": 0.425,
+   "scaleY": 0.425,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.398
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0147",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2831.74,
+   "y": 597.83,
+   "scaleX": 1.141,
+   "scaleY": 1.141,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0148",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2893.02,
+   "y": 627.19,
+   "scaleX": 0.515,
+   "scaleY": 0.515,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.864
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0149",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2799.54,
+   "y": 594.49,
+   "scaleX": 0.612,
+   "scaleY": 0.612,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.827
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0150",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2960.87,
+   "y": 563.97,
+   "scaleX": 1.194,
+   "scaleY": 1.194,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0151",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2975.11,
+   "y": 589.83,
+   "scaleX": 0.417,
+   "scaleY": 0.417,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.754
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0152",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2994.55,
+   "y": 587.87,
+   "scaleX": 0.577,
+   "scaleY": 0.577,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.823
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0153",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3090.0,
+   "y": 533.43,
+   "scaleX": 0.962,
+   "scaleY": 0.962,
+   "offsetX": 110,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0154",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3104.97,
+   "y": 533.3,
+   "scaleX": 0.549,
+   "scaleY": 0.549,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.856
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0155",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3051.51,
+   "y": 553.35,
+   "scaleX": 0.613,
+   "scaleY": 0.613,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.742
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0156",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 468.47,
+   "y": 1253.02,
+   "scaleX": 0.371,
+   "scaleY": 0.371,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.404
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0157",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 469.18,
+   "y": 1123.02,
+   "scaleX": 0.252,
+   "scaleY": 0.252,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.423
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0158",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 456.63,
+   "y": 993.02,
+   "scaleX": 0.218,
+   "scaleY": 0.218,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.266
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0159",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 700.81,
+   "y": 1212.51,
+   "scaleX": 0.346,
+   "scaleY": 0.346,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.456
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0160",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 679.85,
+   "y": 1082.51,
+   "scaleX": 0.311,
+   "scaleY": 0.311,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.365
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0161",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 681.63,
+   "y": 952.51,
+   "scaleX": 0.226,
+   "scaleY": 0.226,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.271
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0162",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 956.95,
+   "y": 1160.16,
+   "scaleX": 0.362,
+   "scaleY": 0.362,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.468
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0163",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 934.86,
+   "y": 1030.16,
+   "scaleX": 0.279,
+   "scaleY": 0.279,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.436
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0164",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 927.11,
+   "y": 900.16,
+   "scaleX": 0.237,
+   "scaleY": 0.237,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.281
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0165",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1239.71,
+   "y": 1076.8,
+   "scaleX": 0.34,
+   "scaleY": 0.34,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.487
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0166",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1251.64,
+   "y": 946.8,
+   "scaleX": 0.348,
+   "scaleY": 0.348,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.411
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0167",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1240.91,
+   "y": 816.8,
+   "scaleX": 0.211,
+   "scaleY": 0.211,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.342
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0168",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1489.32,
+   "y": 1005.19,
+   "scaleX": 0.383,
+   "scaleY": 0.383,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.439
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0169",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1479.7,
+   "y": 875.19,
+   "scaleX": 0.266,
+   "scaleY": 0.266,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.38
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0170",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1487.69,
+   "y": 745.19,
+   "scaleX": 0.259,
+   "scaleY": 0.259,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.319
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0171",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1758.06,
+   "y": 908.94,
+   "scaleX": 0.376,
+   "scaleY": 0.376,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.431
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0172",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1749.2,
+   "y": 778.94,
+   "scaleX": 0.313,
+   "scaleY": 0.313,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.356
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0173",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1733.41,
+   "y": 648.94,
+   "scaleX": 0.264,
+   "scaleY": 0.264,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.26
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0174",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1980.84,
+   "y": 822.91,
+   "scaleX": 0.39,
+   "scaleY": 0.39,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.533
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0175",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1966.92,
+   "y": 692.91,
+   "scaleX": 0.32,
+   "scaleY": 0.32,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.331
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0176",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1954.27,
+   "y": 562.91,
+   "scaleX": 0.255,
+   "scaleY": 0.255,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.343
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0177",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2274.99,
+   "y": 715.17,
+   "scaleX": 0.369,
+   "scaleY": 0.369,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.478
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0178",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2239.45,
+   "y": 585.17,
+   "scaleX": 0.339,
+   "scaleY": 0.339,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.441
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0179",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2259.93,
+   "y": 455.17,
+   "scaleX": 0.262,
+   "scaleY": 0.262,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.3
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0180",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2550.82,
+   "y": 617.06,
+   "scaleX": 0.358,
+   "scaleY": 0.358,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.524
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0181",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2528.82,
+   "y": 487.06,
+   "scaleX": 0.283,
+   "scaleY": 0.283,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.33
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0182",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2540.18,
+   "y": 357.06,
+   "scaleX": 0.252,
+   "scaleY": 0.252,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.343
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0183",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2742.38,
+   "y": 550.23,
+   "scaleX": 0.364,
+   "scaleY": 0.364,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.442
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0184",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2739.41,
+   "y": 420.23,
+   "scaleX": 0.266,
+   "scaleY": 0.266,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.403
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0185",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2743.67,
+   "y": 290.23,
+   "scaleX": 0.254,
+   "scaleY": 0.254,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.31
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0186",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 654.53,
+   "y": 1283.72,
+   "scaleX": 2.3,
+   "scaleY": 2.3,
+   "offsetX": 22,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0187",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1495.67,
+   "y": 1063.59,
+   "scaleX": 2.3,
+   "scaleY": 2.3,
+   "offsetX": 22,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0188",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2298.39,
+   "y": 756.99,
+   "scaleX": 2.3,
+   "scaleY": 2.3,
+   "offsetX": 22,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0189",
+   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
+   "frames": [
+    "1.png",
+    "2.png",
+    "3.png",
+    "4.png",
+    "5.png"
+   ],
+   "name": "1",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1902.0,
+   "y": 908.37,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 96,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0190",
+   "dir": "assets_custom/props",
+   "frames": [
+    "gate_arch.png"
+   ],
+   "name": "gate_arch",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2760,
+   "y": 588.08,
+   "scaleX": 1.15,
+   "scaleY": 1.15,
+   "offsetX": 118,
+   "offsetY": 220
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0191",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2510,
+   "y": 656.08,
+   "scaleX": 0.617,
+   "scaleY": 0.617,
+   "offsetX": 30,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0192",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2630,
+   "y": 652.08,
+   "scaleX": 0.57,
+   "scaleY": 0.57,
+   "offsetX": 30,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0193",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2880,
+   "y": 648.08,
+   "scaleX": 0.556,
+   "scaleY": 0.556,
+   "offsetX": 30,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0194",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3000,
+   "y": 652.08,
+   "scaleX": 0.586,
+   "scaleY": 0.586,
+   "offsetX": 30,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0195",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3120,
+   "y": 656.08,
+   "scaleX": 0.598,
+   "scaleY": 0.598,
+   "offsetX": 30,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0196",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2760,
+   "y": 548.08,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 70,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0197",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2460,
+   "y": 654.08,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 22,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0198",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3060,
+   "y": 654.08,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 22,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0199",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2606.4,
+   "y": 661.01,
+   "scaleX": 0.711,
+   "scaleY": 0.711,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.74
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0200",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2865.22,
+   "y": 618.03,
+   "scaleX": 0.67,
+   "scaleY": 0.67,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.825
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0201",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2889.99,
+   "y": 670.16,
+   "scaleX": 0.727,
+   "scaleY": 0.727,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.839
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0202",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2556.05,
+   "y": 698.61,
+   "scaleX": 0.745,
+   "scaleY": 0.745,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.721
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0203",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
    "frames": [
     "Gold Stone 6.png"
@@ -1275,11 +3620,198 @@
    "name": "Gold Stone 6",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1672.24,
-   "y": 1037.43,
-   "scaleX": 0.718,
-   "scaleY": 0.718,
-   "offsetX": 64.0,
+   "x": 429.92,
+   "y": 1339.74,
+   "scaleX": 0.783,
+   "scaleY": 0.783,
+   "offsetX": 64,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0204",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 4.png"
+   ],
+   "name": "Gold Stone 4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 421.28,
+   "y": 1347.54,
+   "scaleX": 0.639,
+   "scaleY": 0.639,
+   "offsetX": 64,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0205",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 5.png"
+   ],
+   "name": "Gold Stone 5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1291.23,
+   "y": 1139.7,
+   "scaleX": 0.746,
+   "scaleY": 0.746,
+   "offsetX": 64,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0206",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 1.png"
+   ],
+   "name": "Gold Stone 1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1270.93,
+   "y": 1140.83,
+   "scaleX": 0.604,
+   "scaleY": 0.604,
+   "offsetX": 64,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0207",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 5.png"
+   ],
+   "name": "Gold Stone 5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2231.55,
+   "y": 802.91,
+   "scaleX": 0.611,
+   "scaleY": 0.611,
+   "offsetX": 64,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0208",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 6.png"
+   ],
+   "name": "Gold Stone 6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2223.29,
+   "y": 824.4,
+   "scaleX": 0.648,
+   "scaleY": 0.648,
+   "offsetX": 64,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0209",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2601.66,
+   "y": 628.08,
+   "scaleX": 0.764,
+   "scaleY": 0.764,
+   "offsetX": 32,
+   "offsetY": 112
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0210",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2959.31,
+   "y": 630.08,
+   "scaleX": 0.765,
+   "scaleY": 0.765,
+   "offsetX": 32,
+   "offsetY": 112
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0211",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1421.38,
+   "y": 1102.67,
+   "scaleX": 0.731,
+   "scaleY": 0.731,
+   "offsetX": 32,
+   "offsetY": 112
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0212",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 5.png"
+   ],
+   "name": "Gold Stone",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2711.49,
+   "y": 665.68,
+   "scaleX": 0.694,
+   "scaleY": 0.694,
+   "offsetX": 64,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0213",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 6.png"
+   ],
+   "name": "Gold Stone",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2670.69,
+   "y": 696.4,
+   "scaleX": 0.7,
+   "scaleY": 0.7,
+   "offsetX": 64,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r25_0214",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 6.png"
+   ],
+   "name": "Gold Stone",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2733.99,
+   "y": 680.3,
+   "scaleX": 0.667,
+   "scaleY": 0.667,
+   "offsetX": 64,
    "offsetY": 127
   }
  ],
@@ -1551,7 +4083,7 @@
    "config": {
     "id": "npc25_1",
     "name": "Sky Pilgrim",
-    "first": "Each_step_climbs_toward_the_five_who_rose_above_all_judgment._Mind_the_updrafts._And_mind_that_'five'_\u2014_there_should_be_six_thrones_at_the_top.",
+    "first": "Each_step_climbs_toward_the_five_who_rose_above_all_judgment._Mind_the_updrafts._And_mind_that_'five'_—_there_should_be_six_thrones_at_the_top.",
     "active": "",
     "completed": ""
    }
