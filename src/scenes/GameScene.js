@@ -479,7 +479,22 @@ export class GameScene extends Phaser.Scene {
     }
   }
 
+  // Per-region biome → drives both weather particles and the colour grade.
+  _regionBiome(i) {
+    const B = ['pollen','pollen','leaves','leaves','sand','mist','ember',   // 0-6 (1-6 legacy)
+               'leaves','mist','leaves','cave','pollen',                    // 7-11
+               'pollen','leaves','sand',                                    // 12-14  Act I
+               'mist','mist','spore','spore',                               // 15-18  Act II
+               'ash','sand','sand','ember','gold','ember',                  // 19-24  Act III
+               'feather','feather','feather','snow','gold','storm',         // 25-30  Act IV
+               'cave','sparkle','dust','cave',                              // 31-34  Act V
+               'void','void','void','void',                                 // 35-38  Act VI
+               'gold','gold','gold'];                                       // 39-41  hidden
+    return B[i] || 'dust';
+  }
+
   _spawnAmbientParticles(regionIndex) {
+    if (!QualitySettings.weather) return;   // weather disabled on 'low' quality
     if (!this.textures.exists('amb_particle')) {
       const g = this.make.graphics({ add: false });
       g.fillStyle(0xffffff, 1);
@@ -487,44 +502,62 @@ export class GameScene extends Phaser.Scene {
       g.generateTexture('amb_particle', 7, 7);
       g.destroy();
     }
-    const cfgs = [
-      { tints: [0x44bb33, 0x88cc44, 0x66aa22], gravity: -18, freq: 320, blend: 'NORMAL' },
-      { tints: [0x55cc33, 0x77dd44, 0x44aa22], gravity: -20, freq: 300, blend: 'NORMAL' },
-      { tints: [0xffdd44, 0xffbb22, 0xaadd44], gravity: -25, freq: 350, blend: 'ADD'    },
-      { tints: [0x44aa66, 0x228855, 0x99cc44], gravity: -15, freq: 330, blend: 'NORMAL' },
-      { tints: [0xff6600, 0xffaa44, 0xff4422], gravity: -22, freq: 360, blend: 'ADD'    },
-      { tints: [0xeeeeff, 0xaaddff, 0xffeedd], gravity: -30, freq: 290, blend: 'ADD'    },
-      { tints: [0xff3300, 0x882222, 0xff6644], gravity: -18, freq: 370, blend: 'ADD'    },
-    ];
-    const cfg = cfgs[regionIndex] || cfgs[0];
+    // grav<0 rises (embers/motes), grav>0 falls (snow/leaves/ash). ang in degrees.
+    const P = {
+      pollen:  { tints:[0xcfe0a0,0xe8f0c8,0xbcd488], grav:-10, ang:[180,360], spd:[8,20],  life:[6000,10000], freq:360, blend:'NORMAL', scale:[0.45,0.10], alpha:0.40 },
+      leaves:  { tints:[0x7fa64a,0xb8923a,0x6f8f3f], grav:12,  ang:[200,340], spd:[10,22], life:[5000,9000],  freq:340, blend:'NORMAL', scale:[0.55,0.15], alpha:0.50 },
+      mist:    { tints:[0xbcd0e0,0xa8c4d8,0xd0e0ec], grav:-3,  ang:[160,200], spd:[6,16],  life:[8000,13000], freq:460, blend:'NORMAL', scale:[1.10,0.30], alpha:0.20 },
+      spore:   { tints:[0x9fd06a,0x6fae4a,0xbfe08a], grav:-7,  ang:[180,360], spd:[5,14],  life:[7000,12000], freq:380, blend:'ADD',    scale:[0.40,0.05], alpha:0.30 },
+      cave:    { tints:[0x6fc0c8,0x4a9aa8,0x88d0d8], grav:-5,  ang:[180,360], spd:[4,12],  life:[8000,13000], freq:440, blend:'ADD',    scale:[0.40,0.05], alpha:0.28 },
+      ash:     { tints:[0x9a948c,0x7a726a,0xb0a89e,0xff7a3a], grav:9, ang:[200,340], spd:[8,18], life:[6000,11000], freq:320, blend:'NORMAL', scale:[0.50,0.12], alpha:0.42 },
+      sand:    { tints:[0xd8c088,0xc0a064,0xe8d4a0], grav:-6,  ang:[170,210], spd:[12,28], life:[6000,10000], freq:340, blend:'NORMAL', scale:[0.40,0.08], alpha:0.32 },
+      ember:   { tints:[0xff7a18,0xffb840,0xff4a18], grav:-24, ang:[180,360], spd:[14,32], life:[3500,7000],  freq:280, blend:'ADD',    scale:[0.50,0.02], alpha:0.70 },
+      gold:    { tints:[0xffe08a,0xffc24a,0xfff0c0], grav:-14, ang:[180,360], spd:[8,20],  life:[5000,9000],  freq:320, blend:'ADD',    scale:[0.45,0.05], alpha:0.55 },
+      feather: { tints:[0xeef2f8,0xcfe0f0,0xfff4e8], grav:5,   ang:[200,340], spd:[6,16],  life:[8000,13000], freq:400, blend:'NORMAL', scale:[0.55,0.12], alpha:0.32 },
+      snow:    { tints:[0xffffff,0xeaf2ff,0xd8e8f8], grav:20,  ang:[230,310], spd:[10,26], life:[6000,11000], freq:220, blend:'NORMAL', scale:[0.55,0.18], alpha:0.60 },
+      storm:   { tints:[0xcfe0f5,0x9fc0e8,0xeef4ff], grav:40,  ang:[250,290], spd:[50,90], life:[2500,4500],  freq:180, blend:'ADD',    scale:[0.55,0.10], alpha:0.40 },
+      sparkle: { tints:[0xc89af0,0x7fd8e0,0xffd86a,0xff9ad0], grav:-5, ang:[0,360], spd:[3,10], life:[3000,6000], freq:240, blend:'ADD', scale:[0.60,0.00], alpha:0.85 },
+      void:    { tints:[0xb070e0,0x8a4ac0,0xd0a0f0], grav:-9,  ang:[180,360], spd:[6,16],  life:[7000,12000], freq:360, blend:'ADD',    scale:[0.50,0.05], alpha:0.45 },
+      dust:    { tints:[0xc8c0b0,0xa89e90,0xd8d0c0], grav:-6,  ang:[180,360], spd:[8,18],  life:[7000,12000], freq:420, blend:'NORMAL', scale:[0.40,0.06], alpha:0.28 },
+    };
+    const cfg = P[this._regionBiome(regionIndex)] || P.dust;
     this.add.particles(WORLD_W / 2, WORLD_H / 2, 'amb_particle', {
       x:        { min: -WORLD_W / 2 + 150, max: WORLD_W / 2 - 150 },
       y:        { min: -WORLD_H / 2 + 150, max: WORLD_H / 2 - 150 },
-      scale:    { start: 0.6, end: 0.1 },
-      alpha:    { start: 0.55, end: 0 },
-      speed:    { min: 10, max: 30 },
-      angle:    { min: 180, max: 360 },
-      lifespan: { min: 5000, max: 9000 },
+      scale:    { start: cfg.scale[0], end: cfg.scale[1] },
+      alpha:    { start: cfg.alpha, end: 0 },
+      speed:    { min: cfg.spd[0], max: cfg.spd[1] },
+      angle:    { min: cfg.ang[0], max: cfg.ang[1] },
+      lifespan: { min: cfg.life[0], max: cfg.life[1] },
       frequency: cfg.freq,
       quantity:  1,
       tint:      cfg.tints,
       depth:    -2,
-      gravityY:  cfg.gravity,
+      gravityY:  cfg.grav,
       blendMode: cfg.blend,
     });
   }
 
   _applyRegionColorOverlay(regionIndex) {
-    const overlays = [
-      null,
-      { color: 0x001100, alpha: 0.06 },
-      { color: 0x001408, alpha: 0.07 },
-      { color: 0x010d00, alpha: 0.10 },
-      { color: 0x100500, alpha: 0.09 },
-      { color: 0x000510, alpha: 0.08 },
-      { color: 0x100000, alpha: 0.12 },
-    ];
-    const ov = overlays[regionIndex];
+    // subtle per-biome colour grade over the ground (Phaser rect, depth -7)
+    const G = {
+      pollen:  { color: 0x121a08, alpha: 0.05 },
+      leaves:  { color: 0x0a1f0a, alpha: 0.07 },
+      mist:    { color: 0x06121f, alpha: 0.08 },
+      spore:   { color: 0x0a1606, alpha: 0.11 },
+      cave:    { color: 0x05101a, alpha: 0.16 },
+      ash:     { color: 0x151214, alpha: 0.12 },
+      sand:    { color: 0x1c1406, alpha: 0.08 },
+      ember:   { color: 0x1c0700, alpha: 0.13 },
+      gold:    { color: 0x1c1606, alpha: 0.06 },
+      feather: { color: 0x0c1622, alpha: 0.05 },
+      snow:    { color: 0x0e1824, alpha: 0.06 },
+      storm:   { color: 0x0a1018, alpha: 0.13 },
+      sparkle: { color: 0x0e0a1c, alpha: 0.09 },
+      void:    { color: 0x0b0512, alpha: 0.13 },
+      dust:    { color: 0x14120e, alpha: 0.07 },
+    };
+    const ov = G[this._regionBiome(regionIndex)];
     if (!ov) return;
     this.add.rectangle(WORLD_W / 2, WORLD_H / 2, WORLD_W, WORLD_H, ov.color, ov.alpha).setDepth(-7);
   }
