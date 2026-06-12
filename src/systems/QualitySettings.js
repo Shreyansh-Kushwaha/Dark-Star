@@ -32,6 +32,17 @@ export const QualitySettings = {
   // some browsers, in which case we fall back to 'medium'.
   _autoDetect() {
     try {
+      // Mobile/tablet GPUs have a tight texture-memory budget. Stacking the
+      // bloom + glow postFX passes (medium/high) on top of the boss arena's
+      // large lazy-loaded frames + camera zoom can exhaust it and lose the
+      // WebGL context — which renders every sprite as a green "missing"
+      // placeholder and hard-freezes the game (the FPS watchdog can't even run
+      // to recover). deviceMemory is absent on iOS Safari and phones routinely
+      // report 4-8 cores, so the signals below would wrongly pick medium/high.
+      // Floor touch devices to 'low' (no postFx/glow/shadows); the player can
+      // still opt up via the quality toggle and that choice is remembered.
+      if (this._isTouchDevice()) return 'low';
+
       const mem   = navigator.deviceMemory || 0;        // 0 = unknown
       const cores = navigator.hardwareConcurrency || 0; // 0 = unknown
       if ((mem && mem <= 2) || (cores && cores <= 2)) return 'low';
@@ -40,6 +51,19 @@ export const QualitySettings = {
       return 'medium';
     } catch (e) {
       return 'medium';
+    }
+  },
+
+  // Coarse pointer (finger) + touch points is the most reliable cross-browser
+  // "is this a phone/tablet" signal, backed up by a UA check for older engines.
+  _isTouchDevice() {
+    try {
+      const coarse = typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches;
+      const touch  = (navigator.maxTouchPoints || 0) > 0 || 'ontouchstart' in window;
+      const uaHit  = /Android|iPhone|iPad|iPod|Mobile|Silk|Kindle/i.test(navigator.userAgent || '');
+      return (coarse && touch) || uaHit;
+    } catch (e) {
+      return false;
     }
   },
 

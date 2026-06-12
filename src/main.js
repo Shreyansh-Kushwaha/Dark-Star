@@ -52,3 +52,31 @@ const game = new Phaser.Game(config);
 
 // Expose for debugging
 window.__game = game;
+
+// WebGL context-loss safety net. On mobile GPUs a memory spike (e.g. the boss
+// arena's large frames + postFX) can lose the context: every texture turns into
+// a green "missing" box and the game hard-freezes. Phaser tries to restore, but
+// if it doesn't come back we drop to 'low' (lighter GPU load) and reload ONCE so
+// the player isn't stuck on a dead frame. The sessionStorage guard prevents a
+// reload loop if the device keeps dropping the context.
+try {
+  const canvas = game.canvas;
+  if (canvas && canvas.addEventListener) {
+    canvas.addEventListener('webglcontextlost', (e) => {
+      // preventDefault lets the browser attempt to restore the context at all.
+      e.preventDefault();
+      // Future loads should avoid the postFX that likely caused the spike.
+      try { QualitySettings.setLevel('low'); } catch (_) {}
+      if (!sessionStorage.getItem('webgl_recovered')) {
+        sessionStorage.setItem('webgl_recovered', '1');
+        // Give Phaser a chance to restore on its own first; reload if it can't.
+        setTimeout(() => {
+          if (game.renderer && game.renderer.contextLost) location.reload();
+        }, 2500);
+      }
+    }, false);
+    canvas.addEventListener('webglcontextrestored', () => {
+      sessionStorage.removeItem('webgl_recovered');
+    }, false);
+  }
+} catch (_) { /* non-WebGL build or no canvas — nothing to guard */ }
