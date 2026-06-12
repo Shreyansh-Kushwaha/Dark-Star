@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "M\u1e5bgavana \u2014 The Hunter's Thicket",
+ "regionName": "Hunter's Thicket",
+ "regionSubtitle": "M\u1e5bgavana",
  "background": {
   "type": "color",
   "value": "#23461b"

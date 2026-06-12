@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "\u1e62a\u1e63\u1e6dha Dv\u0101ra \u2014 The Sixth Gate",
+ "regionName": "Sixth Gate",
+ "regionSubtitle": "\u1e62a\u1e63\u1e6dha Dv\u0101ra",
  "background": {
   "type": "color",
   "value": "#1a1408"

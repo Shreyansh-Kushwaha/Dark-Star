@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "S\u016btracheda \u2014 The Place of the Severing",
+ "regionName": "The Severing",
+ "regionSubtitle": "S\u016btracheda",
  "background": {
   "type": "color",
   "value": "#0a0608"

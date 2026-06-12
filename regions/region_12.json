@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Dh\u0101nyakshetra \u2014 The Famished Fields",
+ "regionName": "Withered Fields",
+ "regionSubtitle": "Dh\u0101nyakshetra",
  "background": {
   "type": "color",
   "value": "#6f6a39"

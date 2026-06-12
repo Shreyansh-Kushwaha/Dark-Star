@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Andhak\u016bpa \u2014 The Blind Well",
+ "regionName": "Blind Well",
+ "regionSubtitle": "Andhak\u016bpa",
  "background": {
   "type": "color",
   "value": "#15110f"

@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "T\u0101mrapura \u2014 The Copper Bazaar",
+ "regionName": "Copper Bazaar",
+ "regionSubtitle": "T\u0101mrapura",
  "background": {
   "type": "color",
   "value": "#7a5d36"

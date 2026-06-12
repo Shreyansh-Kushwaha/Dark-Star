@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "V\u0101yu R\u0101k\u1e63asa's Tempest",
+ "regionName": "Storm's Eye",
+ "regionSubtitle": "V\u0101yu R\u0101k\u1e63asa",
  "background": {
   "type": "color",
   "value": "#5a6e84"

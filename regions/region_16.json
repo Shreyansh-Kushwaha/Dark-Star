@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Nadit\u012bra \u2014 The River-Ferry Village",
+ "regionName": "Ferry Village",
+ "regionSubtitle": "Nadit\u012bra",
  "background": {
   "type": "color",
   "value": "#39594d"

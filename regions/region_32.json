@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Ratnaguha \u2014 The Gem Hollows",
+ "regionName": "Gem Hollows",
+ "regionSubtitle": "Ratnaguha",
  "background": {
   "type": "color",
   "value": "#171420"

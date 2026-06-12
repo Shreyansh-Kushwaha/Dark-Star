@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Chidrabh\u016bmi \u2014 The Torn Land",
+ "regionName": "Torn Land",
+ "regionSubtitle": "Chidrabh\u016bmi",
  "background": {
   "type": "color",
   "value": "#12080a"

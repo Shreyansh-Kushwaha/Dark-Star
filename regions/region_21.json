@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Marusthala \u2014 The Glass Desert",
+ "regionName": "Glass Desert",
+ "regionSubtitle": "Marusthala",
  "background": {
   "type": "color",
   "value": "#9a7e4d"

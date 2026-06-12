@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Vism\u1e5bti K\u016bpa \u2014 The Well of Forgetting",
+ "regionName": "Forgotten Well",
+ "regionSubtitle": "Vism\u1e5bti K\u016bpa",
  "background": {
   "type": "color",
   "value": "#0d0c10"

@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Shilavana \u2014 The Vale of Stones",
+ "regionName": "Stone Vale",
+ "regionSubtitle": "Shilavana",
  "background": {
   "type": "color",
   "value": "#23682a"

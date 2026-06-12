@@ -71,8 +71,9 @@ def hyp(ax, ay, bx, by): return math.hypot(ax - bx, ay - by)
 
 
 class Region:
-    def __init__(self, index, name, bg, seed):
+    def __init__(self, index, name, bg, seed, subtitle=""):
         self.index = index; self.name = name; self.bg = bg
+        self.subtitle = subtitle
         self.R = RNG(seed)
         self.sprites = []; self.zones = []; self.enemies = []
         self.npcs = []; self.portals = []; self.boss = None
@@ -223,6 +224,7 @@ class Region:
     # ---- output -------------------------------------------------------------
     def emit(self):
         out = {"version": 1, "regionName": self.name,
+               "regionSubtitle": self.subtitle,
                "background": {"type": "color", "value": self.bg},
                "sprites": self.sprites, "noWalkZones": self.zones,
                "enemies": self.enemies, "boss": self.boss, "npcs": self.npcs,

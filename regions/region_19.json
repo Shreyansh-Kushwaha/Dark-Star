@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Bhasmabh\u016bmi \u2014 The Ashen Flats",
+ "regionName": "Ash Flats",
+ "regionSubtitle": "Bhasmabh\u016bmi",
  "background": {
   "type": "color",
   "value": "#48423b"

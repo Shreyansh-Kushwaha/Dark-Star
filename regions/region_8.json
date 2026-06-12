@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Test Boss Nagraj",
+ "regionName": "Serpent Court",
+ "regionSubtitle": "N\u0101gar\u0101ja Sabha",
  "background": {
   "type": "color",
   "value": "#26721d"

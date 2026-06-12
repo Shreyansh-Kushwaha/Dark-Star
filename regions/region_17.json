@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Kardama \u2014 The Mire of Whispers",
+ "regionName": "Whisper Mire",
+ "regionSubtitle": "Kardama",
  "background": {
   "type": "color",
   "value": "#2d3a2a"

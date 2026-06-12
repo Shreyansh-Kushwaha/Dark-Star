@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Meghasop\u0101na \u2014 The Cloud Stair",
+ "regionName": "Cloud Stair",
+ "regionSubtitle": "Meghasop\u0101na",
  "background": {
   "type": "color",
   "value": "#8fb4d6"

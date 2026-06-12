@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "P\u0101\u1e63\u0101\u1e47a Daitya's Forge",
+ "regionName": "Demon Forge",
+ "regionSubtitle": "P\u0101\u1e63\u0101\u1e47a Daitya",
  "background": {
   "type": "color",
   "value": "#3a2a22"

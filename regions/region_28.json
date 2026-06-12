@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Himashikhara \u2014 The Frostpeak",
+ "regionName": "Frostpeak",
+ "regionSubtitle": "Himashikhara",
  "background": {
   "type": "color",
   "value": "#bcc8d4"

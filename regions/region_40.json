@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Ek\u0101tm\u0101laya \u2014 The Sanctum of the One Soul",
+ "regionName": "Soul Sanctum",
+ "regionSubtitle": "Ek\u0101tm\u0101laya",
  "background": {
   "type": "color",
   "value": "#3a2e14"

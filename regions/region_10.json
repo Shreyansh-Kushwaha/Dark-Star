@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "P\u0101t\u0101la Guha \u2014 The Sunless Deep",
+ "regionName": "Sunless Deep",
+ "regionSubtitle": "P\u0101t\u0101la Guha",
  "background": {
   "type": "color",
   "value": "#171210"

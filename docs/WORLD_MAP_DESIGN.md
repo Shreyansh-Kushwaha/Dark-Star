@@ -53,7 +53,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 
 ## ACT I — THE MORTAL VALE *(Prithvi · Earth)*
 
-**1. Gramavana — The Village of Ash and Memory** 🟢🏘️ *(existing R0)*
+**1. Ash Village — *Gramavana*** 🟢🏘️ *(existing R0)*
 - **Biome:** Forest village, peaceful green clearing.
 - **Theme:** Earth / home / memory.
 - **Terrain & objects:** Huts with gates, sacred pressure plates, well, ash-stained shrine, rabbits.
@@ -62,7 +62,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Open (start). Exit unlocks after talking to Mahesh.
 - **Difficulty:** 0.4
 
-**2. Smrtivana — The Grove of Remembering** 🟢 *(existing R7)*
+**2. Memory Grove — *Smrtivana*** 🟢 *(existing R7)*
 - **Biome:** Dense green forest with mossy rocks (its current look).
 - **Theme:** Earth / the forest that "remembers" the old world.
 - **Terrain & objects:** Tall canopy trees, rock clusters, fallen logs, a thread-shrine where a frayed golden strand still hums.
@@ -71,7 +71,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Open from Gramavana.
 - **Difficulty:** 0.6
 
-**3. Dhanyakshetra — The Famished Fields** ★
+**3. Withered Fields — *Dhanyakshetra*** ★
 - **Biome:** Abandoned terraced farmland gone to rot.
 - **Theme:** Earth / decay, the cost of severance on ordinary people.
 - **Terrain & objects:** Dead crop rows, scarecrows, broken irrigation channels, a ruined granary.
@@ -80,7 +80,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Optional spur off Setubandha.
 - **Difficulty:** 0.7
 
-**4. Setubandha — The Broken Bridge Town** 🏘️🔒
+**4. Broken Bridge — *Setubandha*** 🏘️🔒
 - **Biome:** Stone trade-town perched at the lip of the first great chasm.
 - **Theme:** Earth / the first visible "severance wound" — a colossal broken bridge.
 - **Terrain & objects:** Market stalls, merchant huts, the shattered bridge spanning a bottomless rift, a winch-lift down into the Deep.
@@ -89,7 +89,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** **Hub.** Forward bridge to Pasanadvara is broken until you retrieve the **Stone Key** from Mrgavana *or* Dhanyakshetra.
 - **Difficulty:** 0.8
 
-**5. Mrgavana — The Hunter's Thicket** ★
+**5. Hunter's Thicket — *Mrgavana*** ★
 - **Biome:** Wild tangled woods, darker than Smrtivana.
 - **Theme:** Earth / untamed nature.
 - **Terrain & objects:** Thornbrush, hunter's blinds, bone-piles, a poacher's camp.
@@ -98,7 +98,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Optional, off Setubandha; one of two Stone Key sources.
 - **Difficulty:** 0.9
 
-**6. Pasanadvara — The Stone Gate Pass** ⚔️🔒
+**6. Stone Gate — *Pasanadvara*** ⚔️🔒
 - **Biome:** Narrow mountain pass between cliff walls.
 - **Theme:** Earth / threshold out of the homeland.
 - **Terrain & objects:** Carved gate pillars, rockslide debris, a toll-shrine.
@@ -111,7 +111,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 
 ## ACT II — THE DROWNED REACH *(Jal · Water)*
 
-**7. Plavita — The Sunken Causeway**
+**7. Sunken Road — *Plavita***
 - **Biome:** A drowned road, half-submerged, knee-deep water and reeds.
 - **Theme:** Water / the land literally sinking.
 - **Terrain & objects:** Flooded pavement, reed beds, tilted statues, lily pads.
@@ -120,7 +120,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Critical path from Pasanadvara.
 - **Difficulty:** 1.2
 
-**8. Naditira — The River-Ferry Village** 🏘️
+**8. Ferry Village — *Naditira*** 🏘️
 - **Biome:** Riverside stilt-village on a wide delta.
 - **Theme:** Water / commerce and crossing.
 - **Terrain & objects:** Docks, stilt-huts, moored boats, fish-drying racks, pressure-plate shrine.
@@ -129,7 +129,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** **Hub** branching to side-regions and the serpent path.
 - **Difficulty:** 1.3
 
-**9. Kardama — The Mire of Whispers** ★
+**9. Whisper Mire — *Kardama*** ★
 - **Biome:** Fetid swamp, fog, poison pools.
 - **Theme:** Water / corruption, things that should stay sunk.
 - **Terrain & objects:** Mangrove roots, bubbling poison, witch-light, a half-sunk shrine.
@@ -138,7 +138,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Optional, via ferry.
 - **Difficulty:** 1.4
 
-**10. Shilavana — The Vale of Stones** 🟢★ *(existing R9)*
+**10. Stone Vale — *Shilavana*** 🟢★ *(existing R9)*
 - **Biome:** Stony river-valley, scattered boulders, a clear stream (its current look).
 - **Theme:** Water + Earth boundary; a calm respite.
 - **Terrain & objects:** Standing stones, river, sheep, sparse trees (its existing cropped assets).
@@ -147,7 +147,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Optional, off the ferry (Naditira). A peaceful breather between fights.
 - **Difficulty:** 1.5
 
-**11. Nagakshetra — The Serpent Marsh** 🔒
+**11. Serpent Marsh — *Nagakshetra*** 🔒
 - **Biome:** Brackish marsh of coiling channels, serpent territory.
 - **Theme:** Water / the Naga domain.
 - **Terrain & objects:** Snake-carved totems, amber pools, petrified trees, shed skins.
@@ -156,7 +156,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Critical path; opens after you bring the **Naga Token** (from Kardama or a ferry quest).
 - **Difficulty:** 1.6
 
-**12. Nagaraja Sabha — The Serpent King's Court** 🟢⚔️ *(existing R8, "Test Boss Nagraj")*
+**12. Serpent Court — *Nagaraja Sabha*** 🟢⚔️ *(existing R8, "Test Boss Nagraj")*
 - **Biome:** Sunken serpent throne-hall, green-lit.
 - **Theme:** Water / serpent royalty.
 - **Terrain & objects:** Coiled-pillar columns, a flooded throne, votive snakes.
@@ -169,7 +169,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 
 ## ACT III — THE EMBERWASTES *(Agni · Fire)*
 
-**13. Bhasmabhumi — The Ashen Flats**
+**13. Ash Flats — *Bhasmabhumi***
 - **Biome:** Endless grey ash plain, scorched.
 - **Theme:** Fire / aftermath of a divine burning.
 - **Terrain & objects:** Ash dunes, charred trees, smoking fissures, bone markers.
@@ -178,7 +178,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Critical path from the serpent court.
 - **Difficulty:** 1.9
 
-**14. Tamrapura — The Copper Bazaar** 🏘️
+**14. Copper Bazaar — *Tamrapura*** 🏘️
 - **Biome:** Sandstone desert trade-city, copper domes.
 - **Theme:** Fire / desert civilization.
 - **Terrain & objects:** Bazaar tents, copper rooftops, a great furnace-forge, cistern shrine.
@@ -187,7 +187,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** **Hub** for Act III; branches to Marusthala.
 - **Difficulty:** 2.0
 
-**15. Marusthala — The Glass Desert** ★
+**15. Glass Desert — *Marusthala*** ★
 - **Biome:** Open dunes fused to glass by old fire; mirages.
 - **Theme:** Fire / illusion and thirst.
 - **Terrain & objects:** Glass spires, mirage-pools, a buried caravan, sun-bleached idol.
@@ -196,7 +196,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Optional, off Tamrapura.
 - **Difficulty:** 2.1
 
-**16. Agnikunda — The Firepit Caldera** 🔒
+**16. Fire Caldera — *Agnikunda*** 🔒
 - **Biome:** Active volcanic caldera, lava channels.
 - **Theme:** Fire / the forge of the gods.
 - **Terrain & objects:** Lava flows, basalt bridges, ember geysers, an anvil-altar.
@@ -205,7 +205,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Critical path; needs **Heatward Charm** from Tamrapura.
 - **Difficulty:** 2.2
 
-**17. Deva Mandira — The Temple of the Gods** 🔒
+**17. Temple of Gods — *Deva Mandira*** 🔒
 - **Biome:** Grand golden fire-temple complex.
 - **Theme:** Fire / divine authority (the conspirators' seat).
 - **Terrain & objects:** Gold pillars, eternal braziers, the **Great Mural** (six halos, one scraped away), priest-cells.
@@ -214,7 +214,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Critical path.
 - **Difficulty:** 2.3
 
-**18. Pasana Daitya's Forge** ⚔️
+**18. Demon Forge — *Pasana Daitya*** ⚔️
 - **Biome:** Inner forge-sanctum, molten and stone.
 - **Theme:** Fire + Earth.
 - **Terrain & objects:** Bellows, slag heaps, a half-finished colossus.
@@ -227,7 +227,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 
 ## ACT IV — THE SKYWARD CLIMB *(Vayu · Wind)*
 
-**19. Meghasopana — The Cloud Stair**
+**19. Cloud Stair — *Meghasopana***
 - **Biome:** Floating stone stairs rising into cloudbanks.
 - **Theme:** Wind / ascent.
 - **Terrain & objects:** Broken sky-stairs, drifting platforms, prayer-bells, updraft vents.
@@ -236,7 +236,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Critical path from the forge.
 - **Difficulty:** 2.5
 
-**20. Vayupatha — The Windward Cliffs** 🔒
+**20. Wind Cliffs — *Vayupatha*** 🔒
 - **Biome:** Sheer cliffs lashed by crosswinds.
 - **Theme:** Wind / peril.
 - **Terrain & objects:** Narrow ledges, rope-bridges, gust-zones that shove the player.
@@ -245,7 +245,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Critical path; wind-gusts require **Anchor Stone** (from Garudalaya quest) for the hardest ledges.
 - **Difficulty:** 2.6
 
-**21. Garudalaya — The Eyrie Sanctuary** 🏘️
+**21. The Eyrie — *Garudalaya*** 🏘️
 - **Biome:** Cliff-top sanctuary of the bird-folk.
 - **Theme:** Wind / refuge above the world.
 - **Terrain & objects:** Nest-towers, wind-shrines, a great roost, pressure-plate shrine.
@@ -254,7 +254,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** **Hub.**
 - **Difficulty:** 2.7
 
-**22. Himashikhara — The Frostpeak** ★
+**22. Frostpeak — *Himashikhara*** ★
 - **Biome:** Snow-capped summit, blizzard.
 - **Theme:** Wind + ice / isolation.
 - **Terrain & objects:** Snowdrifts, ice shrines, a frozen pilgrim, frost-crystals.
@@ -263,7 +263,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Optional, off Garudalaya.
 - **Difficulty:** 2.8
 
-**23. Swarga Seema — The Edge of Heaven** 🔒
+**23. Heaven's Edge — *Swarga Seema*** 🔒
 - **Biome:** Pale sky-blue heaven-rim, palace clouds.
 - **Theme:** Wind / the gods' threshold.
 - **Terrain & objects:** Cloud terraces, heavenly gates, apsara fountains.
@@ -272,7 +272,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Critical path; needs Ekatmadeva's name learned at Garudalaya.
 - **Difficulty:** 2.9
 
-**24. Vayu Rakshasa's Tempest** ⚔️
+**24. Storm's Eye — *Vayu Rakshasa*** ⚔️
 - **Biome:** Eye of a perpetual sky-storm.
 - **Theme:** Wind.
 - **Terrain & objects:** Spinning debris-rings, lightning, a torn banner of six gods.
@@ -288,7 +288,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 > Reachable early via the lift at **Setubandha** (Act I) and again from **Asthinagara**. Optional for
 > the normal ending, **required for the true ending.**
 
-**25. Andhakupa — The Blind Well**
+**25. Blind Well — *Andhakupa***
 - **Biome:** A vast vertical shaft descending into darkness.
 - **Theme:** Underworld / descent.
 - **Terrain & objects:** Spiral ledges, dripping roots, lantern-hooks, a creaking lift.
@@ -297,7 +297,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Entrance from Setubandha's lift.
 - **Difficulty:** 2.0
 
-**26. Ratnaguha — The Gem Hollows** ★
+**26. Gem Hollows — *Ratnaguha*** ★
 - **Biome:** Crystal caverns, faint glow.
 - **Theme:** Underworld / hidden wealth and truth.
 - **Terrain & objects:** Gem clusters, underground pools, mining ruins.
@@ -306,7 +306,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Optional spur.
 - **Difficulty:** 2.4
 
-**27. Patala Guha — The Sunless Deep** 🟢 *(existing R10)*
+**27. Sunless Deep — *Patala Guha*** 🟢 *(existing R10)*
 - **Biome:** Torch-lit crystal cave with a black underground lake (its current look).
 - **Theme:** Underworld / the deep heart.
 - **Terrain & objects:** Crystal pillars, torches, the still black lake, rock chambers (its existing assets).
@@ -315,7 +315,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Critical to the Deep branch.
 - **Difficulty:** 2.6
 
-**28. Asthinagara — The City of Bone** 🔒
+**28. Bone City — *Asthinagara*** 🔒
 - **Biome:** A buried ancient city of pale bone-stone.
 - **Theme:** Underworld / the dead who remember.
 - **Terrain & objects:** Bone arches, ossuary towers, a sunken plaza, ancestor-shrines.
@@ -324,7 +324,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Needs **Bone Sigil** from Ratnaguha.
 - **Difficulty:** 2.8
 
-**29. Vismrti Kupa — The Well of Forgetting** ✦🔒
+**29. Forgotten Well — *Vismrti Kupa*** ✦🔒
 - **Biome:** A drowned vault at the world's bottom, utterly silent.
 - **Theme:** Underworld / oblivion itself.
 - **Terrain & objects:** Submerged archives, a black mirror-pool, a sealed sixth door.
@@ -337,7 +337,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 
 ## ACT VI — THE SEVERANCE *(Void · finale)*
 
-**30. Chidrabhumi — The Torn Land**
+**30. Torn Land — *Chidrabhumi***
 - **Biome:** Reality fractured into floating shards over a void.
 - **Theme:** Void / the wound itself.
 - **Terrain & objects:** Drifting land-shards, snapped golden threads, gravity tears.
@@ -346,7 +346,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Critical path convergence point.
 - **Difficulty:** 3.1
 
-**31. Antarala — The Between-Place** 🏘️
+**31. The Between — *Antarala*** 🏘️
 - **Biome:** A still grey limbo, a last island of calm.
 - **Theme:** Void / the pause before the end.
 - **Terrain & objects:** A single shrine, a campfire, the frayed end of the Sutra.
@@ -355,7 +355,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** **Hub** before finale.
 - **Difficulty:** 3.2
 
-**32. Viyoga Durga — The Fortress of Separation** 🔒
+**32. Severance Fortress — *Viyoga Durga*** 🔒
 - **Biome:** Black-purple void fortress, dark overlay.
 - **Theme:** Void.
 - **Terrain & objects:** Obsidian ramparts, broken thread-bridges, judgment thrones.
@@ -364,7 +364,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Critical path.
 - **Difficulty:** 3.4
 
-**33. Sutracheda — The Place of the Severing** ⚔️
+**33. The Severing — *Sutracheda*** ⚔️
 - **Biome:** The exact point where the thread was cut, a void-altar.
 - **Theme:** Void / truth.
 - **Terrain & objects:** The severed Sutra's two ends, a cosmic loom, six thrones (one empty).
@@ -379,7 +379,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 
 > Unlocks **only** with all lore fragments collected, via the sealed door in **Vismrti Kupa (R29)**.
 
-**34. Shashtha Dvara — The Sixth Gate** ✦🔒
+**34. Sixth Gate — *Shashtha Dvara*** ✦🔒
 - **Biome:** A radiant doorway that "shouldn't exist," gold against the dark.
 - **Theme:** The restored sixth element — *Atman* (soul).
 - **Terrain & objects:** A gate of living thread, names re-appearing on the walls as you pass.
@@ -388,7 +388,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** All lore fragments.
 - **Difficulty:** 3.0
 
-**35. Ekatmalaya — The Sanctum of the One Soul** ✦
+**35. Soul Sanctum — *Ekatmalaya*** ✦
 - **Biome:** Ekatmadeva's erased temple, rebuilt by your remembering — warm gold, whole.
 - **Theme:** Wholeness / the unbroken thread as it was.
 - **Terrain & objects:** Six intact halos, an unbroken Sutra, a living tree at the center.
@@ -397,7 +397,7 @@ and Patala Guha (R10) is the heart of the underworld branch.
 - **Gating:** Past the Sixth Gate.
 - **Difficulty:** 3.5
 
-**36. Maunamandira — The Silent Shrine** ✦★
+**36. Silent Shrine — *Maunamandira*** ✦★
 - **Biome:** A tiny hidden shrine outside time, reachable only from Ekatmalaya.
 - **Theme:** Reflection / epilogue.
 - **Terrain & objects:** A single candle, two seats, the whole thread coiled at rest.
@@ -413,54 +413,54 @@ and Patala Guha (R10) is the heart of the underworld branch.
 ```mermaid
 graph TD
     %% ===== ACT I — MORTAL VALE =====
-    R0["🟢 0 · Gramavana<br/>(Start / Village)"]
-    R7["🟢 2 · Smrtivana<br/>(Grove)"]
-    R3["★ 3 · Dhanyakshetra<br/>(Fields)"]
-    R4["🏘️ 4 · Setubandha<br/>(Broken Bridge HUB)"]
-    R5["★ 5 · Mrgavana<br/>(Thicket)"]
-    R6["⚔️ 6 · Pasanadvara<br/>(Stone Gate)"]
+    R0["🟢 0 · Ash Village<br/>(Gramavana)"]
+    R7["🟢 2 · Memory Grove<br/>(Smrtivana)"]
+    R3["★ 3 · Withered Fields<br/>(Dhanyakshetra)"]
+    R4["🏘️ 4 · Broken Bridge<br/>(Setubandha · HUB)"]
+    R5["★ 5 · Hunter's Thicket<br/>(Mrgavana)"]
+    R6["⚔️ 6 · Stone Gate<br/>(Pasanadvara)"]
 
     %% ===== ACT II — DROWNED REACH =====
-    R8["7 · Plavita<br/>(Causeway)"]
-    R9h["🏘️ 8 · Naditira<br/>(Ferry HUB)"]
-    R10["★ 9 · Kardama<br/>(Swamp)"]
-    R9k["🟢★ 10 · Shilavana<br/>(Vale of Stones)"]
-    R11["11 · Nagakshetra<br/>(Marsh)"]
-    R12["🟢⚔️ 12 · Nagaraja Sabha<br/>(Serpent King)"]
+    R8["7 · Sunken Road<br/>(Plavita)"]
+    R9h["🏘️ 8 · Ferry Village<br/>(Naditira · HUB)"]
+    R10["★ 9 · Whisper Mire<br/>(Kardama)"]
+    R9k["🟢★ 10 · Stone Vale<br/>(Shilavana)"]
+    R11["11 · Serpent Marsh<br/>(Nagakshetra)"]
+    R12["🟢⚔️ 12 · Serpent Court<br/>(Nagaraja Sabha)"]
 
     %% ===== ACT III — EMBERWASTES =====
-    R13["13 · Bhasmabhumi<br/>(Ash Flats)"]
-    R14["🏘️ 14 · Tamrapura<br/>(Bazaar HUB)"]
-    R15["★ 15 · Marusthala<br/>(Glass Desert)"]
-    R16["16 · Agnikunda<br/>(Caldera)"]
-    R17["17 · Deva Mandira<br/>(Temple/Mural)"]
-    R18["⚔️ 18 · Pasana Forge<br/>(Stone Demon)"]
+    R13["13 · Ash Flats<br/>(Bhasmabhumi)"]
+    R14["🏘️ 14 · Copper Bazaar<br/>(Tamrapura · HUB)"]
+    R15["★ 15 · Glass Desert<br/>(Marusthala)"]
+    R16["16 · Fire Caldera<br/>(Agnikunda)"]
+    R17["17 · Temple of Gods<br/>(Deva Mandira)"]
+    R18["⚔️ 18 · Demon Forge<br/>(Pasana Daitya)"]
 
     %% ===== ACT IV — SKYWARD CLIMB =====
-    R19["19 · Meghasopana<br/>(Cloud Stair)"]
-    R20["20 · Vayupatha<br/>(Cliffs)"]
-    R21["🏘️ 21 · Garudalaya<br/>(Eyrie HUB)"]
-    R22["★ 22 · Himashikhara<br/>(Frostpeak)"]
-    R23["23 · Swarga Seema<br/>(Edge of Heaven)"]
-    R24["⚔️ 24 · Vayu Tempest<br/>(Wind Demon)"]
+    R19["19 · Cloud Stair<br/>(Meghasopana)"]
+    R20["20 · Wind Cliffs<br/>(Vayupatha)"]
+    R21["🏘️ 21 · The Eyrie<br/>(Garudalaya · HUB)"]
+    R22["★ 22 · Frostpeak<br/>(Himashikhara)"]
+    R23["23 · Heaven's Edge<br/>(Swarga Seema)"]
+    R24["⚔️ 24 · Storm's Eye<br/>(Vayu Rakshasa)"]
 
     %% ===== ACT V — SUNLESS DEEP =====
-    R25["25 · Andhakupa<br/>(Blind Well)"]
-    R26["★ 26 · Ratnaguha<br/>(Gem Hollows)"]
-    R27["🟢 27 · Patala Guha<br/>(Sunless Deep)"]
-    R28["28 · Asthinagara<br/>(City of Bone)"]
-    R29["✦ 29 · Vismrti Kupa<br/>(Well of Forgetting)"]
+    R25["25 · Blind Well<br/>(Andhakupa)"]
+    R26["★ 26 · Gem Hollows<br/>(Ratnaguha)"]
+    R27["🟢 27 · Sunless Deep<br/>(Patala Guha)"]
+    R28["28 · Bone City<br/>(Asthinagara)"]
+    R29["✦ 29 · Forgotten Well<br/>(Vismrti Kupa)"]
 
     %% ===== ACT VI — SEVERANCE =====
-    R30["30 · Chidrabhumi<br/>(Torn Land)"]
-    R31["🏘️ 31 · Antarala<br/>(Between · last save)"]
-    R32["32 · Viyoga Durga<br/>(Fortress)"]
-    R33["⚔️ 33 · Sutracheda<br/>(FINAL BOSS)"]
+    R30["30 · Torn Land<br/>(Chidrabhumi)"]
+    R31["🏘️ 31 · The Between<br/>(Antarala · last save)"]
+    R32["32 · Severance Fortress<br/>(Viyoga Durga)"]
+    R33["⚔️ 33 · The Severing<br/>(Sutracheda · FINAL BOSS)"]
 
     %% ===== HIDDEN — ERASED PATH =====
-    R34["✦ 34 · Shashtha Dvara<br/>(Sixth Gate)"]
-    R35["✦ 35 · Ekatmalaya<br/>(Sanctum)"]
-    R36["✦ 36 · Maunamandira<br/>(Silent Shrine)"]
+    R34["✦ 34 · Sixth Gate<br/>(Shashtha Dvara)"]
+    R35["✦ 35 · Soul Sanctum<br/>(Ekatmalaya)"]
+    R36["✦ 36 · Silent Shrine<br/>(Maunamandira)"]
 
     %% ---- CRITICAL PATH (solid) ----
     R0 --> R7 --> R4

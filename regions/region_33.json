@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Asthinagara \u2014 The City of Bone",
+ "regionName": "Bone City",
+ "regionSubtitle": "Asthinagara",
  "background": {
   "type": "color",
   "value": "#26221e"

@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Swarga Seema \u2014 The Edge of Heaven",
+ "regionName": "Heaven's Edge",
+ "regionSubtitle": "Swarga Seema",
  "background": {
   "type": "color",
   "value": "#a8c4dc"

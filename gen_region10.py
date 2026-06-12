@@ -270,7 +270,7 @@ npcs = [
 portals = [{"id": "portal10_back", "targetRegion": 9, "x": 60, "y": 1000}]
 
 out = {
-    "version": 1, "regionName": "Pātāla Guha — The Sunless Deep",
+    "version": 1, "regionName": "Sunless Deep", "regionSubtitle": "Pātāla Guha",
     "background": {"type": "color", "value": "#171210"},
     "sprites": sprites, "noWalkZones": noWalkZones, "enemies": enemies,
     "boss": boss, "npcs": npcs, "portals": portals, "regionIndex": 10,

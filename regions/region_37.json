@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Viyoga Durga \u2014 The Fortress of Separation",
+ "regionName": "Severance Fortress",
+ "regionSubtitle": "Viyoga Durga",
  "background": {
   "type": "color",
   "value": "#12080a"

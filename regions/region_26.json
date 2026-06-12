@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "V\u0101yupatha \u2014 The Windward Cliffs",
+ "regionName": "Wind Cliffs",
+ "regionSubtitle": "V\u0101yupatha",
  "background": {
   "type": "color",
   "value": "#7a93ad"

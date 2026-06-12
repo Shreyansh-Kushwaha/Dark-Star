@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Maunamandira \u2014 The Silent Shrine",
+ "regionName": "Silent Shrine",
+ "regionSubtitle": "Maunamandira",
  "background": {
   "type": "color",
   "value": "#241e2a"

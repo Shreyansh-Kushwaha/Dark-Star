@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Antar\u0101la \u2014 The Between-Place",
+ "regionName": "The Between",
+ "regionSubtitle": "Antar\u0101la",
  "background": {
   "type": "color",
   "value": "#2a2730"

@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Setubandha \u2014 The Broken Bridge Town",
+ "regionName": "Broken Bridge",
+ "regionSubtitle": "Setubandha",
  "background": {
   "type": "color",
   "value": "#514a33"

@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Agniku\u1e47\u1e0da \u2014 The Firepit Caldera",
+ "regionName": "Fire Caldera",
+ "regionSubtitle": "Agniku\u1e47\u1e0da",
  "background": {
   "type": "color",
   "value": "#2d201b"

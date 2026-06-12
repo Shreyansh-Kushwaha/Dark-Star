@@ -119,7 +119,7 @@ export class GameScene extends Phaser.Scene {
       return {
         index: regionIndex,
         name: md?.regionName || `Region ${regionIndex}`,
-        subtitle: '',
+        subtitle: md?.regionSubtitle || '',
         bgColor,
         bgColor2: bgColor,
         borderColor: 0x111111,
@@ -349,8 +349,13 @@ export class GameScene extends Phaser.Scene {
       }
     });
     // ── Region title ──────────────────────────────────────────────
+    // Prefer the map's nickname + Sanskrit subtitle when a JSON map exists,
+    // so editor-authored regions (incl. the start region) show the new names
+    // even where a legacy REGIONS[] entry would otherwise shadow them.
     this.time.delayedCall(500, () => {
-      this.events.emit('region_title', { name: region.name, subtitle: region.subtitle });
+      const titleName = this._mapData?.regionName || region.name;
+      const titleSub  = this._mapData?.regionSubtitle ?? region.subtitle;
+      this.events.emit('region_title', { name: titleName, subtitle: titleSub });
     });
 
     // Start ambient audio

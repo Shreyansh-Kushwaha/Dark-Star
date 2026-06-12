@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Pl\u0101vita \u2014 The Sunken Causeway",
+ "regionName": "Sunken Road",
+ "regionSubtitle": "Pl\u0101vita",
  "background": {
   "type": "color",
   "value": "#33524a"

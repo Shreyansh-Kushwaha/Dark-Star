@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "P\u0101\u1e63\u0101\u1e47adv\u0101ra \u2014 The Stone Gate Pass",
+ "regionName": "Stone Gate",
+ "regionSubtitle": "P\u0101\u1e63\u0101\u1e47adv\u0101ra",
  "background": {
   "type": "color",
   "value": "#3b352f"

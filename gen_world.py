@@ -60,7 +60,7 @@ def near_spawn(x, y, r=240): return (x-SPAWN[0])**2 + (y-SPAWN[1])**2 < r*r
 def build_12():
     """Dhanyakshetra — The Famished Fields. Rotting open farmland, scarecrows,
     crop furrows, a ruined granary. Optional spur off Setubandha."""
-    r = Region(12, "Dhānyakshetra — The Famished Fields", "#6f6a39", 120012)
+    r = Region(12, "Withered Fields", "#6f6a39", 120012, subtitle="Dhānyakshetra")
     def open_area(x, y):  # the workable field (kept clear of the deep treeline)
         return 230 < x < WORLD_W - 230 and 330 < y < WORLD_H - 330
     # 1) dried crop furrows across the whole field (wavy tilled-earth strokes)
@@ -104,7 +104,7 @@ def build_12():
 def build_13():
     """Mrgavana — The Hunter's Thicket. Dense wild woods, a poacher's camp,
     bone piles; the corrupted forest guardian Vanaraksha stirs at the far glade."""
-    r = Region(13, "Mṛgavana — The Hunter's Thicket", "#23461b", 130013)
+    r = Region(13, "Hunter's Thicket", "#23461b", 130013, subtitle="Mṛgavana")
     GLADE = (2620, 1010)
     def open_area(x, y):  # a winding clearing from spawn to the glade
         lane = abs(y - (1000 + 150 * math.sin(x / 360.0))) < 150
@@ -148,7 +148,7 @@ def build_13():
 def build_14():
     """Pasanadvara — The Stone Gate Pass. A narrow corridor between towering
     cliffs, guarded by stone sentinels at a carved gate. Critical-path threshold."""
-    r = Region(14, "Pāṣāṇadvāra — The Stone Gate Pass", "#3b352f", 140014)
+    r = Region(14, "Stone Gate", "#3b352f", 140014, subtitle="Pāṣāṇadvāra")
     def corridor_y(x): return 1000 + 120 * math.sin(x / 600.0)
     HALF = 250
     def open_area(x, y): return abs(y - corridor_y(x)) < HALF or near_spawn(x, y, 300)
@@ -192,7 +192,7 @@ def build_14():
 def build_15():
     """Plavita — The Sunken Causeway. A drowned road raised through flooded
     fields; tilted statues and submerged murals flank the only dry path."""
-    r = Region(15, "Plāvita — The Sunken Causeway", "#33524a", 150015)
+    r = Region(15, "Sunken Road", "#33524a", 150015, subtitle="Plāvita")
     def cway_y(x): return 1000 + 110 * math.sin(x / 560.0)
     HALF = 200
     def water(x, y): return abs(y - cway_y(x)) > HALF - 10 and not near_spawn(x, y, 300)
@@ -244,7 +244,7 @@ def build_15():
 def build_16():
     """Naditira — The River-Ferry Village. A stilt-village hub on a wide delta;
     a ferry routes travelers to the marsh, the mire and the vale of stones."""
-    r = Region(16, "Naditīra — The River-Ferry Village", "#39594d", 160016)
+    r = Region(16, "Ferry Village", "#39594d", 160016, subtitle="Naditīra")
     def river_x(y): return 1640 + 70 * math.sin(y / 240.0)
     FORD = (1640, 1000)
     # the wide river down the middle
@@ -290,7 +290,7 @@ def build_16():
 def build_17():
     """Kardama — The Mire of Whispers. A fetid swamp of poison pools, mangrove
     husks and drifting fog; mimics lurk in the muck. Optional, via the ferry."""
-    r = Region(17, "Kardama — The Mire of Whispers", "#2d3a2a", 170017)
+    r = Region(17, "Whisper Mire", "#2d3a2a", 170017, subtitle="Kardama")
     def open_path(x, y):  # a faint winding causeway of mud
         return abs(y - (1000 + 230*math.sin(x/430.0) + 80*math.sin(x/170.0))) < 170 or near_spawn(x, y, 300)
     # poison pools scattered through the mire
@@ -326,7 +326,7 @@ def build_17():
 def build_18():
     """Nagakshetra — The Serpent Marsh. Brackish coiling channels and snake
     totems; the Naga guard the road to their drowned king's court."""
-    r = Region(18, "Nāgakṣetra — The Serpent Marsh", "#3a4a30", 180018)
+    r = Region(18, "Serpent Marsh", "#3a4a30", 180018, subtitle="Nāgakṣetra")
     def chan_x(y): return 1000 + 220*math.sin(y/300.0)   # a coiling channel
     # amber/brackish channels and pools
     r.river(lambda y: chan_x(y), "#7a5a24", "#a07a30", 150, 64)
@@ -368,7 +368,7 @@ def dunes(r, c0, c1, y0=-40, y1=WORLD_H+40, step=78, amp=40, width=120):
 def build_19():
     """Bhasmabhumi — The Ashen Flats. A scorched grey plain where the gods burned
     the sixth god's temples; the ash never settles."""
-    r = Region(19, "Bhasmabhūmi — The Ashen Flats", "#48423b", 190019)
+    r = Region(19, "Ash Flats", "#48423b", 190019, subtitle="Bhasmabhūmi")
     dunes(r, "#4f483f", "#544c42", amp=34, width=120)
     # smoking fissures (dark cracks with ember seams)
     for (fx0, fy) in [(500, 760), (1300, 1180), (2100, 720), (2500, 1240)]:
@@ -403,7 +403,7 @@ def build_19():
 def build_20():
     """Tamrapura — The Copper Bazaar. A sandstone desert trade-city; a relic
     dealer here sells a coin bearing the erased god's face. Act III hub."""
-    r = Region(20, "Tāmrapura — The Copper Bazaar", "#7a5d36", 200020)
+    r = Region(20, "Copper Bazaar", "#7a5d36", 200020, subtitle="Tāmrapura")
     dunes(r, "#7d6038", "#866741", amp=26, width=110)
     # sandstone roads through the bazaar
     r.stroke(meander(120, WORLD_W-120, 1000, 60, 520), "#8a6d42", 150)
@@ -441,7 +441,7 @@ def build_20():
 def build_21():
     """Marusthala — The Glass Desert. Dunes fused to glass by old fire; mirages
     and a buried caravan. Optional spur off Tamrapura."""
-    r = Region(21, "Marusthala — The Glass Desert", "#9a7e4d", 210021)
+    r = Region(21, "Glass Desert", "#9a7e4d", 210021, subtitle="Marusthala")
     dunes(r, "#9c8050", "#a98c5b", amp=44, width=130)
     # glass spires (cyan crystals) catching the sun
     r.scatter(lambda x,y,s: r.crystal(x,y,r.R.rng(0.8,1.6),"cyan"), 22, (260, WORLD_W-260), (320, 1700), avoid=near_spawn)
@@ -467,7 +467,7 @@ def build_21():
 def build_22():
     """Agnikunda — The Firepit Caldera. Lava channels and basalt; the forge of
     the gods, where the weapons used against the sixth god were made."""
-    r = Region(22, "Agnikuṇḍa — The Firepit Caldera", "#2d201b", 220022)
+    r = Region(22, "Fire Caldera", "#2d201b", 220022, subtitle="Agnikuṇḍa")
     def lava(x): return 1000 + 150*math.sin(x/430.0) + 70*math.sin(x/170.0)
     # lava rivers (layered glowing strokes)
     r.stroke([(x, lava(x)) for x in range(-40, WORLD_W+40, 50)], "#7a1e08", 150)
@@ -504,7 +504,7 @@ def build_22():
 def build_23():
     """Deva Mandira — The Temple of the Gods. The conspirators' golden seat; the
     Great Mural shows six halos with one scraped away."""
-    r = Region(23, "Deva Mandira — The Temple of the Gods", "#7a5a28", 230023)
+    r = Region(23, "Temple of Gods", "#7a5a28", 230023, subtitle="Deva Mandira")
     # marble avenue up the middle
     r.stroke([(x, 1000) for x in range(80, WORLD_W-80, 60)], "#9a7d44", 200)
     r.stroke([(x, 1000) for x in range(80, WORLD_W-80, 60)], "#b49a5e", 110)
@@ -538,7 +538,7 @@ def build_23():
 def build_24():
     """Pashana Daitya's Forge. The inner forge-sanctum; the stone-and-fire demon
     built to guard the lie. Act III boss arena."""
-    r = Region(24, "Pāṣāṇa Daitya's Forge", "#3a2a22", 240024)
+    r = Region(24, "Demon Forge", "#3a2a22", 240024, subtitle="Pāṣāṇa Daitya")
     ARENA = (2680, 1000)
     def lava(x): return 1000 + 90*math.sin(x/380.0)
     r.stroke([(x, lava(x)) for x in range(-40, 2300, 50)], "#7a1e08", 130)
@@ -583,7 +583,7 @@ def sky_void(r, keep, cloud_n=26):
 def build_25():
     """Meghasopana — The Cloud Stair. Floating stone stairs climbing through the
     clouds toward the gods who 'ascended above judgment.'"""
-    r = Region(25, "Meghasopāna — The Cloud Stair", "#8fb4d6", 250025)
+    r = Region(25, "Cloud Stair", "#8fb4d6", 250025, subtitle="Meghasopāna")
     def stair_y(x): return 1380 - (x / WORLD_W) * 760 + 60*math.sin(x/300.0)  # rising path
     HALF = 180
     def on_stair(x, y): return abs(y - stair_y(x)) < HALF or near_spawn(x, y, 280)
@@ -614,7 +614,7 @@ def build_25():
 def build_26():
     """Vayupatha — The Windward Cliffs. Sheer cliffs and rope-bridges lashed by
     crosswinds; a carving shows a god cast down."""
-    r = Region(26, "Vāyupatha — The Windward Cliffs", "#7a93ad", 260026)
+    r = Region(26, "Wind Cliffs", "#7a93ad", 260026, subtitle="Vāyupatha")
     def ledge_y(x): return 1000 + 150*math.sin(x/520.0)
     HALF = 170
     def on_ledge(x, y): return abs(y - ledge_y(x)) < HALF or near_spawn(x, y, 280)
@@ -646,7 +646,7 @@ def build_26():
 def build_27():
     """Garudalaya — The Eyrie Sanctuary. The bird-folk's cliff-top refuge; they
     kept uncensored records and can teach the erased god's true name. Hub."""
-    r = Region(27, "Garuḍālaya — The Eyrie Sanctuary", "#86a8c8", 270027)
+    r = Region(27, "The Eyrie", "#86a8c8", 270027, subtitle="Garuḍālaya")
     sky_void(r, lambda x,y: 220<x<WORLD_W-220 and 300<y<WORLD_H-300, 22)
     # a broad cloud terrace as the floor
     for x in range(120, WORLD_W-80, 200):
@@ -676,7 +676,7 @@ def build_27():
 def build_28():
     """Himashikhara — The Frostpeak. A blizzard-wracked summit where a pilgrim
     froze mid-prayer to the erased god. Optional spur off Garudalaya."""
-    r = Region(28, "Himashikhara — The Frostpeak", "#bcc8d4", 280028)
+    r = Region(28, "Frostpeak", "#bcc8d4", 280028, subtitle="Himashikhara")
     # snow drifts (pale wavy strokes)
     for i, yy in enumerate(range(-40, WORLD_H+40, 84)):
         r.stroke([(x, yy+30*math.sin(x/320.0+i)) for x in range(-60, WORLD_W+60, 70)],
@@ -702,7 +702,7 @@ def build_28():
 def build_29():
     """Swarga Seema — The Edge of Heaven. The pale rim of the five gods' realm —
     the conspiracy's penthouse. Opens only to one who knows the Sixth's name."""
-    r = Region(29, "Swarga Seema — The Edge of Heaven", "#a8c4dc", 290029)
+    r = Region(29, "Heaven's Edge", "#a8c4dc", 290029, subtitle="Swarga Seema")
     sky_void(r, lambda x,y: 200<x<WORLD_W-200 and 320<y<WORLD_H-320, 22)
     # cloud terraces (the floor) + heavenly avenue
     for x in range(120, WORLD_W-80, 190):
@@ -731,7 +731,7 @@ def build_29():
 def build_30():
     """Vayu Rakshasa's Tempest. The eye of a sky-storm guarding heaven's lie.
     Act IV boss arena."""
-    r = Region(30, "Vāyu Rākṣasa's Tempest", "#5a6e84", 300030)
+    r = Region(30, "Storm's Eye", "#5a6e84", 300030, subtitle="Vāyu Rākṣasa")
     ARENA = (1700, 1000)
     sky_void(r, lambda x,y: (x-ARENA[0])**2+(y-ARENA[1])**2 < 520**2 or near_spawn(x,y,280) or abs(y-1000)<150, 18)
     # lightning arcs across the storm (jagged blue strokes)
@@ -782,7 +782,7 @@ def cave(r, cy_fn, half_fn, wall_step=138, wall_max=3.6):
 def build_31():
     """Andhakupa — The Blind Well. A vast shaft descending into the dark, dug to
     bury what the gods wanted gone. Entered by the lift from Setubandha."""
-    r = Region(31, "Andhakūpa — The Blind Well", "#15110f", 310031)
+    r = Region(31, "Blind Well", "#15110f", 310031, subtitle="Andhakūpa")
     cy = lambda x: 1000 + 150*math.sin(x/520.0)
     half = lambda x: 300 + 120*math.exp(-((x-700)**2)/(2*360.0**2))
     in_cav = cave(r, cy, half)
@@ -808,7 +808,7 @@ def build_31():
 def build_32():
     """Ratnaguha — The Gem Hollows. Glowing crystal caverns and old mine ruins;
     the gems hold light from before the severing. Optional."""
-    r = Region(32, "Ratnaguha — The Gem Hollows", "#171420", 320032)
+    r = Region(32, "Gem Hollows", "#171420", 320032, subtitle="Ratnaguha")
     cy = lambda x: 1000 + 130*math.sin(x/470.0)
     half = lambda x: 330 + 130*math.exp(-((x-1500)**2)/(2*520.0**2))
     in_cav = cave(r, cy, half)
@@ -836,7 +836,7 @@ def build_32():
 def build_33():
     """Asthinagara — The City of Bone. A buried ossuary-city whose dead testify
     to the erasure unfiltered; a tunnel rises to the Torn Land."""
-    r = Region(33, "Asthinagara — The City of Bone", "#26221e", 330033)
+    r = Region(33, "Bone City", "#26221e", 330033, subtitle="Asthinagara")
     cy = lambda x: 1000 + 110*math.sin(x/560.0)
     half = lambda x: 360 + 120*math.exp(-((x-1600)**2)/(2*620.0**2))
     in_cav = cave(r, cy, half, wall_max=3.2)
@@ -864,7 +864,7 @@ def build_33():
 def build_34():
     """Vismrti Kupa — The Well of Forgetting. The drowned vault where the gods
     sank every record of Ekatmadeva; a sealed sixth door waits for all the lore."""
-    r = Region(34, "Vismṛti Kūpa — The Well of Forgetting", "#0d0c10", 340034)
+    r = Region(34, "Forgotten Well", "#0d0c10", 340034, subtitle="Vismṛti Kūpa")
     cy = lambda x: 1000 + 90*math.sin(x/600.0)
     half = lambda x: 320 + 150*math.exp(-((x-1600)**2)/(2*560.0**2))
     in_cav = cave(r, cy, half, wall_max=3.4)
@@ -915,7 +915,7 @@ def void_floor(r, keep, shard_n=24, crystal_n=14):
 def build_35():
     """Chidrabhumi — The Torn Land. Reality fractured into floating shards over
     the void; you walk the actual severance scar."""
-    r = Region(35, "Chidrabhūmi — The Torn Land", "#12080a", 350035)
+    r = Region(35, "Torn Land", "#12080a", 350035, subtitle="Chidrabhūmi")
     def road_y(x): return 1000 + 140*math.sin(x/520.0)
     HALF = 190
     def on_road(x, y): return abs(y-road_y(x)) < HALF or near_spawn(x, y, 280)
@@ -943,7 +943,7 @@ def build_35():
 def build_36():
     """Antarala — The Between-Place. A still grey limbo, the last island of calm
     before the end; the frayed end of the Sutra rests here. No enemies."""
-    r = Region(36, "Antarāla — The Between-Place", "#2a2730", 360036)
+    r = Region(36, "The Between", "#2a2730", 360036, subtitle="Antarāla")
     void_floor(r, lambda x,y: 240<x<WORLD_W-240 and 360<y<WORLD_H-360, 18)
     for x in range(160, WORLD_W-120, 220):
         for y in (640, 1000, 1360): r.void_shard(x, y, r.R.rng(0.9, 1.2))
@@ -965,7 +965,7 @@ def build_36():
 def build_37():
     """Viyoga Durga — The Fortress of Separation. Viyogasur's obsidian seat and
     the prison where the gods chained the 'Demon of Separation.' Boss: Vanasur."""
-    r = Region(37, "Viyoga Durga — The Fortress of Separation", "#12080a", 370037)
+    r = Region(37, "Severance Fortress", "#12080a", 370037, subtitle="Viyoga Durga")
     ARENA = (2680, 1000)
     def road_y(x): return 1000 + 90*math.sin(x/560.0)
     HALF = 200
@@ -1001,7 +1001,7 @@ def build_37():
 def build_38():
     """Sutracheda — The Place of the Severing. The exact point where the Thread
     was cut; six thrones, one empty. Final boss: Viyogasur."""
-    r = Region(38, "Sūtracheda — The Place of the Severing", "#0a0608", 380038)
+    r = Region(38, "The Severing", "#0a0608", 380038, subtitle="Sūtracheda")
     ARENA = (1700, 1000)
     void_floor(r, lambda x,y: (x-ARENA[0])**2+(y-ARENA[1])**2<560**2 or near_spawn(x,y,280) or abs(y-1000)<160, 20)
     # the severed Sutra: two golden ends reaching for a central gap (the cut)
@@ -1038,7 +1038,7 @@ def build_38():
 def build_39():
     """Shashtha Dvara — The Sixth Gate. A radiant doorway that 'shouldn't exist';
     crossing it restores Ekatmadeva to the world's records. Secret."""
-    r = Region(39, "Ṣaṣṭha Dvāra — The Sixth Gate", "#1a1408", 390039)
+    r = Region(39, "Sixth Gate", "#1a1408", 390039, subtitle="Ṣaṣṭha Dvāra")
     void_floor(r, lambda x,y: abs(y-1000)<220 or near_spawn(x,y,280), 16)
     # a golden avenue of living thread leading to the gate
     thread(r, [(x,1000+30*math.sin(x/300.0)) for x in range(120, WORLD_W-80, 80)])
@@ -1062,7 +1062,7 @@ def build_39():
 def build_40():
     """Ekatmalaya — The Sanctum of the One Soul. The erased god's temple, rebuilt
     by your remembering — whole and warm; six intact halos, an unbroken Sutra."""
-    r = Region(40, "Ekātmālaya — The Sanctum of the One Soul", "#3a2e14", 400040)
+    r = Region(40, "Soul Sanctum", "#3a2e14", 400040, subtitle="Ekātmālaya")
     r.stroke([(x,1000) for x in range(80,WORLD_W-80,60)], "#6e5a2a", 200)
     r.stroke([(x,1000) for x in range(80,WORLD_W-80,60)], "#8c7440", 110)
     # the UNBROKEN Sutra runs the whole length (no cut)
@@ -1089,7 +1089,7 @@ def build_40():
 def build_41():
     """Maunamandira — The Silent Shrine. A tiny shrine outside time; the whole
     thread coiled at rest. The epilogue beat — no combat."""
-    r = Region(41, "Maunamandira — The Silent Shrine", "#241e2a", 410041)
+    r = Region(41, "Silent Shrine", "#241e2a", 410041, subtitle="Maunamandira")
     void_floor(r, lambda x,y: 320<x<WORLD_W-320 and 420<y<WORLD_H-420, 14)
     for x in range(220, WORLD_W-160, 240):
         for y in (700, 1000, 1300): r.void_shard(x, y, r.R.rng(0.85, 1.1))

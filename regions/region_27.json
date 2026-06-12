@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Garu\u1e0d\u0101laya \u2014 The Eyrie Sanctuary",
+ "regionName": "The Eyrie",
+ "regionSubtitle": "Garu\u1e0d\u0101laya",
  "background": {
   "type": "color",
   "value": "#86a8c8"

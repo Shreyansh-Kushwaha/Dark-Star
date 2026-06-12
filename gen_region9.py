@@ -279,7 +279,7 @@ npcs = [
 portals = [{"id": "portal9_back", "targetRegion": 8, "x": 60, "y": 1000}]
 
 out = {
-    "version": 1, "regionName": "Shilavana — The Vale of Stones",
+    "version": 1, "regionName": "Stone Vale", "regionSubtitle": "Shilavana",
     "background": {"type": "color", "value": "#23682a"},
     "sprites": sprites, "noWalkZones": noWalkZones, "enemies": enemies,
     "boss": boss, "npcs": npcs, "portals": portals, "regionIndex": 9,

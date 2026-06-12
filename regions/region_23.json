@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "Deva Mandira \u2014 The Temple of the Gods",
+ "regionName": "Temple of Gods",
+ "regionSubtitle": "Deva Mandira",
  "background": {
   "type": "color",
   "value": "#7a5a28"

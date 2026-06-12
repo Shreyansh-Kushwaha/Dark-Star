@@ -1,6 +1,7 @@
 {
  "version": 1,
- "regionName": "N\u0101gak\u1e63etra \u2014 The Serpent Marsh",
+ "regionName": "Serpent Marsh",
+ "regionSubtitle": "N\u0101gak\u1e63etra",
  "background": {
   "type": "color",
   "value": "#3a4a30"

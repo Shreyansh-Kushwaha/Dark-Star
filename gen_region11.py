@@ -330,7 +330,7 @@ portals = [
 ]
 
 out = {
-    "version": 1, "regionName": "Setubandha — The Broken Bridge Town",
+    "version": 1, "regionName": "Broken Bridge", "regionSubtitle": "Setubandha",
     "background": {"type": "color", "value": "#514a33"},
     "sprites": sprites, "noWalkZones": noWalkZones, "enemies": enemies,
     "boss": boss, "npcs": npcs, "portals": portals, "regionIndex": 11,
