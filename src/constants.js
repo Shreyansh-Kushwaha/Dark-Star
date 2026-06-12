@@ -56,6 +56,11 @@ export const PACK_FRAME_H = 120;
 // XP thresholds per level (index = current level, value = XP needed to reach next)
 export const XP_THRESHOLDS = [100, 250, 450, 700, 1000, 1350, 1750, 2200, 2700, Infinity];
 
+// Level-up stat allocation. Each level grants POINTS_PER_LEVEL points to spend
+// across stats; each point applied to a stat is +5% (see Player.applyStat).
+export const POINTS_PER_LEVEL = 5;
+export const POINT_PCT = 5; // display only: % gained per point
+
 // Item definitions — type: 'consumable' | 'passive' | 'token'
 // consumable: used from inventory for immediate effect
 // passive: auto-applied on pickup (permanent stat boost)

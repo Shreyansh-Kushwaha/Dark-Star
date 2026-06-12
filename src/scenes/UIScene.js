@@ -1,4 +1,4 @@
-import { GAME_W, GAME_H, ITEM_DEFS, XP_THRESHOLDS } from '../constants.js';
+import { GAME_W, GAME_H, ITEM_DEFS, XP_THRESHOLDS, POINTS_PER_LEVEL, POINT_PCT } from '../constants.js';
 
 const BAR_L     = 52;          // HP bar left x
 const BAR_R     = GAME_W - 30; // HP bar right x
@@ -37,6 +37,7 @@ export class UIScene extends Phaser.Scene {
     this._createVignette();
 
     this._statTiers = { ...(this.scene.get('GameScene')?._save?.statTiers || {}) };
+    this._statPoints = this.scene.get('GameScene')?._save?.statPoints || 0; // banked, unspent points
     this._levelUpActive = false;
 
     this._keyEsc       = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
@@ -796,112 +797,168 @@ export class UIScene extends Phaser.Scene {
     if (this._levelUpActive) return;
     this._levelUpActive = true;
 
-    // Show a quick toast so the player immediately knows what's happening,
-    // then pause physics after one frame so the toast renders first.
-    this.toast('⚔  LEVEL UP!  Choose your boon below', '#ffd700', 1800);
+    // Grant points for every banked level at once, so the player allocates
+    // a single pool instead of re-opening the panel per level.
+    const levels = Math.max(1, gs._pendingLevels || 0);
+    this._statPoints += levels * POINTS_PER_LEVEL;
+    this._levelsConsumed = levels;
+
+    // Quick toast, then pause physics one frame later so the toast renders first.
+    this.toast(`⚔  LEVEL UP!  ${this._statPoints} points to spend`, '#ffd700', 1800);
     this.time.delayedCall(16, () => {
       gs._paused = true;
       gs.physics?.pause();
     });
 
     const depth = 9993;
-    const choices = [
-      { key: '1', stat: 'maxHp',     label: 'VITALITY',   desc: '+25% Max HP' },
-      { key: '2', stat: 'stamina',   label: 'ENDURANCE',  desc: '+25% Stamina' },
-      { key: '3', stat: 'abilityPow', label: 'POWER',     desc: '+25% Ability Power' },
+    const stats = [
+      { stat: 'maxHp',      label: 'VITALITY',  blurb: 'Max HP' },
+      { stat: 'stamina',    label: 'ENDURANCE', blurb: 'Stamina' },
+      { stat: 'abilityPow', label: 'POWER',     blurb: 'Ability Power' },
     ];
 
-    // Veil fades in quickly so the screen dims before the UI is drawn
+    // Points spent this session per stat — used to allow refunds before closing.
+    const sessionSpent = { maxHp: 0, stamina: 0, abilityPow: 0 };
+    let selected = 0;
+    let closed = false;
+
+    // Veil
     const veil = this.add.rectangle(0, 0, GAME_W, GAME_H, 0x000000, 0).setOrigin(0).setDepth(depth);
     this.tweens.add({ targets: veil, alpha: 0.82, duration: 120 });
 
-    // Title and all cards appear almost instantly
-    const title = this.add.text(GAME_W / 2, GAME_H / 2 - 118, '⚔  LEVEL UP', {
+    const title = this.add.text(GAME_W / 2, GAME_H / 2 - 150, '⚔  LEVEL UP', {
       fontSize: '36px', color: '#ffd700', fontFamily: 'serif',
       stroke: '#000', strokeThickness: 6, letterSpacing: 6,
     }).setOrigin(0.5).setDepth(depth + 1).setAlpha(0);
-    this.tweens.add({ targets: title, alpha: 1, duration: 150, delay: 80 });
+    this.tweens.add({ targets: title, alpha: 1, duration: 150, delay: 60 });
 
-    const sub = this.add.text(GAME_W / 2, GAME_H / 2 - 74, 'Choose your boon', {
-      fontSize: '14px', color: '#ddaa66', fontFamily: 'serif',
+    // Available-points readout
+    const pointsLabel = this.add.text(GAME_W / 2, GAME_H / 2 - 104, '', {
+      fontSize: '16px', color: '#ffe8a0', fontFamily: 'monospace',
     }).setOrigin(0.5).setDepth(depth + 1).setAlpha(0);
-    this.tweens.add({ targets: sub, alpha: 1, duration: 150, delay: 100 });
+    this.tweens.add({ targets: pointsLabel, alpha: 1, duration: 150, delay: 90 });
 
-    const hint = this.add.text(GAME_W / 2, GAME_H / 2 + 92, 'Click a card  —  or press  1 / 2 / 3', {
-      fontSize: '12px', color: '#aa8855', fontFamily: 'monospace',
-    }).setOrigin(0.5).setDepth(depth + 1).setAlpha(0);
-    this.tweens.add({ targets: hint, alpha: 1, duration: 150, delay: 120 });
+    // One row per stat
+    const rowH = 64, rowW = 460;
+    const rowObjs = [];
+    for (let i = 0; i < stats.length; i++) {
+      const s  = stats[i];
+      const ry = GAME_H / 2 - 56 + i * (rowH + 8);
 
-    let _chosen = false;
-    const cardObjs = [];
-    for (let i = 0; i < 3; i++) {
-      const c  = choices[i];
-      const cx = GAME_W / 2 + (i - 1) * 224;
-      const cy = GAME_H / 2 + 14;
-
-      const bg  = this.add.rectangle(cx, cy, 186, 130, 0x1a1000, 0.92)
+      const bg = this.add.rectangle(GAME_W / 2, ry, rowW, rowH, 0x1a1000, 0.92)
         .setDepth(depth + 1).setAlpha(0).setStrokeStyle(2, 0x886633)
         .setInteractive({ useHandCursor: true });
-      const num = this.add.text(cx, cy - 46, `[${c.key}]`, {
-        fontSize: '22px', color: '#ffd700', fontFamily: 'monospace',
-      }).setOrigin(0.5).setDepth(depth + 2).setAlpha(0);
-      const lbl = this.add.text(cx, cy - 8, c.label, {
+      const lbl = this.add.text(GAME_W / 2 - rowW / 2 + 18, ry - 12, s.label, {
         fontSize: '18px', color: '#ffffff', fontFamily: 'serif', fontStyle: 'bold',
-      }).setOrigin(0.5).setDepth(depth + 2).setAlpha(0);
-      const desc = this.add.text(cx, cy + 24, c.desc, {
-        fontSize: '13px', color: '#ccaa77', fontFamily: 'monospace',
-      }).setOrigin(0.5).setDepth(depth + 2).setAlpha(0);
+      }).setOrigin(0, 0.5).setDepth(depth + 2).setAlpha(0);
+      const val = this.add.text(GAME_W / 2 - rowW / 2 + 18, ry + 14, '', {
+        fontSize: '12px', color: '#ccaa77', fontFamily: 'monospace',
+      }).setOrigin(0, 0.5).setDepth(depth + 2).setAlpha(0);
+      // Pip strip showing total invested tiers
+      const pips = this.add.text(GAME_W / 2 + rowW / 2 - 18, ry, '', {
+        fontSize: '14px', color: '#ffd700', fontFamily: 'monospace',
+      }).setOrigin(1, 0.5).setDepth(depth + 2).setAlpha(0);
 
-      const cardIdx = i;
-      bg.on('pointerover', () => bg.setStrokeStyle(3, 0xffd700));
-      bg.on('pointerout',  () => bg.setStrokeStyle(2, 0x886633));
-      bg.on('pointerdown', () => applyChoice(cardIdx));
+      const rowIdx = i;
+      bg.on('pointerover', () => { selected = rowIdx; render(); });
+      bg.on('pointerdown', () => { selected = rowIdx; spend(); });
 
-      // All three cards appear together quickly
-      const delay = 120 + i * 40;
-      this.tweens.add({ targets: [bg, num, lbl, desc], alpha: 1, duration: 180, delay });
-      cardObjs.push({ bg, num, lbl, desc });
+      this.tweens.add({ targets: [bg, lbl, val, pips], alpha: 1, duration: 180, delay: 110 + i * 40 });
+      rowObjs.push({ bg, lbl, val, pips, ...s });
     }
 
-    const allObjs = [veil, title, sub, hint, ...cardObjs.flatMap(c => [c.bg, c.num, c.lbl, c.desc])];
+    const hint = this.add.text(GAME_W / 2, GAME_H / 2 + 150,
+      '[↑/↓] Select   [→ / Enter] Spend   [←] Refund   [ESC] Done', {
+        fontSize: '12px', color: '#aa8855', fontFamily: 'monospace',
+      }).setOrigin(0.5).setDepth(depth + 1).setAlpha(0);
+    this.tweens.add({ targets: hint, alpha: 1, duration: 150, delay: 160 });
 
-    const applyChoice = (idx) => {
-      if (_chosen) return;
-      _chosen = true;
-      k1.off('down'); k2.off('down'); k3.off('down');
-      k1.destroy(); k2.destroy(); k3.destroy();
-      cardObjs.forEach(c => c.bg.disableInteractive());
+    const allObjs = [veil, title, pointsLabel, hint, ...rowObjs.flatMap(r => [r.bg, r.lbl, r.val, r.pips])];
 
-      const c   = choices[idx];
-      const tier = ((this._statTiers?.[c.stat] || 0) + 1);
-      this._statTiers[c.stat] = tier;
-      gs.players?.forEach(p => p?.applyStat?.(c.stat, tier));
+    const render = () => {
+      pointsLabel.setText(`Available Points: ${this._statPoints}`);
+      pointsLabel.setColor(this._statPoints > 0 ? '#ffe8a0' : '#888888');
+      for (let i = 0; i < rowObjs.length; i++) {
+        const r = rowObjs[i];
+        const tier = this._statTiers?.[r.stat] || 0;
+        r.val.setText(`+${tier * POINT_PCT}%  ${r.blurb}`);
+        r.pips.setText('◆'.repeat(Math.min(tier, 20)) || '–');
+        const isSel = i === selected;
+        r.bg.setStrokeStyle(isSel ? 3 : 2, isSel ? 0xffd700 : 0x886633);
+        r.bg.setFillStyle(isSel ? 0x2a1c08 : 0x1a1000, isSel ? 0.96 : 0.92);
+      }
+    };
 
+    const spend = () => {
+      if (closed || this._statPoints <= 0) {
+        if (this._statPoints <= 0) this.tweens.add({ targets: pointsLabel, alpha: 0.4, duration: 80, yoyo: true });
+        return;
+      }
+      const r = rowObjs[selected];
+      const tier = (this._statTiers?.[r.stat] || 0) + 1;
+      this._statTiers[r.stat] = tier;
+      this._statPoints--;
+      sessionSpent[r.stat]++;
+      gs.players?.forEach(p => p?.applyStat?.(r.stat, tier));
+      this.tweens.add({ targets: r.pips, scale: 1.4, duration: 70, yoyo: true });
+      render();
+    };
+
+    const refund = () => {
+      if (closed) return;
+      const r = rowObjs[selected];
+      if (sessionSpent[r.stat] <= 0) return; // can't refund points from past levels
+      const tier = Math.max(0, (this._statTiers?.[r.stat] || 0) - 1);
+      this._statTiers[r.stat] = tier;
+      this._statPoints++;
+      sessionSpent[r.stat]--;
+      gs.players?.forEach(p => p?.applyStat?.(r.stat, tier));
+      render();
+    };
+
+    const close = () => {
+      if (closed) return;
+      closed = true;
+      keys.forEach(k => { k.removeAllListeners('down'); k.destroy(); });
+      rowObjs.forEach(r => r.bg.disableInteractive());
       this.tweens.add({
-        targets: cardObjs[idx].bg, alpha: 0.5, duration: 60, yoyo: true, repeat: 2,
-      });
-      this.time.delayedCall(280, () => {
-        this.tweens.add({
-          targets: allObjs, alpha: 0, duration: 200,
-          onComplete: () => {
-            allObjs.forEach(o => { try { o.destroy(); } catch {} });
-            this._levelUpActive = false;
-            gs._paused = false;
-            gs.physics?.resume();
-            gs.events.emit('level_up_done', { stat: c.stat });
-          },
-        });
+        targets: allObjs, alpha: 0, duration: 200,
+        onComplete: () => {
+          allObjs.forEach(o => { try { o.destroy(); } catch {} });
+          this._levelUpActive = false;
+          gs._paused = false;
+          gs.physics?.resume();
+          // Consume all banked levels at once and persist the new point pool.
+          gs.events.emit('level_up_done', { levels: this._levelsConsumed });
+        },
       });
     };
 
-    const k1 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ONE);
-    const k2 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.TWO);
-    const k3 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.THREE);
-    // Keys active immediately — no artificial delay
-    this.time.delayedCall(200, () => {
-      k1.once('down', () => applyChoice(0));
-      k2.once('down', () => applyChoice(1));
-      k3.once('down', () => applyChoice(2));
+    render();
+
+    // Keyboard bindings — bound after a short delay so the toast's keypress
+    // (if any) doesn't leak into the panel.
+    const KC = Phaser.Input.Keyboard.KeyCodes;
+    const kUp    = this.input.keyboard.addKey(KC.UP);
+    const kDown  = this.input.keyboard.addKey(KC.DOWN);
+    const kW     = this.input.keyboard.addKey(KC.W);
+    const kS     = this.input.keyboard.addKey(KC.S);
+    const kRight = this.input.keyboard.addKey(KC.RIGHT);
+    const kLeft  = this.input.keyboard.addKey(KC.LEFT);
+    const kEnter = this.input.keyboard.addKey(KC.ENTER);
+    const kSpace = this.input.keyboard.addKey(KC.SPACE);
+    const kEsc   = this.input.keyboard.addKey(KC.ESC);
+    const keys = [kUp, kDown, kW, kS, kRight, kLeft, kEnter, kSpace, kEsc];
+
+    this.time.delayedCall(180, () => {
+      if (closed) return;
+      const moveUp   = () => { selected = (selected + stats.length - 1) % stats.length; render(); };
+      const moveDown = () => { selected = (selected + 1) % stats.length; render(); };
+      kUp.on('down', moveUp);     kW.on('down', moveUp);
+      kDown.on('down', moveDown); kS.on('down', moveDown);
+      kRight.on('down', spend);   kEnter.on('down', spend);  kSpace.on('down', spend);
+      kLeft.on('down', refund);
+      kEsc.on('down', close);
     });
   }
 

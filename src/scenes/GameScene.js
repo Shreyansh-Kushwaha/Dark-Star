@@ -159,6 +159,9 @@ export class GameScene extends Phaser.Scene {
     this.questManager.load(saveData.completedQuests || []);
     this.loreManager = new LoreManager();
     this.loreManager.load(saveData.collectedLoreIds || []);
+    // Codex tracking: enemies faced and NPCs met (for the Bestiary / NPC pages).
+    this._encounteredEnemies = new Set(saveData.encounteredEnemyIds || []);
+    this._metNpcs = new Map((saveData.metNpcs || []).map(n => [n.id, n]));
     this.network = this.registry.get('network') || new NetworkManager();
     this.registry.remove('network');
 
@@ -1020,9 +1023,25 @@ export class GameScene extends Phaser.Scene {
     }
     s.pendingLevels    = this._pendingLevels || 0;
     s.statTiers        = { ...(this.scene.get('UIScene')?._statTiers || s.statTiers || {}) };
+    s.statPoints       = this.scene.get('UIScene')?._statPoints ?? s.statPoints ?? 0;
     s.completedQuests  = [...(this.questManager?.completed ?? s.completedQuests ?? [])];
     s.collectedLoreIds = this.loreManager?.toArray?.() ?? s.collectedLoreIds;
+    if (this._encounteredEnemies) s.encounteredEnemyIds = [...this._encounteredEnemies];
+    if (this._metNpcs)            s.metNpcs             = [...this._metNpcs.values()];
     SaveManager.save(s);
+  }
+
+  // ── Codex tracking ──────────────────────────────────────────────────────────
+  _markEnemyEncountered(typeKey) {
+    if (!typeKey || !this._encounteredEnemies || this._encounteredEnemies.has(typeKey)) return;
+    this._encounteredEnemies.add(typeKey);
+    this._persist();
+  }
+
+  _markNpcMet(id, name, lore) {
+    if (!id || !this._metNpcs || this._metNpcs.has(id)) return;
+    this._metNpcs.set(id, { id, name: name || 'Unknown', lore: lore || '' });
+    this._persist();
   }
 
   // ── Death loop: respawn at last shrine, drop a recoverable Lost Echo ─────────
@@ -2086,6 +2105,9 @@ export class GameScene extends Phaser.Scene {
       if (!npc?.active || !npc.isPlayerNear) continue;
       const dlg = npcDialogueMap[npc.npcId] || npc._embeddedDialogue || {};
       const line = dlg.first || dlg.name && `⟨${dlg.name}⟩ "..."` || '⟨NPC⟩ "..."';
+      // Record this NPC in the Codex roster (name + lore from their dialogue).
+      const npcName = dlg.name || line.match(/⟨([^⟩]+)⟩/)?.[1] || 'Wanderer';
+      this._markNpcMet(npc.npcId, npcName, line.replace(/^⟨[^⟩]+⟩\s*/, ''));
       this._dialogueActive = true;
       this.events.emit('show_dialogue', { text: line });
       return;
@@ -2178,12 +2200,12 @@ export class GameScene extends Phaser.Scene {
     this.time.delayedCall(2600, () => this.events.emit('hide_dialogue'));
   }
 
-  _onLevelUpDone() {
-    this._pendingLevels = Math.max(0, (this._pendingLevels || 0) - 1);
+  _onLevelUpDone(data) {
+    // The points panel grants and consumes all banked levels in one session,
+    // so clear them together rather than re-opening the panel per level.
+    const consumed = data?.levels ?? 1;
+    this._pendingLevels = Math.max(0, (this._pendingLevels || 0) - consumed);
     this._persist();
-    if (this._pendingLevels > 0) {
-      this.time.delayedCall(450, () => this.events.emit('level_up_available', { source: 'shrine' }));
-    }
   }
 
   _onAmritUsed(data) {

@@ -604,7 +604,9 @@ export class Player extends Phaser.GameObjects.Container {
   }
 
   applyStat(stat, tier) {
-    const mult = 1 + tier * 0.25;
+    // Each allocated point = +5%. A full 5-point level pumped into one stat = +25%,
+    // matching the pre-points-system per-level growth.
+    const mult = 1 + tier * 0.05;
     if (stat === 'maxHp') {
       this.maxHp = Math.floor(200 * mult);
       this.hp = Math.min(this.hp, this.maxHp);
