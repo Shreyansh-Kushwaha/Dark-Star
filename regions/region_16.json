@@ -1,7 +1,7 @@
 {
  "version": 1,
  "regionName": "Ferry Village",
- "regionSubtitle": "Nadit\u012bra",
+ "regionSubtitle": "Naditīra",
  "background": {
   "type": "color",
   "value": "#39594d"
@@ -2111,6 +2111,12 @@
    "targetRegion": 9,
    "x": 760,
    "y": 250
+  },
+  {
+   "id": "portal16_to43",
+   "targetRegion": 43,
+   "x": 2440,
+   "y": 1740
   }
  ],
  "regionIndex": 16

@@ -490,7 +490,8 @@ export class GameScene extends Phaser.Scene {
                'feather','feather','feather','snow','gold','storm',         // 25-30  Act IV
                'cave','sparkle','dust','cave',                              // 31-34  Act V
                'void','void','void','void',                                 // 35-38  Act VI
-               'gold','gold','gold'];                                       // 39-41  hidden
+               'gold','gold','gold',                                        // 39-41  hidden
+               'cave','mist','ash','snow','cave','void','sparkle','gold'];  // 42-49  new spurs
     return B[i] || 'dust';
   }
 
@@ -622,6 +623,8 @@ export class GameScene extends Phaser.Scene {
     else if (n === 'mural')         c = 0xfff0b0;   // Temple of Gods: the five intact halos glow
     else if (n === 'lava_rock')     c = 0xff6a1e;   // Demon Forge: molten slag emits heat
     else if (n === 'crystal_amber') c = 0xffb24a;   // cooling metal glints
+    else if (n === 'crystal_cyan')  c = 0x6fd0e0;   // ice / gem light
+    else if (n === 'void_shard')    c = 0x9a5cff;   // Severance: void shards bleed light
     else if (d.includes('campfire')) c = 0xff9a3a;
     if (c != null) this._glow(obj, c, 5);
   }

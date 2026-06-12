@@ -1,0 +1,1986 @@
+{
+ "version": 1,
+ "regionName": "Frostspire Monastery",
+ "regionSubtitle": "Himamaṭha",
+ "background": {
+  "type": "color",
+  "value": "#cdddea"
+ },
+ "difficulty": 2.7,
+ "sprites": [
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 164.67931844971483,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2641.3,
+    1661.9,
+    2581.0,
+    1615.1,
+    2559.5,
+    1644.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 156.65532945222373,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1875.8,
+    699.1,
+    1904.0,
+    738.5,
+    1984.7,
+    678.4,
+    1871.3,
+    740.9,
+    1873.7,
+    701.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 160.66700180710592,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    363.3,
+    575.4,
+    470.3,
+    510.1,
+    437.4,
+    548.8,
+    425.3,
+    538.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 168.51232395756756,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1850.8,
+    750.1,
+    1892.3,
+    816.1,
+    1803.7,
+    727.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 123.3440720528443,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2229.4,
+    824.1,
+    2313.1,
+    823.8,
+    2252.2,
+    757.6,
+    2242.2,
+    743.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 116.12833639566242,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2561.0,
+    387.5,
+    2604.0,
+    362.1,
+    2650.9,
+    407.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 82.749115839159,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    832.7,
+    465.3,
+    899.8,
+    399.5,
+    927.8,
+    383.8,
+    960.1,
+    449.4,
+    946.7,
+    393.9
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 136.31747641035457,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1072.2,
+    1483.9,
+    979.7,
+    1488.4,
+    1071.1,
+    1494.2,
+    1154.3,
+    1562.6,
+    1203.0,
+    1531.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 134.1113447264318,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    408.9,
+    794.2,
+    428.6,
+    859.8,
+    386.7,
+    914.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 89.75699425677352,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2778.1,
+    1626.4,
+    2834.1,
+    1632.7,
+    2745.3,
+    1642.3,
+    2859.4,
+    1644.8,
+    2711.2,
+    1566.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 101.60441481844066,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1394.7,
+    207.2,
+    1427.3,
+    316.5,
+    1442.8,
+    292.5,
+    1226.6,
+    245.4,
+    1400.5,
+    235.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 138.862761895353,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2169.9,
+    724.3,
+    2161.5,
+    753.0,
+    2073.5,
+    738.7,
+    2074.4,
+    729.1,
+    2085.5,
+    735.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 146.26894674450372,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    296.7,
+    1719.6,
+    238.9,
+    1803.0,
+    57.9,
+    1767.9,
+    22.9,
+    1652.7,
+    262.3,
+    1808.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 125.43152750730837,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    388.4,
+    1353.6,
+    334.3,
+    1460.0,
+    366.7,
+    1491.3,
+    382.6,
+    1396.1,
+    384.0,
+    1432.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 123.15862825542044,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    874.3,
+    810.5,
+    822.8,
+    688.8,
+    841.5,
+    681.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 158.267121390635,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1532.4,
+    1527.1,
+    1471.5,
+    1521.5,
+    1510.6,
+    1567.6,
+    1449.4,
+    1553.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 145.89749285429585,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2659.6,
+    378.5,
+    2644.7,
+    379.3,
+    2706.0,
+    332.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 121.66485150061752,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1737.7,
+    1228.5,
+    1752.0,
+    1238.3,
+    1793.0,
+    1193.2,
+    1846.7,
+    1227.6,
+    1730.8,
+    1255.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 118.74825467834717,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2822.9,
+    623.2,
+    2872.6,
+    584.2,
+    2837.0,
+    584.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 159.54579318462908,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    835.4,
+    467.6,
+    794.4,
+    418.9,
+    794.0,
+    413.3
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 159.98307361554268,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1926.2,
+    889.7,
+    2116.6,
+    929.6,
+    2007.4,
+    929.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 114.01494014786124,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2387.7,
+    1409.3,
+    2237.7,
+    1386.7,
+    2293.9,
+    1377.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 73.38702655554879,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    3127.0,
+    628.1,
+    3027.9,
+    759.7,
+    3088.4,
+    702.7,
+    3146.2,
+    665.1,
+    3024.9,
+    664.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 154.35967135891528,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1746.6,
+    1229.9,
+    1737.7,
+    1215.3,
+    1735.4,
+    1173.5,
+    1644.8,
+    1205.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 117.93550778236079,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2891.1,
+    610.4,
+    2772.2,
+    547.6,
+    2788.9,
+    624.2,
+    2860.4,
+    574.8,
+    2762.1,
+    608.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 133.04487182745487,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    722.6,
+    832.9,
+    595.3,
+    947.9,
+    725.8,
+    849.9,
+    583.6,
+    843.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 90.63486088967073,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2345.6,
+    427.6,
+    2406.5,
+    441.5,
+    2343.7,
+    539.8,
+    2214.1,
+    425.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 128.20183875863955,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    769.2,
+    368.9,
+    816.8,
+    381.3,
+    812.8,
+    401.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 83.71655339265463,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    855.8,
+    637.3,
+    826.9,
+    646.8,
+    828.6,
+    632.7,
+    781.0,
+    681.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 74.2531854202786,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    710.9,
+    1803.0,
+    589.7,
+    1805.8,
+    687.9,
+    1782.6,
+    465.2,
+    1830.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 88.4690647515023,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    212.3,
+    1514.9,
+    305.9,
+    1611.2,
+    315.8,
+    1495.7,
+    265.2,
+    1457.3
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 100.89101366336105,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1241.0,
+    1815.7,
+    1192.6,
+    1820.8,
+    1265.7,
+    1812.4,
+    1304.4,
+    1840.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 156.25831304268775,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1792.4,
+    993.8,
+    1840.1,
+    953.1,
+    1865.7,
+    944.3
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 71.60755662833402,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2341.2,
+    1580.6,
+    2319.3,
+    1634.8,
+    2269.0,
+    1583.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 118.24668336394564,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2165.7,
+    1792.5,
+    2127.0,
+    1880.9,
+    2105.0,
+    1814.5,
+    2131.5,
+    1862.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 156.99691666225982,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2078.3,
+    555.9,
+    2086.2,
+    549.3,
+    2076.3,
+    566.6,
+    2171.2,
+    614.0,
+    2179.4,
+    560.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 152.81675673693715,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2701.3,
+    1481.8,
+    2723.4,
+    1558.3,
+    2595.2,
+    1539.0,
+    2578.5,
+    1530.1,
+    2704.5,
+    1465.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 102.19642873297263,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1872.8,
+    765.3,
+    1758.6,
+    816.1,
+    1737.6,
+    818.7,
+    1711.3,
+    766.9,
+    1750.4,
+    834.9
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 124.19132082926023,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1574.2,
+    1806.9,
+    1699.8,
+    1818.9,
+    1740.4,
+    1858.7,
+    1714.2,
+    1787.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 113.2568130577296,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    3022.6,
+    337.3,
+    2938.3,
+    373.3,
+    2932.0,
+    289.4,
+    2859.4,
+    375.7
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 138.44772051055705,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    884.4,
+    546.4,
+    905.2,
+    569.6,
+    898.2,
+    545.9,
+    790.7,
+    567.0,
+    794.2,
+    577.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 103.55945423065948,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2813.0,
+    683.2,
+    2923.3,
+    662.9,
+    2763.1,
+    692.6,
+    2747.2,
+    699.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 144.64648903526955,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    3036.2,
+    955.1,
+    3000.1,
+    862.9,
+    2904.5,
+    898.1,
+    2952.0,
+    911.4,
+    2943.3,
+    842.3
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 98.14066922269782,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    196.9,
+    907.1,
+    61.8,
+    874.2,
+    141.1,
+    983.7,
+    59.8,
+    925.3
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 101.55308992118381,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1436.3,
+    574.8,
+    1289.8,
+    564.1,
+    1338.4,
+    580.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 71.05871752856089,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1309.5,
+    995.1,
+    1382.7,
+    994.2,
+    1351.9,
+    1018.7,
+    1404.2,
+    1043.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 96.59982990409492,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    694.0,
+    1064.0,
+    584.0,
+    1121.7,
+    608.5,
+    1081.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 120.07962691125448,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1948.9,
+    1193.3,
+    2040.6,
+    1259.2,
+    2014.3,
+    1204.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 126.84508399234358,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1905.4,
+    1150.0,
+    1964.8,
+    1144.4,
+    2034.9,
+    1197.9,
+    1930.7,
+    1179.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 116.19492767181009,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    237.7,
+    256.9,
+    222.9,
+    252.2,
+    291.6,
+    275.6,
+    262.6,
+    278.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 138.42307309852367,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2086.6,
+    436.2,
+    2021.9,
+    353.0,
+    2044.0,
+    378.7,
+    2008.1,
+    463.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 153.5385121266038,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2689.4,
+    236.4,
+    2542.2,
+    223.0,
+    2583.2,
+    354.7,
+    2553.2,
+    287.9,
+    2542.9,
+    320.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 148.77299784758884,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2251.8,
+    1832.1,
+    2189.2,
+    1809.2,
+    2203.9,
+    1810.9,
+    2201.9,
+    1810.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 75.74669481519594,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    3014.0,
+    719.1,
+    3002.9,
+    806.8,
+    2909.4,
+    787.6,
+    2830.3,
+    809.8,
+    2941.9,
+    811.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 86.16133857712813,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2889.8,
+    1350.0,
+    2787.1,
+    1331.2,
+    2769.2,
+    1258.1,
+    2817.1,
+    1229.0,
+    2925.6,
+    1300.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 164.31810848818793,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    3039.8,
+    916.1,
+    2991.2,
+    873.3,
+    3088.5,
+    934.0,
+    2969.5,
+    910.0
+   ]
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0001",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 825.63,
+   "y": 543.69,
+   "scaleX": 1.288,
+   "scaleY": 0.715,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.344
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0002",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1313.74,
+   "y": 426.9,
+   "scaleX": 1.174,
+   "scaleY": 0.632,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.403
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0003",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2144.93,
+   "y": 323.09,
+   "scaleX": 0.923,
+   "scaleY": 0.69,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.363
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0004",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2119.5,
+   "y": 168.51,
+   "scaleX": 0.988,
+   "scaleY": 0.277,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.594
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0005",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3191.33,
+   "y": 503.09,
+   "scaleX": 1.049,
+   "scaleY": 0.486,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.399
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0006",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 14.02,
+   "y": 102.02,
+   "scaleX": 0.994,
+   "scaleY": 0.603,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.576
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0007",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 335.83,
+   "y": 117.91,
+   "scaleX": 0.509,
+   "scaleY": 0.449,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.403
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0008",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 479.74,
+   "y": 385.46,
+   "scaleX": 1.039,
+   "scaleY": 0.343,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.548
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0009",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 39.75,
+   "y": 503.78,
+   "scaleX": 1.17,
+   "scaleY": 0.358,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.657
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0010",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2317.28,
+   "y": 296.22,
+   "scaleX": 0.813,
+   "scaleY": 0.631,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.362
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0011",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 272.39,
+   "y": 213.38,
+   "scaleX": 1.075,
+   "scaleY": 0.515,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.502
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0012",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2168.55,
+   "y": 50.12,
+   "scaleX": 0.83,
+   "scaleY": 0.595,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.533
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0013",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 365.48,
+   "y": 53.85,
+   "scaleX": 0.515,
+   "scaleY": 0.334,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.362
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0014",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 82.92,
+   "y": 330.66,
+   "scaleX": 1.052,
+   "scaleY": 0.661,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.39
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0015",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2125.67,
+   "y": 553.14,
+   "scaleX": 0.891,
+   "scaleY": 0.673,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.592
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0016",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1765.79,
+   "y": 399.46,
+   "scaleX": 1.263,
+   "scaleY": 0.526,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.537
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0017",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2383.83,
+   "y": 300.79,
+   "scaleX": 0.837,
+   "scaleY": 0.315,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.373
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0018",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 766.05,
+   "y": 627.71,
+   "scaleX": 0.692,
+   "scaleY": 0.302,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.482
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0019",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Buildings/Blue Buildings",
+   "frames": [
+    "Monastery.png"
+   ],
+   "name": "Monastery",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1500,
+   "y": 760,
+   "scaleX": 1.15,
+   "scaleY": 1.15,
+   "offsetX": 96,
+   "offsetY": 319
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0020",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Buildings/Blue Buildings",
+   "frames": [
+    "Tower.png"
+   ],
+   "name": "Tower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1050,
+   "y": 800,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 64,
+   "offsetY": 255
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0021",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Buildings/Blue Buildings",
+   "frames": [
+    "Tower.png"
+   ],
+   "name": "Tower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1950,
+   "y": 800,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 64,
+   "offsetY": 255
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0022",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 760,
+   "y": 1000,
+   "scaleX": 1.05,
+   "scaleY": 1.05,
+   "offsetX": 30,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0023",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1180,
+   "y": 1000,
+   "scaleX": 1.05,
+   "scaleY": 1.05,
+   "offsetX": 30,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0024",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1820,
+   "y": 1000,
+   "scaleX": 1.05,
+   "scaleY": 1.05,
+   "offsetX": 30,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0025",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2240,
+   "y": 1000,
+   "scaleX": 1.05,
+   "scaleY": 1.05,
+   "offsetX": 30,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0026",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2700.61,
+   "y": 1292.48,
+   "scaleX": 1.053,
+   "scaleY": 1.053,
+   "offsetX": 32,
+   "offsetY": 112
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0027",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1793.85,
+   "y": 1267.26,
+   "scaleX": 0.841,
+   "scaleY": 0.841,
+   "offsetX": 32,
+   "offsetY": 112
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0028",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 385.96,
+   "y": 1178.87,
+   "scaleX": 0.856,
+   "scaleY": 0.856,
+   "offsetX": 32,
+   "offsetY": 112
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0029",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2732.81,
+   "y": 1435.45,
+   "scaleX": 1.045,
+   "scaleY": 1.045,
+   "offsetX": 32,
+   "offsetY": 112
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0030",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1315.9,
+   "y": 958.69,
+   "scaleX": 1.046,
+   "scaleY": 1.046,
+   "offsetX": 32,
+   "offsetY": 112
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0031",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2689.08,
+   "y": 1016.86,
+   "scaleX": 1.096,
+   "scaleY": 1.096,
+   "offsetX": 32,
+   "offsetY": 112
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0032",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1277.93,
+   "y": 1587.35,
+   "scaleX": 0.807,
+   "scaleY": 0.807,
+   "offsetX": 32,
+   "offsetY": 112
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0033",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1880.94,
+   "y": 1451.14,
+   "scaleX": 1.07,
+   "scaleY": 1.07,
+   "offsetX": 32,
+   "offsetY": 112
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0034",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2082.66,
+   "y": 1227.5,
+   "scaleX": 1.047,
+   "scaleY": 1.047,
+   "offsetX": 32,
+   "offsetY": 112
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0035",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2182.62,
+   "y": 1354.44,
+   "scaleX": 0.919,
+   "scaleY": 0.919,
+   "offsetX": 32,
+   "offsetY": 112
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0036",
+   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
+   "frames": [
+    "1.png",
+    "2.png",
+    "3.png",
+    "4.png",
+    "5.png"
+   ],
+   "name": "1",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 900,
+   "y": 940,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 96,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0037",
+   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
+   "frames": [
+    "1.png",
+    "2.png",
+    "3.png",
+    "4.png",
+    "5.png"
+   ],
+   "name": "1",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1500,
+   "y": 940,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 96,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0038",
+   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
+   "frames": [
+    "1.png",
+    "2.png",
+    "3.png",
+    "4.png",
+    "5.png"
+   ],
+   "name": "1",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2100,
+   "y": 940,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 96,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0039",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1500,
+   "y": 980,
+   "scaleX": 1.8,
+   "scaleY": 1.8,
+   "offsetX": 70,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0040",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1340,
+   "y": 1010,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 22,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0041",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1660,
+   "y": 1010,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 22,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0042",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1591.21,
+   "y": 1114.33,
+   "scaleX": 1.698,
+   "scaleY": 1.698,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0043",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2963.81,
+   "y": 1297.9,
+   "scaleX": 1.443,
+   "scaleY": 1.443,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0044",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1953.18,
+   "y": 897.95,
+   "scaleX": 1.455,
+   "scaleY": 1.455,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0045",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1753.27,
+   "y": 631.12,
+   "scaleX": 1.311,
+   "scaleY": 1.311,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0046",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1745.36,
+   "y": 1784.92,
+   "scaleX": 1.551,
+   "scaleY": 1.551,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0047",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 654.82,
+   "y": 1570.42,
+   "scaleX": 1.489,
+   "scaleY": 1.489,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0048",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1504.42,
+   "y": 666.43,
+   "scaleX": 1.407,
+   "scaleY": 1.407,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0049",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1484.23,
+   "y": 1584.13,
+   "scaleX": 1.924,
+   "scaleY": 1.924,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0050",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2983.94,
+   "y": 316.33,
+   "scaleX": 1.547,
+   "scaleY": 1.547,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r45_0051",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1684.85,
+   "y": 1143.85,
+   "scaleX": 1.689,
+   "scaleY": 1.689,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  }
+ ],
+ "noWalkZones": [],
+ "enemies": [
+  {
+   "id": "e_1",
+   "type": "flying",
+   "x": 900,
+   "y": 1080
+  },
+  {
+   "id": "e_2",
+   "type": "flying",
+   "x": 2150,
+   "y": 920
+  },
+  {
+   "id": "e_3",
+   "type": "melee",
+   "x": 1500,
+   "y": 1180
+  },
+  {
+   "id": "e_4",
+   "type": "ranged",
+   "x": 1850,
+   "y": 1000
+  }
+ ],
+ "boss": null,
+ "npcs": [
+  {
+   "id": "npc45_1",
+   "type": "blue",
+   "x": 360,
+   "y": 1000,
+   "config": {
+    "id": "npc45_1",
+    "name": "Snow-Abbot Tenzin",
+    "first": "We kept the Sixth Hymn frozen in the bell-ice, where no fire could burn it. Listen close - it still hums his name beneath the wind.",
+    "active": "",
+    "completed": ""
+   }
+  }
+ ],
+ "portals": [
+  {
+   "id": "portal45_back",
+   "direction": "back",
+   "targetRegion": 27,
+   "x": 120,
+   "y": 1000
+  }
+ ],
+ "regionIndex": 45
+}

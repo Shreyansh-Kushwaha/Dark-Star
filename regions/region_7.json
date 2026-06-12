@@ -1,6 +1,6 @@
 {
  "regionName": "Memory Grove",
- "regionSubtitle": "Sm\u1e5btivana",
+ "regionSubtitle": "Smṛtivana",
  "version": 1,
  "background": {
   "type": "color",
@@ -6182,6 +6182,12 @@
    "targetRegion": 11,
    "x": 3120,
    "y": 1065
+  },
+  {
+   "id": "portal7_to42",
+   "targetRegion": 42,
+   "x": 1600,
+   "y": 1720
   }
  ],
  "regionIndex": 7

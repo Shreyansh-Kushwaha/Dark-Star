@@ -1,7 +1,7 @@
 {
  "version": 1,
  "regionName": "The Between",
- "regionSubtitle": "Antar\u0101la",
+ "regionSubtitle": "Antarāla",
  "background": {
   "type": "color",
   "value": "#2a2730"
@@ -1175,6 +1175,12 @@
    "targetRegion": 37,
    "x": 3090,
    "y": 1000
+  },
+  {
+   "id": "portal36_to47",
+   "targetRegion": 47,
+   "x": 1600,
+   "y": 1720
   }
  ],
  "regionIndex": 36

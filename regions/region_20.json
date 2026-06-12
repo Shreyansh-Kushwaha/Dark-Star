@@ -1,7 +1,7 @@
 {
  "version": 1,
  "regionName": "Copper Bazaar",
- "regionSubtitle": "T\u0101mrapura",
+ "regionSubtitle": "Tāmrapura",
  "background": {
   "type": "color",
   "value": "#7a5d36"
@@ -4396,7 +4396,7 @@
    "config": {
     "id": "npc20_1",
     "name": "Coppersmith Deva",
-    "first": "Genuine_relics,_friend!_This_coin_\u2014_see_the_face?_No_temple_will_say_whose._I_call_him_the_Sixth._Worth_more_than_gold_to_the_right_pilgrim.",
+    "first": "Genuine_relics,_friend!_This_coin_—_see_the_face?_No_temple_will_say_whose._I_call_him_the_Sixth._Worth_more_than_gold_to_the_right_pilgrim.",
     "active": "",
     "completed": ""
    }
@@ -4435,6 +4435,12 @@
    "targetRegion": 21,
    "x": 820,
    "y": 1740
+  },
+  {
+   "id": "portal20_to44",
+   "targetRegion": 44,
+   "x": 2400,
+   "y": 1700
   }
  ],
  "regionIndex": 20

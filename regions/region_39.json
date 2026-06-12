@@ -1,7 +1,7 @@
 {
  "version": 1,
  "regionName": "Sixth Gate",
- "regionSubtitle": "\u1e62a\u1e63\u1e6dha Dv\u0101ra",
+ "regionSubtitle": "Ṣaṣṭha Dvāra",
  "background": {
   "type": "color",
   "value": "#1a1408"
@@ -1446,6 +1446,12 @@
    "targetRegion": 40,
    "x": 3090,
    "y": 1000
+  },
+  {
+   "id": "portal39_to48",
+   "targetRegion": 48,
+   "x": 1600,
+   "y": 320
   }
  ],
  "regionIndex": 39

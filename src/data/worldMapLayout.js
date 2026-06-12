@@ -76,6 +76,16 @@ export const MAP_LAYOUT = {
   39: { ...P(14.5, 3), act: 7, tag: 'secret' },
   40: { ...P(16, 3),   act: 7, tag: 'secret' },
   41: { ...P(17.5, 3), act: 7, tag: 'secret' },
+
+  // ── New optional spur regions (one per province) + secret offshoot ─────────
+  42: { ...P(1, 1),    act: 1 },              // Root Hollows      (off R7)
+  43: { ...P(4.4, -1), act: 2 },              // Tidewreck Harbor  (off R16)
+  44: { ...P(8.6, -1), act: 3 },              // Cinder Bazaar     (off R20)
+  45: { ...P(15.6, -1),act: 4 },              // Frostspire Mon.   (off R27)
+  46: { ...P(4.8, 2),  act: 5 },              // Drowned Catacombs (off R32)
+  47: { ...P(19, 1),   act: 6 },              // The Unwound Waste (off R36)
+  48: { ...P(15, 4),   act: 7, tag: 'secret' },   // Threshold of Names (off R39)
+  49: { ...P(16.5, 4), act: 7, tag: 'secret' },   // The First Loom    (off R48)
 };
 
 // Fallback grid position for any region not in MAP_LAYOUT (keeps the map robust

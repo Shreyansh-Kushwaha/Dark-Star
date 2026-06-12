@@ -1,7 +1,7 @@
 {
  "version": 1,
  "regionName": "The Eyrie",
- "regionSubtitle": "Garu\u1e0d\u0101laya",
+ "regionSubtitle": "Garuḍālaya",
  "background": {
   "type": "color",
   "value": "#86a8c8"
@@ -1738,6 +1738,12 @@
    "id": "portal27_to28",
    "targetRegion": 28,
    "x": 760,
+   "y": 250
+  },
+  {
+   "id": "portal27_to45",
+   "targetRegion": 45,
+   "x": 2400,
    "y": 250
   }
  ],

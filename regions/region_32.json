@@ -6732,6 +6732,12 @@
    "targetRegion": 10,
    "x": 3090,
    "y": 1037.333556466675
+  },
+  {
+   "id": "portal32_to46",
+   "targetRegion": 46,
+   "x": 1600,
+   "y": 1740
   }
  ],
  "regionIndex": 32
