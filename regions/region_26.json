@@ -8,540 +8,378 @@
  },
  "sprites": [
   {
-   "type": "stroke",
-   "stroke": "#574d40",
-   "strokeWidth": 70,
-   "lineCap": "round",
-   "lineJoin": "round",
-   "composite": "source-over",
-   "points": [
-    0,
-    1040.0,
-    50,
-    1043.6,
-    100,
-    1047.2,
-    150,
-    1049.9,
-    200,
-    1051.8,
-    250,
-    1053.7,
-    300,
-    1055.5,
-    350,
-    1057.1,
-    400,
-    1058.6,
-    450,
-    1059.9,
-    500,
-    1061.0,
-    550,
-    1061.9,
-    600,
-    1062.5,
-    650,
-    1062.9,
-    700,
-    1063.1,
-    750,
-    1063.0,
-    800,
-    1062.6,
-    850,
-    1062.0,
-    900,
-    1061.0,
-    950,
-    1059.8,
-    1000,
-    1058.3,
-    1050,
-    1056.5,
-    1100,
-    1054.4,
-    1150,
-    1052.0,
-    1200,
-    1049.3,
-    1250,
-    1046.4,
-    1300,
-    1043.2,
-    1350,
-    1039.7,
-    1400,
-    1036.0,
-    1450,
-    1032.1,
-    1500,
-    1027.9,
-    1550,
-    1023.6,
-    1600,
-    1019.1,
-    1650,
-    1014.4,
-    1700,
-    1009.6,
-    1750,
-    1004.7,
-    1800,
-    999.7,
-    1850,
-    994.6,
-    1900,
-    989.5,
-    1950,
-    984.4,
-    2000,
-    979.2,
-    2050,
-    974.1,
-    2100,
-    969.1,
-    2150,
-    964.1,
-    2200,
-    959.2,
-    2250,
-    954.4,
-    2300,
-    949.7,
-    2350,
-    945.2,
-    2400,
-    940.9,
-    2450,
-    936.8,
-    2500,
-    932.9,
-    2550,
-    929.2,
-    2600,
-    925.8,
-    2650,
-    922.6,
-    2700,
-    919.7,
-    2750,
-    917.0,
-    2800,
-    914.7,
-    2850,
-    912.6,
-    2900,
-    910.8,
-    2950,
-    909.3,
-    3000,
-    908.1,
-    3050,
-    907.2,
-    3100,
-    906.8,
-    3150,
-    908.0,
-    3200,
-    909.5
-   ]
-  },
-  {
    "type": "sprite",
    "spriteId": "s_r26_0001",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock2.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2741.03,
-   "y": 703.71,
-   "scaleX": 1.759,
-   "scaleY": 1.759,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.301
+   "x": 2015.08,
+   "y": 722.18,
+   "scaleX": 0.746,
+   "scaleY": 0.746,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0002",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock2.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2762.45,
-   "y": 657.71,
-   "scaleX": 1.368,
-   "scaleY": 1.368,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.301
+   "x": 2686.9,
+   "y": 618.96,
+   "scaleX": 0.894,
+   "scaleY": 0.894,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0003",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock1.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2754.13,
-   "y": 611.71,
-   "scaleX": 0.977,
-   "scaleY": 0.977,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.301
+   "x": 773.65,
+   "y": 1708.0,
+   "scaleX": 0.845,
+   "scaleY": 0.845,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0004",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock4.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2699.84,
-   "y": 734.07,
-   "scaleX": 1.474,
-   "scaleY": 1.474,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.29
+   "x": 1208.52,
+   "y": 611.96,
+   "scaleX": 0.753,
+   "scaleY": 0.753,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0005",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock4.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2711.16,
-   "y": 688.07,
-   "scaleX": 1.277,
-   "scaleY": 1.277,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.29
+   "x": 3195.87,
+   "y": 1463.16,
+   "scaleX": 0.668,
+   "scaleY": 0.668,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0006",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock1.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2715.89,
-   "y": 642.07,
-   "scaleX": 1.081,
-   "scaleY": 1.081,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.29
+   "x": 3039.03,
+   "y": 480.95,
+   "scaleX": 0.542,
+   "scaleY": 0.542,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0007",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock1.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2693.58,
-   "y": 596.07,
-   "scaleX": 0.884,
-   "scaleY": 0.884,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.29
+   "x": -17.38,
+   "y": 1517.16,
+   "scaleX": 0.774,
+   "scaleY": 0.774,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0008",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock2.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2711.45,
-   "y": 550.07,
-   "scaleX": 0.688,
-   "scaleY": 0.688,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.29
+   "x": 2294.69,
+   "y": 415.76,
+   "scaleX": 0.643,
+   "scaleY": 0.643,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0009",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock3.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2964.24,
-   "y": 770.62,
-   "scaleX": 1.667,
-   "scaleY": 1.667,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.348
+   "x": 1767.46,
+   "y": 1199.03,
+   "scaleX": 0.708,
+   "scaleY": 0.708,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0010",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock4.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2931.27,
-   "y": 724.62,
-   "scaleX": 1.296,
-   "scaleY": 1.296,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.348
+   "x": 1187.33,
+   "y": 1634.31,
+   "scaleX": 0.768,
+   "scaleY": 0.768,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0011",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock1.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2956.49,
-   "y": 678.62,
-   "scaleX": 0.926,
-   "scaleY": 0.926,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.348
+   "x": 1090.95,
+   "y": 653.49,
+   "scaleX": 0.509,
+   "scaleY": 0.509,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0012",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock1.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1560.35,
-   "y": 693.58,
-   "scaleX": 1.452,
-   "scaleY": 1.452,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.25
+   "x": 23.38,
+   "y": 7.82,
+   "scaleX": 0.679,
+   "scaleY": 0.679,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0013",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock4.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1562.45,
-   "y": 647.58,
-   "scaleX": 1.129,
-   "scaleY": 1.129,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.25
+   "x": 1988.54,
+   "y": 1673.65,
+   "scaleX": 0.604,
+   "scaleY": 0.604,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0014",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock2.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1564.01,
-   "y": 601.58,
-   "scaleX": 0.807,
-   "scaleY": 0.807,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.25
+   "x": 2742.57,
+   "y": 699.6,
+   "scaleX": 0.728,
+   "scaleY": 0.728,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0015",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock3.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1627.62,
-   "y": 746.75,
-   "scaleX": 1.785,
-   "scaleY": 1.785,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.312
+   "x": 440.45,
+   "y": 179.09,
+   "scaleX": 0.511,
+   "scaleY": 0.511,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0016",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock3.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1613.37,
-   "y": 700.75,
-   "scaleX": 1.487,
-   "scaleY": 1.487,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.312
+   "x": 411.19,
+   "y": 1440.04,
+   "scaleX": 0.65,
+   "scaleY": 0.65,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0017",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock4.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1617.29,
-   "y": 654.75,
-   "scaleX": 1.19,
-   "scaleY": 1.19,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.312
+   "x": 342.97,
+   "y": 580.88,
+   "scaleX": 0.771,
+   "scaleY": 0.771,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0018",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock3.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1641.81,
-   "y": 608.75,
-   "scaleX": 0.892,
-   "scaleY": 0.892,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.312
+   "x": 269.43,
+   "y": 343.56,
+   "scaleX": 0.584,
+   "scaleY": 0.584,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0019",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock2.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1663.02,
-   "y": 803.18,
-   "scaleX": 1.475,
-   "scaleY": 1.475,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.318
+   "x": 1117.02,
+   "y": 451.3,
+   "scaleX": 0.801,
+   "scaleY": 0.801,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0020",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock4.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1657.94,
-   "y": 757.18,
-   "scaleX": 1.278,
-   "scaleY": 1.278,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.318
+   "x": 1099.8,
+   "y": 1960.23,
+   "scaleX": 0.677,
+   "scaleY": 0.677,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0021",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
    "frames": [
-    "Rock2.png"
+    "Clouds_01.png"
    ],
-   "name": "Rock",
+   "name": "Clouds_01",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1654.53,
-   "y": 711.18,
-   "scaleX": 1.082,
-   "scaleY": 1.082,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.318
+   "x": 2449.88,
+   "y": 1344.62,
+   "scaleX": 0.512,
+   "scaleY": 0.512,
+   "offsetX": 288.0,
+   "offsetY": 128.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0022",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock2.png"
+    "Rock3.png"
    ],
-   "name": "Rock",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1649.67,
-   "y": 665.18,
-   "scaleX": 0.885,
-   "scaleY": 0.885,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.318
+   "x": 2177.98,
+   "y": 362.63,
+   "scaleX": 2.563,
+   "scaleY": 2.563,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
@@ -550,124 +388,117 @@
    "frames": [
     "Rock2.png"
    ],
-   "name": "Rock",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1648.54,
-   "y": 619.18,
-   "scaleX": 0.688,
-   "scaleY": 0.688,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.318
+   "x": 1616.58,
+   "y": 495.94,
+   "scaleX": 2.176,
+   "scaleY": 2.176,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0024",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock3.png"
+    "Rock1.png"
    ],
-   "name": "Rock",
+   "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2280.22,
-   "y": 739.21,
-   "scaleX": 1.386,
-   "scaleY": 1.386,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.36
+   "x": 1796.93,
+   "y": 451.43,
+   "scaleX": 1.576,
+   "scaleY": 1.576,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0025",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock2.png"
+    "Rock3.png"
    ],
-   "name": "Rock",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2284.01,
-   "y": 693.21,
-   "scaleX": 1.078,
-   "scaleY": 1.078,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.36
+   "x": 2111.27,
+   "y": 506.66,
+   "scaleX": 2.619,
+   "scaleY": 2.619,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0026",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock4.png"
+    "Rock3.png"
    ],
-   "name": "Rock",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2273.98,
-   "y": 647.21,
-   "scaleX": 0.77,
-   "scaleY": 0.77,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.36
+   "x": 2272.66,
+   "y": 463.65,
+   "scaleX": 1.973,
+   "scaleY": 1.973,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0027",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock1.png"
+    "Rock2.png"
    ],
-   "name": "Rock",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1071.54,
-   "y": 764.66,
-   "scaleX": 1.898,
-   "scaleY": 1.898,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.323
+   "x": 2552.66,
+   "y": 473.54,
+   "scaleX": 1.578,
+   "scaleY": 1.578,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0028",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock2.png"
+    "Rock3.png"
    ],
-   "name": "Rock",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1074.37,
-   "y": 718.66,
-   "scaleX": 1.582,
-   "scaleY": 1.582,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.323
+   "x": 2673.57,
+   "y": 455.18,
+   "scaleX": 1.905,
+   "scaleY": 1.905,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0029",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock4.png"
+    "Rock2.png"
    ],
-   "name": "Rock",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1066.84,
-   "y": 672.66,
-   "scaleX": 1.265,
-   "scaleY": 1.265,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.323
+   "x": 2979.88,
+   "y": 502.19,
+   "scaleX": 2.388,
+   "scaleY": 2.388,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
@@ -676,718 +507,678 @@
    "frames": [
     "Rock3.png"
    ],
-   "name": "Rock",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1058.39,
-   "y": 626.66,
-   "scaleX": 0.949,
-   "scaleY": 0.949,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.323
+   "x": 3123.57,
+   "y": 480.18,
+   "scaleX": 1.82,
+   "scaleY": 1.82,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0031",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock2.png"
+    "Rock1.png"
    ],
-   "name": "Rock",
+   "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 297.35,
-   "y": 642.02,
-   "scaleX": 1.818,
-   "scaleY": 1.818,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.283
+   "x": -79.17,
+   "y": 631.48,
+   "scaleX": 2.609,
+   "scaleY": 2.609,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0032",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock2.png"
+    "Rock1.png"
    ],
-   "name": "Rock",
+   "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 311.06,
-   "y": 596.02,
-   "scaleX": 1.414,
-   "scaleY": 1.414,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.283
+   "x": 56.65,
+   "y": 630.68,
+   "scaleX": 2.081,
+   "scaleY": 2.081,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0033",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock2.png"
+    "Rock4.png"
    ],
-   "name": "Rock",
+   "name": "Rock4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 320.77,
-   "y": 550.02,
-   "scaleX": 1.01,
-   "scaleY": 1.01,
-   "offsetX": 32,
-   "offsetY": 63,
-   "alpha": 0.283
+   "x": 233.0,
+   "y": 662.11,
+   "scaleX": 2.094,
+   "scaleY": 2.094,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0034",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock4.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 3035.73,
-   "y": 210.52,
-   "scaleX": 0.836,
-   "scaleY": 0.373,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.534
+   "x": 648.77,
+   "y": 645.11,
+   "scaleX": 2.112,
+   "scaleY": 2.112,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0035",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock2.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2397.35,
-   "y": 422.77,
-   "scaleX": 0.942,
-   "scaleY": 0.359,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.343
+   "x": 1093.88,
+   "y": 655.0,
+   "scaleX": 1.993,
+   "scaleY": 1.993,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0036",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock3.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2604.34,
-   "y": 1021.71,
-   "scaleX": 0.794,
-   "scaleY": 0.476,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.667
+   "x": 1255.54,
+   "y": 639.52,
+   "scaleX": 2.781,
+   "scaleY": 2.781,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0037",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock3.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 74.57,
-   "y": 392.87,
-   "scaleX": 0.843,
-   "scaleY": 0.464,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.79
+   "x": 1438.23,
+   "y": 604.19,
+   "scaleX": 1.942,
+   "scaleY": 1.942,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0038",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock3.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2448.93,
-   "y": 1566.3,
-   "scaleX": 0.878,
-   "scaleY": 0.402,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.447
+   "x": 1741.9,
+   "y": 653.0,
+   "scaleX": 1.745,
+   "scaleY": 1.745,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0039",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock2.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 176.31,
-   "y": 1762.96,
-   "scaleX": 1.118,
-   "scaleY": 0.458,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.789
+   "x": 1884.16,
+   "y": 658.72,
+   "scaleX": 2.505,
+   "scaleY": 2.505,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0040",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock4.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 3240.4,
-   "y": 719.48,
-   "scaleX": 1.143,
-   "scaleY": 0.38,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.625
+   "x": 2889.32,
+   "y": 621.41,
+   "scaleX": 1.405,
+   "scaleY": 1.405,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0041",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock4.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 460.63,
-   "y": 1243.76,
-   "scaleX": 0.778,
-   "scaleY": 0.453,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.489
+   "x": 3182.58,
+   "y": 610.09,
+   "scaleX": 2.024,
+   "scaleY": 2.024,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0042",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock3.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1634.45,
-   "y": 886.08,
-   "scaleX": 1.097,
-   "scaleY": 0.414,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.657
+   "x": 3338.75,
+   "y": 608.66,
+   "scaleX": 2.592,
+   "scaleY": 2.592,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0043",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock3.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1375.16,
-   "y": 377.62,
-   "scaleX": 0.803,
-   "scaleY": 0.351,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.255
+   "x": 895.56,
+   "y": 783.23,
+   "scaleX": 1.681,
+   "scaleY": 1.681,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0044",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock3.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 3154.33,
-   "y": 1215.4,
-   "scaleX": 0.981,
-   "scaleY": 0.435,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.271
+   "x": 1043.64,
+   "y": 791.0,
+   "scaleX": 2.507,
+   "scaleY": 2.507,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0045",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock4.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 3073.34,
-   "y": 650.59,
-   "scaleX": 1.146,
-   "scaleY": 0.413,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.778
+   "x": 1503.57,
+   "y": 749.5,
+   "scaleX": 2.768,
+   "scaleY": 2.768,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0046",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock1.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1016.45,
-   "y": 1669.3,
-   "scaleX": 0.708,
-   "scaleY": 0.492,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.494
+   "x": 782.58,
+   "y": 921.79,
+   "scaleX": 2.207,
+   "scaleY": 2.207,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0047",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock2.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1249.09,
-   "y": 1733.98,
-   "scaleX": 0.991,
-   "scaleY": 0.385,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.744
+   "x": 974.64,
+   "y": 911.27,
+   "scaleX": 1.734,
+   "scaleY": 1.734,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0048",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock2.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2678.54,
-   "y": 1405.7,
-   "scaleX": 1.047,
-   "scaleY": 0.391,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.599
+   "x": 2269.35,
+   "y": 1094.41,
+   "scaleX": 1.618,
+   "scaleY": 1.618,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0049",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock1.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2502.14,
-   "y": 974.7,
-   "scaleX": 0.796,
-   "scaleY": 0.433,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.647
+   "x": -105.06,
+   "y": 1249.91,
+   "scaleX": 1.866,
+   "scaleY": 1.866,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0050",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock1.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 3251.31,
-   "y": 1836.17,
-   "scaleX": 0.943,
-   "scaleY": 0.455,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.603
+   "x": 1865.59,
+   "y": 1211.1,
+   "scaleX": 1.575,
+   "scaleY": 1.575,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0051",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock3.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1249.41,
-   "y": 1050.08,
-   "scaleX": 1.122,
-   "scaleY": 0.5,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.513
+   "x": 2321.29,
+   "y": 1260.82,
+   "scaleX": 2.365,
+   "scaleY": 2.365,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0052",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock3.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 909.88,
-   "y": 1561.49,
-   "scaleX": 0.799,
-   "scaleY": 0.482,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.496
+   "x": 2442.37,
+   "y": 1226.25,
+   "scaleX": 2.488,
+   "scaleY": 2.488,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0053",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock2.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1293.67,
-   "y": 1423.9,
-   "scaleX": 1.05,
-   "scaleY": 0.355,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.721
+   "x": 2772.65,
+   "y": 1217.03,
+   "scaleX": 2.514,
+   "scaleY": 2.514,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0054",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock4.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1696.74,
-   "y": 1725.58,
-   "scaleX": 0.875,
-   "scaleY": 0.455,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.622
+   "x": 3038.36,
+   "y": 1253.6,
+   "scaleX": 1.683,
+   "scaleY": 1.683,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0055",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock2.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2134.2,
-   "y": 626.58,
-   "scaleX": 0.808,
-   "scaleY": 0.361,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.629
+   "x": 3207.49,
+   "y": 1256.86,
+   "scaleX": 1.85,
+   "scaleY": 1.85,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0056",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock2.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 3071.34,
-   "y": 1154.94,
-   "scaleX": 0.89,
-   "scaleY": 0.492,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.62
+   "x": -192.31,
+   "y": 1352.93,
+   "scaleX": 2.208,
+   "scaleY": 2.208,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0057",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock2.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 3.01,
-   "y": 1439.04,
-   "scaleX": 1.023,
-   "scaleY": 0.489,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.301
+   "x": -27.16,
+   "y": 1382.75,
+   "scaleX": 2.766,
+   "scaleY": 2.766,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0058",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock1.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": -25.23,
-   "y": 1877.15,
-   "scaleX": 0.991,
-   "scaleY": 0.351,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.447
+   "x": 167.49,
+   "y": 1406.87,
+   "scaleX": 2.152,
+   "scaleY": 2.152,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0059",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock2.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 3181.27,
-   "y": 806.04,
-   "scaleX": 1.148,
-   "scaleY": 0.484,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.763
+   "x": 313.39,
+   "y": 1397.68,
+   "scaleX": 2.489,
+   "scaleY": 2.489,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0060",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock1.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2813.16,
-   "y": 1363.09,
-   "scaleX": 0.805,
-   "scaleY": 0.413,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.612
+   "x": 434.34,
+   "y": 1382.84,
+   "scaleX": 1.43,
+   "scaleY": 1.43,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0061",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock2.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2632.83,
-   "y": 531.27,
-   "scaleX": 0.998,
-   "scaleY": 0.519,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.735
+   "x": 727.96,
+   "y": 1375.45,
+   "scaleX": 2.738,
+   "scaleY": 2.738,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0062",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock2.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 97.6,
-   "y": 1147.35,
-   "scaleX": 1.101,
-   "scaleY": 0.426,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.65
+   "x": 1482.39,
+   "y": 1383.44,
+   "scaleX": 2.272,
+   "scaleY": 2.272,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0063",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock2.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1416.89,
-   "y": 1263.12,
-   "scaleX": 1.034,
-   "scaleY": 0.477,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.71
+   "x": 1623.68,
+   "y": 1395.9,
+   "scaleX": 2.034,
+   "scaleY": 2.034,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0064",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock1.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2740.27,
-   "y": 177.62,
-   "scaleX": 1.38,
-   "scaleY": 0.4,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.147
+   "x": 1803.35,
+   "y": 1377.11,
+   "scaleX": 1.748,
+   "scaleY": 1.748,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0065",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock2.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 977.35,
-   "y": 1309.97,
-   "scaleX": 1.574,
-   "scaleY": 0.4,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.17
+   "x": 2106.61,
+   "y": 1377.57,
+   "scaleX": 2.695,
+   "scaleY": 2.695,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0066",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock4.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 249.7,
-   "y": 184.17,
-   "scaleX": 1.416,
-   "scaleY": 0.4,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.193
+   "x": 2689.14,
+   "y": 1358.47,
+   "scaleX": 1.795,
+   "scaleY": 1.795,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0067",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock2.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 206.79,
-   "y": 414.0,
-   "scaleX": 1.733,
-   "scaleY": 0.4,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.185
+   "x": 3309.94,
+   "y": 1409.68,
+   "scaleX": 1.785,
+   "scaleY": 1.785,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0068",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock2.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2216.64,
-   "y": 565.86,
-   "scaleX": 1.774,
-   "scaleY": 0.4,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.218
+   "x": 208.63,
+   "y": 1548.99,
+   "scaleX": 2.029,
+   "scaleY": 2.029,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0069",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Clouds_01.png"
+    "Rock3.png"
    ],
-   "name": "Clouds_01",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 382.15,
-   "y": 445.81,
-   "scaleX": 1.568,
-   "scaleY": 0.4,
-   "offsetX": 288,
-   "offsetY": 128,
-   "alpha": 0.137
+   "x": 377.17,
+   "y": 1507.95,
+   "scaleX": 1.698,
+   "scaleY": 1.698,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
@@ -1396,14 +1187,14 @@
    "frames": [
     "Rock4.png"
    ],
-   "name": "Rock",
+   "name": "Rock4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 40,
-   "y": 1072.9,
-   "scaleX": 2.708,
-   "scaleY": 2.708,
-   "offsetX": 32,
+   "x": 544.59,
+   "y": 1534.14,
+   "scaleX": 1.406,
+   "scaleY": 1.406,
+   "offsetX": 32.0,
    "offsetY": 63
   },
   {
@@ -1411,16 +1202,16 @@
    "spriteId": "s_r26_0071",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock2.png"
+    "Rock3.png"
    ],
-   "name": "Rock",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 98,
-   "y": 1077.08,
-   "scaleX": 2.29,
-   "scaleY": 2.29,
-   "offsetX": 32,
+   "x": 812.14,
+   "y": 1520.95,
+   "scaleX": 2.358,
+   "scaleY": 2.358,
+   "offsetX": 32.0,
    "offsetY": 63
   },
   {
@@ -1428,16 +1219,16 @@
    "spriteId": "s_r26_0072",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock4.png"
+    "Rock2.png"
    ],
-   "name": "Rock",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 92.01,
-   "y": 1129.08,
-   "scaleX": 2.334,
-   "scaleY": 2.334,
-   "offsetX": 32,
+   "x": 1106.87,
+   "y": 1533.85,
+   "scaleX": 2.794,
+   "scaleY": 2.794,
+   "offsetX": 32.0,
    "offsetY": 63
   },
   {
@@ -1445,16 +1236,16 @@
    "spriteId": "s_r26_0073",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock2.png"
+    "Rock3.png"
    ],
-   "name": "Rock",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 156,
-   "y": 1080.11,
-   "scaleX": 2.634,
-   "scaleY": 2.634,
-   "offsetX": 32,
+   "x": 1252.76,
+   "y": 1513.71,
+   "scaleX": 1.91,
+   "scaleY": 1.91,
+   "offsetX": 32.0,
    "offsetY": 63
   },
   {
@@ -1462,16 +1253,16 @@
    "spriteId": "s_r26_0074",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock2.png"
+    "Rock1.png"
    ],
-   "name": "Rock",
+   "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 168.82,
-   "y": 1132.11,
-   "scaleX": 2.207,
-   "scaleY": 2.207,
-   "offsetX": 32,
+   "x": 1434.63,
+   "y": 1545.81,
+   "scaleX": 1.675,
+   "scaleY": 1.675,
+   "offsetX": 32.0,
    "offsetY": 63
   },
   {
@@ -1479,16 +1270,16 @@
    "spriteId": "s_r26_0075",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock2.png"
+    "Rock1.png"
    ],
-   "name": "Rock",
+   "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 169.65,
-   "y": 1184.11,
-   "scaleX": 2.058,
-   "scaleY": 2.058,
-   "offsetX": 32,
+   "x": 1532.83,
+   "y": 1523.2,
+   "scaleX": 2.794,
+   "scaleY": 2.794,
+   "offsetX": 32.0,
    "offsetY": 63
   },
   {
@@ -1498,3623 +1289,299 @@
    "frames": [
     "Rock1.png"
    ],
-   "name": "Rock",
+   "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 214,
-   "y": 1082.38,
-   "scaleX": 2.328,
-   "scaleY": 2.328,
-   "offsetX": 32,
+   "x": 3352.56,
+   "y": 1525.04,
+   "scaleX": 1.44,
+   "scaleY": 1.44,
+   "offsetX": 32.0,
    "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0077",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "assets_custom/structures",
    "frames": [
-    "Rock3.png"
+    "bridge_deck.png"
    ],
-   "name": "Rock",
+   "name": "bridge_deck",
    "animated": false,
    "spriteLayer": "below",
-   "x": 202.37,
-   "y": 1134.38,
-   "scaleX": 2.102,
-   "scaleY": 2.102,
-   "offsetX": 32,
-   "offsetY": 63
+   "x": 420,
+   "y": 1108.4,
+   "scaleX": 1.25,
+   "scaleY": 1.25,
+   "offsetX": 80.0,
+   "offsetY": 60.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0078",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "assets_custom/structures",
    "frames": [
-    "Rock1.png"
+    "bridge_deck.png"
    ],
-   "name": "Rock",
+   "name": "bridge_deck",
    "animated": false,
    "spriteLayer": "below",
-   "x": 200.78,
-   "y": 1186.38,
-   "scaleX": 2.028,
-   "scaleY": 2.028,
-   "offsetX": 32,
-   "offsetY": 63
+   "x": 570,
+   "y": 1133.42,
+   "scaleX": 1.25,
+   "scaleY": 1.25,
+   "offsetX": 80.0,
+   "offsetY": 60.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0079",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "assets_custom/structures",
    "frames": [
-    "Rock4.png"
+    "bridge_deck.png"
    ],
-   "name": "Rock",
+   "name": "bridge_deck",
    "animated": false,
    "spriteLayer": "below",
-   "x": 272,
-   "y": 1084.51,
-   "scaleX": 2.647,
-   "scaleY": 2.647,
-   "offsetX": 32,
-   "offsetY": 63
+   "x": 940,
+   "y": 1145.81,
+   "scaleX": 1.25,
+   "scaleY": 1.25,
+   "offsetX": 80.0,
+   "offsetY": 60.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0080",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "assets_custom/structures",
    "frames": [
-    "Rock1.png"
+    "bridge_deck.png"
    ],
-   "name": "Rock",
+   "name": "bridge_deck",
    "animated": false,
    "spriteLayer": "below",
-   "x": 283.36,
-   "y": 1136.51,
-   "scaleX": 2.223,
-   "scaleY": 2.223,
-   "offsetX": 32,
-   "offsetY": 63
+   "x": 1090,
+   "y": 1129.77,
+   "scaleX": 1.25,
+   "scaleY": 1.25,
+   "offsetX": 80.0,
+   "offsetY": 60.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0081",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "assets_custom/structures",
    "frames": [
-    "Rock3.png"
+    "bridge_deck.png"
    ],
-   "name": "Rock",
+   "name": "bridge_deck",
    "animated": false,
    "spriteLayer": "below",
-   "x": 286.22,
-   "y": 1188.51,
-   "scaleX": 2.136,
-   "scaleY": 2.136,
-   "offsetX": 32,
-   "offsetY": 63
+   "x": 1460,
+   "y": 1049.16,
+   "scaleX": 1.25,
+   "scaleY": 1.25,
+   "offsetX": 80.0,
+   "offsetY": 60.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0082",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "assets_custom/structures",
    "frames": [
-    "Rock1.png"
+    "bridge_deck.png"
    ],
-   "name": "Rock",
+   "name": "bridge_deck",
    "animated": false,
    "spriteLayer": "below",
-   "x": 330,
-   "y": 1086.47,
-   "scaleX": 2.353,
-   "scaleY": 2.353,
-   "offsetX": 32,
-   "offsetY": 63
+   "x": 1610,
+   "y": 1006.81,
+   "scaleX": 1.25,
+   "scaleY": 1.25,
+   "offsetX": 80.0,
+   "offsetY": 60.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0083",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "assets_custom/structures",
    "frames": [
-    "Rock2.png"
+    "bridge_deck.png"
    ],
-   "name": "Rock",
+   "name": "bridge_deck",
    "animated": false,
    "spriteLayer": "below",
-   "x": 341.71,
-   "y": 1138.47,
-   "scaleX": 2.206,
-   "scaleY": 2.206,
-   "offsetX": 32,
-   "offsetY": 63
+   "x": 1980,
+   "y": 907.31,
+   "scaleX": 1.25,
+   "scaleY": 1.25,
+   "offsetX": 80.0,
+   "offsetY": 60.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0084",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "assets_custom/structures",
    "frames": [
-    "Rock1.png"
+    "bridge_deck.png"
    ],
-   "name": "Rock",
+   "name": "bridge_deck",
    "animated": false,
    "spriteLayer": "below",
-   "x": 342.46,
-   "y": 1190.47,
-   "scaleX": 2.124,
-   "scaleY": 2.124,
-   "offsetX": 32,
-   "offsetY": 63
+   "x": 2130,
+   "y": 877.59,
+   "scaleX": 1.25,
+   "scaleY": 1.25,
+   "offsetX": 80.0,
+   "offsetY": 60.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0085",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "assets_custom/structures",
    "frames": [
-    "Rock3.png"
+    "bridge_deck.png"
    ],
-   "name": "Rock",
+   "name": "bridge_deck",
    "animated": false,
    "spriteLayer": "below",
-   "x": 315.29,
-   "y": 1242.47,
-   "scaleX": 1.599,
-   "scaleY": 1.599,
-   "offsetX": 32,
-   "offsetY": 63
+   "x": 2500,
+   "y": 850.68,
+   "scaleX": 1.25,
+   "scaleY": 1.25,
+   "offsetX": 80.0,
+   "offsetY": 60.0
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0086",
-   "dir": "assets_custom/rocks_sand",
+   "dir": "assets_custom/structures",
    "frames": [
-    "Rock4.png"
+    "bridge_deck.png"
    ],
-   "name": "Rock",
+   "name": "bridge_deck",
    "animated": false,
    "spriteLayer": "below",
-   "x": 388,
-   "y": 1088.24,
-   "scaleX": 2.271,
-   "scaleY": 2.271,
-   "offsetX": 32,
-   "offsetY": 63
+   "x": 2650,
+   "y": 860.91,
+   "scaleX": 1.25,
+   "scaleY": 1.25,
+   "offsetX": 80.0,
+   "offsetY": 60.0
+  },
+  {
+   "type": "stroke",
+   "stroke": "#6a6052",
+   "strokeWidth": 110,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    120,
+    1034.31,
+    180,
+    1050.89,
+    240,
+    1066.8,
+    300,
+    1081.82,
+    360,
+    1095.75,
+    420,
+    1108.4,
+    480,
+    1119.62,
+    540,
+    1129.24,
+    600,
+    1137.15,
+    660,
+    1143.23,
+    720,
+    1147.41,
+    780,
+    1149.62,
+    840,
+    1149.85,
+    900,
+    1148.08,
+    960,
+    1144.35,
+    1020,
+    1138.69,
+    1080,
+    1131.19,
+    1140,
+    1121.95,
+    1200,
+    1111.08,
+    1260,
+    1098.74,
+    1320,
+    1085.08,
+    1380,
+    1070.3,
+    1440,
+    1054.57,
+    1500,
+    1038.12,
+    1560,
+    1021.17,
+    1620,
+    1003.93,
+    1680,
+    986.64,
+    1740,
+    969.53,
+    1800,
+    952.82,
+    1860,
+    936.74,
+    1920,
+    921.51,
+    1980,
+    907.31,
+    2040,
+    894.35,
+    2100,
+    882.79,
+    2160,
+    872.8,
+    2220,
+    864.49,
+    2280,
+    857.99,
+    2340,
+    853.37,
+    2400,
+    850.71,
+    2460,
+    850.03,
+    2520,
+    851.34,
+    2580,
+    854.63,
+    2640,
+    859.86,
+    2700,
+    866.95,
+    2760,
+    875.8,
+    2820,
+    886.31,
+    2880,
+    898.33,
+    2940,
+    911.71,
+    3000,
+    926.26,
+    3060,
+    941.78
+   ]
   },
   {
    "type": "sprite",
    "spriteId": "s_r26_0087",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 402.33,
-   "y": 1140.24,
-   "scaleX": 2.496,
-   "scaleY": 2.496,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0088",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 398.36,
-   "y": 1192.24,
-   "scaleX": 1.972,
-   "scaleY": 1.972,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0089",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 387.92,
-   "y": 1244.24,
-   "scaleX": 1.709,
-   "scaleY": 1.709,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0090",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 386.43,
-   "y": 1296.24,
-   "scaleX": 1.379,
-   "scaleY": 1.379,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0091",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 446,
-   "y": 1089.77,
-   "scaleX": 2.349,
-   "scaleY": 2.349,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0092",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 450.57,
-   "y": 1141.77,
-   "scaleX": 2.189,
-   "scaleY": 2.189,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0093",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 450.49,
-   "y": 1193.77,
-   "scaleX": 2.036,
-   "scaleY": 2.036,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0094",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 435.55,
-   "y": 1245.77,
-   "scaleX": 1.658,
-   "scaleY": 1.658,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0095",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 504,
-   "y": 1091.05,
-   "scaleX": 2.704,
-   "scaleY": 2.704,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0096",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 506.58,
-   "y": 1143.05,
-   "scaleX": 2.517,
-   "scaleY": 2.517,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0097",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 517.48,
-   "y": 1195.05,
-   "scaleX": 1.941,
-   "scaleY": 1.941,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0098",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 562,
-   "y": 1092.04,
-   "scaleX": 2.735,
-   "scaleY": 2.735,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0099",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 559.13,
-   "y": 1144.04,
-   "scaleX": 2.163,
-   "scaleY": 2.163,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0100",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 620,
-   "y": 1092.71,
-   "scaleX": 2.544,
-   "scaleY": 2.544,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0101",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 860,
-   "y": 1091.82,
-   "scaleX": 2.582,
-   "scaleY": 2.582,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0102",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 918,
-   "y": 1090.64,
-   "scaleX": 2.584,
-   "scaleY": 2.584,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0103",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 926.5,
-   "y": 1142.64,
-   "scaleX": 2.436,
-   "scaleY": 2.436,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0104",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 976,
-   "y": 1089.06,
-   "scaleX": 2.233,
-   "scaleY": 2.233,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0105",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 988.76,
-   "y": 1141.06,
-   "scaleX": 2.184,
-   "scaleY": 2.184,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0106",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 973.48,
-   "y": 1193.06,
-   "scaleX": 1.819,
-   "scaleY": 1.819,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0107",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1034,
-   "y": 1087.09,
-   "scaleX": 2.759,
-   "scaleY": 2.759,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0108",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1043.82,
-   "y": 1139.09,
-   "scaleX": 2.516,
-   "scaleY": 2.516,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0109",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1047.13,
-   "y": 1191.09,
-   "scaleX": 1.839,
-   "scaleY": 1.839,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0110",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1092,
-   "y": 1084.73,
-   "scaleX": 2.206,
-   "scaleY": 2.206,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0111",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1088.72,
-   "y": 1136.73,
-   "scaleX": 2.477,
-   "scaleY": 2.477,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0112",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1076.19,
-   "y": 1188.73,
-   "scaleX": 1.988,
-   "scaleY": 1.988,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0113",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1150,
-   "y": 1081.98,
-   "scaleX": 2.277,
-   "scaleY": 2.277,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0114",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1141.55,
-   "y": 1133.98,
-   "scaleX": 2.482,
-   "scaleY": 2.482,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0115",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1148.42,
-   "y": 1185.98,
-   "scaleX": 1.823,
-   "scaleY": 1.823,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0116",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1138.7,
-   "y": 1237.98,
-   "scaleX": 1.587,
-   "scaleY": 1.587,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0117",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1141.28,
-   "y": 1289.98,
-   "scaleX": 1.271,
-   "scaleY": 1.271,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0118",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1208,
-   "y": 1078.86,
-   "scaleX": 2.7,
-   "scaleY": 2.7,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0119",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1204.0,
-   "y": 1130.86,
-   "scaleX": 2.345,
-   "scaleY": 2.345,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0120",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1212.15,
-   "y": 1182.86,
-   "scaleX": 2.0,
-   "scaleY": 2.0,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0121",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1212.64,
-   "y": 1234.86,
-   "scaleX": 1.468,
-   "scaleY": 1.468,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0122",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1266,
-   "y": 1075.37,
-   "scaleX": 2.219,
-   "scaleY": 2.219,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0123",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1265.62,
-   "y": 1127.37,
-   "scaleX": 2.468,
-   "scaleY": 2.468,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0124",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1253.41,
-   "y": 1179.37,
-   "scaleX": 2.118,
-   "scaleY": 2.118,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0125",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1271.2,
-   "y": 1231.37,
-   "scaleX": 1.633,
-   "scaleY": 1.633,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0126",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1324,
-   "y": 1071.53,
-   "scaleX": 2.214,
-   "scaleY": 2.214,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0127",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1334.79,
-   "y": 1123.53,
-   "scaleX": 2.362,
-   "scaleY": 2.362,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0128",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1312.59,
-   "y": 1175.53,
-   "scaleX": 1.935,
-   "scaleY": 1.935,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0129",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1382,
-   "y": 1067.36,
-   "scaleX": 2.216,
-   "scaleY": 2.216,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0130",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1390.85,
-   "y": 1119.36,
-   "scaleX": 2.314,
-   "scaleY": 2.314,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0131",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1440,
-   "y": 1062.87,
-   "scaleX": 2.558,
-   "scaleY": 2.558,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0132",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1700,
-   "y": 1039.63,
-   "scaleX": 2.729,
-   "scaleY": 2.729,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0133",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1758,
-   "y": 1033.92,
-   "scaleX": 2.683,
-   "scaleY": 2.683,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0134",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1773.63,
-   "y": 1085.92,
-   "scaleX": 2.191,
-   "scaleY": 2.191,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0135",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1816,
-   "y": 1028.1,
-   "scaleX": 2.624,
-   "scaleY": 2.624,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0136",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1820.48,
-   "y": 1080.1,
-   "scaleX": 2.292,
-   "scaleY": 2.292,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0137",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1814.72,
-   "y": 1132.1,
-   "scaleX": 1.919,
-   "scaleY": 1.919,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0138",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1874,
-   "y": 1022.19,
-   "scaleX": 2.409,
-   "scaleY": 2.409,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0139",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1862.7,
-   "y": 1074.19,
-   "scaleX": 2.306,
-   "scaleY": 2.306,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0140",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1858.22,
-   "y": 1126.19,
-   "scaleX": 1.841,
-   "scaleY": 1.841,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0141",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1877.14,
-   "y": 1178.19,
-   "scaleX": 1.701,
-   "scaleY": 1.701,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0142",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1932,
-   "y": 1016.24,
-   "scaleX": 2.463,
-   "scaleY": 2.463,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0143",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1935.6,
-   "y": 1068.24,
-   "scaleX": 2.151,
-   "scaleY": 2.151,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0144",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1924.93,
-   "y": 1120.24,
-   "scaleX": 2.088,
-   "scaleY": 2.088,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0145",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1945.89,
-   "y": 1172.24,
-   "scaleX": 1.48,
-   "scaleY": 1.48,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0146",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1945.25,
-   "y": 1224.24,
-   "scaleX": 1.384,
-   "scaleY": 1.384,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0147",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1990,
-   "y": 1010.27,
-   "scaleX": 2.529,
-   "scaleY": 2.529,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0148",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1974.03,
-   "y": 1062.27,
-   "scaleX": 2.304,
-   "scaleY": 2.304,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0149",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1998.07,
-   "y": 1114.27,
-   "scaleX": 1.95,
-   "scaleY": 1.95,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0150",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2048,
-   "y": 1004.33,
-   "scaleX": 2.758,
-   "scaleY": 2.758,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0151",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2039.39,
-   "y": 1056.33,
-   "scaleX": 2.244,
-   "scaleY": 2.244,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0152",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2050.82,
-   "y": 1108.33,
-   "scaleX": 1.882,
-   "scaleY": 1.882,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0153",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2042.67,
-   "y": 1160.33,
-   "scaleX": 1.511,
-   "scaleY": 1.511,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0154",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2047.84,
-   "y": 1212.33,
-   "scaleX": 1.239,
-   "scaleY": 1.239,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0155",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2106,
-   "y": 998.46,
-   "scaleX": 2.344,
-   "scaleY": 2.344,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0156",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2093.25,
-   "y": 1050.46,
-   "scaleX": 2.332,
-   "scaleY": 2.332,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0157",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2090.51,
-   "y": 1102.46,
-   "scaleX": 1.849,
-   "scaleY": 1.849,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0158",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2121.1,
-   "y": 1154.46,
-   "scaleX": 1.711,
-   "scaleY": 1.711,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0159",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2164,
-   "y": 992.68,
-   "scaleX": 2.263,
-   "scaleY": 2.263,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0160",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2151.58,
-   "y": 1044.68,
-   "scaleX": 2.231,
-   "scaleY": 2.231,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0161",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2161.64,
-   "y": 1096.68,
-   "scaleX": 2.081,
-   "scaleY": 2.081,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0162",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2222,
-   "y": 987.04,
-   "scaleX": 2.203,
-   "scaleY": 2.203,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0163",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2500,
-   "y": 962.89,
-   "scaleX": 2.521,
-   "scaleY": 2.521,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0164",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2558,
-   "y": 958.64,
-   "scaleX": 2.217,
-   "scaleY": 2.217,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0165",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2556.98,
-   "y": 1010.64,
-   "scaleX": 2.387,
-   "scaleY": 2.387,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0166",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2616,
-   "y": 954.72,
-   "scaleX": 2.465,
-   "scaleY": 2.465,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0167",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2610.7,
-   "y": 1006.72,
-   "scaleX": 2.088,
-   "scaleY": 2.088,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0168",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2605.33,
-   "y": 1058.72,
-   "scaleX": 1.855,
-   "scaleY": 1.855,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0169",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2674,
-   "y": 951.15,
-   "scaleX": 2.57,
-   "scaleY": 2.57,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0170",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2672.23,
-   "y": 1003.15,
-   "scaleX": 2.292,
-   "scaleY": 2.292,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0171",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2669.18,
-   "y": 1055.15,
-   "scaleX": 2.056,
-   "scaleY": 2.056,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0172",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2732,
-   "y": 947.94,
-   "scaleX": 2.467,
-   "scaleY": 2.467,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0173",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2722.46,
-   "y": 999.94,
-   "scaleX": 2.374,
-   "scaleY": 2.374,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0174",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2747.25,
-   "y": 1051.94,
-   "scaleX": 1.863,
-   "scaleY": 1.863,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0175",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2790,
-   "y": 945.1,
-   "scaleX": 2.406,
-   "scaleY": 2.406,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0176",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2800.53,
-   "y": 997.1,
-   "scaleX": 2.163,
-   "scaleY": 2.163,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0177",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2790.55,
-   "y": 1049.1,
-   "scaleX": 1.886,
-   "scaleY": 1.886,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0178",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2794.06,
-   "y": 1101.1,
-   "scaleX": 1.532,
-   "scaleY": 1.532,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0179",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2848,
-   "y": 942.65,
-   "scaleX": 2.46,
-   "scaleY": 2.46,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0180",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2846.05,
-   "y": 994.65,
-   "scaleX": 2.192,
-   "scaleY": 2.192,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0181",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2852.83,
-   "y": 1046.65,
-   "scaleX": 2.121,
-   "scaleY": 2.121,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0182",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2849.43,
-   "y": 1098.65,
-   "scaleX": 1.525,
-   "scaleY": 1.525,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0183",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2860.64,
-   "y": 1150.65,
-   "scaleX": 1.164,
-   "scaleY": 1.164,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0184",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2906,
-   "y": 940.59,
-   "scaleX": 2.727,
-   "scaleY": 2.727,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0185",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2912.17,
-   "y": 992.59,
-   "scaleX": 2.403,
-   "scaleY": 2.403,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0186",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2905.2,
-   "y": 1044.59,
-   "scaleX": 2.105,
-   "scaleY": 2.105,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0187",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2909.13,
-   "y": 1096.59,
-   "scaleX": 1.754,
-   "scaleY": 1.754,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0188",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2902.19,
-   "y": 1148.59,
-   "scaleX": 1.291,
-   "scaleY": 1.291,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0189",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2964,
-   "y": 938.92,
-   "scaleX": 2.336,
-   "scaleY": 2.336,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0190",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2964.4,
-   "y": 990.92,
-   "scaleX": 2.137,
-   "scaleY": 2.137,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0191",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2972.9,
-   "y": 1042.92,
-   "scaleX": 1.778,
-   "scaleY": 1.778,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0192",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2953.61,
-   "y": 1094.92,
-   "scaleX": 1.644,
-   "scaleY": 1.644,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0193",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 3022,
-   "y": 937.65,
-   "scaleX": 2.644,
-   "scaleY": 2.644,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0194",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 3026.89,
-   "y": 989.65,
-   "scaleX": 2.487,
-   "scaleY": 2.487,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0195",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 3023.54,
-   "y": 1041.65,
-   "scaleX": 1.897,
-   "scaleY": 1.897,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0196",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 3018.13,
-   "y": 1093.65,
-   "scaleX": 1.658,
-   "scaleY": 1.658,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0197",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 3080,
-   "y": 936.76,
-   "scaleX": 2.757,
-   "scaleY": 2.757,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0198",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 3086.58,
-   "y": 988.76,
-   "scaleX": 2.423,
-   "scaleY": 2.423,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0199",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 3086.67,
-   "y": 1040.76,
-   "scaleX": 2.101,
-   "scaleY": 2.101,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0200",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 3138,
-   "y": 937.71,
-   "scaleX": 2.234,
-   "scaleY": 2.234,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0201",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 3147.56,
-   "y": 989.71,
-   "scaleX": 2.105,
-   "scaleY": 2.105,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0202",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 3196,
-   "y": 939.33,
-   "scaleX": 2.424,
-   "scaleY": 2.424,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0203",
-   "dir": "assets_custom/structures",
-   "frames": [
-    "bridge_deck.png"
-   ],
-   "name": "bridge_deck",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 610,
-   "y": 1054.98,
-   "scaleX": 1.2,
-   "scaleY": 1.2,
-   "offsetX": 80,
-   "offsetY": 60
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0204",
-   "dir": "assets_custom/structures",
-   "frames": [
-    "bridge_deck.png"
-   ],
-   "name": "bridge_deck",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 728,
-   "y": 1106.64,
-   "scaleX": 1.2,
-   "scaleY": 1.2,
-   "offsetX": 80,
-   "offsetY": 60
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0205",
-   "dir": "assets_custom/structures",
-   "frames": [
-    "bridge_deck.png"
-   ],
-   "name": "bridge_deck",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 846,
-   "y": 1071.71,
-   "scaleX": 1.2,
-   "scaleY": 1.2,
-   "offsetX": 80,
-   "offsetY": 60
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0206",
-   "dir": "assets_custom/props",
-   "frames": [
-    "pillar.png"
-   ],
-   "name": "pillar",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 640,
-   "y": 1258.87,
-   "scaleX": 1.1,
-   "scaleY": 1.1,
-   "offsetX": 30,
-   "offsetY": 195
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0207",
-   "dir": "assets_custom/props",
-   "frames": [
-    "pillar.png"
-   ],
-   "name": "pillar",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 840,
-   "y": 1258.14,
-   "scaleX": 1.1,
-   "scaleY": 1.1,
-   "offsetX": 30,
-   "offsetY": 195
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0208",
-   "dir": "assets_custom/structures",
-   "frames": [
-    "bridge_deck.png"
-   ],
-   "name": "bridge_deck",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1450,
-   "y": 1024.43,
-   "scaleX": 1.2,
-   "scaleY": 1.2,
-   "offsetX": 80,
-   "offsetY": 60
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0209",
-   "dir": "assets_custom/structures",
-   "frames": [
-    "bridge_deck.png"
-   ],
-   "name": "bridge_deck",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1568,
-   "y": 1065.55,
-   "scaleX": 1.2,
-   "scaleY": 1.2,
-   "offsetX": 80,
-   "offsetY": 60
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0210",
-   "dir": "assets_custom/structures",
-   "frames": [
-    "bridge_deck.png"
-   ],
-   "name": "bridge_deck",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1686,
-   "y": 1020.65,
-   "scaleX": 1.2,
-   "scaleY": 1.2,
-   "offsetX": 80,
-   "offsetY": 60
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0211",
-   "dir": "assets_custom/props",
-   "frames": [
-    "pillar.png"
-   ],
-   "name": "pillar",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1480,
-   "y": 1225.61,
-   "scaleX": 1.1,
-   "scaleY": 1.1,
-   "offsetX": 30,
-   "offsetY": 195
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0212",
-   "dir": "assets_custom/props",
-   "frames": [
-    "pillar.png"
-   ],
-   "name": "pillar",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1680,
-   "y": 1207.56,
-   "scaleX": 1.1,
-   "scaleY": 1.1,
-   "offsetX": 30,
-   "offsetY": 195
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0213",
-   "dir": "assets_custom/structures",
-   "frames": [
-    "bridge_deck.png"
-   ],
-   "name": "bridge_deck",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2250,
-   "y": 946.74,
-   "scaleX": 1.2,
-   "scaleY": 1.2,
-   "offsetX": 80,
-   "offsetY": 60
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0214",
-   "dir": "assets_custom/structures",
-   "frames": [
-    "bridge_deck.png"
-   ],
-   "name": "bridge_deck",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2368,
-   "y": 987.22,
-   "scaleX": 1.2,
-   "scaleY": 1.2,
-   "offsetX": 80,
-   "offsetY": 60
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0215",
-   "dir": "assets_custom/structures",
-   "frames": [
-    "bridge_deck.png"
-   ],
-   "name": "bridge_deck",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2486,
-   "y": 943.63,
-   "scaleX": 1.2,
-   "scaleY": 1.2,
-   "offsetX": 80,
-   "offsetY": 60
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0216",
-   "dir": "assets_custom/props",
-   "frames": [
-    "pillar.png"
-   ],
-   "name": "pillar",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2280,
-   "y": 1147.57,
-   "scaleX": 1.1,
-   "scaleY": 1.1,
-   "offsetX": 30,
-   "offsetY": 195
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0217",
-   "dir": "assets_custom/props",
-   "frames": [
-    "pillar.png"
-   ],
-   "name": "pillar",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2480,
-   "y": 1130.43,
-   "scaleX": 1.1,
-   "scaleY": 1.1,
-   "offsetX": 30,
-   "offsetY": 195
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0218",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 433.87,
-   "y": 1019.37,
-   "scaleX": 2.027,
-   "scaleY": 2.027,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0219",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 427.27,
-   "y": 971.37,
-   "scaleX": 1.82,
-   "scaleY": 1.82,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0220",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 433.64,
-   "y": 923.37,
-   "scaleX": 1.613,
-   "scaleY": 1.613,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0221",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 423.03,
-   "y": 875.37,
-   "scaleX": 1.406,
-   "scaleY": 1.406,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0222",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 428.7,
-   "y": 827.37,
-   "scaleX": 1.199,
-   "scaleY": 1.199,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0223",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 423.61,
-   "y": 779.37,
-   "scaleX": 0.993,
-   "scaleY": 0.993,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0224",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 418.59,
-   "y": 731.37,
-   "scaleX": 0.786,
-   "scaleY": 0.786,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0225",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1317.12,
-   "y": 1001.11,
-   "scaleX": 2.478,
-   "scaleY": 2.478,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0226",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1324.68,
-   "y": 953.11,
-   "scaleX": 2.124,
-   "scaleY": 2.124,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0227",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1332.72,
-   "y": 905.11,
-   "scaleX": 1.77,
-   "scaleY": 1.77,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0228",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1321.5,
-   "y": 857.11,
-   "scaleX": 1.416,
-   "scaleY": 1.416,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0229",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1336.96,
-   "y": 809.11,
-   "scaleX": 1.062,
-   "scaleY": 1.062,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0230",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2078.46,
-   "y": 931.08,
-   "scaleX": 2.427,
-   "scaleY": 2.427,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0231",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2067.17,
-   "y": 883.08,
-   "scaleX": 2.138,
-   "scaleY": 2.138,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0232",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2084.18,
-   "y": 835.08,
-   "scaleX": 1.849,
-   "scaleY": 1.849,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0233",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2088.34,
-   "y": 787.08,
-   "scaleX": 1.56,
-   "scaleY": 1.56,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0234",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2072.68,
-   "y": 739.08,
-   "scaleX": 1.271,
-   "scaleY": 1.271,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0235",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2093.69,
-   "y": 691.08,
-   "scaleX": 0.982,
-   "scaleY": 0.982,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0236",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2830.29,
-   "y": 873.79,
-   "scaleX": 2.056,
-   "scaleY": 2.056,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0237",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2819.06,
-   "y": 825.79,
-   "scaleX": 1.846,
-   "scaleY": 1.846,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0238",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2818.62,
-   "y": 777.79,
-   "scaleX": 1.636,
-   "scaleY": 1.636,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0239",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2819.31,
-   "y": 729.79,
-   "scaleX": 1.426,
-   "scaleY": 1.426,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0240",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2830.23,
-   "y": 681.79,
-   "scaleX": 1.217,
-   "scaleY": 1.217,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0241",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2816.11,
-   "y": 633.79,
-   "scaleX": 1.007,
-   "scaleY": 1.007,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0242",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2813.66,
-   "y": 585.79,
-   "scaleX": 0.797,
-   "scaleY": 0.797,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0243",
-   "dir": "assets_custom/rocks_void",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 705.44,
-   "y": 1980,
-   "scaleX": 2.781,
-   "scaleY": 2.781,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0244",
-   "dir": "assets_custom/rocks_void",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 704.4,
-   "y": 1932,
-   "scaleX": 2.119,
-   "scaleY": 2.119,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0245",
-   "dir": "assets_custom/rocks_void",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 699.52,
-   "y": 1884,
-   "scaleX": 1.457,
-   "scaleY": 1.457,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0246",
-   "dir": "assets_custom/rocks_void",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1913.22,
-   "y": 1980,
-   "scaleX": 2.913,
-   "scaleY": 2.913,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0247",
-   "dir": "assets_custom/rocks_void",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1911.24,
-   "y": 1932,
-   "scaleX": 2.393,
-   "scaleY": 2.393,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0248",
-   "dir": "assets_custom/rocks_void",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1890.92,
-   "y": 1884,
-   "scaleX": 1.872,
-   "scaleY": 1.872,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0249",
-   "dir": "assets_custom/rocks_void",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1897.25,
-   "y": 1836,
-   "scaleX": 1.352,
-   "scaleY": 1.352,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0250",
-   "dir": "assets_custom/rocks_void",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2957.05,
-   "y": 1980,
-   "scaleX": 2.937,
-   "scaleY": 2.937,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0251",
-   "dir": "assets_custom/rocks_void",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2958.95,
-   "y": 1932,
-   "scaleX": 2.238,
-   "scaleY": 2.238,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0252",
-   "dir": "assets_custom/rocks_void",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2949.39,
-   "y": 1884,
-   "scaleX": 1.538,
-   "scaleY": 1.538,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0253",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 958.45,
-   "y": 550.8,
-   "scaleX": 2.52,
-   "scaleY": 2.52,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0254",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1022.4,
-   "y": 552.78,
-   "scaleX": 2.882,
-   "scaleY": 2.882,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0255",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1069.12,
-   "y": 559.03,
-   "scaleX": 2.428,
-   "scaleY": 2.428,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0256",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1133.48,
-   "y": 569.52,
-   "scaleX": 2.728,
-   "scaleY": 2.728,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0257",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1199.85,
-   "y": 564.69,
-   "scaleX": 2.536,
-   "scaleY": 2.536,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0258",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1236.68,
-   "y": 552.21,
-   "scaleX": 2.725,
-   "scaleY": 2.725,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0259",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 951.8,
-   "y": 616.13,
-   "scaleX": 2.49,
-   "scaleY": 2.49,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0260",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1021.03,
-   "y": 615.08,
-   "scaleX": 2.446,
-   "scaleY": 2.446,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0261",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1081.48,
-   "y": 617.6,
-   "scaleX": 2.484,
-   "scaleY": 2.484,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0262",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1138.44,
-   "y": 604.33,
-   "scaleX": 2.834,
-   "scaleY": 2.834,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0263",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1199.14,
-   "y": 611.74,
-   "scaleX": 2.869,
-   "scaleY": 2.869,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0264",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1248.14,
-   "y": 604.35,
-   "scaleX": 2.531,
-   "scaleY": 2.531,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0265",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 936.58,
-   "y": 658.61,
-   "scaleX": 2.774,
-   "scaleY": 2.774,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0266",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1001.71,
-   "y": 650.58,
-   "scaleX": 2.858,
-   "scaleY": 2.858,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0267",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1080.96,
-   "y": 651.29,
-   "scaleX": 2.525,
-   "scaleY": 2.525,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0268",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1139.59,
-   "y": 657.67,
-   "scaleX": 2.659,
-   "scaleY": 2.659,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0269",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1201.75,
-   "y": 665.95,
-   "scaleX": 2.512,
-   "scaleY": 2.512,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0270",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1250.19,
-   "y": 661.85,
-   "scaleX": 2.593,
-   "scaleY": 2.593,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0271",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 960.25,
-   "y": 847.11,
-   "scaleX": 2.642,
-   "scaleY": 2.642,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0272",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1017.38,
-   "y": 845.59,
-   "scaleX": 2.74,
-   "scaleY": 2.74,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0273",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1074.85,
-   "y": 830.36,
-   "scaleX": 2.6,
-   "scaleY": 2.6,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0274",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1127.35,
-   "y": 832.02,
-   "scaleX": 2.813,
-   "scaleY": 2.813,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0275",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1201.99,
-   "y": 839.11,
-   "scaleX": 2.515,
-   "scaleY": 2.515,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0276",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1259.86,
-   "y": 833.16,
-   "scaleX": 2.707,
-   "scaleY": 2.707,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0277",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 940.44,
-   "y": 890.66,
-   "scaleX": 2.621,
-   "scaleY": 2.621,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0278",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1004.87,
-   "y": 886.58,
-   "scaleX": 2.897,
-   "scaleY": 2.897,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0279",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1069.91,
-   "y": 896.23,
-   "scaleX": 2.602,
-   "scaleY": 2.602,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0280",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1142.6,
-   "y": 897.21,
-   "scaleX": 2.75,
-   "scaleY": 2.75,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0281",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1192.75,
-   "y": 885.65,
-   "scaleX": 2.665,
-   "scaleY": 2.665,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0282",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1260.28,
-   "y": 891.65,
-   "scaleX": 2.475,
-   "scaleY": 2.475,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0283",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 954.11,
-   "y": 939.0,
-   "scaleX": 2.419,
-   "scaleY": 2.419,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0284",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1009.4,
-   "y": 939.82,
-   "scaleX": 2.598,
-   "scaleY": 2.598,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0285",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1075.5,
-   "y": 934.66,
-   "scaleX": 2.485,
-   "scaleY": 2.485,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0286",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1141.09,
-   "y": 936.11,
-   "scaleX": 2.755,
-   "scaleY": 2.755,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0287",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1190.9,
-   "y": 934.99,
-   "scaleX": 2.438,
-   "scaleY": 2.438,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0288",
-   "dir": "assets_custom/rocks_sand",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1236.21,
-   "y": 937.02,
-   "scaleX": 2.563,
-   "scaleY": 2.563,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0289",
    "dir": "assets_custom/props",
    "frames": [
     "mural.png"
@@ -5122,16 +1589,16 @@
    "name": "mural",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1100,
-   "y": 770,
-   "scaleX": 3.1,
-   "scaleY": 3.1,
-   "offsetX": 70,
+   "x": 1500,
+   "y": 908.12,
+   "scaleX": 1.6,
+   "scaleY": 1.6,
+   "offsetX": 70.0,
    "offsetY": 99
   },
   {
    "type": "sprite",
-   "spriteId": "s_r26_0290",
+   "spriteId": "s_r26_0088",
    "dir": "assets_custom/props",
    "frames": [
     "brazier.png"
@@ -5139,16 +1606,16 @@
    "name": "brazier",
    "animated": false,
    "spriteLayer": "below",
-   "x": 925,
-   "y": 815,
+   "x": 900,
+   "y": 1238.08,
    "scaleX": 2.2,
    "scaleY": 2.2,
-   "offsetX": 22,
+   "offsetX": 22.0,
    "offsetY": 77
   },
   {
    "type": "sprite",
-   "spriteId": "s_r26_0291",
+   "spriteId": "s_r26_0089",
    "dir": "assets_custom/props",
    "frames": [
     "brazier.png"
@@ -5156,240 +1623,497 @@
    "name": "brazier",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1275,
-   "y": 815,
+   "x": 2100,
+   "y": 972.79,
    "scaleX": 2.2,
    "scaleY": 2.2,
-   "offsetX": 22,
+   "offsetX": 22.0,
    "offsetY": 77
   },
   {
    "type": "sprite",
-   "spriteId": "s_r26_0292",
-   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
-   "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
-   ],
-   "name": "1",
-   "animated": true,
-   "spriteLayer": "below",
-   "x": 320,
-   "y": 1048.15,
-   "scaleX": 1.5,
-   "scaleY": 1.5,
-   "offsetX": 96,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0293",
-   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
-   "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
-   ],
-   "name": "1",
-   "animated": true,
-   "spriteLayer": "below",
-   "x": 980,
-   "y": 1050.94,
-   "scaleX": 1.5,
-   "scaleY": 1.5,
-   "offsetX": 96,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0294",
-   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
-   "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
-   ],
-   "name": "1",
-   "animated": true,
-   "spriteLayer": "below",
-   "x": 1560,
-   "y": 1014.71,
-   "scaleX": 1.5,
-   "scaleY": 1.5,
-   "offsetX": 96,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0295",
-   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
-   "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
-   ],
-   "name": "1",
-   "animated": true,
-   "spriteLayer": "below",
-   "x": 2180,
-   "y": 953.11,
-   "scaleX": 1.5,
-   "scaleY": 1.5,
-   "offsetX": 96,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0296",
-   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
-   "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
-   ],
-   "name": "1",
-   "animated": true,
-   "spriteLayer": "below",
-   "x": 2760,
-   "y": 908.52,
-   "scaleX": 1.5,
-   "scaleY": 1.5,
-   "offsetX": 96,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0297",
-   "dir": "assets_custom/props",
-   "frames": [
-    "brazier.png"
-   ],
-   "name": "brazier",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 560,
-   "y": 1058.01,
-   "scaleX": 2.1,
-   "scaleY": 2.1,
-   "offsetX": 22,
-   "offsetY": 77
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0298",
-   "dir": "assets_custom/props",
-   "frames": [
-    "brazier.png"
-   ],
-   "name": "brazier",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2400,
-   "y": 936.92,
-   "scaleX": 2.1,
-   "scaleY": 2.1,
-   "offsetX": 22,
-   "offsetY": 77
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r26_0299",
+   "spriteId": "s_r26_0090",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock3.png"
+    "Rock1.png"
    ],
-   "name": "Rock",
+   "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1384.68,
-   "y": 1048.67,
-   "scaleX": 1.195,
-   "scaleY": 1.195,
-   "offsetX": 32,
+   "x": 1830.1,
+   "y": 946.22,
+   "scaleX": 0.85,
+   "scaleY": 0.85,
+   "offsetX": 32.0,
    "offsetY": 63
   },
   {
    "type": "sprite",
-   "spriteId": "s_r26_0300",
+   "spriteId": "s_r26_0091",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock2.png"
+    "Rock4.png"
    ],
-   "name": "Rock",
+   "name": "Rock4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2567.4,
-   "y": 932.88,
-   "scaleX": 1.345,
-   "scaleY": 1.345,
-   "offsetX": 32,
+   "x": 1614.17,
+   "y": 1139.46,
+   "scaleX": 0.813,
+   "scaleY": 0.813,
+   "offsetX": 32.0,
    "offsetY": 63
   },
   {
    "type": "sprite",
-   "spriteId": "s_r26_0301",
+   "spriteId": "s_r26_0092",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock2.png"
+    "Rock4.png"
    ],
-   "name": "Rock",
+   "name": "Rock4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 405.86,
-   "y": 1062.5,
-   "scaleX": 1.171,
-   "scaleY": 1.171,
-   "offsetX": 32,
+   "x": 1978.93,
+   "y": 1003.9,
+   "scaleX": 0.768,
+   "scaleY": 0.768,
+   "offsetX": 32.0,
    "offsetY": 63
   },
   {
    "type": "sprite",
-   "spriteId": "s_r26_0302",
+   "spriteId": "s_r26_0093",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock2.png"
+    "Rock1.png"
    ],
-   "name": "Rock",
+   "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 224.82,
-   "y": 1058.33,
-   "scaleX": 1.224,
-   "scaleY": 1.224,
-   "offsetX": 32,
+   "x": 377.71,
+   "y": 1092.57,
+   "scaleX": 0.919,
+   "scaleY": 0.919,
+   "offsetX": 32.0,
    "offsetY": 63
   },
   {
    "type": "sprite",
-   "spriteId": "s_r26_0303",
+   "spriteId": "s_r26_0094",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock2.png"
+    "Rock1.png"
    ],
-   "name": "Rock",
+   "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1990.78,
-   "y": 990.45,
-   "scaleX": 1.181,
-   "scaleY": 1.181,
-   "offsetX": 32,
+   "x": 1505.98,
+   "y": 1041.02,
+   "scaleX": 0.959,
+   "scaleY": 0.959,
+   "offsetX": 32.0,
    "offsetY": 63
   },
   {
    "type": "sprite",
-   "spriteId": "s_r26_0304",
+   "spriteId": "s_r26_tu001",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2543.1,
+   "y": 248.84,
+   "scaleX": 0.488,
+   "scaleY": 0.488,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.379
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu002",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1478.06,
+   "y": 64.31,
+   "scaleX": 0.595,
+   "scaleY": 0.595,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.354
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu003",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2802.08,
+   "y": 174.99,
+   "scaleX": 0.458,
+   "scaleY": 0.458,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.215
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu004",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 472.68,
+   "y": 510.12,
+   "scaleX": 0.631,
+   "scaleY": 0.631,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.282
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu005",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 901.91,
+   "y": 555.36,
+   "scaleX": 0.468,
+   "scaleY": 0.468,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.292
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu006",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1578.79,
+   "y": 125.25,
+   "scaleX": 0.59,
+   "scaleY": 0.59,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.389
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu007",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2600.52,
+   "y": 695.67,
+   "scaleX": 0.631,
+   "scaleY": 0.631,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.324
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu008",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2022.0,
+   "y": 73.29,
+   "scaleX": 0.65,
+   "scaleY": 0.65,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.201
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu009",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3098.63,
+   "y": 331.66,
+   "scaleX": 0.427,
+   "scaleY": 0.427,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.307
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu010",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 727.37,
+   "y": 248.61,
+   "scaleX": 0.516,
+   "scaleY": 0.516,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.304
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu011",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1191.06,
+   "y": 1181.91,
+   "scaleX": 1.164,
+   "scaleY": 1.164,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.449
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu012",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2679.06,
+   "y": 215.67,
+   "scaleX": 1.317,
+   "scaleY": 1.317,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.514
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu013",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2812.85,
+   "y": 864.66,
+   "scaleX": 1.386,
+   "scaleY": 1.386,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.323
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu014",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2558.09,
+   "y": 273.16,
+   "scaleX": 1.292,
+   "scaleY": 1.292,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.45
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu015",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2638.59,
+   "y": 1134.61,
+   "scaleX": 1.252,
+   "scaleY": 1.252,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.308
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu016",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1360.07,
+   "y": 369.06,
+   "scaleX": 1.167,
+   "scaleY": 1.167,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.385
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu017",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3030.14,
+   "y": 1635.79,
+   "scaleX": 0.673,
+   "scaleY": 0.673,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.827
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu018",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1133.87,
+   "y": 1214.08,
+   "scaleX": 0.563,
+   "scaleY": 0.563,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.884
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu019",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1931.14,
+   "y": 1376.1,
+   "scaleX": 0.791,
+   "scaleY": 0.791,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.776
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu020",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1724.58,
+   "y": 895.63,
+   "scaleX": 0.604,
+   "scaleY": 0.604,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.925
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu021",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 141.86,
+   "y": 83.49,
+   "scaleX": 0.787,
+   "scaleY": 0.787,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.876
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu022",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1639.42,
+   "y": 705.68,
+   "scaleX": 0.74,
+   "scaleY": 0.74,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.862
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu023",
    "dir": "assets_custom/rocks_sand",
    "frames": [
     "Rock1.png"
@@ -5397,67 +2121,101 @@
    "name": "Rock",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1105.4,
-   "y": 1051.46,
-   "scaleX": 1.284,
-   "scaleY": 1.284,
+   "x": 2922.47,
+   "y": 482.93,
+   "scaleX": 1.781,
+   "scaleY": 1.781,
    "offsetX": 32,
    "offsetY": 63
   },
   {
    "type": "sprite",
-   "spriteId": "s_r26_0305",
+   "spriteId": "s_r26_tu024",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock2.png"
+    "Rock4.png"
    ],
    "name": "Rock",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2148.28,
-   "y": 958.31,
-   "scaleX": 1.237,
-   "scaleY": 1.237,
+   "x": 2253.15,
+   "y": 1558.6,
+   "scaleX": 1.557,
+   "scaleY": 1.557,
    "offsetX": 32,
    "offsetY": 63
   },
   {
    "type": "sprite",
-   "spriteId": "s_r26_0306",
+   "spriteId": "s_r26_tu025",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock2.png"
+    "Rock1.png"
    ],
    "name": "Rock",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1859.49,
-   "y": 992.96,
-   "scaleX": 0.945,
-   "scaleY": 0.945,
+   "x": 2416.62,
+   "y": 894.15,
+   "scaleX": 2.077,
+   "scaleY": 2.077,
    "offsetX": 32,
    "offsetY": 63
   },
   {
    "type": "sprite",
-   "spriteId": "s_r26_0307",
+   "spriteId": "s_r26_tu026",
    "dir": "assets_custom/rocks_sand",
    "frames": [
-    "Rock2.png"
+    "Rock4.png"
    ],
    "name": "Rock",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1280.25,
-   "y": 1053.81,
-   "scaleX": 1.077,
-   "scaleY": 1.077,
+   "x": 1586.97,
+   "y": 748.87,
+   "scaleX": 1.566,
+   "scaleY": 1.566,
    "offsetX": 32,
    "offsetY": 63
   },
   {
    "type": "sprite",
-   "spriteId": "s_r26_0308",
+   "spriteId": "s_r26_tu027",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2580.03,
+   "y": 950.71,
+   "scaleX": 1.656,
+   "scaleY": 1.656,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu028",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 405.03,
+   "y": 1749.92,
+   "scaleX": 1.521,
+   "scaleY": 1.521,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu029",
    "dir": "assets_custom/rocks_sand",
    "frames": [
     "Rock3.png"
@@ -5465,16 +2223,16 @@
    "name": "Rock",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1934.35,
-   "y": 995.25,
-   "scaleX": 1.092,
-   "scaleY": 1.092,
+   "x": 2921.81,
+   "y": 757.96,
+   "scaleX": 2.165,
+   "scaleY": 2.165,
    "offsetX": 32,
    "offsetY": 63
   },
   {
    "type": "sprite",
-   "spriteId": "s_r26_0309",
+   "spriteId": "s_r26_tu030",
    "dir": "assets_custom/rocks_sand",
    "frames": [
     "Rock4.png"
@@ -5482,16 +2240,118 @@
    "name": "Rock",
    "animated": false,
    "spriteLayer": "below",
-   "x": 476.69,
-   "y": 1071.71,
-   "scaleX": 1.328,
-   "scaleY": 1.328,
+   "x": 1634.56,
+   "y": 795.02,
+   "scaleX": 1.47,
+   "scaleY": 1.47,
    "offsetX": 32,
    "offsetY": 63
   },
   {
    "type": "sprite",
-   "spriteId": "s_r26_0310",
+   "spriteId": "s_r26_tu031",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2965.19,
+   "y": 839.21,
+   "scaleX": 1.536,
+   "scaleY": 1.536,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu032",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2716.52,
+   "y": 222.46,
+   "scaleX": 1.655,
+   "scaleY": 1.655,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu033",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 269.76,
+   "y": 359.82,
+   "scaleX": 1.98,
+   "scaleY": 1.98,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu034",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1201.49,
+   "y": 1790.7,
+   "scaleX": 1.721,
+   "scaleY": 1.721,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu035",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2428.28,
+   "y": 1855.45,
+   "scaleX": 2.111,
+   "scaleY": 2.111,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu036",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1823.66,
+   "y": 1652.11,
+   "scaleX": 1.814,
+   "scaleY": 1.814,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu037",
    "dir": "assets_custom/rocks_sand",
    "frames": [
     "Rock2.png"
@@ -5499,16 +2359,16 @@
    "name": "Rock",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2112.97,
-   "y": 977.1,
-   "scaleX": 1.247,
-   "scaleY": 1.247,
+   "x": 2537.41,
+   "y": 1793.08,
+   "scaleX": 1.631,
+   "scaleY": 1.631,
    "offsetX": 32,
    "offsetY": 63
   },
   {
    "type": "sprite",
-   "spriteId": "s_r26_0311",
+   "spriteId": "s_r26_tu038",
    "dir": "assets_custom/rocks_sand",
    "frames": [
     "Rock4.png"
@@ -5516,16 +2376,84 @@
    "name": "Rock",
    "animated": false,
    "spriteLayer": "below",
-   "x": 948.87,
-   "y": 1057.03,
-   "scaleX": 1.031,
-   "scaleY": 1.031,
+   "x": 2067.9,
+   "y": 747.42,
+   "scaleX": 1.613,
+   "scaleY": 1.613,
    "offsetX": 32,
    "offsetY": 63
   },
   {
    "type": "sprite",
-   "spriteId": "s_r26_0312",
+   "spriteId": "s_r26_tu039",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2407.56,
+   "y": 333.95,
+   "scaleX": 1.807,
+   "scaleY": 1.807,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu040",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 394.53,
+   "y": 1773.75,
+   "scaleX": 2.072,
+   "scaleY": 2.072,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu041",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1831.81,
+   "y": 903.53,
+   "scaleX": 1.849,
+   "scaleY": 1.849,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu042",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 161.06,
+   "y": 926.33,
+   "scaleX": 1.814,
+   "scaleY": 1.814,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu043",
    "dir": "assets_custom/rocks_sand",
    "frames": [
     "Rock4.png"
@@ -5533,10 +2461,27 @@
    "name": "Rock",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1268.53,
-   "y": 1050.04,
-   "scaleX": 1.383,
-   "scaleY": 1.383,
+   "x": 788.46,
+   "y": 582.52,
+   "scaleX": 1.49,
+   "scaleY": 1.49,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r26_tu044",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3019.75,
+   "y": 353.08,
+   "scaleX": 2.005,
+   "scaleY": 2.005,
    "offsetX": 32,
    "offsetY": 63
   }
