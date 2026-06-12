@@ -1,7 +1,7 @@
 {
  "version": 1,
  "regionName": "Copper Bazaar",
- "regionSubtitle": "Tāmrapura",
+ "regionSubtitle": "T\u0101mrapura",
  "background": {
   "type": "color",
   "value": "#7a5d36"
@@ -3622,11 +3622,7 @@
    "spriteId": "s_r20_0023",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -3635,19 +3631,19 @@
    "y": 540,
    "scaleX": 1.7,
    "scaleY": 1.7,
-   "offsetX": 96.0,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
    "spriteId": "s_r20_0024",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -3656,16 +3652,19 @@
    "y": 1064,
    "scaleX": 1.2,
    "scaleY": 1.2,
-   "offsetX": 96.0,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
    "spriteId": "s_r20_0025",
    "dir": "assest4/map_objects/3 Animated Objects/2 Campfire",
    "frames": [
-    "1.png",
-    "2.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -3674,8 +3673,12 @@
    "y": 1130,
    "scaleX": 1.6,
    "scaleY": 1.6,
-   "offsetX": 96.0,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
@@ -6381,11 +6384,7 @@
    "spriteId": "s_dnsfy_20_0069",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
+    "1.png"
    ],
    "name": "banner",
    "animated": true,
@@ -6394,19 +6393,19 @@
    "y": 520,
    "scaleX": 1.4,
    "scaleY": 1.4,
-   "offsetX": 96,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
    "spriteId": "s_dnsfy_20_0070",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
+    "1.png"
    ],
    "name": "banner",
    "animated": true,
@@ -6415,19 +6414,19 @@
    "y": 520,
    "scaleX": 1.4,
    "scaleY": 1.4,
-   "offsetX": 96,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
    "spriteId": "s_dnsfy_20_0071",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
+    "1.png"
    ],
    "name": "banner",
    "animated": true,
@@ -6436,8 +6435,12 @@
    "y": 1540,
    "scaleX": 1.4,
    "scaleY": 1.4,
-   "offsetX": 96,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
@@ -7668,7 +7671,7 @@
    "config": {
     "id": "npc20_1",
     "name": "Coppersmith Deva",
-    "first": "Genuine_relics,_friend!_This_coin_—_see_the_face?_No_temple_will_say_whose._I_call_him_the_Sixth._Worth_more_than_gold_to_the_right_pilgrim.",
+    "first": "Genuine_relics,_friend!_This_coin_\u2014_see_the_face?_No_temple_will_say_whose._I_call_him_the_Sixth._Worth_more_than_gold_to_the_right_pilgrim.",
     "active": "",
     "completed": ""
    }

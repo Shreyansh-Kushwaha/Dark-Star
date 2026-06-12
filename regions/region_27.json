@@ -1,7 +1,7 @@
 {
  "version": 1,
  "regionName": "The Eyrie",
- "regionSubtitle": "Garuḍālaya",
+ "regionSubtitle": "Garu\u1e0d\u0101laya",
  "background": {
   "type": "color",
   "value": "#86a8c8"
@@ -1151,11 +1151,7 @@
    "spriteId": "s_r27_0068",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -1164,19 +1160,19 @@
    "y": 560,
    "scaleX": 1.7,
    "scaleY": 1.7,
-   "offsetX": 96.0,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
    "spriteId": "s_r27_0069",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -1185,16 +1181,19 @@
    "y": 520,
    "scaleX": 1.7,
    "scaleY": 1.7,
-   "offsetX": 96.0,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
    "spriteId": "s_r27_0070",
    "dir": "assest4/map_objects/3 Animated Objects/2 Campfire",
    "frames": [
-    "1.png",
-    "2.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -1203,8 +1202,12 @@
    "y": 1180,
    "scaleX": 1.6,
    "scaleY": 1.6,
-   "offsetX": 96.0,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",

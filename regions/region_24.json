@@ -1,7 +1,7 @@
 {
  "version": 1,
  "regionName": "Demon Forge",
- "regionSubtitle": "Pāṣāṇa Daitya",
+ "regionSubtitle": "P\u0101\u1e63\u0101\u1e47a Daitya",
  "background": {
   "type": "color",
   "value": "#3a2a22"
@@ -3108,8 +3108,7 @@
    "spriteId": "s_r24_0007",
    "dir": "assest4/map_objects/3 Animated Objects/2 Campfire",
    "frames": [
-    "1.png",
-    "2.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -3118,8 +3117,12 @@
    "y": 905,
    "scaleX": 1.7,
    "scaleY": 1.7,
-   "offsetX": 96,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",

@@ -1,7 +1,7 @@
 {
  "version": 1,
  "regionName": "Threshold of Names",
- "regionSubtitle": "Nāmadvāra",
+ "regionSubtitle": "N\u0101madv\u0101ra",
  "background": {
   "type": "color",
   "value": "#2a2418"
@@ -1591,11 +1591,7 @@
    "spriteId": "s_r48_0043",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -1604,19 +1600,19 @@
    "y": 980,
    "scaleX": 1.4,
    "scaleY": 1.4,
-   "offsetX": 96,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
    "spriteId": "s_r48_0044",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -1625,8 +1621,12 @@
    "y": 980,
    "scaleX": 1.4,
    "scaleY": 1.4,
-   "offsetX": 96,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   }
  ],
  "noWalkZones": [],

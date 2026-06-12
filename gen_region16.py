@@ -85,12 +85,14 @@ def fence_h(x, y, v=1):  return a4("assest4/map_objects/2 Objects/2 Fence", f"{v
 def fence_v(x, y):       return a4("assest4/map_objects/2 Objects/2 Fence", "7.png", "7", x, y, 2.0, 3.5, 30)
 
 def campfire(x, y):
+    # 1.png is a 6-frame 32x64 strip — place as a spritesheet, not whole-image
     return {
         "type": "sprite", "spriteId": sid(),
         "dir": "assest4/map_objects/3 Animated Objects/2 Campfire",
-        "frames": ["1.png", "2.png"], "name": "1", "animated": True,
+        "frames": ["1.png"], "name": "1", "animated": True,
         "spriteLayer": "below", "x": x, "y": y, "scaleX": 1.6, "scaleY": 1.6,
-        "offsetX": 96.0, "offsetY": 63,
+        "offsetX": 16.0, "offsetY": 60,
+        "frameW": 32, "frameH": 64, "frameCount": 6, "frameRow": 0,
     }
 
 def stroke(color, width, pts):

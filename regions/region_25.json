@@ -1,7 +1,7 @@
 {
  "version": 1,
  "regionName": "Cloud Stair",
- "regionSubtitle": "Meghasopāna",
+ "regionSubtitle": "Meghasop\u0101na",
  "background": {
   "type": "color",
   "value": "#8fb4d6"
@@ -3369,11 +3369,7 @@
    "spriteId": "s_r25_0189",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -3382,8 +3378,12 @@
    "y": 908.37,
    "scaleX": 1.5,
    "scaleY": 1.5,
-   "offsetX": 96,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
@@ -4083,7 +4083,7 @@
    "config": {
     "id": "npc25_1",
     "name": "Sky Pilgrim",
-    "first": "Each_step_climbs_toward_the_five_who_rose_above_all_judgment._Mind_the_updrafts._And_mind_that_'five'_—_there_should_be_six_thrones_at_the_top.",
+    "first": "Each_step_climbs_toward_the_five_who_rose_above_all_judgment._Mind_the_updrafts._And_mind_that_'five'_\u2014_there_should_be_six_thrones_at_the_top.",
     "active": "",
     "completed": ""
    }

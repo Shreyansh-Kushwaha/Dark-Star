@@ -11204,8 +11204,7 @@
    "spriteId": "s_r13_0649",
    "dir": "assest4/map_objects/3 Animated Objects/2 Campfire",
    "frames": [
-    "1.png",
-    "2.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -11214,8 +11213,12 @@
    "y": 990,
    "scaleX": 1.7,
    "scaleY": 1.7,
-   "offsetX": 96.0,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",

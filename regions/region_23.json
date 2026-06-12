@@ -2518,8 +2518,7 @@
    "spriteId": "s_r23_0055",
    "dir": "assest4/map_objects/3 Animated Objects/2 Campfire",
    "frames": [
-    "1.png",
-    "2.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -2528,16 +2527,19 @@
    "y": 1075,
    "scaleX": 1.7,
    "scaleY": 1.7,
-   "offsetX": 96,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0056",
    "dir": "assest4/map_objects/3 Animated Objects/2 Campfire",
    "frames": [
-    "1.png",
-    "2.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -2546,16 +2548,19 @@
    "y": 925,
    "scaleX": 1.7,
    "scaleY": 1.7,
-   "offsetX": 96,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0057",
    "dir": "assest4/map_objects/3 Animated Objects/2 Campfire",
    "frames": [
-    "1.png",
-    "2.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -2564,16 +2569,19 @@
    "y": 925,
    "scaleX": 1.7,
    "scaleY": 1.7,
-   "offsetX": 96,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0058",
    "dir": "assest4/map_objects/3 Animated Objects/2 Campfire",
    "frames": [
-    "1.png",
-    "2.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -2582,8 +2590,12 @@
    "y": 1075,
    "scaleX": 1.7,
    "scaleY": 1.7,
-   "offsetX": 96,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
@@ -2692,11 +2704,7 @@
    "spriteId": "s_r23_0065",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -2705,19 +2713,19 @@
    "y": 360,
    "scaleX": 1.9,
    "scaleY": 1.9,
-   "offsetX": 96,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0066",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -2726,19 +2734,19 @@
    "y": 470,
    "scaleX": 1.5,
    "scaleY": 1.5,
-   "offsetX": 96,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0067",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -2747,19 +2755,19 @@
    "y": 470,
    "scaleX": 1.5,
    "scaleY": 1.5,
-   "offsetX": 96,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0068",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -2768,19 +2776,19 @@
    "y": 500,
    "scaleX": 1.4,
    "scaleY": 1.4,
-   "offsetX": 96,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0069",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -2789,19 +2797,19 @@
    "y": 500,
    "scaleX": 1.4,
    "scaleY": 1.4,
-   "offsetX": 96,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0070",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -2810,19 +2818,19 @@
    "y": 610,
    "scaleX": 1.4,
    "scaleY": 1.4,
-   "offsetX": 96,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0071",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -2831,8 +2839,12 @@
    "y": 610,
    "scaleX": 1.4,
    "scaleY": 1.4,
-   "offsetX": 96,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
@@ -6307,8 +6319,7 @@
    "spriteId": "s_r23_0276",
    "dir": "assest4/map_objects/3 Animated Objects/2 Campfire",
    "frames": [
-    "1.png",
-    "2.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -6317,8 +6328,12 @@
    "y": 1665.08,
    "scaleX": 1.6,
    "scaleY": 1.6,
-   "offsetX": 96,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",
@@ -6410,8 +6425,7 @@
    "spriteId": "s_r23_0282",
    "dir": "assest4/map_objects/3 Animated Objects/2 Campfire",
    "frames": [
-    "1.png",
-    "2.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -6420,8 +6434,12 @@
    "y": 1569.16,
    "scaleX": 1.6,
    "scaleY": 1.6,
-   "offsetX": 96,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "sprite",

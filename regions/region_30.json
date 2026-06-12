@@ -1,7 +1,7 @@
 {
  "version": 1,
  "regionName": "Storm's Eye",
- "regionSubtitle": "Vāyu Rākṣasa",
+ "regionSubtitle": "V\u0101yu R\u0101k\u1e63asa",
  "background": {
   "type": "color",
   "value": "#5a6e84"
@@ -884,11 +884,7 @@
    "spriteId": "s_r30_0037",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png"
+    "1.png"
    ],
    "name": "1",
    "animated": true,
@@ -897,8 +893,12 @@
    "y": 800,
    "scaleX": 1.6,
    "scaleY": 1.6,
-   "offsetX": 96.0,
-   "offsetY": 63
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
   },
   {
    "type": "stroke",
@@ -5515,7 +5515,7 @@
    "config": {
     "id": "npc30_1",
     "name": "Storm Herald",
-    "first": "The_last_guardian_of_heaven's_lie_rides_this_storm._Strike_it_down_and_it_will_point_you_where_they_buried_him_—_down,_below_the_world.",
+    "first": "The_last_guardian_of_heaven's_lie_rides_this_storm._Strike_it_down_and_it_will_point_you_where_they_buried_him_\u2014_down,_below_the_world.",
     "active": "",
     "completed": ""
    }
