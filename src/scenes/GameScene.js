@@ -16,6 +16,13 @@ import { QualitySettings } from '../systems/QualitySettings.js';
 import { ExploredManager } from '../systems/ExploredManager.js';
 import { NPC } from '../entities/NPC.js';
 
+// Gated shortcuts: portals sealed until a requirement is met. Keyed by region index,
+// matched to a portal by its targetRegion. requires: { lore: N } | { item } | { boss }.
+// Only gate optional/secret branches so the critical path can never be blocked.
+const PORTAL_GATES = {
+  34: [{ target: 39, requires: { lore: 15 }, sealedText: 'The Sixth Door is sealed. It opens only to one who has gathered the erased truth (15 lore fragments).' }],
+};
+
 // Poisson-disk sampling (returns {x,y}[] within bounds avoiding exclusion zones)
 function poissonDisk(width, height, minDist, count, exclusions, seed = 42) {
   const grid = [];
@@ -101,8 +108,10 @@ export class GameScene extends Phaser.Scene {
 
   create() {
     const data = this._initData;
-    const saveData = SaveManager.defaults();
+    // Persisted progression (stats, XP, Amrit, lore, quests…) merged over defaults.
+    const saveData = { ...SaveManager.defaults(), ...(SaveManager.load() || {}) };
     this._save = saveData;
+    this._pendingLevels = saveData.pendingLevels ?? 0;
     const regionIndex = data.regionIndex ?? saveData.regionIndex ?? 0;
     this._regionIndex = regionIndex;
 
@@ -185,6 +194,19 @@ export class GameScene extends Phaser.Scene {
     p2.isLocal = isClient;
     this.players.push(p2);
     this.physics.add.collider(this.players, this._noWalkGroup);
+
+    // Re-apply persisted level-up stat tiers so character growth survives reloads.
+    const tiers = saveData.statTiers || {};
+    for (const [stat, tier] of Object.entries(tiers)) {
+      if (tier > 0) this.players.forEach(p => p?.applyStat?.(stat, tier));
+    }
+    this.players.forEach(p => { if (p) p.hp = p.maxHp; });
+
+    // Seed the HUD Amrit pips from each player's actual charges.
+    this.time.delayedCall(0, () => {
+      this.events.emit('amrit_changed', { player: p1, charges: p1.amritCharges, max: p1.amritMax });
+      this.events.emit('amrit_changed', { player: p2, charges: p2.amritCharges, max: p2.amritMax });
+    });
 
     // Camera follows the local player
     const localPlayer = isClient ? p2 : p1;
@@ -269,6 +291,7 @@ export class GameScene extends Phaser.Scene {
       E: Phaser.Input.Keyboard.KeyCodes.E,
       R: Phaser.Input.Keyboard.KeyCodes.R,
       F: Phaser.Input.Keyboard.KeyCodes.F,
+      H: Phaser.Input.Keyboard.KeyCodes.H,
       SHIFT: Phaser.Input.Keyboard.KeyCodes.SHIFT,
     });
 
@@ -309,9 +332,11 @@ export class GameScene extends Phaser.Scene {
     this._fixedEnemyMode = false;
     this._anyEnemyKilled = false;
 
+    this._shrineOpen = false;
     this._createWorldFragments(region);
     this._createSpawners(region);
     this._createPortals(region);
+    this._createShrine(region);
     this._createPressurePlates(region);
     // Apply map-editor entity overrides before arena/spawner setup
     if (this._mapData?.boss) {
@@ -330,15 +355,22 @@ export class GameScene extends Phaser.Scene {
       this._buildRegionDecorations(region, regionIndex);
     }
 
+    // Seal any gated shortcuts in this region (portals must exist by now).
+    this._applyPortalGates();
+
     this._spawnRabbitDecoration(regionIndex);
 
     // ── UI scene (overlay) ────────────────────────────────────────
     this.scene.launch('UIScene', { gameScene: this });
+    this._spawnDeathEcho();
 
     // ── Event listeners ───────────────────────────────────────────
     this.events.on('spawn_projectile',  this._onSpawnProjectile, this);
     this.events.on('healing_aura',      this._onHealingAura, this);
     this.events.on('ability_fx',        this._onAbilityFx, this);
+    this.events.on('amrit_used',        this._onAmritUsed, this);
+    this.events.on('level_banked',      this._onLevelBanked, this);
+    this.events.on('level_up_done',     this._onLevelUpDone, this);
     this.events.on('enemy_killed',      this._onEnemyKilled, this);
     this.events.on('boss_killed',       this._onBossKilled,    this);
     this.events.on('boss_wall_break',   this._onBossWallBreak, this);
@@ -678,6 +710,217 @@ export class GameScene extends Phaser.Scene {
       this.events.emit('show_dialogue', { text: '⟨Portal⟩ The path forward is open.' });
       this.time.delayedCall(2500, () => this.events.emit('hide_dialogue'));
     }
+  }
+
+  // ── Gated shortcuts ─────────────────────────────────────────────────────────
+  _allPortals() {
+    return [this._portals?.back, this._portals?.next, ...(this._portalList || [])].filter(Boolean);
+  }
+
+  _portalReqMet(req) {
+    if (!req) return true;
+    if (req.lore != null) return (this.loreManager?.count?.() ?? 0) >= req.lore;
+    if (req.item) return (this._save?.inventory || []).includes(req.item);
+    if (req.boss) return (this._save?.bossKills || []).includes(req.boss);
+    return true;
+  }
+
+  _applyPortalGates() {
+    const gates = PORTAL_GATES[this._regionIndex];
+    if (!gates) return;
+    for (const gate of gates) {
+      const portal = this._allPortals().find(p => p.targetRegion === gate.target);
+      if (!portal) continue;
+      portal.requires   = gate.requires;
+      portal.sealedText = gate.sealedText;
+      this._refreshPortalGate(portal);
+    }
+  }
+
+  _maybeSealedFeedback(portal) {
+    if (!portal?.requires || !portal.sealedText) return;
+    const near = this.players.some(p => p?.alive && !p.downed &&
+      Phaser.Math.Distance.Between(p.x, p.y, portal.x, portal.y) < 55);
+    if (!near) return;
+    if (this._sealedMsgCd && this.time.now < this._sealedMsgCd) return;
+    this._sealedMsgCd = this.time.now + 5000;
+    this.events.emit('show_dialogue', { text: '⟨Sealed⟩ ' + portal.sealedText });
+    this.time.delayedCall(3200, () => this.events.emit('hide_dialogue'));
+  }
+
+  _refreshPortalGate(portal) {
+    if (!portal?.requires) return;
+    const met = this._portalReqMet(portal.requires);
+    portal.locked = !met;
+    if (portal.text) {
+      portal.text.setText(met ? (portal.label || 'PORTAL') : '🔒 SEALED');
+      portal.text.setColor(met ? '#88ffee' : '#cc6655');
+    }
+    portal.visual?.setAlpha(met ? 1 : 0.4);
+  }
+
+  // ── Thread Shrine (bonfire) ─────────────────────────────────────────────────
+  _createShrine(region) {
+    const sp = region.spawnPos || { x: 380, y: WORLD_H / 2 };
+    const x = sp.x + 80, y = sp.y - 110;
+    this._shrine = { x, y };
+
+    // Glowing base + a hovering 'thread' flame.
+    const base = this.add.graphics().setDepth(y - 2);
+    base.fillStyle(0x2a2418, 1); base.fillEllipse(x, y + 10, 70, 26);
+    base.fillStyle(0x4a3a22, 1); base.fillRect(x - 9, y - 34, 18, 44);
+    base.lineStyle(2, 0xe8c860, 0.5); base.strokeRect(x - 9, y - 34, 18, 44);
+
+    const glow = this.add.circle(x, y + 8, 60, 0xe8c860, 0.10).setDepth(-3);
+    this.tweens.add({ targets: glow, alpha: { from: 0.06, to: 0.22 }, scale: { from: 0.85, to: 1.2 },
+      duration: 1100, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
+
+    const flame = this.add.circle(x, y - 44, 11, 0xffd870, 0.95).setDepth(y + 1);
+    this.tweens.add({ targets: flame, y: y - 52, scaleX: { from: 1, to: 0.7 }, alpha: { from: 0.95, to: 0.7 },
+      duration: 600, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
+    this._shrine.flame = flame;
+
+    this._shrinePrompt = this.add.text(x, y - 78, '[F] Rest at the Thread Shrine', {
+      fontSize: '12px', color: '#ffe9a0', fontFamily: 'monospace', stroke: '#000', strokeThickness: 3,
+    }).setOrigin(0.5).setDepth(120).setVisible(false);
+  }
+
+  _playerNearShrine() {
+    if (!this._shrine) return false;
+    return this.players.some(p => p?.alive && !p.downed && p.isLocal &&
+      Phaser.Math.Distance.Between(p.x, p.y, this._shrine.x, this._shrine.y) < 95);
+  }
+
+  _checkShrineProximity() {
+    if (!this._shrinePrompt) return;
+    this._shrinePrompt.setVisible(!this._shrineOpen && this._playerNearShrine());
+  }
+
+  openShrine() {
+    if (this._shrineOpen) return;
+    this._shrineOpen = true;
+    this._paused = true;
+    this.physics.pause();
+    this._shrinePrompt?.setVisible(false);
+    this.scene.launch('ShrineScene', {
+      regionIndex: this._regionIndex,
+      regionName: this._mapData?.regionName || this._region?.name || `Region ${this._regionIndex}`,
+      pendingLevels: this._pendingLevels || 0,
+    });
+    this.scene.bringToTop('ShrineScene');
+  }
+
+  closeShrine() {
+    if (!this._shrineOpen) return;
+    this._shrineOpen = false;
+    this._paused = false;
+    this.physics.resume();
+  }
+
+  restAtShrine() {
+    // Recover the party, refill Amrit, and save this shrine as the respawn point.
+    for (const p of this.players) {
+      if (!p) continue;
+      p.hp = p.maxHp;
+      p.stamina = p.maxStamina;
+      p._updateHpBar?.();
+      p.refillAmrit?.(this);
+      if (p.downed) p.revive?.();
+    }
+    this._save.lastShrineRegion = this._regionIndex;
+    this._persist(this._regionIndex);
+    if (this._shrine?.flame) {
+      const burst = this.add.circle(this._shrine.x, this._shrine.y - 44, 14, 0xffe9a0, 0.6).setDepth(9999);
+      this.tweens.add({ targets: burst, alpha: 0, scale: 3, duration: 600, onComplete: () => burst.destroy() });
+    }
+    this.events.emit('show_dialogue', { text: '⟨Thread Shrine⟩ You rest. The thread steadies — wounds close, Amrit replenished, your return point is set here.' });
+    this.time.delayedCall(3200, () => this.events.emit('hide_dialogue'));
+  }
+
+  attuneAtShrine() {
+    if ((this._pendingLevels || 0) > 0) {
+      this.events.emit('level_up_available', { source: 'shrine' });
+    } else {
+      this.events.emit('show_dialogue', { text: '⟨Thread Shrine⟩ You have no attunement to spend. Slay foes to earn it.' });
+      this.time.delayedCall(2400, () => this.events.emit('hide_dialogue'));
+    }
+  }
+
+  // ── Persistence ─────────────────────────────────────────────────────────────
+  _persist(regionIndex) {
+    const s = this._save;
+    if (!s) return;
+    if (regionIndex != null) s.regionIndex = regionIndex;
+    const p = this.players?.find(x => x) || this.players?.[0];
+    if (p) {
+      s.playerStats  = { maxHp: p.maxHp, maxStamina: p.maxStamina, abilityPow: p.abilityPow };
+      s.playerLevel  = p.level;
+      s.playerXP     = p.xp;
+      s.amritCharges = p.amritCharges;
+      s.amritMax     = p.amritMax;
+    }
+    s.pendingLevels    = this._pendingLevels || 0;
+    s.statTiers        = { ...(this.scene.get('UIScene')?._statTiers || s.statTiers || {}) };
+    s.completedQuests  = [...(this.questManager?.completed ?? s.completedQuests ?? [])];
+    s.collectedLoreIds = this.loreManager?.toArray?.() ?? s.collectedLoreIds;
+    SaveManager.save(s);
+  }
+
+  // ── Death loop: respawn at last shrine, drop a recoverable Lost Echo ─────────
+  respawnAfterDeath() {
+    if (this._respawning) return;
+    this._respawning = true;
+    this._dropDeathEcho();
+    this._save.amritCharges = this._save.amritMax;  // Amrit refills on death
+    const target = this._save.lastShrineRegion ?? this._regionIndex;
+    this._persist(target);
+    this._fadeAndTransition(target);
+  }
+
+  _dropDeathEcho() {
+    const p = this.players?.find(x => x?.isLocal) || this.players?.[0];
+    const xp = p?.xp ?? 0;
+    if (xp <= 0) { this.registry.remove('deathEcho'); return; }
+    const pos = p ? { x: p.x, y: p.y } : { x: 400, y: WORLD_H / 2 };
+    this.registry.set('deathEcho', { region: this._regionIndex, x: pos.x, y: pos.y, xp });
+    if (p) { p.xp = 0; this._save.playerXP = 0; }
+  }
+
+  _spawnDeathEcho() {
+    const echo = this.registry.get('deathEcho');
+    this._deathEchoObj = null;
+    if (!echo || echo.region !== this._regionIndex) return;
+    const orb = this.add.circle(echo.x, echo.y, 16, 0x66ddff, 0.5).setDepth(echo.y);
+    const core = this.add.circle(echo.x, echo.y, 7, 0xccf4ff, 0.95).setDepth(echo.y + 1);
+    this.tweens.add({ targets: [orb], alpha: { from: 0.3, to: 0.7 }, scale: { from: 0.8, to: 1.3 },
+      duration: 900, yoyo: true, repeat: -1 });
+    const prompt = this.add.text(echo.x, echo.y - 34, '[F] Reclaim Lost Echo', {
+      fontSize: '11px', color: '#aef2ff', fontFamily: 'monospace', stroke: '#000', strokeThickness: 3,
+    }).setOrigin(0.5).setDepth(120).setVisible(false);
+    this._deathEchoObj = { x: echo.x, y: echo.y, xp: echo.xp, orb, core, prompt };
+  }
+
+  _playerNearEcho() {
+    if (!this._deathEchoObj) return false;
+    return this.players.some(p => p?.alive && !p.downed && p.isLocal &&
+      Phaser.Math.Distance.Between(p.x, p.y, this._deathEchoObj.x, this._deathEchoObj.y) < 70);
+  }
+
+  _checkDeathEcho() {
+    if (!this._deathEchoObj) return;
+    this._deathEchoObj.prompt.setVisible(this._playerNearEcho());
+  }
+
+  _reclaimDeathEcho() {
+    const e = this._deathEchoObj;
+    if (!e) return;
+    const p = this.players?.find(x => x?.isLocal) || this.players?.[0];
+    if (p?.gainXP) p.gainXP(e.xp);
+    this.registry.remove('deathEcho');
+    e.orb.destroy(); e.core.destroy(); e.prompt.destroy();
+    this._deathEchoObj = null;
+    this.events.emit('show_dialogue', { text: `⟨Lost Echo⟩ You reclaim ${e.xp} essence.` });
+    this.time.delayedCall(2000, () => this.events.emit('hide_dialogue'));
   }
 
   _createPressurePlates(region) {
@@ -1249,6 +1492,8 @@ export class GameScene extends Phaser.Scene {
       this._checkPressurePlates();
       this._checkPortals();
       this._checkEchoTriggers();
+      this._checkShrineProximity();
+      this._checkDeathEcho();
     }
 
     // ── Interact ─────────────────────────────────────────────────
@@ -1455,12 +1700,18 @@ export class GameScene extends Phaser.Scene {
         }
       }
     };
+    // Re-evaluate gated portals so they open the instant their requirement is met.
+    for (const portal of this._allPortals()) {
+      if (portal.requires) this._refreshPortalGate(portal);
+    }
+
     if (!this._portalCooldown || this.time.now > this._portalCooldown) {
       check(this._portals?.back, false);
       check(this._portals?.next, true);
       // direction-less portals
       for (const portal of (this._portalList || [])) {
-        if (!portal || portal.locked) continue;
+        if (!portal) continue;
+        if (portal.locked) { this._maybeSealedFeedback(portal); continue; }
         for (const p of this.players) {
           if (!p?.alive || p.downed) continue;
           if (Phaser.Math.Distance.Between(p.x, p.y, portal.x, portal.y) < 40) {
@@ -1500,8 +1751,9 @@ export class GameScene extends Phaser.Scene {
     this._fadeAndTransition(newIndex);
   }
 
-  _saveProgress(_newIndex) {
-    // Save removed — session-only progress
+  _saveProgress(newIndex) {
+    // Persist progression as you cross between regions (open-world checkpointing).
+    this._persist(newIndex);
   }
 
   _fadeAndTransition(newIndex) {
@@ -1547,6 +1799,12 @@ export class GameScene extends Phaser.Scene {
         if (Phaser.Math.Distance.Between(player.x, player.y, ally.x, ally.y) < 70) return;
       }
     }
+
+    // Thread Shrine — rest, attune, fast travel
+    if (this._shrine && this._playerNearShrine()) { this.openShrine(); return; }
+
+    // Reclaim a Lost Echo (recovered souls dropped on death)
+    if (this._deathEchoObj && this._playerNearEcho()) { this._reclaimDeathEcho(); return; }
 
     if (this._dialogueActive) {
       this._dialogueActive = false;
@@ -1642,6 +1900,35 @@ export class GameScene extends Phaser.Scene {
   _onSpawnProjectile(data) {
     const proj = new Projectile(this, data.x, data.y, data.key || 'fire_01', data);
     this.projectiles.push(proj);
+  }
+
+  _onLevelBanked() {
+    this._pendingLevels = (this._pendingLevels || 0) + 1;
+    this._persist();
+    this.events.emit('status_flash', { color: 0xffd700, alpha: 0.18, duration: 280 });
+    this.events.emit('show_dialogue', { text: `⚔ Attunement earned (${this._pendingLevels} ready) — rest at a Thread Shrine to grow stronger.` });
+    this.time.delayedCall(2600, () => this.events.emit('hide_dialogue'));
+  }
+
+  _onLevelUpDone() {
+    this._pendingLevels = Math.max(0, (this._pendingLevels || 0) - 1);
+    this._persist();
+    if (this._pendingLevels > 0) {
+      this.time.delayedCall(450, () => this.events.emit('level_up_available', { source: 'shrine' }));
+    }
+  }
+
+  _onAmritUsed(data) {
+    const { x, y } = data;
+    this.audio?.heal?.();
+    // golden restorative burst
+    const ring = this.add.circle(x, y, 30, 0xffcc44, 0.4).setDepth(y + 5);
+    this.tweens.add({ targets: ring, alpha: 0, scaleX: 2.4, scaleY: 2.4, duration: 520, onComplete: () => ring.destroy() });
+    for (let i = 0; i < 6; i++) {
+      const ox = Phaser.Math.Between(-18, 18);
+      const mote = this.add.circle(x + ox, y + 14, 3, 0xffe07a, 0.9).setDepth(y + 6);
+      this.tweens.add({ targets: mote, y: y - 30, alpha: 0, duration: 600, delay: i * 40, onComplete: () => mote.destroy() });
+    }
   }
 
   _onHealingAura(data) {
@@ -1843,10 +2130,7 @@ export class GameScene extends Phaser.Scene {
           this.time.delayedCall(5000, () => this.events.emit('hide_dialogue'));
         });
       }
-      // Level-up selection after lore clears
-      this.time.delayedCall(3800, () => {
-        this.events.emit('level_up_available', { bossKey });
-      });
+      // Boss XP is banked via gainXP → level_banked; the boon is chosen at a shrine.
     }
 
     // Final boss: UIScene handles defeat speech; we transition after 8s
@@ -2039,12 +2323,14 @@ export class GameScene extends Phaser.Scene {
     }
   }
 
-  openWorldMap() {
+  openWorldMap(opts = {}) {
     if (this._mapOpen) return;
     this._mapOpen = true;
     this._paused  = true;
     this.physics.pause();
-    this.scene.launch('WorldMapScene', { from: 'game', currentRegion: this._regionIndex });
+    this.scene.launch('WorldMapScene', {
+      from: 'game', currentRegion: this._regionIndex, fastTravel: !!opts.fastTravel,
+    });
     this.scene.bringToTop('WorldMapScene');
   }
 
@@ -2053,6 +2339,15 @@ export class GameScene extends Phaser.Scene {
     this._mapOpen = false;
     this._paused  = false;
     this.physics.resume();
+  }
+
+  // Fast travel from the world map to an explored region's shrine.
+  fastTravelTo(regionIndex) {
+    if (regionIndex == null || regionIndex === this._regionIndex) { this.closeWorldMap(); return; }
+    this._mapOpen = false;   // map scene stops itself
+    this._persist(regionIndex);
+    this.audio?.portal?.();
+    this._fadeAndTransition(regionIndex);
   }
 
   // Called by Player.js when player melee hits boss

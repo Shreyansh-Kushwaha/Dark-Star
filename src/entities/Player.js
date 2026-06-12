@@ -3,6 +3,7 @@ import {
   LIGHT_CD, HEAVY_CD, DODGE_CD, DODGE_STAMINA, DODGE_DURATION,
   PERFECT_DODGE_WINDOW, PERFECT_DODGE_SLOWMO, PERFECT_DODGE_DURATION,
   WARRIOR_FRAME, XP_THRESHOLDS,
+  AMRIT_MAX_DEFAULT, AMRIT_HEAL_FRAC, AMRIT_SIP_LOCKOUT,
 } from '../constants.js';
 import { AbilityManager } from '../systems/AbilityManager.js';
 import { QualitySettings } from '../systems/QualitySettings.js';
@@ -28,6 +29,11 @@ export class Player extends Phaser.GameObjects.Container {
     this.abilityPow = stats.abilityPow;
     this.level      = saveData?.playerLevel ?? 1;
     this.xp         = saveData?.playerXP    ?? 0;
+
+    // Amrit — healing flask (Estus equivalent)
+    this.amritMax     = saveData?.amritMax     ?? AMRIT_MAX_DEFAULT;
+    this.amritCharges = saveData?.amritCharges ?? this.amritMax;
+    this._amritLockout = 0;
 
     // State
     this.alive    = true;
@@ -123,9 +129,12 @@ export class Player extends Phaser.GameObjects.Container {
       return;
     }
 
+    if (this._amritLockout > 0) this._amritLockout -= delta;
+
     this._tick(time, delta);
     this._move(delta, cursors, keys);
     if (keys) this._handleInput(time, keys, enemies, scene);
+    if (keys?.H && Phaser.Input.Keyboard.JustDown(keys.H)) this.quaffAmrit(scene);
 
     this._regen(delta);
     this._updateHpBar();
@@ -495,6 +504,7 @@ export class Player extends Phaser.GameObjects.Container {
       hp: this.hp, stamina: this.stamina,
       facingX: this.facingX, facingY: this.facingY,
       downed: this.downed,
+      amritCharges: this.amritCharges, amritMax: this.amritMax,
       anim: this.sprite.anims.currentAnim?.key || '',
     };
   }
@@ -503,7 +513,9 @@ export class Player extends Phaser.GameObjects.Container {
     this.hp      = state.hp;
     this.stamina = state.stamina;
     this.downed  = state.downed;
-    this.facingX = state.facingX; 
+    if (state.amritCharges != null) this.amritCharges = state.amritCharges;
+    if (state.amritMax != null)     this.amritMax     = state.amritMax;
+    this.facingX = state.facingX;
     this.facingY = state.facingY;
 
     this.sprite.setFlipX(state.facingX < 0);
@@ -594,6 +606,28 @@ export class Player extends Phaser.GameObjects.Container {
     this._updateHpBar();
   }
 
+  quaffAmrit(scene) {
+    if (!this.alive || this.downed) return false;
+    if (this._amritLockout > 0) return false;
+    if (this.amritCharges <= 0) {
+      scene?.events?.emit('amrit_changed', { player: this, charges: this.amritCharges, max: this.amritMax, empty: true });
+      return false;
+    }
+    if (this.hp >= this.maxHp) return false;   // don't waste a sip at full HP
+    this.amritCharges--;
+    this._amritLockout = AMRIT_SIP_LOCKOUT;
+    this.hp = Math.min(this.maxHp, this.hp + Math.floor(this.maxHp * AMRIT_HEAL_FRAC));
+    this._updateHpBar();
+    scene?.events?.emit('amrit_used', { player: this, x: this.x, y: this.y });
+    scene?.events?.emit('amrit_changed', { player: this, charges: this.amritCharges, max: this.amritMax });
+    return true;
+  }
+
+  refillAmrit(scene) {
+    this.amritCharges = this.amritMax;
+    scene?.events?.emit('amrit_changed', { player: this, charges: this.amritCharges, max: this.amritMax });
+  }
+
   gainXP(amount) {
     if (!this.alive) return;
     this.xp += amount;
@@ -601,7 +635,8 @@ export class Player extends Phaser.GameObjects.Container {
     if (threshold && this.xp >= threshold) {
       this.level++;
       this.xp -= threshold;
-      this.scene.events.emit('level_up_available', { source: 'xp' });
+      // Banked: the boon is chosen by resting at a Thread Shrine, Souls-style.
+      this.scene.events.emit('level_banked', { level: this.level });
     }
     this.scene.events.emit('xp_changed', { xp: this.xp, level: this.level, threshold: XP_THRESHOLDS[this.level - 1] });
   }

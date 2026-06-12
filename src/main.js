@@ -5,6 +5,7 @@ import { GameScene }        from './scenes/GameScene.js';
 import { UIScene }          from './scenes/UIScene.js';
 import { PauseScene }       from './scenes/PauseScene.js';
 import { WorldMapScene }    from './scenes/WorldMapScene.js';
+import { ShrineScene }      from './scenes/ShrineScene.js';
 import { GameEndingScene }  from './scenes/GameEndingScene.js';
 import { GAME_W, GAME_H }   from './constants.js';
 import { QualitySettings }  from './systems/QualitySettings.js';
@@ -42,6 +43,7 @@ const config = {
     UIScene,
     PauseScene,
     WorldMapScene,
+    ShrineScene,
     GameEndingScene,
   ],
 };

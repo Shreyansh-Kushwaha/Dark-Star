@@ -38,6 +38,9 @@ export class SaveManager {
       inventory: [],
       collectedLoreIds: [],
       bossKills: [],
+      amritCharges: 4,
+      amritMax: 4,
+      lastShrineRegion: null,
     };
   }
 

@@ -22,6 +22,11 @@ export const PERFECT_DODGE_WINDOW = 200;
 export const PERFECT_DODGE_SLOWMO = 0.25;
 export const PERFECT_DODGE_DURATION = 500;
 
+// Amrit — the healing flask (Estus equivalent). Limited charges, refilled at Thread Shrines.
+export const AMRIT_MAX_DEFAULT = 4;     // starting charges
+export const AMRIT_HEAL_FRAC   = 0.55;  // fraction of max HP restored per sip
+export const AMRIT_SIP_LOCKOUT = 550;   // ms you're vulnerable while drinking
+
 export const SPAWNER_INTERVAL = 25000; // ms
 export const BOSS_TRIGGER_DIST = 300;
 export const TETHER_DIST = 360;

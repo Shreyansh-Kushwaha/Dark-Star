@@ -36,7 +36,7 @@ export class UIScene extends Phaser.Scene {
     this._createCheatConsole();
     this._createVignette();
 
-    this._statTiers = {};
+    this._statTiers = { ...(this.scene.get('GameScene')?._save?.statTiers || {}) };
     this._levelUpActive = false;
 
     this._keyEsc       = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
@@ -80,6 +80,7 @@ export class UIScene extends Phaser.Scene {
     gs.events.on('status_flash',       this._onStatusFlash,     this);
     gs.events.on('item_acquired',      this._onItemAcquired,    this);
     gs.events.on('xp_changed',         this._onXpChanged,       this);
+    gs.events.on('amrit_changed',      this._onAmritChanged,    this);
 
     // Cache lore fragment data for the lore tab
     import('/src/data/quests.js').then(m => { this._loreFragCache = m.LORE_FRAGMENTS; });
@@ -107,6 +108,14 @@ export class UIScene extends Phaser.Scene {
     this._taraHpText = this.add.text(tx + barW + 4, 26, '200/200', { fontSize: '10px', color: '#aaa', fontFamily: 'monospace' }).setOrigin(0, 0.5);
     this._taraStamBg   = this.add.rectangle(tx, 40, smW, smH, 0x333333).setOrigin(0, 0.5);
     this._taraStamFill = this.add.rectangle(tx, 40, smW, smH, 0x66ccff).setOrigin(0, 0.5);
+
+    // Amrit flask pips (one row per player, below the bars)
+    this.add.text(pad, 49, '⚕', { fontSize: '10px', color: '#ffcc44', fontFamily: 'monospace' }).setOrigin(0, 0);
+    this.add.text(tx,  49, '⚕', { fontSize: '10px', color: '#ffcc44', fontFamily: 'monospace' }).setOrigin(0, 0);
+    this._dhruvaAmritPips = this.add.container(pad + 14, 54);
+    this._taraAmritPips   = this.add.container(tx  + 14, 54);
+    this._renderAmritPips(this._dhruvaAmritPips, 4, 4);
+    this._renderAmritPips(this._taraAmritPips,   4, 4);
 
     this._regionLabel = this.add.text(GAME_W - pad, 10, 'Region 0', {
       fontSize: '13px', color: '#ffd700', fontFamily: 'serif',
@@ -362,14 +371,8 @@ export class UIScene extends Phaser.Scene {
     // YOU DIED input — takes priority over all other keys
     if (this._youDiedRetryRegion !== null) {
       if (Phaser.Input.Keyboard.JustDown(this._keyR)) {
-        const ri = this._youDiedRetryRegion;
         this._youDiedRetryRegion = null;
-        this.cameras.main.fadeOut(500, 0, 0, 0);
-        this.cameras.main.once('camerafadeoutcomplete', () => {
-          this.scene.stop('UIScene');
-          this.scene.stop('GameScene');
-          this.scene.start('GameScene', { regionIndex: ri });
-        });
+        this.scene.get('GameScene')?.respawnAfterDeath();
         return;
       }
       if (Phaser.Input.Keyboard.JustDown(this._keyEsc)) {
@@ -876,6 +879,7 @@ export class UIScene extends Phaser.Scene {
             this._levelUpActive = false;
             gs._paused = false;
             gs.physics?.resume();
+            gs.events.emit('level_up_done', { stat: c.stat });
           },
         });
       });
@@ -912,6 +916,26 @@ export class UIScene extends Phaser.Scene {
     const targetW = Math.min(120, Math.floor((xp / maxXp) * 120));
     this.tweens.add({ targets: this._xpBarFill, width: targetW, duration: 300, ease: 'Power1.Out' });
     this._levelLabel.setText(`LVL ${level}`);
+  }
+
+  _renderAmritPips(container, charges, max) {
+    if (!container) return;
+    container.removeAll(true);
+    const pw = 7, ph = 9, gap = 3;
+    for (let i = 0; i < max; i++) {
+      const filled = i < charges;
+      container.add(this.add.rectangle(i * (pw + gap), 0, pw, ph, filled ? 0xffcc44 : 0x4a3a18)
+        .setOrigin(0, 0).setStrokeStyle(1, 0x2a1e08));
+    }
+  }
+
+  _onAmritChanged(data) {
+    const gs = this.scene.get('GameScene');
+    const players = gs?.players || [];
+    const p = data?.player;
+    const isP1 = p ? (p === players[0]) : null;
+    if (isP1 === false) this._renderAmritPips(this._taraAmritPips, p.amritCharges, p.amritMax);
+    else if (p)         this._renderAmritPips(this._dhruvaAmritPips, p.amritCharges, p.amritMax);
   }
 
   // ── Dialogue ───────────────────────────────────────────────────────────────
@@ -1086,29 +1110,24 @@ export class UIScene extends Phaser.Scene {
       duration: 2200, delay: 300, ease: 'Power2.Out',
     });
 
-    // Subtitle with retry / menu options
-    const hintTxt = this.add.text(GAME_W / 2, GAME_H / 2 + 54, '[R]  Retry Region      [ESC]  Main Menu', {
+    // Subtitle — return to the last Thread Shrine
+    const hintTxt = this.add.text(GAME_W / 2, GAME_H / 2 + 54, '[R]  Return to last Shrine      [ESC]  Main Menu', {
       fontSize: '14px', color: '#886666', fontFamily: 'monospace',
       stroke: '#000', strokeThickness: 2,
     }).setOrigin(0.5).setDepth(depth + 2).setAlpha(0);
 
-    this.tweens.add({ targets: hintTxt, alpha: 1, duration: 500, delay: 2200 });
+    this.tweens.add({ targets: hintTxt, alpha: 1, duration: 500, delay: 1800 });
 
-    // Key handler — fires once after hint appears
+    // Key handler — fires once after hint appears; auto-respawns at the shrine.
     this._youDiedActive = true;
-    this.time.delayedCall(2200, () => {
+    this.time.delayedCall(1800, () => {
       this._youDiedRetryRegion = regionIndex;
 
-      // Auto-redirect to main menu after 5 seconds if no key pressed
-      this.time.delayedCall(5000, () => {
+      // Auto-respawn at the last shrine after a beat if no key pressed
+      this.time.delayedCall(2600, () => {
         if (this._youDiedRetryRegion === null) return; // already handled
         this._youDiedRetryRegion = null;
-        this.cameras.main.fadeOut(500, 0, 0, 0);
-        this.cameras.main.once('camerafadeoutcomplete', () => {
-          this.scene.stop('UIScene');
-          this.scene.stop('GameScene');
-          this.scene.start('MainMenuScene');
-        });
+        this.scene.get('GameScene')?.respawnAfterDeath();
       });
     });
   }

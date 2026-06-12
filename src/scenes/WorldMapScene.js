@@ -30,6 +30,7 @@ export class WorldMapScene extends Phaser.Scene {
     this._fromScene   = this._from === 'game' ? 'GameScene'
                       : this._from === 'pause' ? 'PauseScene' : 'MainMenuScene';
     this._current     = data?.currentRegion ?? 0;
+    this._fastTravel  = !!data?.fastTravel;
   }
 
   create() {
@@ -332,6 +333,33 @@ export class WorldMapScene extends Phaser.Scene {
     add(this.add.text(px + PANEL_W / 2, ty + 6, '✦ Explored', {
       fontSize: '12px', fontFamily: 'monospace', color: '#6bbf6b',
     }).setOrigin(0.5, 0).setDepth(32));
+
+    // Fast-travel action (only when opened from a Thread Shrine)
+    if (this._fastTravel && idx !== this._current) {
+      const by = ty + 40;
+      const btn = add(this.add.rectangle(px + PANEL_W / 2, by, PANEL_W - 80, 38, 0x1a2a1a)
+        .setStrokeStyle(2, 0x6bbf6b).setDepth(33).setInteractive({ useHandCursor: true }));
+      const btxt = add(this.add.text(px + PANEL_W / 2, by, '▶  Travel the Thread', {
+        fontSize: '15px', fontFamily: 'serif', fontStyle: 'bold', color: '#bdf2bd',
+      }).setOrigin(0.5).setDepth(34));
+      btn.on('pointerover', () => { btn.setFillStyle(0x255025); btxt.setColor('#ffffff'); });
+      btn.on('pointerout',  () => { btn.setFillStyle(0x1a2a1a); btxt.setColor('#bdf2bd'); });
+      btn.on('pointerup',   () => this._doFastTravel(idx));
+    } else if (this._fastTravel && idx === this._current) {
+      add(this.add.text(px + PANEL_W / 2, ty + 46, '— You are here —', {
+        fontSize: '12px', fontFamily: 'monospace', color: '#8a8568',
+      }).setOrigin(0.5, 0).setDepth(33));
+    }
+  }
+
+  _doFastTravel(idx) {
+    if (this._launcher?.input) {
+      this._launcher.input.enabled = true;
+      if (this._launcher.input.keyboard) this._launcher.input.keyboard.enabled = true;
+    }
+    const gs = this.scene.get('GameScene');
+    this.scene.stop();
+    gs?.fastTravelTo(idx);
   }
 
   // ── Fixed HUD (title, legend, panel frame, hints) ────────────────────────────
@@ -348,6 +376,12 @@ export class WorldMapScene extends Phaser.Scene {
     this._counter = this.add.text(30, 74, '', {
       fontSize: '12px', fontFamily: 'monospace', color: C.ink,
     }).setDepth(30);
+
+    if (this._fastTravel) {
+      this.add.text(30, 94, '✦ FAST TRAVEL — pick an explored region', {
+        fontSize: '12px', fontFamily: 'monospace', color: '#6bbf6b',
+      }).setDepth(30);
+    }
 
     // Right detail panel frame.
     const px = GAME_W - PANEL_W;
