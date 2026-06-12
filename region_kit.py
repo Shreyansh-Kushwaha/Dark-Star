@@ -31,6 +31,12 @@ N2DEC  = "assest4/next2/2 Objects/3 Decor"
 N2TNT  = "assest4/next2/2 Objects/6 Tent"
 N2GRS  = "assest4/next2/2 Objects/5 Grass"
 ROCKS  = f"{TS}/Terrain/Decorations/Rocks"
+# biome-recolored rock variants (same Rock1-4.png names) so hot/desert/void
+# regions stop reusing the cold teal rock. Set via Region.rock_pal.
+ROCK_DIRS = {"default": ROCKS,
+             "basalt": "assets_custom/rocks_basalt",   # forge / caldera / ash (dark charred)
+             "sand":   "assets_custom/rocks_sand",     # desert / bazaar / cliffs / bone (warm tan)
+             "void":   "assets_custom/rocks_void"}     # severance / torn / storm (violet obsidian)
 GOLD   = f"{TS}/Terrain/Resources/Gold/Gold Stones"
 CLOUDS = f"{TS}/Terrain/Decorations/Clouds"
 WROCK  = f"{TS}/Terrain/Decorations/Rocks in the Water"
@@ -78,6 +84,7 @@ class Region:
         self.sprites = []; self.zones = []; self.enemies = []
         self.npcs = []; self.portals = []; self.boss = None
         self._sid = 0; self._zid = 0; self.foot = []
+        self.rock_pal = "default"   # biome rock recolor (see ROCK_DIRS)
 
     # ---- low level ----------------------------------------------------------
     def sid(self):
@@ -115,7 +122,7 @@ class Region:
     def tuft(self, x, y, s):  self.add(CRAFT, self.R.pick(TUFT) + ".png", x, y, s)
     def bush(self, x, y, s):  self.add("cropped", self.R.pick(BUSHES) + ".png", x, y, s)
     def dead_tree(self, x, y, s): self.add(PROPS, "dead_tree.png", x, y, s)
-    def rock(self, x, y, s):  self.add(ROCKS, f"Rock{int(self.R.rng(1,5))}.png", x, y, s)
+    def rock(self, x, y, s):  self.add(ROCK_DIRS[self.rock_pal], f"Rock{int(self.R.rng(1,5))}.png", x, y, s)
     def gold(self, x, y, s):  self.add(GOLD, f"Gold Stone {int(self.R.rng(1,7))}.png", x, y, s)
     def stump(self, x, y, s): self.add(WOOD, "Stump 4.png", x, y, s)
     def sheep(self, x, y, s): self.add("cropped", "Sheep_Idle_crop.png", x, y, s)

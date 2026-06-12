@@ -148,7 +148,7 @@ def build_13():
 def build_14():
     """Pasanadvara — The Stone Gate Pass. A narrow corridor between towering
     cliffs, guarded by stone sentinels at a carved gate. Critical-path threshold."""
-    r = Region(14, "Stone Gate", "#3b352f", 140014, subtitle="Pāṣāṇadvāra")
+    r = Region(14, "Stone Gate", "#3b352f", 140014, subtitle="Pāṣāṇadvāra"); r.rock_pal = "sand"
     def corridor_y(x): return 1000 + 120 * math.sin(x / 600.0)
     HALF = 250
     def open_area(x, y): return abs(y - corridor_y(x)) < HALF or near_spawn(x, y, 300)
@@ -368,7 +368,7 @@ def dunes(r, c0, c1, y0=-40, y1=WORLD_H+40, step=78, amp=40, width=120):
 def build_19():
     """Bhasmabhumi — The Ashen Flats. A scorched grey plain where the gods burned
     the sixth god's temples; the ash never settles."""
-    r = Region(19, "Ash Flats", "#48423b", 190019, subtitle="Bhasmabhūmi")
+    r = Region(19, "Ash Flats", "#48423b", 190019, subtitle="Bhasmabhūmi"); r.rock_pal = "basalt"
     dunes(r, "#4f483f", "#544c42", amp=34, width=120)
     # smoking fissures (dark cracks with ember seams)
     for (fx0, fy) in [(500, 760), (1300, 1180), (2100, 720), (2500, 1240)]:
@@ -403,7 +403,7 @@ def build_19():
 def build_20():
     """Tamrapura — The Copper Bazaar. A sandstone desert trade-city; a relic
     dealer here sells a coin bearing the erased god's face. Act III hub."""
-    r = Region(20, "Copper Bazaar", "#7a5d36", 200020, subtitle="Tāmrapura")
+    r = Region(20, "Copper Bazaar", "#7a5d36", 200020, subtitle="Tāmrapura"); r.rock_pal = "sand"
     dunes(r, "#7d6038", "#866741", amp=26, width=110)
     # sandstone roads through the bazaar
     r.stroke(meander(120, WORLD_W-120, 1000, 60, 520), "#8a6d42", 150)
@@ -441,7 +441,7 @@ def build_20():
 def build_21():
     """Marusthala — The Glass Desert. Dunes fused to glass by old fire; mirages
     and a buried caravan. Optional spur off Tamrapura."""
-    r = Region(21, "Glass Desert", "#9a7e4d", 210021, subtitle="Marusthala")
+    r = Region(21, "Glass Desert", "#9a7e4d", 210021, subtitle="Marusthala"); r.rock_pal = "sand"
     dunes(r, "#9c8050", "#a98c5b", amp=44, width=130)
     # glass spires (cyan crystals) catching the sun
     r.scatter(lambda x,y,s: r.crystal(x,y,r.R.rng(0.8,1.6),"cyan"), 22, (260, WORLD_W-260), (320, 1700), avoid=near_spawn)
@@ -467,7 +467,7 @@ def build_21():
 def build_22():
     """Agnikunda — The Firepit Caldera. Lava channels and basalt; the forge of
     the gods, where the weapons used against the sixth god were made."""
-    r = Region(22, "Fire Caldera", "#2d201b", 220022, subtitle="Agnikuṇḍa")
+    r = Region(22, "Fire Caldera", "#2d201b", 220022, subtitle="Agnikuṇḍa"); r.rock_pal = "basalt"
     def lava(x): return 1000 + 150*math.sin(x/430.0) + 70*math.sin(x/170.0)
     # lava rivers (layered glowing strokes)
     r.stroke([(x, lava(x)) for x in range(-40, WORLD_W+40, 50)], "#7a1e08", 150)
@@ -538,7 +538,7 @@ def build_23():
 def build_24():
     """Pashana Daitya's Forge. The inner forge-sanctum; the stone-and-fire demon
     built to guard the lie. Act III boss arena."""
-    r = Region(24, "Demon Forge", "#3a2a22", 240024, subtitle="Pāṣāṇa Daitya")
+    r = Region(24, "Demon Forge", "#3a2a22", 240024, subtitle="Pāṣāṇa Daitya"); r.rock_pal = "basalt"
     ARENA = (2680, 1000)
     def lava(x): return 1000 + 90*math.sin(x/380.0)
     r.stroke([(x, lava(x)) for x in range(-40, 2300, 50)], "#7a1e08", 130)
@@ -583,7 +583,7 @@ def sky_void(r, keep, cloud_n=26):
 def build_25():
     """Meghasopana — The Cloud Stair. Floating stone stairs climbing through the
     clouds toward the gods who 'ascended above judgment.'"""
-    r = Region(25, "Cloud Stair", "#8fb4d6", 250025, subtitle="Meghasopāna")
+    r = Region(25, "Cloud Stair", "#8fb4d6", 250025, subtitle="Meghasopāna"); r.rock_pal = "sand"
     def stair_y(x): return 1380 - (x / WORLD_W) * 760 + 60*math.sin(x/300.0)  # rising path
     HALF = 180
     def on_stair(x, y): return abs(y - stair_y(x)) < HALF or near_spawn(x, y, 280)
@@ -614,14 +614,15 @@ def build_25():
 def build_26():
     """Vayupatha — The Windward Cliffs. Sheer cliffs and rope-bridges lashed by
     crosswinds; a carving shows a god cast down."""
-    r = Region(26, "Wind Cliffs", "#7a93ad", 260026, subtitle="Vāyupatha")
+    r = Region(26, "Wind Cliffs", "#7a93ad", 260026, subtitle="Vāyupatha"); r.rock_pal = "sand"
     def ledge_y(x): return 1000 + 150*math.sin(x/520.0)
     HALF = 170
     def on_ledge(x, y): return abs(y - ledge_y(x)) < HALF or near_spawn(x, y, 280)
     sky_void(r, on_ledge, 26)
-    # cliff walls of rock above & below the ledge corridor
-    grid_fill(r, lambda x,y,s: r.rock(x,y,r.R.rng(1.6,3.2)),
-              lambda x,y: abs(y-ledge_y(x))<HALF+60 or near_spawn(x,y,300), step=132, chance=0.92)
+    # cliff faces hug the ledge corridor; the deep sky beyond stays open & airy
+    grid_fill(r, lambda x,y,s: r.rock(x,y,r.R.rng(1.4,2.8)),
+              lambda x,y: abs(y-ledge_y(x))<HALF+50 or abs(y-ledge_y(x))>HALF+340 or near_spawn(x,y,300),
+              step=150, chance=0.6)
     # rope-bridges (custom deck) spanning gaps in the ledge
     for x in range(420, WORLD_W-300, 520):
         r.bridge_deck(x, ledge_y(x), 1.25); r.bridge_deck(x+150, ledge_y(x+150), 1.25)
@@ -731,7 +732,7 @@ def build_29():
 def build_30():
     """Vayu Rakshasa's Tempest. The eye of a sky-storm guarding heaven's lie.
     Act IV boss arena."""
-    r = Region(30, "Storm's Eye", "#5a6e84", 300030, subtitle="Vāyu Rākṣasa")
+    r = Region(30, "Storm's Eye", "#5a6e84", 300030, subtitle="Vāyu Rākṣasa"); r.rock_pal = "void"
     ARENA = (1700, 1000)
     sky_void(r, lambda x,y: (x-ARENA[0])**2+(y-ARENA[1])**2 < 520**2 or near_spawn(x,y,280) or abs(y-1000)<150, 18)
     # lightning arcs across the storm (jagged blue strokes)
@@ -836,7 +837,7 @@ def build_32():
 def build_33():
     """Asthinagara — The City of Bone. A buried ossuary-city whose dead testify
     to the erasure unfiltered; a tunnel rises to the Torn Land."""
-    r = Region(33, "Bone City", "#26221e", 330033, subtitle="Asthinagara")
+    r = Region(33, "Bone City", "#26221e", 330033, subtitle="Asthinagara"); r.rock_pal = "sand"
     cy = lambda x: 1000 + 110*math.sin(x/560.0)
     half = lambda x: 360 + 120*math.exp(-((x-1600)**2)/(2*620.0**2))
     in_cav = cave(r, cy, half, wall_max=3.2)
@@ -915,7 +916,7 @@ def void_floor(r, keep, shard_n=24, crystal_n=14):
 def build_35():
     """Chidrabhumi — The Torn Land. Reality fractured into floating shards over
     the void; you walk the actual severance scar."""
-    r = Region(35, "Torn Land", "#12080a", 350035, subtitle="Chidrabhūmi")
+    r = Region(35, "Torn Land", "#12080a", 350035, subtitle="Chidrabhūmi"); r.rock_pal = "void"
     def road_y(x): return 1000 + 140*math.sin(x/520.0)
     HALF = 190
     def on_road(x, y): return abs(y-road_y(x)) < HALF or near_spawn(x, y, 280)
@@ -965,15 +966,15 @@ def build_36():
 def build_37():
     """Viyoga Durga — The Fortress of Separation. Viyogasur's obsidian seat and
     the prison where the gods chained the 'Demon of Separation.' Boss: Vanasur."""
-    r = Region(37, "Severance Fortress", "#12080a", 370037, subtitle="Viyoga Durga")
+    r = Region(37, "Severance Fortress", "#12080a", 370037, subtitle="Viyoga Durga"); r.rock_pal = "void"
     ARENA = (2680, 1000)
     def road_y(x): return 1000 + 90*math.sin(x/560.0)
     HALF = 200
     def keep(x, y): return abs(y-road_y(x))<HALF or near_spawn(x,y,280) or (x-ARENA[0])**2+(y-ARENA[1])**2<420**2
     void_floor(r, keep, 22)
-    # obsidian ramparts (dark rock walls) + broken thread-bridges + judgment thrones
-    grid_fill(r, lambda x,y,s: r.rock(x,y,r.R.rng(1.6,3.2)),
-              lambda x,y: keep(x,y), step=140, chance=0.9)
+    # obsidian ramparts hug the causeway; the void beyond stays dark & open
+    grid_fill(r, lambda x,y,s: r.rock(x,y,r.R.rng(1.6,3.0)),
+              lambda x,y: keep(x,y) or abs(y-road_y(x))>HALF+360, step=150, chance=0.62)
     for x in range(420, 2300, 300): r.bridge_deck(x, road_y(x), 1.2)
     for px in range(500, 2300, 360):
         r.pillar(px, road_y(px)-HALF+40, r.R.rng(1.1,1.4)); r.pillar(px, road_y(px)+HALF-30, r.R.rng(1.1,1.4))
