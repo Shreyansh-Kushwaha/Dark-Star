@@ -1,5 +1,7 @@
 import { GAME_W, GAME_H } from '../constants.js';
 import { QUESTS, LORE_FRAGMENTS } from '../data/quests.js';
+import { ENEMY_TYPES } from '../data/enemies.js';
+import { ENEMY_LORE, CHARACTERS, NPC_CODEX } from '../data/codex.js';
 
 const REGION_LABELS = [
   'Gramavana', 'Mahāvana', 'Vrindavana',
@@ -68,8 +70,10 @@ export class PauseScene extends Phaser.Scene {
     kb.on('keydown-ESC',       () => this._onEsc());
     kb.on('keydown-BACKSPACE', () => this._onEsc());
     kb.on('keydown-HOME',      () => this._resume());
-    kb.on('keydown-UP',        () => this._move(-1));
-    kb.on('keydown-DOWN',      () => this._move(1));
+    kb.on('keydown-UP',        () => this._bookOpen ? this._bookPageStep(-1) : this._move(-1));
+    kb.on('keydown-DOWN',      () => this._bookOpen ? this._bookPageStep(1)  : this._move(1));
+    kb.on('keydown-LEFT',      () => { if (this._bookOpen) this._bookTabStep(-1); });
+    kb.on('keydown-RIGHT',     () => { if (this._bookOpen) this._bookTabStep(1); });
     kb.on('keydown-ENTER',     () => this._confirm());
     kb.on('keydown-SPACE',     () => this._confirm());
 
@@ -115,8 +119,26 @@ export class PauseScene extends Phaser.Scene {
     this._bookOpen = true;
     this._bookTab  = 'quests';
     this._bookPage = 0;
+    this._bookTotalPages = 1;
     this._bookObjs = [];
     this._renderBook();
+  }
+
+  // Tab order for ← / → navigation.
+  get _tabKeys() { return ['quests', 'lore', 'enemies', 'characters', 'npcs']; }
+
+  _bookTabStep(d) {
+    const keys = this._tabKeys;
+    const i = Math.max(0, keys.indexOf(this._bookTab));
+    this._bookTab  = keys[(i + d + keys.length) % keys.length];
+    this._bookPage = 0;
+    this._renderBook();
+  }
+
+  _bookPageStep(d) {
+    const tp = this._bookTotalPages || 1;
+    const np = Phaser.Math.Clamp(this._bookPage + d, 0, tp - 1);
+    if (np !== this._bookPage) { this._bookPage = np; this._renderBook(); }
   }
 
   _closeBook() {
@@ -198,10 +220,17 @@ export class PauseScene extends Phaser.Scene {
     hd.lineBetween(LMX + 16, T + 38, LMX + BW - 16, T + 38);
 
     // ── Tabs ─────────────────────────────────────────────────────────────
-    const tabs = [{ k: 'quests', label: '📜  Quests' }, { k: 'lore', label: '📖  Lore' }];
-    const tabW = 140, tabH = 26, tabY = T + 52;
+    const tabs = [
+      { k: 'quests',     label: '📜  Quests'   },
+      { k: 'lore',       label: '📖  Lore'     },
+      { k: 'enemies',    label: '🗡  Bestiary' },
+      { k: 'characters', label: '👤  Heroes'   },
+      { k: 'npcs',       label: '💬  NPCs'     },
+    ];
+    const tabW = 150, tabH = 26, tabY = T + 52, tabStep = 168;
+    const tabStartX = BX - tabStep * (tabs.length - 1) / 2;
     tabs.forEach((tab, i) => {
-      const tx = BX - 76 + i * 156;
+      const tx = tabStartX + i * tabStep;
       const isActive = tab.k === this._bookTab;
       const tg = this._add(this.add.graphics().setDepth(D + 4));
       tg.fillStyle(isActive ? C.tab : C.tabInact, isActive ? 1 : 0.55);
@@ -232,11 +261,20 @@ export class PauseScene extends Phaser.Scene {
     // ── Content ───────────────────────────────────────────────────────────
     const CT = T + 72;   // content top
     const CB = T + BH - 22; // content bottom
-    if (this._bookTab === 'quests') {
-      this._renderQuests(LMX, RMX, PW, CT, CB, D);
-    } else {
-      this._renderLore(LMX, RMX, PW, CT, CB, D);
+    this._bookTotalPages = 1;   // tabs that paginate override this
+    switch (this._bookTab) {
+      case 'lore':       this._renderLore(LMX, RMX, PW, CT, CB, D);       break;
+      case 'enemies':    this._renderEnemies(LMX, RMX, PW, CT, CB, D);    break;
+      case 'characters': this._renderCharacters(LMX, RMX, PW, CT, CB, D); break;
+      case 'npcs':       this._renderNpcs(LMX, RMX, PW, CT, CB, D);       break;
+      default:           this._renderQuests(LMX, RMX, PW, CT, CB, D);     break;
     }
+
+    // ── Keyboard hint ─────────────────────────────────────────────────────
+    this._add(this.add.text(BX, T + BH + 4,
+      '◄ ► Tabs     ▲ ▼ Pages     Esc — Close', {
+        fontSize: '9px', fontFamily: 'monospace', color: '#caa460',
+      }).setOrigin(0.5, 0).setDepth(D + 5));
   }
 
   // ── Quests tab ────────────────────────────────────────────────────────────
@@ -319,6 +357,7 @@ export class PauseScene extends Phaser.Scene {
     const PAGE_SIZE = 5;
     const total = LORE_FRAGMENTS.length;
     const totalPages = Math.ceil(total / PAGE_SIZE);
+    this._bookTotalPages = totalPages;
     const pageFrags = LORE_FRAGMENTS.slice(this._bookPage * PAGE_SIZE, (this._bookPage + 1) * PAGE_SIZE);
 
     const PAD = 16;
@@ -427,6 +466,226 @@ export class PauseScene extends Phaser.Scene {
         fontSize: '9px', fontFamily: 'serif', fontStyle: 'italic', color: '#888866',
       }).setOrigin(0, 0.5).setDepth(D + 5));
       return H;
+    }
+  }
+
+  // ── Bestiary tab ────────────────────────────────────────────────────────
+  // All enemies, with stats + lore once faced. Foes you have not met read "???".
+  _renderEnemies(LMX, RMX, PW, CT, CB, D) {
+    const faced = this._gs()?._encounteredEnemies || new Set();
+    const defs  = Object.values(ENEMY_TYPES);
+    const PAD = 16;
+    const entryW = PW - PAD * 2 - 6;
+
+    // Left page = first half, right page = second half (single spread).
+    const half = Math.ceil(defs.length / 2);
+    const cols = [
+      { x: LMX + PAD, list: defs.slice(0, half) },
+      { x: RMX + PAD, list: defs.slice(half)    },
+    ];
+
+    this._sectionHeader(LMX + PAD, CT, 'BESTIARY  ·  FOES  FACED', D);
+    this._sectionHeader(RMX + PAD, CT, 'BESTIARY  ·  CONTINUED',   D);
+
+    for (const col of cols) {
+      let y = CT + 20;
+      for (const def of col.list) {
+        const found = faced.has(def.key);
+        const h = this._enemyEntry(col.x, y, entryW, def, found, D);
+        y += h + 5;
+        if (y + 20 > CB) break;
+      }
+    }
+
+    this._ornament(RMX + PW / 2, CB - 16, D);
+    this._add(this.add.text(RMX + PW / 2, CB, `${faced.size} / ${defs.length} foes recorded`, {
+      fontSize: '9px', fontFamily: 'monospace', color: '#7a5a30',
+    }).setOrigin(0.5, 1).setDepth(D + 5));
+  }
+
+  _enemyEntry(x, y, w, def, found, D) {
+    if (!found) {
+      const H = 30;
+      const eg = this._add(this.add.graphics().setDepth(D + 4));
+      eg.fillStyle(C.missedBg, 0.4); eg.fillRoundedRect(x, y, w, H, 3);
+      eg.fillStyle(C.lockedGrey, 0.5); eg.fillRect(x, y, 3, H);
+      this._add(this.add.text(x + 10, y + H / 2, '???  —  not yet faced', {
+        fontSize: '9px', fontFamily: 'serif', fontStyle: 'italic', color: '#888866',
+      }).setOrigin(0, 0.5).setDepth(D + 5));
+      return H;
+    }
+    const H = 86;
+    const eg = this._add(this.add.graphics().setDepth(D + 4));
+    eg.fillStyle(C.loreBg, 0.45); eg.fillRoundedRect(x, y, w, H, 3);
+    eg.fillStyle(0x8b2a1a, 0.7); eg.fillRect(x, y, 3, H);
+
+    this._add(this.add.text(x + 8, y + 6, def.label || def.key, {
+      fontSize: '10.5px', fontFamily: 'serif', fontStyle: 'bold', color: '#3d1f05',
+    }).setDepth(D + 5));
+    this._add(this.add.text(x + 8, y + 20,
+      `HP ${def.maxHp}    DMG ${def.attackDmg}    SPD ${def.speed}    XP ${def.xpValue}`, {
+        fontSize: '7.5px', fontFamily: 'monospace', color: '#6a4520',
+      }).setDepth(D + 5));
+    this._add(this.add.text(x + 8, y + 32, ENEMY_LORE[def.key] || '', {
+      fontSize: '8px', fontFamily: 'serif', color: '#2a1a08',
+      wordWrap: { width: w - 16 },
+    }).setDepth(D + 5));
+    return H;
+  }
+
+  // ── Heroes tab ──────────────────────────────────────────────────────────
+  // The two playable characters and their lore, one per page.
+  _renderCharacters(LMX, RMX, PW, CT, CB, D) {
+    const PAD = 16;
+    this._characterPage(LMX + PAD, PW - PAD * 2 - 6, CT, CB, CHARACTERS[0], D);
+    this._characterPage(RMX + PAD, PW - PAD * 2 - 6, CT, CB, CHARACTERS[1], D);
+  }
+
+  _characterPage(x, w, CT, CB, char, D) {
+    if (!char) return;
+    this._sectionHeader(x, CT, 'PLAYABLE  HERO', D);
+
+    // Colour swatch + name
+    const sw = this._add(this.add.graphics().setDepth(D + 4));
+    sw.fillStyle(Phaser.Display.Color.HexStringToColor(char.color || '#c8a040').color, 1);
+    sw.fillCircle(x + 7, CT + 34, 6);
+    sw.lineStyle(1, C.gold, 0.6); sw.strokeCircle(x + 7, CT + 34, 6);
+
+    this._add(this.add.text(x + 20, CT + 26, char.name, {
+      fontSize: '20px', fontFamily: 'serif', fontStyle: 'bold', color: '#3d1f05',
+    }).setDepth(D + 5));
+    this._add(this.add.text(x + 20, CT + 50, char.title, {
+      fontSize: '11px', fontFamily: 'serif', fontStyle: 'italic', color: '#7a5030',
+    }).setDepth(D + 5));
+
+    const dv = this._add(this.add.graphics().setDepth(D + 4));
+    dv.lineStyle(1, C.rule, 0.4); dv.lineBetween(x, CT + 70, x + w, CT + 70);
+
+    this._add(this.add.text(x, CT + 80, char.lore, {
+      fontSize: '10px', fontFamily: 'serif', color: '#2a1a08', lineSpacing: 4,
+      wordWrap: { width: w },
+    }).setDepth(D + 5));
+  }
+
+  // ── NPC tab ───────────────────────────────────────────────────────────────
+  // Everyone you have spoken with, plus the known roster yet to be met.
+  _renderNpcs(LMX, RMX, PW, CT, CB, D) {
+    const met = this._gs()?._metNpcs || new Map();
+
+    // Roster: curated story NPCs (region order) then any extra wanderers met.
+    const roster = Object.keys(NPC_CODEX).map(id => ({
+      id, name: NPC_CODEX[id].name, region: NPC_CODEX[id].region,
+      lore: NPC_CODEX[id].lore, found: met.has(id),
+    }));
+    roster.sort((a, b) => a.region - b.region);
+    for (const [id, rec] of met) {
+      if (NPC_CODEX[id]) continue;
+      roster.push({ id, name: rec.name, region: null, lore: rec.lore, found: true });
+    }
+
+    const PAGE_SIZE = 5;
+    const totalPages = Math.max(1, Math.ceil(roster.length / PAGE_SIZE));
+    this._bookTotalPages = totalPages;
+    const pageRoster = roster.slice(this._bookPage * PAGE_SIZE, (this._bookPage + 1) * PAGE_SIZE);
+
+    const PAD = 16;
+    const entryW = PW - PAD * 2 - 6;
+
+    // Left — roster entries
+    let y = CT;
+    this._sectionHeader(LMX + PAD, y, 'SOULS  ENCOUNTERED', D); y += 20;
+    for (const rec of pageRoster) {
+      const h = this._npcEntry(LMX + PAD, y, entryW, rec, D);
+      y += h + 5;
+      if (y + 30 > CB) break;
+    }
+    this._pageNav(LMX, PAD, PW, CB - 2, totalPages, D);
+
+    // Right — met progress by region
+    y = CT;
+    this._sectionHeader(RMX + PAD, y, 'MET  BY  REGION', D); y += 22;
+    const byRegion = {};
+    for (const id of Object.keys(NPC_CODEX)) {
+      const r = NPC_CODEX[id].region;
+      (byRegion[r] = byRegion[r] || []).push(id);
+    }
+    const barW = PW - PAD * 2 - 50;
+    for (const rIdx of Object.keys(byRegion).map(Number).sort((a, b) => a - b)) {
+      const ids = byRegion[rIdx];
+      const got = ids.filter(id => met.has(id)).length;
+      const pct = got / ids.length;
+      this._add(this.add.text(RMX + PAD, y, REGION_LABELS[rIdx] || `Region ${rIdx}`, {
+        fontSize: '10px', fontFamily: 'serif', fontStyle: 'bold', color: '#3d2008',
+      }).setDepth(D + 5));
+      y += 14;
+      const bg2 = this._add(this.add.graphics().setDepth(D + 4));
+      bg2.fillStyle(C.barTrack, 0.7); bg2.fillRoundedRect(RMX + PAD, y, barW, 8, 4);
+      if (pct > 0) {
+        bg2.fillStyle(C.barFill, 0.9); bg2.fillRoundedRect(RMX + PAD, y, barW * pct, 8, 4);
+        if (pct === 1) { bg2.lineStyle(1, C.gold, 0.6); bg2.strokeRoundedRect(RMX + PAD, y, barW, 8, 4); }
+      }
+      this._add(this.add.text(RMX + PAD + barW + 7, y + 4, `${got}/${ids.length}`, {
+        fontSize: '9px', fontFamily: 'monospace', color: '#5a3a10',
+      }).setOrigin(0, 0.5).setDepth(D + 5));
+      y += 20;
+    }
+    const totalMet = roster.filter(r => r.found).length;
+    this._ornament(RMX + PW / 2, CB - 16, D);
+    this._add(this.add.text(RMX + PW / 2, CB, `${totalMet} souls remembered`, {
+      fontSize: '9px', fontFamily: 'monospace', color: '#7a5a30',
+    }).setOrigin(0.5, 1).setDepth(D + 5));
+  }
+
+  _npcEntry(x, y, w, rec, D) {
+    if (!rec.found) {
+      const H = 30;
+      const eg = this._add(this.add.graphics().setDepth(D + 4));
+      eg.fillStyle(C.missedBg, 0.4); eg.fillRoundedRect(x, y, w, H, 3);
+      eg.fillStyle(C.lockedGrey, 0.5); eg.fillRect(x, y, 3, H);
+      this._add(this.add.text(x + 10, y + H / 2, '???  —  not yet encountered', {
+        fontSize: '9px', fontFamily: 'serif', fontStyle: 'italic', color: '#888866',
+      }).setOrigin(0, 0.5).setDepth(D + 5));
+      return H;
+    }
+    const H = 74;
+    const eg = this._add(this.add.graphics().setDepth(D + 4));
+    eg.fillStyle(C.loreBg, 0.45); eg.fillRoundedRect(x, y, w, H, 3);
+    eg.fillStyle(0x2a6a8b, 0.7); eg.fillRect(x, y, 3, H);
+    this._add(this.add.text(x + 8, y + 6, rec.name, {
+      fontSize: '10.5px', fontFamily: 'serif', fontStyle: 'bold', color: '#3d1f05',
+    }).setDepth(D + 5));
+    this._add(this.add.text(x + 8, y + 20, rec.lore, {
+      fontSize: '8px', fontFamily: 'serif', color: '#2a1a08',
+      wordWrap: { width: w - 16 },
+    }).setDepth(D + 5));
+    if (rec.region != null) {
+      this._add(this.add.text(x + 8, y + H - 10, `— ${REGION_LABELS[rec.region] || `Region ${rec.region}`}`, {
+        fontSize: '7.5px', fontFamily: 'serif', fontStyle: 'italic', color: '#7a5030',
+      }).setDepth(D + 5));
+    }
+    return H;
+  }
+
+  // Clickable ◄ Prev / Next ► row (keyboard ▲ ▼ also page via _bookPageStep).
+  _pageNav(LMX, PAD, PW, navY, totalPages, D) {
+    if (this._bookPage > 0) {
+      const prev = this._add(this.add.text(LMX + PAD, navY, '◄ Prev', {
+        fontSize: '10px', fontFamily: 'serif', color: '#5a3a10',
+      }).setOrigin(0, 1).setDepth(D + 5).setInteractive({ useHandCursor: true }));
+      prev.on('pointerover', () => prev.setColor('#c8900a'));
+      prev.on('pointerout',  () => prev.setColor('#5a3a10'));
+      prev.on('pointerdown', () => { this._bookPage--; this._renderBook(); });
+    }
+    this._add(this.add.text(LMX + PW / 2, navY, `${this._bookPage + 1}  /  ${totalPages}`, {
+      fontSize: '9px', fontFamily: 'monospace', color: '#7a5a30',
+    }).setOrigin(0.5, 1).setDepth(D + 5));
+    if (this._bookPage < totalPages - 1) {
+      const next = this._add(this.add.text(LMX + PW - PAD, navY, 'Next ►', {
+        fontSize: '10px', fontFamily: 'serif', color: '#5a3a10',
+      }).setOrigin(1, 1).setDepth(D + 5).setInteractive({ useHandCursor: true }));
+      next.on('pointerover', () => next.setColor('#c8900a'));
+      next.on('pointerout',  () => next.setColor('#5a3a10'));
+      next.on('pointerdown', () => { this._bookPage++; this._renderBook(); });
     }
   }
 

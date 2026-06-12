@@ -16,6 +16,7 @@ export class Enemy extends Phaser.GameObjects.Container {
     const cfg = ENEMY_TYPES[typeKey];
     this.typeKey   = typeKey;
     this.cfg       = cfg;
+    scene._markEnemyEncountered?.(typeKey);   // unlock the Codex bestiary entry
     this.alive     = true;
     this.state     = STATE.IDLE;
     this.speed     = cfg.speed;
