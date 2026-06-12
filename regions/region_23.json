@@ -534,6 +534,1068 @@
    ]
   },
   {
+   "type": "stroke",
+   "stroke": "#67692f",
+   "strokeWidth": 69.67997586661721,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1618.7983548655977,
+    1760.7081290354377,
+    1463.3480667904919,
+    1746.1601219036486,
+    1510.7107993935356,
+    1741.1981124912793
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#8a6e3c",
+   "strokeWidth": 87.4979956868924,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    3011.521649938078,
+    223.25446393079778,
+    3020.6192196836473,
+    200.68380653594198,
+    3040.102543690759,
+    137.2074066290386
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7e6636",
+   "strokeWidth": 85.47771577030865,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2854.638845298988,
+    1585.6168699755885,
+    2785.5504373602002,
+    1601.1771839010582,
+    2913.4789352712382,
+    1484.2548883457264
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#8a6e3c",
+   "strokeWidth": 87.93420823218365,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2666.546763395223,
+    480.2574626077993,
+    2666.777150896092,
+    498.8728086020682,
+    2671.8578181144157,
+    502.88084988330587,
+    2561.3169214044424,
+    445.0250048020092,
+    2651.326304099208,
+    526.8026162232693
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#6a5e34",
+   "strokeWidth": 55.30134218249721,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    987.2353813415832,
+    1399.973015880187,
+    992.6147414162862,
+    1401.8189866559585,
+    1102.2355100792477,
+    1463.184931121948,
+    1111.0295453131312,
+    1383.8850854208026
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#566031",
+   "strokeWidth": 76.13205551532725,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2430.627976512138,
+    218.78941263056558,
+    2501.1972805341884,
+    291.9191472168031,
+    2468.6046226065387,
+    338.1527209326609,
+    2434.637089776705,
+    335.2697283391247,
+    2486.5420679345825,
+    282.23140105669756
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#5e6330",
+   "strokeWidth": 66.97083871538038,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    339.50856937134654,
+    429.4929985569222,
+    259.9149684298368,
+    382.09649632289114,
+    343.4862262369917,
+    399.833619069818,
+    328.5469475856058,
+    417.88931753548934
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#5e6330",
+   "strokeWidth": 100.5507483852036,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1145.0812511514127,
+    756.9335993790263,
+    944.9920564317201,
+    693.5623369579832,
+    939.4463125688205,
+    681.1548086461395
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#67692f",
+   "strokeWidth": 56.45420769364653,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2141.3081528430866,
+    1323.9302970105996,
+    2153.615417521053,
+    1250.9293735152517,
+    2053.0161082577833,
+    1312.8198592936749,
+    2067.9314793485855,
+    1252.9010544303187
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#6a5e34",
+   "strokeWidth": 100.71832114685773,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2649.7420766319415,
+    1690.6316112718716,
+    2518.0115439796086,
+    1721.157870519292,
+    2632.0116509904537,
+    1791.1846016107265,
+    2566.770010666826,
+    1765.217661507802,
+    2512.691079368044,
+    1691.5659019113064
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#6f5530",
+   "strokeWidth": 71.22966077372297,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1549.1247901200034,
+    1421.8272689703265,
+    1563.05675934478,
+    1421.912483686111,
+    1637.9345951756302,
+    1408.756872401912,
+    1536.181259091712,
+    1486.5345237550464
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#6a5e34",
+   "strokeWidth": 61.76694423005069,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    396.83866685911136,
+    1583.2503450850832,
+    359.4566944675774,
+    1539.3864739679825,
+    370.9355598506893,
+    1503.3922686801761,
+    305.17404385920344,
+    1479.4936995141584,
+    385.3987797193517,
+    1489.570280292491
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#856a38",
+   "strokeWidth": 119.41605627379602,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1409.7336132778505,
+    279.91622331452237,
+    1304.651134135187,
+    255.4127932965063,
+    1427.0317986674731,
+    291.19525487149025
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#5f5a30",
+   "strokeWidth": 108.67885678432509,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1669.9570980296617,
+    1754.322715121477,
+    1659.3220369094056,
+    1732.974460755425,
+    1594.791822257253,
+    1761.4236547323571,
+    1650.4281046057342,
+    1761.611211094361,
+    1707.0673416924685,
+    1745.3477453117696
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7e6636",
+   "strokeWidth": 105.06067349407284,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1251.069747124009,
+    622.2114522333039,
+    1175.4898636122693,
+    511.84167680106503,
+    1114.0233680307645,
+    502.39245643815195,
+    1127.5968547678922,
+    547.3520242809599
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#8a6e3c",
+   "strokeWidth": 65.30395016801539,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2944.0917719645304,
+    1191.3889820162283,
+    3030.443745810894,
+    1220.0137558695005,
+    2976.9548320684535,
+    1196.9737609618246
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#856a38",
+   "strokeWidth": 95.70633130736697,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1212.237398703723,
+    733.962258665842,
+    1250.8367499029453,
+    691.6594045103793,
+    1087.472984839666,
+    651.3859300544107
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#8a6e3c",
+   "strokeWidth": 98.14748922934851,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2302.443425097537,
+    1228.7324503887087,
+    2261.2521377437115,
+    1186.6829212496184,
+    2282.8145590502627,
+    1171.6207242528271,
+    2276.8300871255838,
+    1196.9821219946894,
+    2328.005118236903,
+    1200.2877603267923
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#5e6330",
+   "strokeWidth": 118.14847856053481,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2954.9534362872687,
+    749.182016640568,
+    3106.5540239297993,
+    681.3103352547193,
+    3071.582408506253,
+    745.1310745864428
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7e6636",
+   "strokeWidth": 71.30726731048722,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1342.392414642492,
+    1523.9805430253598,
+    1186.921751241453,
+    1403.301799221921,
+    1259.1604232401169,
+    1448.894138231478
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#856a38",
+   "strokeWidth": 74.37723670588811,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2852.8668354115675,
+    349.891021444528,
+    2767.7352569693335,
+    296.7376884810098,
+    2810.555489132634,
+    299.59533940124305
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#8a6e3c",
+   "strokeWidth": 114.71537831830182,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1201.0168594174766,
+    357.46569718500496,
+    1219.1820727180368,
+    310.21591754915227,
+    1177.2973836970225,
+    364.2263585617597,
+    1258.5495546146442,
+    388.3769991089706
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7e6636",
+   "strokeWidth": 74.32024391507248,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1872.7575307101797,
+    1207.0011214207884,
+    1925.072226272106,
+    1194.3975538139596,
+    1752.9044259021339,
+    1149.6526337770683,
+    1764.98924109779,
+    1151.5576024890638
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#5f5a30",
+   "strokeWidth": 124.8045666333434,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2613.782857869242,
+    189.93258157005448,
+    2829.752120548113,
+    185.04852858721296,
+    2638.6290451844748,
+    280.5595694334686,
+    2739.3124827828415,
+    208.11577335761635
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#6f5530",
+   "strokeWidth": 79.93618715235147,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2448.38368716801,
+    812.9911508777025,
+    2496.6921059335587,
+    747.1649975483643,
+    2354.181556041352,
+    816.919285636688,
+    2437.6614441376764,
+    742.7718217134832,
+    2384.410942704918,
+    809.1209252517168
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#6f5530",
+   "strokeWidth": 110.68631925170865,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    902.2945382426075,
+    582.9230156722349,
+    979.0337138928953,
+    515.8538740029526,
+    953.1601150171499,
+    601.3873117492047,
+    935.6613626848862,
+    614.5014863632681
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#6f5530",
+   "strokeWidth": 60.63388184618089,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    342.7804659762108,
+    1739.7974154526278,
+    359.2525754377518,
+    1690.1930453567488,
+    347.4381629923074,
+    1703.3776522439007,
+    402.27847362055496,
+    1649.832270002575,
+    324.2136939126577,
+    1695.7949865027044
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#8a6e3c",
+   "strokeWidth": 125.48066943273604,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    506.07933712641824,
+    1090.471627882053,
+    385.5060565055129,
+    1093.6724246273059,
+    524.9372776897078,
+    1211.9538507351851,
+    402.32040598075105,
+    1177.1292132365033
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#6f5530",
+   "strokeWidth": 75.17269952283388,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    651.8441334558802,
+    1648.2703630254696,
+    528.1344687560096,
+    1652.3441899665127,
+    643.1627639001318,
+    1670.7587829134854,
+    651.5517070085242,
+    1676.0645614322457
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7e6636",
+   "strokeWidth": 83.07112703180164,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1796.946446430951,
+    518.9687060711764,
+    1728.217494133766,
+    545.732874592605,
+    1615.3599394846356,
+    517.7442013599973
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7e6636",
+   "strokeWidth": 105.64602020498344,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2930.16960222724,
+    730.6638604696312,
+    2776.7962744848674,
+    675.4983988681981,
+    2966.886051680718,
+    676.4284766013556,
+    2963.550132549426,
+    711.2755553675654
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#6a5e34",
+   "strokeWidth": 62.42819970575243,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2434.019367376405,
+    1806.552364663756,
+    2585.694692328426,
+    1864.4276692724995,
+    2484.511273816257,
+    1806.8668836403072,
+    2482.890084107236,
+    1883.4282528750857
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#67692f",
+   "strokeWidth": 83.47135687712628,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2552.728708207645,
+    1599.9356339473602,
+    2524.2163653218563,
+    1668.5903551326003,
+    2434.488639993393,
+    1592.128991234856,
+    2477.011025649311,
+    1681.8774960439532
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#5e6330",
+   "strokeWidth": 77.3210126381232,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1986.1950904150544,
+    576.7170644415208,
+    1978.0481988303652,
+    601.5073873686915,
+    2080.147410726519,
+    580.8517083476512,
+    2061.904438845285,
+    636.7102185376469,
+    1878.3003939663258,
+    598.8456110318406
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#67692f",
+   "strokeWidth": 83.34545716906688,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2618.1920541893855,
+    692.4486227252163,
+    2558.825081675274,
+    712.5840206291415,
+    2581.521675432647,
+    689.7404948335914
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#6f5530",
+   "strokeWidth": 76.34898316102162,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    540.946631723965,
+    895.3558720423641,
+    604.1855440142257,
+    889.7751409218183,
+    593.3818257113562,
+    923.4923055773529,
+    511.9136085009932,
+    877.3794123916517
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#856a38",
+   "strokeWidth": 104.90196043277764,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1269.6655590818461,
+    250.7604373146976,
+    1270.8026913951626,
+    195.76165694807264,
+    1284.0214129723315,
+    223.39616755851006
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#5f5a30",
+   "strokeWidth": 99.41016404131253,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1515.5531564774587,
+    226.67443640748198,
+    1400.953977636033,
+    303.4371338369822,
+    1402.3297584119668,
+    203.01764096666295,
+    1462.9823986257475,
+    265.71852516187465,
+    1364.0755551143266,
+    295.8267168515308
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#5f5a30",
+   "strokeWidth": 109.93743911241788,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    195.12966393374722,
+    1160.9310232797218,
+    251.68354621416805,
+    1146.627310081927,
+    327.1028748853927,
+    1168.2570044807765
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#67692f",
+   "strokeWidth": 86.87393942713342,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1343.753190223811,
+    1320.567210347941,
+    1402.3968847603858,
+    1310.8076927761776,
+    1451.19166607796,
+    1420.8340575208042,
+    1361.9170241484117,
+    1338.895671150278,
+    1291.9004412291076,
+    1301.746508548571
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7e6636",
+   "strokeWidth": 102.43805865770376,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2420.7812493707347,
+    781.343682526832,
+    2508.8613233211263,
+    817.616426824173,
+    2433.30923335049,
+    805.6977435712291,
+    2409.9507904704587,
+    810.817289972221
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7e6636",
+   "strokeWidth": 99.42566045502731,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1801.1355048170976,
+    1219.100673259668,
+    1803.528088160274,
+    1215.0601110985751,
+    1755.0070522606034,
+    1189.6033980993975
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#8a6e3c",
+   "strokeWidth": 86.1483172602696,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2914.490400879799,
+    1873.8520347208944,
+    2778.14576651157,
+    1840.9349904481535,
+    2719.3501785787153,
+    1844.8230242117238,
+    2923.5462497131266,
+    1825.6294874743892,
+    2867.180270620487,
+    1779.2755609711403
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#856a38",
+   "strokeWidth": 95.72919582384627,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    485.41791472126533,
+    762.6768608151006,
+    251.36649472005462,
+    775.8019615150197,
+    372.88766868838616,
+    782.3369591613506,
+    370.3096084887285,
+    718.8203155304514
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#8a6e3c",
+   "strokeWidth": 90.54449672966177,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    404.44771547432924,
+    262.0943220654354,
+    361.56310176525835,
+    266.21764414149135,
+    403.6525157454451,
+    257.50983005582236,
+    394.13769375645046,
+    236.32939592351332
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#856a38",
+   "strokeWidth": 110.73045273012471,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1217.7531183083624,
+    1620.8974695262846,
+    1164.209447693816,
+    1566.014856328143,
+    1198.9626500906418,
+    1630.0929101931165
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#5e6330",
+   "strokeWidth": 78.13915470406533,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    209.5931170266186,
+    1579.0115800677022,
+    392.3318634608694,
+    1550.3647568032495,
+    338.6021909483379,
+    1575.173921728436,
+    244.20853390491683,
+    1537.127627879225
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7e6636",
+   "strokeWidth": 93.23081742997155,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    934.4124640891612,
+    248.13975352985074,
+    823.7604277662199,
+    157.90151512503877,
+    958.1698734210797,
+    273.40601954373585,
+    859.9650863899817,
+    159.1110725412486
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7e6636",
+   "strokeWidth": 67.30837018793841,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2428.669080420449,
+    424.19499465894575,
+    2507.3192766131588,
+    390.2474973126589,
+    2629.449276464873,
+    333.5348298051821,
+    2488.432283974205,
+    326.2496755687579
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#6a5e34",
+   "strokeWidth": 66.71382546329521,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1542.0562741714637,
+    1459.0385236443028,
+    1704.5509841321125,
+    1491.802684224565,
+    1587.7447144031178,
+    1518.1276500462252
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#566031",
+   "strokeWidth": 94.72921005343548,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2169.787312678448,
+    590.4783464751887,
+    2258.299233364915,
+    612.595069209265,
+    2219.4469041082225,
+    631.3847963922393,
+    2180.367862208826,
+    601.4120910114675
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7e6636",
+   "strokeWidth": 64.54812233078172,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    633.0090618363569,
+    594.6288582717647,
+    678.328609237343,
+    566.513950817121,
+    682.8178390327182,
+    560.648846924695
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#67692f",
+   "strokeWidth": 65.90385187248314,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    544.1532894519435,
+    1795.0254189593522,
+    506.9060019736629,
+    1763.447066146566,
+    449.5397167798267,
+    1761.17053526368,
+    426.48029304886427,
+    1748.5470680010612,
+    291.45238957354763,
+    1673.81870846855
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#6a5e34",
+   "strokeWidth": 58.656824260308,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    437.7400147137265,
+    1329.7441002343046,
+    418.71508056582985,
+    1266.4558250824143,
+    351.6204609381507,
+    1306.993698585584
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#6f5530",
+   "strokeWidth": 79.99444563744065,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1431.8327525373481,
+    156.55113614810284,
+    1272.5806551765863,
+    243.31902958051373,
+    1376.589816848592,
+    231.76442165500987
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#6a5e34",
+   "strokeWidth": 67.8155546719668,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1485.685318404772,
+    1180.719561206223,
+    1525.6661413223426,
+    1086.7103819174972,
+    1510.7239059150259,
+    1154.0191500038582,
+    1632.6851281262625,
+    1179.8827171739308
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#8a6e3c",
+   "strokeWidth": 68.72931096670976,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1531.6141654705834,
+    398.79438128442814,
+    1569.9395495101896,
+    419.1984992910563,
+    1655.8283974233723,
+    368.33889381934813,
+    1546.5782061489856,
+    399.33186649410015
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#8a6e3c",
+   "strokeWidth": 85.8348721038068,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    810.7773517261778,
+    750.9023725437063,
+    661.6760639744331,
+    836.5667736557081,
+    709.1699340592922,
+    871.8419928134578
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#5f5a30",
+   "strokeWidth": 71.99154021297731,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1482.5286888705423,
+    482.4752516259545,
+    1447.9359633170295,
+    595.0272944071306,
+    1392.817457254559,
+    579.2822633483358
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#566031",
+   "strokeWidth": 66.08125578440237,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    618.3313067008086,
+    547.4937052317616,
+    766.0181967635965,
+    544.722849784192,
+    666.2531939008973,
+    592.7510273224585,
+    800.3726026049478,
+    599.2597748426429
+   ]
+  },
+  {
    "type": "sprite",
    "spriteId": "s_r23_0001",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Buildings/Yellow Buildings",
@@ -713,46 +1775,46 @@
    "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 326.72,
-   "y": 708.79,
-   "scaleX": 1.049,
-   "scaleY": 1.049,
+   "x": 318.15,
+   "y": 698.93,
+   "scaleX": 1.191,
+   "scaleY": 0.625,
    "offsetX": 30,
    "offsetY": 195
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0012",
-   "dir": "assets_custom/props",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
-    "pillar.png"
+    "Log2.png"
    ],
-   "name": "pillar",
+   "name": "Log2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 311.92,
-   "y": 1291.24,
-   "scaleX": 1.14,
-   "scaleY": 1.14,
-   "offsetX": 30,
-   "offsetY": 195
+   "x": 363.78,
+   "y": 752.42,
+   "scaleX": 1.921,
+   "scaleY": 1.921,
+   "offsetX": 16.5,
+   "offsetY": 31
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0013",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "pillar.png"
+    "Rock2.png"
    ],
-   "name": "pillar",
+   "name": "Rock",
    "animated": false,
    "spriteLayer": "below",
-   "x": 558.02,
-   "y": 701.38,
-   "scaleX": 1.067,
-   "scaleY": 1.067,
-   "offsetX": 30,
-   "offsetY": 195
+   "x": 264.37,
+   "y": 726.9,
+   "scaleX": 1.105,
+   "scaleY": 1.105,
+   "offsetX": 32,
+   "offsetY": 63
   },
   {
    "type": "sprite",
@@ -764,10 +1826,10 @@
    "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 565.68,
-   "y": 1273.04,
-   "scaleX": 1.075,
-   "scaleY": 1.075,
+   "x": 313.47,
+   "y": 1284.69,
+   "scaleX": 1.012,
+   "scaleY": 0.959,
    "offsetX": 30,
    "offsetY": 195
   },
@@ -781,50 +1843,16 @@
    "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 791.8,
-   "y": 702.83,
-   "scaleX": 1.054,
-   "scaleY": 0.466,
+   "x": 565.68,
+   "y": 715.83,
+   "scaleX": 1.117,
+   "scaleY": 1.117,
    "offsetX": 30,
    "offsetY": 195
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0016",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
-   "frames": [
-    "Log3.png"
-   ],
-   "name": "Log3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 855.43,
-   "y": 751.53,
-   "scaleX": 1.844,
-   "scaleY": 1.844,
-   "offsetX": 22.5,
-   "offsetY": 13
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r23_0017",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 771.72,
-   "y": 736.3,
-   "scaleX": 1.06,
-   "scaleY": 1.06,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r23_0018",
    "dir": "assets_custom/props",
    "frames": [
     "pillar.png"
@@ -832,12 +1860,46 @@
    "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 790.7,
-   "y": 1289.08,
-   "scaleX": 1.174,
-   "scaleY": 1.174,
+   "x": 546.51,
+   "y": 1284.32,
+   "scaleX": 1.176,
+   "scaleY": 0.587,
    "offsetX": 30,
    "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0017",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Log3.png"
+   ],
+   "name": "Log3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 631.37,
+   "y": 1321.48,
+   "scaleX": 1.876,
+   "scaleY": 1.876,
+   "offsetX": 22.5,
+   "offsetY": 13
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0018",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 522.0,
+   "y": 1323.11,
+   "scaleX": 0.853,
+   "scaleY": 0.853,
+   "offsetX": 32,
+   "offsetY": 63
   },
   {
    "type": "sprite",
@@ -849,10 +1911,10 @@
    "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1034.07,
-   "y": 693.45,
-   "scaleX": 1.099,
-   "scaleY": 1.099,
+   "x": 788.22,
+   "y": 714.51,
+   "scaleX": 1.187,
+   "scaleY": 1.187,
    "offsetX": 30,
    "offsetY": 195
   },
@@ -866,10 +1928,10 @@
    "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1021.1,
-   "y": 1282.75,
-   "scaleX": 1.163,
-   "scaleY": 1.163,
+   "x": 785.78,
+   "y": 1276.86,
+   "scaleX": 1.217,
+   "scaleY": 1.217,
    "offsetX": 30,
    "offsetY": 195
   },
@@ -883,46 +1945,46 @@
    "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1263.35,
-   "y": 702.27,
-   "scaleX": 1.279,
-   "scaleY": 1.279,
+   "x": 1022.9,
+   "y": 712.51,
+   "scaleX": 1.12,
+   "scaleY": 0.611,
    "offsetX": 30,
    "offsetY": 195
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0022",
-   "dir": "assets_custom/props",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
-    "pillar.png"
+    "Log2.png"
    ],
-   "name": "pillar",
+   "name": "Log2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1259.23,
-   "y": 1288.12,
-   "scaleX": 1.287,
-   "scaleY": 1.287,
-   "offsetX": 30,
-   "offsetY": 195
+   "x": 1082.08,
+   "y": 725.83,
+   "scaleX": 1.648,
+   "scaleY": 1.648,
+   "offsetX": 16.5,
+   "offsetY": 31
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0023",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "pillar.png"
+    "Rock2.png"
    ],
-   "name": "pillar",
+   "name": "Rock",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1501.25,
-   "y": 1281.53,
-   "scaleX": 1.181,
-   "scaleY": 1.181,
-   "offsetX": 30,
-   "offsetY": 195
+   "x": 973.36,
+   "y": 719.13,
+   "scaleX": 0.904,
+   "scaleY": 0.904,
+   "offsetX": 32,
+   "offsetY": 63
   },
   {
    "type": "sprite",
@@ -934,10 +1996,10 @@
    "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1738.39,
-   "y": 700.76,
-   "scaleX": 1.279,
-   "scaleY": 1.279,
+   "x": 1035.41,
+   "y": 1283.34,
+   "scaleX": 1.297,
+   "scaleY": 1.297,
    "offsetX": 30,
    "offsetY": 195
   },
@@ -951,10 +2013,10 @@
    "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1733.16,
-   "y": 1278.71,
-   "scaleX": 1.291,
-   "scaleY": 1.291,
+   "x": 1261.56,
+   "y": 712.45,
+   "scaleX": 1.264,
+   "scaleY": 1.264,
    "offsetX": 30,
    "offsetY": 195
   },
@@ -968,10 +2030,10 @@
    "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1980.03,
-   "y": 701.77,
-   "scaleX": 1.287,
-   "scaleY": 1.287,
+   "x": 1259.37,
+   "y": 1286.21,
+   "scaleX": 1.235,
+   "scaleY": 1.235,
    "offsetX": 30,
    "offsetY": 195
   },
@@ -985,46 +2047,46 @@
    "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1977.52,
-   "y": 1288.24,
-   "scaleX": 1.009,
-   "scaleY": 0.55,
+   "x": 1502.44,
+   "y": 1289.34,
+   "scaleX": 1.261,
+   "scaleY": 1.261,
    "offsetX": 30,
    "offsetY": 195
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0028",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "assets_custom/props",
    "frames": [
-    "Log3.png"
+    "pillar.png"
    ],
-   "name": "Log3",
+   "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2025.33,
-   "y": 1332.89,
-   "scaleX": 1.788,
-   "scaleY": 1.788,
-   "offsetX": 22.5,
-   "offsetY": 13
+   "x": 1731.86,
+   "y": 702.98,
+   "scaleX": 1.245,
+   "scaleY": 1.245,
+   "offsetX": 30,
+   "offsetY": 195
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0029",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "dir": "assets_custom/props",
    "frames": [
-    "Rock3.png"
+    "pillar.png"
    ],
-   "name": "Rock",
+   "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1916.2,
-   "y": 1307.8,
-   "scaleX": 0.852,
-   "scaleY": 0.852,
-   "offsetX": 32,
-   "offsetY": 63
+   "x": 1736.17,
+   "y": 1284.12,
+   "scaleX": 1.21,
+   "scaleY": 1.21,
+   "offsetX": 30,
+   "offsetY": 195
   },
   {
    "type": "sprite",
@@ -1036,10 +2098,10 @@
    "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2213.39,
-   "y": 707.54,
-   "scaleX": 1.007,
-   "scaleY": 0.843,
+   "x": 1973.19,
+   "y": 715.21,
+   "scaleX": 1.198,
+   "scaleY": 1.198,
    "offsetX": 30,
    "offsetY": 195
   },
@@ -1053,10 +2115,10 @@
    "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2201.4,
-   "y": 1288.99,
-   "scaleX": 1.175,
-   "scaleY": 0.541,
+   "x": 1963.8,
+   "y": 1284.04,
+   "scaleX": 1.143,
+   "scaleY": 0.548,
    "offsetX": 30,
    "offsetY": 195
   },
@@ -1065,32 +2127,32 @@
    "spriteId": "s_r23_0032",
    "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
-    "Log3.png"
+    "Log2.png"
    ],
-   "name": "Log3",
+   "name": "Log2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2269.38,
-   "y": 1327.59,
-   "scaleX": 1.757,
-   "scaleY": 1.757,
-   "offsetX": 22.5,
-   "offsetY": 13
+   "x": 2041.1,
+   "y": 1339.86,
+   "scaleX": 1.652,
+   "scaleY": 1.652,
+   "offsetX": 16.5,
+   "offsetY": 31
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0033",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "Rock3.png"
+    "Rock2.png"
    ],
    "name": "Rock",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2149.3,
-   "y": 1319.07,
-   "scaleX": 1.003,
-   "scaleY": 1.003,
+   "x": 1927.79,
+   "y": 1322.91,
+   "scaleX": 0.834,
+   "scaleY": 0.834,
    "offsetX": 32,
    "offsetY": 63
   },
@@ -1104,10 +2166,10 @@
    "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2442.57,
-   "y": 711.92,
-   "scaleX": 1.246,
-   "scaleY": 1.246,
+   "x": 2216.47,
+   "y": 699.68,
+   "scaleX": 1.259,
+   "scaleY": 1.259,
    "offsetX": 30,
    "offsetY": 195
   },
@@ -1121,10 +2183,10 @@
    "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2439.64,
-   "y": 1274.42,
-   "scaleX": 1.144,
-   "scaleY": 1.144,
+   "x": 2213.37,
+   "y": 1290.89,
+   "scaleX": 1.087,
+   "scaleY": 1.087,
    "offsetX": 30,
    "offsetY": 195
   },
@@ -1138,10 +2200,10 @@
    "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2682.35,
-   "y": 712.75,
-   "scaleX": 1.017,
-   "scaleY": 0.963,
+   "x": 2436.62,
+   "y": 695.51,
+   "scaleX": 1.142,
+   "scaleY": 1.142,
    "offsetX": 30,
    "offsetY": 195
   },
@@ -1155,135 +2217,50 @@
    "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2674.18,
-   "y": 1286.78,
-   "scaleX": 1.067,
-   "scaleY": 0.627,
+   "x": 2437.05,
+   "y": 1285.25,
+   "scaleX": 1.062,
+   "scaleY": 1.062,
    "offsetX": 30,
    "offsetY": 195
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0038",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "assets_custom/props",
    "frames": [
-    "Log3.png"
+    "pillar.png"
    ],
-   "name": "Log3",
+   "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2735.64,
-   "y": 1324.42,
-   "scaleX": 1.806,
-   "scaleY": 1.806,
-   "offsetX": 22.5,
-   "offsetY": 13
+   "x": 2689.91,
+   "y": 702.28,
+   "scaleX": 1.091,
+   "scaleY": 1.091,
+   "offsetX": 30,
+   "offsetY": 195
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0039",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "dir": "assets_custom/props",
    "frames": [
-    "Rock2.png"
+    "pillar.png"
    ],
-   "name": "Rock",
+   "name": "pillar",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2633.14,
-   "y": 1303.74,
-   "scaleX": 0.93,
-   "scaleY": 0.93,
-   "offsetX": 32,
-   "offsetY": 63
+   "x": 2676.79,
+   "y": 1277.69,
+   "scaleX": 1.006,
+   "scaleY": 0.506,
+   "offsetX": 30,
+   "offsetY": 195
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0040",
-   "dir": "assets_custom/props",
-   "frames": [
-    "pillar.png"
-   ],
-   "name": "pillar",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2911.71,
-   "y": 697.43,
-   "scaleX": 1.057,
-   "scaleY": 0.996,
-   "offsetX": 30,
-   "offsetY": 195
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r23_0041",
-   "dir": "assets_custom/props",
-   "frames": [
-    "pillar.png"
-   ],
-   "name": "pillar",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2910.92,
-   "y": 1273.91,
-   "scaleX": 1.037,
-   "scaleY": 1.037,
-   "offsetX": 30,
-   "offsetY": 195
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r23_0042",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
-   "frames": [
-    "Log3.png"
-   ],
-   "name": "Log3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 748.72,
-   "y": 1418.82,
-   "scaleX": 1.508,
-   "scaleY": 1.508,
-   "offsetX": 22.5,
-   "offsetY": 13
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r23_0043",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
-   "frames": [
-    "Log3.png"
-   ],
-   "name": "Log3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1607.97,
-   "y": 1362.7,
-   "scaleX": 1.571,
-   "scaleY": 1.571,
-   "offsetX": 22.5,
-   "offsetY": 13
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r23_0044",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
-   "frames": [
-    "Log1.png"
-   ],
-   "name": "Log1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2718.98,
-   "y": 729.97,
-   "scaleX": 1.522,
-   "scaleY": 1.522,
-   "offsetX": 17,
-   "offsetY": 20
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r23_0045",
    "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
     "Log2.png"
@@ -1291,16 +2268,135 @@
    "name": "Log2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 408.86,
-   "y": 741.44,
-   "scaleX": 1.599,
-   "scaleY": 1.599,
+   "x": 2729.87,
+   "y": 1332.29,
+   "scaleX": 1.721,
+   "scaleY": 1.721,
    "offsetX": 16.5,
    "offsetY": 31
   },
   {
    "type": "sprite",
+   "spriteId": "s_r23_0041",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2648.5,
+   "y": 1304.77,
+   "scaleX": 0.935,
+   "scaleY": 0.935,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0042",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2907.08,
+   "y": 693.53,
+   "scaleX": 1.22,
+   "scaleY": 1.22,
+   "offsetX": 30,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0043",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2912.31,
+   "y": 1281.53,
+   "scaleX": 0.928,
+   "scaleY": 0.834,
+   "offsetX": 30,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0044",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Log3.png"
+   ],
+   "name": "Log3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 575.41,
+   "y": 660.79,
+   "scaleX": 1.497,
+   "scaleY": 1.497,
+   "offsetX": 22.5,
+   "offsetY": 13
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0045",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Log1.png"
+   ],
+   "name": "Log1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2593.37,
+   "y": 1330.75,
+   "scaleX": 1.829,
+   "scaleY": 1.829,
+   "offsetX": 17,
+   "offsetY": 20
+  },
+  {
+   "type": "sprite",
    "spriteId": "s_r23_0046",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Log2.png"
+   ],
+   "name": "Log2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 723.36,
+   "y": 1370.97,
+   "scaleX": 1.634,
+   "scaleY": 1.634,
+   "offsetX": 16.5,
+   "offsetY": 31
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0047",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Log3.png"
+   ],
+   "name": "Log3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 954.53,
+   "y": 1437.6,
+   "scaleX": 1.873,
+   "scaleY": 1.873,
+   "offsetX": 22.5,
+   "offsetY": 13
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0048",
    "dir": "assets_custom/props",
    "frames": [
     "brazier.png"
@@ -1317,7 +2413,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0047",
+   "spriteId": "s_r23_0049",
    "dir": "assets_custom/props",
    "frames": [
     "brazier.png"
@@ -1334,7 +2430,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0048",
+   "spriteId": "s_r23_0050",
    "dir": "assets_custom/props",
    "frames": [
     "brazier.png"
@@ -1351,7 +2447,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0049",
+   "spriteId": "s_r23_0051",
    "dir": "assets_custom/props",
    "frames": [
     "brazier.png"
@@ -1368,7 +2464,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0050",
+   "spriteId": "s_r23_0052",
    "dir": "assets_custom/props",
    "frames": [
     "brazier.png"
@@ -1385,7 +2481,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0051",
+   "spriteId": "s_r23_0053",
    "dir": "assets_custom/props",
    "frames": [
     "brazier.png"
@@ -1402,7 +2498,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0052",
+   "spriteId": "s_r23_0054",
    "dir": "assets_custom/props",
    "frames": [
     "brazier.png"
@@ -1419,7 +2515,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0053",
+   "spriteId": "s_r23_0055",
    "dir": "assest4/map_objects/3 Animated Objects/2 Campfire",
    "frames": [
     "1.png",
@@ -1437,7 +2533,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0054",
+   "spriteId": "s_r23_0056",
    "dir": "assest4/map_objects/3 Animated Objects/2 Campfire",
    "frames": [
     "1.png",
@@ -1455,7 +2551,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0055",
+   "spriteId": "s_r23_0057",
    "dir": "assest4/map_objects/3 Animated Objects/2 Campfire",
    "frames": [
     "1.png",
@@ -1473,7 +2569,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0056",
+   "spriteId": "s_r23_0058",
    "dir": "assest4/map_objects/3 Animated Objects/2 Campfire",
    "frames": [
     "1.png",
@@ -1491,75 +2587,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0057",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
-   "frames": [
-    "Lamp3.png"
-   ],
-   "name": "Lamp3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 400.19,
-   "y": 840,
-   "scaleX": 2.716,
-   "scaleY": 2.716,
-   "offsetX": 6.5,
-   "offsetY": 34
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r23_0058",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
-   "frames": [
-    "Lamp1.png"
-   ],
-   "name": "Lamp1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 940.63,
-   "y": 1170,
-   "scaleX": 2.958,
-   "scaleY": 2.958,
-   "offsetX": 10,
-   "offsetY": 34
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_r23_0059",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
-   "frames": [
-    "Lamp3.png"
-   ],
-   "name": "Lamp3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1476.73,
-   "y": 840,
-   "scaleX": 2.732,
-   "scaleY": 2.732,
-   "offsetX": 6.5,
-   "offsetY": 34
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r23_0060",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
-   "frames": [
-    "Lamp1.png"
-   ],
-   "name": "Lamp1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2027.85,
-   "y": 1170,
-   "scaleX": 2.785,
-   "scaleY": 2.785,
-   "offsetX": 10,
-   "offsetY": 34
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r23_0061",
    "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
     "Lamp2.png"
@@ -1567,16 +2595,33 @@
    "name": "Lamp2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2553.97,
+   "x": 392.26,
    "y": 1170,
-   "scaleX": 2.8,
-   "scaleY": 2.8,
+   "scaleX": 2.891,
+   "scaleY": 2.891,
    "offsetX": 5.5,
    "offsetY": 34
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0062",
+   "spriteId": "s_r23_0060",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp2.png"
+   ],
+   "name": "Lamp2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 942.51,
+   "y": 840,
+   "scaleX": 2.721,
+   "scaleY": 2.721,
+   "offsetX": 5.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0061",
    "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
     "Lamp1.png"
@@ -1584,16 +2629,67 @@
    "name": "Lamp1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2987.79,
-   "y": 840,
-   "scaleX": 3.034,
-   "scaleY": 3.034,
+   "x": 1475.57,
+   "y": 1170,
+   "scaleX": 3.059,
+   "scaleY": 3.059,
    "offsetX": 10,
    "offsetY": 34
   },
   {
    "type": "sprite",
+   "spriteId": "s_r23_0062",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp3.png"
+   ],
+   "name": "Lamp3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2022.48,
+   "y": 840,
+   "scaleX": 3.028,
+   "scaleY": 3.028,
+   "offsetX": 6.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
    "spriteId": "s_r23_0063",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp3.png"
+   ],
+   "name": "Lamp3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2551.35,
+   "y": 1170,
+   "scaleX": 3.048,
+   "scaleY": 3.048,
+   "offsetX": 6.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0064",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp2.png"
+   ],
+   "name": "Lamp2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2970.22,
+   "y": 1170,
+   "scaleX": 2.902,
+   "scaleY": 2.902,
+   "offsetX": 5.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0065",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
     "1.png",
@@ -1614,7 +2710,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0064",
+   "spriteId": "s_r23_0066",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
     "1.png",
@@ -1635,7 +2731,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0065",
+   "spriteId": "s_r23_0067",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
     "1.png",
@@ -1656,7 +2752,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0066",
+   "spriteId": "s_r23_0068",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
     "1.png",
@@ -1677,7 +2773,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0067",
+   "spriteId": "s_r23_0069",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
     "1.png",
@@ -1698,7 +2794,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0068",
+   "spriteId": "s_r23_0070",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
     "1.png",
@@ -1719,7 +2815,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0069",
+   "spriteId": "s_r23_0071",
    "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
    "frames": [
     "1.png",
@@ -1740,7 +2836,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0070",
+   "spriteId": "s_r23_0072",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
    "frames": [
     "Gold Stone 6.png"
@@ -1757,7 +2853,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0071",
+   "spriteId": "s_r23_0073",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
    "frames": [
     "Gold Stone 5.png"
@@ -1774,7 +2870,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0072",
+   "spriteId": "s_r23_0074",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
    "frames": [
     "Gold Stone 4.png"
@@ -1791,7 +2887,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0073",
+   "spriteId": "s_r23_0075",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
    "frames": [
     "Gold Stone 2.png"
@@ -1808,7 +2904,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0074",
+   "spriteId": "s_r23_0076",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
    "frames": [
     "Gold Stone 5.png"
@@ -1825,7 +2921,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0075",
+   "spriteId": "s_r23_0077",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
    "frames": [
     "Gold Stone 4.png"
@@ -1842,7 +2938,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0076",
+   "spriteId": "s_r23_0078",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
    "frames": [
     "Gold Stone 6.png"
@@ -1859,7 +2955,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0077",
+   "spriteId": "s_r23_0079",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
    "frames": [
     "Gold Stone 5.png"
@@ -1876,7 +2972,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0078",
+   "spriteId": "s_r23_0080",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
    "frames": [
     "Gold Stone 6.png"
@@ -1893,7 +2989,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0079",
+   "spriteId": "s_r23_0081",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
    "frames": [
     "Gold Stone 4.png"
@@ -1910,7 +3006,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0080",
+   "spriteId": "s_r23_0082",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
    "frames": [
     "Gold Stone 6.png"
@@ -1927,7 +3023,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0081",
+   "spriteId": "s_r23_0083",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
    "frames": [
     "Gold Stone 5.png"
@@ -1944,7 +3040,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0082",
+   "spriteId": "s_r23_0084",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
    "frames": [
     "Gold Stone 4.png"
@@ -1961,239 +3057,205 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0083",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
-   "frames": [
-    "Dirt1.png"
-   ],
-   "name": "Dirt1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 634.76,
-   "y": 1552.07,
-   "scaleX": 1.927,
-   "scaleY": 1.927,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r23_0084",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
-   "frames": [
-    "Dirt1.png"
-   ],
-   "name": "Dirt1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 821.05,
-   "y": 1817.31,
-   "scaleX": 2.244,
-   "scaleY": 2.244,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_r23_0085",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "Dirt1.png"
+    "1.png"
    ],
-   "name": "Dirt1",
+   "name": "1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1908.82,
-   "y": 1707.75,
-   "scaleX": 2.114,
-   "scaleY": 2.114,
+   "x": 630.53,
+   "y": 1212.58,
+   "scaleX": 2.718,
+   "scaleY": 2.718,
    "offsetX": 32,
    "offsetY": 32
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0086",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "Dirt2.png"
+    "6.png"
    ],
-   "name": "Dirt2",
+   "name": "6",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2993.47,
-   "y": 1049.2,
-   "scaleX": 2.355,
-   "scaleY": 2.355,
+   "x": 596.96,
+   "y": 1251.22,
+   "scaleX": 2.786,
+   "scaleY": 2.786,
    "offsetX": 32,
    "offsetY": 32
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0087",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "Dirt6.png"
+    "1.png"
    ],
-   "name": "Dirt6",
+   "name": "1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2699.7,
-   "y": 987.03,
-   "scaleX": 2.079,
-   "scaleY": 2.079,
+   "x": 2349.83,
+   "y": 763.2,
+   "scaleX": 2.483,
+   "scaleY": 2.483,
    "offsetX": 32,
    "offsetY": 32
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0088",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "Dirt3.png"
+    "4.png"
    ],
-   "name": "Dirt3",
+   "name": "4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 612.24,
-   "y": 330.28,
-   "scaleX": 2.342,
-   "scaleY": 2.342,
+   "x": 2446.9,
+   "y": 737.68,
+   "scaleX": 2.655,
+   "scaleY": 2.655,
    "offsetX": 32,
    "offsetY": 32
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0089",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "Dirt2.png"
+    "4.png"
    ],
-   "name": "Dirt2",
+   "name": "4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2173.38,
-   "y": 939.62,
-   "scaleX": 2.024,
-   "scaleY": 2.024,
+   "x": 2443.58,
+   "y": 793.45,
+   "scaleX": 2.994,
+   "scaleY": 2.994,
    "offsetX": 32,
    "offsetY": 32
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0090",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "Dirt1.png"
+    "5.png"
    ],
-   "name": "Dirt1",
+   "name": "5",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2075.49,
-   "y": 450.72,
-   "scaleX": 1.908,
-   "scaleY": 1.908,
+   "x": 2428.51,
+   "y": 676.72,
+   "scaleX": 2.565,
+   "scaleY": 2.565,
    "offsetX": 32,
    "offsetY": 32
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0091",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "Dirt1.png"
+    "3.png"
    ],
-   "name": "Dirt1",
+   "name": "3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2387.08,
-   "y": 1801.59,
-   "scaleX": 2.501,
-   "scaleY": 2.501,
+   "x": 2089.29,
+   "y": 413.96,
+   "scaleX": 2.803,
+   "scaleY": 2.803,
    "offsetX": 32,
    "offsetY": 32
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0092",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "Dirt1.png"
+    "5.png"
    ],
-   "name": "Dirt1",
+   "name": "5",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1081.68,
-   "y": 1066.77,
-   "scaleX": 2.46,
-   "scaleY": 2.46,
+   "x": 2019.83,
+   "y": 394.46,
+   "scaleX": 2.516,
+   "scaleY": 2.516,
    "offsetX": 32,
    "offsetY": 32
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0093",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "Dirt6.png"
+    "5.png"
    ],
-   "name": "Dirt6",
+   "name": "5",
    "animated": false,
    "spriteLayer": "below",
-   "x": 399.45,
-   "y": 1063.21,
-   "scaleX": 1.925,
-   "scaleY": 1.925,
+   "x": 2098.76,
+   "y": 350.65,
+   "scaleX": 3.197,
+   "scaleY": 3.197,
    "offsetX": 32,
    "offsetY": 32
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0094",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "Dirt2.png"
+    "5.png"
    ],
-   "name": "Dirt2",
+   "name": "5",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1639.25,
-   "y": 1011.26,
-   "scaleX": 1.902,
-   "scaleY": 1.902,
+   "x": 1621.27,
+   "y": 1505.52,
+   "scaleX": 2.673,
+   "scaleY": 2.673,
    "offsetX": 32,
    "offsetY": 32
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0095",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "Dirt6.png"
+    "4.png"
    ],
-   "name": "Dirt6",
+   "name": "4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 735.0,
-   "y": 514.33,
-   "scaleX": 2.133,
-   "scaleY": 2.133,
+   "x": 1575.79,
+   "y": 1447.66,
+   "scaleX": 2.963,
+   "scaleY": 2.963,
    "offsetX": 32,
    "offsetY": 32
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0096",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "Dirt3.png"
+    "2.png"
    ],
-   "name": "Dirt3",
+   "name": "2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 347.01,
-   "y": 518.51,
-   "scaleX": 2.564,
-   "scaleY": 2.564,
+   "x": 1533.7,
+   "y": 1436.0,
+   "scaleX": 2.663,
+   "scaleY": 2.663,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2202,15 +3264,15 @@
    "spriteId": "s_r23_0097",
    "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "2.png"
+    "6.png"
    ],
-   "name": "2",
+   "name": "6",
    "animated": false,
    "spriteLayer": "below",
-   "x": 243.96,
-   "y": 1749.73,
-   "scaleX": 2.609,
-   "scaleY": 2.609,
+   "x": 1607.25,
+   "y": 1428.79,
+   "scaleX": 2.992,
+   "scaleY": 2.992,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2219,15 +3281,15 @@
    "spriteId": "s_r23_0098",
    "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "4.png"
+    "1.png"
    ],
-   "name": "4",
+   "name": "1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1591.51,
-   "y": 1119.06,
-   "scaleX": 2.6,
-   "scaleY": 2.6,
+   "x": 2296.26,
+   "y": 1518.73,
+   "scaleX": 2.449,
+   "scaleY": 2.449,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2236,15 +3298,15 @@
    "spriteId": "s_r23_0099",
    "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "3.png"
+    "4.png"
    ],
-   "name": "3",
+   "name": "4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1032.44,
-   "y": 1662.69,
-   "scaleX": 2.934,
-   "scaleY": 2.934,
+   "x": 2305.71,
+   "y": 1517.55,
+   "scaleX": 2.564,
+   "scaleY": 2.564,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2253,15 +3315,15 @@
    "spriteId": "s_r23_0100",
    "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "4.png"
+    "6.png"
    ],
-   "name": "4",
+   "name": "6",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1767.56,
-   "y": 1654.22,
-   "scaleX": 2.507,
-   "scaleY": 2.507,
+   "x": 974.56,
+   "y": 598.49,
+   "scaleX": 2.677,
+   "scaleY": 2.677,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2270,15 +3332,15 @@
    "spriteId": "s_r23_0101",
    "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "4.png"
+    "3.png"
    ],
-   "name": "4",
+   "name": "3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 499.31,
-   "y": 867.56,
-   "scaleX": 2.681,
-   "scaleY": 2.681,
+   "x": 1046.4,
+   "y": 534.51,
+   "scaleX": 2.461,
+   "scaleY": 2.461,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2292,10 +3354,10 @@
    "name": "1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 630.0,
-   "y": 1115.5,
-   "scaleX": 2.674,
-   "scaleY": 2.674,
+   "x": 926.83,
+   "y": 516.85,
+   "scaleX": 2.358,
+   "scaleY": 2.358,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2304,15 +3366,15 @@
    "spriteId": "s_r23_0103",
    "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "5.png"
+    "1.png"
    ],
-   "name": "5",
+   "name": "1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 245.38,
-   "y": 1143.17,
-   "scaleX": 2.864,
-   "scaleY": 2.864,
+   "x": 2021.23,
+   "y": 320.89,
+   "scaleX": 2.467,
+   "scaleY": 2.467,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2326,10 +3388,10 @@
    "name": "5",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2044.26,
-   "y": 277.35,
-   "scaleX": 2.683,
-   "scaleY": 2.683,
+   "x": 1925.78,
+   "y": 404.22,
+   "scaleX": 2.788,
+   "scaleY": 2.788,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2343,10 +3405,10 @@
    "name": "6",
    "animated": false,
    "spriteLayer": "below",
-   "x": 224.24,
-   "y": 1129.14,
-   "scaleX": 2.484,
-   "scaleY": 2.484,
+   "x": 2055.69,
+   "y": 402.56,
+   "scaleX": 2.584,
+   "scaleY": 2.584,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2355,15 +3417,15 @@
    "spriteId": "s_r23_0106",
    "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "1.png"
+    "3.png"
    ],
-   "name": "1",
+   "name": "3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2078.46,
-   "y": 1135.39,
-   "scaleX": 3.109,
-   "scaleY": 3.109,
+   "x": 442.97,
+   "y": 1251.53,
+   "scaleX": 2.341,
+   "scaleY": 2.341,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2372,15 +3434,15 @@
    "spriteId": "s_r23_0107",
    "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "4.png"
+    "6.png"
    ],
-   "name": "4",
+   "name": "6",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1284.92,
-   "y": 859.85,
-   "scaleX": 2.571,
-   "scaleY": 2.571,
+   "x": 456.02,
+   "y": 1332.58,
+   "scaleX": 2.613,
+   "scaleY": 2.613,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2389,15 +3451,15 @@
    "spriteId": "s_r23_0108",
    "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "5.png"
+    "6.png"
    ],
-   "name": "5",
+   "name": "6",
    "animated": false,
    "spriteLayer": "below",
-   "x": 551.92,
-   "y": 1125.22,
-   "scaleX": 2.658,
-   "scaleY": 2.658,
+   "x": 546.31,
+   "y": 1342.14,
+   "scaleX": 3.183,
+   "scaleY": 3.183,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2406,15 +3468,15 @@
    "spriteId": "s_r23_0109",
    "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "6.png"
+    "4.png"
    ],
-   "name": "6",
+   "name": "4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2596.68,
-   "y": 448.53,
-   "scaleX": 3.105,
-   "scaleY": 3.105,
+   "x": 668.28,
+   "y": 1252.4,
+   "scaleX": 3.11,
+   "scaleY": 3.11,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2423,15 +3485,15 @@
    "spriteId": "s_r23_0110",
    "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "6.png"
+    "4.png"
    ],
-   "name": "6",
+   "name": "4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1825.78,
-   "y": 1545.18,
-   "scaleX": 3.184,
-   "scaleY": 3.184,
+   "x": 652.01,
+   "y": 1261.23,
+   "scaleX": 2.505,
+   "scaleY": 2.505,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2440,15 +3502,15 @@
    "spriteId": "s_r23_0111",
    "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "5.png"
+    "3.png"
    ],
-   "name": "5",
+   "name": "3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1948.45,
-   "y": 1704.78,
-   "scaleX": 2.603,
-   "scaleY": 2.603,
+   "x": 1276.07,
+   "y": 1680.61,
+   "scaleX": 3.16,
+   "scaleY": 3.16,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2462,10 +3524,10 @@
    "name": "2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1471.44,
-   "y": 877.72,
-   "scaleX": 2.865,
-   "scaleY": 2.865,
+   "x": 1250.95,
+   "y": 1765.08,
+   "scaleX": 2.923,
+   "scaleY": 2.923,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2474,15 +3536,15 @@
    "spriteId": "s_r23_0113",
    "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "2.png"
+    "1.png"
    ],
-   "name": "2",
+   "name": "1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2155.65,
-   "y": 524.03,
-   "scaleX": 2.478,
-   "scaleY": 2.478,
+   "x": 2595.05,
+   "y": 1735.74,
+   "scaleX": 2.835,
+   "scaleY": 2.835,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2491,15 +3553,15 @@
    "spriteId": "s_r23_0114",
    "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "3.png"
+    "2.png"
    ],
-   "name": "3",
+   "name": "2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1475.0,
-   "y": 1659.39,
-   "scaleX": 2.862,
-   "scaleY": 2.862,
+   "x": 2638.3,
+   "y": 1698.3,
+   "scaleX": 2.899,
+   "scaleY": 2.899,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2508,15 +3570,15 @@
    "spriteId": "s_r23_0115",
    "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "5.png"
+    "3.png"
    ],
-   "name": "5",
+   "name": "3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1164.35,
-   "y": 1811.41,
-   "scaleX": 2.784,
-   "scaleY": 2.784,
+   "x": 2692.95,
+   "y": 1780.81,
+   "scaleX": 2.401,
+   "scaleY": 2.401,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2525,15 +3587,15 @@
    "spriteId": "s_r23_0116",
    "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "2.png"
+    "5.png"
    ],
-   "name": "2",
+   "name": "5",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2212.22,
-   "y": 1781.77,
-   "scaleX": 3.037,
-   "scaleY": 3.037,
+   "x": 2612.51,
+   "y": 1781.78,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2547,10 +3609,10 @@
    "name": "6",
    "animated": false,
    "spriteLayer": "below",
-   "x": 786.18,
-   "y": 861.17,
-   "scaleX": 2.6,
-   "scaleY": 2.6,
+   "x": 1211.21,
+   "y": 581.46,
+   "scaleX": 3.143,
+   "scaleY": 3.143,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -2564,152 +3626,1648 @@
    "name": "4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2691.16,
-   "y": 864.04,
-   "scaleX": 2.748,
-   "scaleY": 2.748,
+   "x": 1209.77,
+   "y": 621.84,
+   "scaleX": 2.428,
+   "scaleY": 2.428,
    "offsetX": 32,
    "offsetY": 32
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0119",
-   "dir": "cropped",
+   "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "Bushe4_crop.png"
+    "1.png"
    ],
-   "name": "Bushe4_crop",
+   "name": "1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2810.17,
-   "y": 567.67,
-   "scaleX": 0.976,
-   "scaleY": 0.976,
-   "offsetX": 38.5,
-   "offsetY": 66
+   "x": 2279.68,
+   "y": 1772.12,
+   "scaleX": 2.565,
+   "scaleY": 2.565,
+   "offsetX": 32,
+   "offsetY": 32
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0120",
-   "dir": "cropped",
+   "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "Bushe3_crop.png"
+    "4.png"
    ],
-   "name": "Bushe3_crop",
+   "name": "4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2897.65,
-   "y": 1352.32,
-   "scaleX": 0.973,
-   "scaleY": 0.973,
-   "offsetX": 48,
-   "offsetY": 88
+   "x": 2196.14,
+   "y": 1863.23,
+   "scaleX": 2.979,
+   "scaleY": 2.979,
+   "offsetX": 32,
+   "offsetY": 32
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0121",
-   "dir": "cropped",
+   "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "Bushe1_crop.png"
+    "3.png"
    ],
-   "name": "Bushe1_crop",
+   "name": "3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 311.38,
-   "y": 607.14,
-   "scaleX": 0.95,
-   "scaleY": 0.95,
-   "offsetX": 40,
-   "offsetY": 72
+   "x": 2254.55,
+   "y": 1867.26,
+   "scaleX": 2.393,
+   "scaleY": 2.393,
+   "offsetX": 32,
+   "offsetY": 32
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0122",
-   "dir": "cropped",
+   "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "Bushe1_crop.png"
+    "2.png"
    ],
-   "name": "Bushe1_crop",
+   "name": "2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2843.51,
-   "y": 965.66,
-   "scaleX": 0.949,
-   "scaleY": 0.949,
-   "offsetX": 40,
-   "offsetY": 72
+   "x": 2225.18,
+   "y": 1862.17,
+   "scaleX": 3.02,
+   "scaleY": 3.02,
+   "offsetX": 32,
+   "offsetY": 32
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0123",
-   "dir": "cropped",
+   "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "Bushe4_crop.png"
+    "6.png"
    ],
-   "name": "Bushe4_crop",
+   "name": "6",
    "animated": false,
    "spriteLayer": "below",
-   "x": 324.86,
-   "y": 1463.16,
-   "scaleX": 0.99,
-   "scaleY": 0.99,
-   "offsetX": 38.5,
-   "offsetY": 66
+   "x": 1720.26,
+   "y": 360.65,
+   "scaleX": 2.938,
+   "scaleY": 2.938,
+   "offsetX": 32,
+   "offsetY": 32
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0124",
-   "dir": "cropped",
+   "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "Bushe2_crop.png"
+    "1.png"
    ],
-   "name": "Bushe2_crop",
+   "name": "1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 388.33,
-   "y": 257.63,
-   "scaleX": 0.865,
-   "scaleY": 0.865,
-   "offsetX": 38.5,
-   "offsetY": 50
+   "x": 1749.67,
+   "y": 259.34,
+   "scaleX": 2.929,
+   "scaleY": 2.929,
+   "offsetX": 32,
+   "offsetY": 32
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0125",
-   "dir": "cropped",
+   "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "Bushe3_crop.png"
+    "2.png"
    ],
-   "name": "Bushe3_crop",
+   "name": "2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2851.34,
-   "y": 1240.13,
-   "scaleX": 0.969,
-   "scaleY": 0.969,
-   "offsetX": 48,
-   "offsetY": 88
+   "x": 1217.41,
+   "y": 1506.58,
+   "scaleX": 2.822,
+   "scaleY": 2.822,
+   "offsetX": 32,
+   "offsetY": 32
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0126",
-   "dir": "cropped",
+   "dir": "assest4/next2/2 Objects/5 Grass",
    "frames": [
-    "Bushe2_crop.png"
+    "2.png"
    ],
-   "name": "Bushe2_crop",
+   "name": "2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2876.75,
-   "y": 1692.63,
-   "scaleX": 1.008,
-   "scaleY": 1.008,
-   "offsetX": 38.5,
-   "offsetY": 50
+   "x": 1169.89,
+   "y": 1508.32,
+   "scaleX": 3.116,
+   "scaleY": 3.116,
+   "offsetX": 32,
+   "offsetY": 32
   },
   {
    "type": "sprite",
    "spriteId": "s_r23_0127",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "4.png"
+   ],
+   "name": "4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1158.8,
+   "y": 1473.98,
+   "scaleX": 3.089,
+   "scaleY": 3.089,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0128",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "3.png"
+   ],
+   "name": "3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2244.33,
+   "y": 739.25,
+   "scaleX": 2.835,
+   "scaleY": 2.835,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0129",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "6.png"
+   ],
+   "name": "6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2221.87,
+   "y": 703.37,
+   "scaleX": 2.851,
+   "scaleY": 2.851,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0130",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "1.png"
+   ],
+   "name": "1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2256.69,
+   "y": 789.08,
+   "scaleX": 2.463,
+   "scaleY": 2.463,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0131",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "2.png"
+   ],
+   "name": "2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2733.4,
+   "y": 1594.82,
+   "scaleX": 2.527,
+   "scaleY": 2.527,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0132",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "1.png"
+   ],
+   "name": "1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2661.28,
+   "y": 1657.38,
+   "scaleX": 2.519,
+   "scaleY": 2.519,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0133",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "1.png"
+   ],
+   "name": "1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2659.43,
+   "y": 1598.26,
+   "scaleX": 2.736,
+   "scaleY": 2.736,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0134",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "1.png"
+   ],
+   "name": "1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2160.0,
+   "y": 1405.63,
+   "scaleX": 2.424,
+   "scaleY": 2.424,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0135",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "5.png"
+   ],
+   "name": "5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2131.77,
+   "y": 1426.61,
+   "scaleX": 2.816,
+   "scaleY": 2.816,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0136",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "3.png"
+   ],
+   "name": "3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2136.2,
+   "y": 1298.22,
+   "scaleX": 2.625,
+   "scaleY": 2.625,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0137",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "6.png"
+   ],
+   "name": "6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 978.24,
+   "y": 1388.25,
+   "scaleX": 2.578,
+   "scaleY": 2.578,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0138",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "1.png"
+   ],
+   "name": "1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1023.11,
+   "y": 1395.47,
+   "scaleX": 2.522,
+   "scaleY": 2.522,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0139",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "5.png"
+   ],
+   "name": "5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 954.06,
+   "y": 1509.8,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0140",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "2.png"
+   ],
+   "name": "2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1020.3,
+   "y": 1488.48,
+   "scaleX": 2.76,
+   "scaleY": 2.76,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0141",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "5.png"
+   ],
+   "name": "5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2346.99,
+   "y": 926.71,
+   "scaleX": 2.629,
+   "scaleY": 2.629,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0142",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "2.png"
+   ],
+   "name": "2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2336.87,
+   "y": 821.72,
+   "scaleX": 2.68,
+   "scaleY": 2.68,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0143",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "4.png"
+   ],
+   "name": "4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2454.71,
+   "y": 1514.77,
+   "scaleX": 3.122,
+   "scaleY": 3.122,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0144",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "1.png"
+   ],
+   "name": "1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2364.3,
+   "y": 1601.87,
+   "scaleX": 3.16,
+   "scaleY": 3.16,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0145",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "1.png"
+   ],
+   "name": "1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2373.46,
+   "y": 1505.36,
+   "scaleX": 2.656,
+   "scaleY": 2.656,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0146",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "6.png"
+   ],
+   "name": "6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1383.32,
+   "y": 1114.56,
+   "scaleX": 3.13,
+   "scaleY": 3.13,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0147",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "4.png"
+   ],
+   "name": "4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1365.5,
+   "y": 1144.81,
+   "scaleX": 2.961,
+   "scaleY": 2.961,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0148",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "4.png"
+   ],
+   "name": "4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 999.01,
+   "y": 334.17,
+   "scaleX": 3.062,
+   "scaleY": 3.062,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0149",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "2.png"
+   ],
+   "name": "2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1083.66,
+   "y": 393.6,
+   "scaleX": 2.827,
+   "scaleY": 2.827,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0150",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "3.png"
+   ],
+   "name": "3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2070.45,
+   "y": 1627.34,
+   "scaleX": 2.915,
+   "scaleY": 2.915,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0151",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "4.png"
+   ],
+   "name": "4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2054.02,
+   "y": 1645.2,
+   "scaleX": 3.046,
+   "scaleY": 3.046,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0152",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "2.png"
+   ],
+   "name": "2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2149.56,
+   "y": 1725.6,
+   "scaleX": 2.398,
+   "scaleY": 2.398,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0153",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "5.png"
+   ],
+   "name": "5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2167.94,
+   "y": 1701.57,
+   "scaleX": 2.615,
+   "scaleY": 2.615,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0154",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "2.png"
+   ],
+   "name": "2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1181.27,
+   "y": 1312.45,
+   "scaleX": 2.537,
+   "scaleY": 2.537,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0155",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "6.png"
+   ],
+   "name": "6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1142.4,
+   "y": 1316.04,
+   "scaleX": 3.074,
+   "scaleY": 3.074,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0156",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "1.png"
+   ],
+   "name": "1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1066.45,
+   "y": 1356.56,
+   "scaleX": 2.864,
+   "scaleY": 2.864,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0157",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "2.png"
+   ],
+   "name": "2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 567.23,
+   "y": 1357.06,
+   "scaleX": 2.558,
+   "scaleY": 2.558,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0158",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "2.png"
+   ],
+   "name": "2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 552.53,
+   "y": 1306.74,
+   "scaleX": 2.576,
+   "scaleY": 2.576,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0159",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "5.png"
+   ],
+   "name": "5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 631.76,
+   "y": 1388.87,
+   "scaleX": 2.392,
+   "scaleY": 2.392,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0160",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "2.png"
+   ],
+   "name": "2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 578.15,
+   "y": 1326.71,
+   "scaleX": 2.666,
+   "scaleY": 2.666,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0161",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "1.png"
+   ],
+   "name": "1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1206.94,
+   "y": 848.69,
+   "scaleX": 2.885,
+   "scaleY": 2.885,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0162",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "6.png"
+   ],
+   "name": "6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1785.02,
+   "y": 851.41,
+   "scaleX": 2.977,
+   "scaleY": 2.977,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0163",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "5.png"
+   ],
+   "name": "5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2382.04,
+   "y": 1143.42,
+   "scaleX": 2.774,
+   "scaleY": 2.774,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0164",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "5.png"
+   ],
+   "name": "5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1421.55,
+   "y": 868.88,
+   "scaleX": 2.476,
+   "scaleY": 2.476,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0165",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "2.png"
+   ],
+   "name": "2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1745.82,
+   "y": 1137.33,
+   "scaleX": 2.97,
+   "scaleY": 2.97,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0166",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "4.png"
+   ],
+   "name": "4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 306.41,
+   "y": 1112.16,
+   "scaleX": 2.598,
+   "scaleY": 2.598,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0167",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "2.png"
+   ],
+   "name": "2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 416.46,
+   "y": 852.39,
+   "scaleX": 2.626,
+   "scaleY": 2.626,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0168",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "1.png"
+   ],
+   "name": "1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 963.89,
+   "y": 1128.39,
+   "scaleX": 2.802,
+   "scaleY": 2.802,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0169",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "6.png"
+   ],
+   "name": "6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2146.35,
+   "y": 879.9,
+   "scaleX": 3.063,
+   "scaleY": 3.063,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0170",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "2.png"
+   ],
+   "name": "2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1042.4,
+   "y": 1139.55,
+   "scaleX": 2.654,
+   "scaleY": 2.654,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0171",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "2.png"
+   ],
+   "name": "2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2790.67,
+   "y": 1126.32,
+   "scaleX": 3.078,
+   "scaleY": 3.078,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0172",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "4.png"
+   ],
+   "name": "4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1351.41,
+   "y": 1111.64,
+   "scaleX": 2.649,
+   "scaleY": 2.649,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0173",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt1.png"
+   ],
+   "name": "Dirt1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 328.92,
+   "y": 617.44,
+   "scaleX": 2.442,
+   "scaleY": 2.442,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0174",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt2.png"
+   ],
+   "name": "Dirt2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1096.86,
+   "y": 1173.33,
+   "scaleX": 2.486,
+   "scaleY": 2.486,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0175",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt6.png"
+   ],
+   "name": "Dirt6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3028.02,
+   "y": 294.06,
+   "scaleX": 2.638,
+   "scaleY": 2.638,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0176",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt3.png"
+   ],
+   "name": "Dirt3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 684.58,
+   "y": 1447.93,
+   "scaleX": 2.26,
+   "scaleY": 2.26,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0177",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt2.png"
+   ],
+   "name": "Dirt2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 943.74,
+   "y": 868.01,
+   "scaleX": 2.243,
+   "scaleY": 2.243,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0178",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt3.png"
+   ],
+   "name": "Dirt3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 687.31,
+   "y": 1110.36,
+   "scaleX": 2.033,
+   "scaleY": 2.033,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0179",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt6.png"
+   ],
+   "name": "Dirt6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2540.82,
+   "y": 1379.13,
+   "scaleX": 2.128,
+   "scaleY": 2.128,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0180",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt1.png"
+   ],
+   "name": "Dirt1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1876.94,
+   "y": 1773.24,
+   "scaleX": 2.078,
+   "scaleY": 2.078,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0181",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt6.png"
+   ],
+   "name": "Dirt6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2497.75,
+   "y": 1745.13,
+   "scaleX": 1.938,
+   "scaleY": 1.938,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0182",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt6.png"
+   ],
+   "name": "Dirt6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1485.53,
+   "y": 1337.01,
+   "scaleX": 2.634,
+   "scaleY": 2.634,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0183",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt2.png"
+   ],
+   "name": "Dirt2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2135.87,
+   "y": 1584.45,
+   "scaleX": 2.31,
+   "scaleY": 2.31,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0184",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt3.png"
+   ],
+   "name": "Dirt3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1469.13,
+   "y": 773.98,
+   "scaleX": 2.6,
+   "scaleY": 2.6,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0185",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt2.png"
+   ],
+   "name": "Dirt2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1781.99,
+   "y": 1735.56,
+   "scaleX": 1.951,
+   "scaleY": 1.951,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0186",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt2.png"
+   ],
+   "name": "Dirt2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 497.6,
+   "y": 352.04,
+   "scaleX": 2.261,
+   "scaleY": 2.261,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0187",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt1.png"
+   ],
+   "name": "Dirt1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2726.76,
+   "y": 631.4,
+   "scaleX": 2.001,
+   "scaleY": 2.001,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0188",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt1.png"
+   ],
+   "name": "Dirt1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 712.95,
+   "y": 1568.39,
+   "scaleX": 2.612,
+   "scaleY": 2.612,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0189",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt2.png"
+   ],
+   "name": "Dirt2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1452.13,
+   "y": 516.82,
+   "scaleX": 2.178,
+   "scaleY": 2.178,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0190",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt2.png"
+   ],
+   "name": "Dirt2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 615.08,
+   "y": 938.75,
+   "scaleX": 1.998,
+   "scaleY": 1.998,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0191",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt1.png"
+   ],
+   "name": "Dirt1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1850.09,
+   "y": 1686.8,
+   "scaleX": 2.207,
+   "scaleY": 2.207,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0192",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt2.png"
+   ],
+   "name": "Dirt2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1366.67,
+   "y": 1579.26,
+   "scaleX": 2.499,
+   "scaleY": 2.499,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0193",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt2.png"
+   ],
+   "name": "Dirt2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2628.84,
+   "y": 887.36,
+   "scaleX": 2.194,
+   "scaleY": 2.194,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0194",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt3.png"
+   ],
+   "name": "Dirt3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1196.75,
+   "y": 831.52,
+   "scaleX": 2.078,
+   "scaleY": 2.078,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0195",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt1.png"
+   ],
+   "name": "Dirt1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1644.44,
+   "y": 268.08,
+   "scaleX": 2.18,
+   "scaleY": 2.18,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0196",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt1.png"
+   ],
+   "name": "Dirt1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2272.69,
+   "y": 1724.32,
+   "scaleX": 2.322,
+   "scaleY": 2.322,
+   "offsetX": 32,
+   "offsetY": 32
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0197",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1786.49,
+   "y": 1578.07,
+   "scaleX": 0.95,
+   "scaleY": 0.95,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0198",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1794.73,
+   "y": 1585.88,
+   "scaleX": 1.07,
+   "scaleY": 1.07,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0199",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1831.85,
+   "y": 1576.08,
+   "scaleX": 0.94,
+   "scaleY": 0.94,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0200",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2407.57,
+   "y": 240.29,
+   "scaleX": 0.864,
+   "scaleY": 0.864,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0201",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1039.31,
+   "y": 753.16,
+   "scaleX": 1.014,
+   "scaleY": 1.014,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0202",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 992.49,
+   "y": 729.65,
+   "scaleX": 1.166,
+   "scaleY": 1.166,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0203",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1137.74,
+   "y": 1256.2,
+   "scaleX": 0.844,
+   "scaleY": 0.844,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0204",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1047.85,
+   "y": 1260.05,
+   "scaleX": 0.892,
+   "scaleY": 0.892,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0205",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2205.23,
+   "y": 842.34,
+   "scaleX": 1.022,
+   "scaleY": 1.022,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0206",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2654.35,
+   "y": 1671.95,
+   "scaleX": 1.024,
+   "scaleY": 1.024,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0207",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2463.79,
+   "y": 1598.15,
+   "scaleX": 1.3,
+   "scaleY": 1.3,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0208",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2467.45,
+   "y": 1669.52,
+   "scaleX": 1.094,
+   "scaleY": 1.094,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0209",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2488.64,
+   "y": 229.58,
+   "scaleX": 0.874,
+   "scaleY": 0.874,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0210",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2463.82,
+   "y": 287.76,
+   "scaleX": 1.001,
+   "scaleY": 1.001,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0211",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2037.64,
+   "y": 1486.34,
+   "scaleX": 1.108,
+   "scaleY": 1.108,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0212",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2903.79,
+   "y": 1411.73,
+   "scaleX": 0.869,
+   "scaleY": 0.869,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0213",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2868.51,
+   "y": 1547.52,
+   "scaleX": 1.617,
+   "scaleY": 1.617,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0214",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 405.4,
+   "y": 295.78,
+   "scaleX": 0.839,
+   "scaleY": 0.839,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0215",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
     "Rock4.png"
@@ -2717,50 +5275,33 @@
    "name": "Rock",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2588.44,
-   "y": 1537.47,
-   "scaleX": 1.528,
-   "scaleY": 1.528,
+   "x": 2982.45,
+   "y": 1682.26,
+   "scaleX": 1.458,
+   "scaleY": 1.458,
    "offsetX": 32,
    "offsetY": 63
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0128",
+   "spriteId": "s_r23_0216",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "Rock3.png"
+    "Rock4.png"
    ],
    "name": "Rock",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1528.99,
-   "y": 1827.6,
-   "scaleX": 1.007,
-   "scaleY": 1.007,
+   "x": 2532.09,
+   "y": 1209.23,
+   "scaleX": 1.301,
+   "scaleY": 1.301,
    "offsetX": 32,
    "offsetY": 63
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0129",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 967.78,
-   "y": 1616.37,
-   "scaleX": 0.922,
-   "scaleY": 0.922,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r23_0130",
+   "spriteId": "s_r23_0217",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
     "Rock1.png"
@@ -2768,42 +5309,8 @@
    "name": "Rock",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2860.93,
-   "y": 1696.74,
-   "scaleX": 1.987,
-   "scaleY": 1.987,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r23_0131",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1761.46,
-   "y": 210.17,
-   "scaleX": 1.982,
-   "scaleY": 1.982,
-   "offsetX": 32,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r23_0132",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 395.62,
-   "y": 1776.47,
+   "x": 1435.37,
+   "y": 1225.47,
    "scaleX": 1.701,
    "scaleY": 1.701,
    "offsetX": 32,
@@ -2811,41 +5318,279 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0133",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "spriteId": "s_r23_0218",
+   "dir": "cropped",
    "frames": [
-    "Rock1.png"
+    "Bushe4_crop.png"
    ],
-   "name": "Rock",
+   "name": "Bushe4_crop",
    "animated": false,
    "spriteLayer": "below",
-   "x": 990.62,
-   "y": 1745.1,
-   "scaleX": 1.94,
-   "scaleY": 1.94,
-   "offsetX": 32,
-   "offsetY": 63
+   "x": 1331.68,
+   "y": 399.82,
+   "scaleX": 0.986,
+   "scaleY": 0.986,
+   "offsetX": 38.5,
+   "offsetY": 66
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0134",
-   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "spriteId": "s_r23_0219",
+   "dir": "cropped",
    "frames": [
-    "middle_lane_tree4.png"
+    "Bushe2_crop.png"
    ],
-   "name": "middle_lane_tree4",
+   "name": "Bushe2_crop",
    "animated": false,
    "spriteLayer": "below",
-   "x": 175,
-   "y": 300,
-   "scaleX": 0.765,
-   "scaleY": 0.765,
-   "offsetX": 78,
-   "offsetY": 275
+   "x": 2941.13,
+   "y": 254.41,
+   "scaleX": 0.99,
+   "scaleY": 0.99,
+   "offsetX": 38.5,
+   "offsetY": 50
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0135",
+   "spriteId": "s_r23_0220",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "Bushe2_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 437.12,
+   "y": 1696.26,
+   "scaleX": 0.882,
+   "scaleY": 0.882,
+   "offsetX": 38.5,
+   "offsetY": 50
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0221",
+   "dir": "cropped",
+   "frames": [
+    "Bushe1_crop.png"
+   ],
+   "name": "Bushe1_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1162.53,
+   "y": 198.18,
+   "scaleX": 1.029,
+   "scaleY": 1.029,
+   "offsetX": 40,
+   "offsetY": 72
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0222",
+   "dir": "cropped",
+   "frames": [
+    "Bushe1_crop.png"
+   ],
+   "name": "Bushe1_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 227.06,
+   "y": 778.43,
+   "scaleX": 1.004,
+   "scaleY": 1.004,
+   "offsetX": 40,
+   "offsetY": 72
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0223",
+   "dir": "cropped",
+   "frames": [
+    "Bushe1_crop.png"
+   ],
+   "name": "Bushe1_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2008.91,
+   "y": 1639.73,
+   "scaleX": 1.027,
+   "scaleY": 1.027,
+   "offsetX": 40,
+   "offsetY": 72
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0224",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "Bushe2_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1584.91,
+   "y": 276.81,
+   "scaleX": 0.91,
+   "scaleY": 0.91,
+   "offsetX": 38.5,
+   "offsetY": 50
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0225",
+   "dir": "cropped",
+   "frames": [
+    "Bushe4_crop.png"
+   ],
+   "name": "Bushe4_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2780.79,
+   "y": 1313.44,
+   "scaleX": 0.856,
+   "scaleY": 0.856,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0226",
+   "dir": "cropped",
+   "frames": [
+    "Bushe4_crop.png"
+   ],
+   "name": "Bushe4_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2077.52,
+   "y": 1182.41,
+   "scaleX": 1.067,
+   "scaleY": 1.067,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0227",
+   "dir": "cropped",
+   "frames": [
+    "Bushe4_crop.png"
+   ],
+   "name": "Bushe4_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 553.39,
+   "y": 1627.68,
+   "scaleX": 0.909,
+   "scaleY": 0.909,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0228",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "Bushe2_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 342.05,
+   "y": 870.29,
+   "scaleX": 0.867,
+   "scaleY": 0.867,
+   "offsetX": 38.5,
+   "offsetY": 50
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0229",
+   "dir": "cropped",
+   "frames": [
+    "Bushe1_crop.png"
+   ],
+   "name": "Bushe1_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 812.98,
+   "y": 1264.68,
+   "scaleX": 0.831,
+   "scaleY": 0.831,
+   "offsetX": 40,
+   "offsetY": 72
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0230",
+   "dir": "cropped",
+   "frames": [
+    "Bushe1_crop.png"
+   ],
+   "name": "Bushe1_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2603.67,
+   "y": 173.82,
+   "scaleX": 1.055,
+   "scaleY": 1.055,
+   "offsetX": 40,
+   "offsetY": 72
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0231",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "Bushe2_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2766.26,
+   "y": 1566.46,
+   "scaleX": 1.065,
+   "scaleY": 1.065,
+   "offsetX": 38.5,
+   "offsetY": 50
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0232",
+   "dir": "cropped",
+   "frames": [
+    "Bushe1_crop.png"
+   ],
+   "name": "Bushe1_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2870.03,
+   "y": 291.62,
+   "scaleX": 0.888,
+   "scaleY": 0.888,
+   "offsetX": 40,
+   "offsetY": 72
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0233",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "Bushe2_crop",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1164.44,
+   "y": 1415.39,
+   "scaleX": 1.026,
+   "scaleY": 1.026,
+   "offsetX": 38.5,
+   "offsetY": 50
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0234",
    "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
    "frames": [
     "middle_lane_tree2.png"
@@ -2854,32 +5599,49 @@
    "animated": false,
    "spriteLayer": "below",
    "x": 175,
-   "y": 1770,
-   "scaleX": 0.758,
-   "scaleY": 0.758,
+   "y": 300,
+   "scaleX": 0.72,
+   "scaleY": 0.72,
    "offsetX": 104,
    "offsetY": 268
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0136",
+   "spriteId": "s_r23_0235",
    "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
    "frames": [
-    "middle_lane_tree3.png"
+    "middle_lane_tree4.png"
    ],
-   "name": "middle_lane_tree3",
+   "name": "middle_lane_tree4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 355,
+   "y": 1770,
+   "scaleX": 0.716,
+   "scaleY": 0.716,
+   "offsetX": 78,
+   "offsetY": 275
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0236",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
    "animated": false,
    "spriteLayer": "below",
    "x": 3030,
    "y": 300,
-   "scaleX": 0.774,
-   "scaleY": 0.774,
-   "offsetX": 93.5,
-   "offsetY": 256
+   "scaleX": 0.769,
+   "scaleY": 0.769,
+   "offsetX": 104,
+   "offsetY": 268
   },
   {
    "type": "sprite",
-   "spriteId": "s_r23_0137",
+   "spriteId": "s_r23_0237",
    "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
    "frames": [
     "middle_lane_tree2.png"
@@ -2889,10 +5651,146 @@
    "spriteLayer": "below",
    "x": 3030,
    "y": 1775,
-   "scaleX": 0.742,
-   "scaleY": 0.742,
+   "scaleX": 0.799,
+   "scaleY": 0.799,
    "offsetX": 104,
    "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0238",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 700,
+   "y": 250,
+   "scaleX": 0.78,
+   "scaleY": 0.78,
+   "offsetX": 104,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0239",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree3.png"
+   ],
+   "name": "middle_lane_tree3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1150,
+   "y": 230,
+   "scaleX": 0.838,
+   "scaleY": 0.838,
+   "offsetX": 93.5,
+   "offsetY": 256
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0240",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree4.png"
+   ],
+   "name": "middle_lane_tree4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1900,
+   "y": 235,
+   "scaleX": 0.7,
+   "scaleY": 0.7,
+   "offsetX": 78,
+   "offsetY": 275
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0241",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2400,
+   "y": 255,
+   "scaleX": 0.717,
+   "scaleY": 0.717,
+   "offsetX": 99.5,
+   "offsetY": 246
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0242",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 520,
+   "y": 1810,
+   "scaleX": 0.785,
+   "scaleY": 0.785,
+   "offsetX": 99.5,
+   "offsetY": 246
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0243",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree4.png"
+   ],
+   "name": "middle_lane_tree4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1050,
+   "y": 1820,
+   "scaleX": 0.842,
+   "scaleY": 0.842,
+   "offsetX": 78,
+   "offsetY": 275
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0244",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2050,
+   "y": 1815,
+   "scaleX": 0.691,
+   "scaleY": 0.691,
+   "offsetX": 99.5,
+   "offsetY": 246
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0245",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2560,
+   "y": 1805,
+   "scaleX": 0.733,
+   "scaleY": 0.733,
+   "offsetX": 99.5,
+   "offsetY": 246
   }
  ],
  "noWalkZones": [

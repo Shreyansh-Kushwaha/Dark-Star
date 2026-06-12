@@ -78,6 +78,22 @@ stroke("#5a4626", 8, [140, 1092, 3060, 1092])
 for x in range(300, 3001, 270):
     stroke("#6a542e", 5, [x, 912, x, 1088])
 
+# Mottled ground texture: soft earth-tone dabs across the field so the dirt
+# isn't one flat brown. Round-cap 1px lines render as filled circles. Kept out
+# of the path band (905-1095) so the processional stays clean.
+EARTH = ["#6f5530", "#856a38", "#5f5a30", "#8a6e3c", "#6a5e34", "#7e6636"]
+MOSS  = ["#5e6330", "#67692f", "#566031"]
+for _ in range(60):
+    cx = rng.uniform(150, 3050)
+    cy = rng.choice([rng.uniform(170, 880), rng.uniform(1120, 1850)])
+    tone = rng.choice(EARTH if rng.random() < 0.78 else MOSS)
+    # Irregular wandering patch (round-cap stroke) reads as organic ground, not a disc.
+    spread = rng.uniform(60, 150)
+    pts = []
+    for _ in range(rng.randint(3, 5)):
+        pts += [cx + rng.uniform(-spread, spread), cy + rng.uniform(-spread * 0.6, spread * 0.6)]
+    stroke(tone, rng.uniform(55, 130), pts)
+
 # ── 2. BUILDINGS (kept in place) + priest quarters in empty corners ───────────
 sprite(YBLD, "Monastery.png", 520, 640, 1.10, name="Monastery")
 sprite(YBLD, "Castle.png",    2700, 760, 1.05, name="Castle")
@@ -170,39 +186,76 @@ gold("Gold Stone 4.png", 605, 820, 0.85)
 gold("Gold Stone 6.png", 2640, 945, 0.9); gold("Gold Stone 5.png", 2710, 970, 0.85)
 gold("Gold Stone 4.png", 2772, 938, 0.8)
 
-# ── 10. GROUND DECOR filling the empty bands ──────────────────────────────────
-TOP_BAND = (190, 540); BOT_BAND = (1500, 1850)
-def scatter_band(frame_pick, dir_, count, sx_range, bands=(TOP_BAND, BOT_BAND), xr=(150, 3050)):
-    for _ in range(count):
-        b = rng.choice(bands)
+# ── 10. GROUND DECOR scattered across the whole field ─────────────────────────
+BUILDINGS = [(520, 640, 230), (2700, 760, 280), (1500, 600, 220),
+             (235, 1565, 200), (2985, 560, 200), (1500, 860, 260)]  # (x, y, keep-clear radius)
+
+def in_path(y):                       # the processional corridor
+    return 900 <= y <= 1100
+def near_building(x, y, pad=0.0):
+    return any((x - bx) ** 2 + (y - by) ** 2 < (r + pad) ** 2 for bx, by, r in BUILDINGS)
+
+def field_point(allow_path=False, avoid_buildings=True, pad=0.0):
+    for _ in range(40):
+        x = rng.uniform(150, 3050); y = rng.uniform(170, 1850)
+        if not allow_path and in_path(y):       continue
+        if avoid_buildings and near_building(x, y, pad): continue
+        return x, y
+    return x, y
+
+def cluster(dir_, frame_pick, n, sx_range, off_jit=70, **fp):
+    """Place a small clump so decor reads as natural, not noise."""
+    cx, cy = field_point(**fp)
+    for _ in range(n):
         frame = frame_pick()
-        sprite(dir_, frame, rng.uniform(*xr), rng.uniform(*b), rng.uniform(*sx_range),
+        sprite(dir_, frame, cx + rng.uniform(-off_jit, off_jit),
+               cy + rng.uniform(-off_jit, off_jit), rng.uniform(*sx_range),
                name=frame.rsplit('.', 1)[0])
 
-# Dirt patches
-scatter_band(lambda: rng.choice(["Dirt1.png", "Dirt2.png", "Dirt3.png", "Dirt6.png"]),
-             DECOR, 14, (1.9, 2.6), bands=(TOP_BAND, BOT_BAND, (900, 1100)))
-# Grass clumps (also along path edges)
-scatter_band(lambda: rng.choice(["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"]),
-             GRASS, 22, (2.4, 3.2), bands=(TOP_BAND, BOT_BAND, (840, 880), (1110, 1150)))
-# Bushes near edges/corners
-for _ in range(8):
-    frame = rng.choice(["Bushe1_crop.png", "Bushe2_crop.png", "Bushe3_crop.png", "Bushe4_crop.png"])
-    x = rng.choice([rng.uniform(150, 420), rng.uniform(2780, 3050)])
-    y = rng.uniform(250, 1800)
-    sprite(CROPPED, frame, x, y, rng.uniform(0.85, 1.05), name=frame[:-4])
-# Standalone rocks
-for _ in range(7):
-    frame = rng.choice(["Rock1.png", "Rock2.png", "Rock3.png", "Rock4.png"])
-    base_s = {"Rock1.png": 2.4, "Rock2.png": 1.0, "Rock3.png": 1.0, "Rock4.png": 1.5}[frame]
-    sprite(ROCKS, frame, rng.uniform(180, 3020),
-           rng.choice([rng.uniform(*TOP_BAND), rng.uniform(*BOT_BAND)]),
-           base_s * rng.uniform(0.7, 1.05), name="Rock")
-# Framing trees at the far corners
-for x, y in [(175, 300), (175, 1770), (3030, 300), (3030, 1775)]:
-    frame = rng.choice(["middle_lane_tree2.png", "middle_lane_tree3.png",
-                        "middle_lane_tree4.png", "middle_lane_tree5.png"])
-    sprite(TREES, frame, x, y, rng.uniform(0.70, 0.85), name=frame[:-4])
+GRASS_F = lambda: rng.choice(["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"])
+DIRT_F  = lambda: rng.choice(["Dirt1.png", "Dirt2.png", "Dirt3.png", "Dirt6.png"])
+ROCK_F  = lambda: rng.choice(["Rock1.png", "Rock2.png", "Rock3.png", "Rock4.png"])
+BUSH_F  = lambda: rng.choice(["Bushe1_crop.png", "Bushe2_crop.png", "Bushe3_crop.png", "Bushe4_crop.png"])
+TREE_F  = lambda: rng.choice(["middle_lane_tree2.png", "middle_lane_tree3.png",
+                              "middle_lane_tree4.png", "middle_lane_tree5.png"])
+
+# Grass — dense, in small clumps across the whole field (+ along path edges).
+for _ in range(26):
+    cluster(GRASS, GRASS_F, rng.randint(2, 4), (2.3, 3.2))
+for _ in range(12):                              # path-edge tufts
+    x = rng.uniform(180, 3020); y = rng.choice([rng.uniform(845, 882), rng.uniform(1108, 1148)])
+    f = GRASS_F(); sprite(GRASS, f, x, y, rng.uniform(2.4, 3.1), name=f[:-4])
+
+# Dirt patches scattered everywhere (including under the path band for wear).
+for _ in range(24):
+    x, y = field_point(allow_path=True, avoid_buildings=False)
+    f = DIRT_F(); sprite(DECOR, f, x, y, rng.uniform(1.9, 2.7), name=f[:-4])
+
+# Rocks — clumps of rubble plus lone boulders across the field.
+for _ in range(9):
+    cluster(ROCKS, ROCK_F, rng.randint(1, 3), (0.8, 1.3), off_jit=55)
+for _ in range(6):
+    f = ROCK_F(); x, y = field_point()
+    base = {"Rock1.png": 2.3, "Rock2.png": 1.0, "Rock3.png": 1.0, "Rock4.png": 1.5}[f]
+    sprite(ROCKS, f, x, y, base * rng.uniform(0.7, 1.05), name="Rock")
+
+# Bushes spread through the field, weighted toward the edges.
+for _ in range(16):
+    if rng.random() < 0.55:
+        x = rng.choice([rng.uniform(150, 460), rng.uniform(2740, 3050)]); y = rng.uniform(220, 1820)
+        if in_path(y) or near_building(x, y): x, y = field_point()
+    else:
+        x, y = field_point()
+    f = BUSH_F(); sprite(CROPPED, f, x, y, rng.uniform(0.82, 1.08), name=f[:-4])
+
+# Trees framing the perimeter — corners plus along the top and bottom edges.
+tree_spots = [(175, 300), (175, 1770), (3030, 300), (3030, 1775),
+              (700, 250), (1150, 230), (1900, 235), (2400, 255),
+              (520, 1810), (1050, 1820), (2050, 1815), (2560, 1805)]
+for x, y in tree_spots:
+    if near_building(x, y, pad=60):  # nudge off any building it lands on
+        x += 180
+    f = TREE_F(); sprite(TREES, f, x, y, rng.uniform(0.68, 0.86), name=f[:-4])
 
 # ── WRITE ─────────────────────────────────────────────────────────────────────
 data = json.load(open(PATH))
