@@ -8,6 +8,310 @@
  },
  "sprites": [
   {
+   "type": "stroke",
+   "spriteId": "s_r10d_0001",
+   "stroke": "#382a1c",
+   "strokeWidth": 124,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    40,
+    1077.03,
+    120,
+    1104.18,
+    200,
+    1118.31,
+    280,
+    1120.28,
+    360,
+    1112.85,
+    440,
+    1100.18,
+    520,
+    1086.97,
+    600,
+    1077.64,
+    680,
+    1075.46,
+    760,
+    1081.98,
+    840,
+    1096.7,
+    920,
+    1117.17,
+    1000,
+    1139.39,
+    1080,
+    1158.52,
+    1160,
+    1169.78,
+    1240,
+    1169.28,
+    1320,
+    1154.78,
+    1400,
+    1126.09,
+    1480,
+    1085.21,
+    1560,
+    1036.05,
+    1640,
+    983.79,
+    1720,
+    934.08,
+    1800,
+    892.14,
+    1880,
+    861.92,
+    1960,
+    845.47,
+    2040,
+    842.72,
+    2120,
+    851.48,
+    2200,
+    867.94,
+    2280,
+    887.4,
+    2360,
+    905.07,
+    2440,
+    917.01,
+    2520,
+    920.79,
+    2600,
+    915.95,
+    2680,
+    904.06,
+    2760,
+    888.45,
+    2840,
+    873.56,
+    2920,
+    864.17,
+    3000,
+    864.47,
+    3080,
+    877.31,
+    3160,
+    903.59
+   ]
+  },
+  {
+   "type": "stroke",
+   "spriteId": "s_r10d_0002",
+   "stroke": "#382a1c",
+   "strokeWidth": 124,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1692.5,
+    1130.0,
+    1680.15,
+    1186.29,
+    1643.93,
+    1238.75,
+    1586.33,
+    1283.8,
+    1511.25,
+    1318.36,
+    1423.82,
+    1340.09,
+    1330.0,
+    1347.5,
+    1236.18,
+    1340.09,
+    1148.75,
+    1318.36,
+    1073.67,
+    1283.8,
+    1016.07,
+    1238.75,
+    979.85,
+    1186.29,
+    967.5,
+    1130.0,
+    979.85,
+    1073.71,
+    1016.07,
+    1021.25,
+    1073.67,
+    976.2,
+    1148.75,
+    941.64,
+    1236.18,
+    919.91,
+    1330.0,
+    912.5,
+    1423.82,
+    919.91,
+    1511.25,
+    941.64,
+    1586.33,
+    976.2,
+    1643.93,
+    1021.25,
+    1680.15,
+    1073.71,
+    1692.5,
+    1130.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "spriteId": "s_r10d_0003",
+   "stroke": "#463420",
+   "strokeWidth": 66,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    40,
+    1077.03,
+    120,
+    1104.18,
+    200,
+    1118.31,
+    280,
+    1120.28,
+    360,
+    1112.85,
+    440,
+    1100.18,
+    520,
+    1086.97,
+    600,
+    1077.64,
+    680,
+    1075.46,
+    760,
+    1081.98,
+    840,
+    1096.7,
+    920,
+    1117.17,
+    1000,
+    1139.39,
+    1080,
+    1158.52,
+    1160,
+    1169.78,
+    1240,
+    1169.28,
+    1320,
+    1154.78,
+    1400,
+    1126.09,
+    1480,
+    1085.21,
+    1560,
+    1036.05,
+    1640,
+    983.79,
+    1720,
+    934.08,
+    1800,
+    892.14,
+    1880,
+    861.92,
+    1960,
+    845.47,
+    2040,
+    842.72,
+    2120,
+    851.48,
+    2200,
+    867.94,
+    2280,
+    887.4,
+    2360,
+    905.07,
+    2440,
+    917.01,
+    2520,
+    920.79,
+    2600,
+    915.95,
+    2680,
+    904.06,
+    2760,
+    888.45,
+    2840,
+    873.56,
+    2920,
+    864.17,
+    3000,
+    864.47,
+    3080,
+    877.31,
+    3160,
+    903.59
+   ]
+  },
+  {
+   "type": "stroke",
+   "spriteId": "s_r10d_0004",
+   "stroke": "#463420",
+   "strokeWidth": 66,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1692.5,
+    1130.0,
+    1680.15,
+    1186.29,
+    1643.93,
+    1238.75,
+    1586.33,
+    1283.8,
+    1511.25,
+    1318.36,
+    1423.82,
+    1340.09,
+    1330.0,
+    1347.5,
+    1236.18,
+    1340.09,
+    1148.75,
+    1318.36,
+    1073.67,
+    1283.8,
+    1016.07,
+    1238.75,
+    979.85,
+    1186.29,
+    967.5,
+    1130.0,
+    979.85,
+    1073.71,
+    1016.07,
+    1021.25,
+    1073.67,
+    976.2,
+    1148.75,
+    941.64,
+    1236.18,
+    919.91,
+    1330.0,
+    912.5,
+    1423.82,
+    919.91,
+    1511.25,
+    941.64,
+    1586.33,
+    976.2,
+    1643.93,
+    1021.25,
+    1680.15,
+    1073.71,
+    1692.5,
+    1130.0
+   ]
+  },
+  {
    "type": "sprite",
    "spriteId": "s_region10_0001",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
@@ -2542,57 +2846,6 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_region10_0150",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2570.31,
-   "y": 312.39,
-   "scaleX": 1.881,
-   "scaleY": 1.881,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0151",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2671.1,
-   "y": 275.15,
-   "scaleX": 2.53,
-   "scaleY": 2.53,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0152",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2703.32,
-   "y": 285.03,
-   "scaleX": 1.652,
-   "scaleY": 1.652,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_region10_0153",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
@@ -2605,23 +2858,6 @@
    "y": 282.67,
    "scaleX": 1.979,
    "scaleY": 1.979,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0154",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2799.76,
-   "y": 310.36,
-   "scaleX": 1.271,
-   "scaleY": 1.271,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -3086,125 +3322,6 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_region10_0182",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1785.42,
-   "y": 453.96,
-   "scaleX": 2.177,
-   "scaleY": 2.177,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0183",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1773.67,
-   "y": 444.85,
-   "scaleX": 1.334,
-   "scaleY": 1.334,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0184",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1939.33,
-   "y": 459.72,
-   "scaleX": 2.294,
-   "scaleY": 2.294,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0185",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2008.14,
-   "y": 430.23,
-   "scaleX": 1.636,
-   "scaleY": 1.636,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0186",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2199.4,
-   "y": 463.47,
-   "scaleX": 2.545,
-   "scaleY": 2.545,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0187",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2240.86,
-   "y": 460.14,
-   "scaleX": 1.545,
-   "scaleY": 1.545,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0188",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2340.16,
-   "y": 423.87,
-   "scaleX": 2.496,
-   "scaleY": 2.496,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_region10_0189",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
@@ -3222,23 +3339,6 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_region10_0190",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2494.48,
-   "y": 402.29,
-   "scaleX": 1.612,
-   "scaleY": 1.612,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_region10_0191",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
@@ -3251,74 +3351,6 @@
    "y": 428.76,
    "scaleX": 2.351,
    "scaleY": 2.351,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0192",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2593.65,
-   "y": 413.13,
-   "scaleX": 1.225,
-   "scaleY": 1.225,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0193",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2857.92,
-   "y": 449.29,
-   "scaleX": 1.993,
-   "scaleY": 1.993,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0194",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2996.47,
-   "y": 417.27,
-   "scaleX": 2.201,
-   "scaleY": 2.201,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0195",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 3027.67,
-   "y": 416.38,
-   "scaleX": 1.789,
-   "scaleY": 1.789,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -3443,57 +3475,6 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_region10_0203",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 223.2,
-   "y": 594.02,
-   "scaleX": 1.874,
-   "scaleY": 1.874,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0204",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 307.87,
-   "y": 604.05,
-   "scaleX": 1.647,
-   "scaleY": 1.647,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0205",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 489.37,
-   "y": 571.13,
-   "scaleX": 2.367,
-   "scaleY": 2.367,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_region10_0206",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
@@ -3579,23 +3560,6 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_region10_0211",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1057.59,
-   "y": 609.81,
-   "scaleX": 1.278,
-   "scaleY": 1.278,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_region10_0212",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
@@ -3630,23 +3594,6 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_region10_0214",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1291.0,
-   "y": 592.87,
-   "scaleX": 1.801,
-   "scaleY": 1.801,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_region10_0215",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
@@ -3659,40 +3606,6 @@
    "y": 544.93,
    "scaleX": 2.39,
    "scaleY": 2.39,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0216",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1593.27,
-   "y": 544.68,
-   "scaleX": 2.267,
-   "scaleY": 2.267,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0217",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1978.02,
-   "y": 541.38,
-   "scaleX": 1.932,
-   "scaleY": 1.932,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -3868,210 +3781,6 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_region10_0228",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 285.08,
-   "y": 705.11,
-   "scaleX": 1.783,
-   "scaleY": 1.783,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0229",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 380.55,
-   "y": 711.69,
-   "scaleX": 1.835,
-   "scaleY": 1.835,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0230",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 409.46,
-   "y": 706.11,
-   "scaleX": 1.206,
-   "scaleY": 1.206,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0231",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 674.54,
-   "y": 688.25,
-   "scaleX": 1.56,
-   "scaleY": 1.56,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0232",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 817.3,
-   "y": 736.78,
-   "scaleX": 2.196,
-   "scaleY": 2.196,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0233",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 798.51,
-   "y": 767.61,
-   "scaleX": 1.056,
-   "scaleY": 1.056,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0234",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 958.48,
-   "y": 730.05,
-   "scaleX": 2.348,
-   "scaleY": 2.348,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0235",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1073.02,
-   "y": 688.41,
-   "scaleX": 2.54,
-   "scaleY": 2.54,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0236",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1259.8,
-   "y": 692.25,
-   "scaleX": 1.971,
-   "scaleY": 1.971,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0237",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1267.75,
-   "y": 669.04,
-   "scaleX": 1.569,
-   "scaleY": 1.569,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0238",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1341.28,
-   "y": 705.19,
-   "scaleX": 1.514,
-   "scaleY": 1.514,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0239",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1335.34,
-   "y": 712.8,
-   "scaleX": 1.07,
-   "scaleY": 1.07,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_region10_0240",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
@@ -4084,23 +3793,6 @@
    "y": 735.22,
    "scaleX": 1.542,
    "scaleY": 1.542,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0241",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 768.68,
-   "y": 832.33,
-   "scaleX": 1.523,
-   "scaleY": 1.523,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -4123,40 +3815,6 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_region10_0243",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 871.6,
-   "y": 809.42,
-   "scaleX": 2.399,
-   "scaleY": 2.399,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0244",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 897.72,
-   "y": 811.96,
-   "scaleX": 1.254,
-   "scaleY": 1.254,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_region10_0245",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
@@ -4174,23 +3832,6 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_region10_0246",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1028.1,
-   "y": 779.28,
-   "scaleX": 1.642,
-   "scaleY": 1.642,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_region10_0247",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
@@ -4203,23 +3844,6 @@
    "y": 1150.66,
    "scaleX": 2.429,
    "scaleY": 2.429,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0248",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1963.94,
-   "y": 1166.32,
-   "scaleX": 1.36,
-   "scaleY": 1.36,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -4344,40 +3968,6 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_region10_0256",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1948.72,
-   "y": 1229.18,
-   "scaleX": 1.553,
-   "scaleY": 1.553,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0257",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2022.28,
-   "y": 1297.86,
-   "scaleX": 2.413,
-   "scaleY": 2.413,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_region10_0258",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
@@ -4412,23 +4002,6 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_region10_0260",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2350.89,
-   "y": 1295.65,
-   "scaleX": 2.429,
-   "scaleY": 2.429,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_region10_0261",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
@@ -4441,74 +4014,6 @@
    "y": 1269.47,
    "scaleX": 1.455,
    "scaleY": 1.455,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0262",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2895.28,
-   "y": 1285.33,
-   "scaleX": 1.649,
-   "scaleY": 1.649,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0263",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2994.69,
-   "y": 1227.96,
-   "scaleX": 1.673,
-   "scaleY": 1.673,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0264",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2966.97,
-   "y": 1232.19,
-   "scaleX": 1.006,
-   "scaleY": 1.006,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0265",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 3152.01,
-   "y": 1255.54,
-   "scaleX": 1.714,
-   "scaleY": 1.714,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -4599,74 +4104,6 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_region10_0271",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 578.33,
-   "y": 1422.46,
-   "scaleX": 1.629,
-   "scaleY": 1.629,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0272",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 589.11,
-   "y": 1420.0,
-   "scaleX": 1.087,
-   "scaleY": 1.087,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0273",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 700.1,
-   "y": 1430.38,
-   "scaleX": 2.377,
-   "scaleY": 2.377,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0274",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 737.38,
-   "y": 1451.88,
-   "scaleX": 1.455,
-   "scaleY": 1.455,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_region10_0275",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
@@ -4679,23 +4116,6 @@
    "y": 1383.08,
    "scaleX": 1.548,
    "scaleY": 1.548,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0276",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1695.94,
-   "y": 1388.74,
-   "scaleX": 2.259,
-   "scaleY": 2.259,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -4815,125 +4235,6 @@
    "y": 1403.33,
    "scaleX": 3.388,
    "scaleY": 3.388,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0284",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2361.63,
-   "y": 1367.79,
-   "scaleX": 2.393,
-   "scaleY": 2.393,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0285",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2357.26,
-   "y": 1387.23,
-   "scaleX": 1.542,
-   "scaleY": 1.542,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0286",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2497.44,
-   "y": 1430.91,
-   "scaleX": 2.043,
-   "scaleY": 2.043,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0287",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2517.83,
-   "y": 1439.9,
-   "scaleX": 1.091,
-   "scaleY": 1.091,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0288",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2663.86,
-   "y": 1396.89,
-   "scaleX": 2.299,
-   "scaleY": 2.299,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0289",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2776.64,
-   "y": 1387.71,
-   "scaleX": 2.146,
-   "scaleY": 2.146,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0290",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2957.01,
-   "y": 1432.42,
-   "scaleX": 3.4,
-   "scaleY": 3.4,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -5075,125 +4376,6 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_region10_0299",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 94.33,
-   "y": 1570.82,
-   "scaleX": 2.184,
-   "scaleY": 2.184,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0300",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 121.84,
-   "y": 1600.31,
-   "scaleX": 1.055,
-   "scaleY": 1.055,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0301",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 243.96,
-   "y": 1544.39,
-   "scaleX": 1.656,
-   "scaleY": 1.656,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0302",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 398.68,
-   "y": 1572.46,
-   "scaleX": 2.568,
-   "scaleY": 2.568,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0303",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 356.87,
-   "y": 1540.59,
-   "scaleX": 1.688,
-   "scaleY": 1.688,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0304",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 536.26,
-   "y": 1504.74,
-   "scaleX": 2.43,
-   "scaleY": 2.43,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0305",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 691.05,
-   "y": 1497.76,
-   "scaleX": 1.822,
-   "scaleY": 1.822,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_region10_0306",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
@@ -5223,91 +4405,6 @@
    "y": 1552.28,
    "scaleX": 1.683,
    "scaleY": 1.683,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0308",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 921.13,
-   "y": 1498.37,
-   "scaleX": 1.942,
-   "scaleY": 1.942,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0309",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1532.51,
-   "y": 1559.52,
-   "scaleX": 1.718,
-   "scaleY": 1.718,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0310",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1501.19,
-   "y": 1568.07,
-   "scaleX": 1.363,
-   "scaleY": 1.363,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0311",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1605.97,
-   "y": 1558.96,
-   "scaleX": 1.961,
-   "scaleY": 1.961,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0312",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1615.19,
-   "y": 1545.75,
-   "scaleX": 1.654,
-   "scaleY": 1.654,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -5427,57 +4524,6 @@
    "y": 1519.42,
    "scaleX": 2.643,
    "scaleY": 2.643,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0320",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2472.6,
-   "y": 1531.02,
-   "scaleX": 1.819,
-   "scaleY": 1.819,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0321",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2609.57,
-   "y": 1534.39,
-   "scaleX": 2.019,
-   "scaleY": 2.019,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0322",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2643.72,
-   "y": 1556.68,
-   "scaleX": 1.774,
-   "scaleY": 1.774,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -5653,40 +4699,6 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_region10_0333",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 222.53,
-   "y": 1642.12,
-   "scaleX": 2.242,
-   "scaleY": 2.242,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0334",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 285.0,
-   "y": 1638.34,
-   "scaleX": 2.186,
-   "scaleY": 2.186,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_region10_0335",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
@@ -5835,91 +4847,6 @@
    "y": 1671.64,
    "scaleX": 2.297,
    "scaleY": 2.297,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0344",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 959.5,
-   "y": 1656.7,
-   "scaleX": 1.266,
-   "scaleY": 1.266,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0345",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1176.4,
-   "y": 1695.81,
-   "scaleX": 1.769,
-   "scaleY": 1.769,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0346",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1290.95,
-   "y": 1648.54,
-   "scaleX": 2.523,
-   "scaleY": 2.523,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0347",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1419.22,
-   "y": 1710.81,
-   "scaleX": 1.559,
-   "scaleY": 1.559,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0348",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1461.08,
-   "y": 1741.57,
-   "scaleX": 1.433,
-   "scaleY": 1.433,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -6537,23 +5464,6 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_region10_0385",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1070.63,
-   "y": 1748.3,
-   "scaleX": 1.012,
-   "scaleY": 1.012,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_region10_0386",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
@@ -6566,23 +5476,6 @@
    "y": 1848.78,
    "scaleX": 2.761,
    "scaleY": 2.761,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0387",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1351.03,
-   "y": 1805.33,
-   "scaleX": 2.218,
-   "scaleY": 2.218,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -8407,23 +7300,6 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_region10_0495",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 954.8,
-   "y": 825.04,
-   "scaleX": 1.988,
-   "scaleY": 1.988,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_region10_0496",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
@@ -8776,23 +7652,6 @@
    "y": 1265.88,
    "scaleX": 1.424,
    "scaleY": 1.424,
-   "offsetX": 32,
-   "offsetY": 32
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_region10_0517",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2162.61,
-   "y": 1227.34,
-   "scaleX": 1.61,
-   "scaleY": 1.61,
    "offsetX": 32,
    "offsetY": 32
   },
@@ -11019,6 +9878,2607 @@
    "scaleY": 1.166,
    "offsetX": 64,
    "offsetY": 64
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0005",
+   "dir": "assets_custom/props",
+   "frames": [
+    "obelisk.png"
+   ],
+   "name": "obelisk",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 405.26,
+   "y": 841.48,
+   "scaleX": 1.706,
+   "scaleY": 1.706,
+   "offsetX": 26.0,
+   "offsetY": 146
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0006",
+   "dir": "assets_custom/props",
+   "frames": [
+    "obelisk.png"
+   ],
+   "name": "obelisk",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 452.0,
+   "y": 854.46,
+   "scaleX": 1.939,
+   "scaleY": 1.939,
+   "offsetX": 26.0,
+   "offsetY": 146
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0007",
+   "dir": "assets_custom/props",
+   "frames": [
+    "torch.png"
+   ],
+   "name": "torch",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 470.35,
+   "y": 870.2,
+   "scaleX": 1.857,
+   "scaleY": 1.857,
+   "offsetX": 15.0,
+   "offsetY": 65
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0008",
+   "dir": "assets_custom/props",
+   "frames": [
+    "obelisk.png"
+   ],
+   "name": "obelisk",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1079.94,
+   "y": 860.46,
+   "scaleX": 1.739,
+   "scaleY": 1.739,
+   "offsetX": 26.0,
+   "offsetY": 146
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0009",
+   "dir": "assets_custom/props",
+   "frames": [
+    "obelisk.png"
+   ],
+   "name": "obelisk",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1130.0,
+   "y": 866.68,
+   "scaleX": 1.538,
+   "scaleY": 1.538,
+   "offsetX": 26.0,
+   "offsetY": 146
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0010",
+   "dir": "assets_custom/props",
+   "frames": [
+    "obelisk.png"
+   ],
+   "name": "obelisk",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1179.39,
+   "y": 871.83,
+   "scaleX": 1.643,
+   "scaleY": 1.643,
+   "offsetX": 26.0,
+   "offsetY": 146
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0011",
+   "dir": "assets_custom/props",
+   "frames": [
+    "torch.png"
+   ],
+   "name": "torch",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1183.55,
+   "y": 888.45,
+   "scaleX": 1.802,
+   "scaleY": 1.802,
+   "offsetX": 15.0,
+   "offsetY": 65
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0012",
+   "dir": "assets_custom/props",
+   "frames": [
+    "obelisk.png"
+   ],
+   "name": "obelisk",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1637.66,
+   "y": 1221.69,
+   "scaleX": 1.85,
+   "scaleY": 1.85,
+   "offsetX": 26.0,
+   "offsetY": 146
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0013",
+   "dir": "assets_custom/props",
+   "frames": [
+    "obelisk.png"
+   ],
+   "name": "obelisk",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1681.12,
+   "y": 1233.58,
+   "scaleX": 1.963,
+   "scaleY": 1.963,
+   "offsetX": 26.0,
+   "offsetY": 146
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0014",
+   "dir": "assets_custom/props",
+   "frames": [
+    "torch.png"
+   ],
+   "name": "torch",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1698.62,
+   "y": 1247.13,
+   "scaleX": 1.842,
+   "scaleY": 1.842,
+   "offsetX": 15.0,
+   "offsetY": 65
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0015",
+   "dir": "assets_custom/props",
+   "frames": [
+    "obelisk.png"
+   ],
+   "name": "obelisk",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2457.03,
+   "y": 587.81,
+   "scaleX": 1.941,
+   "scaleY": 1.941,
+   "offsetX": 26.0,
+   "offsetY": 146
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0016",
+   "dir": "assets_custom/props",
+   "frames": [
+    "obelisk.png"
+   ],
+   "name": "obelisk",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2502.6,
+   "y": 590.36,
+   "scaleX": 1.648,
+   "scaleY": 1.648,
+   "offsetX": 26.0,
+   "offsetY": 146
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0017",
+   "dir": "assets_custom/props",
+   "frames": [
+    "torch.png"
+   ],
+   "name": "torch",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2536.27,
+   "y": 623.09,
+   "scaleX": 1.736,
+   "scaleY": 1.736,
+   "offsetX": 15.0,
+   "offsetY": 65
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0018",
+   "dir": "assets_custom/props",
+   "frames": [
+    "obelisk.png"
+   ],
+   "name": "obelisk",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 844.24,
+   "y": 1254.39,
+   "scaleX": 1.69,
+   "scaleY": 1.69,
+   "offsetX": 26.0,
+   "offsetY": 146
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0019",
+   "dir": "assets_custom/props",
+   "frames": [
+    "obelisk.png"
+   ],
+   "name": "obelisk",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 893.61,
+   "y": 1243.16,
+   "scaleX": 1.61,
+   "scaleY": 1.61,
+   "offsetX": 26.0,
+   "offsetY": 146
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0020",
+   "dir": "assets_custom/props",
+   "frames": [
+    "torch.png"
+   ],
+   "name": "torch",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 922.5,
+   "y": 1277.24,
+   "scaleX": 1.711,
+   "scaleY": 1.711,
+   "offsetX": 15.0,
+   "offsetY": 65
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0021",
+   "dir": "assets_custom/props",
+   "frames": [
+    "flag_red.png"
+   ],
+   "name": "flag_red",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1190,
+   "y": 1370,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 13.0,
+   "offsetY": 110
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0022",
+   "dir": "assets_custom/props",
+   "frames": [
+    "torch.png"
+   ],
+   "name": "torch",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1238,
+   "y": 1382,
+   "scaleX": 1.7,
+   "scaleY": 1.7,
+   "offsetX": 15.0,
+   "offsetY": 65
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0023",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1067.03,
+   "y": 730.81,
+   "scaleX": 1.82,
+   "scaleY": 1.82,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0024",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1116.6,
+   "y": 687.76,
+   "scaleX": 1.838,
+   "scaleY": 1.838,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0025",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 987.03,
+   "y": 681.18,
+   "scaleX": 1.591,
+   "scaleY": 1.591,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0026",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1785.04,
+   "y": 394.16,
+   "scaleX": 1.364,
+   "scaleY": 1.364,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0027",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1780.0,
+   "y": 397.51,
+   "scaleX": 1.353,
+   "scaleY": 1.353,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0028",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1914.43,
+   "y": 405.41,
+   "scaleX": 1.682,
+   "scaleY": 1.682,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0029",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2913.16,
+   "y": 457.61,
+   "scaleX": 1.785,
+   "scaleY": 1.785,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0030",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2915.92,
+   "y": 435.68,
+   "scaleX": 1.783,
+   "scaleY": 1.783,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0031",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2999.23,
+   "y": 422.4,
+   "scaleX": 1.429,
+   "scaleY": 1.429,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0032",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 571.98,
+   "y": 1476.41,
+   "scaleX": 1.678,
+   "scaleY": 1.678,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0033",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 658.1,
+   "y": 1475.68,
+   "scaleX": 1.402,
+   "scaleY": 1.402,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0034",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1559.33,
+   "y": 1513.44,
+   "scaleX": 1.797,
+   "scaleY": 1.797,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0035",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1499.83,
+   "y": 1499.92,
+   "scaleX": 1.632,
+   "scaleY": 1.632,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0036",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1492.99,
+   "y": 1522.79,
+   "scaleX": 1.843,
+   "scaleY": 1.843,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0037",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2438.39,
+   "y": 1486.02,
+   "scaleX": 1.651,
+   "scaleY": 1.651,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0038",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2457.94,
+   "y": 1470.93,
+   "scaleX": 1.529,
+   "scaleY": 1.529,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0039",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2398.72,
+   "y": 1485.81,
+   "scaleX": 1.736,
+   "scaleY": 1.736,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0040",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2448.51,
+   "y": 1433.24,
+   "scaleX": 1.814,
+   "scaleY": 1.814,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0041",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3017.26,
+   "y": 1277.31,
+   "scaleX": 1.812,
+   "scaleY": 1.812,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0042",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2987.27,
+   "y": 1256.04,
+   "scaleX": 1.894,
+   "scaleY": 1.894,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0043",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3000.74,
+   "y": 1276.5,
+   "scaleX": 1.348,
+   "scaleY": 1.348,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0044",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3081.7,
+   "y": 1281.07,
+   "scaleX": 1.511,
+   "scaleY": 1.511,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0045",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 200.7,
+   "y": 1529.77,
+   "scaleX": 1.464,
+   "scaleY": 1.464,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0046",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 142.65,
+   "y": 1520.35,
+   "scaleX": 1.497,
+   "scaleY": 1.497,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0047",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 83.92,
+   "y": 1554.44,
+   "scaleX": 1.638,
+   "scaleY": 1.638,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0048",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 275.34,
+   "y": 608.99,
+   "scaleX": 1.691,
+   "scaleY": 1.691,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0049",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 345.69,
+   "y": 653.41,
+   "scaleX": 1.795,
+   "scaleY": 1.795,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0050",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 226.69,
+   "y": 611.12,
+   "scaleX": 1.895,
+   "scaleY": 1.895,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0051",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 260.8,
+   "y": 1633.84,
+   "scaleX": 1.788,
+   "scaleY": 1.788,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0052",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 289.81,
+   "y": 1591.8,
+   "scaleX": 1.865,
+   "scaleY": 1.865,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0053",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 277.23,
+   "y": 1613.14,
+   "scaleX": 1.774,
+   "scaleY": 1.774,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0054",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 227.1,
+   "y": 1600.56,
+   "scaleX": 1.522,
+   "scaleY": 1.522,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0055",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 510.71,
+   "y": 675.67,
+   "scaleX": 1.881,
+   "scaleY": 1.881,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0056",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 475.89,
+   "y": 621.75,
+   "scaleX": 1.494,
+   "scaleY": 1.494,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0057",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 450.42,
+   "y": 666.44,
+   "scaleX": 1.474,
+   "scaleY": 1.474,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0058",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 402.98,
+   "y": 632.03,
+   "scaleX": 1.416,
+   "scaleY": 1.416,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0059",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 460.07,
+   "y": 1592.04,
+   "scaleX": 1.96,
+   "scaleY": 1.96,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0060",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 514.09,
+   "y": 1588.82,
+   "scaleX": 1.93,
+   "scaleY": 1.93,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0061",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 657.17,
+   "y": 656.78,
+   "scaleX": 1.514,
+   "scaleY": 1.514,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0062",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 662.77,
+   "y": 640.84,
+   "scaleX": 1.741,
+   "scaleY": 1.741,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0063",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 583.24,
+   "y": 654.92,
+   "scaleX": 1.588,
+   "scaleY": 1.588,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0064",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 619.57,
+   "y": 607.85,
+   "scaleX": 1.678,
+   "scaleY": 1.678,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0065",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 633.99,
+   "y": 1565.28,
+   "scaleX": 1.565,
+   "scaleY": 1.565,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0066",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 629.32,
+   "y": 1534.72,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0067",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 551.18,
+   "y": 1506.08,
+   "scaleX": 1.826,
+   "scaleY": 1.826,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0068",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 733.12,
+   "y": 745.07,
+   "scaleX": 1.424,
+   "scaleY": 1.424,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0069",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 782.49,
+   "y": 723.07,
+   "scaleX": 1.677,
+   "scaleY": 1.677,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0070",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 756.81,
+   "y": 713.71,
+   "scaleX": 1.687,
+   "scaleY": 1.687,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0071",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 880.54,
+   "y": 766.7,
+   "scaleX": 1.827,
+   "scaleY": 1.827,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0072",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 830.31,
+   "y": 723.33,
+   "scaleX": 1.996,
+   "scaleY": 1.996,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0073",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 825.28,
+   "y": 717.73,
+   "scaleX": 1.373,
+   "scaleY": 1.373,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0074",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 952.46,
+   "y": 1478.74,
+   "scaleX": 1.694,
+   "scaleY": 1.694,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0075",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 892.4,
+   "y": 1532.44,
+   "scaleX": 1.617,
+   "scaleY": 1.617,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0076",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 961.28,
+   "y": 1524.03,
+   "scaleX": 1.997,
+   "scaleY": 1.997,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0077",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 962.81,
+   "y": 1533.95,
+   "scaleX": 1.67,
+   "scaleY": 1.67,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0078",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 966.75,
+   "y": 681.73,
+   "scaleX": 1.966,
+   "scaleY": 1.966,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0079",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1000.5,
+   "y": 649.35,
+   "scaleX": 1.691,
+   "scaleY": 1.691,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0080",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 968.31,
+   "y": 1578.46,
+   "scaleX": 1.871,
+   "scaleY": 1.871,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0081",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1017.52,
+   "y": 1604.91,
+   "scaleX": 1.782,
+   "scaleY": 1.782,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0082",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1103.92,
+   "y": 1569.41,
+   "scaleX": 1.424,
+   "scaleY": 1.424,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0083",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1010.06,
+   "y": 1552.55,
+   "scaleX": 1.769,
+   "scaleY": 1.769,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0084",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1264.12,
+   "y": 671.21,
+   "scaleX": 1.628,
+   "scaleY": 1.628,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0085",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1208.52,
+   "y": 648.43,
+   "scaleX": 1.509,
+   "scaleY": 1.509,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0086",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1236.76,
+   "y": 655.84,
+   "scaleX": 1.851,
+   "scaleY": 1.851,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0087",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1260.2,
+   "y": 686.23,
+   "scaleX": 1.728,
+   "scaleY": 1.728,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0088",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1145.9,
+   "y": 1716.51,
+   "scaleX": 1.577,
+   "scaleY": 1.577,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0089",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1155.71,
+   "y": 1690.96,
+   "scaleX": 1.498,
+   "scaleY": 1.498,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0090",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1257.45,
+   "y": 1677.26,
+   "scaleX": 1.758,
+   "scaleY": 1.758,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0091",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1118.98,
+   "y": 1683.92,
+   "scaleX": 1.805,
+   "scaleY": 1.805,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0092",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1305.61,
+   "y": 574.66,
+   "scaleX": 1.403,
+   "scaleY": 1.403,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0093",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1308.09,
+   "y": 541.16,
+   "scaleX": 1.555,
+   "scaleY": 1.555,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0094",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1355.98,
+   "y": 1709.92,
+   "scaleX": 1.368,
+   "scaleY": 1.368,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0095",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1404.57,
+   "y": 1731.7,
+   "scaleX": 1.465,
+   "scaleY": 1.465,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0096",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1331.08,
+   "y": 1747.2,
+   "scaleX": 1.467,
+   "scaleY": 1.467,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0097",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1421.57,
+   "y": 1574.2,
+   "scaleX": 1.718,
+   "scaleY": 1.718,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0098",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1476.17,
+   "y": 1585.17,
+   "scaleX": 1.744,
+   "scaleY": 1.744,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0099",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1434.27,
+   "y": 1575.37,
+   "scaleX": 1.583,
+   "scaleY": 1.583,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0100",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1694.09,
+   "y": 576.89,
+   "scaleX": 1.762,
+   "scaleY": 1.762,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0101",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1613.43,
+   "y": 515.81,
+   "scaleX": 1.65,
+   "scaleY": 1.65,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0102",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1645.68,
+   "y": 545.61,
+   "scaleX": 1.858,
+   "scaleY": 1.858,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0103",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1694.03,
+   "y": 569.55,
+   "scaleX": 1.926,
+   "scaleY": 1.926,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0104",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1583.1,
+   "y": 1463.04,
+   "scaleX": 1.671,
+   "scaleY": 1.671,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0105",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1623.98,
+   "y": 1430.03,
+   "scaleX": 1.825,
+   "scaleY": 1.825,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0106",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1623.95,
+   "y": 1448.04,
+   "scaleX": 1.988,
+   "scaleY": 1.988,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0107",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1635.75,
+   "y": 1436.34,
+   "scaleX": 1.973,
+   "scaleY": 1.973,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0108",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1891.15,
+   "y": 430.47,
+   "scaleX": 1.83,
+   "scaleY": 1.83,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0109",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1924.62,
+   "y": 437.1,
+   "scaleX": 1.477,
+   "scaleY": 1.477,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0110",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1870.94,
+   "y": 455.61,
+   "scaleX": 1.685,
+   "scaleY": 1.685,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0111",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1879.92,
+   "y": 471.01,
+   "scaleX": 1.575,
+   "scaleY": 1.575,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0112",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2157.37,
+   "y": 460.06,
+   "scaleX": 1.985,
+   "scaleY": 1.985,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0113",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2034.81,
+   "y": 486.27,
+   "scaleX": 1.551,
+   "scaleY": 1.551,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0114",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2054.35,
+   "y": 444.2,
+   "scaleX": 1.598,
+   "scaleY": 1.598,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0115",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2016.22,
+   "y": 461.33,
+   "scaleX": 1.397,
+   "scaleY": 1.397,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0116",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2084.87,
+   "y": 1226.42,
+   "scaleX": 1.688,
+   "scaleY": 1.688,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0117",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2047.71,
+   "y": 1185.92,
+   "scaleX": 1.49,
+   "scaleY": 1.49,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0118",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2083.3,
+   "y": 1239.92,
+   "scaleX": 1.363,
+   "scaleY": 1.363,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0119",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2018.16,
+   "y": 1215.79,
+   "scaleX": 1.765,
+   "scaleY": 1.765,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0120",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2196.4,
+   "y": 468.7,
+   "scaleX": 1.405,
+   "scaleY": 1.405,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0121",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2310.58,
+   "y": 453.62,
+   "scaleX": 1.987,
+   "scaleY": 1.987,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0122",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2217.93,
+   "y": 469.92,
+   "scaleX": 1.616,
+   "scaleY": 1.616,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0123",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2609.91,
+   "y": 337.76,
+   "scaleX": 1.9,
+   "scaleY": 1.9,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0124",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2530.12,
+   "y": 372.25,
+   "scaleX": 1.629,
+   "scaleY": 1.629,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0125",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2584.78,
+   "y": 330.73,
+   "scaleX": 1.738,
+   "scaleY": 1.738,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0126",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2593.89,
+   "y": 1515.7,
+   "scaleX": 1.637,
+   "scaleY": 1.637,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0127",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2477.43,
+   "y": 1453.41,
+   "scaleX": 1.454,
+   "scaleY": 1.454,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0128",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2511.13,
+   "y": 1502.88,
+   "scaleX": 1.581,
+   "scaleY": 1.581,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0129",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2728.93,
+   "y": 323.82,
+   "scaleX": 1.366,
+   "scaleY": 1.366,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0130",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2681.62,
+   "y": 289.9,
+   "scaleX": 1.387,
+   "scaleY": 1.387,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0131",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2639.23,
+   "y": 1506.43,
+   "scaleX": 1.983,
+   "scaleY": 1.983,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0132",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2671.77,
+   "y": 1453.75,
+   "scaleX": 1.888,
+   "scaleY": 1.888,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0133",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2891.37,
+   "y": 368.58,
+   "scaleX": 1.428,
+   "scaleY": 1.428,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0134",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2868.73,
+   "y": 388.05,
+   "scaleX": 1.42,
+   "scaleY": 1.42,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0135",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2825.54,
+   "y": 361.51,
+   "scaleX": 1.936,
+   "scaleY": 1.936,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0136",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2906.83,
+   "y": 1392.59,
+   "scaleX": 1.668,
+   "scaleY": 1.668,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0137",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2786.41,
+   "y": 1431.97,
+   "scaleX": 1.467,
+   "scaleY": 1.467,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0138",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2825.26,
+   "y": 1388.56,
+   "scaleX": 1.423,
+   "scaleY": 1.423,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0139",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_gold.png"
+   ],
+   "name": "tree_gold",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3046.09,
+   "y": 423.52,
+   "scaleX": 1.508,
+   "scaleY": 1.508,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0140",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2993.41,
+   "y": 399.36,
+   "scaleX": 1.404,
+   "scaleY": 1.404,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0141",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3064.58,
+   "y": 1289.47,
+   "scaleX": 1.422,
+   "scaleY": 1.422,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0142",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2947.84,
+   "y": 1258.26,
+   "scaleX": 1.383,
+   "scaleY": 1.383,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0143",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2989.63,
+   "y": 1281.16,
+   "scaleX": 1.561,
+   "scaleY": 1.561,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0144",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2916.06,
+   "y": 1286.07,
+   "scaleX": 1.512,
+   "scaleY": 1.512,
+   "offsetX": 46.0,
+   "offsetY": 122
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0145",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2360,
+   "y": 1344.57,
+   "scaleX": 2.6,
+   "scaleY": 2.6,
+   "offsetX": 48.0,
+   "offsetY": 130
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0146",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 760,
+   "y": 779.03,
+   "scaleX": 2.2,
+   "scaleY": 2.2,
+   "offsetX": 48.0,
+   "offsetY": 130
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0147",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1435.72,
+   "y": 1153.09,
+   "scaleX": 2.262,
+   "scaleY": 2.262,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0148",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1323.46,
+   "y": 1174.83,
+   "scaleX": 1.861,
+   "scaleY": 1.861,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0149",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1212.54,
+   "y": 1155.65,
+   "scaleX": 2.297,
+   "scaleY": 2.297,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0150",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1243.4,
+   "y": 1100.0,
+   "scaleX": 2.042,
+   "scaleY": 2.042,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0151",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1362.35,
+   "y": 1057.56,
+   "scaleX": 2.143,
+   "scaleY": 2.143,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0152",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1386.64,
+   "y": 1114.15,
+   "scaleX": 1.696,
+   "scaleY": 1.696,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0153",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1572.49,
+   "y": 1218.5,
+   "scaleX": 1.668,
+   "scaleY": 1.668,
+   "offsetX": 17.0,
+   "offsetY": 72
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0154",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1234.23,
+   "y": 1296.33,
+   "scaleX": 1.477,
+   "scaleY": 1.477,
+   "offsetX": 17.0,
+   "offsetY": 72
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0155",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1066.89,
+   "y": 1069.46,
+   "scaleX": 1.584,
+   "scaleY": 1.584,
+   "offsetX": 17.0,
+   "offsetY": 72
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0156",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1234.23,
+   "y": 963.67,
+   "scaleX": 1.728,
+   "scaleY": 1.728,
+   "offsetX": 17.0,
+   "offsetY": 72
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r10d_0157",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1544.49,
+   "y": 1016.23,
+   "scaleX": 1.793,
+   "scaleY": 1.793,
+   "offsetX": 17.0,
+   "offsetY": 72
   }
  ],
  "noWalkZones": [

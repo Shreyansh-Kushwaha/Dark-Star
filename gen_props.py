@@ -245,6 +245,59 @@ def flag_red():
     d.polygon([(16,31),(42,33),(16,50)], fill=rd)                          # shaded lower fold
     save(im, "flag_red")
 
+def _canopy_tree(name, body, shad, lite, deep):
+    # a round-canopy tree — clustered foliage lobes over a short trunk, like the
+    # chunky teal/gold groves of the reference art. Base-anchored at the trunk.
+    im, d = canvas(92, 124)
+    tr=(60,46,36,255); trd=(40,32,26,255)
+    d.polygon([(40,122),(54,122),(51,86),(43,86)], fill=tr, outline=OL)
+    d.line([46,92,46,118], fill=trd, width=2)
+    lobes = [(46,52,38,32),(18,64,16,13),(74,64,16,13),(24,36,15,12),
+             (68,36,15,12),(46,20,18,13),(30,78,14,11),(62,78,14,11)]
+    for (cx,cy,rx,ry) in lobes: blob(d, cx, cy, rx, ry, body, OL)
+    for (cx,cy,rx,ry) in lobes: blob(d, cx, cy, rx-2, ry-2, body)  # clear inner outlines
+    for (cx,cy,rx,ry) in [(62,68,20,14),(74,48,11,9),(40,80,16,9)]:   # lower-right shade
+        blob(d, cx, cy, rx, ry, shad)
+    for (cx,cy,rx,ry) in [(28,34,12,9),(44,20,11,8),(18,54,8,6)]:     # top-left light
+        blob(d, cx, cy, rx, ry, lite)
+    # chunky leaf-cluster speckles
+    for i,(px,py) in enumerate([(34,48),(52,42),(60,58),(26,62),(48,66),(38,30),
+                                (58,32),(68,56),(44,56),(30,72),(56,74),(64,42)]):
+        col = lite if py < 40 and i % 2 else deep
+        d.ellipse([px-2,py-2,px+2,py+2], fill=col)
+    save(im, name)
+
+def obelisk():
+    # a weathered standing stone — tapered shaft on a plinth, chipped crown,
+    # carved bands and faint teal rune-marks. Base-anchored.
+    im, d = canvas(52, 148)
+    s=(126,134,140,255); sd=(90,100,108,255); sl=(166,176,182,255)
+    d.rectangle([8,134,44,146], fill=sd, outline=OL, width=2)              # plinth
+    d.polygon([(14,136),(38,136),(34,16),(18,16)], fill=s, outline=OL)     # tapered shaft
+    d.polygon([(18,16),(34,16),(29,5),(22,9)], fill=s, outline=OL)         # chipped crown
+    d.line([19,20,17,132], fill=sl, width=2)                               # lit left edge
+    d.line([33,22,35,130], fill=sd, width=2)                               # shaded right
+    for yy in (38,62,86,110): d.line([22,yy,31,yy], fill=sd, width=2)      # carving bands
+    for yy in (48,72,96): d.ellipse([24,yy,28,yy+4], fill=(110,200,200,255))  # rune-marks
+    save(im, "obelisk")
+
+def lily_pad():
+    # a flat lily pad with a cut notch and a small pink blossom — lies on the
+    # water, centre-anchored, soft dark rim instead of the hard prop outline.
+    im, d = canvas(44, 28)
+    g=(64,124,80,255); gd=(44,90,60,255); gl=(92,156,104,255)
+    d.ellipse([2,4,42,26], fill=g, outline=(28,56,42,255), width=2)
+    d.ellipse([8,8,28,16], fill=gl)
+    for a0 in (40, 100, 150): d.arc([8,8,36,22], a0, a0+30, fill=gd, width=1)
+    mask = Image.new("L", im.size, 0)
+    ImageDraw.Draw(mask).polygon([(24,15),(44,9),(44,19)], fill=255)       # cut the notch
+    im.paste((0,0,0,0), (0,0), mask)
+    d = ImageDraw.Draw(im)
+    d.line([24,15,42,10], fill=gd, width=2); d.line([24,15,42,18], fill=gd, width=2)
+    blob(d, 14, 12, 4, 4, (216,130,156,255))                               # blossom
+    d.ellipse([12,10,16,14], fill=(244,206,214,255))
+    save(im, "lily_pad")
+
 def crystal(name, base, light, dark):
     im, d = canvas(64, 116)
     d.polygon([(32,6),(50,60),(40,112),(24,112),(14,60)], fill=base, outline=OL)
@@ -260,6 +313,9 @@ if __name__ == "__main__":
     cloud_platform(); ice_shard(); brazier(); pillar(); mural(); void_shard()
     reed(); gate_arch(); lava_rock(); boat(); dock()
     cypress(); pond(); torch(); flag_red()
+    _canopy_tree("tree_teal", (62,124,114,255), (38,86,82,255), (104,174,154,255), (26,58,56,255))
+    _canopy_tree("tree_gold", (198,152,60,255), (148,102,40,255), (234,198,104,255), (112,76,32,255))
+    obelisk(); lily_pad()
     crystal("crystal_cyan",   (108,196,210,255), (190,238,244,255), (64,140,158,255))
     crystal("crystal_purple", (140,110,196,255), (206,180,244,255), (92,64,150,255))
     crystal("crystal_amber",  (210,160,72,255),  (244,212,140,255), (150,104,40,255))

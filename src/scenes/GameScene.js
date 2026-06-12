@@ -853,6 +853,7 @@ export class GameScene extends Phaser.Scene {
     let c = null, lightR = 90;
     if (n === 'brazier')            { c = 0xffb24a; lightR = 80;  }
     else if (n === 'torch')         { c = 0xffb24a; lightR = 56;  }  // scattered fire torches
+    else if (n === 'tree_gold')     { c = 0xffc24e; lightR = 64;  }  // Sunless Deep: golden glow-trees
     else if (n === 'pond')          { c = 0x5aa0c8; lightR = 70;  }  // still water catches cool sky light
     else if (n === 'gate_arch')     { c = 0xfff0b0; lightR = 150; }
     else if (n === 'mural')         { c = 0xfff0b0; lightR = 70;  }  // Temple of Gods: the five intact halos glow
