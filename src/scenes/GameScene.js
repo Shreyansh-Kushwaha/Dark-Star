@@ -620,6 +620,8 @@ export class GameScene extends Phaser.Scene {
     if (n === 'brazier')            c = 0xffb24a;
     else if (n === 'gate_arch')     c = 0xfff0b0;
     else if (n === 'mural')         c = 0xfff0b0;   // Temple of Gods: the five intact halos glow
+    else if (n === 'lava_rock')     c = 0xff6a1e;   // Demon Forge: molten slag emits heat
+    else if (n === 'crystal_amber') c = 0xffb24a;   // cooling metal glints
     else if (d.includes('campfire')) c = 0xff9a3a;
     if (c != null) this._glow(obj, c, 5);
   }
