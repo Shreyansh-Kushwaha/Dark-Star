@@ -18,6 +18,8 @@ export class Projectile extends Phaser.GameObjects.Sprite {
     this.setScale(config.scale || 0.6);
     if (config.tint) this.setTint(config.tint);
     this.setDepth(this.y + 10);
+    // emissive glow for magic projectiles (tinted); gated by quality inside _glow
+    if (config.tint) scene._glow?.(this, config.glowColor || config.tint, 3);
 
     this._born = scene.time.now;
     this._hit  = false;

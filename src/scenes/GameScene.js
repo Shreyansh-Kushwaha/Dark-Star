@@ -174,6 +174,7 @@ export class GameScene extends Phaser.Scene {
     this._buildGroundTexture();
     this._spawnAmbientParticles(regionIndex);
     this._applyRegionColorOverlay(regionIndex);
+    this._setupPostFx();
 
     // ── Players ───────────────────────────────────────────────────
     const spawnPos = region.spawnPos;
@@ -560,6 +561,34 @@ export class GameScene extends Phaser.Scene {
     const ov = G[this._regionBiome(regionIndex)];
     if (!ov) return;
     this.add.rectangle(WORLD_W / 2, WORLD_H / 2, WORLD_W, WORLD_H, ov.color, ov.alpha).setDepth(-7);
+  }
+
+  // Global bloom (WebGL only) makes every bright/additive thing — shrine flame,
+  // portal fills, lava rivers, crystals, gold, VFX bursts — actually emit light.
+  _setupPostFx() {
+    if (!QualitySettings.postFx) return;
+    const cam = this.cameras?.main;
+    if (!cam?.postFX?.addBloom) return;   // WebGL pipeline required
+    try { cam.postFX.addBloom(0xffffff, 1, 1, 1, 0.8, 4); } catch (e) {}
+  }
+
+  // Per-object emissive glow. addGlow only works on Sprite/Image/Text in WebGL,
+  // so this is for the sprite-based light sources (fire props, gate, projectiles).
+  _glow(obj, color, outer = 4) {
+    if (!QualitySettings.postFx || !obj?.postFX?.addGlow) return obj;
+    try { obj.postFX.addGlow(color, outer, 0, false, 0.1, 8); } catch (e) {}
+    return obj;
+  }
+
+  // Glow a placed map sprite if it is an emissive prop (fire / radiant gate).
+  _glowEmissive(obj, sp) {
+    const n = (sp.name || '').toLowerCase();
+    const d = (sp.dir  || '').toLowerCase();
+    let c = null;
+    if (n === 'brazier')            c = 0xffb24a;
+    else if (n === 'gate_arch')     c = 0xfff0b0;
+    else if (d.includes('campfire')) c = 0xff9a3a;
+    if (c != null) this._glow(obj, c, 5);
   }
 
   _setupWorld(region) {
@@ -1139,6 +1168,7 @@ export class GameScene extends Phaser.Scene {
             .play(animKey);
           if (sp.offsetX != null && sp.offsetY != null)
             spr.setOrigin(sp.offsetX / sp.frameW, sp.offsetY / sp.frameH);
+          this._glowEmissive(spr, sp);
           continue;
         }
 
@@ -1163,6 +1193,7 @@ export class GameScene extends Phaser.Scene {
             const h = tex.getSourceImage()?.height || sp.offsetY * 2;
             spr.setOrigin(sp.offsetX / w, sp.offsetY / h);
           }
+          this._glowEmissive(spr, sp);
           continue;
         }
 
@@ -1175,6 +1206,7 @@ export class GameScene extends Phaser.Scene {
           const h = tex.getSourceImage()?.height || sp.offsetY * 2;
           img.setOrigin(sp.offsetX / w, sp.offsetY / h);
         }
+        this._glowEmissive(img, sp);
       }
 
       // Spawn enemies placed in the map editor.
