@@ -196,6 +196,55 @@ def lava_rock():
         d.line([x,y,x+8,y], fill=(250,140,40,255), width=2)        # lava seams
     save(im, "lava_rock")
 
+def cypress():
+    # a dark pointed conifer — stacked tiers, columnar, base-anchored at the trunk.
+    # Almost black-green to read as a graveyard sentinel tree in low light.
+    im, d = canvas(72, 144)
+    tr=(56,44,34,255); trd=(38,30,24,255)
+    d.rectangle([32,122,40,142], fill=tr, outline=OL); d.line([35,124,35,140], fill=trd, width=1)
+    body=(40,62,48,255); shad=(26,42,33,255); lite=(60,88,66,255)
+    # four overlapping triangle tiers from base to tip
+    for (base_y, half, apex) in [(126,30,84),(104,26,60),(82,22,38),(60,17,14)]:
+        d.polygon([(36-half,base_y),(36+half,base_y),(36,apex)], fill=body, outline=OL)
+        d.polygon([(36,apex),(36,base_y),(36+half,base_y)], fill=shad)      # right side in shadow
+        d.line([36,apex,36-half+4,base_y], fill=lite, width=1)              # lit left edge
+    d.polygon([(31,16),(41,16),(36,2)], fill=body, outline=OL)             # tip
+    save(im, "cypress")
+
+def pond():
+    # a still water pool — deep teal with an upper sheen, soft dark-blue rim.
+    # Center-anchored (it lies flat on the ground, no hard black outline).
+    im, d = canvas(148, 88)
+    water=(54,104,134,255); deep=(38,80,108,255); sheen=(82,140,168,255); bright=(120,178,202,255)
+    rim=(30,52,70,255)
+    d.ellipse([6,12,142,80], fill=water, outline=rim, width=3)
+    d.ellipse([14,46,134,80], fill=deep)                                   # darker lower water
+    d.ellipse([28,18,118,52], fill=sheen)                                  # upper sky sheen
+    d.ellipse([46,22,98,40], fill=bright)                                  # bright glint
+    for ry in (60,68): d.arc([34,ry-8,114,ry+8], 200, 340, fill=bright, width=1)  # ripples
+    save(im, "pond")
+
+def torch():
+    # a small ground torch on a wrapped stick, flame on top. Base-anchored.
+    im, d = canvas(30, 66)
+    post=(98,72,46,255); pd=(66,48,30,255)
+    d.rectangle([12,26,18,64], fill=post, outline=OL); d.line([15,28,15,62], fill=pd, width=1)
+    d.rectangle([9,18,21,30], fill=(64,52,42,255), outline=OL)             # wrapped head
+    for (c, r) in [((250,176,64,255),9),((250,124,42,255),6),((255,232,150,255),3)]:
+        d.polygon([(15,18-int(r*1.6)),(15-r//2,20),(15+r//2,20)], fill=c)  # flame
+    save(im, "torch")
+
+def flag_red():
+    # a tattered crimson banner on a wooden pole — a waymarker by the gate.
+    im, d = canvas(58, 112)
+    pole=(120,96,60,255); pd=(84,64,38,255)
+    d.rectangle([10,8,16,110], fill=pole, outline=OL); d.line([13,10,13,108], fill=pd, width=1)
+    red=(170,44,40,255); rl=(204,72,60,255); rd=(122,30,28,255)
+    d.polygon([(16,12),(54,20),(42,31),(54,42),(16,50)], fill=red, outline=OL)  # swallowtail banner
+    d.polygon([(16,12),(42,18),(16,31)], fill=rl)                          # lit upper fold
+    d.polygon([(16,31),(42,33),(16,50)], fill=rd)                          # shaded lower fold
+    save(im, "flag_red")
+
 def crystal(name, base, light, dark):
     im, d = canvas(64, 116)
     d.polygon([(32,6),(50,60),(40,112),(24,112),(14,60)], fill=base, outline=OL)
@@ -210,6 +259,7 @@ if __name__ == "__main__":
     cactus(); dead_tree(); scarecrow(); bone_pile(); skull(); bone_arch()
     cloud_platform(); ice_shard(); brazier(); pillar(); mural(); void_shard()
     reed(); gate_arch(); lava_rock(); boat(); dock()
+    cypress(); pond(); torch(); flag_red()
     crystal("crystal_cyan",   (108,196,210,255), (190,238,244,255), (64,140,158,255))
     crystal("crystal_purple", (140,110,196,255), (206,180,244,255), (92,64,150,255))
     crystal("crystal_amber",  (210,160,72,255),  (244,212,140,255), (150,104,40,255))
