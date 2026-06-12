@@ -1613,20 +1613,33 @@ export class GameScene extends Phaser.Scene {
   update(time, delta) {
     if (this._paused) return;
 
+    // ── Boss cutscene freeze ──────────────────────────────────────
+    // While the boss intro/name-card plays, hold every actor in place: zero
+    // their velocities and skip their AI/input updates so nobody drifts or
+    // attacks mid-cinematic. The intro runs on timers/tweens (not this loop),
+    // so it still completes and everyone resumes the moment it clears.
+    // (The boss itself already self-freezes via Boss `_introActive`.)
+    if (this._bossIntroActive) {
+      for (const pl of this.players) pl?.body?.setVelocity(0, 0);
+      for (const en of this.enemies) en?.body?.setVelocity(0, 0);
+    }
+
     // ── Players ───────────────────────────────────────────────────
     const p1 = this.players[0];
     const p2 = this.players[1];
 
-    if (p1 && p1.isLocal)  p1.update(time, delta, this._cursors, this._keys, this.enemies, this);
-    if (p2 && p2.isLocal)  p2.update(time, delta, this._cursors, this._keys, this.enemies, this);
-    // Solo only: Tara follows P1 via AI when there is no network connection
-    if (p2 && !p2.isLocal && !this.network.connected) this._taraAI(p1, p2, delta);
+    if (!this._bossIntroActive) {
+      if (p1 && p1.isLocal)  p1.update(time, delta, this._cursors, this._keys, this.enemies, this);
+      if (p2 && p2.isLocal)  p2.update(time, delta, this._cursors, this._keys, this.enemies, this);
+      // Solo only: Tara follows P1 via AI when there is no network connection
+      if (p2 && !p2.isLocal && !this.network.connected) this._taraAI(p1, p2, delta);
+    }
 
     // ── Enemies ───────────────────────────────────────────────────
     // Only host runs enemy AI; client receives positions via ENEMY_SYNC.
     // Cull AI by distance to the NEAREST active player (not just the host's
     // camera) so enemies near the client's player still pursue and attack.
-    if (!this.network.connected || this.network.isHost()) {
+    if (!this._bossIntroActive && (!this.network.connected || this.network.isHost())) {
       for (let i = this.enemies.length - 1; i >= 0; i--) {
         const e = this.enemies[i];
         if (!e || !e.active) { this.enemies.splice(i, 1); continue; }
