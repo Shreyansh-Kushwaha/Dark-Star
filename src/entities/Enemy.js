@@ -4,6 +4,7 @@ import { QualitySettings } from '../systems/QualitySettings.js';
 const STATE = { IDLE: 'idle', PURSUE: 'pursue', ATTACK: 'attack', DEAD: 'dead' };
 const IDLE_ROAM_DIST = 120;
 const DETECT_RANGE   = 350;
+const DETECT_RANGE_SQ = DETECT_RANGE * DETECT_RANGE;
 let _enemyIdCounter  = 0;
 
 export class Enemy extends Phaser.GameObjects.Container {
@@ -98,8 +99,8 @@ export class Enemy extends Phaser.GameObjects.Container {
     // Mimic: awaken sequence when player steps close
     if (this.cfg.isMimic && !this._mimicAwake) {
       if (target) {
-        const d = Phaser.Math.Distance.Between(this.x, this.y, target.x, target.y);
-        if (d < 200 && this._mimicPhase === 'chest') {
+        const mdx = this.x - target.x, mdy = this.y - target.y;
+        if (mdx * mdx + mdy * mdy < 200 * 200 && this._mimicPhase === 'chest') {
           this._mimicPhase = 'opening';
           this._playAnim('opening');
           this.scene.time.delayedCall(900, () => {
@@ -122,19 +123,20 @@ export class Enemy extends Phaser.GameObjects.Container {
 
   _nearestPlayer(players) {
     if (this.scene?.freeroam) return null;
-    let best = null, bestDist = Infinity;
+    let best = null, bestDistSq = Infinity;
     for (const p of players) {
       if (!p || !p.active || !p.alive || p.downed) continue;
-      const d = Phaser.Math.Distance.Between(this.x, this.y, p.x, p.y);
-      if (d < bestDist) { best = p; bestDist = d; }
+      const dx = this.x - p.x, dy = this.y - p.y;
+      const dSq = dx * dx + dy * dy;
+      if (dSq < bestDistSq) { best = p; bestDistSq = dSq; }
     }
-    return bestDist < DETECT_RANGE || this.state !== STATE.IDLE ? best : null;
+    return bestDistSq < DETECT_RANGE_SQ || this.state !== STATE.IDLE ? best : null;
   }
 
   _doIdle(time, delta, target) {
     if (target) {
-      const d = Phaser.Math.Distance.Between(this.x, this.y, target.x, target.y);
-      if (d < DETECT_RANGE) { this.state = STATE.PURSUE; return; }
+      const dx = this.x - target.x, dy = this.y - target.y;
+      if (dx * dx + dy * dy < DETECT_RANGE_SQ) { this.state = STATE.PURSUE; return; }
     }
 
     this._roamTimer -= delta;

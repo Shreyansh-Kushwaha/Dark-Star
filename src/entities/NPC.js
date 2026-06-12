@@ -44,15 +44,16 @@ export class NPC extends Phaser.GameObjects.Container {
   }
 
   update(players) {
-    let nearest = Infinity;
+    let nearestSq = Infinity;
     for (const p of players) {
       if (!p || !p.active) continue;
-      const d = Phaser.Math.Distance.Between(this.x, this.y, p.x, p.y);
-      if (d < nearest) nearest = d;
+      const dx = this.x - p.x, dy = this.y - p.y;
+      const dSq = dx * dx + dy * dy;
+      if (dSq < nearestSq) nearestSq = dSq;
     }
 
     const wasNear = this._playerNear;
-    this._playerNear = nearest < 100;
+    this._playerNear = nearestSq < 100 * 100;
 
     if (this._playerNear && !wasNear) {
       this.scene.tweens.add({

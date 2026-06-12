@@ -280,16 +280,17 @@ export class Player extends Phaser.GameObjects.Container {
     const angle = Math.atan2(this.facingY, this.facingX);
     const halfArc = Phaser.Math.DegToRad(ATTACK_ARC / 2);
 
+    const rangeSq = ATTACK_RANGE * ATTACK_RANGE;
     for (const enemy of enemies) {
       if (!enemy || !enemy.active || !enemy.alive) continue;
       const dx = enemy.x - this.x;
       const dy = enemy.y - this.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
+      const distSq = dx * dx + dy * dy;
 
-      if (dist > ATTACK_RANGE) continue;
+      if (distSq > rangeSq) continue;
 
       // Point-blank always hits
-      const hits = dist <= 50 || Math.abs(Phaser.Math.Angle.Wrap(Math.atan2(dy, dx) - angle)) < halfArc;
+      const hits = distSq <= 50 * 50 || Math.abs(Phaser.Math.Angle.Wrap(Math.atan2(dy, dx) - angle)) < halfArc;
       if (hits) {
         enemy.takeDamage(damage, this, scene);
         this._spawnHitFX(scene, enemy.x, enemy.y, heavy);
@@ -302,10 +303,10 @@ export class Player extends Phaser.GameObjects.Container {
     if (boss?.alive) {
       const dx = boss.x - this.x;
       const dy = boss.y - this.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
+      const distSq = dx * dx + dy * dy;
       const bossRange = ATTACK_RANGE + 40;
-      if (dist <= bossRange) {
-        const hits = dist <= 70 || Math.abs(Phaser.Math.Angle.Wrap(Math.atan2(dy, dx) - angle)) < halfArc;
+      if (distSq <= bossRange * bossRange) {
+        const hits = distSq <= 70 * 70 || Math.abs(Phaser.Math.Angle.Wrap(Math.atan2(dy, dx) - angle)) < halfArc;
         if (hits) {
           scene.hitBoss(damage);
           this._spawnHitFX(scene, boss.x, boss.y, heavy);

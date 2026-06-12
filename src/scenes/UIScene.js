@@ -292,7 +292,7 @@ export class UIScene extends Phaser.Scene {
         fontFamily: "'Silkscreen', monospace",
       }).setOrigin(0.5);
       const cd = this.add.text(x, y, '–', { fontSize: '12px', color: '#ccc', fontFamily: 'monospace' }).setOrigin(0.5);
-      this._abilityIcons.push({ bg, border, cd, x, y, cdLeft: 0, cdMax: 1 });
+      this._abilityIcons.push({ bg, border, cd, x, y, cdLeft: 0, cdMax: 1, _lastCdText: null, _lastAlpha: -1 });
     }
   }
 
@@ -360,11 +360,14 @@ export class UIScene extends Phaser.Scene {
       if (icon.cdLeft > 0) {
         icon.cdLeft = Math.max(0, icon.cdLeft - delta);
         const pct = icon.cdLeft / icon.cdMax;
-        icon.border.setAlpha(0.25 + 0.75 * (1 - pct));
-        icon.cd.setText(icon.cdLeft > 0 ? (icon.cdLeft / 1000).toFixed(1) : '–');
+        const alpha = 0.25 + 0.75 * (1 - pct);
+        if (alpha !== icon._lastAlpha) { icon.border.setAlpha(alpha); icon._lastAlpha = alpha; }
+        // Only re-layout the text texture when the rendered value (0.1s steps) changes.
+        const txt = icon.cdLeft > 0 ? (icon.cdLeft / 1000).toFixed(1) : '–';
+        if (txt !== icon._lastCdText) { icon.cd.setText(txt); icon._lastCdText = txt; }
       } else {
-        icon.cd.setText('–');
-        icon.border.setAlpha(0.5);
+        if (icon._lastCdText !== '–') { icon.cd.setText('–'); icon._lastCdText = '–'; }
+        if (icon._lastAlpha !== 0.5) { icon.border.setAlpha(0.5); icon._lastAlpha = 0.5; }
       }
     }
 
@@ -422,14 +425,20 @@ export class UIScene extends Phaser.Scene {
     const localP = gs?.players?.find(p => p?.isLocal) || gs?.players?.[0];
     if (localP && localP.alive && this._hpVignette) {
       const hpPct = localP.hp / localP.maxHp;
+      let target;
       if (hpPct < 0.3) {
         this._vigPulse = (this._vigPulse || 0) + delta * 0.0028;
         const pulse = Math.abs(Math.sin(this._vigPulse));
         const base  = (0.3 - hpPct) * 0.85;
-        this._hpVignette.setAlpha(base * (0.35 + pulse * 0.65));
+        target = base * (0.35 + pulse * 0.65);
       } else {
-        this._hpVignette.setAlpha(0);
+        target = 0;
         this._vigPulse = 0;
+      }
+      // Skip the setAlpha (and its render flag dirtying) when nothing visibly changed.
+      if (this._vigLastAlpha === undefined || Math.abs(target - this._vigLastAlpha) > 0.01) {
+        this._hpVignette.setAlpha(target);
+        this._vigLastAlpha = target;
       }
     }
   }

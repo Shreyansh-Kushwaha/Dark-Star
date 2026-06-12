@@ -7,6 +7,7 @@ import { Player } from '../entities/Player.js';
 import { Enemy  } from '../entities/Enemy.js';
 import { Boss   } from '../entities/Boss.js';
 import { BOSSES } from '../data/bosses.js';
+import { BOSS_FAMILIES, bossFamilyForTextureBase, bossAssetsReady, defineBossAnims } from '../data/bossAssets.js';
 import { Projectile } from '../entities/Projectile.js';
 import { AudioManager } from '../systems/AudioManager.js';
 import { QuestManager } from '../systems/QuestManager.js';
@@ -174,6 +175,7 @@ export class GameScene extends Phaser.Scene {
     this._buildGroundTexture();
     this._spawnAmbientParticles(regionIndex);
     this._applyRegionColorOverlay(regionIndex);
+    this._glowCount = 0;   // reset per-region glow budget (scene instance is reused)
     this._setupPostFx();
 
     // ── Players ───────────────────────────────────────────────────
@@ -312,6 +314,8 @@ export class GameScene extends Phaser.Scene {
     this._treePositions = [];
     this._boss = null;
     this._bossTriggered = false;
+    this._bossAssetsReady = true;     // flipped to false by _ensureBossAssets if a stream is needed
+    this._bossLoadingFamily = null;
     this._pressurePlates = [];
     this._plateTriggered = [false, false];
     this._plateRewardGiven = false;
@@ -328,6 +332,12 @@ export class GameScene extends Phaser.Scene {
     this._netTimer = 0;
     this._uiThrottleCounter = 0;
     this._slowTickCounter   = 0;
+    // FPS watchdog: accumulates time spent below the threshold; if it stays low
+    // long enough we step quality down one level (once per scene session).
+    this._lowFpsAccum   = 0;
+    this._fpsGraceTimer = 3000;   // ignore the first few seconds (load/GC spikes)
+    this._autoDowngraded = false;
+    this._wdLast = undefined;
     this._pendingRTBake     = [];
     this._paused = false;
     this._fixedEnemyMode = false;
@@ -496,6 +506,7 @@ export class GameScene extends Phaser.Scene {
   }
 
   _spawnAmbientParticles(regionIndex) {
+    this._ambientEmitter = null;
     if (!QualitySettings.weather) return;   // weather disabled on 'low' quality
     if (!this.textures.exists('amb_particle')) {
       const g = this.make.graphics({ add: false });
@@ -523,7 +534,7 @@ export class GameScene extends Phaser.Scene {
       dust:    { tints:[0xc8c0b0,0xa89e90,0xd8d0c0], grav:-6,  ang:[180,360], spd:[8,18],  life:[7000,12000], freq:420, blend:'NORMAL', scale:[0.40,0.06], alpha:0.28 },
     };
     const cfg = P[this._regionBiome(regionIndex)] || P.dust;
-    this.add.particles(WORLD_W / 2, WORLD_H / 2, 'amb_particle', {
+    this._ambientEmitter = this.add.particles(WORLD_W / 2, WORLD_H / 2, 'amb_particle', {
       x:        { min: -WORLD_W / 2 + 150, max: WORLD_W / 2 - 150 },
       y:        { min: -WORLD_H / 2 + 150, max: WORLD_H / 2 - 150 },
       scale:    { start: cfg.scale[0], end: cfg.scale[1] },
@@ -567,17 +578,21 @@ export class GameScene extends Phaser.Scene {
   // Global bloom (WebGL only) makes every bright/additive thing — shrine flame,
   // portal fills, lava rivers, crystals, gold, VFX bursts — actually emit light.
   _setupPostFx() {
+    this._bloomFx = null;
     if (!QualitySettings.postFx) return;
     const cam = this.cameras?.main;
     if (!cam?.postFX?.addBloom) return;   // WebGL pipeline required
-    try { cam.postFX.addBloom(0xffffff, 1, 1, 1, 0.8, 4); } catch (e) {}
+    try { this._bloomFx = cam.postFX.addBloom(0xffffff, 1, 1, 1, 0.8, 4); } catch (e) {}
   }
 
   // Per-object emissive glow. addGlow only works on Sprite/Image/Text in WebGL,
   // so this is for the sprite-based light sources (fire props, gate, projectiles).
   _glow(obj, color, outer = 4) {
-    if (!QualitySettings.postFx || !obj?.postFX?.addGlow) return obj;
-    try { obj.postFX.addGlow(color, outer, 0, false, 0.1, 8); } catch (e) {}
+    // Per-object glow is a separate WebGL shader pass each — restrict to the
+    // high preset and cap the total count so low/mid GPUs aren't flooded.
+    if (!QualitySettings.glow || !obj?.postFX?.addGlow) return obj;
+    if ((this._glowCount || 0) >= QualitySettings.glowMax) return obj;
+    try { obj.postFX.addGlow(color, outer, 0, false, 0.1, 8); this._glowCount = (this._glowCount || 0) + 1; } catch (e) {}
     return obj;
   }
 
@@ -1036,10 +1051,44 @@ export class GameScene extends Phaser.Scene {
     }
   }
 
+  // Lazily load this region's boss art (frames + anims) the first time the
+  // region is entered. Sets this._bossAssetsReady so the trigger can wait for a
+  // slow load rather than spawn a textureless boss. Uses a dedicated loader so
+  // it never races the map-sprite loader on this.load.
+  _ensureBossAssets(bossKey) {
+    const base   = BOSSES[bossKey]?.textureBase;
+    const family = bossFamilyForTextureBase(base);
+    if (!family) { this._bossAssetsReady = true; return; } // no lazy assets needed
+
+    if (bossAssetsReady(this, family)) { defineBossAnims(this, family); this._bossAssetsReady = true; return; }
+
+    // Already streaming this family — don't queue a second loader on retry.
+    if (this._bossLoadingFamily === family) return;
+    this._bossLoadingFamily = family;
+
+    // Dedicated loader instance — independent of this.load (the map-sprite
+    // loader), so the two never clobber each other's 'complete' events.
+    this._bossAssetsReady = false;
+    const loader = new Phaser.Loader.LoaderPlugin(this);
+    let queued = 0;
+    for (const { key, url } of BOSS_FAMILIES[family].loads) {
+      if (!this.textures.exists(key)) { loader.image(key, url); queued++; }
+    }
+    const finish = () => { defineBossAnims(this, family); this._bossAssetsReady = true; };
+    if (queued === 0) { finish(); return; }
+    loader.once(Phaser.Loader.Events.COMPLETE, finish);
+    loader.once(Phaser.Loader.Events.LOAD_ERROR, () => { /* keep waiting for COMPLETE; missing frame just won't show */ });
+    loader.start();
+  }
+
   _createBossArena(region) {
     // Map editor boss override takes precedence; fall back to region config
     const bossKey = this._mapBossOverride?.key || region.bossKey;
     if (!bossKey) return;
+
+    // Start streaming this boss's (lazily-loaded) art now, while the player is
+    // still far from the arena — runs identically on host and client.
+    this._ensureBossAssets(bossKey);
     const bp = this._mapBossOverride
       ? { x: this._mapBossOverride.x, y: this._mapBossOverride.y }
       : region.bossPos;
@@ -1509,7 +1558,7 @@ export class GameScene extends Phaser.Scene {
         if (ent.y >= tree.y) continue;
         const dx = ent.x - tree.x;
         const dy = ent.y - tree.y;
-        if (Math.sqrt(dx * dx + dy * dy) < tree.r) {
+        if (dx * dx + dy * dy < tree.r * tree.r) {
           behind = true;
           break;
         }
@@ -1560,13 +1609,14 @@ export class GameScene extends Phaser.Scene {
 
     // ── World fragment proximity prompts ──────────────────────────
     for (const wf of this._worldFragmentObjects) {
-      let nearest = Infinity;
+      let nearestSq = Infinity;
       for (const p of this.players) {
         if (!p?.active) continue;
-        const d = Phaser.Math.Distance.Between(wf.x, wf.y, p.x, p.y);
-        if (d < nearest) nearest = d;
+        const dx = wf.x - p.x, dy = wf.y - p.y;
+        const dSq = dx * dx + dy * dy;
+        if (dSq < nearestSq) nearestSq = dSq;
       }
-      wf.prompt.setAlpha(nearest < 80 ? 1 : 0);
+      wf.prompt.setAlpha(nearestSq < 80 * 80 ? 1 : 0);
     }
 
     // ── Boss ──────────────────────────────────────────────────────
@@ -1589,6 +1639,9 @@ export class GameScene extends Phaser.Scene {
     // ── Throttle counters ─────────────────────────────────────────
     this._uiThrottleCounter++;
     this._slowTickCounter++;
+
+    // ── Adaptive quality: drop a level if FPS stays low ───────────
+    this._fpsWatchdog(delta);
 
     // ── Tree occlusion (High quality only) ────────────────────────
     if (QualitySettings.occlusion) this._updateOcclusionAlpha();
@@ -1652,6 +1705,50 @@ export class GameScene extends Phaser.Scene {
     p2.setDepth(p2.y);
   }
 
+  // Adaptive quality: if the running FPS stays below target for a sustained
+  // window, step the quality preset down one level. Runs at most once per
+  // scene session. Gives immediate relief by killing the most expensive live
+  // effects (bloom + ambient particles); the rest applies on the next region.
+  _fpsWatchdog(delta) {
+    if (this._autoDowngraded || QualitySettings.level === 'low') return;
+
+    // Use wall-clock elapsed between frames, not Phaser's smoothed `delta` —
+    // at very low FPS the smoothed delta lags real time and would never reach
+    // the threshold.
+    const now = (typeof performance !== 'undefined' && performance.now) ? performance.now() : Date.now();
+    if (this._wdLast === undefined) { this._wdLast = now; return; }
+    const real = Math.min(1000, now - this._wdLast); // cap a single hitch/tab-switch
+    this._wdLast = now;
+
+    if (this._fpsGraceTimer > 0) { this._fpsGraceTimer -= real; return; }
+
+    const fps = this.game.loop.actualFps;
+    if (fps < 45) {
+      this._lowFpsAccum += real;
+    } else {
+      this._lowFpsAccum = Math.max(0, this._lowFpsAccum - real * 2); // recover quickly
+    }
+    if (this._lowFpsAccum < 5000) return; // require ~5s sustained low FPS
+
+    const newLevel = QualitySettings.lowerLevel();
+    this._autoDowngraded = true;
+    this._lowFpsAccum = 0;
+    if (!newLevel) return;
+
+    // Immediate relief for this session (the full preset applies next region).
+    if (!QualitySettings.postFx && this._bloomFx) {
+      try { this.cameras.main.postFX.remove(this._bloomFx); } catch (e) {}
+      this._bloomFx = null;
+    }
+    if (!QualitySettings.weather && this._ambientEmitter) {
+      try { this._ambientEmitter.destroy(); } catch (e) {}
+      this._ambientEmitter = null;
+    }
+    try {
+      this.scene.get('UIScene')?.toast?.(`Graphics lowered to ${newLevel.toUpperCase()} for performance`, '#ffcc44', 2600);
+    } catch (e) {}
+  }
+
   _checkProjectileCollisions(proj) {
     if (!proj.active) return;
 
@@ -1659,8 +1756,8 @@ export class GameScene extends Phaser.Scene {
       // Hit players
       for (const p of this.players) {
         if (!p?.alive || p.downed) continue;
-        const d = Phaser.Math.Distance.Between(proj.x, proj.y, p.x, p.y);
-        if (d < 24) {
+        const dx = proj.x - p.x, dy = proj.y - p.y;
+        if (dx * dx + dy * dy < 24 * 24) {
           p.takeDamage(proj.damage, null, this);
           if (proj.poisonOnHit) {
             const dps = (this._boss?.cfg.maxHp || 2000) * 0.004;
@@ -1679,16 +1776,16 @@ export class GameScene extends Phaser.Scene {
       // Hit enemies
       for (const e of this.enemies) {
         if (!e?.alive) continue;
-        const d = Phaser.Math.Distance.Between(proj.x, proj.y, e.x, e.y);
-        if (d < 28) {
+        const dx = proj.x - e.x, dy = proj.y - e.y;
+        if (dx * dx + dy * dy < 28 * 28) {
           e.takeDamage(proj.damage, null, this);
           if (!proj.piercing) { proj.hit(); return; }
         }
       }
       // Hit boss
       if (this._boss?.alive) {
-        const d = Phaser.Math.Distance.Between(proj.x, proj.y, this._boss.x, this._boss.y);
-        if (d < 60) {
+        const dx = proj.x - this._boss.x, dy = proj.y - this._boss.y;
+        if (dx * dx + dy * dy < 60 * 60) {
           this._boss.takeDamage(proj.damage, this);
           proj.hit();
         }
@@ -1704,6 +1801,9 @@ export class GameScene extends Phaser.Scene {
   _checkBossTrigger() {
     const bossKey = this._mapBossOverride?.key || this._region?.bossKey;
     if (!this._bossArenaPos || !bossKey) return;
+    // Wait for lazily-loaded boss art before spawning (avoids a textureless boss
+    // if the player sprints to the arena before the stream finishes).
+    if (this._bossAssetsReady === false) return;
     for (const p of this.players) {
       if (!p?.alive) continue;
       const d = Phaser.Math.Distance.Between(p.x, p.y, this._bossArenaPos.x, this._bossArenaPos.y);
@@ -1716,11 +1816,14 @@ export class GameScene extends Phaser.Scene {
 
   _triggerBoss() {
     if (this._bossTriggered) return;
-    this._bossTriggered = true;
     const region = this._region;
     // Map editor override takes precedence for both key and position
     const bossKey = this._mapBossOverride?.key || region.bossKey;
     if (!bossKey) return;
+    // Boss art is streamed lazily — don't spawn until it's ready. We retry on a
+    // later frame (proximity check) or once the load completes.
+    if (this._bossAssetsReady === false) { this._ensureBossAssets(bossKey); return; }
+    this._bossTriggered = true;
 
     this._bossArenaGfx?.setVisible(false);
     this._bossArenaLabel?.setVisible(false);

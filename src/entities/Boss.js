@@ -123,9 +123,8 @@ export class Boss extends Phaser.GameObjects.Container {
         this._invincible = false;
         this._playAnim('idle');
         if (this._decoys?.length) {
-          this._decoys.forEach(d => {
-            if (d?.active) scene.tweens.add({ targets: d, alpha: 1.0, duration: 300 });
-          });
+          const live = this._decoys.filter(d => d?.active);
+          if (live.length) scene.tweens.add({ targets: live, alpha: 1.0, duration: 300 });
         }
       }
       return;
@@ -191,7 +190,7 @@ export class Boss extends Phaser.GameObjects.Container {
     // Illusion AI: each decoy chases and attacks the player independently
     if (this._decoys?.length) {
       const pCfg = this.cfg.phases[this.phase];
-      const illusionTarget = this._nearestPlayer(players);
+      const illusionTarget = target; // same nearest player computed above
       this._decoys.forEach(d => {
         if (!d?.active) return;
         d._atkTimer = (d._atkTimer || 0) - delta;
@@ -253,11 +252,12 @@ export class Boss extends Phaser.GameObjects.Container {
   }
 
   _nearestPlayer(players) {
-    let best = null, bestD = Infinity;
+    let best = null, bestDSq = Infinity;
     for (const p of players) {
       if (!p?.alive || p.downed) continue;
-      const d = Phaser.Math.Distance.Between(this.x, this.y, p.x, p.y);
-      if (d < bestD) { best = p; bestD = d; }
+      const dx = this.x - p.x, dy = this.y - p.y;
+      const dSq = dx * dx + dy * dy;
+      if (dSq < bestDSq) { best = p; bestDSq = dSq; }
     }
     return best;
   }
@@ -742,23 +742,25 @@ export class Boss extends Phaser.GameObjects.Container {
 
   _refreshDecoys(scene) {
     if (!this._decoys?.length) { this._spawnDecoys(scene); return; }
+    const live = [];
     this._decoys.forEach(d => {
       if (!d?.active) return;
       d.setScale(this.sprite.scaleX);
       if (this.cfg.tint) d.setTint(this.cfg.tint); else d.clearTint();
-      scene.tweens.add({ targets: d, alpha: 1.0, duration: 300 });
+      live.push(d);
     });
+    if (live.length) scene.tweens.add({ targets: live, alpha: 1.0, duration: 300 });
   }
 
   _dismissDecoys(scene) {
     if (!this._decoys?.length) return;
-    this._decoys.forEach(d => {
-      if (!d?.active) return;
+    const live = this._decoys.filter(d => d?.active);
+    if (live.length) {
       scene?.tweens?.add({
-        targets: d, alpha: 0, duration: 400,
-        onComplete: () => { try { d.destroy(); } catch {} },
+        targets: live, alpha: 0, duration: 400,
+        onComplete: () => { for (const d of live) { try { d.destroy(); } catch {} } },
       });
-    });
+    }
     this._decoys = [];
   }
 

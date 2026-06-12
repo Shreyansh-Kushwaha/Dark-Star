@@ -72,44 +72,10 @@ export class PreloadScene extends Phaser.Scene {
     for (let i = 1; i <= 8; i++) this.load.image(`orc2_attack_${String(i).padStart(2,'0')}`,`${PK}/ORC2/attack/${String(i).padStart(2,'0')}.png`);
     for (let i = 1; i <= 10; i++) this.load.image(`orc2_dead_${String(i).padStart(2,'0')}`, `${PK}/ORC2/DEAD/${String(i).padStart(2,'0')}.png`);
 
-    // ── KING SLIME (Boss: Nagraj, Viyogasur) ─────────────────────
-    for (let i = 1; i <= 4; i++) this.load.image(`slime_boss_idle_${String(i).padStart(2,'0')}`, `${PK}/KING SLIME/idel/${String(i).padStart(2,'0')}.png`);
-    for (let i = 1; i <= 8; i++) this.load.image(`slime_boss_attack_${String(i).padStart(2,'0')}`, `${PK}/KING SLIME/attack/${String(i).padStart(2,'0')}.png`);
-    for (let i = 1; i <= 8; i++) this.load.image(`slime_boss_dead_${String(i).padStart(2,'0')}`, `${PK}/KING SLIME/Dead/${String(i).padStart(2,'0')}.png`);
-
-    // ── Tree Boss (Vanaraksha, Vanasur) ───────────────────────────
-    for (let i = 1; i <= 10; i++) this.load.image(`tree_boss_attack_${String(i).padStart(2,'0')}`, `${PK}/Tree/attact/${String(i).padStart(2,'0')}.png`);
-    for (let i = 1; i <= 11; i++) this.load.image(`tree_boss_idle_${String(i).padStart(2,'0')}`,   `${PK}/Tree/ground Up/${String(i).padStart(2,'0')}.png`);
-    // Use ground-up as run too
-    for (let i = 1; i <= 11; i++) this.load.image(`tree_boss_run_${String(i).padStart(2,'0')}`,    `${PK}/Tree/ground Up/${String(i).padStart(2,'0')}.png`);
-    // Dead reuses attack in reverse (no dead folder for tree)
-    for (let i = 10; i >= 1; i--) this.load.image(`tree_boss_dead_${String(11-i).padStart(2,'0')}`, `${PK}/Tree/attact/${String(i).padStart(2,'0')}.png`);
-
-    // ── ORC2 as boss (Pashana Daitya, Vayu Rakshasa) ─────────────
-    for (let i = 1; i <= 6; i++) this.load.image(`orc2_boss_idle_${String(i).padStart(2,'0')}`,   `${PK}/ORC2/IDEL/${String(i).padStart(2,'0')}.png`);
-    for (let i = 1; i <= 6; i++) this.load.image(`orc2_boss_run_${String(i).padStart(2,'0')}`,    `${PK}/ORC2/Run/${String(i).padStart(2,'0')}.png`);
-    for (let i = 1; i <= 8; i++) this.load.image(`orc2_boss_attack_${String(i).padStart(2,'0')}`, `${PK}/ORC2/attack/${String(i).padStart(2,'0')}.png`);
-    for (let i = 1; i <= 10; i++) this.load.image(`orc2_boss_dead_${String(i).padStart(2,'0')}`,  `${PK}/ORC2/DEAD/${String(i).padStart(2,'0')}.png`);
-
-    // ── Minotaur (Region 4 Boss) ──────────────────────────────────
-    const MN = 'assest2/mino_v1.1_free/animations';
-    for (let i = 1; i <= 16; i++) this.load.image(`mino_idle_${String(i).padStart(2,'0')}`,   `${MN}/idle/idle_${i}.png`);
-    for (let i = 1; i <= 12; i++) this.load.image(`mino_run_${String(i).padStart(2,'0')}`,    `${MN}/walk/walk_${i}.png`);
-    for (let i = 1; i <= 16; i++) this.load.image(`mino_attack_${String(i).padStart(2,'0')}`, `${MN}/atk_1/atk_1_${i}.png`);
-
-    // ── Frost Guardian (Region 5 Boss) ───────────────────────────
-    const FG = 'assest2/Frost_Guardian_FREE_v1.0/PNG files';
-    for (let i = 1; i <= 6;  i++) this.load.image(`frost_idle_${String(i).padStart(2,'0')}`,   `${FG}/idle/idle_${i}.png`);
-    for (let i = 1; i <= 10; i++) this.load.image(`frost_run_${String(i).padStart(2,'0')}`,    `${FG}/walk/walk_${i}.png`);
-    for (let i = 1; i <= 14; i++) this.load.image(`frost_attack_${String(i).padStart(2,'0')}`, `${FG}/1_atk/1_atk_${i}.png`);
-    for (let i = 1; i <= 16; i++) this.load.image(`frost_dead_${String(i).padStart(2,'0')}`,   `${FG}/death/death_${i}.png`);
-
-    // ── Demon Slime (Region 6 Boss) ──────────────────────────────
-    const DS = 'assest2/boss_demon_slime_FREE_v1.0/individual sprites';
-    for (let i = 1; i <= 6;  i++) this.load.image(`dslime_idle_${String(i).padStart(2,'0')}`,   `${DS}/01_demon_idle/demon_idle_${i}.png`);
-    for (let i = 1; i <= 12; i++) this.load.image(`dslime_run_${String(i).padStart(2,'0')}`,    `${DS}/02_demon_walk/demon_walk_${i}.png`);
-    for (let i = 1; i <= 15; i++) this.load.image(`dslime_attack_${String(i).padStart(2,'0')}`, `${DS}/03_demon_cleave/demon_cleave_${i}.png`);
-    for (let i = 1; i <= 22; i++) this.load.image(`dslime_dead_${String(i).padStart(2,'0')}`,   `${DS}/05_demon_death/demon_death_${i}.png`);
+    // ── Boss frames (slime_boss, tree_boss, orc2_boss, mino, frost, dslime) ──
+    // Loaded lazily per-region via src/data/bossAssets.js when the player enters
+    // a region that uses them — keeps ~230 large boss textures (mino/frost/dslime
+    // live in the 81 MB assest2 pack) out of the initial boot load.
 
     // ── Particle FX ───────────────────────────────────────────────
     this.load.image('explosion_01', `${TS}/Particle FX/Explosion_01.png`);
@@ -366,38 +332,9 @@ export class PreloadScene extends Phaser.Scene {
     this._buildMultiAnim('orc2_attack', this._frames('orc2_attack', [1,2,3,4,5,6,7,8]));
     this._buildMultiAnim('orc2_dead',   this._frames('orc2_dead',   [1,2,3,4,5,6,7,8,9,10]));
 
-    this._buildMultiAnim('slime_boss_idle',   this._frames('slime_boss_idle',   [1,2,3,4]));
-    this._buildMultiAnim('slime_boss_attack', this._frames('slime_boss_attack', [1,2,3,4,5,6,7,8]));
-    this._buildMultiAnim('slime_boss_dead',   this._frames('slime_boss_dead',   [1,2,3,4,5,6,7,8]));
-    this._buildMultiAnim('slime_boss_run',    this._frames('slime_boss_idle',   [1,2,3,4]));
-
-    this._buildMultiAnim('tree_boss_idle',   this._frames('tree_boss_idle',   [11]), 10, -1);
-    this._buildMultiAnim('tree_boss_run',    this._frames('tree_boss_run',    [11]), 10, -1);
-    this._buildMultiAnim('tree_boss_attack', this._frames('tree_boss_attack', [1,2,3,4,5,6,7,8,9,10]));
-    this._buildMultiAnim('tree_boss_dead',   this._frames('tree_boss_dead',   [1,2,3,4,5,6,7,8,9,10]));
-
-    this._buildMultiAnim('orc2_boss_idle',   this._frames('orc2_boss_idle',   [1,2,3,4,5,6]));
-    this._buildMultiAnim('orc2_boss_run',    this._frames('orc2_boss_run',    [1,2,3,4,5,6]));
-    this._buildMultiAnim('orc2_boss_attack', this._frames('orc2_boss_attack', [1,2,3,4,5,6,7,8]));
-    this._buildMultiAnim('orc2_boss_dead',   this._frames('orc2_boss_dead',   [1,2,3,4,5,6,7,8,9,10]));
-
-    // ── Minotaur boss animations ───────────────────────────────
-    this._buildMultiAnim('mino_idle',   this._frames('mino_idle',   [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]));
-    this._buildMultiAnim('mino_run',    this._frames('mino_run',    [1,2,3,4,5,6,7,8,9,10,11,12]));
-    this._buildMultiAnim('mino_attack', this._frames('mino_attack', [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]));
-    this._buildMultiAnim('mino_dead',   this._frames('mino_idle',   [16,14,12,10,8,6,4,2,1]), 6, 0);
-
-    // ── Frost Guardian boss animations ─────────────────────────
-    this._buildMultiAnim('frost_idle',   this._frames('frost_idle',   [1,2,3,4,5,6]));
-    this._buildMultiAnim('frost_run',    this._frames('frost_run',    [1,2,3,4,5,6,7,8,9,10]));
-    this._buildMultiAnim('frost_attack', this._frames('frost_attack', [1,2,3,4,5,6,7,8,9,10,11,12,13,14]));
-    this._buildMultiAnim('frost_dead',   this._frames('frost_dead',   [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]), 10, 0);
-
-    // ── Demon Slime boss animations ────────────────────────────
-    this._buildMultiAnim('dslime_idle',   this._frames('dslime_idle',   [1,2,3,4,5,6]));
-    this._buildMultiAnim('dslime_run',    this._frames('dslime_run',    [1,2,3,4,5,6,7,8,9,10,11,12]));
-    this._buildMultiAnim('dslime_attack', this._frames('dslime_attack', [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]));
-    this._buildMultiAnim('dslime_dead',   this._frames('dslime_dead',   [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]), 12, 0);
+    // ── Boss animations (slime_boss/tree_boss/orc2_boss/mino/frost/dslime) ──
+    // Defined lazily alongside their textures in src/data/bossAssets.js when a
+    // region that uses them is entered (see GameScene._ensureBossAssets).
 
     // ── Goblin enemy animations ────────────────────────────────
     this._buildMultiAnim('goblin_idle',   this._frames('goblin_idle',   [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]));

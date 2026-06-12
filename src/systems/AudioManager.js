@@ -25,20 +25,23 @@ export class AudioManager {
     return this._muted;
   }
 
-  _tone(freq, type, duration, gain = 0.3, attack = 0.01, decay = 0.1) {
+  // `delay` (seconds) schedules the tone in the future via the AudioContext
+  // clock — more accurate than setTimeout and creates no JS timers.
+  _tone(freq, type, duration, gain = 0.3, attack = 0.01, decay = 0.1, delay = 0) {
     if (this._muted) return;
     const ctx = this._getCtx();
+    const t0  = ctx.currentTime + delay;
     const osc = ctx.createOscillator();
     const g   = ctx.createGain();
     osc.type = type;
-    osc.frequency.setValueAtTime(freq, ctx.currentTime);
-    g.gain.setValueAtTime(0, ctx.currentTime);
-    g.gain.linearRampToValueAtTime(gain, ctx.currentTime + attack);
-    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+    osc.frequency.setValueAtTime(freq, t0);
+    g.gain.setValueAtTime(0, t0);
+    g.gain.linearRampToValueAtTime(gain, t0 + attack);
+    g.gain.exponentialRampToValueAtTime(0.001, t0 + duration);
     osc.connect(g);
     g.connect(this._masterGain);
-    osc.start(ctx.currentTime);
-    osc.stop(ctx.currentTime + duration + 0.05);
+    osc.start(t0);
+    osc.stop(t0 + duration + 0.05);
   }
 
   _noise(duration, gain = 0.2) {
@@ -106,13 +109,13 @@ export class AudioManager {
 
   bossPhase() {
     [200, 300, 400, 300, 200].forEach((f, i) => {
-      setTimeout(() => this._tone(f, 'sawtooth', 0.3, 0.35), i * 120);
+      this._tone(f, 'sawtooth', 0.3, 0.35, 0.01, 0.1, i * 0.12);
     });
   }
 
   questComplete() {
     [440, 550, 660, 880].forEach((f, i) => {
-      setTimeout(() => this._tone(f, 'sine', 0.25, 0.25), i * 80);
+      this._tone(f, 'sine', 0.25, 0.25, 0.01, 0.1, i * 0.08);
     });
   }
 
@@ -135,7 +138,7 @@ export class AudioManager {
 
   victory() {
     [440, 550, 660, 550, 440, 660, 880].forEach((f, i) => {
-      setTimeout(() => this._tone(f, 'square', 0.3, 0.3), i * 100);
+      this._tone(f, 'square', 0.3, 0.3, 0.01, 0.1, i * 0.1);
     });
   }
 
@@ -187,6 +190,6 @@ export class AudioManager {
 
   bossStagger() {
     this._noise(0.3, 0.3);
-    setTimeout(() => this._tone(120, 'sawtooth', 0.4, 0.3), 100);
+    this._tone(120, 'sawtooth', 0.4, 0.3, 0.01, 0.1, 0.1);
   }
 }
