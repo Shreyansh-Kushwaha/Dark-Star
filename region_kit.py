@@ -163,6 +163,8 @@ class Region:
     def reed(self, x, y, s): self.prop("reed", x, y, s)
     def gate(self, x, y, s): self.prop("gate_arch", x, y, s)
     def lava_rock(self, x, y, s): self.prop("lava_rock", x, y, s)
+    def boat(self, x, y, s): self.prop("boat", x, y, s)
+    def dock(self, x, y, s): self.prop("dock", x, y, s)
     def crystal(self, x, y, s, kind="cyan"): self.prop(f"crystal_{kind}", x, y, s)
     def bridge_deck(self, x, y, s): self.add(STRUCT, "bridge_deck.png", x, y, s, anchor="center")
     def lift(self, x, y, s): self.add(STRUCT, "lift_platform.png", x, y, s)

@@ -5059,8 +5059,8 @@
    "y": 557.89,
    "scaleX": 1.445,
    "scaleY": 1.445,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5076,8 +5076,8 @@
    "y": 1464.11,
    "scaleX": 1.411,
    "scaleY": 1.411,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5093,8 +5093,8 @@
    "y": 1493.73,
    "scaleX": 1.476,
    "scaleY": 1.476,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5110,8 +5110,8 @@
    "y": 720.74,
    "scaleX": 1.443,
    "scaleY": 1.443,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5127,8 +5127,8 @@
    "y": 774.21,
    "scaleX": 1.269,
    "scaleY": 1.269,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5144,8 +5144,8 @@
    "y": 1322.13,
    "scaleX": 1.386,
    "scaleY": 1.386,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5161,8 +5161,8 @@
    "y": 1339.51,
    "scaleX": 1.114,
    "scaleY": 1.114,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5178,8 +5178,8 @@
    "y": 725.33,
    "scaleX": 1.586,
    "scaleY": 1.586,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5195,8 +5195,8 @@
    "y": 450.26,
    "scaleX": 1.261,
    "scaleY": 1.261,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5212,8 +5212,8 @@
    "y": 978.69,
    "scaleX": 1.259,
    "scaleY": 1.259,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5229,8 +5229,8 @@
    "y": 590.65,
    "scaleX": 1.546,
    "scaleY": 1.546,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5246,8 +5246,8 @@
    "y": 1600.74,
    "scaleX": 1.066,
    "scaleY": 1.066,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5263,8 +5263,8 @@
    "y": 1086.23,
    "scaleX": 1.224,
    "scaleY": 1.224,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5280,8 +5280,8 @@
    "y": 1119.61,
    "scaleX": 1.584,
    "scaleY": 1.584,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5297,8 +5297,8 @@
    "y": 639.4,
    "scaleX": 1.272,
    "scaleY": 1.272,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5314,8 +5314,8 @@
    "y": 1292.89,
    "scaleX": 1.382,
    "scaleY": 1.382,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5331,8 +5331,8 @@
    "y": 1543.99,
    "scaleX": 1.074,
    "scaleY": 1.074,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5348,8 +5348,8 @@
    "y": 1647.11,
    "scaleX": 1.126,
    "scaleY": 1.126,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5365,8 +5365,8 @@
    "y": 1188.48,
    "scaleX": 1.155,
    "scaleY": 1.155,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5382,8 +5382,8 @@
    "y": 1518.31,
    "scaleX": 1.419,
    "scaleY": 1.419,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5399,8 +5399,8 @@
    "y": 1088.13,
    "scaleX": 1.588,
    "scaleY": 1.588,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -5416,8 +5416,8 @@
    "y": 1602.44,
    "scaleX": 1.115,
    "scaleY": 1.115,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",

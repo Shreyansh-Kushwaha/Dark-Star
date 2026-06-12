@@ -264,7 +264,12 @@ def build_16():
     # east-bank (smaller hamlet, toward the marsh)
     r.building("House2", "Yellow", 2300, 820, 1.1); r.building("House1", "Yellow", 2620, 1240, 1.1)
     r.tent(2480, 1020, 1.6); r.barrel(2380, 1100, 1.7)
-    # docks (logs/planks) reaching into the river + lamps
+    # the ferry crossing at the ford: jetties on both banks, a rope, and the skiff itself
+    r.stroke([(1520,1000),(river_x(1000),1000),(1760,1000)], "#caa46a", 4)   # guide rope
+    r.dock(1520, 1000, 1.15)            # west jetty
+    r.dock(1760, 1000, 1.15)            # east jetty
+    r.boat(river_x(1000)-10, 1014, 1.5) # the ferry skiff moored at the ford
+    # lamps along the banks
     for (lx, ly) in [(480,1000),(840,1000),(1180,1000),(2200,1000),(2600,1000)]: r.lamp(lx, ly-70, 3.0)
     # greenery
     r.scatter(r.bush, 18, (200, WORLD_W-200), (300, 1760), avoid=lambda x,y: abs(x-river_x(y))<160, smin=0.8, smax=1.1)
@@ -787,6 +792,16 @@ def build_31():
     cy = lambda x: 1000 + 150*math.sin(x/520.0)
     half = lambda x: 300 + 120*math.exp(-((x-700)**2)/(2*360.0**2))
     in_cav = cave(r, cy, half)
+    # the Blind Well itself — the great black shaft sunk through the heart of the cavern
+    WC = (1500, cy(1500))
+    r.pool(WC[0], WC[1], 260, 165, "#060610", "#13202c", 210, 120)   # the bottomless shaft
+    for k in range(16):
+        a = k/16*math.tau; r.rock(WC[0]+math.cos(a)*250, WC[1]+math.sin(a)*155, r.R.rng(1.0,1.7))  # stone rim
+    r.log(WC[0]-150, WC[1]-150, 2.0); r.log(WC[0]+150, WC[1]-150, 2.0)        # winch posts
+    r.stroke([(WC[0]-150,WC[1]-150),(WC[0]+150,WC[1]-150)], "#5a4a36", 7)     # winch beam
+    r.stroke([(WC[0],WC[1]-150),(WC[0],WC[1]+10)], "#3a2f22", 3)              # rope into the dark
+    r.lamp(WC[0], WC[1]-150, 3.2)                                             # lantern over the shaft
+    r.zone(WC[0]-260*0.62, WC[1]-165*0.62, 260*1.24, 165*1.24, zid="z31_well")  # the shaft is a hole
     # spiral ledges (rock steps), dripping roots (dead trees), lantern torches
     for x in range(220, WORLD_W-160, 200):
         r.lamp(x, cy(x)-half(x)+40, r.R.rng(2.8,3.4))

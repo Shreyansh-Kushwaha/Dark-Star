@@ -1148,8 +1148,75 @@
    "offsetY": 41
   },
   {
+   "type": "stroke",
+   "stroke": "#caa46a",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1520,
+    1000,
+    1580.17,
+    1000,
+    1760,
+    1000
+   ]
+  },
+  {
    "type": "sprite",
    "spriteId": "s_r16_0044",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dock.png"
+   ],
+   "name": "dock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1520,
+   "y": 1000,
+   "scaleX": 1.15,
+   "scaleY": 1.15,
+   "offsetX": 62.0,
+   "offsetY": 69
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0045",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dock.png"
+   ],
+   "name": "dock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1760,
+   "y": 1000,
+   "scaleX": 1.15,
+   "scaleY": 1.15,
+   "offsetX": 62.0,
+   "offsetY": 69
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0046",
+   "dir": "assets_custom/props",
+   "frames": [
+    "boat.png"
+   ],
+   "name": "boat",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1570.17,
+   "y": 1014,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 75.0,
+   "offsetY": 75
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r16_0047",
    "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
     "Lamp3.png"
@@ -1166,7 +1233,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0045",
+   "spriteId": "s_r16_0048",
    "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
     "Lamp2.png"
@@ -1183,7 +1250,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0046",
+   "spriteId": "s_r16_0049",
    "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
     "Lamp1.png"
@@ -1200,7 +1267,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0047",
+   "spriteId": "s_r16_0050",
    "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
     "Lamp3.png"
@@ -1217,7 +1284,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0048",
+   "spriteId": "s_r16_0051",
    "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
     "Lamp1.png"
@@ -1234,7 +1301,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0049",
+   "spriteId": "s_r16_0052",
    "dir": "cropped",
    "frames": [
     "Bushe1_crop.png"
@@ -1251,7 +1318,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0050",
+   "spriteId": "s_r16_0053",
    "dir": "cropped",
    "frames": [
     "Bushe3_crop.png"
@@ -1268,7 +1335,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0051",
+   "spriteId": "s_r16_0054",
    "dir": "cropped",
    "frames": [
     "Bushe1_crop.png"
@@ -1285,7 +1352,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0052",
+   "spriteId": "s_r16_0055",
    "dir": "cropped",
    "frames": [
     "Bushe3_crop.png"
@@ -1302,7 +1369,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0053",
+   "spriteId": "s_r16_0056",
    "dir": "cropped",
    "frames": [
     "Bushe2_crop.png"
@@ -1319,7 +1386,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0054",
+   "spriteId": "s_r16_0057",
    "dir": "cropped",
    "frames": [
     "Bushe4_crop.png"
@@ -1336,7 +1403,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0055",
+   "spriteId": "s_r16_0058",
    "dir": "cropped",
    "frames": [
     "Bushe3_crop.png"
@@ -1353,7 +1420,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0056",
+   "spriteId": "s_r16_0059",
    "dir": "cropped",
    "frames": [
     "Bushe2_crop.png"
@@ -1370,7 +1437,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0057",
+   "spriteId": "s_r16_0060",
    "dir": "cropped",
    "frames": [
     "Bushe3_crop.png"
@@ -1387,7 +1454,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0058",
+   "spriteId": "s_r16_0061",
    "dir": "cropped",
    "frames": [
     "Bushe4_crop.png"
@@ -1404,7 +1471,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0059",
+   "spriteId": "s_r16_0062",
    "dir": "cropped",
    "frames": [
     "Bushe2_crop.png"
@@ -1421,7 +1488,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0060",
+   "spriteId": "s_r16_0063",
    "dir": "cropped",
    "frames": [
     "Bushe2_crop.png"
@@ -1438,7 +1505,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0061",
+   "spriteId": "s_r16_0064",
    "dir": "cropped",
    "frames": [
     "Bushe1_crop.png"
@@ -1455,7 +1522,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0062",
+   "spriteId": "s_r16_0065",
    "dir": "cropped",
    "frames": [
     "Bushe3_crop.png"
@@ -1472,7 +1539,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0063",
+   "spriteId": "s_r16_0066",
    "dir": "cropped",
    "frames": [
     "Bushe2_crop.png"
@@ -1489,7 +1556,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0064",
+   "spriteId": "s_r16_0067",
    "dir": "cropped",
    "frames": [
     "Bushe1_crop.png"
@@ -1506,7 +1573,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0065",
+   "spriteId": "s_r16_0068",
    "dir": "cropped",
    "frames": [
     "Bushe1_crop.png"
@@ -1523,7 +1590,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0066",
+   "spriteId": "s_r16_0069",
    "dir": "assets_custom/props",
    "frames": [
     "reed.png"
@@ -1540,7 +1607,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0067",
+   "spriteId": "s_r16_0070",
    "dir": "assets_custom/props",
    "frames": [
     "reed.png"
@@ -1557,7 +1624,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0068",
+   "spriteId": "s_r16_0071",
    "dir": "assets_custom/props",
    "frames": [
     "reed.png"
@@ -1574,7 +1641,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0069",
+   "spriteId": "s_r16_0072",
    "dir": "assets_custom/props",
    "frames": [
     "reed.png"
@@ -1591,7 +1658,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0070",
+   "spriteId": "s_r16_0073",
    "dir": "assest4/map_objects/2 Objects/6 Flower",
    "frames": [
     "6.png"
@@ -1608,7 +1675,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0071",
+   "spriteId": "s_r16_0074",
    "dir": "assest4/map_objects/2 Objects/6 Flower",
    "frames": [
     "12.png"
@@ -1625,7 +1692,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0072",
+   "spriteId": "s_r16_0075",
    "dir": "assest4/map_objects/2 Objects/6 Flower",
    "frames": [
     "7.png"
@@ -1642,7 +1709,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0073",
+   "spriteId": "s_r16_0076",
    "dir": "assest4/map_objects/2 Objects/6 Flower",
    "frames": [
     "7.png"
@@ -1659,7 +1726,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0074",
+   "spriteId": "s_r16_0077",
    "dir": "assest4/map_objects/2 Objects/6 Flower",
    "frames": [
     "12.png"
@@ -1676,7 +1743,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0075",
+   "spriteId": "s_r16_0078",
    "dir": "assest4/map_objects/2 Objects/6 Flower",
    "frames": [
     "6.png"
@@ -1693,7 +1760,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0076",
+   "spriteId": "s_r16_0079",
    "dir": "assest4/map_objects/2 Objects/6 Flower",
    "frames": [
     "6.png"
@@ -1710,7 +1777,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0077",
+   "spriteId": "s_r16_0080",
    "dir": "assest4/map_objects/2 Objects/6 Flower",
    "frames": [
     "3.png"
@@ -1727,7 +1794,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0078",
+   "spriteId": "s_r16_0081",
    "dir": "assest4/map_objects/2 Objects/6 Flower",
    "frames": [
     "3.png"
@@ -1744,7 +1811,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0079",
+   "spriteId": "s_r16_0082",
    "dir": "assest4/map_objects/2 Objects/6 Flower",
    "frames": [
     "7.png"
@@ -1761,7 +1828,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0080",
+   "spriteId": "s_r16_0083",
    "dir": "assest4/map_objects/2 Objects/6 Flower",
    "frames": [
     "11.png"
@@ -1778,7 +1845,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0081",
+   "spriteId": "s_r16_0084",
    "dir": "assest4/map_objects/2 Objects/6 Flower",
    "frames": [
     "7.png"
@@ -1795,7 +1862,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0082",
+   "spriteId": "s_r16_0085",
    "dir": "assest4/map_objects/2 Objects/6 Flower",
    "frames": [
     "2.png"
@@ -1812,7 +1879,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0083",
+   "spriteId": "s_r16_0086",
    "dir": "assest4/map_objects/2 Objects/6 Flower",
    "frames": [
     "12.png"
@@ -1829,7 +1896,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0084",
+   "spriteId": "s_r16_0087",
    "dir": "assest4/map_objects/2 Objects/6 Flower",
    "frames": [
     "9.png"
@@ -1846,7 +1913,7 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r16_0085",
+   "spriteId": "s_r16_0088",
    "dir": "assest4/map_objects/2 Objects/6 Flower",
    "frames": [
     "2.png"

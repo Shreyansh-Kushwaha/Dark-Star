@@ -56,12 +56,37 @@ def scarecrow():
     save(im, "scarecrow")
 
 def bone_pile():
-    im, d = canvas(76, 54); bn=(214,206,188,255); bs=(170,160,140,255)
-    for (x,y,r) in [(20,38,12),(40,42,14),(58,36,11)]: blob(d,x,y,r,r*0.7,bn,OL)
-    for (x0,y0,x1,y1) in [(10,30,34,22),(30,40,58,30),(40,20,62,16)]:
-        d.line([x0,y0,x1,y1], fill=bn, width=6);
-        blob(d,x0,y0,4,4,bn,OL); blob(d,x1,y1,4,4,bn,OL)
+    # a clear heap of bones: crossed long-bones with knobbed ends + a small skull
+    im, d = canvas(84, 60); bn=(220,212,194,255); bs=(168,158,138,255)
+    blob(d, 42, 52, 34, 8, (0,0,0,45))                       # ground shadow
+    def long_bone(x0,y0,x1,y1,w=7):
+        d.line([x0,y0,x1,y1], fill=bn, width=w)
+        for (cx,cy) in [(x0,y0),(x1,y1)]:                    # knobbed ends
+            blob(d,cx-3,cy,5,5,bn,OL); blob(d,cx+3,cy,5,5,bn,OL)
+    long_bone(14,46,72,32); long_bone(18,32,70,50)           # two crossed femurs
+    blob(d, 30, 24, 12, 11, bn, OL)                          # skull cap
+    d.ellipse([24,22,30,29], fill=OL); d.ellipse([33,22,39,29], fill=OL)  # eye sockets
+    for tx in (28,32,36): d.line([tx,32,tx,36], fill=bs, width=1)         # teeth
     save(im, "bone_pile")
+
+def boat():
+    # a small wooden ferry skiff, bow to the right; base-anchored at the hull
+    im, d = canvas(150, 76); wood=(120,84,50,255); wd=(84,56,32,255); wl=(156,116,72,255)
+    d.polygon([(10,22),(116,14),(140,38),(116,62),(10,54)], fill=wood, outline=OL)   # hull
+    d.polygon([(24,28),(108,22),(122,38),(108,52),(24,48)], fill=wd)                 # inner well
+    for sx in (46,74,102): d.line([sx,26,sx,50], fill=wl, width=3)                   # thwarts/seats
+    d.line([10,22,116,14], fill=wl, width=2)                                         # gunwale shine
+    d.line([62,30,62,46], fill=OL, width=2); d.line([62,30,40,22], fill=wl, width=3) # oar
+    save(im, "boat")
+
+def dock():
+    # a plank jetty reaching out over the water, base-anchored at the posts
+    im, d = canvas(124, 70); wood=(122,90,56,255); wd=(88,62,36,255); wl=(150,114,72,255)
+    d.rectangle([6,16,118,44], fill=wood, outline=OL)
+    for px in range(18,118,14): d.line([px,16,px,44], fill=wd, width=2)              # plank seams
+    d.line([6,18,118,18], fill=wl, width=2)
+    for px in (18,108): d.rectangle([px-3,42,px+3,66], fill=wd, outline=OL)          # support posts
+    save(im, "dock")
 
 def skull():
     im, d = canvas(40, 38); bn=(220,212,196,255)
@@ -184,7 +209,7 @@ def crystal(name, base, light, dark):
 if __name__ == "__main__":
     cactus(); dead_tree(); scarecrow(); bone_pile(); skull(); bone_arch()
     cloud_platform(); ice_shard(); brazier(); pillar(); mural(); void_shard()
-    reed(); gate_arch(); lava_rock()
+    reed(); gate_arch(); lava_rock(); boat(); dock()
     crystal("crystal_cyan",   (108,196,210,255), (190,238,244,255), (64,140,158,255))
     crystal("crystal_purple", (140,110,196,255), (206,180,244,255), (92,64,150,255))
     crystal("crystal_amber",  (210,160,72,255),  (244,212,140,255), (150,104,40,255))

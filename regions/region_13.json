@@ -11265,8 +11265,8 @@
    "y": 1120,
    "scaleX": 1.206,
    "scaleY": 1.206,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -11282,8 +11282,8 @@
    "y": 1180,
    "scaleX": 1.096,
    "scaleY": 1.096,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -11299,8 +11299,8 @@
    "y": 760,
    "scaleX": 1.335,
    "scaleY": 1.335,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -11316,8 +11316,8 @@
    "y": 860,
    "scaleX": 1.038,
    "scaleY": 1.038,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",
@@ -11860,8 +11860,8 @@
    "y": 1130,
    "scaleX": 1.4,
    "scaleY": 1.4,
-   "offsetX": 38.0,
-   "offsetY": 53
+   "offsetX": 42.0,
+   "offsetY": 59
   },
   {
    "type": "sprite",

@@ -5414,326 +5414,458 @@
    "offsetY": 63
   },
   {
+   "type": "stroke",
+   "stroke": "#060610",
+   "strokeWidth": 210,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1656.0,
+    1038.12,
+    1648.36,
+    1068.72,
+    1626.21,
+    1096.31,
+    1591.69,
+    1118.22,
+    1548.21,
+    1132.28,
+    1500.0,
+    1137.12,
+    1451.79,
+    1132.28,
+    1408.31,
+    1118.22,
+    1373.79,
+    1096.31,
+    1351.64,
+    1068.72,
+    1344.0,
+    1038.12,
+    1351.64,
+    1007.53,
+    1373.79,
+    979.93,
+    1408.31,
+    958.03,
+    1451.79,
+    943.97,
+    1500.0,
+    939.12,
+    1548.21,
+    943.97,
+    1591.69,
+    958.03,
+    1626.21,
+    979.93,
+    1648.36,
+    1007.53,
+    1656.0,
+    1038.12
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#13202c",
+   "strokeWidth": 120,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1656.0,
+    1038.12,
+    1648.36,
+    1068.72,
+    1626.21,
+    1096.31,
+    1591.69,
+    1118.22,
+    1548.21,
+    1132.28,
+    1500.0,
+    1137.12,
+    1451.79,
+    1132.28,
+    1408.31,
+    1118.22,
+    1373.79,
+    1096.31,
+    1351.64,
+    1068.72,
+    1344.0,
+    1038.12,
+    1351.64,
+    1007.53,
+    1373.79,
+    979.93,
+    1408.31,
+    958.03,
+    1451.79,
+    943.97,
+    1500.0,
+    939.12,
+    1548.21,
+    943.97,
+    1591.69,
+    958.03,
+    1626.21,
+    979.93,
+    1648.36,
+    1007.53,
+    1656.0,
+    1038.12
+   ]
+  },
+  {
    "type": "sprite",
    "spriteId": "s_r31_0319",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "Lamp3.png"
+    "Rock3.png"
    ],
-   "name": "Lamp3",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 220,
-   "y": 752.25,
-   "scaleX": 3.084,
-   "scaleY": 3.084,
-   "offsetX": 6.5,
-   "offsetY": 34
+   "x": 1750.0,
+   "y": 1038.12,
+   "scaleX": 1.332,
+   "scaleY": 1.332,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0320",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "Lamp3.png"
+    "Rock1.png"
    ],
-   "name": "Lamp3",
+   "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 420,
-   "y": 759.73,
-   "scaleX": 2.815,
-   "scaleY": 2.815,
-   "offsetX": 6.5,
-   "offsetY": 34
+   "x": 1730.97,
+   "y": 1097.44,
+   "scaleX": 1.575,
+   "scaleY": 1.575,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0321",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "Lamp3.png"
+    "Rock4.png"
    ],
-   "name": "Lamp3",
+   "name": "Rock4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 620,
-   "y": 762.31,
-   "scaleX": 2.813,
-   "scaleY": 2.813,
-   "offsetX": 6.5,
-   "offsetY": 34
+   "x": 1676.78,
+   "y": 1147.73,
+   "scaleX": 1.513,
+   "scaleY": 1.513,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0322",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "Lamp3.png"
+    "Rock4.png"
    ],
-   "name": "Lamp3",
+   "name": "Rock4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 820,
-   "y": 776.48,
-   "scaleX": 3.391,
-   "scaleY": 3.391,
-   "offsetX": 6.5,
-   "offsetY": 34
+   "x": 1595.67,
+   "y": 1181.33,
+   "scaleX": 1.015,
+   "scaleY": 1.015,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0323",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "Lamp2.png"
+    "Rock4.png"
    ],
-   "name": "Lamp2",
+   "name": "Rock4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1020,
-   "y": 797.86,
-   "scaleX": 3.023,
-   "scaleY": 3.023,
-   "offsetX": 5.5,
-   "offsetY": 34
+   "x": 1500.0,
+   "y": 1193.12,
+   "scaleX": 1.474,
+   "scaleY": 1.474,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0324",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "Lamp3.png"
+    "Rock4.png"
    ],
-   "name": "Lamp3",
+   "name": "Rock4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1080,
-   "y": 1479.53,
-   "scaleX": 3.245,
-   "scaleY": 3.245,
-   "offsetX": 6.5,
-   "offsetY": 34
+   "x": 1404.33,
+   "y": 1181.33,
+   "scaleX": 1.576,
+   "scaleY": 1.576,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0325",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "Lamp1.png"
+    "Rock3.png"
    ],
-   "name": "Lamp1",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1220,
-   "y": 804.85,
-   "scaleX": 3.305,
-   "scaleY": 3.305,
-   "offsetX": 10.0,
-   "offsetY": 34
+   "x": 1323.22,
+   "y": 1147.73,
+   "scaleX": 1.26,
+   "scaleY": 1.26,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0326",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "Lamp1.png"
+    "Rock3.png"
    ],
-   "name": "Lamp1",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1280,
-   "y": 1409.4,
-   "scaleX": 3.14,
-   "scaleY": 3.14,
-   "offsetX": 10.0,
-   "offsetY": 34
+   "x": 1269.03,
+   "y": 1097.44,
+   "scaleX": 1.028,
+   "scaleY": 1.028,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0327",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "Lamp2.png"
+    "Rock4.png"
    ],
-   "name": "Lamp2",
+   "name": "Rock4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1420,
-   "y": 783.66,
-   "scaleX": 3.156,
-   "scaleY": 3.156,
-   "offsetX": 5.5,
-   "offsetY": 34
+   "x": 1250.0,
+   "y": 1038.12,
+   "scaleX": 1.658,
+   "scaleY": 1.658,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0328",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "Lamp3.png"
+    "Rock2.png"
    ],
-   "name": "Lamp3",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1480,
-   "y": 1336.14,
-   "scaleX": 3.086,
-   "scaleY": 3.086,
-   "offsetX": 6.5,
-   "offsetY": 34
+   "x": 1269.03,
+   "y": 978.81,
+   "scaleX": 1.044,
+   "scaleY": 1.044,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0329",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "Lamp2.png"
+    "Rock1.png"
    ],
-   "name": "Lamp2",
+   "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1620,
-   "y": 739.35,
-   "scaleX": 2.908,
-   "scaleY": 2.908,
-   "offsetX": 5.5,
-   "offsetY": 34
+   "x": 1323.22,
+   "y": 928.52,
+   "scaleX": 1.397,
+   "scaleY": 1.397,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0330",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "Lamp2.png"
+    "Rock3.png"
    ],
-   "name": "Lamp2",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1680,
-   "y": 1268.51,
-   "scaleX": 3.241,
-   "scaleY": 3.241,
-   "offsetX": 5.5,
-   "offsetY": 34
+   "x": 1404.33,
+   "y": 894.92,
+   "scaleX": 1.416,
+   "scaleY": 1.416,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0331",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "Lamp2.png"
+    "Rock2.png"
    ],
-   "name": "Lamp2",
+   "name": "Rock2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1820,
-   "y": 686.43,
-   "scaleX": 2.855,
-   "scaleY": 2.855,
-   "offsetX": 5.5,
-   "offsetY": 34
+   "x": 1500.0,
+   "y": 883.12,
+   "scaleX": 1.13,
+   "scaleY": 1.13,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0332",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "Lamp3.png"
+    "Rock1.png"
    ],
-   "name": "Lamp3",
+   "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1880,
-   "y": 1208.33,
-   "scaleX": 3.27,
-   "scaleY": 3.27,
-   "offsetX": 6.5,
-   "offsetY": 34
+   "x": 1595.67,
+   "y": 894.92,
+   "scaleX": 1.681,
+   "scaleY": 1.681,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0333",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "Lamp2.png"
+    "Rock1.png"
    ],
-   "name": "Lamp2",
+   "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2020,
-   "y": 638.38,
-   "scaleX": 3.034,
-   "scaleY": 3.034,
-   "offsetX": 5.5,
-   "offsetY": 34
+   "x": 1676.78,
+   "y": 928.52,
+   "scaleX": 1.455,
+   "scaleY": 1.455,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0334",
-   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "Lamp1.png"
+    "Rock3.png"
    ],
-   "name": "Lamp1",
+   "name": "Rock3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2080,
-   "y": 1158.67,
-   "scaleX": 3.072,
-   "scaleY": 3.072,
-   "offsetX": 10.0,
-   "offsetY": 34
+   "x": 1730.97,
+   "y": 978.81,
+   "scaleX": 1.514,
+   "scaleY": 1.514,
+   "offsetX": 32.0,
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0335",
    "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
-    "Lamp2.png"
+    "Log1.png"
    ],
-   "name": "Lamp2",
+   "name": "Log1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2220,
-   "y": 604.47,
-   "scaleX": 3.111,
-   "scaleY": 3.111,
-   "offsetX": 5.5,
-   "offsetY": 34
+   "x": 1350,
+   "y": 888.12,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 17.0,
+   "offsetY": 20
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0336",
    "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
-    "Lamp1.png"
+    "Log2.png"
    ],
-   "name": "Lamp1",
+   "name": "Log2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2280,
-   "y": 1124.51,
-   "scaleX": 2.903,
-   "scaleY": 2.903,
-   "offsetX": 10.0,
-   "offsetY": 34
+   "x": 1650,
+   "y": 888.12,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 16.5,
+   "offsetY": 31
+  },
+  {
+   "type": "stroke",
+   "stroke": "#5a4a36",
+   "strokeWidth": 7,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1350,
+    888.12,
+    1650,
+    888.12
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#3a2f22",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1500,
+    888.12,
+    1500,
+    1048.12
+   ]
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0337",
    "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
-    "Lamp3.png"
+    "Lamp2.png"
    ],
-   "name": "Lamp3",
+   "name": "Lamp2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2420,
-   "y": 590.26,
-   "scaleX": 3.385,
-   "scaleY": 3.385,
-   "offsetX": 6.5,
+   "x": 1500,
+   "y": 888.12,
+   "scaleX": 3.2,
+   "scaleY": 3.2,
+   "offsetX": 5.5,
    "offsetY": 34
   },
   {
@@ -5746,10 +5878,10 @@
    "name": "Lamp3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2480,
-   "y": 1110.26,
-   "scaleX": 3.132,
-   "scaleY": 3.132,
+   "x": 220,
+   "y": 752.25,
+   "scaleX": 3.27,
+   "scaleY": 3.27,
    "offsetX": 6.5,
    "offsetY": 34
   },
@@ -5763,10 +5895,10 @@
    "name": "Lamp1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2620,
-   "y": 597.9,
-   "scaleX": 3.221,
-   "scaleY": 3.221,
+   "x": 280,
+   "y": 1370.92,
+   "scaleX": 3.053,
+   "scaleY": 3.053,
    "offsetX": 10.0,
    "offsetY": 34
   },
@@ -5775,16 +5907,16 @@
    "spriteId": "s_r31_0340",
    "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
-    "Lamp2.png"
+    "Lamp1.png"
    ],
-   "name": "Lamp2",
+   "name": "Lamp1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2680,
-   "y": 1117.9,
-   "scaleX": 3.309,
-   "scaleY": 3.309,
-   "offsetX": 5.5,
+   "x": 420,
+   "y": 759.73,
+   "scaleX": 3.072,
+   "scaleY": 3.072,
+   "offsetX": 10.0,
    "offsetY": 34
   },
   {
@@ -5797,10 +5929,10 @@
    "name": "Lamp1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2820,
-   "y": 626.31,
-   "scaleX": 3.276,
-   "scaleY": 3.276,
+   "x": 480,
+   "y": 1457.08,
+   "scaleX": 3.165,
+   "scaleY": 3.165,
    "offsetX": 10.0,
    "offsetY": 34
   },
@@ -5809,16 +5941,16 @@
    "spriteId": "s_r31_0342",
    "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
-    "Lamp2.png"
+    "Lamp1.png"
    ],
-   "name": "Lamp2",
+   "name": "Lamp1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 3020,
-   "y": 671.33,
-   "scaleX": 3.223,
-   "scaleY": 3.223,
-   "offsetX": 5.5,
+   "x": 620,
+   "y": 762.31,
+   "scaleX": 2.903,
+   "scaleY": 2.903,
+   "offsetX": 10.0,
    "offsetY": 34
   },
   {
@@ -5831,135 +5963,339 @@
    "name": "Lamp1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 3080,
-   "y": 1191.33,
-   "scaleX": 3.136,
-   "scaleY": 3.136,
+   "x": 820,
+   "y": 776.48,
+   "scaleX": 3.202,
+   "scaleY": 3.202,
    "offsetX": 10.0,
    "offsetY": 34
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0344",
-   "dir": "assets_custom/props",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
-    "dead_tree.png"
+    "Lamp3.png"
    ],
-   "name": "dead_tree",
+   "name": "Lamp3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2980.54,
-   "y": 1163.22,
-   "scaleX": 0.503,
-   "scaleY": 0.503,
-   "offsetX": 48.0,
-   "offsetY": 131
+   "x": 880,
+   "y": 1523.51,
+   "scaleX": 3.272,
+   "scaleY": 3.272,
+   "offsetX": 6.5,
+   "offsetY": 34
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0345",
-   "dir": "assets_custom/props",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
-    "dead_tree.png"
+    "Lamp2.png"
    ],
-   "name": "dead_tree",
+   "name": "Lamp2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 982.15,
-   "y": 1428.56,
-   "scaleX": 0.628,
-   "scaleY": 0.628,
-   "offsetX": 48.0,
-   "offsetY": 131
+   "x": 1020,
+   "y": 797.86,
+   "scaleX": 2.893,
+   "scaleY": 2.893,
+   "offsetX": 5.5,
+   "offsetY": 34
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0346",
-   "dir": "assets_custom/props",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
-    "dead_tree.png"
+    "Lamp3.png"
    ],
-   "name": "dead_tree",
+   "name": "Lamp3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 589.2,
-   "y": 1479.55,
-   "scaleX": 0.789,
-   "scaleY": 0.789,
-   "offsetX": 48.0,
-   "offsetY": 131
+   "x": 1220,
+   "y": 804.85,
+   "scaleX": 3.078,
+   "scaleY": 3.078,
+   "offsetX": 6.5,
+   "offsetY": 34
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0347",
-   "dir": "assets_custom/props",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
-    "dead_tree.png"
+    "Lamp3.png"
    ],
-   "name": "dead_tree",
+   "name": "Lamp3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1681.98,
-   "y": 794.08,
-   "scaleX": 0.718,
-   "scaleY": 0.718,
-   "offsetX": 48.0,
-   "offsetY": 131
+   "x": 1280,
+   "y": 1409.4,
+   "scaleX": 3.233,
+   "scaleY": 3.233,
+   "offsetX": 6.5,
+   "offsetY": 34
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0348",
-   "dir": "assets_custom/props",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
-    "dead_tree.png"
+    "Lamp1.png"
    ],
-   "name": "dead_tree",
+   "name": "Lamp1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1381.81,
-   "y": 1242.78,
-   "scaleX": 0.781,
-   "scaleY": 0.781,
-   "offsetX": 48.0,
-   "offsetY": 131
+   "x": 1420,
+   "y": 783.66,
+   "scaleX": 3.192,
+   "scaleY": 3.192,
+   "offsetX": 10.0,
+   "offsetY": 34
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0349",
-   "dir": "assets_custom/props",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
-    "dead_tree.png"
+    "Lamp3.png"
    ],
-   "name": "dead_tree",
+   "name": "Lamp3",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1030.69,
-   "y": 1215.14,
-   "scaleX": 0.747,
-   "scaleY": 0.747,
-   "offsetX": 48.0,
-   "offsetY": 131
+   "x": 1480,
+   "y": 1336.14,
+   "scaleX": 2.887,
+   "scaleY": 2.887,
+   "offsetX": 6.5,
+   "offsetY": 34
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0350",
-   "dir": "assets_custom/props",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
    "frames": [
-    "dead_tree.png"
+    "Lamp2.png"
    ],
-   "name": "dead_tree",
+   "name": "Lamp2",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1849.81,
-   "y": 682.98,
-   "scaleX": 0.769,
-   "scaleY": 0.769,
-   "offsetX": 48.0,
-   "offsetY": 131
+   "x": 1620,
+   "y": 739.35,
+   "scaleX": 3.177,
+   "scaleY": 3.177,
+   "offsetX": 5.5,
+   "offsetY": 34
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0351",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp3.png"
+   ],
+   "name": "Lamp3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1680,
+   "y": 1268.51,
+   "scaleX": 3.248,
+   "scaleY": 3.248,
+   "offsetX": 6.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0352",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp3.png"
+   ],
+   "name": "Lamp3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1820,
+   "y": 686.43,
+   "scaleX": 2.961,
+   "scaleY": 2.961,
+   "offsetX": 6.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0353",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp1.png"
+   ],
+   "name": "Lamp1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1880,
+   "y": 1208.33,
+   "scaleX": 3.055,
+   "scaleY": 3.055,
+   "offsetX": 10.0,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0354",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp2.png"
+   ],
+   "name": "Lamp2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2020,
+   "y": 638.38,
+   "scaleX": 3.325,
+   "scaleY": 3.325,
+   "offsetX": 5.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0355",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp1.png"
+   ],
+   "name": "Lamp1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2220,
+   "y": 604.47,
+   "scaleX": 2.873,
+   "scaleY": 2.873,
+   "offsetX": 10.0,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0356",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp1.png"
+   ],
+   "name": "Lamp1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2280,
+   "y": 1124.51,
+   "scaleX": 3.355,
+   "scaleY": 3.355,
+   "offsetX": 10.0,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0357",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp2.png"
+   ],
+   "name": "Lamp2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2420,
+   "y": 590.26,
+   "scaleX": 2.956,
+   "scaleY": 2.956,
+   "offsetX": 5.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0358",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp3.png"
+   ],
+   "name": "Lamp3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2480,
+   "y": 1110.26,
+   "scaleX": 2.911,
+   "scaleY": 2.911,
+   "offsetX": 6.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0359",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp3.png"
+   ],
+   "name": "Lamp3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2620,
+   "y": 597.9,
+   "scaleX": 3.048,
+   "scaleY": 3.048,
+   "offsetX": 6.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0360",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp1.png"
+   ],
+   "name": "Lamp1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2680,
+   "y": 1117.9,
+   "scaleX": 3.362,
+   "scaleY": 3.362,
+   "offsetX": 10.0,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0361",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp2.png"
+   ],
+   "name": "Lamp2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2820,
+   "y": 626.31,
+   "scaleX": 3.201,
+   "scaleY": 3.201,
+   "offsetX": 5.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0362",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp1.png"
+   ],
+   "name": "Lamp1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3020,
+   "y": 671.33,
+   "scaleX": 3.15,
+   "scaleY": 3.15,
+   "offsetX": 10.0,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0363",
    "dir": "assets_custom/props",
    "frames": [
     "dead_tree.png"
@@ -5967,254 +6303,118 @@
    "name": "dead_tree",
    "animated": false,
    "spriteLayer": "below",
-   "x": 243.83,
-   "y": 1244.58,
-   "scaleX": 0.688,
-   "scaleY": 0.688,
+   "x": 2147.37,
+   "y": 989.86,
+   "scaleX": 0.702,
+   "scaleY": 0.702,
    "offsetX": 48.0,
    "offsetY": 131
   },
   {
    "type": "sprite",
-   "spriteId": "s_r31_0352",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 894.48,
-   "y": 1536.34,
-   "scaleX": 1.193,
-   "scaleY": 1.193,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r31_0353",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 233.9,
-   "y": 1057.92,
-   "scaleX": 1.425,
-   "scaleY": 1.425,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r31_0354",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2273.25,
-   "y": 891.42,
-   "scaleX": 1.489,
-   "scaleY": 1.489,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r31_0355",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1935.49,
-   "y": 781.75,
-   "scaleX": 1.181,
-   "scaleY": 1.181,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r31_0356",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1588.34,
-   "y": 1215.11,
-   "scaleX": 1.068,
-   "scaleY": 1.068,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r31_0357",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 971.83,
-   "y": 1026.23,
-   "scaleX": 1.165,
-   "scaleY": 1.165,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r31_0358",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2556.21,
-   "y": 1113.12,
-   "scaleX": 1.39,
-   "scaleY": 1.39,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r31_0359",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 321.75,
-   "y": 1284.01,
-   "scaleX": 1.366,
-   "scaleY": 1.366,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r31_0360",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock4.png"
-   ],
-   "name": "Rock4",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2639.79,
-   "y": 1140.19,
-   "scaleX": 1.313,
-   "scaleY": 1.313,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r31_0361",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 781.46,
-   "y": 1531.65,
-   "scaleX": 0.792,
-   "scaleY": 0.792,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r31_0362",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 334.51,
-   "y": 1033.29,
-   "scaleX": 1.023,
-   "scaleY": 1.023,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r31_0363",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock1.png"
-   ],
-   "name": "Rock1",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 972.29,
-   "y": 1039.1,
-   "scaleX": 1.457,
-   "scaleY": 1.457,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_r31_0364",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "dir": "assets_custom/props",
    "frames": [
-    "Rock4.png"
+    "dead_tree.png"
    ],
-   "name": "Rock4",
+   "name": "dead_tree",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2040.1,
-   "y": 657.57,
-   "scaleX": 1.404,
-   "scaleY": 1.404,
-   "offsetX": 32.0,
-   "offsetY": 63
+   "x": 2829.31,
+   "y": 1006.63,
+   "scaleX": 0.573,
+   "scaleY": 0.573,
+   "offsetX": 48.0,
+   "offsetY": 131
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0365",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "dir": "assets_custom/props",
    "frames": [
-    "Rock3.png"
+    "dead_tree.png"
    ],
-   "name": "Rock3",
+   "name": "dead_tree",
    "animated": false,
    "spriteLayer": "below",
-   "x": 240.54,
-   "y": 723.29,
-   "scaleX": 1.295,
-   "scaleY": 1.295,
-   "offsetX": 32.0,
-   "offsetY": 63
+   "x": 2776.48,
+   "y": 1149.26,
+   "scaleX": 0.504,
+   "scaleY": 0.504,
+   "offsetX": 48.0,
+   "offsetY": 131
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0366",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1669.07,
+   "y": 738.48,
+   "scaleX": 0.719,
+   "scaleY": 0.719,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0367",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2852.3,
+   "y": 1142.19,
+   "scaleX": 0.68,
+   "scaleY": 0.68,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0368",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 495.93,
+   "y": 985.73,
+   "scaleX": 0.638,
+   "scaleY": 0.638,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0369",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 548.22,
+   "y": 1338.76,
+   "scaleX": 0.553,
+   "scaleY": 0.553,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0370",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
     "Rock4.png"
@@ -6222,50 +6422,16 @@
    "name": "Rock4",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1420.54,
-   "y": 1184.63,
-   "scaleX": 1.152,
-   "scaleY": 1.152,
+   "x": 1678.2,
+   "y": 1103.95,
+   "scaleX": 0.842,
+   "scaleY": 0.842,
    "offsetX": 32.0,
    "offsetY": 63
   },
   {
    "type": "sprite",
-   "spriteId": "s_r31_0367",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock3.png"
-   ],
-   "name": "Rock3",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 900.6,
-   "y": 1255.31,
-   "scaleX": 1.385,
-   "scaleY": 1.385,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r31_0368",
-   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
-   "frames": [
-    "Rock2.png"
-   ],
-   "name": "Rock2",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2764.16,
-   "y": 870.49,
-   "scaleX": 0.984,
-   "scaleY": 0.984,
-   "offsetX": 32.0,
-   "offsetY": 63
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r31_0369",
+   "spriteId": "s_r31_0371",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
     "Rock1.png"
@@ -6273,67 +6439,237 @@
    "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 355.45,
-   "y": 1317.82,
-   "scaleX": 1.11,
-   "scaleY": 1.11,
+   "x": 2638.26,
+   "y": 1142.28,
+   "scaleX": 1.429,
+   "scaleY": 1.429,
    "offsetX": 32.0,
    "offsetY": 63
   },
   {
    "type": "sprite",
-   "spriteId": "s_r31_0370",
-   "dir": "assets_custom/props",
-   "frames": [
-    "crystal_cyan.png"
-   ],
-   "name": "crystal_cyan",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 551.71,
-   "y": 1021.02,
-   "scaleX": 0.905,
-   "scaleY": 0.905,
-   "offsetX": 32.0,
-   "offsetY": 115
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r31_0371",
-   "dir": "assets_custom/props",
-   "frames": [
-    "crystal_cyan.png"
-   ],
-   "name": "crystal_cyan",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2863.92,
-   "y": 1164.95,
-   "scaleX": 0.657,
-   "scaleY": 0.657,
-   "offsetX": 32.0,
-   "offsetY": 115
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_r31_0372",
-   "dir": "assets_custom/props",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
-    "crystal_cyan.png"
+    "Rock1.png"
    ],
-   "name": "crystal_cyan",
+   "name": "Rock1",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1756.31,
-   "y": 1067.35,
-   "scaleX": 0.694,
-   "scaleY": 0.694,
+   "x": 2958.46,
+   "y": 622.07,
+   "scaleX": 1.432,
+   "scaleY": 1.432,
    "offsetX": 32.0,
-   "offsetY": 115
+   "offsetY": 63
   },
   {
    "type": "sprite",
    "spriteId": "s_r31_0373",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1693.87,
+   "y": 876.2,
+   "scaleX": 1.043,
+   "scaleY": 1.043,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0374",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3033.0,
+   "y": 1189.34,
+   "scaleX": 0.886,
+   "scaleY": 0.886,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0375",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1006.05,
+   "y": 1312.4,
+   "scaleX": 1.209,
+   "scaleY": 1.209,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0376",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2029.66,
+   "y": 1082.73,
+   "scaleX": 1.43,
+   "scaleY": 1.43,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0377",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1332.64,
+   "y": 815.16,
+   "scaleX": 0.921,
+   "scaleY": 0.921,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0378",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2325.17,
+   "y": 1015.94,
+   "scaleX": 0.854,
+   "scaleY": 0.854,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0379",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2091.75,
+   "y": 761.22,
+   "scaleX": 1.46,
+   "scaleY": 1.46,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0380",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 607.89,
+   "y": 1190.19,
+   "scaleX": 1.394,
+   "scaleY": 1.394,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0381",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 370.65,
+   "y": 1048.82,
+   "scaleX": 0.97,
+   "scaleY": 0.97,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0382",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 319.65,
+   "y": 1124.53,
+   "scaleX": 0.972,
+   "scaleY": 0.972,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0383",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 905.76,
+   "y": 1206.56,
+   "scaleX": 0.672,
+   "scaleY": 0.672,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0384",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2813.79,
+   "y": 1118.15,
+   "scaleX": 0.781,
+   "scaleY": 0.781,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_0385",
    "dir": "assets_custom/structures",
    "frames": [
     "lift_platform.png"
@@ -6573,6 +6909,13 @@
    "y": 1252.6,
    "w": 202,
    "h": 867.4
+  },
+  {
+   "id": "z31_well",
+   "x": 1338.8,
+   "y": 935.8,
+   "w": 322.4,
+   "h": 204.6
   }
  ],
  "enemies": [
