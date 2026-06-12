@@ -623,8 +623,10 @@ export class GameScene extends Phaser.Scene {
       cm.contrast(g.con, true);
       this._gradeFx = cm;
     } catch (e) {}
-    // Vignette: gentle radius so the darkening hugs the screen edges only.
-    try { this._vignetteFx = cam.postFX.addVignette(0.5, 0.5, 0.55, g.vig); } catch (e) {}
+    // Vignette disabled: the radial darkening read as an "oval black border"
+    // around the screen and obscured the player's view. Keep the colour grade
+    // + bloom (the cohesion layer) but let the full frame stay visible.
+    // try { this._vignetteFx = cam.postFX.addVignette(0.5, 0.5, 0.55, g.vig); } catch (e) {}
   }
 
   // Per-object emissive glow. addGlow only works on Sprite/Image/Text in WebGL,
