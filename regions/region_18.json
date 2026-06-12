@@ -9,7 +9,7 @@
  "sprites": [
   {
    "type": "stroke",
-   "stroke": "#7a5a24",
+   "stroke": "#27402f",
    "strokeWidth": 150,
    "lineCap": "round",
    "lineJoin": "round",
@@ -183,7 +183,7 @@
   },
   {
    "type": "stroke",
-   "stroke": "#a07a30",
+   "stroke": "#3c6347",
    "strokeWidth": 64,
    "lineCap": "round",
    "lineJoin": "round",
@@ -357,7 +357,7 @@
   },
   {
    "type": "stroke",
-   "stroke": "#6f5520",
+   "stroke": "#243b2c",
    "strokeWidth": 110,
    "lineCap": "round",
    "lineJoin": "round",
@@ -531,7 +531,7 @@
   },
   {
    "type": "stroke",
-   "stroke": "#946e2a",
+   "stroke": "#375b42",
    "strokeWidth": 48,
    "lineCap": "round",
    "lineJoin": "round",
@@ -873,7 +873,7 @@
   },
   {
    "type": "stroke",
-   "stroke": "#6a5320",
+   "stroke": "#22433a",
    "strokeWidth": 190,
    "lineCap": "round",
    "lineJoin": "round",
@@ -925,7 +925,7 @@
   },
   {
    "type": "stroke",
-   "stroke": "#9a7a2e",
+   "stroke": "#356e54",
    "strokeWidth": 100,
    "lineCap": "round",
    "lineJoin": "round",
@@ -977,7 +977,7 @@
   },
   {
    "type": "stroke",
-   "stroke": "#6a5320",
+   "stroke": "#22433a",
    "strokeWidth": 190,
    "lineCap": "round",
    "lineJoin": "round",
@@ -1029,7 +1029,7 @@
   },
   {
    "type": "stroke",
-   "stroke": "#9a7a2e",
+   "stroke": "#356e54",
    "strokeWidth": 100,
    "lineCap": "round",
    "lineJoin": "round",
@@ -1081,7 +1081,7 @@
   },
   {
    "type": "stroke",
-   "stroke": "#6a5320",
+   "stroke": "#22433a",
    "strokeWidth": 190,
    "lineCap": "round",
    "lineJoin": "round",
@@ -1133,7 +1133,7 @@
   },
   {
    "type": "stroke",
-   "stroke": "#9a7a2e",
+   "stroke": "#356e54",
    "strokeWidth": 100,
    "lineCap": "round",
    "lineJoin": "round",

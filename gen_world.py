@@ -76,11 +76,11 @@ def build_12():
     # 3) scarecrows standing in the rows
     for (sx, sy) in [(620, 720), (1020, 880), (1450, 700), (1850, 980), (980, 1280),
                      (1500, 1300), (700, 1120), (2150, 760)]:
-        r.scarecrow(sx + r.R.rng(-30, 30), sy, r.R.rng(1.5, 1.9))
-    # 4) withered crops: stumps, dry bushes, hay; broken fences along rows
-    r.scatter(r.stump, 14, (300, WORLD_W-300), (420, 1560), avoid=near_spawn, smin=0.4, smax=0.5)
-    r.scatter(r.bush, 24, (300, WORLD_W-300), (420, 1560), avoid=near_spawn, smin=0.7, smax=1.0)
-    r.scatter(lambda x,y,s: r.flower(x,y,r.R.rng(1.6,2.4)), 26, (300, WORLD_W-300), (400, 1580), avoid=near_spawn)
+        r.scarecrow(sx + r.R.rng(-30, 30), sy + r.R.rng(-40, 40), r.R.rng(1.4, 2.0))
+    # 4) withered crops: dead stumps, dry bushes, hay; broken fences (no blooms — the field is famished)
+    r.scatter(r.stump, 22, (300, WORLD_W-300), (420, 1560), avoid=near_spawn, smin=0.4, smax=0.55)
+    r.scatter(r.bush, 18, (300, WORLD_W-300), (420, 1560), avoid=near_spawn, smin=0.6, smax=0.9)
+    r.scatter(lambda x,y,s: r.dead_tree(x,y,r.R.rng(0.4,0.6)), 10, (300, WORLD_W-300), (400, 1580), avoid=near_spawn)
     for fx in range(360, 2400, 60):
         if r.R.chance(0.4): r.fence(fx, 560 + 8*math.sin(fx/200), 2.0)
         if r.R.chance(0.4): r.fence(fx, 1460 + 8*math.sin(fx/180), 2.0)
@@ -328,12 +328,12 @@ def build_18():
     totems; the Naga guard the road to their drowned king's court."""
     r = Region(18, "Serpent Marsh", "#3a4a30", 180018, subtitle="Nāgakṣetra")
     def chan_x(y): return 1000 + 220*math.sin(y/300.0)   # a coiling channel
-    # amber/brackish channels and pools
-    r.river(lambda y: chan_x(y), "#7a5a24", "#a07a30", 150, 64)
-    r.river(lambda y: chan_x(y)+520+90*math.sin(y/200.0), "#6f5520", "#946e2a", 110, 48)
+    # murky brackish-green coiling channels and standing marsh pools (wet, not dry road)
+    r.river(lambda y: chan_x(y), "#27402f", "#3c6347", 150, 64)
+    r.river(lambda y: chan_x(y)+520+90*math.sin(y/200.0), "#243b2c", "#375b42", 110, 48)
     for yv in range(140, WORLD_H, 250): r.water_rock(chan_x(yv)+r.R.rng(-30,30), yv)
     POOLS = [(1500,700,240,150),(2000,1300,250,160),(2500,800,220,140)]
-    for (cx,cy,rx,ry) in POOLS: r.pool(cx,cy,rx,ry,"#6a5320","#9a7a2e",190,100)
+    for (cx,cy,rx,ry) in POOLS: r.pool(cx,cy,rx,ry,"#22433a","#356e54",190,100)
     def open_marsh(x,y): return near_spawn(x,y,320) or abs(y-(1000+120*math.sin(x/520.0)))<260
     # petrified trees + reeds outside the marsh path
     grid_fill(r, lambda x,y,s: r.dead_tree(x,y,r.R.rng(0.8,1.2)), open_marsh, step=150, chance=0.7)
@@ -920,7 +920,12 @@ def build_35():
     def road_y(x): return 1000 + 140*math.sin(x/520.0)
     HALF = 190
     def on_road(x, y): return abs(y-road_y(x)) < HALF or near_spawn(x, y, 280)
-    void_floor(r, on_road, 26)
+    # the severance scar itself — a glowing rift the road runs along (the hero feature)
+    scar = [(x, road_y(x)) for x in range(-60, WORLD_W+60, 40)]
+    r.stroke(scar, "#1e0e2a", 150)   # violet halo
+    r.stroke(scar, "#05030a", 96)    # black chasm core
+    r.stroke(scar, "#8a4fc0", 10)    # bright torn crack down the middle
+    void_floor(r, on_road, 44)       # denser drifting land-chunks so the void isn't empty
     # the path of shards
     for x in range(120, WORLD_W-80, 150): r.void_shard(x, road_y(x), r.R.rng(1.0, 1.5))
     # snapped golden threads dangling from the tears
@@ -947,7 +952,8 @@ def build_36():
     r = Region(36, "The Between", "#2a2730", 360036, subtitle="Antarāla")
     void_floor(r, lambda x,y: 240<x<WORLD_W-240 and 360<y<WORLD_H-360, 18)
     for x in range(160, WORLD_W-120, 220):
-        for y in (640, 1000, 1360): r.void_shard(x, y, r.R.rng(0.9, 1.2))
+        for y in (640, 1000, 1360):
+            if r.R.chance(0.82): r.void_shard(x+r.R.rng(-70,70), y+r.R.rng(-55,55), r.R.rng(0.8, 1.35))
     # a single shrine, a campfire, the frayed thread coming to rest
     r.pillar(1500, 940, 1.2); r.pillar(1700, 940, 1.2); r.brazier(1600, 1000, 2.8)
     r.campfire(1000, 1040, 1.8); r.log(940,1110,1.7); r.log(1060,1110,1.7)
@@ -1093,7 +1099,8 @@ def build_41():
     r = Region(41, "Silent Shrine", "#241e2a", 410041, subtitle="Maunamandira")
     void_floor(r, lambda x,y: 320<x<WORLD_W-320 and 420<y<WORLD_H-420, 14)
     for x in range(220, WORLD_W-160, 240):
-        for y in (700, 1000, 1300): r.void_shard(x, y, r.R.rng(0.85, 1.1))
+        for y in (700, 1000, 1300):
+            if r.R.chance(0.8): r.void_shard(x+r.R.rng(-65,65), y+r.R.rng(-50,50), r.R.rng(0.8, 1.15))
     # the whole Sutra coiled at rest (a golden spiral) + a single candle + two seats
     spiral = [(1600 + (260 - 0.16*t)*math.cos(t/22.0), 1000 + (200 - 0.12*t)*math.sin(t/22.0)) for t in range(0, 360)]
     thread(r, spiral)
