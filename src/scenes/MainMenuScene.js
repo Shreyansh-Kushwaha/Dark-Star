@@ -194,15 +194,17 @@ export class MainMenuScene extends Phaser.Scene {
       return btn;
     };
 
-    addNav(cx, 240, '>  PLAY SOLO',   () => this._startGame(false));
-    addNav(cx, 300, '>  HOST CO-OP',  () => this._hostCoop());
-    addNav(cx, 360, '>  JOIN CO-OP',  () => this._joinCoop());
-    addNav(cx, 420, '>  LOAD REGION', () => this._toggleRegionSelect());
+    addNav(cx, 232, '>  PLAY SOLO',   () => this._startGame(false));
+    addNav(cx, 284, '>  HOST CO-OP',  () => this._hostCoop());
+    addNav(cx, 336, '>  JOIN CO-OP',  () => this._joinCoop());
+    addNav(cx, 388, '>  LOAD REGION', () => this._toggleRegionSelect());
+    addNav(cx, 440, '>  WORLD MAP',   () => this._openWorldMap(),
+      { bg: 0x14122a, border: 0xc8a040, text: '#e8c860', w: 200 });
 
-    this._qualityBtn = addNav(cx, 480, this._qualityLabel(), () => this._cycleQuality(),
+    this._qualityBtn = addNav(cx, 496, this._qualityLabel(), () => this._cycleQuality(),
       { bg: 0x0c1428, border: 0x2244aa, text: '#88aaff', w: 200 });
 
-    this._fsBtn = addNav(cx, 535, this._fsLabel(), () => this._toggleFullscreen(),
+    this._fsBtn = addNav(cx, 544, this._fsLabel(), () => this._toggleFullscreen(),
       { bg: 0x0c1428, border: 0x334466, text: '#7799bb', w: 200 });
 
     this._regionSelectPanel  = null;
@@ -283,6 +285,14 @@ export class MainMenuScene extends Phaser.Scene {
     this.add.text(8, GAME_H - 12, 'v1.0', {
       fontSize: '9px', fontFamily: 'monospace', color: '#334455',
     }).setOrigin(0, 0.5).setDepth(4);
+  }
+
+  // ── World map ─────────────────────────────────────────────────────────────
+
+  _openWorldMap() {
+    if (this._regionSelectOpen) this._toggleRegionSelect();
+    this.scene.launch('WorldMapScene', { from: 'menu', currentRegion: 0 });
+    this.scene.bringToTop('WorldMapScene');
   }
 
   // ── Region select panel ───────────────────────────────────────────────────

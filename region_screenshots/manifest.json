@@ -1,0 +1,218 @@
+{
+ "0": {
+  "full": "region_screenshots/region_00_Region_0.png",
+  "thumb": "region_screenshots/thumbs/region_00.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "7": {
+  "full": "region_screenshots/region_07_Region_7.png",
+  "thumb": "region_screenshots/thumbs/region_07.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "8": {
+  "full": "region_screenshots/region_08_Test_Boss_Nagraj.png",
+  "thumb": "region_screenshots/thumbs/region_08.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "9": {
+  "full": "region_screenshots/region_09_Shilavana_The_Vale_of_Stones.png",
+  "thumb": "region_screenshots/thumbs/region_09.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "10": {
+  "full": "region_screenshots/region_10_Pātāla_Guha_The_Sunless_Deep.png",
+  "thumb": "region_screenshots/thumbs/region_10.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "11": {
+  "full": "region_screenshots/region_11_Setubandha_The_Broken_Bridge_Town.png",
+  "thumb": "region_screenshots/thumbs/region_11.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "12": {
+  "full": "region_screenshots/region_12_Dhānyakshetra_The_Famished_Fields.png",
+  "thumb": "region_screenshots/thumbs/region_12.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "13": {
+  "full": "region_screenshots/region_13_Mṛgavana_The_Hunter_s_Thicket.png",
+  "thumb": "region_screenshots/thumbs/region_13.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "14": {
+  "full": "region_screenshots/region_14_Pāṣāṇadvāra_The_Stone_Gate_Pass.png",
+  "thumb": "region_screenshots/thumbs/region_14.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "15": {
+  "full": "region_screenshots/region_15_Plāvita_The_Sunken_Causeway.png",
+  "thumb": "region_screenshots/thumbs/region_15.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "16": {
+  "full": "region_screenshots/region_16_Naditīra_The_River_Ferry_Village.png",
+  "thumb": "region_screenshots/thumbs/region_16.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "17": {
+  "full": "region_screenshots/region_17_Kardama_The_Mire_of_Whispers.png",
+  "thumb": "region_screenshots/thumbs/region_17.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "18": {
+  "full": "region_screenshots/region_18_Nāgakṣetra_The_Serpent_Marsh.png",
+  "thumb": "region_screenshots/thumbs/region_18.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "19": {
+  "full": "region_screenshots/region_19_Bhasmabhūmi_The_Ashen_Flats.png",
+  "thumb": "region_screenshots/thumbs/region_19.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "20": {
+  "full": "region_screenshots/region_20_Tāmrapura_The_Copper_Bazaar.png",
+  "thumb": "region_screenshots/thumbs/region_20.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "21": {
+  "full": "region_screenshots/region_21_Marusthala_The_Glass_Desert.png",
+  "thumb": "region_screenshots/thumbs/region_21.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "22": {
+  "full": "region_screenshots/region_22_Agnikuṇḍa_The_Firepit_Caldera.png",
+  "thumb": "region_screenshots/thumbs/region_22.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "23": {
+  "full": "region_screenshots/region_23_Deva_Mandira_The_Temple_of_the_Gods.png",
+  "thumb": "region_screenshots/thumbs/region_23.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "24": {
+  "full": "region_screenshots/region_24_Pāṣāṇa_Daitya_s_Forge.png",
+  "thumb": "region_screenshots/thumbs/region_24.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "25": {
+  "full": "region_screenshots/region_25_Cloud_Stair.png",
+  "thumb": "region_screenshots/thumbs/region_25.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "26": {
+  "full": "region_screenshots/region_26_Wind_Cliffs.png",
+  "thumb": "region_screenshots/thumbs/region_26.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "27": {
+  "full": "region_screenshots/region_27_The_Eyrie.png",
+  "thumb": "region_screenshots/thumbs/region_27.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "28": {
+  "full": "region_screenshots/region_28_Frostpeak.png",
+  "thumb": "region_screenshots/thumbs/region_28.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "29": {
+  "full": "region_screenshots/region_29_Heaven_s_Edge.png",
+  "thumb": "region_screenshots/thumbs/region_29.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "30": {
+  "full": "region_screenshots/region_30_Storm_s_Eye.png",
+  "thumb": "region_screenshots/thumbs/region_30.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "31": {
+  "full": "region_screenshots/region_31_Blind_Well.png",
+  "thumb": "region_screenshots/thumbs/region_31.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "32": {
+  "full": "region_screenshots/region_32_Gem_Hollows.png",
+  "thumb": "region_screenshots/thumbs/region_32.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "33": {
+  "full": "region_screenshots/region_33_Bone_City.png",
+  "thumb": "region_screenshots/thumbs/region_33.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "34": {
+  "full": "region_screenshots/region_34_Forgotten_Well.png",
+  "thumb": "region_screenshots/thumbs/region_34.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "35": {
+  "full": "region_screenshots/region_35_Torn_Land.png",
+  "thumb": "region_screenshots/thumbs/region_35.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "36": {
+  "full": "region_screenshots/region_36_The_Between.png",
+  "thumb": "region_screenshots/thumbs/region_36.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "37": {
+  "full": "region_screenshots/region_37_Severance_Fortress.png",
+  "thumb": "region_screenshots/thumbs/region_37.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "38": {
+  "full": "region_screenshots/region_38_The_Severing.png",
+  "thumb": "region_screenshots/thumbs/region_38.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "39": {
+  "full": "region_screenshots/region_39_Sixth_Gate.png",
+  "thumb": "region_screenshots/thumbs/region_39.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "40": {
+  "full": "region_screenshots/region_40_Soul_Sanctum.png",
+  "thumb": "region_screenshots/thumbs/region_40.png",
+  "w": 3200,
+  "h": 2000
+ },
+ "41": {
+  "full": "region_screenshots/region_41_Silent_Shrine.png",
+  "thumb": "region_screenshots/thumbs/region_41.png",
+  "w": 3200,
+  "h": 2000
+ }
+}

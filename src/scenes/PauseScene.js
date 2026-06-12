@@ -45,13 +45,14 @@ export class PauseScene extends Phaser.Scene {
     }).setOrigin(0.5);
 
     this._menuItems = [
-      { label: 'RESUME',    action: () => this._resume()   },
-      { label: 'CODEX',     action: () => this._openBook() },
-      { label: 'MAIN MENU', action: () => this._mainMenu() },
+      { label: 'RESUME',    action: () => this._resume()    },
+      { label: 'WORLD MAP', action: () => this._openMap()   },
+      { label: 'CODEX',     action: () => this._openBook()  },
+      { label: 'MAIN MENU', action: () => this._mainMenu()  },
     ];
     this._selIdx = 0;
     this._buttons = this._menuItems.map((item, i) =>
-      this._makeButton(GAME_W / 2, GAME_H / 2 - 20 + i * 58, item.label, item.action, i));
+      this._makeButton(GAME_W / 2, GAME_H / 2 - 50 +i * 58, item.label, item.action, i));
 
     this._cursor = this.add.text(0, 0, '►', {
       fontSize: '15px', color: '#ffd700', fontFamily: 'serif',
@@ -83,7 +84,7 @@ export class PauseScene extends Phaser.Scene {
   _confirm()  { if (this._bookOpen) return; this._menuItems[this._selIdx].action(); }
 
   _updateCursor() {
-    this._cursor.setPosition(GAME_W / 2 - 140, GAME_H / 2 - 20 + this._selIdx * 58);
+    this._cursor.setPosition(GAME_W / 2 - 140, GAME_H / 2 - 50 +this._selIdx * 58);
     this._buttons.forEach((b, i) => {
       b.txt.setColor(i === this._selIdx ? '#ffd700' : '#aaaaaa');
       b.bg.setFillStyle(i === this._selIdx ? 0x2a2a4e : 0x1a1a2e);
@@ -101,6 +102,11 @@ export class PauseScene extends Phaser.Scene {
 
   _resume()   { this.scene.get('GameScene')?.togglePause(); }
   _mainMenu() { this.scene.stop('GameScene'); this.scene.stop('UIScene'); this.scene.stop('PauseScene'); this.scene.start('MainMenuScene'); }
+  _openMap()  {
+    const cur = this.scene.get('GameScene')?._regionIndex ?? 0;
+    this.scene.launch('WorldMapScene', { from: 'pause', currentRegion: cur });
+    this.scene.bringToTop('WorldMapScene');
+  }
 
   // ── Book ─────────────────────────────────────────────────────────────────
 

@@ -13,6 +13,7 @@ import { QuestManager } from '../systems/QuestManager.js';
 import { SaveManager } from '../systems/SaveManager.js';
 import { NetworkManager } from '../systems/NetworkManager.js';
 import { QualitySettings } from '../systems/QualitySettings.js';
+import { ExploredManager } from '../systems/ExploredManager.js';
 import { NPC } from '../entities/NPC.js';
 
 // Poisson-disk sampling (returns {x,y}[] within bounds avoiding exclusion zones)
@@ -104,6 +105,9 @@ export class GameScene extends Phaser.Scene {
     this._save = saveData;
     const regionIndex = data.regionIndex ?? saveData.regionIndex ?? 0;
     this._regionIndex = regionIndex;
+
+    // Permanently record this region as explored for the world map (fog-of-war).
+    ExploredManager.markExplored(regionIndex);
 
     // Look up map-editor layout first so we can use it for the fallback region
     const _regionMaps = this.registry.get('regionMaps') || [];
@@ -266,6 +270,12 @@ export class GameScene extends Phaser.Scene {
       R: Phaser.Input.Keyboard.KeyCodes.R,
       F: Phaser.Input.Keyboard.KeyCodes.F,
       SHIFT: Phaser.Input.Keyboard.KeyCodes.SHIFT,
+    });
+
+    // World map overlay — open with M (when not already paused / mid-dialogue).
+    this.input.keyboard.on('keydown-M', () => {
+      if (this._paused || this._mapOpen || this._dialogueActive || this._bossIntroActive) return;
+      this.openWorldMap();
     });
 
     // ── Enemies ───────────────────────────────────────────────────
@@ -2027,6 +2037,22 @@ export class GameScene extends Phaser.Scene {
       this.scene.stop('PauseScene');
       this.physics.resume();
     }
+  }
+
+  openWorldMap() {
+    if (this._mapOpen) return;
+    this._mapOpen = true;
+    this._paused  = true;
+    this.physics.pause();
+    this.scene.launch('WorldMapScene', { from: 'game', currentRegion: this._regionIndex });
+    this.scene.bringToTop('WorldMapScene');
+  }
+
+  closeWorldMap() {
+    if (!this._mapOpen) return;
+    this._mapOpen = false;
+    this._paused  = false;
+    this.physics.resume();
   }
 
   // Called by Player.js when player melee hits boss
