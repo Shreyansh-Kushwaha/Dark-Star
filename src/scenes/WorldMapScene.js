@@ -111,6 +111,7 @@ export class WorldMapScene extends Phaser.Scene {
     const indices = Object.keys(MAP_LAYOUT).map(Number);
     const pos = {};
     indices.forEach((idx, ord) => { pos[idx] = MAP_LAYOUT[idx] || fallbackPos(idx, ord); });
+    this._nodePos = pos;   // remembered for keyboard (arrow) navigation
 
     // Edges from real portal data, deduped & undirected.
     const edgeSet = new Set();
@@ -163,8 +164,9 @@ export class WorldMapScene extends Phaser.Scene {
     this._clampPan();
 
     this._updateCounter();
-    this._showDetail(this._explored.has(this._current) ? this._current
-                     : [...this._explored][0] ?? this._current);
+    const initial = this._explored.has(this._current) ? this._current
+                  : ([...this._explored][0] ?? this._current);
+    this._select(initial);   // sets _selected so arrow-key nav has a starting point
   }
 
   _makeNode(idx, p) {
@@ -350,6 +352,19 @@ export class WorldMapScene extends Phaser.Scene {
         fontSize: '12px', fontFamily: 'monospace', color: '#8a8568',
       }).setOrigin(0.5, 0).setDepth(33));
     }
+
+    // Play action when browsing the map from the main menu (Enter also triggers this).
+    if (!this._fastTravel && this._from === 'menu') {
+      const by = ty + 44;
+      const btn = add(this.add.rectangle(px + PANEL_W / 2, by, PANEL_W - 80, 38, 0x1a1a3a)
+        .setStrokeStyle(2, 0x6b86ff).setDepth(33).setInteractive({ useHandCursor: true }));
+      const btxt = add(this.add.text(px + PANEL_W / 2, by, '▶  Enter Region   [Enter]', {
+        fontSize: '14px', fontFamily: 'serif', fontStyle: 'bold', color: '#bdc8ff',
+      }).setOrigin(0.5).setDepth(34));
+      btn.on('pointerover', () => { btn.setFillStyle(0x2a2a66); btxt.setColor('#ffffff'); });
+      btn.on('pointerout',  () => { btn.setFillStyle(0x1a1a3a); btxt.setColor('#bdc8ff'); });
+      btn.on('pointerup',   () => this._startRegionFromMenu(idx));
+    }
   }
 
   _doFastTravel(idx) {
@@ -396,7 +411,8 @@ export class WorldMapScene extends Phaser.Scene {
 
     // Hints.
     this.add.text(30, GAME_H - 22,
-      'Drag / Arrows — Pan    Scroll / + − — Zoom    Click — Inspect    M / Esc — Close', {
+      'Arrows — Select    Scroll / + − — Zoom    Drag — Pan    Enter — ' +
+      (this._fastTravel ? 'Travel' : 'Enter Region') + '    M / Esc — Close', {
         fontSize: '11px', fontFamily: 'monospace', color: '#5a6276',
       }).setDepth(30);
 
@@ -460,19 +476,78 @@ export class WorldMapScene extends Phaser.Scene {
     const kb = this.input.keyboard;
     kb.on('keydown-ESC', () => this._close());
     kb.on('keydown-M',   () => this._close());
-    kb.on('keydown-LEFT',  () => this._panBy(120, 0));
-    kb.on('keydown-RIGHT', () => this._panBy(-120, 0));
-    kb.on('keydown-UP',    () => this._panBy(0, 120));
-    kb.on('keydown-DOWN',  () => this._panBy(0, -120));
-    kb.on('keydown-PLUS',  () => this._zoomAt(GAME_W / 2, GAME_H / 2, 1.15));
-    kb.on('keydown-MINUS', () => this._zoomAt(GAME_W / 2, GAME_H / 2, 0.87));
-    kb.on('keydown-EQUALS',() => this._zoomAt(GAME_W / 2, GAME_H / 2, 1.15));
+    // Arrow keys move the highlighted region; +/- zoom; Enter confirms.
+    kb.on('keydown-LEFT',  () => this._navSelect(-1, 0));
+    kb.on('keydown-RIGHT', () => this._navSelect( 1, 0));
+    kb.on('keydown-UP',    () => this._navSelect(0, -1));
+    kb.on('keydown-DOWN',  () => this._navSelect(0,  1));
+    kb.on('keydown-PLUS',  () => this._keyboardZoom(1.15));
+    kb.on('keydown-MINUS', () => this._keyboardZoom(0.87));
+    kb.on('keydown-EQUALS',() => this._keyboardZoom(1.15));
+    kb.on('keydown-ENTER', () => this._confirm());
+    kb.on('keydown-SPACE', () => this._confirm());
   }
 
-  _panBy(dx, dy) {
-    if (!this._world) return;
-    this._world.x += dx; this._world.y += dy;
+  // Arrow keys: jump the selection to the nearest region in the pressed direction.
+  _navSelect(dx, dy) {
+    if (!this._nodePos) return;
+    const fromIdx = this._selected ?? this._current;
+    const from = this._nodePos[fromIdx];
+    if (!from) return;
+    let best = null, bestScore = Infinity;
+    for (const key of Object.keys(this._nodePos)) {
+      const idx = Number(key);
+      if (idx === fromIdx) continue;
+      const p = this._nodePos[idx];
+      const ox = p.x - from.x, oy = p.y - from.y;
+      const along = ox * dx + oy * dy;        // distance along the pressed direction
+      if (along <= 1) continue;               // must lie ahead
+      const perp = Math.abs(ox * -dy + oy * dx);
+      if (perp > along * 1.8) continue;       // keep within a forward cone
+      const score = along + perp * 2;         // favour straight-ahead, then nearest
+      if (score < bestScore) { bestScore = score; best = idx; }
+    }
+    if (best != null) { this._select(best); this._centerOn(best); }
+  }
+
+  _centerOn(idx) {
+    const p = this._nodePos?.[idx];
+    if (!p || !this._world) return;
+    this._world.x = (GAME_W - PANEL_W) / 2 - p.x * this._zoom;
+    this._world.y = GAME_H / 2 - p.y * this._zoom;
     this._clampPan();
+  }
+
+  // +/- keep the selected region anchored on screen while zooming.
+  _keyboardZoom(factor) {
+    const idx = this._selected ?? this._current;
+    const p = this._nodePos?.[idx];
+    if (p && this._world) {
+      this._zoomAt(this._world.x + p.x * this._zoom, this._world.y + p.y * this._zoom, factor);
+    } else {
+      this._zoomAt((GAME_W - PANEL_W) / 2, GAME_H / 2, factor);
+    }
+  }
+
+  // Enter / Space acts on the highlighted region.
+  _confirm() {
+    const idx = this._selected ?? this._current;
+    if (idx == null) return;
+    if (this._fastTravel) {
+      if (this._explored.has(idx) && idx !== this._current) this._doFastTravel(idx);
+    } else if (this._from === 'menu') {
+      this._startRegionFromMenu(idx);
+    }
+  }
+
+  _startRegionFromMenu(idx) {
+    const menu = this._launcher;
+    if (menu?.input) {
+      menu.input.enabled = true;
+      if (menu.input.keyboard) menu.input.keyboard.enabled = true;
+    }
+    this.scene.stop();
+    menu?._startGame?.(false, idx);
   }
 
   _zoomAt(px, py, factor) {
