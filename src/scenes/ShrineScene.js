@@ -59,7 +59,7 @@ export class ShrineScene extends Phaser.Scene {
       this._rows.push({ bg, lbl, desc, it });
     });
 
-    this.add.text(GAME_W / 2, GAME_H - 40, '↑ ↓  Navigate     Enter  Select     Esc  Leave', {
+    this.add.text(GAME_W / 2, GAME_H - 40, '↑ ↓  Navigate     Enter  Select     Backspace  Map     Esc  Leave', {
       fontSize: '12px', fontFamily: 'monospace', color: '#5a6276',
     }).setOrigin(0.5);
 
@@ -70,6 +70,7 @@ export class ShrineScene extends Phaser.Scene {
     kb.on('keydown-SPACE', () => this._choose(this._sel));
     kb.on('keydown-ESC',   () => this._leave());
     kb.on('keydown-F',     () => this._leave());
+    kb.on('keydown-BACKSPACE', () => this._travel());
     this._refresh();
   }
 

@@ -481,9 +481,14 @@ export class WorldMapScene extends Phaser.Scene {
     kb.on('keydown-RIGHT', () => this._navSelect( 1, 0));
     kb.on('keydown-UP',    () => this._navSelect(0, -1));
     kb.on('keydown-DOWN',  () => this._navSelect(0,  1));
-    kb.on('keydown-PLUS',  () => this._keyboardZoom(1.15));
-    kb.on('keydown-MINUS', () => this._keyboardZoom(0.87));
-    kb.on('keydown-EQUALS',() => this._keyboardZoom(1.15));
+    // Zoom on +/-. Match on event.key (layout-independent) so the main-row
+    // +/= key, the numpad +/-, and non-US layouts all work — keycode-name
+    // events like 'keydown-PLUS' only cover the main-row '=' (187) and miss
+    // the numpad, while 'keydown-EQUALS' isn't even a Phaser keycode.
+    kb.on('keydown', (e) => {
+      if (e.key === '+' || e.key === '=') this._keyboardZoom(1.15);
+      else if (e.key === '-' || e.key === '_') this._keyboardZoom(0.87);
+    });
     kb.on('keydown-ENTER', () => this._confirm());
     kb.on('keydown-SPACE', () => this._confirm());
   }
