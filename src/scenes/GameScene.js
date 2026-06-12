@@ -175,11 +175,14 @@ export class GameScene extends Phaser.Scene {
     // ── World setup ────────────────────────────────────────────────
     this._setupWorld(region);
     this._buildParallaxBorder(regionIndex, region);
+    this._buildParallaxAtmosphere(regionIndex);
     this._buildGroundTexture();
     this._spawnAmbientParticles(regionIndex);
     this._applyRegionColorOverlay(regionIndex);
-    this._glowCount = 0;   // reset per-region glow budget (scene instance is reused)
+    this._glowCount = 0;       // reset per-region glow budget (scene instance is reused)
+    this._lightPoolCount = 0;  // reset per-region light-pool budget
     this._setupPostFx(regionIndex);
+    this._buildVignette(regionIndex);
 
     // ── Players ───────────────────────────────────────────────────
     const spawnPos = region.spawnPos;
@@ -493,6 +496,174 @@ export class GameScene extends Phaser.Scene {
     }
   }
 
+  // ── Parallax atmosphere ────────────────────────────────────────────────
+  // The ground is an opaque full-world fill, so "parallax" here is a drifting
+  // plane *above* the floor (cloud shadows / fog banks / canopy dapple). Each
+  // layer is screen-fixed (scrollFactor 0) and its tilePosition tracks the
+  // camera scroll at a fraction < 1, so it visibly slides slower than the world
+  // as the player moves → real depth, with zero risk of revealing world edges.
+  _buildParallaxAtmosphere(regionIndex) {
+    this._parallaxLayers = [];
+    if (!QualitySettings.weather) return;   // off on 'low' (reuse weather gate)
+
+    // tex: which soft texture; tint/alpha/blend: look; dx/dy: ambient drift px/s.
+    const OD = {
+      pollen:  { tex: 'clouds', tint: 0xfff2c0, alpha: 0.10, blend: 'NORMAL', dx: 7,  dy: 2  },
+      leaves:  { tex: 'dapple', tint: 0x0a1f0a, alpha: 0.16, blend: 'NORMAL', dx: 5,  dy: 3  },
+      sand:    { tex: 'clouds', tint: 0xe8d4a0, alpha: 0.10, blend: 'NORMAL', dx: 12, dy: 1  },
+      mist:    { tex: 'fog',    tint: 0xbcd0e0, alpha: 0.16, blend: 'NORMAL', dx: 6,  dy: 2  },
+      cave:    { tex: 'fog',    tint: 0x2a4048, alpha: 0.18, blend: 'NORMAL', dx: 3,  dy: 1  },
+      ember:   { tex: 'fog',    tint: 0x4a1400, alpha: 0.14, blend: 'ADD',    dx: 8,  dy: -3 },
+      ash:     { tex: 'fog',    tint: 0x3a3430, alpha: 0.16, blend: 'NORMAL', dx: 9,  dy: 2  },
+      spore:   { tex: 'dapple', tint: 0x0a1606, alpha: 0.14, blend: 'NORMAL', dx: 4,  dy: 2  },
+      gold:    { tex: 'clouds', tint: 0xffe08a, alpha: 0.10, blend: 'ADD',    dx: 6,  dy: 1  },
+      feather: { tex: 'clouds', tint: 0xeaf2ff, alpha: 0.12, blend: 'NORMAL', dx: 8,  dy: 2  },
+      snow:    { tex: 'clouds', tint: 0xdfeaf8, alpha: 0.12, blend: 'NORMAL', dx: 10, dy: 3  },
+      storm:   { tex: 'fog',    tint: 0x1a2230, alpha: 0.20, blend: 'NORMAL', dx: 22, dy: 6  },
+      sparkle: { tex: 'clouds', tint: 0x9a6ad0, alpha: 0.10, blend: 'ADD',    dx: 5,  dy: 2  },
+      dust:    { tex: 'clouds', tint: 0xc8c0b0, alpha: 0.10, blend: 'NORMAL', dx: 8,  dy: 1  },
+      // void: intentionally none — keep the abyss empty/oppressive.
+    };
+    const od = OD[this._regionBiome(regionIndex)];
+    if (!od) return;
+
+    const cam = this.cameras.main;
+    // Overhead mid-distance plane: drifts at 55% of camera scroll.
+    this._makeSoftBlobTexture('px_' + od.tex, od.tex);
+    const layer = this.add.tileSprite(0, 0, cam.width, cam.height, 'px_' + od.tex)
+      .setOrigin(0, 0).setScrollFactor(0).setDepth(-3)
+      .setAlpha(od.alpha).setTint(od.tint).setBlendMode(od.blend);
+    this._parallaxLayers.push({ ts: layer, factor: 0.55, dx: od.dx, dy: od.dy });
+
+    // High only: a fainter far-haze plane drifting slower (30%) for a second
+    // depth cue behind the overhead layer.
+    if (QualitySettings.level === 'high') {
+      this._makeSoftBlobTexture('px_fog', 'fog');
+      const haze = this.add.tileSprite(0, 0, cam.width, cam.height, 'px_fog')
+        .setOrigin(0, 0).setScrollFactor(0).setDepth(-6)
+        .setAlpha(od.alpha * 0.6).setTint(od.tint);
+      this._parallaxLayers.push({ ts: haze, factor: 0.30, dx: od.dx * 0.4, dy: od.dy * 0.4 });
+    }
+  }
+
+  // Drive the parallax planes: texture offset = cam scroll × factor (the
+  // parallax) + a slow time-based drift (ambient motion). Called from update().
+  _updateParallax(delta) {
+    if (!this._parallaxLayers?.length) return;
+    const cam = this.cameras.main;
+    this._parallaxTime = (this._parallaxTime || 0) + delta * 0.001;
+    for (const L of this._parallaxLayers) {
+      L.ts.tilePositionX = cam.scrollX * L.factor + this._parallaxTime * L.dx;
+      L.ts.tilePositionY = cam.scrollY * L.factor + this._parallaxTime * L.dy;
+    }
+  }
+
+  // Generate a seamless soft-blob texture (clouds / fog / dapple). Blobs are
+  // wrapped across the edges so the tileSprite repeats without visible seams.
+  _makeSoftBlobTexture(key, kind) {
+    if (this.textures.exists(key)) return;
+    const SPEC = {
+      clouds: { size: 256, blobs: 8,  r: 70,  maxA: 0.9 },
+      fog:    { size: 256, blobs: 5,  r: 110, maxA: 0.7 },
+      dapple: { size: 256, blobs: 16, r: 34,  maxA: 0.8 },
+    };
+    const s = SPEC[kind] || SPEC.clouds;
+    const g = this.make.graphics({ add: false });
+    const RINGS = 6;
+    for (let i = 0; i < s.blobs; i++) {
+      const h  = ((i + 1) * 2654435761) >>> 0;     // deterministic placement
+      const bx = h % s.size;
+      const by = (h >> 8) % s.size;
+      const r  = s.r * (0.6 + ((h >> 16) % 100) / 250);
+      for (let k = RINGS; k >= 1; k--) {
+        g.fillStyle(0xffffff, s.maxA / RINGS);
+        const rr = r * k / RINGS;
+        for (const ox of [0, -s.size, s.size]) {   // wrap for seamless tiling
+          for (const oy of [0, -s.size, s.size]) {
+            g.fillCircle(bx + ox, by + oy, rr);
+          }
+        }
+      }
+    }
+    g.generateTexture(key, s.size, s.size);
+    g.destroy();
+  }
+
+  // ── Vignette ───────────────────────────────────────────────────────────
+  // A texture-based soft radial vignette pinned to the camera. Unlike the old
+  // postFX vignette (which read as a hard oval border), this stays fully clear
+  // across the play area and only darkens the outer corners. Strength comes
+  // from the biome's existing `vig` value.
+  _buildVignette(regionIndex) {
+    this._vignette = null;
+    if (QualitySettings.level === 'low') return;
+    let strength = this._biomeGrade(regionIndex).vig || 0;
+    if (QualitySettings.level === 'medium') strength *= 0.6;   // subtle on medium
+    if (strength <= 0) return;
+
+    this._ensureVignetteTexture();
+    const cam = this.cameras.main;
+    // Depth 8000: above all gameplay actors (depth = y, ≤ WORLD_H) so corner
+    // enemies are framed too, but below cinematic overlays (arena flash 9000,
+    // boss intro 99999) and the separate always-on-top UIScene HUD.
+    this._vignette = this.add.image(0, 0, 'px_vignette')
+      .setOrigin(0, 0).setDisplaySize(cam.width, cam.height)
+      .setScrollFactor(0).setDepth(8000)
+      .setTint(0x000000).setAlpha(Math.min(0.85, strength));
+  }
+
+  _ensureVignetteTexture() {
+    if (this.textures.exists('px_vignette')) return;
+    const W = 512, H = 512;
+    const tex = this.textures.createCanvas('px_vignette', W, H);
+    if (!tex) return;
+    const ctx = tex.getContext();
+    // Transparent across the inner ~58%, easing to opaque white toward the
+    // corners (tinted black at use-site → soft dark frame).
+    const grd = ctx.createRadialGradient(W / 2, H / 2, W * 0.30, W / 2, H / 2, W * 0.62);
+    grd.addColorStop(0, 'rgba(255,255,255,0)');
+    grd.addColorStop(1, 'rgba(255,255,255,1)');
+    ctx.fillStyle = grd;
+    ctx.fillRect(0, 0, W, H);
+    try { tex.setFilter(Phaser.Textures.FilterMode.LINEAR); } catch (e) {}
+    tex.refresh();
+  }
+
+  // ── Emissive light-pools ───────────────────────────────────────────────
+  // Soft additive glow cast on the ground beneath an emissive prop. Cheaper
+  // than Light2D (no per-sprite pipeline) but gives the look of light pooling
+  // on the floor. High-quality only, capped by the same glow budget.
+  _lightPool(x, y, color, radius = 90) {
+    if (!QualitySettings.glow) return;
+    if ((this._lightPoolCount || 0) >= QualitySettings.glowMax) return;
+    this._ensureLightTexture();
+    const pool = this.add.image(x, y, 'px_light')
+      .setDisplaySize(radius * 2, radius * 2)
+      .setTint(color).setAlpha(0).setDepth(-6).setBlendMode('ADD');
+    this._lightPoolCount = (this._lightPoolCount || 0) + 1;
+    this.tweens.add({
+      targets: pool, alpha: 0.45,
+      duration: 1400 + Math.random() * 700, yoyo: true, repeat: -1,
+      ease: 'Sine.easeInOut',
+    });
+  }
+
+  _ensureLightTexture() {
+    if (this.textures.exists('px_light')) return;
+    const W = 128;
+    const tex = this.textures.createCanvas('px_light', W, W);
+    if (!tex) return;
+    const ctx = tex.getContext();
+    const grd = ctx.createRadialGradient(W / 2, W / 2, 0, W / 2, W / 2, W / 2);
+    grd.addColorStop(0,   'rgba(255,255,255,0.9)');
+    grd.addColorStop(0.5, 'rgba(255,255,255,0.35)');
+    grd.addColorStop(1,   'rgba(255,255,255,0)');
+    ctx.fillStyle = grd;
+    ctx.fillRect(0, 0, W, W);
+    try { tex.setFilter(Phaser.Textures.FilterMode.LINEAR); } catch (e) {}
+    tex.refresh();
+  }
+
   // Per-region biome → drives both weather particles and the colour grade.
   _regionBiome(i) {
     const B = ['pollen','pollen','leaves','leaves','sand','mist','ember',   // 0-6 (1-6 legacy)
@@ -679,16 +850,19 @@ export class GameScene extends Phaser.Scene {
   _glowEmissive(obj, sp) {
     const n = (sp.name || '').toLowerCase();
     const d = (sp.dir  || '').toLowerCase();
-    let c = null;
-    if (n === 'brazier')            c = 0xffb24a;
-    else if (n === 'gate_arch')     c = 0xfff0b0;
-    else if (n === 'mural')         c = 0xfff0b0;   // Temple of Gods: the five intact halos glow
-    else if (n === 'lava_rock')     c = 0xff6a1e;   // Demon Forge: molten slag emits heat
-    else if (n === 'crystal_amber') c = 0xffb24a;   // cooling metal glints
-    else if (n === 'crystal_cyan')  c = 0x6fd0e0;   // ice / gem light
-    else if (n === 'void_shard')    c = 0x9a5cff;   // Severance: void shards bleed light
-    else if (d.includes('campfire')) c = 0xff9a3a;
-    if (c != null) this._glow(obj, c, 5);
+    let c = null, lightR = 90;
+    if (n === 'brazier')            { c = 0xffb24a; lightR = 80;  }
+    else if (n === 'gate_arch')     { c = 0xfff0b0; lightR = 150; }
+    else if (n === 'mural')         { c = 0xfff0b0; lightR = 70;  }  // Temple of Gods: the five intact halos glow
+    else if (n === 'lava_rock')     { c = 0xff6a1e; lightR = 110; }  // Demon Forge: molten slag emits heat
+    else if (n === 'crystal_amber') { c = 0xffb24a; lightR = 90;  }  // cooling metal glints
+    else if (n === 'crystal_cyan')  { c = 0x6fd0e0; lightR = 90;  }  // ice / gem light
+    else if (n === 'void_shard')    { c = 0x9a5cff; lightR = 100; }  // Severance: void shards bleed light
+    else if (d.includes('campfire')){ c = 0xff9a3a; lightR = 100; }
+    if (c != null) {
+      this._glow(obj, c, 5);
+      this._lightPool(sp.x, sp.y, c, lightR);
+    }
   }
 
   _setupWorld(region) {
@@ -1719,6 +1893,9 @@ export class GameScene extends Phaser.Scene {
     // ── Adaptive quality: drop a level if FPS stays low ───────────
     this._fpsWatchdog(delta);
 
+    // ── Parallax atmosphere drift ─────────────────────────────────
+    this._updateParallax(delta);
+
     // ── Tree occlusion (High quality only) ────────────────────────
     if (QualitySettings.occlusion) this._updateOcclusionAlpha();
 
@@ -1818,9 +1995,19 @@ export class GameScene extends Phaser.Scene {
       if (this._gradeFx)    { try { this.cameras.main.postFX.remove(this._gradeFx); }    catch (e) {} this._gradeFx = null; }
       if (this._vignetteFx) { try { this.cameras.main.postFX.remove(this._vignetteFx); } catch (e) {} this._vignetteFx = null; }
     }
+    // Texture vignette is gated to medium+; drop it the moment we fall to low.
+    if (QualitySettings.level === 'low' && this._vignette) {
+      try { this._vignette.destroy(); } catch (e) {}
+      this._vignette = null;
+    }
     if (!QualitySettings.weather && this._ambientEmitter) {
       try { this._ambientEmitter.destroy(); } catch (e) {}
       this._ambientEmitter = null;
+    }
+    // Parallax planes share the weather gate (off on low).
+    if (!QualitySettings.weather && this._parallaxLayers?.length) {
+      for (const L of this._parallaxLayers) { try { L.ts.destroy(); } catch (e) {} }
+      this._parallaxLayers = [];
     }
     try {
       this.scene.get('UIScene')?.toast?.(`Graphics lowered to ${newLevel.toUpperCase()} for performance`, '#ffcc44', 2600);
