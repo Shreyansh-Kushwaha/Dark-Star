@@ -580,6 +580,38 @@ export class GameScene extends Phaser.Scene {
     return obj;
   }
 
+  // ── Combat juice ─────────────────────────────────────────────────────────
+  // Quick squash/stretch "pop" that always returns the sprite to its base scale.
+  _popSprite(sprite, baseX, baseY, sx = 1.16, sy = 0.84, dur = 80) {
+    if (!sprite || !sprite.scene) return;
+    if (sprite._popTween) sprite._popTween.stop();
+    sprite.setScale(baseX, baseY);
+    sprite._popTween = this.tweens.add({
+      targets: sprite, scaleX: baseX * sx, scaleY: baseY * sy,
+      duration: dur, yoyo: true, ease: 'Quad.easeOut',
+      onComplete: () => { if (sprite.scene) sprite.setScale(baseX, baseY); sprite._popTween = null; },
+    });
+  }
+
+  // A small kick of dust/spark motes at an impact point.
+  _impactDust(x, y, color = 0xfff0d0, n = 5) {
+    for (let i = 0; i < n; i++) {
+      const a = Math.random() * Math.PI * 2;
+      const reach = 16 + Math.random() * 16;
+      const dot = this.add.circle(x, y, 2 + Math.random() * 2, color, 0.7).setDepth(y + 8);
+      this.tweens.add({
+        targets: dot, x: x + Math.cos(a) * reach, y: y + Math.sin(a) * reach - 6,
+        alpha: 0, scale: 0.2, duration: 240 + Math.random() * 140, ease: 'Quad.easeOut',
+        onComplete: () => dot.destroy(),
+      });
+    }
+  }
+
+  // Very short, subtle camera shake for weighty hits (heavy melee / boss).
+  _cameraPunch(amp = 0.004, dur = 70) {
+    this.cameras?.main?.shake(dur, amp);
+  }
+
   // Glow a placed map sprite if it is an emissive prop (fire / radiant gate).
   _glowEmissive(obj, sp) {
     const n = (sp.name || '').toLowerCase();

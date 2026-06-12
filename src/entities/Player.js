@@ -270,7 +270,11 @@ export class Player extends Phaser.GameObjects.Container {
 
     if (heavy) this._spawnAttackTrail(scene);
 
+    // squash/stretch on the swing (player sprite base scale is a constant 1.0)
+    scene._popSprite?.(this.sprite, 1, 1, heavy ? 1.22 : 1.14, heavy ? 0.80 : 0.90, heavy ? 110 : 80);
+
     this._hitstopTimer = hitstop;
+    let _hitLanded = false;
 
     // Arc hit detection
     const angle = Math.atan2(this.facingY, this.facingX);
@@ -289,6 +293,7 @@ export class Player extends Phaser.GameObjects.Container {
       if (hits) {
         enemy.takeDamage(damage, this, scene);
         this._spawnHitFX(scene, enemy.x, enemy.y, heavy);
+        _hitLanded = true;
       }
     }
 
@@ -304,9 +309,13 @@ export class Player extends Phaser.GameObjects.Container {
         if (hits) {
           scene.hitBoss(damage);
           this._spawnHitFX(scene, boss.x, boss.y, heavy);
+          _hitLanded = true;
         }
       }
     }
+
+    // weighty hits give a short, subtle camera punch
+    if (_hitLanded && heavy) scene._cameraPunch?.(0.006, 80);
   }
 
   _doDodge(scene) {

@@ -850,8 +850,11 @@ export class Boss extends Phaser.GameObjects.Container {
     this.posture = Math.min(this.maxPosture, this.posture + amount * 0.4);
     if (this.posture >= this.maxPosture) this._triggerStagger(scene);
 
-    this.sprite.setTint(0xff8888);
-    scene.time.delayedCall(120, () => {
+    // hit juice: sharp white flash + impact dust (scale left alone — boss scale
+    // is phase-driven, so popping it would fight the phase-transition tweens)
+    scene._impactDust?.(this.x, this.y - 20, 0xffe6b0, amount >= 40 ? 7 : 4);
+    this.sprite.setTint(0xffffff);
+    scene.time.delayedCall(80, () => {
       if (this.alive) this.sprite.setTint(this.cfg.tint || 0xffffff);
     });
 

@@ -315,8 +315,12 @@ export class Enemy extends Phaser.GameObjects.Container {
     this._updateHpBar();
     this._spawnDamageNumber(scene, amount);
 
-    this.sprite.setTint(0xff8888);
-    scene.time.delayedCall(100, () => {
+    // hit juice: sharp white flash, squash/stretch pop, impact dust kick
+    const _base = this.cfg.scale || 1;
+    scene._popSprite?.(this.sprite, _base, _base, 1.18, 0.82, 80);
+    scene._impactDust?.(this.x, this.y - 10, 0xffe6b0, amount >= 20 ? 6 : 4);
+    this.sprite.setTint(0xffffff);
+    scene.time.delayedCall(70, () => {
       if (this.alive) this.sprite.clearTint();
     });
 
