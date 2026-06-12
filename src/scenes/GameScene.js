@@ -176,7 +176,7 @@ export class GameScene extends Phaser.Scene {
     this._spawnAmbientParticles(regionIndex);
     this._applyRegionColorOverlay(regionIndex);
     this._glowCount = 0;   // reset per-region glow budget (scene instance is reused)
-    this._setupPostFx();
+    this._setupPostFx(regionIndex);
 
     // ── Players ───────────────────────────────────────────────────
     const spawnPos = region.spawnPos;
@@ -575,14 +575,56 @@ export class GameScene extends Phaser.Scene {
     this.add.rectangle(WORLD_W / 2, WORLD_H / 2, WORLD_W, WORLD_H, ov.color, ov.alpha).setDepth(-7);
   }
 
+  // Per-biome cinematic grade: a real ColorMatrix (saturation / brightness /
+  // contrast) gives each province a *colour identity* — warm glowing Emberwastes,
+  // desaturated Sunless caves, bright cool Skyward — not just a darker tint of the
+  // same image (what the flat rect overlay can do). Paired with a vignette whose
+  // strength scales with how enclosed/oppressive the biome should feel.
+  // sat: + boosts colour, − drains it.  bri: 1 = neutral multiplier.  con: + adds
+  // contrast.  vig: vignette strength (0 = none, ~0.6 = heavy enclosed dark).
+  _biomeGrade(i) {
+    const G = {
+      pollen:  { sat:  0.12, bri: 1.03, con: 0.05, vig: 0.30 },
+      leaves:  { sat:  0.15, bri: 0.98, con: 0.08, vig: 0.36 },
+      sand:    { sat: -0.05, bri: 1.06, con: 0.06, vig: 0.30 },
+      mist:    { sat: -0.22, bri: 0.94, con: 0.04, vig: 0.42 },
+      ember:   { sat:  0.22, bri: 1.00, con: 0.14, vig: 0.40 },
+      cave:    { sat: -0.42, bri: 0.80, con: 0.10, vig: 0.55 },
+      spore:   { sat:  0.05, bri: 0.90, con: 0.08, vig: 0.46 },
+      ash:     { sat: -0.35, bri: 0.92, con: 0.06, vig: 0.44 },
+      gold:    { sat:  0.18, bri: 1.08, con: 0.08, vig: 0.30 },
+      feather: { sat: -0.06, bri: 1.10, con: 0.04, vig: 0.26 },
+      snow:    { sat: -0.16, bri: 1.08, con: 0.06, vig: 0.34 },
+      storm:   { sat: -0.20, bri: 0.86, con: 0.12, vig: 0.50 },
+      sparkle: { sat:  0.20, bri: 1.02, con: 0.06, vig: 0.34 },
+      void:    { sat: -0.30, bri: 0.74, con: 0.12, vig: 0.60 },
+      dust:    { sat: -0.10, bri: 0.96, con: 0.05, vig: 0.38 },
+    };
+    return G[this._regionBiome(i)] || G.dust;
+  }
+
   // Global bloom (WebGL only) makes every bright/additive thing — shrine flame,
   // portal fills, lava rivers, crystals, gold, VFX bursts — actually emit light.
-  _setupPostFx() {
+  // Plus the per-biome colour grade + vignette above (the cohesion layer).
+  _setupPostFx(regionIndex = 0) {
     this._bloomFx = null;
+    this._gradeFx = null;
+    this._vignetteFx = null;
     if (!QualitySettings.postFx) return;
     const cam = this.cameras?.main;
     if (!cam?.postFX?.addBloom) return;   // WebGL pipeline required
     try { this._bloomFx = cam.postFX.addBloom(0xffffff, 1, 1, 1, 0.8, 4); } catch (e) {}
+    const g = this._biomeGrade(regionIndex);
+    // ColorMatrix: first call sets the matrix, later ones multiply into it.
+    try {
+      const cm = cam.postFX.addColorMatrix();
+      cm.saturate(g.sat);
+      cm.brightness(g.bri, true);
+      cm.contrast(g.con, true);
+      this._gradeFx = cm;
+    } catch (e) {}
+    // Vignette: gentle radius so the darkening hugs the screen edges only.
+    try { this._vignetteFx = cam.postFX.addVignette(0.5, 0.5, 0.55, g.vig); } catch (e) {}
   }
 
   // Per-object emissive glow. addGlow only works on Sprite/Image/Text in WebGL,
@@ -1739,6 +1781,8 @@ export class GameScene extends Phaser.Scene {
     if (!QualitySettings.postFx && this._bloomFx) {
       try { this.cameras.main.postFX.remove(this._bloomFx); } catch (e) {}
       this._bloomFx = null;
+      if (this._gradeFx)    { try { this.cameras.main.postFX.remove(this._gradeFx); }    catch (e) {} this._gradeFx = null; }
+      if (this._vignetteFx) { try { this.cameras.main.postFX.remove(this._vignetteFx); } catch (e) {} this._vignetteFx = null; }
     }
     if (!QualitySettings.weather && this._ambientEmitter) {
       try { this._ambientEmitter.destroy(); } catch (e) {}
