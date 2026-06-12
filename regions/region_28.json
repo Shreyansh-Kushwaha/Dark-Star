@@ -4237,6 +4237,2533 @@
    "scaleY": 0.669,
    "offsetX": 48.0,
    "offsetY": 131
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 125.39670619923683,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1592.1,
+    810.9,
+    1454.6,
+    761.8,
+    1469.8,
+    706.9,
+    1408.7,
+    758.8,
+    1513.3,
+    728.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 86.01044424272648,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    277.0,
+    1378.5,
+    304.6,
+    1415.7,
+    361.1,
+    1369.1,
+    184.0,
+    1363.5,
+    228.6,
+    1428.3
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 84.34216464553656,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2341.5,
+    1227.2,
+    2441.1,
+    1308.6,
+    2467.2,
+    1313.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 99.52758846766612,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2177.0,
+    1653.8,
+    2020.7,
+    1739.9,
+    2123.2,
+    1705.7,
+    2047.3,
+    1675.4,
+    2194.2,
+    1632.9
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 134.89963664241992,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1172.1,
+    676.9,
+    1141.1,
+    690.0,
+    1053.8,
+    691.7
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 83.74880722717425,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    368.9,
+    1429.4,
+    369.7,
+    1406.0,
+    295.8,
+    1432.0,
+    375.9,
+    1430.2,
+    379.8,
+    1420.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 145.6918499150962,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1498.3,
+    581.2,
+    1575.0,
+    649.9,
+    1612.8,
+    635.8,
+    1489.9,
+    505.7
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 156.63838538185897,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    342.7,
+    1402.5,
+    261.1,
+    1454.0,
+    226.8,
+    1447.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 150.14497013439762,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1936.9,
+    1749.4,
+    1828.2,
+    1715.2,
+    1910.5,
+    1683.2,
+    1721.0,
+    1691.3,
+    1821.5,
+    1690.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 139.18204467392113,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2642.2,
+    654.8,
+    2530.5,
+    622.9,
+    2630.7,
+    605.1,
+    2701.2,
+    632.2,
+    2752.0,
+    648.3
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 177.72495745116026,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2532.2,
+    421.3,
+    2477.5,
+    483.0,
+    2450.5,
+    448.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 166.5495790186083,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1602.2,
+    1812.2,
+    1610.1,
+    1840.8,
+    1588.7,
+    1811.7,
+    1709.6,
+    1866.1,
+    1595.0,
+    1788.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 166.33895364231913,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2365.4,
+    551.7,
+    2334.9,
+    579.2,
+    2502.2,
+    612.8,
+    2330.5,
+    673.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 127.08619896343356,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1483.2,
+    1225.4,
+    1409.6,
+    1236.7,
+    1446.8,
+    1200.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 93.12268527724237,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    923.7,
+    1506.0,
+    1095.6,
+    1515.7,
+    934.6,
+    1627.9,
+    1050.3,
+    1529.7
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 118.74843240721069,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1836.0,
+    1300.9,
+    1758.5,
+    1306.7,
+    1668.1,
+    1378.7,
+    1741.7,
+    1257.7,
+    1829.9,
+    1405.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 115.66996983335805,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    302.3,
+    188.8,
+    270.7,
+    157.7,
+    235.4,
+    183.4,
+    227.7,
+    203.4,
+    215.9,
+    201.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 99.47106604975745,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1634.8,
+    349.3,
+    1476.4,
+    289.0,
+    1526.3,
+    255.4,
+    1485.4,
+    288.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 112.17498651483834,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1938.8,
+    996.2,
+    2025.7,
+    919.9,
+    1993.3,
+    940.3,
+    1942.6,
+    978.9,
+    2028.6,
+    912.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 127.70594824161086,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2622.1,
+    1712.8,
+    2696.6,
+    1754.3,
+    2697.1,
+    1763.8,
+    2709.9,
+    1768.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 89.66807730564135,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2179.1,
+    1828.5,
+    2219.6,
+    1815.9,
+    2158.3,
+    1782.9,
+    2139.4,
+    1796.2,
+    2190.8,
+    1810.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 169.57490663884903,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2267.0,
+    944.5,
+    2385.0,
+    858.5,
+    2360.4,
+    837.4,
+    2246.2,
+    866.9,
+    2281.0,
+    893.9
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 94.94068082446127,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1914.8,
+    1525.4,
+    1986.9,
+    1555.8,
+    1911.0,
+    1577.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 108.28166025720668,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2489.8,
+    1165.9,
+    2405.2,
+    1202.9,
+    2517.0,
+    1162.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 160.2689681347385,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2625.8,
+    1644.5,
+    2421.3,
+    1487.1,
+    2394.3,
+    1558.9,
+    2520.2,
+    1580.7,
+    2512.1,
+    1598.7
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 124.16609181197907,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    391.5,
+    1306.9,
+    529.5,
+    1222.9,
+    493.0,
+    1272.0,
+    454.4,
+    1212.9,
+    503.1,
+    1235.7
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 99.79064832765742,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1889.1,
+    453.8,
+    1786.3,
+    446.8,
+    1794.7,
+    426.4,
+    1694.2,
+    437.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 129.85727804615775,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1193.7,
+    731.2,
+    1055.0,
+    719.7,
+    1155.0,
+    749.8,
+    1153.6,
+    685.4,
+    1171.1,
+    719.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 157.4083603190295,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1923.9,
+    1486.7,
+    1964.4,
+    1558.5,
+    1833.6,
+    1567.2,
+    1870.4,
+    1531.3
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 101.99773398269946,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1056.0,
+    1149.3,
+    1108.6,
+    1217.6,
+    991.5,
+    1183.9,
+    1054.8,
+    1153.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 176.50156536558416,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2816.3,
+    1197.2,
+    2716.1,
+    1180.4,
+    2839.6,
+    1098.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 91.89174627577677,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1738.6,
+    393.1,
+    1704.1,
+    342.6,
+    1728.7,
+    305.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 116.89455092483061,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1463.7,
+    1727.4,
+    1504.2,
+    1766.6,
+    1491.5,
+    1707.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 106.0676211995663,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1898.7,
+    335.7,
+    1918.1,
+    367.2,
+    1846.1,
+    254.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 125.39670619923683,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1592.1,
+    810.9,
+    1454.6,
+    761.8,
+    1469.8,
+    706.9,
+    1408.7,
+    758.8,
+    1513.3,
+    728.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 86.01044424272648,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    277.0,
+    1378.5,
+    304.6,
+    1415.7,
+    361.1,
+    1369.1,
+    184.0,
+    1363.5,
+    228.6,
+    1428.3
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 84.34216464553656,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2341.5,
+    1227.2,
+    2441.1,
+    1308.6,
+    2467.2,
+    1313.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 99.52758846766612,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2177.0,
+    1653.8,
+    2020.7,
+    1739.9,
+    2123.2,
+    1705.7,
+    2047.3,
+    1675.4,
+    2194.2,
+    1632.9
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 134.89963664241992,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1172.1,
+    676.9,
+    1141.1,
+    690.0,
+    1053.8,
+    691.7
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 83.74880722717425,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    368.9,
+    1429.4,
+    369.7,
+    1406.0,
+    295.8,
+    1432.0,
+    375.9,
+    1430.2,
+    379.8,
+    1420.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 145.6918499150962,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1498.3,
+    581.2,
+    1575.0,
+    649.9,
+    1612.8,
+    635.8,
+    1489.9,
+    505.7
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 156.63838538185897,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    342.7,
+    1402.5,
+    261.1,
+    1454.0,
+    226.8,
+    1447.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 150.14497013439762,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1936.9,
+    1749.4,
+    1828.2,
+    1715.2,
+    1910.5,
+    1683.2,
+    1721.0,
+    1691.3,
+    1821.5,
+    1690.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 139.18204467392113,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2642.2,
+    654.8,
+    2530.5,
+    622.9,
+    2630.7,
+    605.1,
+    2701.2,
+    632.2,
+    2752.0,
+    648.3
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 177.72495745116026,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2532.2,
+    421.3,
+    2477.5,
+    483.0,
+    2450.5,
+    448.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 166.5495790186083,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1602.2,
+    1812.2,
+    1610.1,
+    1840.8,
+    1588.7,
+    1811.7,
+    1709.6,
+    1866.1,
+    1595.0,
+    1788.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 166.33895364231913,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2365.4,
+    551.7,
+    2334.9,
+    579.2,
+    2502.2,
+    612.8,
+    2330.5,
+    673.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 127.08619896343356,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1483.2,
+    1225.4,
+    1409.6,
+    1236.7,
+    1446.8,
+    1200.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 93.12268527724237,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    923.7,
+    1506.0,
+    1095.6,
+    1515.7,
+    934.6,
+    1627.9,
+    1050.3,
+    1529.7
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 118.74843240721069,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1836.0,
+    1300.9,
+    1758.5,
+    1306.7,
+    1668.1,
+    1378.7,
+    1741.7,
+    1257.7,
+    1829.9,
+    1405.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 115.66996983335805,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    302.3,
+    188.8,
+    270.7,
+    157.7,
+    235.4,
+    183.4,
+    227.7,
+    203.4,
+    215.9,
+    201.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 99.47106604975745,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1634.8,
+    349.3,
+    1476.4,
+    289.0,
+    1526.3,
+    255.4,
+    1485.4,
+    288.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 112.17498651483834,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1938.8,
+    996.2,
+    2025.7,
+    919.9,
+    1993.3,
+    940.3,
+    1942.6,
+    978.9,
+    2028.6,
+    912.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 127.70594824161086,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2622.1,
+    1712.8,
+    2696.6,
+    1754.3,
+    2697.1,
+    1763.8,
+    2709.9,
+    1768.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 89.66807730564135,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2179.1,
+    1828.5,
+    2219.6,
+    1815.9,
+    2158.3,
+    1782.9,
+    2139.4,
+    1796.2,
+    2190.8,
+    1810.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 169.57490663884903,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2267.0,
+    944.5,
+    2385.0,
+    858.5,
+    2360.4,
+    837.4,
+    2246.2,
+    866.9,
+    2281.0,
+    893.9
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 94.94068082446127,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1914.8,
+    1525.4,
+    1986.9,
+    1555.8,
+    1911.0,
+    1577.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 108.28166025720668,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2489.8,
+    1165.9,
+    2405.2,
+    1202.9,
+    2517.0,
+    1162.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 160.2689681347385,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2625.8,
+    1644.5,
+    2421.3,
+    1487.1,
+    2394.3,
+    1558.9,
+    2520.2,
+    1580.7,
+    2512.1,
+    1598.7
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#c2d4e2",
+   "strokeWidth": 124.16609181197907,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    391.5,
+    1306.9,
+    529.5,
+    1222.9,
+    493.0,
+    1272.0,
+    454.4,
+    1212.9,
+    503.1,
+    1235.7
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 99.79064832765742,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1889.1,
+    453.8,
+    1786.3,
+    446.8,
+    1794.7,
+    426.4,
+    1694.2,
+    437.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 129.85727804615775,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1193.7,
+    731.2,
+    1055.0,
+    719.7,
+    1155.0,
+    749.8,
+    1153.6,
+    685.4,
+    1171.1,
+    719.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 157.4083603190295,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1923.9,
+    1486.7,
+    1964.4,
+    1558.5,
+    1833.6,
+    1567.2,
+    1870.4,
+    1531.3
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 101.99773398269946,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1056.0,
+    1149.3,
+    1108.6,
+    1217.6,
+    991.5,
+    1183.9,
+    1054.8,
+    1153.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 176.50156536558416,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2816.3,
+    1197.2,
+    2716.1,
+    1180.4,
+    2839.6,
+    1098.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#b0c6d8",
+   "strokeWidth": 91.89174627577677,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1738.6,
+    393.1,
+    1704.1,
+    342.6,
+    1728.7,
+    305.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#aebfce",
+   "strokeWidth": 116.89455092483061,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1463.7,
+    1727.4,
+    1504.2,
+    1766.6,
+    1491.5,
+    1707.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#d6e6f0",
+   "strokeWidth": 106.0676211995663,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1898.7,
+    335.7,
+    1918.1,
+    367.2,
+    1846.1,
+    254.4
+   ]
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0001",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2015.49,
+   "y": 239.92,
+   "scaleX": 1.192,
+   "scaleY": 0.712,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.578
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0002",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2496.5,
+   "y": 330.29,
+   "scaleX": 0.664,
+   "scaleY": 0.396,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.553
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0003",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1906.96,
+   "y": 362.94,
+   "scaleX": 0.988,
+   "scaleY": 0.29,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.391
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0004",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 880.63,
+   "y": 473.64,
+   "scaleX": 0.615,
+   "scaleY": 0.425,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.49
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0005",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1087.95,
+   "y": 244.65,
+   "scaleX": 0.606,
+   "scaleY": 0.594,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.419
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0006",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2642.37,
+   "y": 235.17,
+   "scaleX": 1.027,
+   "scaleY": 0.38,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0007",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1613.05,
+   "y": 224.64,
+   "scaleX": 1.047,
+   "scaleY": 0.426,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.354
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0008",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2380.41,
+   "y": 164.47,
+   "scaleX": 0.67,
+   "scaleY": 0.529,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.517
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0009",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1507.15,
+   "y": 512.85,
+   "scaleX": 1.154,
+   "scaleY": 0.441,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.356
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0010",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 172.16,
+   "y": 118.02,
+   "scaleX": 0.707,
+   "scaleY": 0.546,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.44
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0011",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3014.43,
+   "y": 440.32,
+   "scaleX": 1.108,
+   "scaleY": 0.543,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.514
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0012",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2769.86,
+   "y": 340.64,
+   "scaleX": 0.711,
+   "scaleY": 0.295,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.385
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0013",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 757.63,
+   "y": 681.86,
+   "scaleX": 0.611,
+   "scaleY": 0.484,
+   "offsetX": 288,
+   "offsetY": 128,
+   "alpha": 0.34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0014",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ice_shard.png"
+   ],
+   "name": "ice_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 514.16,
+   "y": 546.28,
+   "scaleX": 0.787,
+   "scaleY": 0.787,
+   "offsetX": 26,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0015",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ice_shard.png"
+   ],
+   "name": "ice_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 573.73,
+   "y": 576.91,
+   "scaleX": 1.021,
+   "scaleY": 1.021,
+   "offsetX": 26,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0016",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ice_shard.png"
+   ],
+   "name": "ice_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 576.44,
+   "y": 545.5,
+   "scaleX": 0.776,
+   "scaleY": 0.776,
+   "offsetX": 26,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0017",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ice_shard.png"
+   ],
+   "name": "ice_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 682.82,
+   "y": 360.81,
+   "scaleX": 0.876,
+   "scaleY": 0.876,
+   "offsetX": 26,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0018",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 679.62,
+   "y": 330.7,
+   "scaleX": 1.002,
+   "scaleY": 1.002,
+   "offsetX": 32,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0019",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 797.31,
+   "y": 1390.77,
+   "scaleX": 1.056,
+   "scaleY": 1.056,
+   "offsetX": 32,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0020",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ice_shard.png"
+   ],
+   "name": "ice_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 835.08,
+   "y": 1386.86,
+   "scaleX": 0.833,
+   "scaleY": 0.833,
+   "offsetX": 26,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0021",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ice_shard.png"
+   ],
+   "name": "ice_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 857.83,
+   "y": 1410.36,
+   "scaleX": 0.961,
+   "scaleY": 0.961,
+   "offsetX": 26,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0022",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ice_shard.png"
+   ],
+   "name": "ice_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1259.04,
+   "y": 414.25,
+   "scaleX": 1.004,
+   "scaleY": 1.004,
+   "offsetX": 26,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0023",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1227.26,
+   "y": 399.75,
+   "scaleX": 0.935,
+   "scaleY": 0.935,
+   "offsetX": 32,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0024",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ice_shard.png"
+   ],
+   "name": "ice_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2615.72,
+   "y": 1771.6,
+   "scaleX": 0.999,
+   "scaleY": 0.999,
+   "offsetX": 26,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0025",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ice_shard.png"
+   ],
+   "name": "ice_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2615.69,
+   "y": 1845.82,
+   "scaleX": 0.856,
+   "scaleY": 0.856,
+   "offsetX": 26,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0026",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ice_shard.png"
+   ],
+   "name": "ice_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2566.38,
+   "y": 1822.34,
+   "scaleX": 1.067,
+   "scaleY": 1.067,
+   "offsetX": 26,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0027",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2651.31,
+   "y": 1791.51,
+   "scaleX": 0.856,
+   "scaleY": 0.856,
+   "offsetX": 32,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0028",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ice_shard.png"
+   ],
+   "name": "ice_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2801.27,
+   "y": 1249.42,
+   "scaleX": 1.105,
+   "scaleY": 1.105,
+   "offsetX": 26,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0029",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2847.25,
+   "y": 1272.62,
+   "scaleX": 1.122,
+   "scaleY": 1.122,
+   "offsetX": 32,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0030",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ice_shard.png"
+   ],
+   "name": "ice_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2872.13,
+   "y": 1217.36,
+   "scaleX": 1.021,
+   "scaleY": 1.021,
+   "offsetX": 26,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0031",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ice_shard.png"
+   ],
+   "name": "ice_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 441.62,
+   "y": 308.24,
+   "scaleX": 1.013,
+   "scaleY": 1.013,
+   "offsetX": 26,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0032",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ice_shard.png"
+   ],
+   "name": "ice_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 427.04,
+   "y": 264.46,
+   "scaleX": 0.757,
+   "scaleY": 0.757,
+   "offsetX": 26,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0033",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ice_shard.png"
+   ],
+   "name": "ice_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1564.98,
+   "y": 1363.43,
+   "scaleX": 1.125,
+   "scaleY": 1.125,
+   "offsetX": 26,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0034",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1563.26,
+   "y": 1307.62,
+   "scaleX": 0.968,
+   "scaleY": 0.968,
+   "offsetX": 32,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0035",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1596.19,
+   "y": 1355.58,
+   "scaleX": 1.059,
+   "scaleY": 1.059,
+   "offsetX": 32,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0036",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1579.16,
+   "y": 1385.67,
+   "scaleX": 0.893,
+   "scaleY": 0.893,
+   "offsetX": 32,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0037",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ice_shard.png"
+   ],
+   "name": "ice_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 630.61,
+   "y": 1575.67,
+   "scaleX": 0.983,
+   "scaleY": 0.983,
+   "offsetX": 26,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0038",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ice_shard.png"
+   ],
+   "name": "ice_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 559.98,
+   "y": 1572.04,
+   "scaleX": 1.081,
+   "scaleY": 1.081,
+   "offsetX": 26,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0039",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ice_shard.png"
+   ],
+   "name": "ice_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 639.77,
+   "y": 1540.5,
+   "scaleX": 0.735,
+   "scaleY": 0.735,
+   "offsetX": 26,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0040",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ice_shard.png"
+   ],
+   "name": "ice_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 656.44,
+   "y": 1583.92,
+   "scaleX": 1.058,
+   "scaleY": 1.058,
+   "offsetX": 26,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0041",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 559.51,
+   "y": 400.47,
+   "scaleX": 1.089,
+   "scaleY": 1.089,
+   "offsetX": 48,
+   "offsetY": 131,
+   "alpha": 0.9
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0042",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1752.93,
+   "y": 439.14,
+   "scaleX": 1.075,
+   "scaleY": 1.075,
+   "offsetX": 48,
+   "offsetY": 131,
+   "alpha": 0.9
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0043",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1520.04,
+   "y": 1767.0,
+   "scaleX": 1.217,
+   "scaleY": 1.217,
+   "offsetX": 48,
+   "offsetY": 131,
+   "alpha": 0.9
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0044",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1204.5,
+   "y": 277.35,
+   "scaleX": 1.051,
+   "scaleY": 1.051,
+   "offsetX": 48,
+   "offsetY": 131,
+   "alpha": 0.9
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0045",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1313.1,
+   "y": 411.05,
+   "scaleX": 1.185,
+   "scaleY": 1.185,
+   "offsetX": 48,
+   "offsetY": 131,
+   "alpha": 0.9
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0046",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3039.03,
+   "y": 238.66,
+   "scaleX": 1.002,
+   "scaleY": 1.002,
+   "offsetX": 48,
+   "offsetY": 131,
+   "alpha": 0.9
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0047",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2674.77,
+   "y": 476.62,
+   "scaleX": 1.255,
+   "scaleY": 1.255,
+   "offsetX": 48,
+   "offsetY": 131,
+   "alpha": 0.9
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0048",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1107.22,
+   "y": 1665.13,
+   "scaleX": 1.482,
+   "scaleY": 1.482,
+   "offsetX": 48,
+   "offsetY": 131,
+   "alpha": 0.9
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0049",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2526.25,
+   "y": 401.52,
+   "scaleX": 1.044,
+   "scaleY": 1.044,
+   "offsetX": 48,
+   "offsetY": 131,
+   "alpha": 0.9
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0050",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1006.82,
+   "y": 487.56,
+   "scaleX": 1.853,
+   "scaleY": 1.853,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0051",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1106.43,
+   "y": 504.04,
+   "scaleX": 1.689,
+   "scaleY": 1.689,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0052",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2650.02,
+   "y": 296.37,
+   "scaleX": 1.222,
+   "scaleY": 1.222,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0053",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2710.77,
+   "y": 279.29,
+   "scaleX": 1.877,
+   "scaleY": 1.877,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0054",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1261.72,
+   "y": 515.14,
+   "scaleX": 1.224,
+   "scaleY": 1.224,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0055",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1271.95,
+   "y": 571.79,
+   "scaleX": 1.358,
+   "scaleY": 1.358,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0056",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 258.9,
+   "y": 342.53,
+   "scaleX": 1.43,
+   "scaleY": 1.43,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0057",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 222.31,
+   "y": 374.68,
+   "scaleX": 1.838,
+   "scaleY": 1.838,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0058",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 564.36,
+   "y": 1489.45,
+   "scaleX": 1.582,
+   "scaleY": 1.582,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0059",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 535.44,
+   "y": 1515.57,
+   "scaleX": 1.473,
+   "scaleY": 1.473,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0060",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 576.69,
+   "y": 1512.17,
+   "scaleX": 1.468,
+   "scaleY": 1.468,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0061",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 555.6,
+   "y": 1490.06,
+   "scaleX": 1.66,
+   "scaleY": 1.66,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0062",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2598.55,
+   "y": 1732.87,
+   "scaleX": 1.662,
+   "scaleY": 1.662,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0063",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2669.99,
+   "y": 1750.49,
+   "scaleX": 1.882,
+   "scaleY": 1.882,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0064",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2752.15,
+   "y": 1630.34,
+   "scaleX": 1.691,
+   "scaleY": 1.691,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0065",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2688.69,
+   "y": 1656.5,
+   "scaleX": 1.796,
+   "scaleY": 1.796,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0066",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2053.45,
+   "y": 464.86,
+   "scaleX": 1.432,
+   "scaleY": 1.432,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0067",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2054.2,
+   "y": 470.43,
+   "scaleX": 1.98,
+   "scaleY": 1.98,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0068",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1650.4,
+   "y": 1468.12,
+   "scaleX": 1.944,
+   "scaleY": 1.944,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0069",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1593.18,
+   "y": 1437.74,
+   "scaleX": 1.665,
+   "scaleY": 1.665,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0070",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1944.79,
+   "y": 1558.57,
+   "scaleX": 1.605,
+   "scaleY": 1.605,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0071",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1881.56,
+   "y": 1533.87,
+   "scaleX": 1.766,
+   "scaleY": 1.766,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0072",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1535.04,
+   "y": 300.59,
+   "scaleX": 1.851,
+   "scaleY": 1.851,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_28_0073",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1509.07,
+   "y": 295.07,
+   "scaleX": 1.647,
+   "scaleY": 1.647,
+   "offsetX": 32,
+   "offsetY": 63,
+   "alpha": 0.85
   }
  ],
  "noWalkZones": [
@@ -4306,6 +6833,42 @@
    "type": "elite",
    "x": 2360,
    "y": 1000
+  },
+  {
+   "id": "e_dnsfy_6",
+   "type": "flying",
+   "x": 900,
+   "y": 640
+  },
+  {
+   "id": "e_dnsfy_7",
+   "type": "flying",
+   "x": 2300,
+   "y": 700
+  },
+  {
+   "id": "e_dnsfy_8",
+   "type": "melee",
+   "x": 1500,
+   "y": 1540
+  },
+  {
+   "id": "e_dnsfy_9",
+   "type": "flying",
+   "x": 900,
+   "y": 640
+  },
+  {
+   "id": "e_dnsfy_10",
+   "type": "flying",
+   "x": 2300,
+   "y": 700
+  },
+  {
+   "id": "e_dnsfy_11",
+   "type": "melee",
+   "x": 1500,
+   "y": 1540
   }
  ],
  "boss": null,

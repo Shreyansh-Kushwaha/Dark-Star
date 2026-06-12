@@ -1,7 +1,7 @@
 {
  "version": 1,
  "regionName": "Torn Land",
- "regionSubtitle": "Chidrabh\u016bmi",
+ "regionSubtitle": "Chidrabhūmi",
  "background": {
   "type": "color",
   "value": "#12080a"
@@ -1934,6 +1934,4842 @@
    "scaleY": 1.357,
    "offsetX": 32.0,
    "offsetY": 63
+  },
+  {
+   "type": "stroke",
+   "stroke": "#241a36",
+   "strokeWidth": 80.87723754759516,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    778.2,
+    452.8,
+    742.9,
+    455.0,
+    767.4,
+    451.2,
+    716.6,
+    481.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#352a4a",
+   "strokeWidth": 137.09369578267817,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2719.6,
+    344.9,
+    2620.8,
+    417.4,
+    2561.8,
+    414.9,
+    2637.7,
+    345.0,
+    2572.2,
+    367.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#241a36",
+   "strokeWidth": 171.5804515179054,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    625.0,
+    313.9,
+    603.3,
+    295.4,
+    545.2,
+    284.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#241a36",
+   "strokeWidth": 134.4911873949838,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2878.4,
+    1637.0,
+    2860.0,
+    1623.2,
+    2832.9,
+    1639.3,
+    2914.0,
+    1672.1,
+    2882.5,
+    1621.7
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#2c2240",
+   "strokeWidth": 83.41459601937032,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2448.1,
+    1184.4,
+    2400.1,
+    1205.4,
+    2271.5,
+    1155.7,
+    2290.0,
+    1229.6,
+    2447.3,
+    1212.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#241a36",
+   "strokeWidth": 138.12372859166373,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    761.3,
+    1647.8,
+    736.0,
+    1581.1,
+    693.7,
+    1613.3,
+    745.2,
+    1619.8,
+    781.9,
+    1611.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#241a36",
+   "strokeWidth": 106.13083865392451,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    3048.8,
+    637.9,
+    3073.8,
+    640.2,
+    3111.5,
+    626.9,
+    3038.9,
+    631.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#241a36",
+   "strokeWidth": 173.58816419681142,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1196.1,
+    1144.6,
+    1220.2,
+    1094.4,
+    1280.4,
+    1056.6,
+    1356.4,
+    1086.8,
+    1323.4,
+    1159.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#1a1426",
+   "strokeWidth": 85.44649824952761,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2928.5,
+    814.2,
+    2874.5,
+    799.2,
+    2819.5,
+    788.2,
+    2927.0,
+    780.9,
+    2866.3,
+    802.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#1a1426",
+   "strokeWidth": 105.72361828064093,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1235.2,
+    431.1,
+    1170.0,
+    380.7,
+    1158.3,
+    431.3,
+    1178.4,
+    395.3,
+    1190.0,
+    439.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#352a4a",
+   "strokeWidth": 96.80647055813381,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    277.4,
+    1125.1,
+    267.7,
+    1073.4,
+    267.8,
+    1106.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#1a1426",
+   "strokeWidth": 104.34553941516842,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2110.6,
+    1544.5,
+    2080.7,
+    1566.6,
+    2090.1,
+    1561.1,
+    2018.9,
+    1530.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#2c2240",
+   "strokeWidth": 120.81170923224332,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2960.2,
+    872.3,
+    2878.1,
+    927.3,
+    2917.9,
+    892.9,
+    2929.9,
+    939.8,
+    2984.2,
+    918.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#2c2240",
+   "strokeWidth": 157.29359612959925,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    844.2,
+    147.1,
+    849.5,
+    143.4,
+    790.7,
+    200.1,
+    907.0,
+    201.0,
+    802.2,
+    140.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#2c2240",
+   "strokeWidth": 124.15346287024288,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    75.2,
+    546.7,
+    83.1,
+    656.9,
+    270.2,
+    657.1,
+    189.2,
+    571.8,
+    282.7,
+    592.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#241a36",
+   "strokeWidth": 121.5154771948027,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    322.2,
+    1021.7,
+    434.7,
+    915.8,
+    516.7,
+    1012.6,
+    352.1,
+    947.6,
+    395.5,
+    974.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#2c2240",
+   "strokeWidth": 138.48917283900087,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1196.6,
+    230.9,
+    1175.3,
+    154.7,
+    1218.9,
+    172.8,
+    1239.5,
+    224.5,
+    1137.8,
+    199.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#241a36",
+   "strokeWidth": 159.94676870791886,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1706.2,
+    1268.9,
+    1720.1,
+    1234.0,
+    1816.2,
+    1188.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#1a1426",
+   "strokeWidth": 116.72755168967512,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1843.2,
+    1367.7,
+    1755.0,
+    1428.6,
+    1751.2,
+    1365.0,
+    1777.9,
+    1375.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#1a1426",
+   "strokeWidth": 147.08797292018698,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    632.7,
+    1643.8,
+    722.5,
+    1624.3,
+    757.5,
+    1666.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#241a36",
+   "strokeWidth": 94.19242290997238,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1129.5,
+    843.0,
+    1087.9,
+    760.8,
+    1235.0,
+    847.1,
+    1217.4,
+    852.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#2c2240",
+   "strokeWidth": 129.613821893919,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    625.6,
+    673.9,
+    711.0,
+    631.6,
+    611.6,
+    595.4,
+    700.2,
+    632.7
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#1a1426",
+   "strokeWidth": 101.05773216289577,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1439.5,
+    935.4,
+    1361.0,
+    959.7,
+    1312.9,
+    965.5,
+    1418.9,
+    978.5,
+    1472.8,
+    971.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#2c2240",
+   "strokeWidth": 122.98628307177844,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1540.1,
+    1311.7,
+    1664.7,
+    1210.2,
+    1696.6,
+    1181.4,
+    1668.8,
+    1254.4,
+    1632.8,
+    1291.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#1a1426",
+   "strokeWidth": 142.85366468893875,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2347.7,
+    1082.1,
+    2204.2,
+    1120.3,
+    2373.7,
+    1102.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#2c2240",
+   "strokeWidth": 147.7249007868689,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1838.6,
+    1440.2,
+    1757.5,
+    1465.5,
+    1692.3,
+    1490.3,
+    1770.7,
+    1455.3,
+    1721.1,
+    1487.3
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#2c2240",
+   "strokeWidth": 139.62543812276948,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    401.8,
+    1128.1,
+    326.8,
+    1200.0,
+    299.7,
+    1209.3,
+    329.4,
+    1150.7
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#2c2240",
+   "strokeWidth": 123.9057457110026,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    245.2,
+    139.6,
+    285.6,
+    102.6,
+    349.2,
+    226.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#1a1426",
+   "strokeWidth": 156.79673949844158,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2159.6,
+    1326.1,
+    2041.9,
+    1228.4,
+    2056.3,
+    1212.2,
+    2236.5,
+    1325.9
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#241a36",
+   "strokeWidth": 96.30042791785152,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2248.4,
+    1238.3,
+    2260.5,
+    1235.9,
+    2257.8,
+    1213.6,
+    2200.6,
+    1338.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#3a2f56",
+   "strokeWidth": 100.65944957818219,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1542.9,
+    1820.2,
+    1545.8,
+    1734.6,
+    1625.0,
+    1751.7,
+    1725.3,
+    1839.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#3a2f56",
+   "strokeWidth": 65.56502543450064,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    914.8,
+    1702.2,
+    1064.0,
+    1679.6,
+    951.7,
+    1704.9,
+    1038.1,
+    1681.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#46386a",
+   "strokeWidth": 58.725103754045705,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1871.1,
+    860.5,
+    1911.7,
+    851.6,
+    1913.7,
+    805.0,
+    1927.2,
+    862.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#3a2f56",
+   "strokeWidth": 107.69563979591442,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2635.3,
+    593.0,
+    2684.1,
+    581.7,
+    2617.8,
+    661.3
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#46386a",
+   "strokeWidth": 84.72090846772556,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2997.9,
+    851.3,
+    2770.9,
+    828.0,
+    2908.1,
+    870.2,
+    2732.2,
+    849.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#3a2f56",
+   "strokeWidth": 105.42151180208879,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    359.4,
+    1566.0,
+    387.0,
+    1564.5,
+    394.7,
+    1576.0,
+    368.2,
+    1622.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#46386a",
+   "strokeWidth": 90.32362086161089,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2742.4,
+    224.3,
+    2764.4,
+    221.5,
+    2757.9,
+    205.9
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#3a2f56",
+   "strokeWidth": 71.56346840798649,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2243.8,
+    1004.0,
+    2335.5,
+    1102.5,
+    2282.3,
+    1021.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#3a2f56",
+   "strokeWidth": 70.90518499536785,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2041.6,
+    262.4,
+    2089.2,
+    252.4,
+    2019.5,
+    236.2,
+    2055.1,
+    200.2,
+    2018.4,
+    198.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#46386a",
+   "strokeWidth": 88.74748426962273,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2391.7,
+    1584.3,
+    2515.4,
+    1521.1,
+    2390.4,
+    1603.9,
+    2469.2,
+    1602.4,
+    2313.3,
+    1555.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1268.8,
+    268.7,
+    1329.8,
+    331.5,
+    1355.0,
+    398.8,
+    1383.0,
+    474.3,
+    1365.7,
+    576.1,
+    1329.9,
+    647.6,
+    1299.8,
+    701.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1268.8,
+    268.7,
+    1329.8,
+    331.5,
+    1355.0,
+    398.8,
+    1383.0,
+    474.3,
+    1365.7,
+    576.1,
+    1329.9,
+    647.6,
+    1299.8,
+    701.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1268.8,
+    268.7,
+    1329.8,
+    331.5,
+    1355.0,
+    398.8,
+    1383.0,
+    474.3,
+    1365.7,
+    576.1,
+    1329.9,
+    647.6,
+    1299.8,
+    701.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1831.4,
+    629.9,
+    1902.7,
+    557.2,
+    1945.1,
+    499.9,
+    1972.8,
+    421.7,
+    1990.6,
+    338.0,
+    2013.0,
+    242.4,
+    2007.7,
+    179.7,
+    1978.2,
+    100,
+    1900.0,
+    100,
+    1834.9,
+    100
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1831.4,
+    629.9,
+    1902.7,
+    557.2,
+    1945.1,
+    499.9,
+    1972.8,
+    421.7,
+    1990.6,
+    338.0,
+    2013.0,
+    242.4,
+    2007.7,
+    179.7,
+    1978.2,
+    100,
+    1900.0,
+    100,
+    1834.9,
+    100
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1831.4,
+    629.9,
+    1902.7,
+    557.2,
+    1945.1,
+    499.9,
+    1972.8,
+    421.7,
+    1990.6,
+    338.0,
+    2013.0,
+    242.4,
+    2007.7,
+    179.7,
+    1978.2,
+    100,
+    1900.0,
+    100,
+    1834.9,
+    100
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1475.3,
+    1092.6,
+    1433.0,
+    1055.3,
+    1376.4,
+    989.8,
+    1306.5,
+    981.9,
+    1230.0,
+    962.3,
+    1157.3,
+    932.7,
+    1062.7,
+    916.8,
+    989.6,
+    886.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1475.3,
+    1092.6,
+    1433.0,
+    1055.3,
+    1376.4,
+    989.8,
+    1306.5,
+    981.9,
+    1230.0,
+    962.3,
+    1157.3,
+    932.7,
+    1062.7,
+    916.8,
+    989.6,
+    886.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1475.3,
+    1092.6,
+    1433.0,
+    1055.3,
+    1376.4,
+    989.8,
+    1306.5,
+    981.9,
+    1230.0,
+    962.3,
+    1157.3,
+    932.7,
+    1062.7,
+    916.8,
+    989.6,
+    886.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2152.1,
+    392.6,
+    2156.0,
+    470.0,
+    2166.6,
+    536.8,
+    2142.9,
+    622.3,
+    2143.8,
+    692.7,
+    2148.4,
+    769.3,
+    2187.4,
+    829.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2152.1,
+    392.6,
+    2156.0,
+    470.0,
+    2166.6,
+    536.8,
+    2142.9,
+    622.3,
+    2143.8,
+    692.7,
+    2148.4,
+    769.3,
+    2187.4,
+    829.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2152.1,
+    392.6,
+    2156.0,
+    470.0,
+    2166.6,
+    536.8,
+    2142.9,
+    622.3,
+    2143.8,
+    692.7,
+    2148.4,
+    769.3,
+    2187.4,
+    829.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1705.7,
+    946.5,
+    1635.3,
+    930.7,
+    1546.3,
+    915.9,
+    1483.8,
+    903.3,
+    1409.3,
+    937.3,
+    1354.0,
+    989.4,
+    1295.6,
+    1064.8,
+    1217.8,
+    1106.1,
+    1184.4,
+    1185.1,
+    1115.1,
+    1259.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1705.7,
+    946.5,
+    1635.3,
+    930.7,
+    1546.3,
+    915.9,
+    1483.8,
+    903.3,
+    1409.3,
+    937.3,
+    1354.0,
+    989.4,
+    1295.6,
+    1064.8,
+    1217.8,
+    1106.1,
+    1184.4,
+    1185.1,
+    1115.1,
+    1259.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1705.7,
+    946.5,
+    1635.3,
+    930.7,
+    1546.3,
+    915.9,
+    1483.8,
+    903.3,
+    1409.3,
+    937.3,
+    1354.0,
+    989.4,
+    1295.6,
+    1064.8,
+    1217.8,
+    1106.1,
+    1184.4,
+    1185.1,
+    1115.1,
+    1259.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2169.1,
+    1561.6,
+    2232.4,
+    1598.1,
+    2232.4,
+    1696.8,
+    2292.1,
+    1742.8,
+    2354.3,
+    1808.2,
+    2431.9,
+    1826.6,
+    2521.6,
+    1816.7,
+    2598.1,
+    1838.7,
+    2650.4,
+    1873.4,
+    2735.6,
+    1900
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2169.1,
+    1561.6,
+    2232.4,
+    1598.1,
+    2232.4,
+    1696.8,
+    2292.1,
+    1742.8,
+    2354.3,
+    1808.2,
+    2431.9,
+    1826.6,
+    2521.6,
+    1816.7,
+    2598.1,
+    1838.7,
+    2650.4,
+    1873.4,
+    2735.6,
+    1900
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2169.1,
+    1561.6,
+    2232.4,
+    1598.1,
+    2232.4,
+    1696.8,
+    2292.1,
+    1742.8,
+    2354.3,
+    1808.2,
+    2431.9,
+    1826.6,
+    2521.6,
+    1816.7,
+    2598.1,
+    1838.7,
+    2650.4,
+    1873.4,
+    2735.6,
+    1900
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    829.5,
+    684.0,
+    864.7,
+    611.1,
+    897.9,
+    537.4,
+    953.5,
+    480.0,
+    998.1,
+    447.5,
+    1061.9,
+    384.3,
+    1154.9,
+    344.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    829.5,
+    684.0,
+    864.7,
+    611.1,
+    897.9,
+    537.4,
+    953.5,
+    480.0,
+    998.1,
+    447.5,
+    1061.9,
+    384.3,
+    1154.9,
+    344.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    829.5,
+    684.0,
+    864.7,
+    611.1,
+    897.9,
+    537.4,
+    953.5,
+    480.0,
+    998.1,
+    447.5,
+    1061.9,
+    384.3,
+    1154.9,
+    344.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2155.1,
+    330.9,
+    2100.3,
+    387.8,
+    2100.2,
+    479.2,
+    2113.9,
+    540.4,
+    2078.9,
+    600.5,
+    2061.7,
+    686.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2155.1,
+    330.9,
+    2100.3,
+    387.8,
+    2100.2,
+    479.2,
+    2113.9,
+    540.4,
+    2078.9,
+    600.5,
+    2061.7,
+    686.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2155.1,
+    330.9,
+    2100.3,
+    387.8,
+    2100.2,
+    479.2,
+    2113.9,
+    540.4,
+    2078.9,
+    600.5,
+    2061.7,
+    686.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    975.0,
+    351.8,
+    1056.3,
+    403.1,
+    1134.6,
+    414.6,
+    1224.3,
+    417.0,
+    1290.8,
+    473.6,
+    1330.0,
+    530.3,
+    1389.2,
+    587.9,
+    1386.4,
+    654.4,
+    1415.4,
+    754.1,
+    1410.9,
+    819.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    975.0,
+    351.8,
+    1056.3,
+    403.1,
+    1134.6,
+    414.6,
+    1224.3,
+    417.0,
+    1290.8,
+    473.6,
+    1330.0,
+    530.3,
+    1389.2,
+    587.9,
+    1386.4,
+    654.4,
+    1415.4,
+    754.1,
+    1410.9,
+    819.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    975.0,
+    351.8,
+    1056.3,
+    403.1,
+    1134.6,
+    414.6,
+    1224.3,
+    417.0,
+    1290.8,
+    473.6,
+    1330.0,
+    530.3,
+    1389.2,
+    587.9,
+    1386.4,
+    654.4,
+    1415.4,
+    754.1,
+    1410.9,
+    819.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1288.2,
+    753.6,
+    1246.5,
+    806.7,
+    1224.8,
+    877.4,
+    1262.8,
+    937.2,
+    1290.4,
+    992.9,
+    1318.2,
+    1075.3,
+    1400.1,
+    1108.8,
+    1476.2,
+    1134.9,
+    1569.6,
+    1157.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1288.2,
+    753.6,
+    1246.5,
+    806.7,
+    1224.8,
+    877.4,
+    1262.8,
+    937.2,
+    1290.4,
+    992.9,
+    1318.2,
+    1075.3,
+    1400.1,
+    1108.8,
+    1476.2,
+    1134.9,
+    1569.6,
+    1157.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1288.2,
+    753.6,
+    1246.5,
+    806.7,
+    1224.8,
+    877.4,
+    1262.8,
+    937.2,
+    1290.4,
+    992.9,
+    1318.2,
+    1075.3,
+    1400.1,
+    1108.8,
+    1476.2,
+    1134.9,
+    1569.6,
+    1157.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    647.8,
+    603.9,
+    716.2,
+    607.8,
+    778.3,
+    632.2,
+    844.3,
+    683.9,
+    915.4,
+    766.5,
+    987.7,
+    790.6,
+    1063.1,
+    849.3
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    647.8,
+    603.9,
+    716.2,
+    607.8,
+    778.3,
+    632.2,
+    844.3,
+    683.9,
+    915.4,
+    766.5,
+    987.7,
+    790.6,
+    1063.1,
+    849.3
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    647.8,
+    603.9,
+    716.2,
+    607.8,
+    778.3,
+    632.2,
+    844.3,
+    683.9,
+    915.4,
+    766.5,
+    987.7,
+    790.6,
+    1063.1,
+    849.3
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#241a36",
+   "strokeWidth": 80.87723754759516,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    778.2,
+    452.8,
+    742.9,
+    455.0,
+    767.4,
+    451.2,
+    716.6,
+    481.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#352a4a",
+   "strokeWidth": 137.09369578267817,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2719.6,
+    344.9,
+    2620.8,
+    417.4,
+    2561.8,
+    414.9,
+    2637.7,
+    345.0,
+    2572.2,
+    367.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#241a36",
+   "strokeWidth": 171.5804515179054,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    625.0,
+    313.9,
+    603.3,
+    295.4,
+    545.2,
+    284.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#241a36",
+   "strokeWidth": 134.4911873949838,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2878.4,
+    1637.0,
+    2860.0,
+    1623.2,
+    2832.9,
+    1639.3,
+    2914.0,
+    1672.1,
+    2882.5,
+    1621.7
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#2c2240",
+   "strokeWidth": 83.41459601937032,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2448.1,
+    1184.4,
+    2400.1,
+    1205.4,
+    2271.5,
+    1155.7,
+    2290.0,
+    1229.6,
+    2447.3,
+    1212.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#241a36",
+   "strokeWidth": 138.12372859166373,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    761.3,
+    1647.8,
+    736.0,
+    1581.1,
+    693.7,
+    1613.3,
+    745.2,
+    1619.8,
+    781.9,
+    1611.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#241a36",
+   "strokeWidth": 106.13083865392451,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    3048.8,
+    637.9,
+    3073.8,
+    640.2,
+    3111.5,
+    626.9,
+    3038.9,
+    631.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#241a36",
+   "strokeWidth": 173.58816419681142,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1196.1,
+    1144.6,
+    1220.2,
+    1094.4,
+    1280.4,
+    1056.6,
+    1356.4,
+    1086.8,
+    1323.4,
+    1159.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#1a1426",
+   "strokeWidth": 85.44649824952761,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2928.5,
+    814.2,
+    2874.5,
+    799.2,
+    2819.5,
+    788.2,
+    2927.0,
+    780.9,
+    2866.3,
+    802.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#1a1426",
+   "strokeWidth": 105.72361828064093,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1235.2,
+    431.1,
+    1170.0,
+    380.7,
+    1158.3,
+    431.3,
+    1178.4,
+    395.3,
+    1190.0,
+    439.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#352a4a",
+   "strokeWidth": 96.80647055813381,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    277.4,
+    1125.1,
+    267.7,
+    1073.4,
+    267.8,
+    1106.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#1a1426",
+   "strokeWidth": 104.34553941516842,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2110.6,
+    1544.5,
+    2080.7,
+    1566.6,
+    2090.1,
+    1561.1,
+    2018.9,
+    1530.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#2c2240",
+   "strokeWidth": 120.81170923224332,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2960.2,
+    872.3,
+    2878.1,
+    927.3,
+    2917.9,
+    892.9,
+    2929.9,
+    939.8,
+    2984.2,
+    918.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#2c2240",
+   "strokeWidth": 157.29359612959925,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    844.2,
+    147.1,
+    849.5,
+    143.4,
+    790.7,
+    200.1,
+    907.0,
+    201.0,
+    802.2,
+    140.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#2c2240",
+   "strokeWidth": 124.15346287024288,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    75.2,
+    546.7,
+    83.1,
+    656.9,
+    270.2,
+    657.1,
+    189.2,
+    571.8,
+    282.7,
+    592.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#241a36",
+   "strokeWidth": 121.5154771948027,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    322.2,
+    1021.7,
+    434.7,
+    915.8,
+    516.7,
+    1012.6,
+    352.1,
+    947.6,
+    395.5,
+    974.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#2c2240",
+   "strokeWidth": 138.48917283900087,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1196.6,
+    230.9,
+    1175.3,
+    154.7,
+    1218.9,
+    172.8,
+    1239.5,
+    224.5,
+    1137.8,
+    199.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#241a36",
+   "strokeWidth": 159.94676870791886,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1706.2,
+    1268.9,
+    1720.1,
+    1234.0,
+    1816.2,
+    1188.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#1a1426",
+   "strokeWidth": 116.72755168967512,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1843.2,
+    1367.7,
+    1755.0,
+    1428.6,
+    1751.2,
+    1365.0,
+    1777.9,
+    1375.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#1a1426",
+   "strokeWidth": 147.08797292018698,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    632.7,
+    1643.8,
+    722.5,
+    1624.3,
+    757.5,
+    1666.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#241a36",
+   "strokeWidth": 94.19242290997238,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1129.5,
+    843.0,
+    1087.9,
+    760.8,
+    1235.0,
+    847.1,
+    1217.4,
+    852.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#2c2240",
+   "strokeWidth": 129.613821893919,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    625.6,
+    673.9,
+    711.0,
+    631.6,
+    611.6,
+    595.4,
+    700.2,
+    632.7
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#1a1426",
+   "strokeWidth": 101.05773216289577,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1439.5,
+    935.4,
+    1361.0,
+    959.7,
+    1312.9,
+    965.5,
+    1418.9,
+    978.5,
+    1472.8,
+    971.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#2c2240",
+   "strokeWidth": 122.98628307177844,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1540.1,
+    1311.7,
+    1664.7,
+    1210.2,
+    1696.6,
+    1181.4,
+    1668.8,
+    1254.4,
+    1632.8,
+    1291.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#1a1426",
+   "strokeWidth": 142.85366468893875,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2347.7,
+    1082.1,
+    2204.2,
+    1120.3,
+    2373.7,
+    1102.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#2c2240",
+   "strokeWidth": 147.7249007868689,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1838.6,
+    1440.2,
+    1757.5,
+    1465.5,
+    1692.3,
+    1490.3,
+    1770.7,
+    1455.3,
+    1721.1,
+    1487.3
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#2c2240",
+   "strokeWidth": 139.62543812276948,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    401.8,
+    1128.1,
+    326.8,
+    1200.0,
+    299.7,
+    1209.3,
+    329.4,
+    1150.7
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#2c2240",
+   "strokeWidth": 123.9057457110026,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    245.2,
+    139.6,
+    285.6,
+    102.6,
+    349.2,
+    226.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#1a1426",
+   "strokeWidth": 156.79673949844158,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2159.6,
+    1326.1,
+    2041.9,
+    1228.4,
+    2056.3,
+    1212.2,
+    2236.5,
+    1325.9
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#241a36",
+   "strokeWidth": 96.30042791785152,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2248.4,
+    1238.3,
+    2260.5,
+    1235.9,
+    2257.8,
+    1213.6,
+    2200.6,
+    1338.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#3a2f56",
+   "strokeWidth": 100.65944957818219,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1542.9,
+    1820.2,
+    1545.8,
+    1734.6,
+    1625.0,
+    1751.7,
+    1725.3,
+    1839.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#3a2f56",
+   "strokeWidth": 65.56502543450064,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    914.8,
+    1702.2,
+    1064.0,
+    1679.6,
+    951.7,
+    1704.9,
+    1038.1,
+    1681.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#46386a",
+   "strokeWidth": 58.725103754045705,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1871.1,
+    860.5,
+    1911.7,
+    851.6,
+    1913.7,
+    805.0,
+    1927.2,
+    862.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#3a2f56",
+   "strokeWidth": 107.69563979591442,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2635.3,
+    593.0,
+    2684.1,
+    581.7,
+    2617.8,
+    661.3
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#46386a",
+   "strokeWidth": 84.72090846772556,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2997.9,
+    851.3,
+    2770.9,
+    828.0,
+    2908.1,
+    870.2,
+    2732.2,
+    849.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#3a2f56",
+   "strokeWidth": 105.42151180208879,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    359.4,
+    1566.0,
+    387.0,
+    1564.5,
+    394.7,
+    1576.0,
+    368.2,
+    1622.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#46386a",
+   "strokeWidth": 90.32362086161089,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2742.4,
+    224.3,
+    2764.4,
+    221.5,
+    2757.9,
+    205.9
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#3a2f56",
+   "strokeWidth": 71.56346840798649,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2243.8,
+    1004.0,
+    2335.5,
+    1102.5,
+    2282.3,
+    1021.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#3a2f56",
+   "strokeWidth": 70.90518499536785,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2041.6,
+    262.4,
+    2089.2,
+    252.4,
+    2019.5,
+    236.2,
+    2055.1,
+    200.2,
+    2018.4,
+    198.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#46386a",
+   "strokeWidth": 88.74748426962273,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2391.7,
+    1584.3,
+    2515.4,
+    1521.1,
+    2390.4,
+    1603.9,
+    2469.2,
+    1602.4,
+    2313.3,
+    1555.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1268.8,
+    268.7,
+    1329.8,
+    331.5,
+    1355.0,
+    398.8,
+    1383.0,
+    474.3,
+    1365.7,
+    576.1,
+    1329.9,
+    647.6,
+    1299.8,
+    701.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1268.8,
+    268.7,
+    1329.8,
+    331.5,
+    1355.0,
+    398.8,
+    1383.0,
+    474.3,
+    1365.7,
+    576.1,
+    1329.9,
+    647.6,
+    1299.8,
+    701.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1268.8,
+    268.7,
+    1329.8,
+    331.5,
+    1355.0,
+    398.8,
+    1383.0,
+    474.3,
+    1365.7,
+    576.1,
+    1329.9,
+    647.6,
+    1299.8,
+    701.5
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1831.4,
+    629.9,
+    1902.7,
+    557.2,
+    1945.1,
+    499.9,
+    1972.8,
+    421.7,
+    1990.6,
+    338.0,
+    2013.0,
+    242.4,
+    2007.7,
+    179.7,
+    1978.2,
+    100,
+    1900.0,
+    100,
+    1834.9,
+    100
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1831.4,
+    629.9,
+    1902.7,
+    557.2,
+    1945.1,
+    499.9,
+    1972.8,
+    421.7,
+    1990.6,
+    338.0,
+    2013.0,
+    242.4,
+    2007.7,
+    179.7,
+    1978.2,
+    100,
+    1900.0,
+    100,
+    1834.9,
+    100
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1831.4,
+    629.9,
+    1902.7,
+    557.2,
+    1945.1,
+    499.9,
+    1972.8,
+    421.7,
+    1990.6,
+    338.0,
+    2013.0,
+    242.4,
+    2007.7,
+    179.7,
+    1978.2,
+    100,
+    1900.0,
+    100,
+    1834.9,
+    100
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1475.3,
+    1092.6,
+    1433.0,
+    1055.3,
+    1376.4,
+    989.8,
+    1306.5,
+    981.9,
+    1230.0,
+    962.3,
+    1157.3,
+    932.7,
+    1062.7,
+    916.8,
+    989.6,
+    886.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1475.3,
+    1092.6,
+    1433.0,
+    1055.3,
+    1376.4,
+    989.8,
+    1306.5,
+    981.9,
+    1230.0,
+    962.3,
+    1157.3,
+    932.7,
+    1062.7,
+    916.8,
+    989.6,
+    886.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1475.3,
+    1092.6,
+    1433.0,
+    1055.3,
+    1376.4,
+    989.8,
+    1306.5,
+    981.9,
+    1230.0,
+    962.3,
+    1157.3,
+    932.7,
+    1062.7,
+    916.8,
+    989.6,
+    886.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2152.1,
+    392.6,
+    2156.0,
+    470.0,
+    2166.6,
+    536.8,
+    2142.9,
+    622.3,
+    2143.8,
+    692.7,
+    2148.4,
+    769.3,
+    2187.4,
+    829.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2152.1,
+    392.6,
+    2156.0,
+    470.0,
+    2166.6,
+    536.8,
+    2142.9,
+    622.3,
+    2143.8,
+    692.7,
+    2148.4,
+    769.3,
+    2187.4,
+    829.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2152.1,
+    392.6,
+    2156.0,
+    470.0,
+    2166.6,
+    536.8,
+    2142.9,
+    622.3,
+    2143.8,
+    692.7,
+    2148.4,
+    769.3,
+    2187.4,
+    829.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1705.7,
+    946.5,
+    1635.3,
+    930.7,
+    1546.3,
+    915.9,
+    1483.8,
+    903.3,
+    1409.3,
+    937.3,
+    1354.0,
+    989.4,
+    1295.6,
+    1064.8,
+    1217.8,
+    1106.1,
+    1184.4,
+    1185.1,
+    1115.1,
+    1259.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1705.7,
+    946.5,
+    1635.3,
+    930.7,
+    1546.3,
+    915.9,
+    1483.8,
+    903.3,
+    1409.3,
+    937.3,
+    1354.0,
+    989.4,
+    1295.6,
+    1064.8,
+    1217.8,
+    1106.1,
+    1184.4,
+    1185.1,
+    1115.1,
+    1259.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1705.7,
+    946.5,
+    1635.3,
+    930.7,
+    1546.3,
+    915.9,
+    1483.8,
+    903.3,
+    1409.3,
+    937.3,
+    1354.0,
+    989.4,
+    1295.6,
+    1064.8,
+    1217.8,
+    1106.1,
+    1184.4,
+    1185.1,
+    1115.1,
+    1259.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2169.1,
+    1561.6,
+    2232.4,
+    1598.1,
+    2232.4,
+    1696.8,
+    2292.1,
+    1742.8,
+    2354.3,
+    1808.2,
+    2431.9,
+    1826.6,
+    2521.6,
+    1816.7,
+    2598.1,
+    1838.7,
+    2650.4,
+    1873.4,
+    2735.6,
+    1900
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2169.1,
+    1561.6,
+    2232.4,
+    1598.1,
+    2232.4,
+    1696.8,
+    2292.1,
+    1742.8,
+    2354.3,
+    1808.2,
+    2431.9,
+    1826.6,
+    2521.6,
+    1816.7,
+    2598.1,
+    1838.7,
+    2650.4,
+    1873.4,
+    2735.6,
+    1900
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2169.1,
+    1561.6,
+    2232.4,
+    1598.1,
+    2232.4,
+    1696.8,
+    2292.1,
+    1742.8,
+    2354.3,
+    1808.2,
+    2431.9,
+    1826.6,
+    2521.6,
+    1816.7,
+    2598.1,
+    1838.7,
+    2650.4,
+    1873.4,
+    2735.6,
+    1900
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    829.5,
+    684.0,
+    864.7,
+    611.1,
+    897.9,
+    537.4,
+    953.5,
+    480.0,
+    998.1,
+    447.5,
+    1061.9,
+    384.3,
+    1154.9,
+    344.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    829.5,
+    684.0,
+    864.7,
+    611.1,
+    897.9,
+    537.4,
+    953.5,
+    480.0,
+    998.1,
+    447.5,
+    1061.9,
+    384.3,
+    1154.9,
+    344.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    829.5,
+    684.0,
+    864.7,
+    611.1,
+    897.9,
+    537.4,
+    953.5,
+    480.0,
+    998.1,
+    447.5,
+    1061.9,
+    384.3,
+    1154.9,
+    344.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2155.1,
+    330.9,
+    2100.3,
+    387.8,
+    2100.2,
+    479.2,
+    2113.9,
+    540.4,
+    2078.9,
+    600.5,
+    2061.7,
+    686.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2155.1,
+    330.9,
+    2100.3,
+    387.8,
+    2100.2,
+    479.2,
+    2113.9,
+    540.4,
+    2078.9,
+    600.5,
+    2061.7,
+    686.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2155.1,
+    330.9,
+    2100.3,
+    387.8,
+    2100.2,
+    479.2,
+    2113.9,
+    540.4,
+    2078.9,
+    600.5,
+    2061.7,
+    686.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    975.0,
+    351.8,
+    1056.3,
+    403.1,
+    1134.6,
+    414.6,
+    1224.3,
+    417.0,
+    1290.8,
+    473.6,
+    1330.0,
+    530.3,
+    1389.2,
+    587.9,
+    1386.4,
+    654.4,
+    1415.4,
+    754.1,
+    1410.9,
+    819.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    975.0,
+    351.8,
+    1056.3,
+    403.1,
+    1134.6,
+    414.6,
+    1224.3,
+    417.0,
+    1290.8,
+    473.6,
+    1330.0,
+    530.3,
+    1389.2,
+    587.9,
+    1386.4,
+    654.4,
+    1415.4,
+    754.1,
+    1410.9,
+    819.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    975.0,
+    351.8,
+    1056.3,
+    403.1,
+    1134.6,
+    414.6,
+    1224.3,
+    417.0,
+    1290.8,
+    473.6,
+    1330.0,
+    530.3,
+    1389.2,
+    587.9,
+    1386.4,
+    654.4,
+    1415.4,
+    754.1,
+    1410.9,
+    819.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1288.2,
+    753.6,
+    1246.5,
+    806.7,
+    1224.8,
+    877.4,
+    1262.8,
+    937.2,
+    1290.4,
+    992.9,
+    1318.2,
+    1075.3,
+    1400.1,
+    1108.8,
+    1476.2,
+    1134.9,
+    1569.6,
+    1157.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1288.2,
+    753.6,
+    1246.5,
+    806.7,
+    1224.8,
+    877.4,
+    1262.8,
+    937.2,
+    1290.4,
+    992.9,
+    1318.2,
+    1075.3,
+    1400.1,
+    1108.8,
+    1476.2,
+    1134.9,
+    1569.6,
+    1157.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1288.2,
+    753.6,
+    1246.5,
+    806.7,
+    1224.8,
+    877.4,
+    1262.8,
+    937.2,
+    1290.4,
+    992.9,
+    1318.2,
+    1075.3,
+    1400.1,
+    1108.8,
+    1476.2,
+    1134.9,
+    1569.6,
+    1157.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#7a5a1e",
+   "strokeWidth": 9,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    647.8,
+    603.9,
+    716.2,
+    607.8,
+    778.3,
+    632.2,
+    844.3,
+    683.9,
+    915.4,
+    766.5,
+    987.7,
+    790.6,
+    1063.1,
+    849.3
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#e8c860",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    647.8,
+    603.9,
+    716.2,
+    607.8,
+    778.3,
+    632.2,
+    844.3,
+    683.9,
+    915.4,
+    766.5,
+    987.7,
+    790.6,
+    1063.1,
+    849.3
+   ]
+  },
+  {
+   "type": "stroke",
+   "stroke": "#fff0b0",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    647.8,
+    603.9,
+    716.2,
+    607.8,
+    778.3,
+    632.2,
+    844.3,
+    683.9,
+    915.4,
+    766.5,
+    987.7,
+    790.6,
+    1063.1,
+    849.3
+   ]
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0001",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1638.03,
+   "y": 544.94,
+   "scaleX": 1.149,
+   "scaleY": 1.149,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0002",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1604.34,
+   "y": 562.47,
+   "scaleX": 1.668,
+   "scaleY": 1.668,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0003",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1554.66,
+   "y": 617.24,
+   "scaleX": 1.477,
+   "scaleY": 1.477,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0004",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1546.4,
+   "y": 569.28,
+   "scaleX": 1.3,
+   "scaleY": 1.3,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0005",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1331.33,
+   "y": 1481.83,
+   "scaleX": 1.512,
+   "scaleY": 1.512,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0006",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1318.34,
+   "y": 1497.19,
+   "scaleX": 1.236,
+   "scaleY": 1.236,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0007",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1258.9,
+   "y": 1475.48,
+   "scaleX": 1.404,
+   "scaleY": 1.404,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0008",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1891.29,
+   "y": 1546.73,
+   "scaleX": 1.345,
+   "scaleY": 1.345,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0009",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1946.73,
+   "y": 1525.42,
+   "scaleX": 1.301,
+   "scaleY": 1.301,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0010",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1937.69,
+   "y": 1584.56,
+   "scaleX": 1.371,
+   "scaleY": 1.371,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0011",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1821.73,
+   "y": 1550.91,
+   "scaleX": 1.473,
+   "scaleY": 1.473,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0012",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 493.09,
+   "y": 1456.89,
+   "scaleX": 1.531,
+   "scaleY": 1.531,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0013",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 469.83,
+   "y": 1449.7,
+   "scaleX": 1.238,
+   "scaleY": 1.238,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0014",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 438.19,
+   "y": 1428.41,
+   "scaleX": 1.275,
+   "scaleY": 1.275,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0015",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 397.61,
+   "y": 1489.28,
+   "scaleX": 1.477,
+   "scaleY": 1.477,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0016",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 727.13,
+   "y": 1428.3,
+   "scaleX": 1.643,
+   "scaleY": 1.643,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0017",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 744.04,
+   "y": 1406.7,
+   "scaleX": 1.523,
+   "scaleY": 1.523,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0018",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2919.22,
+   "y": 589.95,
+   "scaleX": 1.235,
+   "scaleY": 1.235,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0019",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2831.27,
+   "y": 572.29,
+   "scaleX": 1.19,
+   "scaleY": 1.19,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0020",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2805.64,
+   "y": 595.15,
+   "scaleX": 1.45,
+   "scaleY": 1.45,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0021",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2859.63,
+   "y": 543.55,
+   "scaleX": 1.296,
+   "scaleY": 1.296,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0022",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1635.81,
+   "y": 1633.24,
+   "scaleX": 1.283,
+   "scaleY": 1.283,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0023",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1746.56,
+   "y": 1710.43,
+   "scaleX": 1.211,
+   "scaleY": 1.211,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0024",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 694.4,
+   "y": 747.41,
+   "scaleX": 1.547,
+   "scaleY": 1.547,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0025",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 730.24,
+   "y": 708.7,
+   "scaleX": 1.28,
+   "scaleY": 1.28,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0026",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 369.09,
+   "y": 247.13,
+   "scaleX": 1.225,
+   "scaleY": 1.225,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0027",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 337.28,
+   "y": 328.4,
+   "scaleX": 1.678,
+   "scaleY": 1.678,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0028",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2163.58,
+   "y": 1584.26,
+   "scaleX": 1.336,
+   "scaleY": 1.336,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0029",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2121.98,
+   "y": 1653.92,
+   "scaleX": 1.178,
+   "scaleY": 1.178,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0030",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 491.64,
+   "y": 1795.56,
+   "scaleX": 1.497,
+   "scaleY": 1.497,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0031",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 530.19,
+   "y": 1804.51,
+   "scaleX": 1.119,
+   "scaleY": 1.119,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0032",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 522.78,
+   "y": 1797.33,
+   "scaleX": 1.475,
+   "scaleY": 1.475,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0033",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 551.48,
+   "y": 1874.68,
+   "scaleX": 1.271,
+   "scaleY": 1.271,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0034",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 371.11,
+   "y": 223.44,
+   "scaleX": 1.259,
+   "scaleY": 1.259,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0035",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 359.5,
+   "y": 245.75,
+   "scaleX": 1.243,
+   "scaleY": 1.243,
+   "offsetX": 60,
+   "offsetY": 43
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0036",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_purple.png"
+   ],
+   "name": "crystal_purple",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2592.08,
+   "y": 307.92,
+   "scaleX": 1.377,
+   "scaleY": 1.377,
+   "offsetX": 32,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0037",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_purple.png"
+   ],
+   "name": "crystal_purple",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2404.88,
+   "y": 1682.83,
+   "scaleX": 1.334,
+   "scaleY": 1.334,
+   "offsetX": 32,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0038",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_purple.png"
+   ],
+   "name": "crystal_purple",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 710.5,
+   "y": 231.28,
+   "scaleX": 1.143,
+   "scaleY": 1.143,
+   "offsetX": 32,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0039",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_purple.png"
+   ],
+   "name": "crystal_purple",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 437.22,
+   "y": 606.52,
+   "scaleX": 1.334,
+   "scaleY": 1.334,
+   "offsetX": 32,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0040",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_purple.png"
+   ],
+   "name": "crystal_purple",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 844.36,
+   "y": 1240.55,
+   "scaleX": 1.271,
+   "scaleY": 1.271,
+   "offsetX": 32,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0041",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_purple.png"
+   ],
+   "name": "crystal_purple",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1960.82,
+   "y": 631.32,
+   "scaleX": 1.041,
+   "scaleY": 1.041,
+   "offsetX": 32,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0042",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_purple.png"
+   ],
+   "name": "crystal_purple",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 736.96,
+   "y": 1495.95,
+   "scaleX": 1.381,
+   "scaleY": 1.381,
+   "offsetX": 32,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0043",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_purple.png"
+   ],
+   "name": "crystal_purple",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3003.55,
+   "y": 421.03,
+   "scaleX": 1.327,
+   "scaleY": 1.327,
+   "offsetX": 32,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0044",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_purple.png"
+   ],
+   "name": "crystal_purple",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2142.09,
+   "y": 256.16,
+   "scaleX": 1.247,
+   "scaleY": 1.247,
+   "offsetX": 32,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0045",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_purple.png"
+   ],
+   "name": "crystal_purple",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2132.48,
+   "y": 580.93,
+   "scaleX": 1.146,
+   "scaleY": 1.146,
+   "offsetX": 32,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0046",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_purple.png"
+   ],
+   "name": "crystal_purple",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2250.4,
+   "y": 410.73,
+   "scaleX": 1.343,
+   "scaleY": 1.343,
+   "offsetX": 32,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0047",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1095.11,
+   "y": 242.39,
+   "scaleX": 0.833,
+   "scaleY": 0.833,
+   "offsetX": 32,
+   "offsetY": 112
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0048",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2585.58,
+   "y": 307.97,
+   "scaleX": 0.876,
+   "scaleY": 0.876,
+   "offsetX": 32,
+   "offsetY": 112
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0049",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1770.22,
+   "y": 716.74,
+   "scaleX": 1.02,
+   "scaleY": 1.02,
+   "offsetX": 32,
+   "offsetY": 112
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0050",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 568.29,
+   "y": 1485.49,
+   "scaleX": 0.955,
+   "scaleY": 0.955,
+   "offsetX": 32,
+   "offsetY": 112
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0051",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1713.85,
+   "y": 1472.89,
+   "scaleX": 0.926,
+   "scaleY": 0.926,
+   "offsetX": 32,
+   "offsetY": 112
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0052",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 825.86,
+   "y": 1707.62,
+   "scaleX": 1.153,
+   "scaleY": 1.153,
+   "offsetX": 32,
+   "offsetY": 112
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0053",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2633.27,
+   "y": 1651.52,
+   "scaleX": 1.258,
+   "scaleY": 1.258,
+   "offsetX": 48,
+   "offsetY": 131,
+   "alpha": 0.9
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0054",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2644.82,
+   "y": 540.18,
+   "scaleX": 1.39,
+   "scaleY": 1.39,
+   "offsetX": 48,
+   "offsetY": 131,
+   "alpha": 0.9
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0055",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1741.12,
+   "y": 1542.64,
+   "scaleX": 1.35,
+   "scaleY": 1.35,
+   "offsetX": 48,
+   "offsetY": 131,
+   "alpha": 0.9
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0056",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2196.45,
+   "y": 614.88,
+   "scaleX": 1.268,
+   "scaleY": 1.268,
+   "offsetX": 48,
+   "offsetY": 131,
+   "alpha": 0.9
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0057",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2651.24,
+   "y": 1419.6,
+   "scaleX": 1.085,
+   "scaleY": 1.085,
+   "offsetX": 48,
+   "offsetY": 131,
+   "alpha": 0.9
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0058",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 590.67,
+   "y": 1603.07,
+   "scaleX": 1.192,
+   "scaleY": 1.192,
+   "offsetX": 48,
+   "offsetY": 131,
+   "alpha": 0.9
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0059",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1443.97,
+   "y": 244.13,
+   "scaleX": 1.253,
+   "scaleY": 1.253,
+   "offsetX": 48,
+   "offsetY": 131,
+   "alpha": 0.9
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0060",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2357.0,
+   "y": 465.29,
+   "scaleX": 1.258,
+   "scaleY": 1.258,
+   "offsetX": 48,
+   "offsetY": 131,
+   "alpha": 0.9
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0061",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1843.24,
+   "y": 1543.38,
+   "scaleX": 1.501,
+   "scaleY": 1.501,
+   "offsetX": 20,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0062",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2858.65,
+   "y": 228.19,
+   "scaleX": 1.656,
+   "scaleY": 1.656,
+   "offsetX": 20,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0063",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 801.07,
+   "y": 607.68,
+   "scaleX": 1.699,
+   "scaleY": 1.699,
+   "offsetX": 20,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0064",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 663.81,
+   "y": 194.34,
+   "scaleX": 1.51,
+   "scaleY": 1.51,
+   "offsetX": 20,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0065",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1253.83,
+   "y": 262.73,
+   "scaleX": 1.219,
+   "scaleY": 1.219,
+   "offsetX": 20,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0066",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 355.54,
+   "y": 346.99,
+   "scaleX": 1.373,
+   "scaleY": 1.373,
+   "offsetX": 20,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0067",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 805.31,
+   "y": 643.11,
+   "scaleX": 1.408,
+   "scaleY": 1.408,
+   "offsetX": 20,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0068",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2349.23,
+   "y": 417.56,
+   "scaleX": 1.591,
+   "scaleY": 1.591,
+   "offsetX": 20,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0069",
+   "dir": "assets_custom/rocks_void",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1117.71,
+   "y": 1791.96,
+   "scaleX": 2.108,
+   "scaleY": 2.108,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0070",
+   "dir": "assets_custom/rocks_void",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1060.42,
+   "y": 1800.64,
+   "scaleX": 1.799,
+   "scaleY": 1.799,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0071",
+   "dir": "assets_custom/rocks_void",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 815.6,
+   "y": 208.34,
+   "scaleX": 1.407,
+   "scaleY": 1.407,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0072",
+   "dir": "assets_custom/rocks_void",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 859.8,
+   "y": 233.68,
+   "scaleX": 1.841,
+   "scaleY": 1.841,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0073",
+   "dir": "assets_custom/rocks_void",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 587.96,
+   "y": 1472.08,
+   "scaleX": 2.189,
+   "scaleY": 2.189,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0074",
+   "dir": "assets_custom/rocks_void",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 562.24,
+   "y": 1467.96,
+   "scaleX": 1.803,
+   "scaleY": 1.803,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0075",
+   "dir": "assets_custom/rocks_void",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2946.27,
+   "y": 1497.33,
+   "scaleX": 2.274,
+   "scaleY": 2.274,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0076",
+   "dir": "assets_custom/rocks_void",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2887.54,
+   "y": 1457.71,
+   "scaleX": 2.208,
+   "scaleY": 2.208,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0077",
+   "dir": "assets_custom/rocks_void",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 440.94,
+   "y": 654.99,
+   "scaleX": 1.761,
+   "scaleY": 1.761,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0078",
+   "dir": "assets_custom/rocks_void",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 371.09,
+   "y": 695.34,
+   "scaleX": 1.692,
+   "scaleY": 1.692,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0079",
+   "dir": "assets_custom/rocks_void",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 812.51,
+   "y": 717.2,
+   "scaleX": 1.635,
+   "scaleY": 1.635,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0080",
+   "dir": "assets_custom/rocks_void",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 847.18,
+   "y": 693.8,
+   "scaleX": 1.697,
+   "scaleY": 1.697,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0081",
+   "dir": "assets_custom/rocks_void",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 607.35,
+   "y": 632.47,
+   "scaleX": 2.05,
+   "scaleY": 2.05,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0082",
+   "dir": "assets_custom/rocks_void",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 597.44,
+   "y": 613.39,
+   "scaleX": 1.917,
+   "scaleY": 1.917,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0083",
+   "dir": "assets_custom/rocks_void",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2426.83,
+   "y": 1681.54,
+   "scaleX": 1.506,
+   "scaleY": 1.506,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0084",
+   "dir": "assets_custom/rocks_void",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2453.69,
+   "y": 1703.43,
+   "scaleX": 1.963,
+   "scaleY": 1.963,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0085",
+   "dir": "assets_custom/rocks_void",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1768.38,
+   "y": 1823.97,
+   "scaleX": 2.151,
+   "scaleY": 2.151,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0086",
+   "dir": "assets_custom/rocks_void",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1728.84,
+   "y": 1821.49,
+   "scaleX": 2.08,
+   "scaleY": 2.08,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0087",
+   "dir": "assets_custom/rocks_void",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2616.8,
+   "y": 758.07,
+   "scaleX": 1.975,
+   "scaleY": 1.975,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0088",
+   "dir": "assets_custom/rocks_void",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2683.48,
+   "y": 753.41,
+   "scaleX": 2.025,
+   "scaleY": 2.025,
+   "offsetX": 32,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0089",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 825.96,
+   "y": 1313.04,
+   "scaleX": 1.279,
+   "scaleY": 1.279,
+   "offsetX": 110,
+   "offsetY": 52,
+   "alpha": 0.854
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0090",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 474.14,
+   "y": 657.33,
+   "scaleX": 1.157,
+   "scaleY": 1.157,
+   "offsetX": 110,
+   "offsetY": 52,
+   "alpha": 0.828
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0091",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2497.65,
+   "y": 1363.05,
+   "scaleX": 1.229,
+   "scaleY": 1.229,
+   "offsetX": 110,
+   "offsetY": 52,
+   "alpha": 0.835
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0092",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2398.92,
+   "y": 445.92,
+   "scaleX": 1.274,
+   "scaleY": 1.274,
+   "offsetX": 110,
+   "offsetY": 52,
+   "alpha": 0.814
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0093",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1463.29,
+   "y": 1441.45,
+   "scaleX": 1.048,
+   "scaleY": 1.048,
+   "offsetX": 110,
+   "offsetY": 52,
+   "alpha": 0.924
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_dnsfy_35_0094",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2700.73,
+   "y": 444.11,
+   "scaleX": 1.082,
+   "scaleY": 1.082,
+   "offsetX": 110,
+   "offsetY": 52,
+   "alpha": 0.868
   }
  ],
  "noWalkZones": [
@@ -2198,6 +7034,42 @@
    "type": "elite",
    "x": 2520,
    "y": 861.2506462605526
+  },
+  {
+   "id": "e_dnsfy_7",
+   "type": "elite",
+   "x": 1000,
+   "y": 640
+  },
+  {
+   "id": "e_dnsfy_8",
+   "type": "ranged",
+   "x": 2350,
+   "y": 700
+  },
+  {
+   "id": "e_dnsfy_9",
+   "type": "ranged",
+   "x": 1500,
+   "y": 1540
+  },
+  {
+   "id": "e_dnsfy_10",
+   "type": "elite",
+   "x": 1000,
+   "y": 640
+  },
+  {
+   "id": "e_dnsfy_11",
+   "type": "ranged",
+   "x": 2350,
+   "y": 700
+  },
+  {
+   "id": "e_dnsfy_12",
+   "type": "ranged",
+   "x": 1500,
+   "y": 1540
   }
  ],
  "boss": null,
@@ -2210,7 +7082,7 @@
    "config": {
     "id": "npc35_1",
     "name": "Severed Soul",
-    "first": "This_is_the_WOUND_itself,_where_the_Thread_was_cut._Feel_how_nothing_holds_to_anything?_That_is_what_he_did_\u2014_or_what_they_blamed_on_him.",
+    "first": "This_is_the_WOUND_itself,_where_the_Thread_was_cut._Feel_how_nothing_holds_to_anything?_That_is_what_he_did_—_or_what_they_blamed_on_him.",
     "active": "",
     "completed": ""
    }
