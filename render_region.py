@@ -36,6 +36,9 @@ def render(idx, overlay=False):
             im = Image.open(p).convert("RGBA")
         except Exception:
             missing.add(p); continue
+        if s.get("frameW"):  # spritesheet: preview frame 0 of its row, not the whole sheet
+            fw, fh, row = s["frameW"], s.get("frameH", im.height), s.get("frameRow", 0)
+            im = im.crop((0, row * fh, fw, (row + 1) * fh))
         sx, sy = s.get("scaleX", 1), s.get("scaleY", 1)
         im = im.resize((max(1, int(im.width * sx)), max(1, int(im.height * sy))))
         ox = s.get("offsetX", im.width / 2 / sx) * sx

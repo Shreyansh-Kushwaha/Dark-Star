@@ -857,6 +857,10 @@ export class GameScene extends Phaser.Scene {
     else if (n === 'pond')          { c = 0x5aa0c8; lightR = 70;  }  // still water catches cool sky light
     else if (n === 'gate_arch')     { c = 0xfff0b0; lightR = 150; }
     else if (n === 'mural')         { c = 0xfff0b0; lightR = 70;  }  // Temple of Gods: the five intact halos glow
+    else if (n.startsWith('lamp')) {                                 // standing lanterns: cold over the
+      const drowned = [8, 9, 15, 16, 17, 18, 43].includes(this._regionIndex); // Drowned Reach floodwater,
+      c = drowned ? 0x8fd4e0 : 0xffd890; lightR = 64;                       // warm firelight elsewhere
+    }
     else if (n === 'lava_rock')     { c = 0xff6a1e; lightR = 110; }  // Demon Forge: molten slag emits heat
     else if (n === 'crystal_amber') { c = 0xffb24a; lightR = 90;  }  // cooling metal glints
     else if (n === 'crystal_cyan')  { c = 0x6fd0e0; lightR = 90;  }  // ice / gem light

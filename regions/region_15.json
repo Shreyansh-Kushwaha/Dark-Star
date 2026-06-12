@@ -10,7 +10,7 @@
   {
    "type": "stroke",
    "stroke": "#2b6f78",
-   "strokeWidth": 120,
+   "strokeWidth": 128,
    "lineCap": "round",
    "lineJoin": "round",
    "composite": "source-over",
@@ -116,7 +116,7 @@
   {
    "type": "stroke",
    "stroke": "#327d86",
-   "strokeWidth": 120,
+   "strokeWidth": 102,
    "lineCap": "round",
    "lineJoin": "round",
    "composite": "source-over",
@@ -222,7 +222,7 @@
   {
    "type": "stroke",
    "stroke": "#2b6f78",
-   "strokeWidth": 120,
+   "strokeWidth": 138,
    "lineCap": "round",
    "lineJoin": "round",
    "composite": "source-over",
@@ -328,7 +328,7 @@
   {
    "type": "stroke",
    "stroke": "#327d86",
-   "strokeWidth": 120,
+   "strokeWidth": 96,
    "lineCap": "round",
    "lineJoin": "round",
    "composite": "source-over",
@@ -434,7 +434,7 @@
   {
    "type": "stroke",
    "stroke": "#2b6f78",
-   "strokeWidth": 120,
+   "strokeWidth": 130,
    "lineCap": "round",
    "lineJoin": "round",
    "composite": "source-over",
@@ -540,7 +540,7 @@
   {
    "type": "stroke",
    "stroke": "#327d86",
-   "strokeWidth": 120,
+   "strokeWidth": 110,
    "lineCap": "round",
    "lineJoin": "round",
    "composite": "source-over",
@@ -646,7 +646,7 @@
   {
    "type": "stroke",
    "stroke": "#2b6f78",
-   "strokeWidth": 120,
+   "strokeWidth": 144,
    "lineCap": "round",
    "lineJoin": "round",
    "composite": "source-over",
@@ -752,7 +752,7 @@
   {
    "type": "stroke",
    "stroke": "#327d86",
-   "strokeWidth": 120,
+   "strokeWidth": 100,
    "lineCap": "round",
    "lineJoin": "round",
    "composite": "source-over",
@@ -858,7 +858,7 @@
   {
    "type": "stroke",
    "stroke": "#2b6f78",
-   "strokeWidth": 120,
+   "strokeWidth": 126,
    "lineCap": "round",
    "lineJoin": "round",
    "composite": "source-over",
@@ -964,7 +964,7 @@
   {
    "type": "stroke",
    "stroke": "#2b6f78",
-   "strokeWidth": 120,
+   "strokeWidth": 118,
    "lineCap": "round",
    "lineJoin": "round",
    "composite": "source-over",
@@ -1070,7 +1070,7 @@
   {
    "type": "stroke",
    "stroke": "#327d86",
-   "strokeWidth": 120,
+   "strokeWidth": 134,
    "lineCap": "round",
    "lineJoin": "round",
    "composite": "source-over",
@@ -1176,7 +1176,7 @@
   {
    "type": "stroke",
    "stroke": "#2b6f78",
-   "strokeWidth": 120,
+   "strokeWidth": 98,
    "lineCap": "round",
    "lineJoin": "round",
    "composite": "source-over",
@@ -1282,7 +1282,7 @@
   {
    "type": "stroke",
    "stroke": "#327d86",
-   "strokeWidth": 120,
+   "strokeWidth": 140,
    "lineCap": "round",
    "lineJoin": "round",
    "composite": "source-over",
@@ -1388,7 +1388,7 @@
   {
    "type": "stroke",
    "stroke": "#2b6f78",
-   "strokeWidth": 120,
+   "strokeWidth": 108,
    "lineCap": "round",
    "lineJoin": "round",
    "composite": "source-over",
@@ -1494,7 +1494,7 @@
   {
    "type": "stroke",
    "stroke": "#327d86",
-   "strokeWidth": 120,
+   "strokeWidth": 124,
    "lineCap": "round",
    "lineJoin": "round",
    "composite": "source-over",
@@ -2555,6 +2555,160 @@
     914.5,
     3080,
     922.39
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r15dress",
+   "stroke": "#2b6f78",
+   "strokeWidth": 150,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1780.0,
+    460.0,
+    1766.3,
+    498.6,
+    1726.5,
+    533.5,
+    1664.6,
+    561.1,
+    1586.5,
+    578.9,
+    1500.0,
+    585.0,
+    1413.5,
+    578.9,
+    1335.4,
+    561.1,
+    1273.5,
+    533.5,
+    1233.7,
+    498.6,
+    1220.0,
+    460.0,
+    1233.7,
+    421.4,
+    1273.5,
+    386.5,
+    1335.4,
+    358.9,
+    1413.5,
+    341.1,
+    1500.0,
+    335.0,
+    1586.5,
+    341.1,
+    1664.6,
+    358.9,
+    1726.5,
+    386.5,
+    1766.3,
+    421.4,
+    1780.0,
+    460.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r15dress",
+   "stroke": "#2b6f78",
+   "strokeWidth": 140,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2050.0,
+    1545.0,
+    2037.8,
+    1579.0,
+    2002.3,
+    1609.7,
+    1946.9,
+    1634.0,
+    1877.3,
+    1649.6,
+    1800.0,
+    1655.0,
+    1722.7,
+    1649.6,
+    1653.1,
+    1634.0,
+    1597.7,
+    1609.7,
+    1562.2,
+    1579.0,
+    1550.0,
+    1545.0,
+    1562.2,
+    1511.0,
+    1597.7,
+    1480.3,
+    1653.1,
+    1456.0,
+    1722.7,
+    1440.4,
+    1800.0,
+    1435.0,
+    1877.3,
+    1440.4,
+    1946.9,
+    1456.0,
+    2002.3,
+    1480.3,
+    2037.8,
+    1511.0,
+    2050.0,
+    1545.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r15dress",
+   "stroke": "#2e747d",
+   "strokeWidth": 70,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    150,
+    210,
+    600,
+    290,
+    1100,
+    380,
+    1700,
+    400,
+    2300,
+    310,
+    2800,
+    200,
+    3150,
+    170
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r15dress",
+   "stroke": "#2e747d",
+   "strokeWidth": 70,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    100,
+    1640,
+    700,
+    1540,
+    1300,
+    1430,
+    1900,
+    1410,
+    2500,
+    1500,
+    3100,
+    1620
    ]
   },
   {
@@ -4583,6 +4737,2228 @@
    "frameW": 192,
    "frameH": 192,
    "frameCount": 9,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0501",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dock.png"
+   ],
+   "name": "dock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 450,
+   "y": 1262,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 62.0,
+   "offsetY": 35
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0502",
+   "dir": "assets_custom/props",
+   "frames": [
+    "boat.png"
+   ],
+   "name": "boat",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 575,
+   "y": 1402,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 75.0,
+   "offsetY": 38
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0503",
+   "dir": "assest4/next2/2 Objects/4 Box",
+   "frames": [
+    "3.png"
+   ],
+   "name": "3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 255,
+   "y": 1172,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 8.0,
+   "offsetY": 20
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0504",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp3.png"
+   ],
+   "name": "Lamp3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 470,
+   "y": 1245,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 6.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0505",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 520,
+   "y": 1300,
+   "scaleX": 2.2,
+   "scaleY": 2.2,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0506",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 395,
+   "y": 1330,
+   "scaleX": 1.9,
+   "scaleY": 1.9,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0507",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1274.91,
+   "y": 802.76,
+   "scaleX": 0.95,
+   "scaleY": 0.95,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0508",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1342.05,
+   "y": 758.35,
+   "scaleX": 0.72,
+   "scaleY": 0.72,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0509",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1428.98,
+   "y": 723.5,
+   "scaleX": 1.05,
+   "scaleY": 1.05,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0510",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1497.72,
+   "y": 704.84,
+   "scaleX": 0.82,
+   "scaleY": 0.82,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0511",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1570.46,
+   "y": 724.03,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0512",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1654.77,
+   "y": 756.68,
+   "scaleX": 0.66,
+   "scaleY": 0.66,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0513",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1729.66,
+   "y": 789.03,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0514",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1438.67,
+   "y": 843.77,
+   "scaleX": 0.45,
+   "scaleY": 0.45,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0515",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1565.69,
+   "y": 837.16,
+   "scaleX": 0.48,
+   "scaleY": 0.48,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0516",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1338,
+   "y": 858.0,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 70.0,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0517",
+   "dir": "assets_custom/props",
+   "frames": [
+    "mural.png"
+   ],
+   "name": "mural",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1662,
+   "y": 858.0,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 70.0,
+   "offsetY": 99
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0518",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1310.87,
+   "y": 845,
+   "scaleX": 0.753,
+   "scaleY": 0.753,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0519",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1401.3,
+   "y": 870,
+   "scaleX": 0.701,
+   "scaleY": 0.701,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0520",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1599.0,
+   "y": 868,
+   "scaleX": 0.675,
+   "scaleY": 0.675,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0521",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1714.57,
+   "y": 842,
+   "scaleX": 0.697,
+   "scaleY": 0.697,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0522",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1242.73,
+   "y": 849.97,
+   "scaleX": 1.781,
+   "scaleY": 1.781,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0523",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1210.38,
+   "y": 859.35,
+   "scaleX": 2.2,
+   "scaleY": 2.2,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0524",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1228.56,
+   "y": 862.42,
+   "scaleX": 1.932,
+   "scaleY": 1.932,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0525",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1732.91,
+   "y": 850.34,
+   "scaleX": 1.689,
+   "scaleY": 1.689,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0526",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1724.31,
+   "y": 859.07,
+   "scaleX": 1.663,
+   "scaleY": 1.663,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0527",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1754.13,
+   "y": 863.3,
+   "scaleX": 1.926,
+   "scaleY": 1.926,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0528",
+   "dir": "assets_custom/props",
+   "frames": [
+    "flag_red.png"
+   ],
+   "name": "flag_red",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1180,
+   "y": 980.58,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 13.0,
+   "offsetY": 110
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0529",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2188,
+   "y": 1158,
+   "scaleX": 0.85,
+   "scaleY": 0.85,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0530",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2262,
+   "y": 1208,
+   "scaleX": 0.7,
+   "scaleY": 0.7,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0531",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2338,
+   "y": 1248,
+   "scaleX": 0.55,
+   "scaleY": 0.55,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0532",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2438,
+   "y": 1192,
+   "scaleX": 0.78,
+   "scaleY": 0.78,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0533",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2225,
+   "y": 1130,
+   "scaleX": 0.65,
+   "scaleY": 0.65,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0534",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2395,
+   "y": 1145,
+   "scaleX": 0.674,
+   "scaleY": 0.674,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0535",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2259.47,
+   "y": 1247.5,
+   "scaleX": 2.355,
+   "scaleY": 2.355,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0536",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2210.03,
+   "y": 1258.13,
+   "scaleX": 2.058,
+   "scaleY": 2.058,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0537",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2204.29,
+   "y": 1266.42,
+   "scaleX": 1.647,
+   "scaleY": 1.647,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0538",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2395.61,
+   "y": 1243.63,
+   "scaleX": 1.729,
+   "scaleY": 1.729,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0539",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2382,
+   "y": 1322,
+   "scaleX": 1.3,
+   "scaleY": 1.3,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0540",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2446,
+   "y": 1362,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0541",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2790,
+   "y": 1424,
+   "scaleX": 0.7,
+   "scaleY": 0.7,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0542",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2952,
+   "y": 1524,
+   "scaleX": 0.6,
+   "scaleY": 0.6,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0543",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 455,
+   "y": 540,
+   "scaleX": 0.65,
+   "scaleY": 0.65,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0544",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2660,
+   "y": 348,
+   "scaleX": 0.7,
+   "scaleY": 0.7,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0545",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp3.png"
+   ],
+   "name": "Lamp3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1580,
+   "y": 1160.5,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 6.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0546",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp1.png"
+   ],
+   "name": "Lamp1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2080,
+   "y": 815.67,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 10.0,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0547",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp1.png"
+   ],
+   "name": "Lamp1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2380,
+   "y": 1029.58,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 10.0,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0548",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp3.png"
+   ],
+   "name": "Lamp3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2680,
+   "y": 765.5,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 6.5,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0549",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Lamp1.png"
+   ],
+   "name": "Lamp1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2980,
+   "y": 1034,
+   "scaleX": 3.0,
+   "scaleY": 3.0,
+   "offsetX": 10.0,
+   "offsetY": 34
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0550",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 750.41,
+   "y": 500.82,
+   "scaleX": 1.103,
+   "scaleY": 1.103,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0551",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 795.01,
+   "y": 545.24,
+   "scaleX": 1.287,
+   "scaleY": 1.287,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0552",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 678.97,
+   "y": 562.41,
+   "scaleX": 1.034,
+   "scaleY": 1.034,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0553",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 564.25,
+   "y": 564.15,
+   "scaleX": 1.387,
+   "scaleY": 1.387,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0554",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 641.14,
+   "y": 480.42,
+   "scaleX": 1.112,
+   "scaleY": 1.112,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0555",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 603.08,
+   "y": 532.78,
+   "scaleX": 1.425,
+   "scaleY": 1.425,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0556",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 522.34,
+   "y": 535.75,
+   "scaleX": 0.984,
+   "scaleY": 0.984,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0557",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1567.43,
+   "y": 412.04,
+   "scaleX": 1.39,
+   "scaleY": 1.39,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0558",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1568.79,
+   "y": 529.31,
+   "scaleX": 1.315,
+   "scaleY": 1.315,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0559",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1325.45,
+   "y": 432.26,
+   "scaleX": 1.353,
+   "scaleY": 1.353,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0560",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1640.22,
+   "y": 512.92,
+   "scaleX": 1.373,
+   "scaleY": 1.373,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0561",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1505.53,
+   "y": 429.3,
+   "scaleX": 1.419,
+   "scaleY": 1.419,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0562",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1493.97,
+   "y": 525.9,
+   "scaleX": 1.363,
+   "scaleY": 1.363,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0563",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2242.93,
+   "y": 493.77,
+   "scaleX": 1.263,
+   "scaleY": 1.263,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0564",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2127.83,
+   "y": 587.92,
+   "scaleX": 1.104,
+   "scaleY": 1.104,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0565",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2134.04,
+   "y": 597.36,
+   "scaleX": 0.906,
+   "scaleY": 0.906,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0566",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2351.57,
+   "y": 591.6,
+   "scaleX": 1.464,
+   "scaleY": 1.464,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0567",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2146.36,
+   "y": 543.03,
+   "scaleX": 1.096,
+   "scaleY": 1.096,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0568",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 833.17,
+   "y": 1483.76,
+   "scaleX": 1.403,
+   "scaleY": 1.403,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0569",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 928.09,
+   "y": 1561.63,
+   "scaleX": 0.943,
+   "scaleY": 0.943,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0570",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 749.8,
+   "y": 1538.82,
+   "scaleX": 1.141,
+   "scaleY": 1.141,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0571",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 940.26,
+   "y": 1492.53,
+   "scaleX": 1.07,
+   "scaleY": 1.07,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0572",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 907.48,
+   "y": 1507.45,
+   "scaleX": 1.126,
+   "scaleY": 1.126,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0573",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1921.31,
+   "y": 1569.28,
+   "scaleX": 0.953,
+   "scaleY": 0.953,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0574",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1962.23,
+   "y": 1557.81,
+   "scaleX": 0.99,
+   "scaleY": 0.99,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0575",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1689.3,
+   "y": 1481.78,
+   "scaleX": 1.342,
+   "scaleY": 1.342,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0576",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1869.11,
+   "y": 1571.51,
+   "scaleX": 1.453,
+   "scaleY": 1.453,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0577",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1923.23,
+   "y": 1534.66,
+   "scaleX": 1.163,
+   "scaleY": 1.163,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0578",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1658.25,
+   "y": 1540.74,
+   "scaleX": 1.089,
+   "scaleY": 1.089,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0579",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1879.81,
+   "y": 1517.49,
+   "scaleX": 0.923,
+   "scaleY": 0.923,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0580",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2354.88,
+   "y": 1462.36,
+   "scaleX": 1.461,
+   "scaleY": 1.461,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0581",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2550.31,
+   "y": 1479.84,
+   "scaleX": 1.356,
+   "scaleY": 1.356,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0582",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2547.16,
+   "y": 1494.61,
+   "scaleX": 1.271,
+   "scaleY": 1.271,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0583",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2423.17,
+   "y": 1478.63,
+   "scaleX": 1.407,
+   "scaleY": 1.407,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0584",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2557.9,
+   "y": 1489.23,
+   "scaleX": 0.911,
+   "scaleY": 0.911,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0585",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2442.03,
+   "y": 1492.07,
+   "scaleX": 1.203,
+   "scaleY": 1.203,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0586",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 350,
+   "y": 640,
+   "scaleX": 1.148,
+   "scaleY": 1.148,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0587",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1150,
+   "y": 600,
+   "scaleX": 1.26,
+   "scaleY": 1.26,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0588",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2750,
+   "y": 640,
+   "scaleX": 1.112,
+   "scaleY": 1.112,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0589",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 640,
+   "y": 1350,
+   "scaleX": 1.273,
+   "scaleY": 1.273,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0590",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2150,
+   "y": 1380,
+   "scaleX": 1.023,
+   "scaleY": 1.023,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0591",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lily_pad.png"
+   ],
+   "name": "lily_pad",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3010,
+   "y": 1430,
+   "scaleX": 1.323,
+   "scaleY": 1.323,
+   "offsetX": 22.0,
+   "offsetY": 14
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0592",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 265,
+   "y": 430,
+   "scaleX": 1.7,
+   "scaleY": 1.7,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0593",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1060,
+   "y": 330,
+   "scaleX": 1.9,
+   "scaleY": 1.9,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0594",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3000,
+   "y": 300,
+   "scaleX": 1.75,
+   "scaleY": 1.75,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0595",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1500,
+   "y": 1645,
+   "scaleX": 1.8,
+   "scaleY": 1.8,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0596",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cypress.png"
+   ],
+   "name": "cypress",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 480,
+   "y": 828,
+   "scaleX": 1.6,
+   "scaleY": 1.6,
+   "offsetX": 36.0,
+   "offsetY": 143
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0597",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cypress.png"
+   ],
+   "name": "cypress",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 705,
+   "y": 788,
+   "scaleX": 1.9,
+   "scaleY": 1.9,
+   "offsetX": 36.0,
+   "offsetY": 143
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0598",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cypress.png"
+   ],
+   "name": "cypress",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2020,
+   "y": 726,
+   "scaleX": 1.7,
+   "scaleY": 1.7,
+   "offsetX": 36.0,
+   "offsetY": 143
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0599",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cypress.png"
+   ],
+   "name": "cypress",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2890,
+   "y": 1190,
+   "scaleX": 1.8,
+   "scaleY": 1.8,
+   "offsetX": 36.0,
+   "offsetY": 143
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0600",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cypress.png"
+   ],
+   "name": "cypress",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1010,
+   "y": 1308,
+   "scaleX": 1.6,
+   "scaleY": 1.6,
+   "offsetX": 36.0,
+   "offsetY": 143
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0601",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 489.3,
+   "y": 751.7,
+   "scaleX": 1.84,
+   "scaleY": 1.84,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0602",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 443.33,
+   "y": 739.73,
+   "scaleX": 2.346,
+   "scaleY": 2.346,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0603",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 503.67,
+   "y": 719.87,
+   "scaleX": 1.991,
+   "scaleY": 1.991,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0604",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 940.12,
+   "y": 721.78,
+   "scaleX": 1.747,
+   "scaleY": 1.747,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0605",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 981.72,
+   "y": 720.67,
+   "scaleX": 2.3,
+   "scaleY": 2.3,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0606",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 951.31,
+   "y": 746.71,
+   "scaleX": 2.067,
+   "scaleY": 2.067,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0607",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1009.26,
+   "y": 750.43,
+   "scaleX": 1.824,
+   "scaleY": 1.824,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0608",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1859.74,
+   "y": 735.64,
+   "scaleX": 2.398,
+   "scaleY": 2.398,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0609",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1787.11,
+   "y": 728.52,
+   "scaleX": 1.886,
+   "scaleY": 1.886,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0610",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1904.43,
+   "y": 729.52,
+   "scaleX": 1.629,
+   "scaleY": 1.629,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0611",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2601.1,
+   "y": 747.25,
+   "scaleX": 1.899,
+   "scaleY": 1.899,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0612",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2535.44,
+   "y": 730.41,
+   "scaleX": 2.381,
+   "scaleY": 2.381,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0613",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2481.58,
+   "y": 727.56,
+   "scaleX": 1.963,
+   "scaleY": 1.963,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0614",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2535.9,
+   "y": 738.46,
+   "scaleX": 1.826,
+   "scaleY": 1.826,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0615",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 640.53,
+   "y": 1246.36,
+   "scaleX": 1.663,
+   "scaleY": 1.663,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0616",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 670.23,
+   "y": 1261.02,
+   "scaleX": 1.953,
+   "scaleY": 1.953,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0617",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 725.67,
+   "y": 1249.53,
+   "scaleX": 2.064,
+   "scaleY": 2.064,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0618",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1541.73,
+   "y": 1242.72,
+   "scaleX": 2.084,
+   "scaleY": 2.084,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0619",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1553.39,
+   "y": 1256.59,
+   "scaleX": 1.644,
+   "scaleY": 1.644,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0620",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1553.34,
+   "y": 1262.09,
+   "scaleX": 1.693,
+   "scaleY": 1.693,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0621",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1984.67,
+   "y": 1259.37,
+   "scaleX": 2.273,
+   "scaleY": 2.273,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0622",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2031.91,
+   "y": 1263.55,
+   "scaleX": 1.828,
+   "scaleY": 1.828,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0623",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2047.0,
+   "y": 1260.94,
+   "scaleX": 2.173,
+   "scaleY": 2.173,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0624",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2083.23,
+   "y": 1240.58,
+   "scaleX": 1.755,
+   "scaleY": 1.755,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0625",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2782.88,
+   "y": 1238.91,
+   "scaleX": 2.386,
+   "scaleY": 2.386,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0626",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2788.99,
+   "y": 1241.92,
+   "scaleX": 1.753,
+   "scaleY": 1.753,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0627",
+   "dir": "assets_custom/props",
+   "frames": [
+    "reed.png"
+   ],
+   "name": "reed",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2780.79,
+   "y": 1250.88,
+   "scaleX": 1.927,
+   "scaleY": 1.927,
+   "offsetX": 17.0,
+   "offsetY": 73
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0628",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_01.png"
+   ],
+   "name": "Water Rocks_01",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 230,
+   "y": 565,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0629",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_02.png"
+   ],
+   "name": "Water Rocks_02",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 3060,
+   "y": 620,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r15_0630",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks in the Water",
+   "frames": [
+    "Water Rocks_03.png"
+   ],
+   "name": "Water Rocks_03",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1180,
+   "y": 1395,
+   "scaleX": 1,
+   "scaleY": 1,
+   "offsetX": 32,
+   "offsetY": 32,
+   "frameW": 64,
+   "frameH": 64,
+   "frameCount": 16,
    "frameRow": 0
   }
  ],
