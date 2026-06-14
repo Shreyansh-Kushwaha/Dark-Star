@@ -563,22 +563,31 @@ function bindZoomPan() {
   window.addEventListener('keyup',   e => { if (e.code === 'Space') { spaceDown = false; updateCursor(); } });
 
   const canvasEl = document.getElementById('canvas-container');
+  // Prevent browser context menu on both the container and window level
   canvasEl.addEventListener('contextmenu', e => e.preventDefault());
-  S.stage.on('mousedown', e => {
+  window.addEventListener('contextmenu', e => {
+    if (canvasEl.contains(e.target)) e.preventDefault();
+  });
+  // Use capture-phase pointerdown on window so nothing (Konva included) can block it.
+  // Use pointermove/pointerup instead of mousemove/mouseup because browsers often
+  // suppress mousemove events while the right button is held down.
+  window.addEventListener('pointerdown', e => {
+    if (e.pointerType !== 'mouse') return;
+    if (!canvasEl.contains(e.target)) return;
     if (S.drawMode || S.noWalkMode) return;
-    if (e.evt.button === 2 || e.evt.button === 1 || (e.evt.button === 0 && (spaceDown || S.panMode))) {
-      panStart = { x: e.evt.clientX, y: e.evt.clientY };
+    if (e.button === 2 || e.button === 1 || (e.button === 0 && (spaceDown || S.panMode))) {
+      panStart = { x: e.clientX, y: e.clientY };
       panOrigin = { x: S.stage.x(), y: S.stage.y() };
       canvasEl.style.cursor = 'grabbing';
-      e.evt.preventDefault();
+      if (e.button === 2) e.preventDefault();
     }
-  });
-  window.addEventListener('mousemove', e => {
-    if (!panStart) return;
+  }, true); // capture phase — fires before any other listener
+  window.addEventListener('pointermove', e => {
+    if (!panStart || e.pointerType !== 'mouse') return;
     S.stage.position({ x: panOrigin.x + e.clientX - panStart.x, y: panOrigin.y + e.clientY - panStart.y });
   });
-  window.addEventListener('mouseup', () => {
-    if (!panStart) return;
+  window.addEventListener('pointerup', e => {
+    if (!panStart || e.pointerType !== 'mouse') return;
     panStart = null;
     updateCursor();
   });
