@@ -40,7 +40,7 @@ button.orange.active{background:#ff883322;border-color:#ffaa55}
 #prop-anim{font-size:9px;color:#666;word-break:break-all}
 
 /* ── Bottom tray ── */
-#tray{height:165px;background:#0d0018;border-top:2px solid #4488ff;display:flex;flex-direction:column;flex-shrink:0}
+#tray{height:195px;background:#0d0018;border-top:2px solid #4488ff;display:flex;flex-direction:column;flex-shrink:0}
 #tray-tabs{display:flex;background:#12001c;border-bottom:1px solid #333;overflow-x:auto}
 .tab{padding:5px 12px;font-size:10px;color:#666;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent}
 .tab.active{color:#88ccff;border-bottom-color:#4488ff;background:#4488ff11}
@@ -49,7 +49,13 @@ button.orange.active{background:#ff883322;border-color:#ffaa55}
 .pill{background:#1a0028;border:1px solid #333;color:#666;border-radius:10px;padding:2px 8px;font-size:9px;cursor:pointer;white-space:nowrap}
 .pill.active{background:#4488ff22;border-color:#4488ff;color:#88ccff}
 #tray-search{margin-left:auto;background:#0a0010;border:1px solid #333;color:#ccc;padding:3px 8px;font-size:10px;border-radius:3px;width:110px;font-family:monospace}
+#tray-global-search{display:flex;align-items:center;gap:6px;padding:4px 8px;background:#0b0016;border-bottom:1px solid #222;flex-shrink:0}
+#global-search-input{flex:1;background:#0a0010;border:1px solid #4488ff55;color:#ccc;padding:4px 8px;font-size:11px;border-radius:3px;font-family:monospace;outline:none}
+#global-search-input:focus{border-color:#4488ff}
+#global-search-input::placeholder{color:#444}
+.tray-cat-sep{font-size:8px;color:#4488ff;padding:2px 4px;background:#4488ff11;border-radius:2px;white-space:nowrap;flex-shrink:0;width:100%;margin-top:4px}
 #tray-grid{display:flex;gap:6px;padding:6px 8px;overflow-x:auto;align-items:flex-start;flex:1}
+#tray-grid.global-search-mode{flex-wrap:wrap;overflow-x:hidden;overflow-y:auto;align-content:flex-start}
 .asset-tile{display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;min-width:52px;max-width:52px}
 .asset-tile img{width:48px;height:48px;object-fit:contain;image-rendering:pixelated}
 .asset-tile span{font-size:7px;color:#888;text-align:center;word-break:break-all;max-width:52px;line-height:1.2;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
@@ -216,6 +222,9 @@ button.portal-btn{border-color:#00ccff;color:#66eeff}button.portal-btn:hover{bac
 </div>
 
 <div id="tray">
+  <div id="tray-global-search">
+    <input type="text" id="global-search-input" placeholder="🔍 Search all assets...">
+  </div>
   <div id="tray-tabs"></div>
   <div id="tray-sub">
     <input type="text" id="tray-search" placeholder="🔍 search...">
@@ -420,6 +429,7 @@ const S = {
   activeCat: 0,
   activeGrp: null,
   searchQ: '',
+  globalSearchQ: '',
   panMode: false,
   deleteMode: false,
   selectMode: false,
@@ -554,13 +564,13 @@ function bindZoomPan() {
 
   const canvasEl = document.getElementById('canvas-container');
   canvasEl.addEventListener('contextmenu', e => e.preventDefault());
-  canvasEl.addEventListener('mousedown', e => {
+  S.stage.on('mousedown', e => {
     if (S.drawMode || S.noWalkMode) return;
-    if (e.button === 2 || e.button === 1 || (e.button === 0 && (spaceDown || S.panMode))) {
-      panStart = { x: e.clientX, y: e.clientY };
+    if (e.evt.button === 2 || e.evt.button === 1 || (e.evt.button === 0 && (spaceDown || S.panMode))) {
+      panStart = { x: e.evt.clientX, y: e.evt.clientY };
       panOrigin = { x: S.stage.x(), y: S.stage.y() };
       canvasEl.style.cursor = 'grabbing';
-      e.preventDefault();
+      e.evt.preventDefault();
     }
   });
   window.addEventListener('mousemove', e => {
@@ -857,6 +867,10 @@ async function init() {
   } catch (err) {
     setStatus('⚠ Could not load assets: ' + err.message);
   }
+  document.getElementById('global-search-input').addEventListener('input', e => {
+    S.globalSearchQ = e.target.value.toLowerCase().trim();
+    renderTray();
+  });
   const hashCode = location.hash.slice(1).toUpperCase();
   if (/^[A-Z]{4}$/.test(hashCode)) joinRoom(hashCode);
 }
@@ -894,11 +908,63 @@ function switchTrayTab(tab) {
   document.getElementById('btn-portal-tab').classList.toggle('active', tab === 'portals');
 }
 
+function renderGlobalSearchGrid() {
+  const q = S.globalSearchQ;
+  const grid = document.getElementById('tray-grid');
+  grid.innerHTML = '';
+  grid.classList.add('global-search-mode');
+  if (!S.assets || !q) return;
+  let total = 0;
+  for (const cat of S.assets.categories) {
+    for (const grp of cat.groups) {
+      const matches = grp.sprites.filter(s => s.name.toLowerCase().includes(q));
+      if (!matches.length) continue;
+      const sep = document.createElement('div');
+      sep.className = 'tray-cat-sep';
+      sep.textContent = cat.name + ' › ' + grp.name;
+      grid.appendChild(sep);
+      for (const asset of matches) {
+        total++;
+        const tile = document.createElement('div');
+        tile.className = 'asset-tile' + (S.placingAsset === asset ? ' selected' : '');
+        const url = assetURL(asset.dir, asset.frames[0]);
+        const animBadge = (asset.animated && asset.frameW) ? '<div class="anim-badge">▶ anim</div>' : '';
+        tile.innerHTML = `<div class="tile-img-wrap"><img src="${url}" loading="lazy" title="${asset.name}">${animBadge}<button class="crop-btn" title="Crop this asset">✂</button><button class="rand-btn" title="Randomize this asset">🎲</button></div><span>${asset.name}</span>`;
+        tile.onclick = () => startPlacing(asset);
+        tile.querySelector('.crop-btn').onclick = e => { e.stopPropagation(); openCropModal(asset); };
+        tile.querySelector('.rand-btn').onclick = e => { e.stopPropagation(); openRandModal(asset); };
+        grid.appendChild(tile);
+      }
+    }
+  }
+  if (!total) {
+    const msg = document.createElement('div');
+    msg.style.cssText = 'color:#555;font-size:10px;padding:8px';
+    msg.textContent = 'No assets match "' + S.globalSearchQ + '"';
+    grid.appendChild(msg);
+  }
+}
+
 function renderTray() {
   if (!S.assets) return;
   const cats = S.assets.categories;
   const tabsEl = document.getElementById('tray-tabs');
   tabsEl.innerHTML = '';
+
+  if (S.globalSearchQ) {
+    document.getElementById('tray-sub').style.display = 'none';
+    renderGlobalSearchGrid();
+    // Still render tabs but keep them visible for context
+    cats.forEach((cat, i) => {
+      const t = document.createElement('div');
+      t.className = 'tab';
+      t.textContent = cat.name;
+      t.onclick = () => { S.globalSearchQ = ''; document.getElementById('global-search-input').value = ''; S.activeTrayTab = 'assets'; S.activeCat = i; S.activeGrp = null; renderTray(); };
+      tabsEl.appendChild(t);
+    });
+    return;
+  }
+  document.getElementById('tray-sub').style.display = '';
 
   // Fixed special tabs first
   const enemyTab = document.createElement('div');
@@ -1035,6 +1101,7 @@ function renderTrayGrid() {
   }
   if (S.searchQ) sprites = sprites.filter(s => s.name.toLowerCase().includes(S.searchQ));
   const grid = document.getElementById('tray-grid');
+  grid.classList.remove('global-search-mode');
   grid.innerHTML = '';
   for (const asset of sprites) {
     const tile = document.createElement('div');

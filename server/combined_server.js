@@ -44,6 +44,9 @@ const EXPLICIT_SHEETS = {
   'assest2/Monster Pack (Free)/Spritesheets/Updated Rabbit Horned/Rabbit_Horned_Idle.png':   { frameW: 64, frameH: 64, frameCount: 8, frameRow: 1 },
   'assest2/Monster Pack (Free)/Spritesheets/Updated Rabbit Horned/Rabbit_Horned_Move.png':   { frameW: 64, frameH: 64, frameCount: 8, frameRow: 1 },
   'assest2/Monster Pack (Free)/Spritesheets/Updated Rabbit Horned/Rabbit_Horned_Attack.png': { frameW: 64, frameH: 64, frameCount: 8, frameRow: 1 },
+  // assets_custom/anim — non-square strips (64×80 frames)
+  'assets_custom/anim/crystal_glow.png':     { frameW: 64, frameH: 80, frameCount: 4, frameRow: 0 },
+  'assets_custom/anim/wind_banner_anim.png': { frameW: 64, frameH: 80, frameCount: 4, frameRow: 0 },
 };
 
 // Returns { frameW, frameH, frameCount } if PNG is a horizontal spritesheet, else null.
@@ -172,6 +175,13 @@ const ASSET_GROUPS = [
   { cat:'Assets4',   grp:'Next2',          rel:'assest4/next2' },
   { cat:'Cropped',   grp:'My Crops',       rel:'cropped' },
   { cat:'Uploads',   grp:'My Assets',      rel:'uploads' },
+  // Custom hand-crafted assets
+  { cat:'Custom',    grp:'Props',          rel:'assets_custom/props' },
+  { cat:'Custom',    grp:'Animations',     rel:'assets_custom/anim' },
+  { cat:'Custom',    grp:'Rocks Basalt',   rel:'assets_custom/rocks_basalt' },
+  { cat:'Custom',    grp:'Rocks Sand',     rel:'assets_custom/rocks_sand' },
+  { cat:'Custom',    grp:'Rocks Void',     rel:'assets_custom/rocks_void' },
+  { cat:'Custom',    grp:'Structures',     rel:'assets_custom/structures' },
 ];
 
 function buildManifest() {
