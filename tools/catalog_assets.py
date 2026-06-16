@@ -385,9 +385,94 @@ def main():
     out = os.path.join(PROJECT, "docs", "assets.json")
     with open(out, "w") as f:
         json.dump(doc, f, indent=2)
+
+    md_out = os.path.join(PROJECT, "docs", "ASSETS.md")
+    with open(md_out, "w") as f:
+        f.write(render_markdown(doc))
+
     print(f"wrote {out}")
+    print(f"wrote {md_out}")
     print(f"packs={tot['packs']} singles={tot['single_images']} sheets={tot['spritesheets']} "
           f"frame_anims={tot['frame_animations']} tilesets={tot['tilesets']}")
+
+
+def render_markdown(doc):
+    """Render a human-readable summary of the catalog from the JSON document."""
+    meta = doc["meta"]
+    t = meta["totals"]
+    packs = doc["packs"]
+    L = []
+    L.append("# Asset Catalog")
+    L.append("")
+    L.append(f"_Generated {meta['generated']} by `{meta['generator']}` — "
+             f"summary view of [`assets.json`](assets.json). Regenerate both with "
+             f"`python3 tools/catalog_assets.py`._")
+    L.append("")
+    L.append("## Totals")
+    L.append("")
+    L.append("| Metric | Count |")
+    L.append("|---|--:|")
+    L.append(f"| Packs | {t['packs']} |")
+    L.append(f"| Single images | {t['single_images']} |")
+    L.append(f"| Spritesheet strips/grids | {t['spritesheets']} |")
+    L.append(f"| Frame-sequence animations | {t['frame_animations']} |")
+    L.append(f"| Tilesets | {t['tilesets']} |")
+    L.append("")
+    L.append("## How assets are classified")
+    L.append("")
+    for k, v in meta["classification_legend"].items():
+        L.append(f"- **`{k}`** — {v}")
+    L.append("")
+    L.append("## Notes")
+    L.append("")
+    for n in meta["notes"]:
+        L.append(f"- {n}")
+    L.append("")
+
+    # group packs by (location, collection)
+    groups = defaultdict(list)
+    for p in packs:
+        groups[(p["location"], p.get("collection", "(standalone)"))].append(p)
+
+    def fmt_aux(aux):
+        if not aux:
+            return ""
+        return ", ".join(f"{v} {k.replace('_', ' ')}" for k, v in sorted(aux.items()))
+
+    L.append("## Packs")
+    L.append("")
+    # project collections first, then external
+    order = sorted(groups, key=lambda k: (k[0] != "project", k[1]))
+    for (location, collection) in order:
+        ps = sorted(groups[(location, collection)], key=lambda p: p["id"].lower())
+        header = collection if collection != "(standalone)" else "standalone packs"
+        L.append(f"### `{header}` — {location}")
+        L.append("")
+        L.append("| Pack | Category | Images | Sheets | Frame-anims (frames) | Tilesets | Author | License |")
+        L.append("|---|---|--:|--:|--:|--:|---|---|")
+        for p in ps:
+            c = p["counts"]
+            fa = c["frame_animations"]
+            faf = c["frame_animation_total_frames"]
+            fa_cell = f"{fa} ({faf})" if fa else "0"
+            L.append("| {id} | {cat} | {img} | {sh} | {fa} | {ts} | {auth} | {lic} |".format(
+                id=p["id"], cat=p["category"] or "—",
+                img=c["single_images"], sh=c["spritesheets"], fa=fa_cell, ts=c["tilesets"],
+                auth=(p["author"] or "—"), lic=(p["license"] or "—")))
+        L.append("")
+        # descriptions + aux/audio detail
+        for p in ps:
+            c = p["counts"]
+            bits = []
+            aux = fmt_aux(c.get("aux_files"))
+            if aux:
+                bits.append(f"aux: {aux}")
+            if p.get("audio_files"):
+                bits.append(f"{len(p['audio_files'])} audio files")
+            detail = f" _({'; '.join(bits)})_" if bits else ""
+            L.append(f"- **{p['id']}** — {p['description'] or '_no description_'}{detail}")
+        L.append("")
+    return "\n".join(L)
 
 
 if __name__ == "__main__":
