@@ -421,6 +421,96 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  // ── Animation reviewer: list real frame files in a folder ───────────────────
+  // assets.json stores frame_count + an example name, not the full ordered list,
+  // so the reviewer reads the directory directly to play frames reliably.
+  if (req.method === 'GET' && req.url.startsWith('/api/list-frames')) {
+    try {
+      const q = new URL(req.url, 'http://x').searchParams;
+      const rel = q.get('dir') || '';
+      const absDir = path.join(GAME_ROOT, rel);
+      if (!absDir.startsWith(GAME_ROOT)) throw new Error('Forbidden');
+      const frames = fs.readdirSync(absDir)
+        .filter(n => !n.startsWith('.') && n.toLowerCase().endsWith('.png'))
+        .sort((a, b) => frameNum(a) - frameNum(b));
+      res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' });
+      res.end(JSON.stringify({ ok: true, dir: rel, frames }));
+    } catch (e) {
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: false, error: e.message }));
+    }
+    return;
+  }
+
+  // ── Animation reviewer: save the working draft (approvals + remarks) ─────────
+  if (req.method === 'POST' && req.url === '/api/animations-draft/save') {
+    let body = '';
+    req.on('data', chunk => body += chunk);
+    req.on('end', () => {
+      try {
+        const draft = JSON.parse(body);
+        if (!draft || !Array.isArray(draft.packs)) throw new Error('expected { packs: [...] }');
+        fs.writeFileSync(path.join(GAME_ROOT, 'docs', 'animations_draft.json'),
+          JSON.stringify(draft, null, 2));
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: true }));
+      } catch (e) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: false, error: e.message }));
+      }
+    });
+    return;
+  }
+
+  // ── Animation reviewer: export APPROVED entries → docs/animations.json ───────
+  // Reads the on-disk draft so the "final output" logic lives in one place.
+  if (req.method === 'POST' && req.url === '/api/animations/export') {
+    try {
+      const draftPath = path.join(GAME_ROOT, 'docs', 'animations_draft.json');
+      const draft = JSON.parse(fs.readFileSync(draftPath, 'utf8'));
+      const packs = [];
+      let count = 0;
+      for (const p of draft.packs || []) {
+        const anims = (p.animations || [])
+          .filter(a => a.status === 'approved')
+          .map(a => a.source === 'spritesheet'
+            ? { name: a.name, source: 'spritesheet', spritesheet: a.spritesheet,
+                frame_count: a.frame_count, frame_size: a.frame_size,
+                horizontal: a.horizontal, framerate: a.framerate, loop: a.loop }
+            : { name: a.name, source: 'frame_folder', dir: a.dir,
+                frame_count: a.frame_count, frame_size: a.frame_size,
+                framerate: a.framerate, loop: a.loop });
+        if (!anims.length) continue;
+        count += anims.length;
+        packs.push({ entity_key: p.entity_key, entity_type: p.entity_type,
+          pack_path: p.pack_path, animations: anims });
+      }
+      const out = { version: 1, generated: draft.generated,
+        source: 'docs/animations_draft.json (approved entries only)', packs };
+      fs.writeFileSync(path.join(GAME_ROOT, 'docs', 'animations.json'),
+        JSON.stringify(out, null, 2));
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: true, packs: packs.length, animations: count }));
+    } catch (e) {
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: false, error: e.message }));
+    }
+    return;
+  }
+
+  // ── Serve the approved animation definitions (for the runtime loader) ────────
+  if (req.method === 'GET' && req.url === '/api/animations') {
+    try {
+      const data = fs.readFileSync(path.join(GAME_ROOT, 'docs', 'animations.json'), 'utf8');
+      res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' });
+      res.end(data);
+    } catch {
+      res.writeHead(404, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ version: 1, packs: [], error: 'not exported yet' }));
+    }
+    return;
+  }
+
   let urlPath = decodeURIComponent(req.url.split('?')[0]);
   if (urlPath === '/') urlPath = '/index.html';
 

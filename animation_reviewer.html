@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animation Reviewer — Dark Star</title>
+<style>
+  :root {
+    --bg:#14161b; --panel:#1d2027; --panel2:#252934; --line:#333845;
+    --txt:#e6e8ee; --dim:#9aa3b2; --accent:#4f9dff;
+    --ok:#3ecf8e; --warn:#ff5c5c; --pending:#e0a92e;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--txt);
+    font:14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
+  header { position:sticky; top:0; z-index:10; background:var(--panel);
+    border-bottom:1px solid var(--line); padding:10px 16px; }
+  h1 { margin:0 0 8px; font-size:18px; }
+  .bar { display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; }
+  .bar label { color:var(--dim); font-size:12px; }
+  select, input[type=text], input[type=number] {
+    background:var(--panel2); color:var(--txt); border:1px solid var(--line);
+    border-radius:6px; padding:5px 8px; font:inherit; }
+  input[type=number] { width:56px; }
+  button { background:var(--panel2); color:var(--txt); border:1px solid var(--line);
+    border-radius:6px; padding:6px 12px; cursor:pointer; font:inherit; }
+  button:hover { border-color:var(--accent); }
+  button.primary { background:var(--accent); border-color:var(--accent); color:#08111f; font-weight:600; }
+  .counts { display:flex; gap:10px; align-items:center; font-size:12px; }
+  .pill { padding:2px 8px; border-radius:10px; font-weight:600; }
+  .pill.ok { background:rgba(62,207,142,.15); color:var(--ok); }
+  .pill.warn { background:rgba(255,92,92,.15); color:var(--warn); }
+  .pill.pending { background:rgba(224,169,46,.15); color:var(--pending); }
+  .progress { height:6px; background:var(--panel2); border-radius:4px; overflow:hidden; flex:1; min-width:120px; }
+  .progress > i { display:block; height:100%; background:var(--ok); width:0; transition:width .2s; }
+  main { padding:16px; max-width:1100px; margin:0 auto; }
+  .pack { background:var(--panel); border:1px solid var(--line); border-radius:10px; margin-bottom:14px; }
+  .pack-head { display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center;
+    padding:10px 14px; cursor:pointer; }
+  .pack-head h2 { margin:0; font-size:15px; }
+  .pack-head .meta { color:var(--dim); font-size:12px; }
+  .pack-head .spacer { flex:1; }
+  .pack-body { border-top:1px solid var(--line); padding:6px 10px 12px; }
+  .pack-fields { display:flex; flex-wrap:wrap; gap:6px 12px; align-items:center;
+    padding:8px 4px; color:var(--dim); font-size:12px; }
+  .pack-fields input { width:180px; }
+  .row { display:grid; grid-template-columns:96px 1fr auto; gap:12px;
+    align-items:center; padding:10px 6px; border-top:1px solid var(--line); }
+  .row.s-approved { background:rgba(62,207,142,.05); }
+  .row.s-needs_fix { background:rgba(255,92,92,.06); }
+  .thumb { width:96px; height:96px; background:var(--panel2); border-radius:6px;
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
+    position:relative; image-rendering:pixelated; }
+  .thumb img, .thumb canvas { max-width:100%; max-height:100%; image-rendering:pixelated; }
+  .thumb .play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    background:rgba(0,0,0,.35); color:#fff; font-size:22px; cursor:pointer; }
+  .thumb.playing .play { display:none; }
+  .info .name-line { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .info .name-line input.name { width:130px; font-weight:600; }
+  .info .purpose { color:var(--dim); font-size:12px; margin-top:3px; }
+  .info .src { color:var(--dim); font-size:11px; margin-top:2px; }
+  .info .raw { color:#6f7889; }
+  .ctrls { display:flex; flex-direction:column; gap:6px; align-items:flex-end; min-width:230px; }
+  .ctrls .line1 { display:flex; gap:6px; align-items:center; }
+  .ctrls .remark { width:230px; }
+  .btn-ok.active { background:var(--ok); border-color:var(--ok); color:#06241a; font-weight:700; }
+  .btn-fix.active { background:var(--warn); border-color:var(--warn); color:#2a0808; font-weight:700; }
+  .small { font-size:12px; color:var(--dim); }
+  .badge { font-size:11px; padding:1px 6px; border-radius:8px; background:var(--panel2); color:var(--dim); }
+  #empty { color:var(--dim); text-align:center; padding:40px; }
+  #toast { position:fixed; bottom:16px; left:50%; transform:translateX(-50%);
+    background:var(--panel2); border:1px solid var(--accent); padding:8px 16px;
+    border-radius:8px; opacity:0; transition:opacity .25s; pointer-events:none; }
+  #toast.show { opacity:1; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🎞️ Animation Reviewer <span class="small" id="gen"></span></h1>
+  <div class="bar">
+    <label>Status
+      <select id="f-status">
+        <option value="pending">Pending</option>
+        <option value="needs_fix">Needs Fix</option>
+        <option value="approved">Approved</option>
+        <option value="all">All</option>
+      </select>
+    </label>
+    <label>Type <select id="f-type"></select></label>
+    <label>Search <input type="text" id="f-q" placeholder="pack / animation name"></label>
+    <span class="spacer"></span>
+    <button id="btn-save">💾 Save Draft</button>
+    <button id="btn-export" class="primary">⬇ Export approved → animations.json</button>
+  </div>
+  <div class="bar" style="margin-top:8px;">
+    <div class="counts">
+      <span class="pill ok" id="c-approved">0 approved</span>
+      <span class="pill warn" id="c-fix">0 needs fix</span>
+      <span class="pill pending" id="c-pending">0 pending</span>
+      <span class="small" id="c-total"></span>
+    </div>
+    <div class="progress"><i id="prog"></i></div>
+  </div>
+</header>
+<main>
+  <div id="list"></div>
+  <div id="empty" style="display:none;">Nothing matches the current filter.</div>
+</main>
+<div id="toast"></div>
+
+<script>
+const TYPE_OPTIONS = ['boss','enemy','npc','vfx','prop','misc'];
+let DRAFT = null;
+let dirty = false;
+const players = new Map();   // anim.id -> interval handle
+
+const $ = s => document.querySelector(s);
+const enc = p => '/' + String(p).split('/').map(encodeURIComponent).join('/');
+
+function toast(msg) {
+  const t = $('#toast'); t.textContent = msg; t.classList.add('show');
+  clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.remove('show'), 1800);
+}
+
+async function load() {
+  const res = await fetch('/docs/animations_draft.json?ts=' + Date.now());
+  DRAFT = await res.json();
+  $('#gen').textContent = '· generated ' + (DRAFT.generated || '') + ' · ' +
+    (DRAFT.stats?.total ?? '?') + ' candidates';
+  // populate type filter
+  const types = ['all', ...new Set(DRAFT.packs.map(p => p.entity_type))];
+  $('#f-type').innerHTML = types.map(t => `<option value="${t}">${t}</option>`).join('');
+  // default: bosses first if present
+  if (types.includes('boss')) $('#f-type').value = 'boss';
+  render();
+}
+
+function allAnims() {
+  return DRAFT.packs.flatMap(p => p.animations);
+}
+
+function updateCounts() {
+  const a = allAnims();
+  const approved = a.filter(x => x.status === 'approved').length;
+  const fix = a.filter(x => x.status === 'needs_fix').length;
+  const pending = a.filter(x => x.status === 'pending').length;
+  $('#c-approved').textContent = approved + ' approved';
+  $('#c-fix').textContent = fix + ' needs fix';
+  $('#c-pending').textContent = pending + ' pending';
+  $('#c-total').textContent = '/ ' + a.length + ' total';
+  $('#prog').style.width = a.length ? (100 * approved / a.length) + '%' : '0';
+}
+
+function matches(pack, anim) {
+  const fStatus = $('#f-status').value;
+  const fType = $('#f-type').value;
+  const q = $('#f-q').value.trim().toLowerCase();
+  if (fStatus !== 'all' && anim.status !== fStatus) return false;
+  if (fType !== 'all' && pack.entity_type !== fType) return false;
+  if (q) {
+    const hay = (pack.pack_id + ' ' + pack.entity_key + ' ' + anim.name + ' ' + anim.raw_name).toLowerCase();
+    if (!hay.includes(q)) return false;
+  }
+  return true;
+}
+
+function render() {
+  stopAllPlayers();
+  const list = $('#list'); list.innerHTML = '';
+  let shown = 0;
+  for (const pack of DRAFT.packs) {
+    const visAnims = pack.animations.filter(a => matches(pack, a));
+    if (!visAnims.length) continue;
+    shown += visAnims.length;
+    list.appendChild(renderPack(pack, visAnims));
+  }
+  $('#empty').style.display = shown ? 'none' : 'block';
+  updateCounts();
+}
+
+function renderPack(pack, visAnims) {
+  const el = document.createElement('div'); el.className = 'pack';
+  const head = document.createElement('div'); head.className = 'pack-head';
+  head.innerHTML =
+    `<h2>${pack.entity_key}</h2>` +
+    `<span class="badge">${pack.entity_type}</span>` +
+    `<span class="meta">${pack.pack_id} · ${visAnims.length} shown / ${pack.animations.length}</span>` +
+    `<span class="spacer"></span><span class="small">${pack.category || ''}</span>`;
+  const body = document.createElement('div'); body.className = 'pack-body';
+
+  // pack-level editable fields
+  const pf = document.createElement('div'); pf.className = 'pack-fields';
+  pf.innerHTML = `<span>entity_key</span>`;
+  const keyInp = document.createElement('input'); keyInp.type = 'text'; keyInp.value = pack.entity_key;
+  keyInp.onchange = () => { pack.entity_key = keyInp.value.trim(); markDirty(); head.querySelector('h2').textContent = pack.entity_key; };
+  pf.appendChild(keyInp);
+  const tLabel = document.createElement('span'); tLabel.textContent = 'entity_type'; pf.appendChild(tLabel);
+  const typeSel = document.createElement('select');
+  typeSel.innerHTML = TYPE_OPTIONS.map(t => `<option ${t===pack.entity_type?'selected':''}>${t}</option>`).join('');
+  typeSel.onchange = () => { pack.entity_type = typeSel.value; markDirty(); head.querySelector('.badge').textContent = pack.entity_type; };
+  pf.appendChild(typeSel);
+  body.appendChild(pf);
+
+  for (const anim of visAnims) body.appendChild(renderRow(anim));
+
+  head.onclick = e => { if (e.target.closest('input,select,button')) return;
+    body.style.display = body.style.display === 'none' ? '' : 'none'; };
+  el.appendChild(head); el.appendChild(body);
+  return el;
+}
+
+function renderRow(anim) {
+  const row = document.createElement('div');
+  row.className = 'row s-' + anim.status;
+
+  // ── thumbnail / player ──
+  const thumb = document.createElement('div'); thumb.className = 'thumb';
+  const play = document.createElement('div'); play.className = 'play'; play.textContent = '▶';
+  thumb.appendChild(play);
+  thumb.onclick = () => togglePlay(anim, thumb);
+
+  // ── info ──
+  const info = document.createElement('div'); info.className = 'info';
+  const nameLine = document.createElement('div'); nameLine.className = 'name-line';
+  const nameInp = document.createElement('input'); nameInp.className = 'name'; nameInp.type = 'text'; nameInp.value = anim.name;
+  nameInp.onchange = () => { anim.name = nameInp.value.trim(); markDirty(); };
+  nameLine.appendChild(nameInp);
+  nameLine.insertAdjacentHTML('beforeend',
+    `<span class="badge">${anim.source === 'spritesheet' ? 'sheet' : 'frames'}</span>` +
+    `<span class="badge">${anim.frame_count}f ${anim.frame_size?.[0]||'?'}×${anim.frame_size?.[1]||'?'}</span>`);
+  info.appendChild(nameLine);
+  info.insertAdjacentHTML('beforeend',
+    `<div class="purpose">${anim.purpose_guess || ''}</div>` +
+    `<div class="src"><span class="raw">raw:</span> ${anim.raw_name} · ` +
+    `${anim.source === 'spritesheet' ? anim.spritesheet : anim.dir}</div>`);
+
+  // ── controls ──
+  const ctrls = document.createElement('div'); ctrls.className = 'ctrls';
+  const line1 = document.createElement('div'); line1.className = 'line1';
+  const ok = document.createElement('button'); ok.className = 'btn-ok'; ok.textContent = '✓ Approve';
+  const fix = document.createElement('button'); fix.className = 'btn-fix'; fix.textContent = '✗ Needs Fix';
+  const syncBtns = () => {
+    ok.classList.toggle('active', anim.status === 'approved');
+    fix.classList.toggle('active', anim.status === 'needs_fix');
+    row.className = 'row s-' + anim.status;
+  };
+  ok.onclick = () => { anim.status = anim.status === 'approved' ? 'pending' : 'approved'; syncBtns(); markDirty(); updateCounts(); };
+  fix.onclick = () => { anim.status = anim.status === 'needs_fix' ? 'pending' : 'needs_fix'; syncBtns(); markDirty(); updateCounts(); };
+  line1.appendChild(ok); line1.appendChild(fix);
+
+  const fr = document.createElement('input'); fr.type = 'number'; fr.min = 1; fr.max = 60; fr.value = anim.framerate; fr.title = 'frames per second';
+  fr.onchange = () => { anim.framerate = +fr.value || 8; markDirty(); };
+  const loopLbl = document.createElement('label'); loopLbl.className = 'small'; loopLbl.style.display = 'flex'; loopLbl.style.gap = '3px'; loopLbl.style.alignItems = 'center';
+  const loop = document.createElement('input'); loop.type = 'checkbox'; loop.checked = !!anim.loop;
+  loop.onchange = () => { anim.loop = loop.checked; markDirty(); };
+  loopLbl.appendChild(loop); loopLbl.append('loop');
+  line1.appendChild(document.createTextNode(' '));
+  const frLbl = document.createElement('span'); frLbl.className = 'small'; frLbl.textContent = 'fps';
+  line1.appendChild(fr); line1.appendChild(frLbl); line1.appendChild(loopLbl);
+
+  const remark = document.createElement('input'); remark.className = 'remark'; remark.type = 'text';
+  remark.placeholder = 'remark (why it needs fixing…)'; remark.value = anim.remark || '';
+  remark.onchange = () => { anim.remark = remark.value; markDirty(); };
+
+  ctrls.appendChild(line1); ctrls.appendChild(remark);
+  syncBtns();
+
+  thumb.appendChild(play);
+  row.appendChild(thumb); row.appendChild(info); row.appendChild(ctrls);
+  return row;
+}
+
+// ── Playback ────────────────────────────────────────────────────────────────
+async function togglePlay(anim, thumb) {
+  if (players.has(anim.id)) { stopPlayer(anim.id); thumb.classList.remove('playing'); return; }
+  thumb.classList.add('playing');
+  if (anim.source === 'spritesheet') playSheet(anim, thumb);
+  else await playFrames(anim, thumb);
+}
+
+async function playFrames(anim, thumb) {
+  let urls = anim._urls;
+  if (!urls) {
+    try {
+      const r = await fetch('/api/list-frames?dir=' + encodeURIComponent(anim.dir));
+      const j = await r.json();
+      if (!j.ok || !j.frames.length) throw new Error('no frames');
+      urls = j.frames.map(f => enc(anim.dir + '/' + f));
+      anim._urls = urls;
+    } catch (e) { toast('Could not list frames: ' + e.message); thumb.classList.remove('playing'); return; }
+  }
+  const img = document.createElement('img');
+  thumb.querySelectorAll('img,canvas').forEach(n => n.remove());
+  thumb.insertBefore(img, thumb.firstChild);
+  // preload
+  urls.forEach(u => { const p = new Image(); p.src = u; });
+  let i = 0; img.src = urls[0];
+  const h = setInterval(() => {
+    i = (i + 1) % urls.length;
+    if (!anim.loop && i === 0) { /* keep looping in reviewer for visibility */ }
+    img.src = urls[i];
+  }, 1000 / (anim.framerate || 8));
+  players.set(anim.id, h);
+}
+
+function playSheet(anim, thumb) {
+  const [fw, fh] = anim.frame_size || [0, 0];
+  const n = anim.frame_count || 1;
+  if (!fw || !fh || n < 2) { toast('Spritesheet frame size unknown'); thumb.classList.remove('playing'); return; }
+  const canvas = document.createElement('canvas'); canvas.width = fw; canvas.height = fh;
+  const ctx = canvas.getContext('2d');
+  thumb.querySelectorAll('img,canvas').forEach(node => node.remove());
+  thumb.insertBefore(canvas, thumb.firstChild);
+  const sheet = new Image();
+  sheet.onload = () => {
+    let i = 0;
+    const draw = () => {
+      ctx.clearRect(0, 0, fw, fh);
+      const sx = anim.horizontal ? i * fw : 0;
+      const sy = anim.horizontal ? 0 : i * fh;
+      ctx.drawImage(sheet, sx, sy, fw, fh, 0, 0, fw, fh);
+      i = (i + 1) % n;
+    };
+    draw();
+    const h = setInterval(draw, 1000 / (anim.framerate || 8));
+    players.set(anim.id, h);
+  };
+  sheet.onerror = () => { toast('Could not load sheet'); thumb.classList.remove('playing'); };
+  sheet.src = enc(anim.spritesheet);
+}
+
+function stopPlayer(id) { const h = players.get(id); if (h) { clearInterval(h); players.delete(id); } }
+function stopAllPlayers() { for (const h of players.values()) clearInterval(h); players.clear(); }
+
+// ── Persistence ───────────────────────────────────────────────────────────────
+function markDirty() { dirty = true; }
+
+function stripRuntime(obj) {
+  // remove the _urls cache before serializing
+  return JSON.parse(JSON.stringify(obj, (k, v) => k.startsWith('_') ? undefined : v));
+}
+
+async function save() {
+  try {
+    const res = await fetch('/api/animations-draft/save', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(stripRuntime(DRAFT)),
+    });
+    const j = await res.json();
+    if (!j.ok) throw new Error(j.error);
+    dirty = false; toast('Draft saved');
+  } catch (e) { toast('Save failed: ' + e.message); }
+}
+
+async function exportFinal() {
+  if (dirty) await save();
+  try {
+    const res = await fetch('/api/animations/export', { method: 'POST' });
+    const j = await res.json();
+    if (!j.ok) throw new Error(j.error);
+    toast(`Exported ${j.animations} animations across ${j.packs} packs → docs/animations.json`);
+  } catch (e) { toast('Export failed: ' + e.message); }
+}
+
+// ── Wire up ───────────────────────────────────────────────────────────────────
+$('#f-status').onchange = render;
+$('#f-type').onchange = render;
+$('#f-q').oninput = () => { clearTimeout(render._t); render._t = setTimeout(render, 200); };
+$('#btn-save').onclick = save;
+$('#btn-export').onclick = exportFinal;
+window.addEventListener('beforeunload', e => { if (dirty) { e.preventDefault(); e.returnValue = ''; } });
+
+load();
+</script>
+</body>
+</html>
