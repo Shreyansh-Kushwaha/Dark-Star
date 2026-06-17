@@ -468,17 +468,20 @@ const server = http.createServer((req, res) => {
     try {
       const draftPath = path.join(GAME_ROOT, 'docs', 'animations_draft.json');
       const draft = JSON.parse(fs.readFileSync(draftPath, 'utf8'));
-      const packs = [];
+      // Group approved animations by their per-animation entity_key, so a
+      // multi-character source pack exports as several distinct entities.
+      const byEntity = new Map();
       let count = 0;
       for (const p of draft.packs || []) {
-        const anims = (p.animations || [])
-          .filter(a => a.status === 'approved')
-          .map(a => {
-            if (a.source === 'spritesheet') {
-              return { name: a.name, source: 'spritesheet', spritesheet: a.spritesheet,
-                frame_count: a.frame_count, frame_size: a.frame_size,
-                horizontal: a.horizontal, framerate: a.framerate, loop: a.loop };
-            }
+        for (const a of p.animations || []) {
+          if (a.status !== 'approved') continue;
+          const ek = a.entity_key || p.entity_key;
+          let anim;
+          if (a.source === 'spritesheet') {
+            anim = { name: a.name, source: 'spritesheet', spritesheet: a.spritesheet,
+              frame_count: a.frame_count, frame_size: a.frame_size,
+              horizontal: a.horizontal, framerate: a.framerate, loop: a.loop };
+          } else {
             // Embed the real ordered frame filenames so the runtime AnimationLoader
             // builds exact URLs/keys with no filename guessing.
             let frames = [];
@@ -487,17 +490,21 @@ const server = http.createServer((req, res) => {
                 .filter(n => !n.startsWith('.') && n.toLowerCase().endsWith('.png'))
                 .sort((x, y) => frameNum(x) - frameNum(y));
             } catch { /* dir missing — leave frames empty */ }
-            return { name: a.name, source: 'frame_folder', dir: a.dir, frames,
+            anim = { name: a.name, source: 'frame_folder', dir: a.dir, frames,
               frame_count: a.frame_count, frame_size: a.frame_size,
               framerate: a.framerate, loop: a.loop };
-          });
-        if (!anims.length) continue;
-        count += anims.length;
-        packs.push({ entity_key: p.entity_key, entity_type: p.entity_type,
-          pack_path: p.pack_path, animations: anims });
+          }
+          if (!byEntity.has(ek)) {
+            byEntity.set(ek, { entity_key: ek, entity_type: p.entity_type,
+              pack_path: p.pack_path, animations: [] });
+          }
+          byEntity.get(ek).animations.push(anim);
+          count++;
+        }
       }
+      const packs = [...byEntity.values()];
       const out = { version: 1, generated: draft.generated,
-        source: 'docs/animations_draft.json (approved entries only)', packs };
+        source: 'docs/animations_draft.json (approved entries, grouped by entity_key)', packs };
       fs.writeFileSync(path.join(GAME_ROOT, 'docs', 'animations.json'),
         JSON.stringify(out, null, 2));
       res.writeHead(200, { 'Content-Type': 'application/json' });

@@ -59,7 +59,8 @@
     background:rgba(0,0,0,.35); color:#fff; font-size:22px; cursor:pointer; }
   .thumb.playing .play { display:none; }
   .info .name-line { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
-  .info .name-line input.name { width:130px; font-weight:600; }
+  .info .name-line input.name { width:120px; font-weight:600; }
+  .info .name-line input.ekey { width:170px; color:var(--accent); }
   .info .purpose { color:var(--dim); font-size:12px; margin-top:3px; }
   .info .src { color:var(--dim); font-size:11px; margin-top:2px; }
   .info .raw { color:#6f7889; }
@@ -93,6 +94,7 @@
     <label>Type <select id="f-type"></select></label>
     <label>Search <input type="text" id="f-q" placeholder="pack / animation name"></label>
     <span class="spacer"></span>
+    <button id="btn-reject-all" title="Reject every animation currently matching the filter">🗑 Reject all filtered</button>
     <button id="btn-save">💾 Save Draft</button>
     <button id="btn-export" class="primary">⬇ Export approved → animations.json</button>
   </div>
@@ -165,7 +167,7 @@ function matches(pack, anim) {
   if (fStatus !== 'all' && anim.status !== fStatus) return false;
   if (fType !== 'all' && pack.entity_type !== fType) return false;
   if (q) {
-    const hay = (pack.pack_id + ' ' + pack.entity_key + ' ' + anim.name + ' ' + anim.raw_name).toLowerCase();
+    const hay = (pack.pack_id + ' ' + (anim.entity_key||'') + ' ' + anim.name + ' ' + anim.raw_name).toLowerCase();
     if (!hay.includes(q)) return false;
   }
   return true;
@@ -203,17 +205,21 @@ function renderPack(pack, visAnims) {
   head.appendChild(rejAll);
   const body = document.createElement('div'); body.className = 'pack-body';
 
-  // pack-level editable fields
+  // pack-level editable fields (entity_key is now per-row; type is per-pack)
   const pf = document.createElement('div'); pf.className = 'pack-fields';
-  pf.innerHTML = `<span>entity_key</span>`;
-  const keyInp = document.createElement('input'); keyInp.type = 'text'; keyInp.value = pack.entity_key;
-  keyInp.onchange = () => { pack.entity_key = keyInp.value.trim(); markDirty(); head.querySelector('h2').textContent = pack.entity_key; };
-  pf.appendChild(keyInp);
   const tLabel = document.createElement('span'); tLabel.textContent = 'entity_type'; pf.appendChild(tLabel);
   const typeSel = document.createElement('select');
   typeSel.innerHTML = TYPE_OPTIONS.map(t => `<option ${t===pack.entity_type?'selected':''}>${t}</option>`).join('');
   typeSel.onchange = () => { pack.entity_type = typeSel.value; markDirty(); head.querySelector('.badge').textContent = pack.entity_type; };
   pf.appendChild(typeSel);
+  const setAll = document.createElement('button'); setAll.textContent = 'set entity_key on all shown…';
+  setAll.title = 'Bulk-rename the entity_key of every animation shown in this pack';
+  setAll.onclick = () => {
+    const v = prompt('entity_key for all shown animations in this pack:', visAnims[0]?.entity_key || pack.entity_key);
+    if (v == null) return;
+    visAnims.forEach(a => { a.entity_key = v.trim(); }); markDirty(); render();
+  };
+  pf.appendChild(setAll);
   body.appendChild(pf);
 
   for (const anim of visAnims) body.appendChild(renderRow(anim));
@@ -237,12 +243,17 @@ function renderRow(anim) {
   // ── info ──
   const info = document.createElement('div'); info.className = 'info';
   const nameLine = document.createElement('div'); nameLine.className = 'name-line';
+  const ekInp = document.createElement('input'); ekInp.className = 'ekey'; ekInp.type = 'text';
+  ekInp.value = anim.entity_key || ''; ekInp.title = 'entity_key — which entity this animation belongs to';
+  ekInp.onchange = () => { anim.entity_key = ekInp.value.trim(); markDirty(); };
+  const sep = document.createElement('span'); sep.className = 'small'; sep.textContent = '·';
   const nameInp = document.createElement('input'); nameInp.className = 'name'; nameInp.type = 'text'; nameInp.value = anim.name;
   nameInp.onchange = () => { anim.name = nameInp.value.trim(); markDirty(); };
-  nameLine.appendChild(nameInp);
+  nameLine.appendChild(ekInp); nameLine.appendChild(sep); nameLine.appendChild(nameInp);
   nameLine.insertAdjacentHTML('beforeend',
     `<span class="badge">${anim.source === 'spritesheet' ? 'sheet' : 'frames'}</span>` +
-    `<span class="badge">${anim.frame_count}f ${anim.frame_size?.[0]||'?'}×${anim.frame_size?.[1]||'?'}</span>`);
+    `<span class="badge">${anim.frame_count}f ${anim.frame_size?.[0]||'?'}×${anim.frame_size?.[1]||'?'}</span>` +
+    (anim.auto ? `<span class="badge" style="color:var(--ok)" title="${anim.auto_reason||'auto-approved'}">🤖 auto</span>` : ''));
   info.appendChild(nameLine);
   info.insertAdjacentHTML('beforeend',
     `<div class="purpose">${anim.purpose_guess || ''}</div>` +
@@ -387,6 +398,13 @@ $('#f-type').onchange = render;
 $('#f-q').oninput = () => { clearTimeout(render._t); render._t = setTimeout(render, 200); };
 $('#btn-save').onclick = save;
 $('#btn-export').onclick = exportFinal;
+$('#btn-reject-all').onclick = () => {
+  const hits = DRAFT.packs.flatMap(p => p.animations.filter(a => matches(p, a)));
+  if (!hits.length) { toast('Nothing matches the current filter'); return; }
+  if (!confirm(`Reject all ${hits.length} animation(s) matching the current filter?`)) return;
+  hits.forEach(a => { a.status = 'rejected'; });
+  markDirty(); render();
+};
 window.addEventListener('beforeunload', e => { if (dirty) { e.preventDefault(); e.returnValue = ''; } });
 
 load();

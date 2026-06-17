@@ -35,8 +35,8 @@ PROJECT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSETS_JSON = os.path.join(PROJECT, "docs", "assets.json")
 DRAFT_JSON = os.path.join(PROJECT, "docs", "animations_draft.json")
 
-# Per-animation fields a human may override in the reviewer; preserved across re-scans.
-USER_FIELDS = ("status", "remark", "name", "framerate", "loop")
+# Per-animation fields a human (or tools/auto_review.py) may set; preserved across re-scans.
+USER_FIELDS = ("status", "remark", "name", "framerate", "loop", "auto", "auto_reason", "entity_key")
 # Per-pack fields a human may override; preserved by pack_id across re-scans.
 PACK_USER_FIELDS = ("entity_key", "entity_type")
 
@@ -93,6 +93,15 @@ def canonical_name(raw):
 NOISE_TOKENS = {"free", "pack", "sprite", "sprites", "spritesheet",
                 "png", "file", "files", "v1", "v2", "v3", "2d", "game"}
 
+# Folder segments that wrap art without naming an entity — stripped when deriving
+# a per-animation entity_key from the path between the pack root and the action.
+WRAPPER_SEGS = {
+    "png", "png files", "png sequences", "pngs", "sprites", "sprite",
+    "spritesheet", "spritesheets", "sprite sheet", "sprite sheets",
+    "animation", "animations", "individual sprites", "frames", "frame",
+    "export", "exported", "images", "image", "character", "characters",
+}
+
 
 def slug_entity_key(pack_id):
     """Frost_Guardian_FREE_v1.0 → frost_guardian."""
@@ -101,6 +110,26 @@ def slug_entity_key(pack_id):
     tokens = [t for t in re.split(r"[^a-z0-9]+", s) if t]
     tokens = [t for t in tokens if t not in NOISE_TOKENS and not re.fullmatch(r"v\d+", t)]
     return "_".join(tokens) or "entity"
+
+
+def derive_entity_key(base_slug, pack_path, loc):
+    """Per-animation entity key. For multi-character packs (orc/ogre/goblin under
+    one pack) the character folder disambiguates; single-entity packs fall back to
+    the pack slug. `loc` is the anim's dir (frame_folder) or spritesheet path."""
+    within = loc[len(pack_path):].strip("/") if loc.startswith(pack_path) else loc
+    segs = within.split("/")[:-1]   # drop the action segment (folder or file)
+    char_segs = [s for s in segs if s.lower() not in WRAPPER_SEGS]
+    if not char_segs:
+        return base_slug
+    char = re.sub(r"[^a-z0-9]+", "_", "_".join(char_segs).lower()).strip("_")
+    if not char:
+        return base_slug
+    # Avoid doubling only when the character folder IS the whole pack slug
+    # (e.g. pack "frost" with a "Frost/" folder). A substring like "ogre" inside
+    # "orc_ogre_and_goblin" must still split, so only an exact match collapses.
+    if char == base_slug:
+        return base_slug
+    return f"{base_slug}_{char}"
 
 
 def entity_type_from_category(category):
@@ -196,6 +225,8 @@ def main():
     stats = {"packs": 0, "new": 0, "kept": 0, "changed": 0, "total": 0}
 
     for pack in catalog.get("packs", []):
+        base_slug = slug_entity_key(pack.get("id", ""))
+        pack_path = pack.get("path", "")
         anims = []
         for asset in pack.get("assets", []):
             entry = make_entry(pack, asset)
@@ -204,6 +235,9 @@ def main():
             # skip "spritesheets" that are really a single still (no real frames)
             if entry["frame_count"] < 2:
                 continue
+            # per-animation entity key (splits multi-character packs)
+            loc = entry.get("dir") or entry.get("spritesheet") or ""
+            entry["entity_key"] = derive_entity_key(base_slug, pack_path, loc)
 
             old = prior.get(entry["id"])
             if old is None:
