@@ -1,3 +1,5 @@
+import { loadAnimationsJSON } from '../systems/AnimationLoader.js';
+
 const TS  = "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)";
 const PK  = "THE PACK/Monsters";
 const CP  = "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees";
@@ -232,6 +234,7 @@ export class PreloadScene extends Phaser.Scene {
 
   create() {
     this._defineAnimations();
+    loadAnimationsJSON();   // best-effort merge of reviewer-approved entities (AnimationLoader)
     this._loadNpcDialogue();
     this._loadRegionMaps();
   }

@@ -473,13 +473,24 @@ const server = http.createServer((req, res) => {
       for (const p of draft.packs || []) {
         const anims = (p.animations || [])
           .filter(a => a.status === 'approved')
-          .map(a => a.source === 'spritesheet'
-            ? { name: a.name, source: 'spritesheet', spritesheet: a.spritesheet,
+          .map(a => {
+            if (a.source === 'spritesheet') {
+              return { name: a.name, source: 'spritesheet', spritesheet: a.spritesheet,
                 frame_count: a.frame_count, frame_size: a.frame_size,
-                horizontal: a.horizontal, framerate: a.framerate, loop: a.loop }
-            : { name: a.name, source: 'frame_folder', dir: a.dir,
-                frame_count: a.frame_count, frame_size: a.frame_size,
-                framerate: a.framerate, loop: a.loop });
+                horizontal: a.horizontal, framerate: a.framerate, loop: a.loop };
+            }
+            // Embed the real ordered frame filenames so the runtime AnimationLoader
+            // builds exact URLs/keys with no filename guessing.
+            let frames = [];
+            try {
+              frames = fs.readdirSync(path.join(GAME_ROOT, a.dir))
+                .filter(n => !n.startsWith('.') && n.toLowerCase().endsWith('.png'))
+                .sort((x, y) => frameNum(x) - frameNum(y));
+            } catch { /* dir missing — leave frames empty */ }
+            return { name: a.name, source: 'frame_folder', dir: a.dir, frames,
+              frame_count: a.frame_count, frame_size: a.frame_size,
+              framerate: a.framerate, loop: a.loop };
+          });
         if (!anims.length) continue;
         count += anims.length;
         packs.push({ entity_key: p.entity_key, entity_type: p.entity_type,

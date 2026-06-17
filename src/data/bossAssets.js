@@ -1,13 +1,13 @@
-// Boss asset families, split out of PreloadScene so the ~230 large boss frames
-// (mino/frost/dslime live in the 81 MB assest2 pack) load lazily when the
-// player enters a region that uses them — instead of at initial boot.
+// Boss asset families — the exact, hand-tuned legacy boss specs. This is now a
+// pure DATA module; the generic load/define logic lives in
+// src/systems/AnimationLoader.js, which seeds its family registry from here and
+// also merges entities approved in animation_reviewer.html (docs/animations.json).
 //
 // Each family lists its image loads ({key,url}) and its animation specs
 // ({key, src, nums, fr, rep}); an anim's frame keys are `${src}_${pad(n)}`,
 // letting one state's frames back another anim (e.g. slime "run" reuses idle).
-//
-// loadBossAssets()/defineBossAnims() work with any scene and are idempotent, so
-// both the host and the joining client run them on region entry — co-op safe.
+// The frames load lazily on region entry (the ~230 large mino/frost/dslime frames
+// live in the 81 MB assest2 pack) rather than at boot. See AnimationLoader.js.
 
 const PK = 'THE PACK/Monsters';
 const MN = 'assest2/mino_v1.1_free/animations';
@@ -114,45 +114,6 @@ export const BOSS_FAMILIES = {
   },
 };
 
-// Map a boss textureBase to its family key. (They're the same string today, but
-// this keeps the lookup explicit.)
-export function bossFamilyForTextureBase(textureBase) {
-  return BOSS_FAMILIES[textureBase] ? textureBase : null;
-}
-
-// True if every image + anim for this family is already present.
-export function bossAssetsReady(scene, family) {
-  const fam = BOSS_FAMILIES[family];
-  if (!fam) return true; // nothing to load (unknown/legacy base)
-  for (const a of fam.anims) if (!scene.anims.exists(a.key)) return false;
-  for (const l of fam.loads) if (!scene.textures.exists(l.key)) return false;
-  return true;
-}
-
-// Queue this family's image loads onto the scene loader. Returns the number of
-// NEW files queued (0 if everything is already cached). Caller starts the load.
-export function queueBossLoads(scene, family) {
-  const fam = BOSS_FAMILIES[family];
-  if (!fam) return 0;
-  let queued = 0;
-  for (const { key, url } of fam.loads) {
-    if (!scene.textures.exists(key)) { scene.load.image(key, url); queued++; }
-  }
-  return queued;
-}
-
-// Define this family's animations (idempotent). Call only after the textures
-// for it have finished loading.
-export function defineBossAnims(scene, family) {
-  const fam = BOSS_FAMILIES[family];
-  if (!fam) return;
-  for (const a of fam.anims) {
-    if (scene.anims.exists(a.key)) continue;
-    scene.anims.create({
-      key: a.key,
-      frames: a.nums.map(n => ({ key: `${a.src}_${pad(n)}` })),
-      frameRate: a.fr ?? 10,
-      repeat: a.rep ?? -1,
-    });
-  }
-}
+// The generic loader functions (familyForKey / assetsReady / queueLoads /
+// defineAnims) now live in src/systems/AnimationLoader.js, which consumes the
+// BOSS_FAMILIES data above. This module intentionally exports data only.

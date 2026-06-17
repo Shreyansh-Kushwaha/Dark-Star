@@ -76,6 +76,28 @@ node server/combined_server.js          # http://localhost:8080
 3. `python3 tools/scan_animations.py` → only the new candidates are added as `pending`.
 4. Open the reviewer, filter to **Pending**, review just the new ones, **Export**.
 
+## 4. Runtime — `AnimationLoader`
+
+`src/systems/AnimationLoader.js` is the generic engine that turns this data into
+live Phaser animations. It seeds a family registry from two sources:
+
+1. `BOSS_FAMILIES` (`src/data/bossAssets.js`) — the exact legacy specs for the 6
+   shipping bosses (frame reuse, reversed death frames, single-frame idles). Used
+   verbatim, so bosses are byte-identical to before.
+2. `docs/animations.json` (approved entities) — each `frame_folder` animation is
+   converted into the same `{ loads, anims }` shape. The export embeds the real
+   ordered `frames`, so URLs/keys are exact (no filename guessing). Legacy keys
+   are never clobbered.
+
+`PreloadScene.create()` calls `loadAnimationsJSON()` once at boot (best-effort —
+failure just leaves the legacy bosses intact). `GameScene._ensureBossAssets()`
+drives playback through `familyForKey` / `familyLoads` / `assetsReady` /
+`defineAnims`. Adding a new entity is now data-only: approve it in the reviewer →
+export → it’s loadable by `entity_key` with no code change.
+
+> Spritesheet-source entities are editor-only for now — the image-frame loader
+> can’t slice a sheet, so only `frame_folder` entities become runtime families.
+
 ## Files
 
 | File | Role |
@@ -83,12 +105,7 @@ node server/combined_server.js          # http://localhost:8080
 | `tools/scan_animations.py` | assets.json → animations_draft.json (guesses + diff-merge) |
 | `docs/animations_draft.json` | working review queue (status + remarks) |
 | `animation_reviewer.html` | the review UI (served statically at `/animation_reviewer.html`) |
-| `docs/animations.json` | approved output (consumed by the future runtime loader) |
+| `docs/animations.json` | approved output (consumed by the runtime loader) |
+| `src/systems/AnimationLoader.js` | generic runtime loader (legacy bosses + approved JSON entities) |
+| `src/data/bossAssets.js` | legacy boss family DATA only (logic moved to AnimationLoader) |
 | `server/combined_server.js` | endpoints: `/api/list-frames`, `/api/animations-draft/save`, `/api/animations/export`, `/api/animations` |
-
-## Next (not yet built)
-
-`docs/animations.json` is the input for a future generic `AnimationLoader`
-(`src/systems/AnimationLoader.js`) that would replace `src/data/bossAssets.js`.
-That runtime swap is intentionally deferred until enough entries are approved,
-since the loader needs a populated `animations.json` to read.

@@ -7,7 +7,7 @@ import { Player } from '../entities/Player.js';
 import { Enemy  } from '../entities/Enemy.js';
 import { Boss   } from '../entities/Boss.js';
 import { BOSSES } from '../data/bosses.js';
-import { BOSS_FAMILIES, bossFamilyForTextureBase, bossAssetsReady, defineBossAnims } from '../data/bossAssets.js';
+import { familyForKey, familyLoads, assetsReady, defineAnims } from '../systems/AnimationLoader.js';
 import { Projectile } from '../entities/Projectile.js';
 import { AudioManager } from '../systems/AudioManager.js';
 import { QuestManager } from '../systems/QuestManager.js';
@@ -863,6 +863,7 @@ export class GameScene extends Phaser.Scene {
       c = drowned ? 0x8fd4e0 : 0xffd890; lightR = 64;                       // warm firelight elsewhere
     }
     else if (n === 'lava_rock')     { c = 0xff6a1e; lightR = 110; }  // Demon Forge: molten slag emits heat
+    else if (n === 'fumarole')      { c = 0xff8a2e; lightR = 64;  }  // Ash Flats: vents breathe ember light
     else if (n === 'crystal_amber') { c = 0xffb24a; lightR = 90;  }  // cooling metal glints
     else if (n === 'crystal_cyan')  { c = 0x6fd0e0; lightR = 90;  }  // ice / gem light
     else if (n === 'void_shard')    { c = 0x9a5cff; lightR = 100; }  // Severance: void shards bleed light
@@ -1302,10 +1303,10 @@ export class GameScene extends Phaser.Scene {
   // it never races the map-sprite loader on this.load.
   _ensureBossAssets(bossKey) {
     const base   = BOSSES[bossKey]?.textureBase;
-    const family = bossFamilyForTextureBase(base);
+    const family = familyForKey(base);
     if (!family) { this._bossAssetsReady = true; return; } // no lazy assets needed
 
-    if (bossAssetsReady(this, family)) { defineBossAnims(this, family); this._bossAssetsReady = true; return; }
+    if (assetsReady(this, family)) { defineAnims(this, family); this._bossAssetsReady = true; return; }
 
     // Already streaming this family — don't queue a second loader on retry.
     if (this._bossLoadingFamily === family) return;
@@ -1316,10 +1317,10 @@ export class GameScene extends Phaser.Scene {
     this._bossAssetsReady = false;
     const loader = new Phaser.Loader.LoaderPlugin(this);
     let queued = 0;
-    for (const { key, url } of BOSS_FAMILIES[family].loads) {
+    for (const { key, url } of familyLoads(family)) {
       if (!this.textures.exists(key)) { loader.image(key, url); queued++; }
     }
-    const finish = () => { defineBossAnims(this, family); this._bossAssetsReady = true; };
+    const finish = () => { defineAnims(this, family); this._bossAssetsReady = true; };
     if (queued === 0) { finish(); return; }
     loader.once(Phaser.Loader.Events.COMPLETE, finish);
     loader.once(Phaser.Loader.Events.LOAD_ERROR, () => { /* keep waiting for COMPLETE; missing frame just won't show */ });
