@@ -31,6 +31,7 @@
   .pill.ok { background:rgba(62,207,142,.15); color:var(--ok); }
   .pill.warn { background:rgba(255,92,92,.15); color:var(--warn); }
   .pill.pending { background:rgba(224,169,46,.15); color:var(--pending); }
+  .pill.rejected { background:rgba(120,128,144,.18); color:#8a93a3; }
   .progress { height:6px; background:var(--panel2); border-radius:4px; overflow:hidden; flex:1; min-width:120px; }
   .progress > i { display:block; height:100%; background:var(--ok); width:0; transition:width .2s; }
   main { padding:16px; max-width:1100px; margin:0 auto; }
@@ -48,6 +49,8 @@
     align-items:center; padding:10px 6px; border-top:1px solid var(--line); }
   .row.s-approved { background:rgba(62,207,142,.05); }
   .row.s-needs_fix { background:rgba(255,92,92,.06); }
+  .row.s-rejected { opacity:.5; background:rgba(120,128,144,.06); }
+  .btn-rej.active { background:#5b6472; border-color:#5b6472; color:#11151c; font-weight:700; }
   .thumb { width:96px; height:96px; background:var(--panel2); border-radius:6px;
     display:flex; align-items:center; justify-content:center; overflow:hidden;
     position:relative; image-rendering:pixelated; }
@@ -83,6 +86,7 @@
         <option value="pending">Pending</option>
         <option value="needs_fix">Needs Fix</option>
         <option value="approved">Approved</option>
+        <option value="rejected">Rejected</option>
         <option value="all">All</option>
       </select>
     </label>
@@ -97,6 +101,7 @@
       <span class="pill ok" id="c-approved">0 approved</span>
       <span class="pill warn" id="c-fix">0 needs fix</span>
       <span class="pill pending" id="c-pending">0 pending</span>
+      <span class="pill rejected" id="c-rejected">0 rejected</span>
       <span class="small" id="c-total"></span>
     </div>
     <div class="progress"><i id="prog"></i></div>
@@ -144,9 +149,11 @@ function updateCounts() {
   const approved = a.filter(x => x.status === 'approved').length;
   const fix = a.filter(x => x.status === 'needs_fix').length;
   const pending = a.filter(x => x.status === 'pending').length;
+  const rejected = a.filter(x => x.status === 'rejected').length;
   $('#c-approved').textContent = approved + ' approved';
   $('#c-fix').textContent = fix + ' needs fix';
   $('#c-pending').textContent = pending + ' pending';
+  $('#c-rejected').textContent = rejected + ' rejected';
   $('#c-total').textContent = '/ ' + a.length + ' total';
   $('#prog').style.width = a.length ? (100 * approved / a.length) + '%' : '0';
 }
@@ -185,7 +192,15 @@ function renderPack(pack, visAnims) {
     `<h2>${pack.entity_key}</h2>` +
     `<span class="badge">${pack.entity_type}</span>` +
     `<span class="meta">${pack.pack_id} · ${visAnims.length} shown / ${pack.animations.length}</span>` +
-    `<span class="spacer"></span><span class="small">${pack.category || ''}</span>`;
+    `<span class="small">${pack.category || ''}</span><span class="spacer"></span>`;
+  const rejAll = document.createElement('button'); rejAll.textContent = '🗑 Reject all shown';
+  rejAll.title = 'Mark every animation currently shown in this pack as rejected';
+  rejAll.onclick = () => {
+    if (!confirm(`Reject all ${visAnims.length} shown animation(s) in "${pack.entity_key}"?`)) return;
+    visAnims.forEach(a => { a.status = 'rejected'; });
+    markDirty(); render();
+  };
+  head.appendChild(rejAll);
   const body = document.createElement('div'); body.className = 'pack-body';
 
   // pack-level editable fields
@@ -239,14 +254,18 @@ function renderRow(anim) {
   const line1 = document.createElement('div'); line1.className = 'line1';
   const ok = document.createElement('button'); ok.className = 'btn-ok'; ok.textContent = '✓ Approve';
   const fix = document.createElement('button'); fix.className = 'btn-fix'; fix.textContent = '✗ Needs Fix';
+  const rej = document.createElement('button'); rej.className = 'btn-rej'; rej.textContent = '🗑 Reject';
+  rej.title = "Don't use — hidden from the queue, never exported, won't return on re-scan";
   const syncBtns = () => {
     ok.classList.toggle('active', anim.status === 'approved');
     fix.classList.toggle('active', anim.status === 'needs_fix');
+    rej.classList.toggle('active', anim.status === 'rejected');
     row.className = 'row s-' + anim.status;
   };
   ok.onclick = () => { anim.status = anim.status === 'approved' ? 'pending' : 'approved'; syncBtns(); markDirty(); updateCounts(); };
   fix.onclick = () => { anim.status = anim.status === 'needs_fix' ? 'pending' : 'needs_fix'; syncBtns(); markDirty(); updateCounts(); };
-  line1.appendChild(ok); line1.appendChild(fix);
+  rej.onclick = () => { anim.status = anim.status === 'rejected' ? 'pending' : 'rejected'; syncBtns(); markDirty(); updateCounts(); };
+  line1.appendChild(ok); line1.appendChild(fix); line1.appendChild(rej);
 
   const fr = document.createElement('input'); fr.type = 'number'; fr.min = 1; fr.max = 60; fr.value = anim.framerate; fr.title = 'frames per second';
   fr.onchange = () => { anim.framerate = +fr.value || 8; markDirty(); };

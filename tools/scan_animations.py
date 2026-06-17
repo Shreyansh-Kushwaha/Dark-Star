@@ -217,8 +217,10 @@ def main():
                         entry[k] = old[k]
                 entry.setdefault("status", "pending")
                 entry.setdefault("remark", "")
-                # Art changed under an already-reviewed entry → force re-review.
-                if old.get("fingerprint") != entry["fingerprint"] and entry["status"] != "pending":
+                # Art changed under an approved/needs-fix entry → force re-review.
+                # Rejected entries stay rejected (the user explicitly dropped them).
+                if (old.get("fingerprint") != entry["fingerprint"]
+                        and entry["status"] in ("approved", "needs_fix")):
                     entry["status"] = "pending"
                     note = f"[auto] art changed ({old.get('fingerprint')} → {entry['fingerprint']}), re-review"
                     entry["remark"] = (entry.get("remark", "") + " " + note).strip()
