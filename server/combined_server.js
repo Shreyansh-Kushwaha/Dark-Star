@@ -74,14 +74,24 @@ function frameNum(name) {
   return m ? parseInt(m[1], 10) : 0;
 }
 
+// Editor / aux folders that never contain usable game sprites — skip them so big
+// packs (assets5/assets6) don't flood the manifest with source files or macOS junk.
+const SKIP_DIRS = new Set([
+  '__MACOSX', 'PSD', 'PSD files', 'ASEPRITE', 'Aseprite', 'ASE',
+  'Tiled', 'Tiled_files', 'Vector Parts', 'Audio', 'Music',
+]);
+
 function scanDir(dir) {
   try {
-    return fs.readdirSync(dir).map(name => {
-      const full = path.join(dir, name);
-      let isDir = false;
-      try { isDir = fs.statSync(full).isDirectory(); } catch {}
-      return { name, full, isDir };
-    });
+    return fs.readdirSync(dir)
+      // Drop dotfiles (incl. ._* AppleDouble resource forks) and known aux/source dirs.
+      .filter(name => !name.startsWith('.') && !SKIP_DIRS.has(name))
+      .map(name => {
+        const full = path.join(dir, name);
+        let isDir = false;
+        try { isDir = fs.statSync(full).isDirectory(); } catch {}
+        return { name, full, isDir };
+      });
   } catch { return []; }
 }
 
@@ -108,6 +118,15 @@ function spritesFromDir(absDir, relDir) {
       const subRel = relDir + '/' + sub.name;
       if (subF.length > 0) {
         out.push({ name: path.basename(absDir) + ' — ' + sub.name, dir: subRel, frames: subF.map(f => f.name), animated: subF.length > 1 });
+        // Also surface standalone PNG animation strips living alongside the frames
+        // — e.g. enemy folders with Attack_1/2/3 frames plus separate Run/Walk/Idle sheets.
+        // Restrict to detectable spritesheets so stray single-frame stills aren't picked up.
+        for (const png of subE.filter(e => !e.isDir && e.name.toLowerCase().endsWith('.png') && !isAnimFrame(e.name))) {
+          const sh = detectSpritesheet(png.full);
+          if (!sh) continue;
+          out.push({ name: png.name.replace(/\.png$/i, ''), dir: subRel, frames: [png.name],
+            animated: true, ...sh });
+        }
       } else {
         out.push(...spritesFromDir(sub.full, subRel));
       }
@@ -182,6 +201,37 @@ const ASSET_GROUPS = [
   { cat:'Custom',    grp:'Rocks Sand',     rel:'assets_custom/rocks_sand' },
   { cat:'Custom',    grp:'Rocks Void',     rel:'assets_custom/rocks_void' },
   { cat:'Custom',    grp:'Structures',     rel:'assets_custom/structures' },
+
+  // ── assets5 ──────────────────────────────────────────────────────────────
+  { cat:'Dungeon II',     grp:'Frames',       rel:'assets5/0x72_dungeon_tileset_ii/0x72_DungeonTilesetII_v1.7/frames' },
+  { cat:'Dungeon Crawl',  grp:'Dungeon',      rel:'assets5/dungeon_crawl_32x32_cc0/Dungeon Crawl Stone Soup Full/dungeon' },
+  { cat:'Dungeon Crawl',  grp:'Monster',      rel:'assets5/dungeon_crawl_32x32_cc0/Dungeon Crawl Stone Soup Full/monster' },
+  { cat:'Dungeon Crawl',  grp:'Player',       rel:'assets5/dungeon_crawl_32x32_cc0/Dungeon Crawl Stone Soup Full/player' },
+  { cat:'Dungeon Crawl',  grp:'Item',         rel:'assets5/dungeon_crawl_32x32_cc0/Dungeon Crawl Stone Soup Full/item' },
+  { cat:'Dungeon Crawl',  grp:'Effect',       rel:'assets5/dungeon_crawl_32x32_cc0/Dungeon Crawl Stone Soup Full/effect' },
+  { cat:'Dungeon Crawl',  grp:'Misc',         rel:'assets5/dungeon_crawl_32x32_cc0/Dungeon Crawl Stone Soup Full/misc' },
+  { cat:'Dungeon Crawl',  grp:'GUI',          rel:'assets5/dungeon_crawl_32x32_cc0/Dungeon Crawl Stone Soup Full/gui' },
+  { cat:'Dungeon Crawl',  grp:'Emissaries',   rel:'assets5/dungeon_crawl_32x32_cc0/Dungeon Crawl Stone Soup Full/emissaries' },
+  { cat:'Ninja',          grp:'Characters',   rel:'assets5/ninja_adventure_pack/Ninja Adventure - Asset Pack/Actor/Character' },
+  { cat:'Ninja',          grp:'Characters Anim', rel:'assets5/ninja_adventure_pack/Ninja Adventure - Asset Pack/Actor/CharacterAnimated' },
+  { cat:'Ninja',          grp:'Monsters',     rel:'assets5/ninja_adventure_pack/Ninja Adventure - Asset Pack/Actor/Monster' },
+  { cat:'Ninja',          grp:'Bosses',       rel:'assets5/ninja_adventure_pack/Ninja Adventure - Asset Pack/Actor/Boss' },
+  { cat:'Ninja',          grp:'Animals',      rel:'assets5/ninja_adventure_pack/Ninja Adventure - Asset Pack/Actor/Animal' },
+  { cat:'Ninja',          grp:'Items',        rel:'assets5/ninja_adventure_pack/Ninja Adventure - Asset Pack/Items' },
+  { cat:'Ninja',          grp:'FX',           rel:'assets5/ninja_adventure_pack/Ninja Adventure - Asset Pack/FX' },
+  { cat:'Ninja',          grp:'UI',           rel:'assets5/ninja_adventure_pack/Ninja Adventure - Asset Pack/Ui' },
+  { cat:'Ninja',          grp:'Backgrounds',  rel:'assets5/ninja_adventure_pack/Ninja Adventure - Asset Pack/Backgrounds' },
+  { cat:'Fantasy Icons',  grp:'Icons',        rel:"assets5/shikashi_fantasy_icons/Shikashi's Fantasy Icons Pack v2" },
+
+  // ── assets6 ──────────────────────────────────────────────────────────────
+  { cat:'Animals',        grp:'Set 1',        rel:'assets6/animal/PNG' },
+  { cat:'Animals',        grp:'Set 2',        rel:'assets6/animal 2/PNG' },
+  { cat:'Enemies A6',     grp:'Skeleton/Fire/Plant', rel:'assets6/enemy' },
+  { cat:'Enemies A6',     grp:'Slime',        rel:'assets6/slime/PNG' },
+  { cat:'Bosses A6',      grp:'Leaders (Aztec/Maya/Nordic)', rel:'assets6/enemy 2' },
+  { cat:'Bosses A6',      grp:'Seers',        rel:'assets6/enemy 3' },
+  { cat:'Bosses A6',      grp:'Viking/Caveman/Goblin', rel:'assets6/enemy 4' },
+  { cat:'Bosses A6',      grp:'Minotaur',     rel:'assets6/minotaur' },
 ];
 
 function buildManifest() {

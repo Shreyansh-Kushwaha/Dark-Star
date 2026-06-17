@@ -1121,6 +1121,11 @@ function renderTrayGrid() {
   const grid = document.getElementById('tray-grid');
   grid.classList.remove('global-search-mode');
   grid.innerHTML = '';
+  // Big packs (assets5/6) can hold thousands of sprites; rendering all tiles at once
+  // is slow. Cap the DOM and prompt the user to pick a group or search to narrow.
+  const TILE_CAP = 600;
+  const total = sprites.length;
+  if (total > TILE_CAP) sprites = sprites.slice(0, TILE_CAP);
   for (const asset of sprites) {
     const tile = document.createElement('div');
     tile.className = 'asset-tile' + (S.placingAsset === asset ? ' selected' : '');
@@ -1131,6 +1136,12 @@ function renderTrayGrid() {
     tile.querySelector('.crop-btn').onclick = e => { e.stopPropagation(); openCropModal(asset); };
     tile.querySelector('.rand-btn').onclick = e => { e.stopPropagation(); openRandModal(asset); };
     grid.appendChild(tile);
+  }
+  if (total > TILE_CAP) {
+    const note = document.createElement('div');
+    note.style.cssText = 'grid-column:1/-1;padding:8px;font-size:11px;color:#ffcc66;text-align:center';
+    note.textContent = `Showing first ${TILE_CAP} of ${total} — pick a group above or type in 🔍 search to narrow.`;
+    grid.appendChild(note);
   }
 }
 
