@@ -79,6 +79,10 @@ function frameNum(name) {
 const SKIP_DIRS = new Set([
   '__MACOSX', 'PSD', 'PSD files', 'ASEPRITE', 'Aseprite', 'ASE',
   'Tiled', 'Tiled_files', 'Vector Parts', 'Audio', 'Music',
+  // Packs that ship per-action numbered "PNG Sequences" AND a redundant "Spritesheets"
+  // copy (huge multi-row grids the single-row player can't animate). Prefer the
+  // sequences; skip the grid duplicates so they don't appear as broken stills.
+  'Spritesheets',
 ]);
 
 function scanDir(dir) {

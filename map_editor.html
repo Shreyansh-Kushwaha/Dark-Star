@@ -162,7 +162,7 @@ button.portal-btn{border-color:#00ccff;color:#66eeff}button.portal-btn:hover{bac
   <span id="zoom-label">25%</span>
   <button id="btn-zoom-in">+</button>
   <div class="sep"></div>
-  <button class="purple" id="btn-preview">▶ Preview</button>
+  <button class="purple" id="btn-preview" title="Pause/resume sprite animation">⏹ Stop</button>
   <div class="sep"></div>
   <button id="btn-select">🖱 Select</button>
   <button id="btn-pan">✋ Pan</button>
@@ -422,7 +422,7 @@ const S = {
   transformer: null,
   selectedNode: null,
   placingAsset: null,
-  previewInterval: null,
+  animPaused: false,
   history: [],
   assets: null,
   imgCache: {},
@@ -857,17 +857,30 @@ function bindToolbar() {
 // ── Spritesheet auto-animation ─────────────────────────────────────────────
 function startEditorAnimTicker() {
   setInterval(() => {
+    if (S.animPaused) return;
     let dirty = false;
     getAllSpriteNodes().forEach(node => {
       const fc = node.getAttr('assetFrameCount');
-      if (!fc || fc <= 1) return;
-      const fw = node.getAttr('assetFrameW');
-      const fh = node.getAttr('assetFrameH');
-      const fr = node.getAttr('assetFrameRow') || 0;
-      const cf = ((node.getAttr('currentFrame') || 0) + 1) % fc;
-      node.setAttr('currentFrame', cf);
-      node.crop({ x: fw * cf, y: fr * fh, width: fw, height: fh });
-      dirty = true;
+      if (fc && fc > 1) {
+        // Single-row spritesheet — advance the crop window.
+        const fw = node.getAttr('assetFrameW');
+        const fh = node.getAttr('assetFrameH');
+        const fr = node.getAttr('assetFrameRow') || 0;
+        const cf = ((node.getAttr('currentFrame') || 0) + 1) % fc;
+        node.setAttr('currentFrame', cf);
+        node.crop({ x: fw * cf, y: fr * fh, width: fw, height: fh });
+        dirty = true;
+        return;
+      }
+      // Numbered-frame folder animation — swap to the next frame image.
+      const frames = node.getAttr('assetFrames');
+      if (!frames || frames.length <= 1) return;
+      const next = ((node.getAttr('currentFrame') || 0) + 1) % frames.length;
+      node.setAttr('currentFrame', next);
+      const url = assetURL(node.getAttr('assetDir'), frames[next]);
+      const cached = S.imgCache[url];
+      if (cached) { node.image(cached); dirty = true; }
+      else getImg(url).then(img => { node.image(img); konvaLayerFor(node.getAttr('spriteLayer')).batchDraw(); }).catch(() => {});
     });
     if (dirty) { S.belowLayer.batchDraw(); S.aboveLayer.batchDraw(); }
   }, 150);
@@ -946,7 +959,7 @@ function renderGlobalSearchGrid() {
         const tile = document.createElement('div');
         tile.className = 'asset-tile' + (S.placingAsset === asset ? ' selected' : '');
         const url = assetURL(asset.dir, asset.frames[0]);
-        const animBadge = (asset.animated && asset.frameW) ? '<div class="anim-badge">▶ anim</div>' : '';
+        const animBadge = (asset.animated && (asset.frameW || (asset.frames && asset.frames.length > 1))) ? '<div class="anim-badge">▶ anim</div>' : '';
         tile.innerHTML = `<div class="tile-img-wrap"><img src="${url}" loading="lazy" title="${asset.name}">${animBadge}<button class="crop-btn" title="Crop this asset">✂</button><button class="rand-btn" title="Randomize this asset">🎲</button></div><span>${asset.name}</span>`;
         tile.onclick = () => startPlacing(asset);
         tile.querySelector('.crop-btn').onclick = e => { e.stopPropagation(); openCropModal(asset); };
@@ -1130,7 +1143,7 @@ function renderTrayGrid() {
     const tile = document.createElement('div');
     tile.className = 'asset-tile' + (S.placingAsset === asset ? ' selected' : '');
     const url = assetURL(asset.dir, asset.frames[0]);
-    const animBadge = (asset.animated && asset.frameW) ? '<div class="anim-badge">▶ anim</div>' : '';
+    const animBadge = (asset.animated && (asset.frameW || (asset.frames && asset.frames.length > 1))) ? '<div class="anim-badge">▶ anim</div>' : '';
     tile.innerHTML = `<div class="tile-img-wrap"><img src="${url}" loading="lazy" title="${asset.name}">${animBadge}<button class="crop-btn" title="Crop this asset">✂</button><button class="rand-btn" title="Randomize this asset">🎲</button></div><span>${asset.name}</span>`;
     tile.onclick = () => startPlacing(asset);
     tile.querySelector('.crop-btn').onclick = e => { e.stopPropagation(); openCropModal(asset); };
@@ -1882,37 +1895,28 @@ function bindPropsPanel() {
   };
 }
 
-// ── Preview animation ──────────────────────────────────────────────────────
+// ── Animation play/pause ───────────────────────────────────────────────────
+// Both spritesheets and numbered-frame folders auto-play via startEditorAnimTicker.
+// This button just pauses/resumes that ticker and resets every sprite to frame 0.
 function togglePreview() {
   const btn = document.getElementById('btn-preview');
-  if (S.previewInterval) {
-    clearInterval(S.previewInterval);
-    S.previewInterval = null;
-    btn.textContent = '▶ Preview';
-    getAllSpriteNodes().forEach(node => {
-      if (node.getAttr('assetFrameCount') > 1) return; // spritesheet — auto-animating, don't reset
-      const frames = node.getAttr('assetFrames');
-      if (!frames || frames.length <= 1) return;
+  S.animPaused = !S.animPaused;
+  if (!S.animPaused) { btn.textContent = '⏹ Stop'; return; }
+  btn.textContent = '▶ Play';
+  getAllSpriteNodes().forEach(node => {
+    const fc = node.getAttr('assetFrameCount');
+    if (fc && fc > 1) {
+      const fw = node.getAttr('assetFrameW'), fh = node.getAttr('assetFrameH'), fr = node.getAttr('assetFrameRow') || 0;
       node.setAttr('currentFrame', 0);
-      getImg(assetURL(node.getAttr('assetDir'), frames[0])).then(img => { node.image(img); }).catch(() => {});
-    });
-    S.belowLayer.batchDraw(); S.aboveLayer.batchDraw();
-    return;
-  }
-  btn.textContent = '⏹ Stop';
-  S.previewInterval = setInterval(() => {
-    getAllSpriteNodes().forEach(node => {
-      if (node.getAttr('assetFrameCount') > 1) return; // spritesheet — already auto-animating
-      const frames = node.getAttr('assetFrames');
-      if (!frames || frames.length <= 1) return;
-      const next = (node.getAttr('currentFrame') + 1) % frames.length;
-      node.setAttr('currentFrame', next);
-      getImg(assetURL(node.getAttr('assetDir'), frames[next])).then(img => {
-        node.image(img);
-        konvaLayerFor(node.getAttr('spriteLayer')).batchDraw();
-      }).catch(() => {});
-    });
-  }, 120);
+      node.crop({ x: 0, y: fr * fh, width: fw, height: fh });
+      return;
+    }
+    const frames = node.getAttr('assetFrames');
+    if (!frames || frames.length <= 1) return;
+    node.setAttr('currentFrame', 0);
+    getImg(assetURL(node.getAttr('assetDir'), frames[0])).then(img => { node.image(img); S.belowLayer.batchDraw(); S.aboveLayer.batchDraw(); }).catch(() => {});
+  });
+  S.belowLayer.batchDraw(); S.aboveLayer.batchDraw();
 }
 
 // ── Undo ───────────────────────────────────────────────────────────────────
@@ -2372,7 +2376,7 @@ document.getElementById('load-region-modal').addEventListener('click', e => {
 
 // ── Export PNG ─────────────────────────────────────────────────────────────
 function exportPNG() {
-  if (S.previewInterval) togglePreview();
+  if (!S.animPaused) togglePreview();   // freeze animations to frame 0 for a clean capture
   const wasSelected = S.selectedNode;
   deselectAll();
   setStatus('Exporting PNG…');
