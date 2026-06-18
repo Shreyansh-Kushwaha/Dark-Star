@@ -353,11 +353,15 @@ function playSheet(anim, thumb) {
   thumb.insertBefore(canvas, thumb.firstChild);
   const sheet = new Image();
   sheet.onload = () => {
+    // Frames laid out in a grid: index = frame_start + i, wrapped by column count.
+    const start = anim.frame_start || 0;
+    const cols = Math.max(1, Math.floor(sheet.width / fw));
     let i = 0;
     const draw = () => {
       ctx.clearRect(0, 0, fw, fh);
-      const sx = anim.horizontal ? i * fw : 0;
-      const sy = anim.horizontal ? 0 : i * fh;
+      const idx = start + i;
+      const sx = (idx % cols) * fw;
+      const sy = Math.floor(idx / cols) * fh;
       ctx.drawImage(sheet, sx, sy, fw, fh, 0, 0, fw, fh);
       i = (i + 1) % n;
     };

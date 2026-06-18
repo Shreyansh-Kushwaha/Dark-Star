@@ -38,28 +38,32 @@ const ENTITY_TYPES = {};
 // spritesheet animations (sliced by Phaser using `frame_size`). Exported for
 // unit testing.
 export function familyFromPack(pack) {
-  const loads = [];
+  const loadMap = new Map();   // key -> load (dedupes a sheet shared by many rows)
   const anims = [];
+  const addLoad = l => { if (!loadMap.has(l.key)) loadMap.set(l.key, l); };
   for (const a of pack.animations || []) {
     const key = `${pack.entity_key}_${a.name}`;
     if (a.source === 'spritesheet') {
       const [fw, fh] = a.frame_size || [];
       const n = a.frame_count || 0;
       if (!fw || !fh || n < 1 || !a.spritesheet) continue;
-      const sheet = `${key}_sheet`;
-      loads.push({ key: sheet, url: a.spritesheet, frameWidth: fw, frameHeight: fh });
+      // One texture per sheet FILE (shared across rows of the same grid), so a
+      // multi-row sheet (e.g. directional animals) isn't reloaded per row.
+      const sheet = `sheet::${a.spritesheet}::${fw}x${fh}`;
+      const start = a.frame_start ?? 0;   // first frame index (row offset in a grid)
+      addLoad({ key: sheet, url: a.spritesheet, frameWidth: fw, frameHeight: fh });
       anims.push({
         key,
         sheet,
-        start: 0,
-        end: n - 1,
+        start,
+        end: start + n - 1,
         fr: a.framerate ?? 8,
         rep: a.loop ? -1 : 0,
       });
     } else {
       if (!Array.isArray(a.frames) || !a.frames.length) continue;
       a.frames.forEach((file, i) => {
-        loads.push({ key: `${key}_${pad(i + 1)}`, url: a.dir + '/' + file });
+        addLoad({ key: `${key}_${pad(i + 1)}`, url: a.dir + '/' + file });
       });
       anims.push({
         key,
@@ -70,6 +74,7 @@ export function familyFromPack(pack) {
       });
     }
   }
+  const loads = [...loadMap.values()];
   return (loads.length || anims.length) ? { loads, anims } : null;
 }
 

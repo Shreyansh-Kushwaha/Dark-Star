@@ -479,7 +479,7 @@ const server = http.createServer((req, res) => {
           let anim;
           if (a.source === 'spritesheet') {
             anim = { name: a.name, source: 'spritesheet', spritesheet: a.spritesheet,
-              frame_count: a.frame_count, frame_size: a.frame_size,
+              frame_count: a.frame_count, frame_size: a.frame_size, frame_start: a.frame_start || 0,
               horizontal: a.horizontal, framerate: a.framerate, loop: a.loop };
           } else {
             // Embed the real ordered frame filenames so the runtime AnimationLoader

@@ -24823,9 +24823,9 @@
           "remark": ""
         },
         {
-          "id": "sheet::assets6/animal/PNG/With_shadow/Bull_animation_with_shadow.png",
+          "id": "sheet::assets6/animal/PNG/With_shadow/Bull_animation_with_shadow.png::row0",
           "source": "spritesheet",
-          "raw_name": "Bull_animation_with_shadow",
+          "raw_name": "bull_idle",
           "name": "idle",
           "spritesheet": "assets6/animal/PNG/With_shadow/Bull_animation_with_shadow.png",
           "sheet_size": [
@@ -24837,20 +24837,203 @@
             64,
             64
           ],
+          "frame_start": 0,
           "horizontal": true,
           "framerate": 6,
           "loop": true,
-          "purpose_guess": "idle animation",
-          "fingerprint": "6:64x64",
+          "purpose_guess": "idle (row 0)",
+          "fingerprint": "6:64x64@0",
           "entity_key": "bull",
           "status": "approved",
-          "remark": "[fix] animal-1 combined 6x8 grid \u2014 using first row as idle (other rows unlabeled)",
+          "remark": "",
           "auto": false
         },
         {
-          "id": "sheet::assets6/animal/PNG/With_shadow/Calf_animation_with_shadow.png",
+          "id": "sheet::assets6/animal/PNG/With_shadow/Bull_animation_with_shadow.png::row1",
           "source": "spritesheet",
-          "raw_name": "Calf_animation_with_shadow",
+          "raw_name": "bull_idle_back",
+          "name": "idle_back",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Bull_animation_with_shadow.png",
+          "sheet_size": [
+            384,
+            512
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            64,
+            64
+          ],
+          "frame_start": 6,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_back (row 1)",
+          "fingerprint": "6:64x64@6",
+          "entity_key": "bull",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Bull_animation_with_shadow.png::row2",
+          "source": "spritesheet",
+          "raw_name": "bull_idle_left",
+          "name": "idle_left",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Bull_animation_with_shadow.png",
+          "sheet_size": [
+            384,
+            512
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            64,
+            64
+          ],
+          "frame_start": 12,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_left (row 2)",
+          "fingerprint": "6:64x64@12",
+          "entity_key": "bull",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Bull_animation_with_shadow.png::row3",
+          "source": "spritesheet",
+          "raw_name": "bull_idle_right",
+          "name": "idle_right",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Bull_animation_with_shadow.png",
+          "sheet_size": [
+            384,
+            512
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            64,
+            64
+          ],
+          "frame_start": 18,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_right (row 3)",
+          "fingerprint": "6:64x64@18",
+          "entity_key": "bull",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Bull_animation_with_shadow.png::row4",
+          "source": "spritesheet",
+          "raw_name": "bull_walk",
+          "name": "walk",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Bull_animation_with_shadow.png",
+          "sheet_size": [
+            384,
+            512
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            64,
+            64
+          ],
+          "frame_start": 24,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk (row 4)",
+          "fingerprint": "4:64x64@24",
+          "entity_key": "bull",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Bull_animation_with_shadow.png::row5",
+          "source": "spritesheet",
+          "raw_name": "bull_walk_back",
+          "name": "walk_back",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Bull_animation_with_shadow.png",
+          "sheet_size": [
+            384,
+            512
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            64,
+            64
+          ],
+          "frame_start": 30,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_back (row 5)",
+          "fingerprint": "4:64x64@30",
+          "entity_key": "bull",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Bull_animation_with_shadow.png::row6",
+          "source": "spritesheet",
+          "raw_name": "bull_walk_left",
+          "name": "walk_left",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Bull_animation_with_shadow.png",
+          "sheet_size": [
+            384,
+            512
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            64,
+            64
+          ],
+          "frame_start": 36,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_left (row 6)",
+          "fingerprint": "4:64x64@36",
+          "entity_key": "bull",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Bull_animation_with_shadow.png::row7",
+          "source": "spritesheet",
+          "raw_name": "bull_walk_right",
+          "name": "walk_right",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Bull_animation_with_shadow.png",
+          "sheet_size": [
+            384,
+            512
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            64,
+            64
+          ],
+          "frame_start": 42,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_right (row 7)",
+          "fingerprint": "4:64x64@42",
+          "entity_key": "bull",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Calf_animation_with_shadow.png::row0",
+          "source": "spritesheet",
+          "raw_name": "calf_idle",
           "name": "idle",
           "spritesheet": "assets6/animal/PNG/With_shadow/Calf_animation_with_shadow.png",
           "sheet_size": [
@@ -24862,20 +25045,203 @@
             64,
             64
           ],
+          "frame_start": 0,
           "horizontal": true,
           "framerate": 6,
           "loop": true,
-          "purpose_guess": "idle animation",
-          "fingerprint": "6:64x64",
+          "purpose_guess": "idle (row 0)",
+          "fingerprint": "6:64x64@0",
           "entity_key": "calf",
           "status": "approved",
-          "remark": "[fix] animal-1 combined 6x8 grid \u2014 using first row as idle (other rows unlabeled)",
+          "remark": "",
           "auto": false
         },
         {
-          "id": "sheet::assets6/animal/PNG/With_shadow/Chick_animation_with_shadow.png",
+          "id": "sheet::assets6/animal/PNG/With_shadow/Calf_animation_with_shadow.png::row1",
           "source": "spritesheet",
-          "raw_name": "Chick_animation_with_shadow",
+          "raw_name": "calf_idle_back",
+          "name": "idle_back",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Calf_animation_with_shadow.png",
+          "sheet_size": [
+            384,
+            512
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            64,
+            64
+          ],
+          "frame_start": 6,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_back (row 1)",
+          "fingerprint": "6:64x64@6",
+          "entity_key": "calf",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Calf_animation_with_shadow.png::row2",
+          "source": "spritesheet",
+          "raw_name": "calf_idle_left",
+          "name": "idle_left",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Calf_animation_with_shadow.png",
+          "sheet_size": [
+            384,
+            512
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            64,
+            64
+          ],
+          "frame_start": 12,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_left (row 2)",
+          "fingerprint": "6:64x64@12",
+          "entity_key": "calf",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Calf_animation_with_shadow.png::row3",
+          "source": "spritesheet",
+          "raw_name": "calf_idle_right",
+          "name": "idle_right",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Calf_animation_with_shadow.png",
+          "sheet_size": [
+            384,
+            512
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            64,
+            64
+          ],
+          "frame_start": 18,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_right (row 3)",
+          "fingerprint": "6:64x64@18",
+          "entity_key": "calf",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Calf_animation_with_shadow.png::row4",
+          "source": "spritesheet",
+          "raw_name": "calf_walk",
+          "name": "walk",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Calf_animation_with_shadow.png",
+          "sheet_size": [
+            384,
+            512
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            64,
+            64
+          ],
+          "frame_start": 24,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk (row 4)",
+          "fingerprint": "4:64x64@24",
+          "entity_key": "calf",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Calf_animation_with_shadow.png::row5",
+          "source": "spritesheet",
+          "raw_name": "calf_walk_back",
+          "name": "walk_back",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Calf_animation_with_shadow.png",
+          "sheet_size": [
+            384,
+            512
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            64,
+            64
+          ],
+          "frame_start": 30,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_back (row 5)",
+          "fingerprint": "4:64x64@30",
+          "entity_key": "calf",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Calf_animation_with_shadow.png::row6",
+          "source": "spritesheet",
+          "raw_name": "calf_walk_left",
+          "name": "walk_left",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Calf_animation_with_shadow.png",
+          "sheet_size": [
+            384,
+            512
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            64,
+            64
+          ],
+          "frame_start": 36,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_left (row 6)",
+          "fingerprint": "4:64x64@36",
+          "entity_key": "calf",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Calf_animation_with_shadow.png::row7",
+          "source": "spritesheet",
+          "raw_name": "calf_walk_right",
+          "name": "walk_right",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Calf_animation_with_shadow.png",
+          "sheet_size": [
+            384,
+            512
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            64,
+            64
+          ],
+          "frame_start": 42,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_right (row 7)",
+          "fingerprint": "4:64x64@42",
+          "entity_key": "calf",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Chick_animation_with_shadow.png::row0",
+          "source": "spritesheet",
+          "raw_name": "chick_idle",
           "name": "idle",
           "spritesheet": "assets6/animal/PNG/With_shadow/Chick_animation_with_shadow.png",
           "sheet_size": [
@@ -24887,20 +25253,203 @@
             16,
             16
           ],
+          "frame_start": 0,
           "horizontal": true,
           "framerate": 6,
           "loop": true,
-          "purpose_guess": "idle animation",
-          "fingerprint": "6:16x16",
+          "purpose_guess": "idle (row 0)",
+          "fingerprint": "6:16x16@0",
           "entity_key": "chick",
           "status": "approved",
-          "remark": "[fix] animal-1 combined 6x8 grid \u2014 using first row as idle (other rows unlabeled)",
+          "remark": "",
           "auto": false
         },
         {
-          "id": "sheet::assets6/animal/PNG/With_shadow/Lamb_animation_with_shadow.png",
+          "id": "sheet::assets6/animal/PNG/With_shadow/Chick_animation_with_shadow.png::row1",
           "source": "spritesheet",
-          "raw_name": "Lamb_animation_with_shadow",
+          "raw_name": "chick_idle_back",
+          "name": "idle_back",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Chick_animation_with_shadow.png",
+          "sheet_size": [
+            96,
+            128
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            16,
+            16
+          ],
+          "frame_start": 6,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_back (row 1)",
+          "fingerprint": "6:16x16@6",
+          "entity_key": "chick",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Chick_animation_with_shadow.png::row2",
+          "source": "spritesheet",
+          "raw_name": "chick_idle_left",
+          "name": "idle_left",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Chick_animation_with_shadow.png",
+          "sheet_size": [
+            96,
+            128
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            16,
+            16
+          ],
+          "frame_start": 12,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_left (row 2)",
+          "fingerprint": "6:16x16@12",
+          "entity_key": "chick",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Chick_animation_with_shadow.png::row3",
+          "source": "spritesheet",
+          "raw_name": "chick_idle_right",
+          "name": "idle_right",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Chick_animation_with_shadow.png",
+          "sheet_size": [
+            96,
+            128
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            16,
+            16
+          ],
+          "frame_start": 18,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_right (row 3)",
+          "fingerprint": "6:16x16@18",
+          "entity_key": "chick",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Chick_animation_with_shadow.png::row4",
+          "source": "spritesheet",
+          "raw_name": "chick_walk",
+          "name": "walk",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Chick_animation_with_shadow.png",
+          "sheet_size": [
+            96,
+            128
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            16,
+            16
+          ],
+          "frame_start": 24,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk (row 4)",
+          "fingerprint": "4:16x16@24",
+          "entity_key": "chick",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Chick_animation_with_shadow.png::row5",
+          "source": "spritesheet",
+          "raw_name": "chick_walk_back",
+          "name": "walk_back",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Chick_animation_with_shadow.png",
+          "sheet_size": [
+            96,
+            128
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            16,
+            16
+          ],
+          "frame_start": 30,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_back (row 5)",
+          "fingerprint": "4:16x16@30",
+          "entity_key": "chick",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Chick_animation_with_shadow.png::row6",
+          "source": "spritesheet",
+          "raw_name": "chick_walk_left",
+          "name": "walk_left",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Chick_animation_with_shadow.png",
+          "sheet_size": [
+            96,
+            128
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            16,
+            16
+          ],
+          "frame_start": 36,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_left (row 6)",
+          "fingerprint": "4:16x16@36",
+          "entity_key": "chick",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Chick_animation_with_shadow.png::row7",
+          "source": "spritesheet",
+          "raw_name": "chick_walk_right",
+          "name": "walk_right",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Chick_animation_with_shadow.png",
+          "sheet_size": [
+            96,
+            128
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            16,
+            16
+          ],
+          "frame_start": 42,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_right (row 7)",
+          "fingerprint": "4:16x16@42",
+          "entity_key": "chick",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Lamb_animation_with_shadow.png::row0",
+          "source": "spritesheet",
+          "raw_name": "lamb_idle",
           "name": "idle",
           "spritesheet": "assets6/animal/PNG/With_shadow/Lamb_animation_with_shadow.png",
           "sheet_size": [
@@ -24912,20 +25461,203 @@
             32,
             32
           ],
+          "frame_start": 0,
           "horizontal": true,
           "framerate": 6,
           "loop": true,
-          "purpose_guess": "idle animation",
-          "fingerprint": "6:32x32",
+          "purpose_guess": "idle (row 0)",
+          "fingerprint": "6:32x32@0",
           "entity_key": "lamb",
           "status": "approved",
-          "remark": "[fix] animal-1 combined 6x8 grid \u2014 using first row as idle (other rows unlabeled)",
+          "remark": "",
           "auto": false
         },
         {
-          "id": "sheet::assets6/animal/PNG/With_shadow/Piglet_animation_with_shadow.png",
+          "id": "sheet::assets6/animal/PNG/With_shadow/Lamb_animation_with_shadow.png::row1",
           "source": "spritesheet",
-          "raw_name": "Piglet_animation_with_shadow",
+          "raw_name": "lamb_idle_back",
+          "name": "idle_back",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Lamb_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 6,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_back (row 1)",
+          "fingerprint": "6:32x32@6",
+          "entity_key": "lamb",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Lamb_animation_with_shadow.png::row2",
+          "source": "spritesheet",
+          "raw_name": "lamb_idle_left",
+          "name": "idle_left",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Lamb_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 12,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_left (row 2)",
+          "fingerprint": "6:32x32@12",
+          "entity_key": "lamb",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Lamb_animation_with_shadow.png::row3",
+          "source": "spritesheet",
+          "raw_name": "lamb_idle_right",
+          "name": "idle_right",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Lamb_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 18,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_right (row 3)",
+          "fingerprint": "6:32x32@18",
+          "entity_key": "lamb",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Lamb_animation_with_shadow.png::row4",
+          "source": "spritesheet",
+          "raw_name": "lamb_walk",
+          "name": "walk",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Lamb_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 24,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk (row 4)",
+          "fingerprint": "4:32x32@24",
+          "entity_key": "lamb",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Lamb_animation_with_shadow.png::row5",
+          "source": "spritesheet",
+          "raw_name": "lamb_walk_back",
+          "name": "walk_back",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Lamb_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 30,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_back (row 5)",
+          "fingerprint": "4:32x32@30",
+          "entity_key": "lamb",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Lamb_animation_with_shadow.png::row6",
+          "source": "spritesheet",
+          "raw_name": "lamb_walk_left",
+          "name": "walk_left",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Lamb_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 36,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_left (row 6)",
+          "fingerprint": "4:32x32@36",
+          "entity_key": "lamb",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Lamb_animation_with_shadow.png::row7",
+          "source": "spritesheet",
+          "raw_name": "lamb_walk_right",
+          "name": "walk_right",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Lamb_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 42,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_right (row 7)",
+          "fingerprint": "4:32x32@42",
+          "entity_key": "lamb",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Piglet_animation_with_shadow.png::row0",
+          "source": "spritesheet",
+          "raw_name": "piglet_idle",
           "name": "idle",
           "spritesheet": "assets6/animal/PNG/With_shadow/Piglet_animation_with_shadow.png",
           "sheet_size": [
@@ -24937,20 +25669,203 @@
             32,
             32
           ],
+          "frame_start": 0,
           "horizontal": true,
           "framerate": 6,
           "loop": true,
-          "purpose_guess": "idle animation",
-          "fingerprint": "6:32x32",
+          "purpose_guess": "idle (row 0)",
+          "fingerprint": "6:32x32@0",
           "entity_key": "piglet",
           "status": "approved",
-          "remark": "[fix] animal-1 combined 6x8 grid \u2014 using first row as idle (other rows unlabeled)",
+          "remark": "",
           "auto": false
         },
         {
-          "id": "sheet::assets6/animal/PNG/With_shadow/Rooster_animation_with_shadow.png",
+          "id": "sheet::assets6/animal/PNG/With_shadow/Piglet_animation_with_shadow.png::row1",
           "source": "spritesheet",
-          "raw_name": "Rooster_animation_with_shadow",
+          "raw_name": "piglet_idle_back",
+          "name": "idle_back",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Piglet_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 6,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_back (row 1)",
+          "fingerprint": "6:32x32@6",
+          "entity_key": "piglet",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Piglet_animation_with_shadow.png::row2",
+          "source": "spritesheet",
+          "raw_name": "piglet_idle_left",
+          "name": "idle_left",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Piglet_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 12,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_left (row 2)",
+          "fingerprint": "6:32x32@12",
+          "entity_key": "piglet",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Piglet_animation_with_shadow.png::row3",
+          "source": "spritesheet",
+          "raw_name": "piglet_idle_right",
+          "name": "idle_right",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Piglet_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 18,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_right (row 3)",
+          "fingerprint": "6:32x32@18",
+          "entity_key": "piglet",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Piglet_animation_with_shadow.png::row4",
+          "source": "spritesheet",
+          "raw_name": "piglet_walk",
+          "name": "walk",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Piglet_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 24,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk (row 4)",
+          "fingerprint": "4:32x32@24",
+          "entity_key": "piglet",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Piglet_animation_with_shadow.png::row5",
+          "source": "spritesheet",
+          "raw_name": "piglet_walk_back",
+          "name": "walk_back",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Piglet_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 30,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_back (row 5)",
+          "fingerprint": "4:32x32@30",
+          "entity_key": "piglet",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Piglet_animation_with_shadow.png::row6",
+          "source": "spritesheet",
+          "raw_name": "piglet_walk_left",
+          "name": "walk_left",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Piglet_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 36,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_left (row 6)",
+          "fingerprint": "4:32x32@36",
+          "entity_key": "piglet",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Piglet_animation_with_shadow.png::row7",
+          "source": "spritesheet",
+          "raw_name": "piglet_walk_right",
+          "name": "walk_right",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Piglet_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 42,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_right (row 7)",
+          "fingerprint": "4:32x32@42",
+          "entity_key": "piglet",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Rooster_animation_with_shadow.png::row0",
+          "source": "spritesheet",
+          "raw_name": "rooster_idle",
           "name": "idle",
           "spritesheet": "assets6/animal/PNG/With_shadow/Rooster_animation_with_shadow.png",
           "sheet_size": [
@@ -24962,20 +25877,203 @@
             32,
             32
           ],
+          "frame_start": 0,
           "horizontal": true,
           "framerate": 6,
           "loop": true,
-          "purpose_guess": "idle animation",
-          "fingerprint": "6:32x32",
+          "purpose_guess": "idle (row 0)",
+          "fingerprint": "6:32x32@0",
           "entity_key": "rooster",
           "status": "approved",
-          "remark": "[fix] animal-1 combined 6x8 grid \u2014 using first row as idle (other rows unlabeled)",
+          "remark": "",
           "auto": false
         },
         {
-          "id": "sheet::assets6/animal/PNG/With_shadow/Sheep_animation_with_shadow.png",
+          "id": "sheet::assets6/animal/PNG/With_shadow/Rooster_animation_with_shadow.png::row1",
           "source": "spritesheet",
-          "raw_name": "Sheep_animation_with_shadow",
+          "raw_name": "rooster_idle_back",
+          "name": "idle_back",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Rooster_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 6,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_back (row 1)",
+          "fingerprint": "6:32x32@6",
+          "entity_key": "rooster",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Rooster_animation_with_shadow.png::row2",
+          "source": "spritesheet",
+          "raw_name": "rooster_idle_left",
+          "name": "idle_left",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Rooster_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 12,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_left (row 2)",
+          "fingerprint": "6:32x32@12",
+          "entity_key": "rooster",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Rooster_animation_with_shadow.png::row3",
+          "source": "spritesheet",
+          "raw_name": "rooster_idle_right",
+          "name": "idle_right",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Rooster_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 18,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_right (row 3)",
+          "fingerprint": "6:32x32@18",
+          "entity_key": "rooster",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Rooster_animation_with_shadow.png::row4",
+          "source": "spritesheet",
+          "raw_name": "rooster_walk",
+          "name": "walk",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Rooster_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 24,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk (row 4)",
+          "fingerprint": "6:32x32@24",
+          "entity_key": "rooster",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Rooster_animation_with_shadow.png::row5",
+          "source": "spritesheet",
+          "raw_name": "rooster_walk_back",
+          "name": "walk_back",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Rooster_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 30,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_back (row 5)",
+          "fingerprint": "6:32x32@30",
+          "entity_key": "rooster",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Rooster_animation_with_shadow.png::row6",
+          "source": "spritesheet",
+          "raw_name": "rooster_walk_left",
+          "name": "walk_left",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Rooster_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 36,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_left (row 6)",
+          "fingerprint": "6:32x32@36",
+          "entity_key": "rooster",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Rooster_animation_with_shadow.png::row7",
+          "source": "spritesheet",
+          "raw_name": "rooster_walk_right",
+          "name": "walk_right",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Rooster_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 42,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_right (row 7)",
+          "fingerprint": "6:32x32@42",
+          "entity_key": "rooster",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Sheep_animation_with_shadow.png::row0",
+          "source": "spritesheet",
+          "raw_name": "sheep_idle",
           "name": "idle",
           "spritesheet": "assets6/animal/PNG/With_shadow/Sheep_animation_with_shadow.png",
           "sheet_size": [
@@ -24987,20 +26085,203 @@
             32,
             32
           ],
+          "frame_start": 0,
           "horizontal": true,
           "framerate": 6,
           "loop": true,
-          "purpose_guess": "idle animation",
-          "fingerprint": "6:32x32",
+          "purpose_guess": "idle (row 0)",
+          "fingerprint": "6:32x32@0",
           "entity_key": "sheep",
           "status": "approved",
-          "remark": "[fix] animal-1 combined 6x8 grid \u2014 using first row as idle (other rows unlabeled)",
+          "remark": "",
           "auto": false
         },
         {
-          "id": "sheet::assets6/animal/PNG/With_shadow/Turkey_animation_with_shadow.png",
+          "id": "sheet::assets6/animal/PNG/With_shadow/Sheep_animation_with_shadow.png::row1",
           "source": "spritesheet",
-          "raw_name": "Turkey_animation_with_shadow",
+          "raw_name": "sheep_idle_back",
+          "name": "idle_back",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Sheep_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 6,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_back (row 1)",
+          "fingerprint": "6:32x32@6",
+          "entity_key": "sheep",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Sheep_animation_with_shadow.png::row2",
+          "source": "spritesheet",
+          "raw_name": "sheep_idle_left",
+          "name": "idle_left",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Sheep_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 12,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_left (row 2)",
+          "fingerprint": "6:32x32@12",
+          "entity_key": "sheep",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Sheep_animation_with_shadow.png::row3",
+          "source": "spritesheet",
+          "raw_name": "sheep_idle_right",
+          "name": "idle_right",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Sheep_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 18,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_right (row 3)",
+          "fingerprint": "6:32x32@18",
+          "entity_key": "sheep",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Sheep_animation_with_shadow.png::row4",
+          "source": "spritesheet",
+          "raw_name": "sheep_walk",
+          "name": "walk",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Sheep_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 24,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk (row 4)",
+          "fingerprint": "4:32x32@24",
+          "entity_key": "sheep",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Sheep_animation_with_shadow.png::row5",
+          "source": "spritesheet",
+          "raw_name": "sheep_walk_back",
+          "name": "walk_back",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Sheep_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 30,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_back (row 5)",
+          "fingerprint": "4:32x32@30",
+          "entity_key": "sheep",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Sheep_animation_with_shadow.png::row6",
+          "source": "spritesheet",
+          "raw_name": "sheep_walk_left",
+          "name": "walk_left",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Sheep_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 36,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_left (row 6)",
+          "fingerprint": "4:32x32@36",
+          "entity_key": "sheep",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Sheep_animation_with_shadow.png::row7",
+          "source": "spritesheet",
+          "raw_name": "sheep_walk_right",
+          "name": "walk_right",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Sheep_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 42,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_right (row 7)",
+          "fingerprint": "4:32x32@42",
+          "entity_key": "sheep",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Turkey_animation_with_shadow.png::row0",
+          "source": "spritesheet",
+          "raw_name": "turkey_idle",
           "name": "idle",
           "spritesheet": "assets6/animal/PNG/With_shadow/Turkey_animation_with_shadow.png",
           "sheet_size": [
@@ -25012,14 +26293,197 @@
             32,
             32
           ],
+          "frame_start": 0,
           "horizontal": true,
           "framerate": 6,
           "loop": true,
-          "purpose_guess": "idle animation",
-          "fingerprint": "6:32x32",
+          "purpose_guess": "idle (row 0)",
+          "fingerprint": "6:32x32@0",
           "entity_key": "turkey",
           "status": "approved",
-          "remark": "[fix] animal-1 combined 6x8 grid \u2014 using first row as idle (other rows unlabeled)",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Turkey_animation_with_shadow.png::row1",
+          "source": "spritesheet",
+          "raw_name": "turkey_idle_back",
+          "name": "idle_back",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Turkey_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 6,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_back (row 1)",
+          "fingerprint": "6:32x32@6",
+          "entity_key": "turkey",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Turkey_animation_with_shadow.png::row2",
+          "source": "spritesheet",
+          "raw_name": "turkey_idle_left",
+          "name": "idle_left",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Turkey_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 12,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_left (row 2)",
+          "fingerprint": "6:32x32@12",
+          "entity_key": "turkey",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Turkey_animation_with_shadow.png::row3",
+          "source": "spritesheet",
+          "raw_name": "turkey_idle_right",
+          "name": "idle_right",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Turkey_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 18,
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle_right (row 3)",
+          "fingerprint": "6:32x32@18",
+          "entity_key": "turkey",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Turkey_animation_with_shadow.png::row4",
+          "source": "spritesheet",
+          "raw_name": "turkey_walk",
+          "name": "walk",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Turkey_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 24,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk (row 4)",
+          "fingerprint": "4:32x32@24",
+          "entity_key": "turkey",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Turkey_animation_with_shadow.png::row5",
+          "source": "spritesheet",
+          "raw_name": "turkey_walk_back",
+          "name": "walk_back",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Turkey_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 30,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_back (row 5)",
+          "fingerprint": "4:32x32@30",
+          "entity_key": "turkey",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Turkey_animation_with_shadow.png::row6",
+          "source": "spritesheet",
+          "raw_name": "turkey_walk_left",
+          "name": "walk_left",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Turkey_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 36,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_left (row 6)",
+          "fingerprint": "4:32x32@36",
+          "entity_key": "turkey",
+          "status": "approved",
+          "remark": "",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Turkey_animation_with_shadow.png::row7",
+          "source": "spritesheet",
+          "raw_name": "turkey_walk_right",
+          "name": "walk_right",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Turkey_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "frame_start": 42,
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk_right (row 7)",
+          "fingerprint": "4:32x32@42",
+          "entity_key": "turkey",
+          "status": "approved",
+          "remark": "",
           "auto": false
         }
       ]
