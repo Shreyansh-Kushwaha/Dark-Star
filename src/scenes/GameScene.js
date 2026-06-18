@@ -2647,9 +2647,16 @@ export class GameScene extends Phaser.Scene {
   _usePortal(isNext) {
     this._portalCooldown = this.time.now + 3000;
     const portal = isNext ? this._portals?.next : this._portals?.back;
+    // Fallback when a portal has no explicit target: follow the streaming chain
+    // (0 → 7 → 8 …) so we never drop into the bypassed legacy regions 1–6.
+    const chainDir = this._chainNeighbor(this._regionIndex, isNext ? +1 : -1);
     const newIndex = portal?.targetRegion != null
       ? portal.targetRegion
-      : (isNext ? this._regionIndex + 1 : Math.max(0, this._regionIndex - 1));
+      : (chainDir != null
+          ? chainDir
+          : (isNext
+              ? (this._regionIndex === 0 ? 7 : this._regionIndex + 1)
+              : Math.max(0, this._regionIndex - 1)));
 
     if (newIndex < 0) return;
 
