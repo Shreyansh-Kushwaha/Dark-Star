@@ -94,6 +94,7 @@
     <label>Type <select id="f-type"></select></label>
     <label>Search <input type="text" id="f-q" placeholder="pack / animation name"></label>
     <span class="spacer"></span>
+    <button id="btn-approve-all" title="Approve every animation currently matching the filter">✓ Approve all filtered</button>
     <button id="btn-reject-all" title="Reject every animation currently matching the filter">🗑 Reject all filtered</button>
     <button id="btn-save">💾 Save Draft</button>
     <button id="btn-export" class="primary">⬇ Export approved → animations.json</button>
@@ -195,9 +196,17 @@ function renderPack(pack, visAnims) {
     `<span class="badge">${pack.entity_type}</span>` +
     `<span class="meta">${pack.pack_id} · ${visAnims.length} shown / ${pack.animations.length}</span>` +
     `<span class="small">${pack.category || ''}</span><span class="spacer"></span>`;
+  const apvAll = document.createElement('button'); apvAll.textContent = '✓ Approve all shown';
+  apvAll.title = 'Mark every animation currently shown in this pack as approved';
+  apvAll.onclick = e => { e.stopPropagation();
+    if (!confirm(`Approve all ${visAnims.length} shown animation(s) in "${pack.entity_key}"?`)) return;
+    visAnims.forEach(a => { a.status = 'approved'; });
+    markDirty(); render();
+  };
+  head.appendChild(apvAll);
   const rejAll = document.createElement('button'); rejAll.textContent = '🗑 Reject all shown';
   rejAll.title = 'Mark every animation currently shown in this pack as rejected';
-  rejAll.onclick = () => {
+  rejAll.onclick = e => { e.stopPropagation();
     if (!confirm(`Reject all ${visAnims.length} shown animation(s) in "${pack.entity_key}"?`)) return;
     visAnims.forEach(a => { a.status = 'rejected'; });
     markDirty(); render();
@@ -398,6 +407,13 @@ $('#f-type').onchange = render;
 $('#f-q').oninput = () => { clearTimeout(render._t); render._t = setTimeout(render, 200); };
 $('#btn-save').onclick = save;
 $('#btn-export').onclick = exportFinal;
+$('#btn-approve-all').onclick = () => {
+  const hits = DRAFT.packs.flatMap(p => p.animations.filter(a => matches(p, a)));
+  if (!hits.length) { toast('Nothing matches the current filter'); return; }
+  if (!confirm(`Approve all ${hits.length} animation(s) matching the current filter?`)) return;
+  hits.forEach(a => { a.status = 'approved'; });
+  markDirty(); render();
+};
 $('#btn-reject-all').onclick = () => {
   const hits = DRAFT.packs.flatMap(p => p.animations.filter(a => matches(p, a)));
   if (!hits.length) { toast('Nothing matches the current filter'); return; }
