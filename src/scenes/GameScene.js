@@ -1846,19 +1846,22 @@ export class GameScene extends Phaser.Scene {
     return this.add.image(WORLD_W / 2 + dx, WORLD_H / 2 + dy, TEX_KEY).setDepth(-5);
   }
 
-  // Invisible static collider at a solid prop's base, so actors are stopped by
-  // the foot/trunk rather than the whole (mostly empty) sprite bounding box.
-  // `fp` is an optional { w, h } footprint; otherwise it's auto-sized from the
-  // on-screen sprite. Registered like a noWalkZone so streaming unload tracks it.
+  // Invisible circular static collider at a solid prop's base, so actors are
+  // stopped by the foot/trunk rather than the whole (mostly empty) sprite box.
+  // A circle gives smooth top-down sliding against the player's foot circle
+  // (circle-vs-circle is Arcade's accurate case). `fp` is an optional { r }
+  // (or { w } → radius w/2); otherwise it's auto-sized from the on-screen
+  // sprite. Registered like a noWalkZone so streaming unload tracks it.
   _addPropFootprint(worldX, baseY, dispW, dispH, fp, rIdx, sink) {
-    const w = fp?.w ?? Math.max(12, Math.abs(dispW) * 0.5);
-    const h = fp?.h ?? Math.max(10, Math.min(Math.abs(dispH) * 0.28, 24));
-    const rect = this.add.rectangle(worldX, baseY - h / 2, w, h);
-    rect.setVisible(false);
-    this.physics.add.existing(rect, true);   // static body positioned at creation
-    this._noWalkGroup.add(rect);
-    if (sink) { rect._streamRegion = rIdx; sink.noWalk.push(rect); }
-    return rect;
+    const r = fp?.r ?? (fp?.w ? fp.w / 2 : Math.max(7, Math.min(Math.abs(dispW) * 0.28, 16)));
+    // Centre a touch above the contact line so the circle hugs the trunk/foot.
+    const c = this.add.circle(worldX, baseY - r * 0.4, r);
+    c.setVisible(false);
+    this.physics.add.existing(c, true);      // static body positioned at creation
+    this._noWalkGroup.add(c);
+    if (c.body?.setCircle) { c.body.setCircle(r); c.body.updateCenter?.(); }  // circular, not the 2r box
+    if (sink) { c._streamRegion = rIdx; sink.noWalk.push(c); }
+    return c;
   }
 
   // `opts` (streaming): { dx, dy, regionIndex, sink } where sink collects the

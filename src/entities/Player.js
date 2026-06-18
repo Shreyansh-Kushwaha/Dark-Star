@@ -92,10 +92,14 @@ export class Player extends Phaser.GameObjects.Container {
     }).setOrigin(0.5, 1);
     this.add(nameTag);
 
-    // Phaser physics body
+    // Phaser physics body: a small circle at the feet/shadow (the shadow ellipse
+    // sits at local y≈16). Top-down "feet" collision so the player slides past
+    // props and can overlap their tops. Combat is distance-based (see Enemy /
+    // projectile hit checks), NOT body-based, so this governs movement only.
+    // setCircle(r, offX, offY): offset is the circle bounding-box top-left
+    // relative to the container origin, so (-12, 4) centres r=12 on (0, 16).
     scene.physics.add.existing(this);
-    this.body.setSize(32, 32);
-    this.body.setOffset(-16, -16);
+    this.body.setCircle(12, -12, 4);
     this.body.setCollideWorldBounds(true);
     this.body.setMaxVelocity(PLAYER_SPEED, PLAYER_SPEED);
 

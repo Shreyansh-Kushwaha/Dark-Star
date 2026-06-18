@@ -32,11 +32,17 @@ const DIR_RULES = [
   [/cropped|bush/i, 'decor'],
 ];
 
-// Optional per-name footprint overrides (world px, before scale). When absent the
-// collider is auto-sized from the sprite's on-screen dimensions.
+// Optional per-name collider-radius overrides (world px). When absent the circle
+// is auto-sized from the sprite's on-screen width. Tune these if a prop blocks
+// too much (smaller r) or lets the player clip its trunk (larger r).
 const FOOTPRINTS = {
-  pillar: { w: 34, h: 22 },
-  cypress: { w: 26, h: 18 },
+  pillar:  { r: 15 },
+  cypress: { r: 11 },
+  tree:    { r: 12 },
+  rock:    { r: 13 },
+  basalt:  { r: 13 },
+  crate:   { r: 14 },
+  brazier: { r: 12 },
 };
 
 function matchRules(rules, str) {
