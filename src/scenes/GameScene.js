@@ -311,6 +311,10 @@ export class GameScene extends Phaser.Scene {
       this.openWorldMap();
     });
 
+    // Debug: P prints the nearest enemy's live + configured stats (for balancing
+    // map-editor creatures). Logs to console and flashes a readout on screen.
+    this.input.keyboard.on('keydown-P', () => this._debugPrintNearestCreature());
+
     // ── Enemies ───────────────────────────────────────────────────
     this.enemies     = [];
     this._mapNpcs    = [];
@@ -1434,6 +1438,48 @@ export class GameScene extends Phaser.Scene {
         this._mapCreatures.push(enemy);
       }
     }
+  }
+
+  // Debug aid for balancing: print the stats of the enemy nearest the player.
+  // Works for both roster enemies and map-editor creatures (creatures carry an
+  // animAlias in their cfg, so the readout flags which kind it is).
+  _debugPrintNearestCreature() {
+    const players = this.players || [];
+    const ref = players.find(p => p?.isLocal && p?.active) || players[0];
+    if (!ref) return;
+    let best = null, bestD = Infinity;
+    for (const e of this.enemies || []) {
+      if (!e?.alive) continue;
+      const d = Phaser.Math.Distance.Between(ref.x, ref.y, e.x, e.y);
+      if (d < bestD) { bestD = d; best = e; }
+    }
+    if (!best) { console.log('[creature-debug] no living enemy nearby'); this._flashDebug('no enemy nearby'); return; }
+
+    const c = best.cfg || {};
+    const isCreature = !!c.animAlias;
+    const anim = best.sprite?.anims?.currentAnim?.key || '—';
+    const lines = [
+      `${c.key}  ${isCreature ? '(creature)' : '(roster enemy)'}  dist=${bestD | 0}px`,
+      `hp ${best.hp | 0}/${best.maxHp}   dmg ${best.damage}   range ${best.range}   cd ${best.attackCd}ms`,
+      `speed ${best.speed}   scale ${(c.scale ?? 1).toFixed(2)}   xp ${c.xpValue}   state ${best.state}   anim ${anim}`,
+    ];
+    if (isCreature) lines.push(`alias ${JSON.stringify(c.animAlias)}`);
+    console.log('[creature-debug]\n  ' + lines.join('\n  '));
+    this._flashDebug(lines.join('\n'));
+  }
+
+  // Brief on-screen readout (top-left), auto-fades. Single reusable text object.
+  _flashDebug(msg) {
+    if (!this._debugText) {
+      this._debugText = this.add.text(12, 12, '', {
+        fontFamily: 'monospace', fontSize: '12px', color: '#aeffae',
+        backgroundColor: '#000000cc', padding: { x: 8, y: 6 }, lineSpacing: 2,
+      }).setScrollFactor(0).setDepth(100000);
+    }
+    this._debugText.setText(msg).setAlpha(1).setVisible(true);
+    this.tweens.killTweensOf(this._debugText);
+    this.tweens.add({ targets: this._debugText, alpha: 0, delay: 3500, duration: 600,
+      onComplete: () => this._debugText?.setVisible(false) });
   }
 
   _createBossArena(region) {
