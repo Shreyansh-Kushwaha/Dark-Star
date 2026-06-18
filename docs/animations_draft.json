@@ -47429,8 +47429,10 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "5:512x512",
           "entity_key": "food_assets",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/Food assets/Png's",
@@ -47449,8 +47451,10 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "4:512x512",
           "entity_key": "food_assets",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Food assets/Spritesheets/DONUT  spritesheet (32x32).png",
@@ -47473,8 +47477,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "9:32x32",
           "entity_key": "food_assets",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Food assets/Spritesheets/DONUT  spritesheet.png",
@@ -47497,8 +47503,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "9:512x512",
           "entity_key": "food_assets",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Food assets/Spritesheets/Pizza eaten sprite sheet (32x32).png",
@@ -47521,8 +47529,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "5:32x32",
           "entity_key": "food_assets",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Food assets/Spritesheets/Pizza eaten sprite sheet.png",
@@ -47545,8 +47555,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "5:512x512",
           "entity_key": "food_assets",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Food assets/Spritesheets/wtermelon sprite sheet 32x32.png",
@@ -47569,8 +47581,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "5:32x32",
           "entity_key": "food_assets",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Food assets/Spritesheets/wtermelon sprite sheet.png",
@@ -47593,8 +47607,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "5:512x512",
           "entity_key": "food_assets",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/Food assets/Pizza eaten 32x32",
@@ -47613,8 +47629,10 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "5:32x32",
           "entity_key": "food_assets",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         }
       ]
     },
@@ -47648,8 +47666,10 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "12:70x70",
           "entity_key": "monsters_creatures_fantasy_2_rat",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Rat/hurt.png",
@@ -47672,8 +47692,10 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "3:70x70",
           "entity_key": "monsters_creatures_fantasy_2_rat",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Rat/idle.png",
@@ -47696,8 +47718,10 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "10:70x70",
           "entity_key": "monsters_creatures_fantasy_2_rat",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Rat/rat-death.png",
@@ -47720,8 +47744,10 @@
           "purpose_guess": "Death sequence \u2014 plays once",
           "fingerprint": "6:70x70",
           "entity_key": "monsters_creatures_fantasy_2_rat",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Rat/run.png",
@@ -47744,8 +47770,10 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "8:70x70",
           "entity_key": "monsters_creatures_fantasy_2_rat",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Bat/attack.png",
@@ -47768,8 +47796,10 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "11:87x87",
           "entity_key": "monsters_creatures_fantasy_2_bat",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Bat/death.png",
@@ -47792,8 +47822,10 @@
           "purpose_guess": "Death sequence \u2014 plays once",
           "fingerprint": "4:87x87",
           "entity_key": "monsters_creatures_fantasy_2_bat",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Bat/fall.png",
@@ -47816,8 +47848,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "5:87x87",
           "entity_key": "monsters_creatures_fantasy_2_bat",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Bat/fly-to-fall.png",
@@ -47840,8 +47874,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "3:87x87",
           "entity_key": "monsters_creatures_fantasy_2_bat",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Bat/fly.png",
@@ -47864,8 +47900,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "11:87x87",
           "entity_key": "monsters_creatures_fantasy_2_bat",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Bat/hurt.png",
@@ -47888,8 +47926,10 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "3:87x87",
           "entity_key": "monsters_creatures_fantasy_2_bat",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/Monsters Creatures Fantasy 2/Mimic",
@@ -47908,10 +47948,10 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "2:2044x146",
           "entity_key": "monsters_creatures_fantasy_2",
-          "status": "approved",
-          "remark": "",
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
           "auto": true,
-          "auto_reason": "frame_folder 'attack' for monsters_creatures_fantasy_2 (enemy)"
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Mimic/death.png",
@@ -47934,8 +47974,10 @@
           "purpose_guess": "Death sequence \u2014 plays once",
           "fingerprint": "6:146x146",
           "entity_key": "monsters_creatures_fantasy_2_mimic",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Mimic/hurt.png",
@@ -47958,8 +48000,10 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "3:146x146",
           "entity_key": "monsters_creatures_fantasy_2_mimic",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Mimic/idle_transformed.png",
@@ -47982,8 +48026,10 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "9:146x146",
           "entity_key": "monsters_creatures_fantasy_2_mimic",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Mimic/opening.png",
@@ -48006,8 +48052,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "6:146x146",
           "entity_key": "monsters_creatures_fantasy_2_mimic",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Mimic/transform.png",
@@ -48030,8 +48078,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "7:146x146",
           "entity_key": "monsters_creatures_fantasy_2_mimic",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Mimic/walk.png",
@@ -48054,8 +48104,10 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "6:146x146",
           "entity_key": "monsters_creatures_fantasy_2_mimic",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Slime/attack.png",
@@ -48078,8 +48130,10 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "19:156x156",
           "entity_key": "monsters_creatures_fantasy_2_slime",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Slime/death.png",
@@ -48102,8 +48156,10 @@
           "purpose_guess": "Death sequence \u2014 plays once",
           "fingerprint": "11:156x156",
           "entity_key": "monsters_creatures_fantasy_2_slime",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Slime/hurt.png",
@@ -48126,8 +48182,10 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "3:156x156",
           "entity_key": "monsters_creatures_fantasy_2_slime",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Slime/idle.png",
@@ -48150,8 +48208,10 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "14:156x156",
           "entity_key": "monsters_creatures_fantasy_2_slime",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/Monsters Creatures Fantasy 2/Slime/walk.png",
@@ -48174,8 +48234,10 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "6:156x156",
           "entity_key": "monsters_creatures_fantasy_2_slime",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         }
       ]
     },
@@ -48205,8 +48267,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "5:128x256",
           "entity_key": "blue_lightning_vfx3",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/blue lightning/VFX4/Frames",
@@ -48225,8 +48289,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "5:128x256",
           "entity_key": "blue_lightning_vfx4",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/blue lightning/VFX5/Sprite-sheet.png",
@@ -48249,8 +48315,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "4:128x128",
           "entity_key": "blue_lightning_vfx5",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/blue lightning/VFX5/Frames",
@@ -48269,8 +48337,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "4:128x128",
           "entity_key": "blue_lightning_vfx5",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/blue lightning/VFX2/Sprite-sheet.png",
@@ -48293,8 +48363,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "8:128x128",
           "entity_key": "blue_lightning_vfx2",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/blue lightning/VFX2/Frames",
@@ -48313,8 +48385,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "4:256x128",
           "entity_key": "blue_lightning_vfx2",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/blue lightning/VFX1/Sprite-sheet.png",
@@ -48337,8 +48411,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "8:128x128",
           "entity_key": "blue_lightning_vfx1",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/blue lightning/VFX1/Frames",
@@ -48357,8 +48433,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "4:256x128",
           "entity_key": "blue_lightning_vfx1",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/blue lightning/VFX6/Sprite-sheet.png",
@@ -48381,8 +48459,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "7:128x128",
           "entity_key": "blue_lightning_vfx6",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/blue lightning/VFX6/Frames",
@@ -48401,8 +48481,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "7:128x128",
           "entity_key": "blue_lightning_vfx6",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         }
       ]
     },
@@ -48432,8 +48514,10 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "3:32x32",
           "entity_key": "food_transparent_png_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/food/Transparent PNG Files/Soups",
@@ -48452,8 +48536,10 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "3:32x32",
           "entity_key": "food_transparent_png_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/food/Transparent PNG Files/Vegetables",
@@ -48472,8 +48558,10 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "4:32x32",
           "entity_key": "food_transparent_png_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/food/Transparent PNG Files/Nuts",
@@ -48492,8 +48580,10 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "3:32x32",
           "entity_key": "food_transparent_png_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/food/Transparent PNG Files/Fruits",
@@ -48512,8 +48602,10 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "4:32x32",
           "entity_key": "food_transparent_png_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/food/Transparent PNG Files/Pastry",
@@ -48532,8 +48624,10 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "3:32x32",
           "entity_key": "food_transparent_png_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/food/Transparent PNG Files/Meat",
@@ -48552,8 +48646,10 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "3:32x32",
           "entity_key": "food_transparent_png_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/food/Transparent PNG Files/Potato Dishes",
@@ -48572,8 +48668,10 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "4:32x32",
           "entity_key": "food_transparent_png_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/food/Transparent PNG Files/Deserts",
@@ -48592,8 +48690,10 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "3:32x32",
           "entity_key": "food_transparent_png_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         }
       ]
     },
@@ -48623,8 +48723,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "11:256x128",
           "entity_key": "frost_skill_vfx3",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/frost skill/VFX2/frames",
@@ -48643,8 +48745,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "9:128x128",
           "entity_key": "frost_skill_vfx2",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/frost skill/VFX1/frames",
@@ -48663,8 +48767,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "14:256x128",
           "entity_key": "frost_skill_vfx1",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         }
       ]
     },
@@ -48698,8 +48804,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "9:128x128",
           "entity_key": "green_attack_vfx3",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/green attack/VFX3/frames",
@@ -48718,8 +48826,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "9:128x128",
           "entity_key": "green_attack_vfx3",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/green attack/VFX4/sprite-sheet.png",
@@ -48742,8 +48852,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "12:128x128",
           "entity_key": "green_attack_vfx4",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/green attack/VFX4/frames",
@@ -48762,8 +48874,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "8:192x128",
           "entity_key": "green_attack_vfx4",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/green attack/VFX5/frames",
@@ -48782,8 +48896,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "17:192x128",
           "entity_key": "green_attack_vfx5",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/green attack/VFX2/sprite-sheet.png",
@@ -48806,8 +48922,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "9:128x128",
           "entity_key": "green_attack_vfx2",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/green attack/VFX2/frames",
@@ -48826,8 +48944,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "6:192x128",
           "entity_key": "green_attack_vfx2",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/green attack/VFX1/sprite-sheet.png",
@@ -48850,8 +48970,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "9:128x128",
           "entity_key": "green_attack_vfx1",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/green attack/VFX1/frames",
@@ -48870,8 +48992,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "9:128x128",
           "entity_key": "green_attack_vfx1",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         }
       ]
     },
@@ -48905,8 +49029,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "4:128x128",
           "entity_key": "red_fireball_attack_vfx3",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/red fireball attack/VFX3/frames",
@@ -48925,8 +49051,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "4:128x128",
           "entity_key": "red_fireball_attack_vfx3",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/red fireball attack/VFX2/sprite-sheet.png",
@@ -48949,8 +49077,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "12:128x128",
           "entity_key": "red_fireball_attack_vfx2",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/red fireball attack/VFX2/frames",
@@ -48969,8 +49099,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "12:128x128",
           "entity_key": "red_fireball_attack_vfx2",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/red fireball attack/VFX1/part1(start)/sprite-sheet.png",
@@ -48993,8 +49125,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "8:128x128",
           "entity_key": "red_fireball_attack_vfx1_part1_start",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/red fireball attack/VFX1/part1(start)/frames",
@@ -49013,8 +49147,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "8:128x128",
           "entity_key": "red_fireball_attack_vfx1_part1_start",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/red fireball attack/VFX1/part3(end)/sprite-sheet.png",
@@ -49037,8 +49173,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "6:128x128",
           "entity_key": "red_fireball_attack_vfx1_part3_end",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/red fireball attack/VFX1/part3(end)/frames",
@@ -49057,8 +49195,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "6:128x128",
           "entity_key": "red_fireball_attack_vfx1_part3_end",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/red fireball attack/VFX1/part2(loop)/sprite-sheet.png",
@@ -49081,8 +49221,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "5:128x128",
           "entity_key": "red_fireball_attack_vfx1_part2_loop",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/red fireball attack/VFX1/part2(loop)/frames",
@@ -49101,8 +49243,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "5:128x128",
           "entity_key": "red_fireball_attack_vfx1_part2_loop",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         }
       ]
     },
@@ -49136,8 +49280,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "9:128x128",
           "entity_key": "white_smoke_vfx3",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/white smoke/VFX3/frames",
@@ -49156,8 +49302,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "9:128x128",
           "entity_key": "white_smoke_vfx3",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/white smoke/VFX4/sprite-sheet.png",
@@ -49180,8 +49328,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "6:128x128",
           "entity_key": "white_smoke_vfx4",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/white smoke/VFX4/frames",
@@ -49200,8 +49350,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "6:128x128",
           "entity_key": "white_smoke_vfx4",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/white smoke/VFX2/sprite-sheet.png",
@@ -49224,8 +49376,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "5:128x128",
           "entity_key": "white_smoke_vfx2",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/white smoke/VFX2/frames",
@@ -49244,8 +49398,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "5:128x128",
           "entity_key": "white_smoke_vfx2",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/white smoke/VFX1/sprite-sheet.png",
@@ -49268,8 +49424,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "7:128x128",
           "entity_key": "white_smoke_vfx1",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/white smoke/VFX1/frames",
@@ -49288,8 +49446,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "7:128x128",
           "entity_key": "white_smoke_vfx1",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         }
       ]
     },
@@ -49323,8 +49483,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "12:128x128",
           "entity_key": "yellow_power_vfx3",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/yellow power/VFX3/frames",
@@ -49343,8 +49505,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "12:128x128",
           "entity_key": "yellow_power_vfx3",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/yellow power/VFX2/sprite-sheet.png",
@@ -49367,8 +49531,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "11:128x128",
           "entity_key": "yellow_power_vfx2",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/yellow power/VFX2/frames",
@@ -49387,8 +49553,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "11:128x128",
           "entity_key": "yellow_power_vfx2",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "sheet::New folder 3/yellow power/VFX1/sprite-sheet.png",
@@ -49411,8 +49579,10 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "8:128x128",
           "entity_key": "yellow_power_vfx1",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         },
         {
           "id": "frames::New folder 3/yellow power/VFX1/frames",
@@ -49431,8 +49601,10 @@
           "purpose_guess": "Special move / skill \u2014 plays once",
           "fingerprint": "8:128x128",
           "entity_key": "yellow_power_vfx1",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] duplicate of assets3/monsters \u2014 files do not exist at New folder 3 path",
+          "auto": true,
+          "auto_reason": "duplicate_missing_path"
         }
       ]
     },
