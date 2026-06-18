@@ -176,7 +176,6 @@ export class GameScene extends Phaser.Scene {
     // ── World setup ────────────────────────────────────────────────
     this._setupWorld(region);
     this._buildParallaxBorder(regionIndex, region);
-    this._buildParallaxAtmosphere(regionIndex);
     this._buildGroundTexture();
     this._spawnAmbientParticles(regionIndex);
     this._applyRegionColorOverlay(regionIndex);
@@ -500,99 +499,6 @@ export class GameScene extends Phaser.Scene {
       const w2 = 40 + seed2 * 0.28;
       g.fillRect(WORLD_W - w2, y, w2, 48);
     }
-  }
-
-  // ── Parallax atmosphere ────────────────────────────────────────────────
-  // The ground is an opaque full-world fill, so "parallax" here is a drifting
-  // plane *above* the floor (cloud shadows / fog banks / canopy dapple). Each
-  // layer is screen-fixed (scrollFactor 0) and its tilePosition tracks the
-  // camera scroll at a fraction < 1, so it visibly slides slower than the world
-  // as the player moves → real depth, with zero risk of revealing world edges.
-  _buildParallaxAtmosphere(regionIndex) {
-    this._parallaxLayers = [];
-    if (!QualitySettings.weather) return;   // off on 'low' (reuse weather gate)
-
-    // tex: which soft texture; tint/alpha/blend: look; dx/dy: ambient drift px/s.
-    const OD = {
-      pollen:  { tex: 'clouds', tint: 0xfff2c0, alpha: 0.10, blend: 'NORMAL', dx: 7,  dy: 2  },
-      leaves:  { tex: 'dapple', tint: 0x0a1f0a, alpha: 0.16, blend: 'NORMAL', dx: 5,  dy: 3  },
-      sand:    { tex: 'clouds', tint: 0xe8d4a0, alpha: 0.10, blend: 'NORMAL', dx: 12, dy: 1  },
-      mist:    { tex: 'fog',    tint: 0xbcd0e0, alpha: 0.16, blend: 'NORMAL', dx: 6,  dy: 2  },
-      cave:    { tex: 'fog',    tint: 0x2a4048, alpha: 0.18, blend: 'NORMAL', dx: 3,  dy: 1  },
-      ember:   { tex: 'fog',    tint: 0x4a1400, alpha: 0.14, blend: 'ADD',    dx: 8,  dy: -3 },
-      ash:     { tex: 'fog',    tint: 0x3a3430, alpha: 0.16, blend: 'NORMAL', dx: 9,  dy: 2  },
-      spore:   { tex: 'dapple', tint: 0x0a1606, alpha: 0.14, blend: 'NORMAL', dx: 4,  dy: 2  },
-      gold:    { tex: 'clouds', tint: 0xffe08a, alpha: 0.10, blend: 'ADD',    dx: 6,  dy: 1  },
-      feather: { tex: 'clouds', tint: 0xeaf2ff, alpha: 0.12, blend: 'NORMAL', dx: 8,  dy: 2  },
-      snow:    { tex: 'clouds', tint: 0xdfeaf8, alpha: 0.12, blend: 'NORMAL', dx: 10, dy: 3  },
-      storm:   { tex: 'fog',    tint: 0x1a2230, alpha: 0.20, blend: 'NORMAL', dx: 22, dy: 6  },
-      sparkle: { tex: 'clouds', tint: 0x9a6ad0, alpha: 0.10, blend: 'ADD',    dx: 5,  dy: 2  },
-      dust:    { tex: 'clouds', tint: 0xc8c0b0, alpha: 0.10, blend: 'NORMAL', dx: 8,  dy: 1  },
-      // void: intentionally none — keep the abyss empty/oppressive.
-    };
-    const od = OD[this._regionBiome(regionIndex)];
-    if (!od) return;
-
-    const cam = this.cameras.main;
-    // Overhead mid-distance plane: drifts at 55% of camera scroll.
-    this._makeSoftBlobTexture('px_' + od.tex, od.tex);
-    const layer = this.add.tileSprite(0, 0, cam.width, cam.height, 'px_' + od.tex)
-      .setOrigin(0, 0).setScrollFactor(0).setDepth(-3)
-      .setAlpha(od.alpha).setTint(od.tint).setBlendMode(od.blend);
-    this._parallaxLayers.push({ ts: layer, factor: 0.55, dx: od.dx, dy: od.dy });
-
-    // High only: a fainter far-haze plane drifting slower (30%) for a second
-    // depth cue behind the overhead layer.
-    if (QualitySettings.level === 'high') {
-      this._makeSoftBlobTexture('px_fog', 'fog');
-      const haze = this.add.tileSprite(0, 0, cam.width, cam.height, 'px_fog')
-        .setOrigin(0, 0).setScrollFactor(0).setDepth(-6)
-        .setAlpha(od.alpha * 0.6).setTint(od.tint);
-      this._parallaxLayers.push({ ts: haze, factor: 0.30, dx: od.dx * 0.4, dy: od.dy * 0.4 });
-    }
-  }
-
-  // Drive the parallax planes: texture offset = cam scroll × factor (the
-  // parallax) + a slow time-based drift (ambient motion). Called from update().
-  _updateParallax(delta) {
-    if (!this._parallaxLayers?.length) return;
-    const cam = this.cameras.main;
-    this._parallaxTime = (this._parallaxTime || 0) + delta * 0.001;
-    for (const L of this._parallaxLayers) {
-      L.ts.tilePositionX = cam.scrollX * L.factor + this._parallaxTime * L.dx;
-      L.ts.tilePositionY = cam.scrollY * L.factor + this._parallaxTime * L.dy;
-    }
-  }
-
-  // Generate a seamless soft-blob texture (clouds / fog / dapple). Blobs are
-  // wrapped across the edges so the tileSprite repeats without visible seams.
-  _makeSoftBlobTexture(key, kind) {
-    if (this.textures.exists(key)) return;
-    const SPEC = {
-      clouds: { size: 256, blobs: 8,  r: 70,  maxA: 0.9 },
-      fog:    { size: 256, blobs: 5,  r: 110, maxA: 0.7 },
-      dapple: { size: 256, blobs: 16, r: 34,  maxA: 0.8 },
-    };
-    const s = SPEC[kind] || SPEC.clouds;
-    const g = this.make.graphics({ add: false });
-    const RINGS = 6;
-    for (let i = 0; i < s.blobs; i++) {
-      const h  = ((i + 1) * 2654435761) >>> 0;     // deterministic placement
-      const bx = h % s.size;
-      const by = (h >> 8) % s.size;
-      const r  = s.r * (0.6 + ((h >> 16) % 100) / 250);
-      for (let k = RINGS; k >= 1; k--) {
-        g.fillStyle(0xffffff, s.maxA / RINGS);
-        const rr = r * k / RINGS;
-        for (const ox of [0, -s.size, s.size]) {   // wrap for seamless tiling
-          for (const oy of [0, -s.size, s.size]) {
-            g.fillCircle(bx + ox, by + oy, rr);
-          }
-        }
-      }
-    }
-    g.generateTexture(key, s.size, s.size);
-    g.destroy();
   }
 
   // ── Vignette ───────────────────────────────────────────────────────────
@@ -2061,9 +1967,6 @@ export class GameScene extends Phaser.Scene {
     // ── Adaptive quality: drop a level if FPS stays low ───────────
     this._fpsWatchdog(delta);
 
-    // ── Parallax atmosphere drift ─────────────────────────────────
-    this._updateParallax(delta);
-
     // ── Tree occlusion (High quality only) ────────────────────────
     if (QualitySettings.occlusion) this._updateOcclusionAlpha();
 
@@ -2171,11 +2074,6 @@ export class GameScene extends Phaser.Scene {
     if (!QualitySettings.weather && this._ambientEmitter) {
       try { this._ambientEmitter.destroy(); } catch (e) {}
       this._ambientEmitter = null;
-    }
-    // Parallax planes share the weather gate (off on low).
-    if (!QualitySettings.weather && this._parallaxLayers?.length) {
-      for (const L of this._parallaxLayers) { try { L.ts.destroy(); } catch (e) {} }
-      this._parallaxLayers = [];
     }
     try {
       this.scene.get('UIScene')?.toast?.(`Graphics lowered to ${newLevel.toUpperCase()} for performance`, '#ffcc44', 2600);
