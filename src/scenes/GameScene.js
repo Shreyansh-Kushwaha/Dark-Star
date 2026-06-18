@@ -7,7 +7,7 @@ import { Player } from '../entities/Player.js';
 import { Enemy  } from '../entities/Enemy.js';
 import { Boss   } from '../entities/Boss.js';
 import { BOSSES } from '../data/bosses.js';
-import { familyForKey, familyLoads, assetsReady, defineAnims } from '../systems/AnimationLoader.js';
+import { familyForKey, familyLoads, familyAnimKeys, assetsReady, defineAnims, loadAnimationsJSON } from '../systems/AnimationLoader.js';
 import { Projectile } from '../entities/Projectile.js';
 import { AudioManager } from '../systems/AudioManager.js';
 import { QuestManager } from '../systems/QuestManager.js';
@@ -313,6 +313,7 @@ export class GameScene extends Phaser.Scene {
     // ── Enemies ───────────────────────────────────────────────────
     this.enemies     = [];
     this._mapNpcs    = [];
+    this._mapCreatures = [];
     this.projectiles = [];
     this.physics.add.collider(this.enemies, this._noWalkGroup);
     this._spawnerTimers = [];
@@ -1327,6 +1328,71 @@ export class GameScene extends Phaser.Scene {
     loader.start();
   }
 
+  // Load a family's assets (image frames AND/OR spritesheets) on a dedicated
+  // loader, then define its anims. Resolves when ready. Mirrors _ensureBossAssets
+  // but handles spritesheet loads too (creatures can be either source type).
+  _loadFamilyAssets(family) {
+    return new Promise(resolve => {
+      if (assetsReady(this, family)) { defineAnims(this, family); resolve(); return; }
+      const loader = new Phaser.Loader.LoaderPlugin(this);
+      let queued = 0;
+      for (const l of familyLoads(family)) {
+        if (this.textures.exists(l.key)) continue;
+        if (l.frameWidth) loader.spritesheet(l.key, l.url, { frameWidth: l.frameWidth, frameHeight: l.frameHeight });
+        else              loader.image(l.key, l.url);
+        queued++;
+      }
+      const finish = () => { defineAnims(this, family); resolve(); };
+      if (queued === 0) { finish(); return; }
+      loader.once(Phaser.Loader.Events.COMPLETE, finish);
+      loader.once(Phaser.Loader.Events.LOAD_ERROR, () => { /* keep waiting for COMPLETE */ });
+      loader.start();
+    });
+  }
+
+  // Pick the resting animation for a creature: prefer idle, then walk/run, else first.
+  _creatureRestAnim(key) {
+    const keys = familyAnimKeys(key);
+    return keys.find(k => /_idle$/.test(k))
+        || keys.find(k => /_(walk|run)(_|$)/.test(k))
+        || keys[0] || null;
+  }
+
+  // Spawn animated creatures placed in the map editor. Each carries an entity_key
+  // resolved against the merged animations.json families. Best-effort & async:
+  // unknown entities (rejected / not yet exported) are simply skipped.
+  async _spawnMapCreatures(mapData) {
+    const creatures = mapData?.creatures || [];
+    if (!creatures.length) return;
+    await loadAnimationsJSON();   // ensure approved families are merged
+
+    // Load each distinct entity_key once, then place all its markers.
+    const byKey = new Map();
+    for (const c of creatures) {
+      if (!byKey.has(c.key)) byKey.set(c.key, []);
+      byKey.get(c.key).push(c);
+    }
+    for (const [key, list] of byKey) {
+      const family = familyForKey(key);
+      if (!family) continue;                       // unknown/rejected — skip
+      if (!this.scene.isActive()) return;          // region changed mid-load
+      await this._loadFamilyAssets(family);
+      const animKey = this._creatureRestAnim(key);
+      if (!animKey || !this.anims.exists(animKey)) continue;
+      const f0 = this.anims.get(animKey).frames[0];
+      const fh = f0?.frame?.height || 64;
+      const scale = Math.min(2, Math.max(0.15, 80 / fh));   // normalize to ~80px tall
+      for (const c of list) {
+        const spr = this.add.sprite(c.x, c.y, f0.textureKey, f0.textureFrame)
+          .setOrigin(0.5, 0.9)
+          .setScale(scale)
+          .setDepth(c.y);
+        spr.play(animKey);
+        this._mapCreatures.push(spr);
+      }
+    }
+  }
+
   _createBossArena(region) {
     // Map editor boss override takes precedence; fall back to region config
     const bossKey = this._mapBossOverride?.key || region.bossKey;
@@ -1566,6 +1632,10 @@ export class GameScene extends Phaser.Scene {
         npc._embeddedDialogue = n.config || null;
         this._mapNpcs.push(npc);
       }
+
+      // Spawn animated creatures placed in the map editor (auto-discovered from
+      // animations.json). Async + best-effort: missing/rejected entities are skipped.
+      this._spawnMapCreatures(mapData);
 
       // _mapBossOverride already set synchronously before _createBossArena was called
     };

@@ -83,14 +83,19 @@ export function mergeAnimationPacks(json) {
 
 // Fetch + merge approved definitions once at boot. Best-effort: any failure
 // leaves the legacy boss families fully intact, so the game never depends on it.
-let _loaded = false;
-export async function loadAnimationsJSON() {
-  if (_loaded) return;
-  _loaded = true;
-  try {
-    const res = await fetch('/api/animations');
-    if (res.ok) mergeAnimationPacks(await res.json());
-  } catch { /* keep legacy families */ }
+// Returns a cached promise so later callers (e.g. creature spawning) can await
+// the same in-flight load instead of racing it.
+let _loadPromise = null;
+export function loadAnimationsJSON() {
+  if (!_loadPromise) {
+    _loadPromise = (async () => {
+      try {
+        const res = await fetch('/api/animations');
+        if (res.ok) mergeAnimationPacks(await res.json());
+      } catch { /* keep legacy families */ }
+    })();
+  }
+  return _loadPromise;
 }
 
 // ── Generic per-scene API (logic identical to the old bossAssets.js helpers) ──
@@ -103,6 +108,12 @@ export function familyForKey(key) {
 // The image loads for a family ([] if unknown) — used by the scene's dedicated loader.
 export function familyLoads(key) {
   return FAMILIES[key]?.loads || [];
+}
+
+// The animation keys defined for a family ([] if unknown). Lets a caller pick
+// which state to play (e.g. prefer the idle/walk anim) without knowing its specs.
+export function familyAnimKeys(key) {
+  return (FAMILIES[key]?.anims || []).map(a => a.key);
 }
 
 // True if every image + anim for this family is already present.
