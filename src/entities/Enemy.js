@@ -13,10 +13,12 @@ export class Enemy extends Phaser.GameObjects.Container {
     scene.add.existing(this);
     this._id = ++_enemyIdCounter;
 
-    const cfg = ENEMY_TYPES[typeKey];
-    this.typeKey   = typeKey;
+    // typeKey may be a string (ENEMY_TYPES lookup) or a ready-made config object
+    // (map-editor creatures synthesize one from animations.json — see GameScene).
+    const cfg = (typeKey && typeof typeKey === 'object') ? typeKey : ENEMY_TYPES[typeKey];
+    this.typeKey   = cfg.key;
     this.cfg       = cfg;
-    scene._markEnemyEncountered?.(typeKey);   // unlock the Codex bestiary entry
+    if (typeof typeKey === 'string') scene._markEnemyEncountered?.(typeKey); // Codex bestiary
     this.alive     = true;
     this.state     = STATE.IDLE;
     this.speed     = cfg.speed;
@@ -79,7 +81,11 @@ export class Enemy extends Phaser.GameObjects.Container {
   }
 
   _playAnim(state) {
-    const key = `${this.cfg.textureBase}_${state}`;
+    // Creatures may name their anims differently (e.g. "death" not "dead",
+    // "walk" not "run"); cfg.animAlias remaps the logical state to what exists.
+    const alias = this.cfg.animAlias;
+    const name  = (alias && alias[state]) || state;
+    const key = `${this.cfg.textureBase}_${name}`;
     if (this.scene.anims.exists(key)) {
       this.sprite.play(key, true);
     }

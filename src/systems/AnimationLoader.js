@@ -29,6 +29,10 @@ const pad = n => String(n).padStart(2, '0');
 // Merged registry. Legacy boss families are seeded first and never overwritten.
 const FAMILIES = { ...BOSS_FAMILIES };
 
+// entity_key -> entity_type ('boss'|'enemy'|'npc'|…) for merged JSON entities.
+// Lets callers (e.g. creature spawning) pick stats without re-reading the JSON.
+const ENTITY_TYPES = {};
+
 // Convert one approved animations.json pack into a { loads, anims } family.
 // Handles both frame_folder animations (embedded ordered `frames` list) and
 // spritesheet animations (sliced by Phaser using `frame_size`). Exported for
@@ -76,7 +80,11 @@ export function mergeAnimationPacks(json) {
   for (const pack of json?.packs || []) {
     if (!pack.entity_key || FAMILIES[pack.entity_key]) continue;
     const fam = familyFromPack(pack);
-    if (fam) { FAMILIES[pack.entity_key] = fam; added++; }
+    if (fam) {
+      FAMILIES[pack.entity_key] = fam;
+      if (pack.entity_type) ENTITY_TYPES[pack.entity_key] = pack.entity_type;
+      added++;
+    }
   }
   return added;
 }
@@ -114,6 +122,11 @@ export function familyLoads(key) {
 // which state to play (e.g. prefer the idle/walk anim) without knowing its specs.
 export function familyAnimKeys(key) {
   return (FAMILIES[key]?.anims || []).map(a => a.key);
+}
+
+// The entity_type for a merged JSON entity (undefined for legacy bosses / unknown).
+export function entityType(key) {
+  return ENTITY_TYPES[key];
 }
 
 // True if every image + anim for this family is already present.

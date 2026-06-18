@@ -7,7 +7,7 @@ import { Player } from '../entities/Player.js';
 import { Enemy  } from '../entities/Enemy.js';
 import { Boss   } from '../entities/Boss.js';
 import { BOSSES } from '../data/bosses.js';
-import { familyForKey, familyLoads, familyAnimKeys, assetsReady, defineAnims, loadAnimationsJSON } from '../systems/AnimationLoader.js';
+import { familyForKey, familyLoads, familyAnimKeys, entityType, assetsReady, defineAnims, loadAnimationsJSON } from '../systems/AnimationLoader.js';
 import { Projectile } from '../entities/Projectile.js';
 import { AudioManager } from '../systems/AudioManager.js';
 import { QuestManager } from '../systems/QuestManager.js';
@@ -1350,45 +1350,90 @@ export class GameScene extends Phaser.Scene {
     });
   }
 
-  // Pick the resting animation for a creature: prefer idle, then walk/run, else first.
-  _creatureRestAnim(key) {
-    const keys = familyAnimKeys(key);
-    return keys.find(k => /_idle$/.test(k))
-        || keys.find(k => /_(walk|run)(_|$)/.test(k))
-        || keys[0] || null;
+  // The creature's animation names (without the `${key}_` prefix), e.g. ['idle','walk',…].
+  _creatureAnimNames(key) {
+    return familyAnimKeys(key).map(k => k.slice(key.length + 1));
   }
 
-  // Spawn animated creatures placed in the map editor. Each carries an entity_key
-  // resolved against the merged animations.json families. Best-effort & async:
-  // unknown entities (rejected / not yet exported) are simply skipped.
+  // Pick the resting animation name for a creature: prefer idle, then walk/run, else first.
+  _creatureRestName(key) {
+    const names = this._creatureAnimNames(key);
+    return names.find(n => n === 'idle')
+        || names.find(n => /^(walk|run|move)$/.test(n))
+        || names[0] || null;
+  }
+
+  // Map the Enemy's logical states (idle/run/attack/dead) to the animation names
+  // this creature actually has, so combat plays the right clips.
+  _creatureAnimAlias(key, restName) {
+    const names = this._creatureAnimNames(key);
+    const has = n => names.includes(n);
+    const pick = (...opts) => opts.find(has);
+    return {
+      idle:   pick('idle') || restName,
+      run:    pick('run', 'walk', 'move') || restName,
+      attack: pick('attack', 'special', 'cast', 'shoot'),
+      dead:   pick('death', 'dead'),
+    };
+  }
+
+  // Base combat stats for a placed creature, scaled by its entity_type.
+  _creatureStats(entityType) {
+    const T = {
+      boss:  { maxHp: 320, speed: 80,  attackDmg: 30, attackRange: 80, attackCd: 1400, xpValue: 50 },
+      enemy: { maxHp: 90,  speed: 110, attackDmg: 16, attackRange: 60, attackCd: 1200, xpValue: 14 },
+      npc:   { maxHp: 60,  speed: 95,  attackDmg: 8,  attackRange: 55, attackCd: 1300, xpValue: 8 },
+    };
+    return T[entityType] || T.enemy;
+  }
+
+  // Spawn map-editor creatures as fighting Enemy instances. Each carries an
+  // entity_key resolved against the merged animations.json families, with a
+  // synthesized Enemy config (textureBase + anim alias + stats). Best-effort &
+  // async: unknown entities (rejected / not yet exported) are skipped. Co-op:
+  // only the host spawns/simulates enemies (clients receive them via ENEMY_SYNC).
   async _spawnMapCreatures(mapData) {
     const creatures = mapData?.creatures || [];
     if (!creatures.length) return;
+    if (this.network?.connected && !this.network.isHost()) return;
     await loadAnimationsJSON();   // ensure approved families are merged
 
-    // Load each distinct entity_key once, then place all its markers.
+    const difficulty = (this._region || {}).difficulty ?? 1.0;
+
+    // Load each distinct entity_key once, then spawn all its markers.
     const byKey = new Map();
     for (const c of creatures) {
       if (!byKey.has(c.key)) byKey.set(c.key, []);
       byKey.get(c.key).push(c);
     }
     for (const [key, list] of byKey) {
-      const family = familyForKey(key);
-      if (!family) continue;                       // unknown/rejected — skip
+      const entity = familyForKey(key);
+      if (!entity) continue;                       // unknown/rejected — skip
       if (!this.scene.isActive()) return;          // region changed mid-load
-      await this._loadFamilyAssets(family);
-      const animKey = this._creatureRestAnim(key);
-      if (!animKey || !this.anims.exists(animKey)) continue;
-      const f0 = this.anims.get(animKey).frames[0];
+      await this._loadFamilyAssets(key);
+      const restName = this._creatureRestName(key);
+      const restKey  = restName && `${key}_${restName}`;
+      if (!restKey || !this.anims.exists(restKey)) continue;
+
+      const f0 = this.anims.get(restKey).frames[0];
       const fh = f0?.frame?.height || 64;
       const scale = Math.min(2, Math.max(0.15, 80 / fh));   // normalize to ~80px tall
+      const cfg = {
+        key,
+        textureBase:   key,
+        spriteTexture: f0.textureKey,
+        animAlias:     this._creatureAnimAlias(key, restName),
+        scale,
+        tint:    null,
+        physics: false,
+        label:   key,
+        drops:   [],
+        ...this._creatureStats(entityType(key) || 'enemy'),
+      };
       for (const c of list) {
-        const spr = this.add.sprite(c.x, c.y, f0.textureKey, f0.textureFrame)
-          .setOrigin(0.5, 0.9)
-          .setScale(scale)
-          .setDepth(c.y);
-        spr.play(animKey);
-        this._mapCreatures.push(spr);
+        const enemy = new Enemy(this, c.x, c.y, cfg, difficulty);
+        this.enemies.push(enemy);
+        this._mapCreatures.push(enemy);
       }
     }
   }
