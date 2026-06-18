@@ -200,8 +200,8 @@ function renderPack(pack, visAnims) {
   apvAll.title = 'Mark every animation currently shown in this pack as approved';
   apvAll.onclick = e => { e.stopPropagation();
     if (!confirm(`Approve all ${visAnims.length} shown animation(s) in "${pack.entity_key}"?`)) return;
-    visAnims.forEach(a => { a.status = 'approved'; });
-    markDirty(); render();
+    visAnims.forEach(a => applyStatusInPlace(a, 'approved'));
+    markDirty(); updateCounts();
   };
   head.appendChild(apvAll);
   const rejAll = document.createElement('button'); rejAll.textContent = '🗑 Reject all shown';
@@ -242,6 +242,7 @@ function renderPack(pack, visAnims) {
 function renderRow(anim) {
   const row = document.createElement('div');
   row.className = 'row s-' + anim.status;
+  row.dataset.animId = anim.id;
 
   // ── thumbnail / player ──
   const thumb = document.createElement('div'); thumb.className = 'thumb';
@@ -368,6 +369,16 @@ function playSheet(anim, thumb) {
   sheet.src = enc(anim.spritesheet);
 }
 
+function applyStatusInPlace(anim, status) {
+  anim.status = status;
+  const row = document.querySelector(`.row[data-anim-id="${CSS.escape(anim.id)}"]`);
+  if (!row) return;
+  row.className = 'row s-' + status;
+  row.querySelector('.btn-ok')?.classList.toggle('active', status === 'approved');
+  row.querySelector('.btn-fix')?.classList.toggle('active', status === 'needs_fix');
+  row.querySelector('.btn-rej')?.classList.toggle('active', status === 'rejected');
+}
+
 function stopPlayer(id) { const h = players.get(id); if (h) { clearInterval(h); players.delete(id); } }
 function stopAllPlayers() { for (const h of players.values()) clearInterval(h); players.clear(); }
 
@@ -411,8 +422,8 @@ $('#btn-approve-all').onclick = () => {
   const hits = DRAFT.packs.flatMap(p => p.animations.filter(a => matches(p, a)));
   if (!hits.length) { toast('Nothing matches the current filter'); return; }
   if (!confirm(`Approve all ${hits.length} animation(s) matching the current filter?`)) return;
-  hits.forEach(a => { a.status = 'approved'; });
-  markDirty(); render();
+  hits.forEach(a => applyStatusInPlace(a, 'approved'));
+  markDirty(); updateCounts();
 };
 $('#btn-reject-all').onclick = () => {
   const hits = DRAFT.packs.flatMap(p => p.animations.filter(a => matches(p, a)));
