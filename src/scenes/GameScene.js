@@ -32,8 +32,9 @@ const PORTAL_GATES = {
 // horizontal (east/west) neighbours along `_streamChain` (numeric index order).
 const STREAM_POC = {
   enabled: true,
-  trigger: 520,   // px from the shared edge → start pre-loading the neighbour
-  commit:  720,   // px past the boundary → old region is off-camera, unload + remap
+  trigger: 520,        // px from the shared edge → start pre-loading the neighbour
+  commit:  720,        // px past the boundary → old region is off-camera, unload + remap
+  buildPerFrame: 160,  // streamed-region sprites created per frame (avoids a build hitch)
 };
 
 // Poisson-disk sampling (returns {x,y}[] within bounds avoiding exclusion zones)
@@ -350,6 +351,9 @@ export class GameScene extends Phaser.Scene {
     // (x: 0..WORLD_W). `next`/`prev` hold a pre-loaded neighbour (or null).
     this._stream = { base: regionIndex, next: null, prev: null };
     this._streamBusy = false;
+    // Deferred sprite creation for streamed neighbours: { regionIndex, fn }
+    // entries drained a few-hundred-per-frame so heavy regions don't hitch.
+    this._streamBuildQueue = [];
 
     this._shrineOpen = false;
     this._createWorldFragments(region);
@@ -519,6 +523,27 @@ export class GameScene extends Phaser.Scene {
     return (n >= 0 && n < chain.length) ? chain[n] : null;
   }
 
+  // Create up to `budget` queued streamed-region sprites this frame.
+  _drainBuildQueue(budget) {
+    const q = this._streamBuildQueue;
+    let n = Math.min(budget, q.length);
+    for (let i = 0; i < n; i++) q.shift().fn();
+  }
+
+  // Create all remaining queued sprites for a region immediately (used right
+  // before a remap so the survivor's pending sprites get shifted with it).
+  _flushBuildQueue(regionIndex) {
+    const q = this._streamBuildQueue;
+    const keep = [];
+    for (const item of q) { if (item.regionIndex === regionIndex) item.fn(); else keep.push(item); }
+    this._streamBuildQueue = keep;
+  }
+
+  // Discard queued sprites for a region that is being unloaded (never created).
+  _dropBuildQueue(regionIndex) {
+    this._streamBuildQueue = this._streamBuildQueue.filter(item => item.regionIndex !== regionIndex);
+  }
+
   // Build a full region's world content shifted by (dx, dy). Returns a "slice"
   // descriptor tracking everything created so it can be unloaded later. Mirrors
   // the active-region build path but offset, tagged, and without portals/UI.
@@ -548,7 +573,8 @@ export class GameScene extends Phaser.Scene {
       }
     }
 
-    console.log(`[stream] built region ${regionIndex} at (${dx},${dy}) — ${sink.objects.length} objs, ${sink.enemies.length} enemies`);
+    const queued = this._streamBuildQueue.filter(i => i.regionIndex === regionIndex).length;
+    console.log(`[stream] built region ${regionIndex} at (${dx},${dy}) — ${sink.objects.length} objs + ${queued} queued sprites, ${sink.enemies.length} enemies`);
     return sink;
   }
 
@@ -625,6 +651,7 @@ export class GameScene extends Phaser.Scene {
   // Destroy every object/enemy/no-walk body belonging to a streamed slice.
   _unloadSlice(slice) {
     if (!slice) return;
+    this._dropBuildQueue(slice.regionIndex);   // cancel any not-yet-created sprites
     for (const e of slice.enemies) {
       const i = this.enemies.indexOf(e);
       if (i >= 0) this.enemies.splice(i, 1);
@@ -637,6 +664,7 @@ export class GameScene extends Phaser.Scene {
 
   // Destroy the active (untracked-but-tagged) base region by its index.
   _unloadRegion(regionIndex) {
+    this._dropBuildQueue(regionIndex);   // safety: cancel any pending sprite work
     // Enemies tagged with this region.
     for (let i = this.enemies.length - 1; i >= 0; i--) {
       if (this.enemies[i]?._streamRegion === regionIndex) { this.enemies[i].destroy?.(); this.enemies.splice(i, 1); }
@@ -725,6 +753,11 @@ export class GameScene extends Phaser.Scene {
     this._unloadRegion(oldBase);
     if (shiftX < 0 && this._stream.prev) { this._unloadSlice(this._stream.prev); this._stream.prev = null; }
     if (shiftX > 0 && this._stream.next) { this._unloadSlice(this._stream.next); this._stream.next = null; }
+
+    // Finish any still-queued sprites for the region we entered BEFORE remapping
+    // (so they're created at the pre-remap offset and shifted with everything
+    // else). By commit time the queue is virtually always already drained.
+    this._flushBuildQueue(newBaseIdx);
 
     // The neighbour we entered keeps its objects (now tagged with its index);
     // remap so it sits back at origin.
@@ -1846,73 +1879,82 @@ export class GameScene extends Phaser.Scene {
       }
     }
 
-    const place = () => {
-      track(this._renderMapStrokes(sprites.filter(sp => !sp.frames), dx, dy, sink ? rIdx : null));
+    // Place one map sprite (image / spritesheet anim / frame-sequence anim).
+    const placeSprite = (sp) => {
+      const key = _mapSpriteKey(sp.dir, sp.frames[0]);
+      const depth = sp.spriteLayer === 'above' ? sp.y + 1 : sp.y - 1;
 
-      for (const sp of sprites) {
-        if (!sp.frames) continue; // skip non-image entries (e.g. strokes)
-        const key = _mapSpriteKey(sp.dir, sp.frames[0]);
-        const depth = sp.spriteLayer === 'above' ? sp.y + 1 : sp.y - 1;
-
-        if (sp.frameW && sp.frameH && sp.frameCount > 1) {
-          // Spritesheet animation
-          const animKey = key + '_loop';
-          if (!this.anims.exists(animKey)) {
-            this.anims.create({
-              key: animKey,
-              frames: this.anims.generateFrameNumbers(key, { start: 0, end: sp.frameCount - 1 }),
-              frameRate: 8,
-              repeat: -1,
-            });
-          }
-          const spr = track(this.add.sprite(sp.x + dx, sp.y + dy, key))
-            .setScale(sp.scaleX ?? 1, sp.scaleY ?? 1)
-            .setDepth(depth)
-            .setAlpha(sp.alpha ?? 1)
-            .play(animKey);
-          if (sp.offsetX != null && sp.offsetY != null)
-            spr.setOrigin(sp.offsetX / sp.frameW, sp.offsetY / sp.frameH);
-          this._glowEmissive(spr, sp);
-          continue;
+      if (sp.frameW && sp.frameH && sp.frameCount > 1) {
+        // Spritesheet animation
+        const animKey = key + '_loop';
+        if (!this.anims.exists(animKey)) {
+          this.anims.create({
+            key: animKey,
+            frames: this.anims.generateFrameNumbers(key, { start: 0, end: sp.frameCount - 1 }),
+            frameRate: 8,
+            repeat: -1,
+          });
         }
-
-        if (sp.animated && sp.frames.length > 1 && !sp.frameW && sp.frames.every(f => /^\d+\.png$/i.test(f))) {
-          // Multi-frame sequence animation (separate image files per frame)
-          const animKey = key + '_seq';
-          if (!this.anims.exists(animKey)) {
-            this.anims.create({
-              key: animKey,
-              frames: sp.frames.map(f => ({ key: _mapSpriteKey(sp.dir, f) })),
-              frameRate: 8,
-              repeat: -1,
-            });
-          }
-          const spr = track(this.add.sprite(sp.x + dx, sp.y + dy, key))
-            .setScale(sp.scaleX ?? 1, sp.scaleY ?? 1)
-            .setDepth(depth)
-            .setAlpha(sp.alpha ?? 1)
-            .play(animKey);
-          if (sp.offsetX != null && sp.offsetY != null) {
-            const tex = this.textures.get(key);
-            const w = tex.getSourceImage()?.width || sp.offsetX * 2;
-            const h = tex.getSourceImage()?.height || sp.offsetY * 2;
-            spr.setOrigin(sp.offsetX / w, sp.offsetY / h);
-          }
-          this._glowEmissive(spr, sp);
-          continue;
-        }
-
-        const img = track(this.add.image(sp.x + dx, sp.y + dy, key))
+        const spr = track(this.add.sprite(sp.x + dx, sp.y + dy, key))
           .setScale(sp.scaleX ?? 1, sp.scaleY ?? 1)
           .setDepth(depth)
-          .setAlpha(sp.alpha ?? 1);
+          .setAlpha(sp.alpha ?? 1)
+          .play(animKey);
+        if (sp.offsetX != null && sp.offsetY != null)
+          spr.setOrigin(sp.offsetX / sp.frameW, sp.offsetY / sp.frameH);
+        this._glowEmissive(spr, sp);
+        return;
+      }
+
+      if (sp.animated && sp.frames.length > 1 && !sp.frameW && sp.frames.every(f => /^\d+\.png$/i.test(f))) {
+        // Multi-frame sequence animation (separate image files per frame)
+        const animKey = key + '_seq';
+        if (!this.anims.exists(animKey)) {
+          this.anims.create({
+            key: animKey,
+            frames: sp.frames.map(f => ({ key: _mapSpriteKey(sp.dir, f) })),
+            frameRate: 8,
+            repeat: -1,
+          });
+        }
+        const spr = track(this.add.sprite(sp.x + dx, sp.y + dy, key))
+          .setScale(sp.scaleX ?? 1, sp.scaleY ?? 1)
+          .setDepth(depth)
+          .setAlpha(sp.alpha ?? 1)
+          .play(animKey);
         if (sp.offsetX != null && sp.offsetY != null) {
           const tex = this.textures.get(key);
           const w = tex.getSourceImage()?.width || sp.offsetX * 2;
           const h = tex.getSourceImage()?.height || sp.offsetY * 2;
-          img.setOrigin(sp.offsetX / w, sp.offsetY / h);
+          spr.setOrigin(sp.offsetX / w, sp.offsetY / h);
         }
-        this._glowEmissive(img, sp);
+        this._glowEmissive(spr, sp);
+        return;
+      }
+
+      const img = track(this.add.image(sp.x + dx, sp.y + dy, key))
+        .setScale(sp.scaleX ?? 1, sp.scaleY ?? 1)
+        .setDepth(depth)
+        .setAlpha(sp.alpha ?? 1);
+      if (sp.offsetX != null && sp.offsetY != null) {
+        const tex = this.textures.get(key);
+        const w = tex.getSourceImage()?.width || sp.offsetX * 2;
+        const h = tex.getSourceImage()?.height || sp.offsetY * 2;
+        img.setOrigin(sp.offsetX / w, sp.offsetY / h);
+      }
+      this._glowEmissive(img, sp);
+    };
+
+    const place = () => {
+      track(this._renderMapStrokes(sprites.filter(sp => !sp.frames), dx, dy, sink ? rIdx : null));
+
+      const spriteList = sprites.filter(sp => sp.frames);
+      if (sink) {
+        // Streamed neighbour: spread sprite creation across frames (drained in
+        // update()) so a heavy region (800+ sprites) doesn't hitch on stream-in.
+        for (const sp of spriteList) this._streamBuildQueue.push({ regionIndex: rIdx, fn: () => placeSprite(sp) });
+      } else {
+        for (const sp of spriteList) placeSprite(sp);
       }
 
       // Spawn enemies placed in the map editor.
@@ -2276,6 +2318,9 @@ export class GameScene extends Phaser.Scene {
     // ── Throttle counters ─────────────────────────────────────────
     this._uiThrottleCounter++;
     this._slowTickCounter++;
+
+    // ── Frame-chunked streamed-region sprite creation ─────────────
+    if (this._streamBuildQueue?.length) this._drainBuildQueue(STREAM_POC.buildPerFrame);
 
     // ── Adaptive quality: drop a level if FPS stays low ───────────
     this._fpsWatchdog(delta);
