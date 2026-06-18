@@ -25,6 +25,18 @@ const PORTAL_GATES = {
   34: [{ target: 39, requires: { lore: 15 }, sealedText: 'The Sixth Door is sealed. It opens only to one who has gathered the erased truth (15 lore fragments).' }],
 };
 
+// ── Seamless region streaming (proof-of-concept) ────────────────────────────
+// PoC: silently pre-load the horizontally-adjacent region beside the current
+// one so the player walks across the boundary with no portal / fade / restart.
+// Scoped to solo play and horizontal (east/west) neighbours for now.
+const STREAM_POC = {
+  enabled: true,
+  // Only these base regions participate in the PoC crossing (0 ⇄ 1).
+  regions: [0, 1],
+  trigger: 480,   // px from the shared edge → start pre-loading the neighbour
+  commit:  640,   // px past the boundary → unload the region behind us + remap
+};
+
 // Poisson-disk sampling (returns {x,y}[] within bounds avoiding exclusion zones)
 function poissonDisk(width, height, minDist, count, exclusions, seed = 42) {
   const grid = [];
@@ -354,6 +366,11 @@ export class GameScene extends Phaser.Scene {
     this._fixedEnemyMode = false;
     this._anyEnemyKilled = false;
 
+    // Seamless streaming state. `base` is the region occupying world-cell 0
+    // (x: 0..WORLD_W). `next`/`prev` hold a pre-loaded neighbour (or null).
+    this._stream = { base: regionIndex, next: null, prev: null };
+    this._streamBusy = false;
+
     this._shrineOpen = false;
     this._createWorldFragments(region);
     this._createSpawners(region);
@@ -455,7 +472,262 @@ export class GameScene extends Phaser.Scene {
       this._pendingRTBake = null;
     }
 
+    // Tag everything the base region just created so seamless streaming can
+    // later unload it. Players (Containers) and camera-fixed HUD are skipped.
+    if (STREAM_POC.enabled) this._tagBaseRegion(regionIndex);
+
     console.log(`[GameScene] Region ${regionIndex}: ${region.name}`);
+  }
+
+  // ── Seamless region streaming ─────────────────────────────────────────────
+  // Tag the currently-built region's world objects + enemies + no-walk bodies
+  // with `_streamRegion` so they can be located and destroyed on unload.
+  _tagBaseRegion(regionIndex) {
+    for (const o of this.children.list) {
+      if (o === this.players?.[0] || o === this.players?.[1]) continue;
+      if (o.scrollFactorX === 0) continue; // camera-fixed (HUD / vignette / flash)
+      if (o._streamRegion == null) o._streamRegion = regionIndex;
+    }
+    for (const e of (this.enemies || []))            if (e._streamRegion == null) e._streamRegion = regionIndex;
+    for (const z of this._noWalkGroup.getChildren()) if (z._streamRegion == null) z._streamRegion = regionIndex;
+    for (const n of (this._mapNpcs || []))           if (n._streamRegion == null) n._streamRegion = regionIndex;
+    for (const c of (this._mapCreatures || []))      if (c._streamRegion == null) c._streamRegion = regionIndex;
+  }
+
+  // Build a full region's world content shifted by (dx, dy). Returns a "slice"
+  // descriptor tracking everything created so it can be unloaded later. Mirrors
+  // the active-region build path but offset, tagged, and without portals/UI.
+  _buildRegionAtOffset(regionIndex, dx, dy) {
+    const region = REGIONS[regionIndex];
+    if (!region) return null;
+    const maps = this.registry.get('regionMaps') || [];
+    const mapData = maps.find(e => e.regionIndex === regionIndex)?.data || null;
+    const sink = { regionIndex, dx, dy, objects: [], enemies: [], noWalk: [] };
+
+    this._paintRegionGround(region, mapData, dx, dy, sink);
+
+    if (mapData) {
+      this._buildFromMapData(mapData, { dx, dy, regionIndex, sink });
+    } else if (region.denseForest) {
+      this._buildForestAtOffset(region, dx, dy, sink);
+    } else {
+      this._buildDecorAtOffset(region, regionIndex, dx, dy, sink);
+    }
+
+    // Pre-placed enemies (host/solo only). Streamed regions use fixed enemies;
+    // spawner timers are intentionally skipped to avoid orphaned timers.
+    if (!this.network.connected || this.network.isHost()) {
+      const track = (e) => { e._streamRegion = regionIndex; sink.enemies.push(e); this.enemies.push(e); };
+      for (const cfg of (region.fixedEnemies || [])) {
+        track(new Enemy(this, cfg.x + dx, cfg.y + dy, cfg.type, region.difficulty));
+      }
+    }
+
+    console.log(`[stream] built region ${regionIndex} at (${dx},${dy}) — ${sink.objects.length} objs, ${sink.enemies.length} enemies`);
+    return sink;
+  }
+
+  // Background fill + patches + edge strip + ground noise for a streamed region.
+  _paintRegionGround(region, mapData, dx, dy, sink) {
+    const track = (o) => { o._streamRegion = sink.regionIndex; sink.objects.push(o); return o; };
+    let bgColor = region.bgColor, bgColor2 = region.bgColor2;
+    if (mapData?.background?.type === 'color' && mapData.background.value) {
+      bgColor = bgColor2 = parseInt(mapData.background.value.replace('#', ''), 16);
+    }
+    const g = track(this.add.graphics().setDepth(-10));
+    g.fillStyle(bgColor, 1);
+    g.fillRect(dx, dy, WORLD_W, WORLD_H);
+    g.fillStyle(bgColor2, 0.5);
+    const PATCH = 120;
+    const cols = Math.ceil(WORLD_W / PATCH), rows = Math.ceil(WORLD_H / PATCH);
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        const hash = (r * 7 + c * 13 + r * c) % 5;
+        if (hash < 2) g.fillRect(dx + c * PATCH + (hash * 12 % PATCH), dy + r * PATCH + (hash * 17 % PATCH), PATCH * 0.55 + hash * 10, PATCH * 0.55 + hash * 8);
+      }
+    }
+    const VIGN = 60, border = region.borderColor || 0x000000;
+    g.fillStyle(border, 0.6);
+    g.fillRect(dx, dy, WORLD_W, VIGN);                 // top
+    g.fillRect(dx, dy + WORLD_H - VIGN, WORLD_W, VIGN); // bottom
+    // Skip the vertical edge strip that faces the active region so the shared
+    // boundary doesn't render a double-thick dark wall.
+    if (dx < 0) g.fillRect(dx, dy, VIGN, WORLD_H);                  // left edge (far side for a western neighbour)
+    if (dx > 0) g.fillRect(dx + WORLD_W - VIGN, dy, VIGN, WORLD_H); // right edge (far side for an eastern neighbour)
+
+    if (this.textures.exists('ground_tile_noise')) {
+      track(this.add.tileSprite(dx, dy, WORLD_W, WORLD_H, 'ground_tile_noise')
+        .setOrigin(0, 0).setDepth(-8).setAlpha(0.65));
+    }
+  }
+
+  // Dense forest trees placed directly (no RT-bake deferral) at an offset.
+  _buildForestAtOffset(region, dx, dy, sink) {
+    const track = (o) => { o._streamRegion = sink.regionIndex; sink.objects.push(o); return o; };
+    const jungleKeys = ['jungle_tree_1','jungle_tree_2','jungle_tree_3','jungle_tree_4','jungle_tree_5','jungle_tree_6','jungle_tree_7','jungle_tree_8','jungle_tree_9','jungle_tree_10','jungle_tree_11','jungle_tree_12','jungle_tree_13','jungle_tree_14'];
+    const firKeys = ['fir_tree_1','fir_tree_2','fir_tree_3','fir_tree_4','fir_tree_5','fir_tree_6','fir_tree_7','fir_tree_8','fir_tree_9','fir_tree_10','fir_tree_11'];
+    const stumpKeys = ['ts_stump_1','ts_stump_2','ts_stump_3','ts_stump_4'];
+    const forestX = 900, forestW = WORLD_W - forestX;
+    const excl = [
+      ...(region.spawnPos ? [{ x: region.spawnPos.x - forestX, y: region.spawnPos.y, r: 180 }] : []),
+      ...(region.fixedEnemies || []).map(e => ({ x: e.x - forestX, y: e.y, r: 120 })),
+    ];
+    const points = poissonDisk(forestW, WORLD_H, 80, 160, excl, 1234);
+    for (const pt of points) {
+      const wx = pt.x + forestX, r = Math.random();
+      let key, scale;
+      if (r < 0.20)      { key = stumpKeys[Math.floor(Math.random() * stumpKeys.length)]; scale = 0.30 + Math.random() * 0.15; }
+      else if (r < 0.60) { key = jungleKeys[Math.floor(Math.random() * jungleKeys.length)]; scale = 0.60 + Math.random() * 0.40; }
+      else               { key = firKeys[Math.floor(Math.random() * firKeys.length)]; scale = 0.70 + Math.random() * 0.40; }
+      if (!this.textures.exists(key)) continue;
+      track(this.add.image(wx + dx, pt.y + dy, key).setScale(scale).setDepth(1));
+    }
+  }
+
+  // Generic scatter decorations for regions without map data or a forest flag.
+  _buildDecorAtOffset(region, regionIndex, dx, dy, sink) {
+    const track = (o) => { o._streamRegion = sink.regionIndex; sink.objects.push(o); return o; };
+    for (let i = 0; i < 30; i++) {
+      const x = 200 + Math.random() * (WORLD_W - 400);
+      const y = 200 + Math.random() * (WORLD_H - 400);
+      let key = regionIndex >= 4 ? (Math.random() < 0.5 ? 'rock1' : 'rock2')
+                                 : ['bush1','bush2','bush3','bush4','rock1','rock2'][Math.floor(Math.random() * 6)];
+      if (!this.textures.exists(key)) continue;
+      track(this.add.image(x + dx, y + dy, key).setScale(1.5 + Math.random()).setDepth(y));
+    }
+  }
+
+  // Destroy every object/enemy/no-walk body belonging to a streamed slice.
+  _unloadSlice(slice) {
+    if (!slice) return;
+    for (const e of slice.enemies) {
+      const i = this.enemies.indexOf(e);
+      if (i >= 0) this.enemies.splice(i, 1);
+      e.destroy?.();
+    }
+    for (const z of slice.noWalk) { this._noWalkGroup.remove(z, true, true); }
+    for (const o of slice.objects) o.destroy?.();
+    this._noWalkGroup.refresh();
+  }
+
+  // Destroy the active (untracked-but-tagged) base region by its index.
+  _unloadRegion(regionIndex) {
+    // Enemies tagged with this region.
+    for (let i = this.enemies.length - 1; i >= 0; i--) {
+      if (this.enemies[i]?._streamRegion === regionIndex) { this.enemies[i].destroy?.(); this.enemies.splice(i, 1); }
+    }
+    // NPCs / creatures.
+    this._mapNpcs    = (this._mapNpcs || []).filter(n => { if (n._streamRegion === regionIndex) { n.destroy?.(); return false; } return true; });
+    this._mapCreatures = (this._mapCreatures || []).filter(c => { if (c._streamRegion === regionIndex) { c.destroy?.(); return false; } return true; });
+    // No-walk bodies.
+    for (const z of this._noWalkGroup.getChildren().slice()) {
+      if (z._streamRegion === regionIndex) this._noWalkGroup.remove(z, true, true);
+    }
+    this._noWalkGroup.refresh();
+    // World display objects.
+    for (const o of this.children.list.slice()) {
+      if (o._streamRegion === regionIndex) o.destroy?.();
+    }
+  }
+
+  // Shift the whole live world so the surviving region returns to origin.
+  // A single pass over the scene display list covers players, enemies, NPCs and
+  // every world sprite (all are scene children). Camera-fixed HUD is left alone.
+  // Keeps coordinates small and avoids float drift over many crossings.
+  _remapPositions(shiftX, shiftY) {
+    for (const o of this.children.list.slice()) {
+      if (o.scrollFactorX === 0) continue;       // HUD / vignette / flash
+      if (o.x == null) continue;
+      o.x += shiftX; o.y += shiftY;
+      if (o.body?.reset) o.body.reset(o.x, o.y);
+      else if (o.body?.updateFromGameObject) o.body.updateFromGameObject();
+    }
+    this._noWalkGroup.refresh();
+    // Shift the camera by the same amount so the view is pixel-identical before
+    // and after the remap — the smooth-follow would otherwise pan across the jump.
+    const cam = this.cameras.main;
+    cam.scrollX += shiftX; cam.scrollY += shiftY;
+  }
+
+  // Slow-tick driver: pre-load the neighbour as the player nears an edge, then
+  // commit (unload the region behind + remap) once they're well across.
+  _checkStreaming() {
+    if (!STREAM_POC.enabled) return;
+    if (this.network?.connected) return;             // solo only for the PoC
+    if (this._streamBusy) return;
+    const lp = this.players.find(p => p?.isLocal) || this.players[0];
+    if (!lp) return;
+    const baseIdx = this._stream.base;
+    if (!STREAM_POC.regions.includes(baseIdx)) return;
+
+    const fwdIdx = baseIdx + 1;
+    const backIdx = baseIdx - 1;
+
+    // ── Pre-load the eastern neighbour ───────────────────────────────
+    if (!this._stream.next && REGIONS[fwdIdx] && STREAM_POC.regions.includes(fwdIdx)
+        && lp.x > WORLD_W - STREAM_POC.trigger) {
+      this._stream.next = this._buildRegionAtOffset(fwdIdx, WORLD_W, 0);
+      this._expandBounds();
+    }
+    // ── Pre-load the western neighbour ───────────────────────────────
+    if (!this._stream.prev && REGIONS[backIdx] && STREAM_POC.regions.includes(backIdx)
+        && lp.x < STREAM_POC.trigger) {
+      this._stream.prev = this._buildRegionAtOffset(backIdx, -WORLD_W, 0);
+      this._expandBounds();
+    }
+
+    // ── Commit eastward: player is well into the next cell ───────────
+    if (this._stream.next && lp.x > WORLD_W + STREAM_POC.commit) {
+      this._commitCrossing(fwdIdx, -WORLD_W);
+    }
+    // ── Commit westward ──────────────────────────────────────────────
+    else if (this._stream.prev && lp.x < -STREAM_POC.commit) {
+      this._commitCrossing(backIdx, WORLD_W);
+    }
+  }
+
+  // Expand world + camera bounds to cover the current base cell plus any
+  // pre-loaded neighbour on either side.
+  _expandBounds() {
+    const left  = this._stream.prev ? -WORLD_W : 0;
+    const right = this._stream.next ? WORLD_W * 2 : WORLD_W;
+    this.physics.world.setBounds(left, 0, right - left, WORLD_H);
+    this.cameras.main.setBounds(left, 0, right - left, WORLD_H);
+  }
+
+  _commitCrossing(newBaseIdx, shiftX) {
+    this._streamBusy = true;
+    const oldBase = this._stream.base;
+    // Drop the slice we're leaving behind, and any neighbour we never entered.
+    this._unloadRegion(oldBase);
+    if (shiftX < 0 && this._stream.prev) { this._unloadSlice(this._stream.prev); this._stream.prev = null; }
+    if (shiftX > 0 && this._stream.next) { this._unloadSlice(this._stream.next); this._stream.next = null; }
+
+    // The neighbour we entered keeps its objects (now tagged with its index);
+    // remap so it sits back at origin.
+    this._remapPositions(shiftX, 0);
+
+    // The previous region owned the portals/shrine/fragments; their visuals are
+    // gone. Reset the references so stale gameplay anchors can't fire. The new
+    // base region is driven purely by streaming for the PoC.
+    this._portals = {};
+    this._portalList = [];
+    this._shrine = null;
+    this._shrinePrompt = null;
+    this._deathEchoObj = null;
+    this._worldFragmentObjects = (this._worldFragmentObjects || []).filter(f => f.gfx?.active);
+
+    this._stream = { base: newBaseIdx, next: null, prev: null };
+    this._regionIndex = newBaseIdx;
+    this._region = REGIONS[newBaseIdx];
+    this._spawnerPositions = REGIONS[newBaseIdx]?.spawnerPositions || [];
+    ExploredManager.markExplored(newBaseIdx);
+    this.physics.world.setBounds(0, 0, WORLD_W, WORLD_H);
+    this.cameras.main.setBounds(0, 0, WORLD_W, WORLD_H);
+    this.events.emit('region_title', { name: REGIONS[newBaseIdx]?.name, subtitle: REGIONS[newBaseIdx]?.subtitle });
+    this.audio?.startAmbient?.(newBaseIdx);
+    console.log(`[stream] committed crossing → region ${newBaseIdx} now at origin`);
+    this._streamBusy = false;
   }
 
   _buildGroundTexture() {
@@ -1486,9 +1758,11 @@ export class GameScene extends Phaser.Scene {
     }
   }
 
-  _renderMapStrokes(strokes) {
-    if (!strokes.length) return;
-    const TEX_KEY = '_map_strokes';
+  _renderMapStrokes(strokes, dx = 0, dy = 0, regionIndex = null) {
+    if (!strokes.length) return null;
+    // Streamed neighbours use a per-region texture key so they never clobber
+    // the active region's baked stroke layer.
+    const TEX_KEY = regionIndex != null ? `_map_strokes_${regionIndex}` : '_map_strokes';
     if (this.textures.exists(TEX_KEY)) this.textures.remove(TEX_KEY);
     const canvasTex = this.textures.createCanvas(TEX_KEY, WORLD_W, WORLD_H);
     const ctx = canvasTex.getContext();
@@ -1508,16 +1782,25 @@ export class GameScene extends Phaser.Scene {
       ctx.restore();
     }
     canvasTex.refresh();
-    this.add.image(WORLD_W / 2, WORLD_H / 2, TEX_KEY).setDepth(-5);
+    return this.add.image(WORLD_W / 2 + dx, WORLD_H / 2 + dy, TEX_KEY).setDepth(-5);
   }
 
-  _buildFromMapData(mapData) {
+  // `opts` (streaming): { dx, dy, regionIndex, sink } where sink collects the
+  // created objects/enemies/no-walk bodies for later unload. Omitted → builds
+  // the active region in-place exactly as before.
+  _buildFromMapData(mapData, opts = {}) {
+    const dx = opts.dx || 0, dy = opts.dy || 0;
+    const sink = opts.sink || null;
+    const rIdx = opts.regionIndex ?? this._regionIndex;
+    const track = (o) => { if (sink && o) { o._streamRegion = rIdx; sink.objects.push(o); } return o; };
+
     // Build no-walk collision zones (invisible static physics bodies)
     for (const z of (mapData.noWalkZones || [])) {
-      const rect = this.add.rectangle(z.x + z.w / 2, z.y + z.h / 2, z.w, z.h);
+      const rect = this.add.rectangle(z.x + z.w / 2 + dx, z.y + z.h / 2 + dy, z.w, z.h);
       rect.setVisible(false);
       this.physics.add.existing(rect, true);
       this._noWalkGroup.add(rect);
+      if (sink) { rect._streamRegion = rIdx; sink.noWalk.push(rect); }
     }
     if ((mapData.noWalkZones || []).length > 0) this._noWalkGroup.refresh();
 
@@ -1539,7 +1822,7 @@ export class GameScene extends Phaser.Scene {
     }
 
     const place = () => {
-      this._renderMapStrokes(sprites.filter(sp => !sp.frames));
+      track(this._renderMapStrokes(sprites.filter(sp => !sp.frames), dx, dy, sink ? rIdx : null));
 
       for (const sp of sprites) {
         if (!sp.frames) continue; // skip non-image entries (e.g. strokes)
@@ -1557,7 +1840,7 @@ export class GameScene extends Phaser.Scene {
               repeat: -1,
             });
           }
-          const spr = this.add.sprite(sp.x, sp.y, key)
+          const spr = track(this.add.sprite(sp.x + dx, sp.y + dy, key))
             .setScale(sp.scaleX ?? 1, sp.scaleY ?? 1)
             .setDepth(depth)
             .setAlpha(sp.alpha ?? 1)
@@ -1579,7 +1862,7 @@ export class GameScene extends Phaser.Scene {
               repeat: -1,
             });
           }
-          const spr = this.add.sprite(sp.x, sp.y, key)
+          const spr = track(this.add.sprite(sp.x + dx, sp.y + dy, key))
             .setScale(sp.scaleX ?? 1, sp.scaleY ?? 1)
             .setDepth(depth)
             .setAlpha(sp.alpha ?? 1)
@@ -1594,7 +1877,7 @@ export class GameScene extends Phaser.Scene {
           continue;
         }
 
-        const img = this.add.image(sp.x, sp.y, key)
+        const img = track(this.add.image(sp.x + dx, sp.y + dy, key))
           .setScale(sp.scaleX ?? 1, sp.scaleY ?? 1)
           .setDepth(depth)
           .setAlpha(sp.alpha ?? 1);
@@ -1613,10 +1896,11 @@ export class GameScene extends Phaser.Scene {
       const mapEnemies = mapData.enemies || [];
       const canSpawnEnemies = !this.network.connected || this.network.isHost();
       if (mapEnemies.length > 0 && canSpawnEnemies) {
-        const difficulty = (this._region || {}).difficulty ?? 1.0;
+        const difficulty = REGIONS[rIdx]?.difficulty ?? (this._region || {}).difficulty ?? 1.0;
         for (const e of mapEnemies) {
-          const enemy = new Enemy(this, e.x, e.y, e.type, difficulty);
+          const enemy = new Enemy(this, e.x + dx, e.y + dy, e.type, difficulty);
           this.enemies.push(enemy);
+          if (sink) { enemy._streamRegion = rIdx; sink.enemies.push(enemy); }
         }
       }
 
@@ -1624,20 +1908,23 @@ export class GameScene extends Phaser.Scene {
       const mapNpcs = mapData.npcs || [];
       for (const n of mapNpcs) {
         const dialogueId = n.config?.id || n.id;
-        const npc = new NPC(this, n.x, n.y, { id: dialogueId, type: n.type || 'yellow' });
+        const npc = new NPC(this, n.x + dx, n.y + dy, { id: dialogueId, type: n.type || 'yellow' });
         npc._embeddedDialogue = n.config || null;
         this._mapNpcs.push(npc);
+        if (sink) { npc._streamRegion = rIdx; sink.objects.push(npc); }
       }
 
       // Spawn animated creatures placed in the map editor (auto-discovered from
       // animations.json). Async + best-effort: missing/rejected entities are skipped.
-      this._spawnMapCreatures(mapData);
+      // Skipped for streamed neighbours (async lifecycle would outlive a quick unload).
+      if (!sink) this._spawnMapCreatures(mapData);
 
       // _mapBossOverride already set synchronously before _createBossArena was called
     };
 
     // Override portals from map-editor placement (runs synchronously, before async place())
-    const mapPortals = mapData.portals || [];
+    // Streamed neighbours don't manage portals — the active region owns them.
+    const mapPortals = (sink ? [] : mapData.portals) || [];
     if (mapPortals.length > 0) {
       ['back', 'next'].forEach(dir => {
         const p = this._portals?.[dir];
@@ -1974,6 +2261,7 @@ export class GameScene extends Phaser.Scene {
     // ── Slow tick: portals + pressure plates + echoes (every 8 frames)
     if (this._slowTickCounter % 8 === 0) {
       this._checkPressurePlates();
+      this._checkStreaming();
       this._checkPortals();
       this._checkEchoTriggers();
       this._checkShrineProximity();
@@ -2230,6 +2518,9 @@ export class GameScene extends Phaser.Scene {
   _checkPortals() {
     // In co-op, only the host triggers portal transitions; client follows via REGION_CHANGE
     if (this.network?.connected && this.network.isClient()) return;
+    // During the streaming PoC the edge portals are owned by the streamer, not
+    // by scene.restart — suppress them so crossings stay seamless.
+    if (STREAM_POC.enabled && !this.network?.connected && STREAM_POC.regions.includes(this._stream?.base)) return;
     const check = (portal, isNext) => {
       if (!portal || portal.locked) return;
       for (const p of this.players) {
