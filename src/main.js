@@ -32,7 +32,11 @@ const config = {
     default: 'arcade',
     arcade: {
       gravity: { y: 0 },
-      debug: false,
+      // TEMP(collision-debug): draws every physics body outline — the player's
+      // foot circle and the solid-prop circles — for tuning. Set `debug` back to
+      // false to turn it off. Velocity arrows disabled to keep it readable.
+      debug: true,
+      debugShowVelocity: false,
     },
   },
   scene: [
