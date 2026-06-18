@@ -8,6 +8,7 @@ import { Enemy  } from '../entities/Enemy.js';
 import { Boss   } from '../entities/Boss.js';
 import { BOSSES } from '../data/bosses.js';
 import { familyForKey, familyLoads, familyAnimKeys, entityType, assetsReady, defineAnims, loadAnimationsJSON } from '../systems/AnimationLoader.js';
+import { statsFor } from '../data/creatureStats.js';
 import { Projectile } from '../entities/Projectile.js';
 import { AudioManager } from '../systems/AudioManager.js';
 import { QuestManager } from '../systems/QuestManager.js';
@@ -1377,16 +1378,6 @@ export class GameScene extends Phaser.Scene {
     };
   }
 
-  // Base combat stats for a placed creature, scaled by its entity_type.
-  _creatureStats(entityType) {
-    const T = {
-      boss:  { maxHp: 320, speed: 80,  attackDmg: 30, attackRange: 80, attackCd: 1400, xpValue: 50 },
-      enemy: { maxHp: 90,  speed: 110, attackDmg: 16, attackRange: 60, attackCd: 1200, xpValue: 14 },
-      npc:   { maxHp: 60,  speed: 95,  attackDmg: 8,  attackRange: 55, attackCd: 1300, xpValue: 8 },
-    };
-    return T[entityType] || T.enemy;
-  }
-
   // Spawn map-editor creatures as fighting Enemy instances. Each carries an
   // entity_key resolved against the merged animations.json families, with a
   // synthesized Enemy config (textureBase + anim alias + stats). Best-effort &
@@ -1415,20 +1406,27 @@ export class GameScene extends Phaser.Scene {
       const restKey  = restName && `${key}_${restName}`;
       if (!restKey || !this.anims.exists(restKey)) continue;
 
+      const stats = statsFor(key, entityType(key) || 'enemy');
       const f0 = this.anims.get(restKey).frames[0];
       const fh = f0?.frame?.height || 64;
-      const scale = Math.min(2, Math.max(0.15, 80 / fh));   // normalize to ~80px tall
+      const targetPx = stats.sizePx || 80;
+      const scale = Math.min(3, Math.max(0.1, targetPx / fh));   // fit to target height
       const cfg = {
         key,
         textureBase:   key,
         spriteTexture: f0.textureKey,
         animAlias:     this._creatureAnimAlias(key, restName),
+        maxHp:       stats.maxHp,
+        speed:       stats.speed,
+        attackDmg:   stats.attackDmg,
+        attackRange: stats.attackRange,
+        attackCd:    stats.attackCd,
+        xpValue:     stats.xpValue,
         scale,
-        tint:    null,
+        tint:    stats.tint ?? null,
         physics: false,
         label:   key,
         drops:   [],
-        ...this._creatureStats(entityType(key) || 'enemy'),
       };
       for (const c of list) {
         const enemy = new Enemy(this, c.x, c.y, cfg, difficulty);
