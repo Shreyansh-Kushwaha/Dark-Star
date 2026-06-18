@@ -1882,20 +1882,10 @@ export class GameScene extends Phaser.Scene {
       if (sink) { rect._streamRegion = rIdx; sink.noWalk.push(rect); }
     }
 
-    // Auto-colliders for solid props (trees, pillars, rocks…): each carries an
-    // authored footprint box at its base, turned into a static body just like a
-    // no-walk zone. Footprint is centred at (ox, oy) relative to the sprite anchor.
-    const solidProps = (mapData.sprites || []).filter(sp => sp.prop === 'solid' && sp.footprint);
-    for (const sp of solidProps) {
-      const f = sp.footprint;
-      const rect = this.add.rectangle(sp.x + (f.ox || 0) + dx, sp.y + (f.oy || 0) + dy, f.w, f.h);
-      rect.setVisible(false);
-      this.physics.add.existing(rect, true);
-      this._noWalkGroup.add(rect);
-      if (sink) { rect._streamRegion = rIdx; sink.noWalk.push(rect); }
-    }
-
-    if ((mapData.noWalkZones || []).length > 0 || solidProps.length > 0) this._noWalkGroup.refresh();
+    // Solid-prop colliders are added per-sprite in placeSprite via
+    // _addPropFootprint (circular bodies at each prop's base) — the single
+    // collision path, so no separate rectangle pass here.
+    if ((mapData.noWalkZones || []).length > 0) this._noWalkGroup.refresh();
 
     const sprites = mapData.sprites || [];
     const missing = []; // { key, url, isSheet?, frameW?, frameH? }
