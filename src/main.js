@@ -33,8 +33,8 @@ const config = {
     arcade: {
       gravity: { y: 0 },
       // Set `debug` to true to draw every physics body outline (the player's
-      // foot circle and the solid-prop circles) for collision tuning.
-      debug: false,
+      // foot circle and the solid-prop footprint boxes) for collision tuning.
+      debug: true,
       debugShowVelocity: false,
     },
   },
