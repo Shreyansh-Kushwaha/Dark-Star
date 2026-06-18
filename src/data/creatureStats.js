@@ -7,6 +7,8 @@
 //   sizePx  — target on-screen height in px (overrides the ~80px auto-fit so a
 //             boss can tower over a rat regardless of source frame size)
 //   tint    — Phaser colour int, e.g. 0xff8888
+//   passive — true for wildlife: never attacks the player; wanders calmly and
+//             bolts (flees) when the player gets close or hits it. Still huntable.
 //
 // ── Balance anchor ──────────────────────────────────────────────────────────
 // Values are tuned against the shipping, already-balanced ENEMY_TYPES roster and
@@ -76,6 +78,23 @@ export const CREATURE_STATS = {
   slime1:                 { maxHp: 38,  speed: 70, attackDmg: 8,  attackRange: 45, attackCd: 1350, xpValue: 6, sizePx: 60 }, // T0/1
   monsters_bat:           { maxHp: 45,  speed: 155, attackDmg: 11, attackRange: 60, attackCd: 950, xpValue: 12, sizePx: 58 }, // T1 (mirrors bat)
   monsters_rat:           { maxHp: 30,  speed: 170, attackDmg: 8,  attackRange: 42, attackCd: 850, xpValue: 7,  sizePx: 55 }, // T0 (mirrors rat)
+
+  // ── Passive wildlife (never attack; flee when approached or hit) ────────────
+  // assets6 animal 2 (wild animals)
+  boar:         { maxHp: 90, speed: 120, attackDmg: 16, attackRange: 58, attackCd: 1200, xpValue: 16, sizePx: 56 }, // AGGRESSIVE (has attack anim)
+  deer:         { maxHp: 50, speed: 155, xpValue: 12, sizePx: 60, passive: true },
+  fox:          { maxHp: 40, speed: 165, xpValue: 10, sizePx: 50, passive: true },
+  hare:         { maxHp: 25, speed: 195, xpValue: 8,  sizePx: 42, passive: true },
+  black_grouse: { maxHp: 30, speed: 140, xpValue: 10, sizePx: 46, passive: true },
+  // assets6 animal 1 (farm animals)
+  bull:    { maxHp: 130, speed: 95,  xpValue: 16, sizePx: 70, passive: true },
+  calf:    { maxHp: 55,  speed: 115, xpValue: 10, sizePx: 52, passive: true },
+  sheep:   { maxHp: 60,  speed: 95,  xpValue: 10, sizePx: 58, passive: true },
+  lamb:    { maxHp: 35,  speed: 125, xpValue: 8,  sizePx: 46, passive: true },
+  piglet:  { maxHp: 35,  speed: 125, xpValue: 8,  sizePx: 46, passive: true },
+  rooster: { maxHp: 25,  speed: 135, xpValue: 7,  sizePx: 44, passive: true },
+  chick:   { maxHp: 12,  speed: 115, xpValue: 4,  sizePx: 30, passive: true },
+  turkey:  { maxHp: 35,  speed: 125, xpValue: 8,  sizePx: 48, passive: true },
 };
 
 // Resolve final stats for an entity: type default merged with any per-key override.

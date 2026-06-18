@@ -1,10 +1,16 @@
 import { ENEMY_TYPES } from '../data/enemies.js';
 import { QualitySettings } from '../systems/QualitySettings.js';
 
-const STATE = { IDLE: 'idle', PURSUE: 'pursue', ATTACK: 'attack', DEAD: 'dead' };
+const STATE = { IDLE: 'idle', PURSUE: 'pursue', ATTACK: 'attack', FLEE: 'flee', DEAD: 'dead' };
 const IDLE_ROAM_DIST = 120;
 const DETECT_RANGE   = 350;
 const DETECT_RANGE_SQ = DETECT_RANGE * DETECT_RANGE;
+// Passive wildlife: bolt when the player gets this close (or when hit), and keep
+// running until they've opened up this much distance.
+const FLEE_TRIGGER   = 170;
+const FLEE_TRIGGER_SQ = FLEE_TRIGGER * FLEE_TRIGGER;
+const FLEE_SAFE      = 360;
+const FLEE_SAFE_SQ   = FLEE_SAFE * FLEE_SAFE;
 let _enemyIdCounter  = 0;
 
 export class Enemy extends Phaser.GameObjects.Container {
@@ -20,6 +26,8 @@ export class Enemy extends Phaser.GameObjects.Container {
     this.cfg       = cfg;
     if (typeof typeKey === 'string') scene._markEnemyEncountered?.(typeKey); // Codex bestiary
     this.alive     = true;
+    this.passive   = !!cfg.passive;   // wildlife: never attacks; flees instead
+    this._fleeTimer = 0;
     this.state     = STATE.IDLE;
     this.speed     = cfg.speed;
     this.maxHp     = Math.floor(cfg.maxHp * diffMult);
@@ -125,6 +133,7 @@ export class Enemy extends Phaser.GameObjects.Container {
       case STATE.IDLE:    this._doIdle(time, delta, target); break;
       case STATE.PURSUE:  this._doPursue(delta, target, treePositions); break;
       case STATE.ATTACK:  this._doAttack(target); break;
+      case STATE.FLEE:    this._doFlee(delta, target); break;
     }
   }
 
@@ -143,7 +152,13 @@ export class Enemy extends Phaser.GameObjects.Container {
   _doIdle(time, delta, target) {
     if (target) {
       const dx = this.x - target.x, dy = this.y - target.y;
-      if (dx * dx + dy * dy < DETECT_RANGE_SQ) { this.state = STATE.PURSUE; return; }
+      const dSq = dx * dx + dy * dy;
+      if (this.passive) {
+        // Wildlife: never aggro — bolt only when the player gets very close.
+        if (dSq < FLEE_TRIGGER_SQ) { this.state = STATE.FLEE; this._fleeTimer = 1200; return; }
+      } else if (dSq < DETECT_RANGE_SQ) {
+        this.state = STATE.PURSUE; return;
+      }
     }
 
     this._roamTimer -= delta;
@@ -183,6 +198,29 @@ export class Enemy extends Phaser.GameObjects.Container {
       this.body.setVelocity(0, 0);
       this._playAnim('idle');
     }
+  }
+
+  // Passive wildlife flee: sprint directly away from the player until they've
+  // opened up a safe gap and the panic timer has run out, then settle to idle.
+  _doFlee(delta, target) {
+    this._fleeTimer -= delta;
+    if (!target) {
+      if (this._fleeTimer <= 0) { this.state = STATE.IDLE; this.body.setVelocity(0, 0); this._playAnim('idle'); }
+      return;
+    }
+    const dx = this.x - target.x, dy = this.y - target.y;
+    const dSq = dx * dx + dy * dy;
+    if (this._fleeTimer <= 0 && dSq > FLEE_SAFE_SQ) {
+      this.state = STATE.IDLE; this._roamTarget = null; this._roamTimer = 0;
+      this.body.setVelocity(0, 0); this._playAnim('idle');
+      return;
+    }
+    if (dSq < FLEE_TRIGGER_SQ) this._fleeTimer = Math.max(this._fleeTimer, 600); // keep bolting while chased
+    const d = Math.sqrt(dSq) || 1;
+    const mx = dx / d, my = dy / d;
+    this.body.setVelocity(mx * this.speed, my * this.speed);
+    this.sprite.setFlipX(mx < 0);
+    this._playAnim('run');
   }
 
   _doPursue(delta, target, treePositions) {
@@ -333,8 +371,9 @@ export class Enemy extends Phaser.GameObjects.Container {
       if (this.alive) this.sprite.clearTint();
     });
 
-    // Aggro on hit
-    if (this.state === STATE.IDLE) this.state = STATE.PURSUE;
+    // Aggro on hit — but passive wildlife bolts instead of fighting back.
+    if (this.passive) { this.state = STATE.FLEE; this._fleeTimer = 1500; }
+    else if (this.state === STATE.IDLE) this.state = STATE.PURSUE;
 
     if (this.hp <= 0) this._die(scene);
   }

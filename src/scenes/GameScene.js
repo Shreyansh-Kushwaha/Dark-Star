@@ -1335,6 +1335,7 @@ export class GameScene extends Phaser.Scene {
         scale,
         tint:    stats.tint ?? null,
         physics: false,
+        passive: !!stats.passive,
         label:   key,
         drops:   [],
       };
