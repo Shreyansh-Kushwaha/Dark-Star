@@ -17,6 +17,7 @@ import { NetworkManager } from '../systems/NetworkManager.js';
 import { QualitySettings } from '../systems/QualitySettings.js';
 import { ExploredManager } from '../systems/ExploredManager.js';
 import { NPC } from '../entities/NPC.js';
+import { classifyProp, propFootprint } from '../data/propTypes.js';
 
 // Gated shortcuts: portals sealed until a requirement is met. Keyed by region index,
 // matched to a portal by its targetRegion. requires: { lore: N } | { item } | { boss }.
@@ -1845,6 +1846,21 @@ export class GameScene extends Phaser.Scene {
     return this.add.image(WORLD_W / 2 + dx, WORLD_H / 2 + dy, TEX_KEY).setDepth(-5);
   }
 
+  // Invisible static collider at a solid prop's base, so actors are stopped by
+  // the foot/trunk rather than the whole (mostly empty) sprite bounding box.
+  // `fp` is an optional { w, h } footprint; otherwise it's auto-sized from the
+  // on-screen sprite. Registered like a noWalkZone so streaming unload tracks it.
+  _addPropFootprint(worldX, baseY, dispW, dispH, fp, rIdx, sink) {
+    const w = fp?.w ?? Math.max(12, Math.abs(dispW) * 0.5);
+    const h = fp?.h ?? Math.max(10, Math.min(Math.abs(dispH) * 0.28, 24));
+    const rect = this.add.rectangle(worldX, baseY - h / 2, w, h);
+    rect.setVisible(false);
+    this.physics.add.existing(rect, true);   // static body positioned at creation
+    this._noWalkGroup.add(rect);
+    if (sink) { rect._streamRegion = rIdx; sink.noWalk.push(rect); }
+    return rect;
+  }
+
   // `opts` (streaming): { dx, dy, regionIndex, sink } where sink collects the
   // created objects/enemies/no-walk bodies for later unload. Omitted → builds
   // the active region in-place exactly as before.
@@ -1862,7 +1878,21 @@ export class GameScene extends Phaser.Scene {
       this._noWalkGroup.add(rect);
       if (sink) { rect._streamRegion = rIdx; sink.noWalk.push(rect); }
     }
-    if ((mapData.noWalkZones || []).length > 0) this._noWalkGroup.refresh();
+
+    // Auto-colliders for solid props (trees, pillars, rocks…): each carries an
+    // authored footprint box at its base, turned into a static body just like a
+    // no-walk zone. Footprint is centred at (ox, oy) relative to the sprite anchor.
+    const solidProps = (mapData.sprites || []).filter(sp => sp.prop === 'solid' && sp.footprint);
+    for (const sp of solidProps) {
+      const f = sp.footprint;
+      const rect = this.add.rectangle(sp.x + (f.ox || 0) + dx, sp.y + (f.oy || 0) + dy, f.w, f.h);
+      rect.setVisible(false);
+      this.physics.add.existing(rect, true);
+      this._noWalkGroup.add(rect);
+      if (sink) { rect._streamRegion = rIdx; sink.noWalk.push(rect); }
+    }
+
+    if ((mapData.noWalkZones || []).length > 0 || solidProps.length > 0) this._noWalkGroup.refresh();
 
     const sprites = mapData.sprites || [];
     const missing = []; // { key, url, isSheet?, frameW?, frameH? }
@@ -1884,7 +1914,38 @@ export class GameScene extends Phaser.Scene {
     // Place one map sprite (image / spritesheet anim / frame-sequence anim).
     const placeSprite = (sp) => {
       const key = _mapSpriteKey(sp.dir, sp.frames[0]);
-      const depth = sp.spriteLayer === 'above' ? sp.y + 1 : sp.y - 1;
+      // Top-down depth + collision, driven by the prop "kind". Editor-authored
+      // sp.prop wins; otherwise the asset is auto-classified by name/dir so
+      // existing regions get correct sorting without re-tagging every sprite.
+      //   ground → fixed low depth (always under entities, above terrain), no collider
+      //   solid  → Y-sorts by its ground base AND gets a footprint collider
+      //   decor  → Y-sorts by its ground base, walk-through (no collider)
+      const kind = sp.prop || classifyProp(sp);
+      // Rendered bottom (where the prop meets the ground) = anchor + the portion
+      // of the (scaled) sprite below its origin. Used for both depth and collider.
+      const sy = sp.scaleY ?? 1;
+      const th = (sp.frameW && sp.frameH)
+        ? sp.frameH
+        : (this.textures.get(key)?.getSourceImage()?.height || (sp.offsetY ?? 0) * 2);
+      const oy = sp.offsetY ?? th / 2;
+      const baseY = sp.y + (th - oy) * sy;
+      let depth;
+      if (kind === 'ground') {
+        depth = -8;
+      } else if (kind === 'solid' && sp.footprint) {
+        depth = sp.y + (sp.footprint.oy || 0) + (sp.footprint.h || 0) / 2;
+      } else {
+        // solid (auto) + decor both sort by their rendered base; honour an
+        // explicit "above" tag as a small overhead bump (e.g. tree canopies).
+        depth = baseY + (sp.spriteLayer === 'above' ? 2 : 0);
+      }
+      // Solid props get a small invisible collider at their base so actors are
+      // blocked by the trunk/foot, not the whole leafy bounding box.
+      const addFootprint = (obj) => {
+        if (kind !== 'solid') return;
+        this._addPropFootprint(obj.x, baseY + dy, obj.displayWidth, obj.displayHeight,
+                               sp.footprint || propFootprint(sp), rIdx, sink);
+      };
       // Streamed sprites pop in over several frames — a brief fade softens that.
       const reveal = (o) => {
         if (sink) { const a = o.alpha; o.setAlpha(0); this.tweens.add({ targets: o, alpha: a, duration: 350, ease: 'Quad.easeOut' }); }
@@ -1909,6 +1970,7 @@ export class GameScene extends Phaser.Scene {
           .play(animKey);
         if (sp.offsetX != null && sp.offsetY != null)
           spr.setOrigin(sp.offsetX / sp.frameW, sp.offsetY / sp.frameH);
+        addFootprint(spr);
         this._glowEmissive(spr, sp);
         reveal(spr);
         return;
@@ -1936,6 +1998,7 @@ export class GameScene extends Phaser.Scene {
           const h = tex.getSourceImage()?.height || sp.offsetY * 2;
           spr.setOrigin(sp.offsetX / w, sp.offsetY / h);
         }
+        addFootprint(spr);
         this._glowEmissive(spr, sp);
         reveal(spr);
         return;
@@ -1951,6 +2014,7 @@ export class GameScene extends Phaser.Scene {
         const h = tex.getSourceImage()?.height || sp.offsetY * 2;
         img.setOrigin(sp.offsetX / w, sp.offsetY / h);
       }
+      addFootprint(img);
       this._glowEmissive(img, sp);
       reveal(img);
     };
