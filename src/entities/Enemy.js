@@ -92,10 +92,17 @@ export class Enemy extends Phaser.GameObjects.Container {
       scene.anims.exists(`${tb}_${n}_left`) ||
       scene.anims.exists(`${tb}_${n}_right`) ||
       scene.anims.exists(`${tb}_${n}_back`));
-    // Directional creatures start facing a random way so a placed group doesn't
-    // all stare front; facing then tracks movement. (Front-only sprites stay front.)
+    // Directional creatures start facing a varied way so a placed group doesn't
+    // all stare front; facing then tracks movement. Seeded from the spawn position
+    // (not Math.random) so host and client agree in co-op. (Front-only stays front.)
     if (this._directional) {
-      this._facing = ['front', 'back', 'left', 'right'][Math.floor(Math.random() * 4)];
+      // Hash the spawn position with an avalanche mix so even grid-aligned
+      // placements spread evenly across the 4 facings (plain low bits don't).
+      let h = (Math.round(x) * 73856093) ^ (Math.round(y) * 19349663);
+      h = Math.imul(h ^ (h >>> 16), 2246822507);
+      h = Math.imul(h ^ (h >>> 13), 3266489909);
+      h = (h ^ (h >>> 16)) >>> 0;
+      this._facing = ['front', 'back', 'left', 'right'][h % 4];
     }
 
     this._playAnim('idle');
