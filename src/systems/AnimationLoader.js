@@ -8,13 +8,19 @@
 //      boss specs (frame reuse, reversed death frames, single-frame idles…).
 //      Kept verbatim so the 6 shipping bosses behave byte-identically.
 //   2. docs/animations.json (served at /api/animations) — entities APPROVED in
-//      animation_reviewer.html. Each frame_folder animation is converted into the
-//      same { loads, anims } family shape. NEW entities need no code — just data.
+//      animation_reviewer.html. Both frame_folder and spritesheet animations are
+//      converted into the { loads, anims } family shape. NEW entities need no
+//      code — just data.
 //
-// A "family" is { loads:[{key,url}], anims:[{key,src,nums,fr,rep}] }; an anim's
-// frame keys are `${src}_${pad(n)}`, letting one state's frames back another
-// (e.g. slime "run" reuses idle). All functions are idempotent and scene-scoped,
-// so host and joining client can both run them on region entry — co-op safe.
+// A "family" is { loads:[…], anims:[…] } supporting two animation sources:
+//   • frame_folder — load is {key,url} (one image per frame); anim is
+//     {key,src,nums,fr,rep} whose frame keys are `${src}_${pad(n)}`, letting one
+//     state's frames back another (e.g. slime "run" reuses idle).
+//   • spritesheet — load is {key,url,frameWidth,frameHeight} (one sheet sliced by
+//     Phaser into a grid); anim is {key,sheet,start,end,fr,rep} built from frame
+//     indices via generateFrameNumbers.
+// All functions are idempotent and scene-scoped, so host and joining client can
+// both run them on region entry — co-op safe.
 
 import { BOSS_FAMILIES } from '../data/bossAssets.js';
 
@@ -24,25 +30,41 @@ const pad = n => String(n).padStart(2, '0');
 const FAMILIES = { ...BOSS_FAMILIES };
 
 // Convert one approved animations.json pack into a { loads, anims } family.
-// Only frame_folder animations with an embedded ordered `frames` list become
-// runtime families; spritesheet entities are editor-only for now (the image-frame
-// loader below can't slice a sheet). Exported for unit testing.
+// Handles both frame_folder animations (embedded ordered `frames` list) and
+// spritesheet animations (sliced by Phaser using `frame_size`). Exported for
+// unit testing.
 export function familyFromPack(pack) {
   const loads = [];
   const anims = [];
   for (const a of pack.animations || []) {
-    if (a.source !== 'frame_folder' || !Array.isArray(a.frames) || !a.frames.length) continue;
-    const src = `${pack.entity_key}_${a.name}`;
-    a.frames.forEach((file, i) => {
-      loads.push({ key: `${src}_${pad(i + 1)}`, url: a.dir + '/' + file });
-    });
-    anims.push({
-      key: src,
-      src,
-      nums: a.frames.map((_, i) => i + 1),
-      fr: a.framerate ?? 8,
-      rep: a.loop ? -1 : 0,
-    });
+    const key = `${pack.entity_key}_${a.name}`;
+    if (a.source === 'spritesheet') {
+      const [fw, fh] = a.frame_size || [];
+      const n = a.frame_count || 0;
+      if (!fw || !fh || n < 1 || !a.spritesheet) continue;
+      const sheet = `${key}_sheet`;
+      loads.push({ key: sheet, url: a.spritesheet, frameWidth: fw, frameHeight: fh });
+      anims.push({
+        key,
+        sheet,
+        start: 0,
+        end: n - 1,
+        fr: a.framerate ?? 8,
+        rep: a.loop ? -1 : 0,
+      });
+    } else {
+      if (!Array.isArray(a.frames) || !a.frames.length) continue;
+      a.frames.forEach((file, i) => {
+        loads.push({ key: `${key}_${pad(i + 1)}`, url: a.dir + '/' + file });
+      });
+      anims.push({
+        key,
+        src: key,
+        nums: a.frames.map((_, i) => i + 1),
+        fr: a.framerate ?? 8,
+        rep: a.loop ? -1 : 0,
+      });
+    }
   }
   return (loads.length || anims.length) ? { loads, anims } : null;
 }
@@ -98,8 +120,14 @@ export function queueLoads(scene, key) {
   const fam = FAMILIES[key];
   if (!fam) return 0;
   let queued = 0;
-  for (const { key: k, url } of fam.loads) {
-    if (!scene.textures.exists(k)) { scene.load.image(k, url); queued++; }
+  for (const l of fam.loads) {
+    if (scene.textures.exists(l.key)) continue;
+    if (l.frameWidth) {
+      scene.load.spritesheet(l.key, l.url, { frameWidth: l.frameWidth, frameHeight: l.frameHeight });
+    } else {
+      scene.load.image(l.key, l.url);
+    }
+    queued++;
   }
   return queued;
 }
@@ -111,9 +139,12 @@ export function defineAnims(scene, key) {
   if (!fam) return;
   for (const a of fam.anims) {
     if (scene.anims.exists(a.key)) continue;
+    const frames = a.sheet
+      ? scene.anims.generateFrameNumbers(a.sheet, { start: a.start, end: a.end })
+      : a.nums.map(n => ({ key: `${a.src}_${pad(n)}` }));
     scene.anims.create({
       key: a.key,
-      frames: a.nums.map(n => ({ key: `${a.src}_${pad(n)}` })),
+      frames,
       frameRate: a.fr ?? 10,
       repeat: a.rep ?? -1,
     });

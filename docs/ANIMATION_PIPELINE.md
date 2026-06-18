@@ -129,8 +129,9 @@ drives playback through `familyForKey` / `familyLoads` / `assetsReady` /
 `defineAnims`. Adding a new entity is now data-only: approve it in the reviewer →
 export → it’s loadable by `entity_key` with no code change.
 
-> Spritesheet-source entities are editor-only for now — the image-frame loader
-> can’t slice a sheet, so only `frame_folder` entities become runtime families.
+> Both source types are runtime-loadable: `frame_folder` entities load one image
+> per frame, and `spritesheet` entities are sliced by Phaser using the approved
+> `frame_size` (`scene.load.spritesheet` + `generateFrameNumbers`).
 
 ## Files
 
