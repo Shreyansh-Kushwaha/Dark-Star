@@ -1490,8 +1490,8 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "2:62x61",
           "entity_key": "map_objects",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] static prop sprites \u2014 multiple variants, not animation frames"
         },
         {
           "id": "frames::assest4/map_objects/2 Objects/5 Grass",
@@ -1510,8 +1510,8 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "6:5x6",
           "entity_key": "map_objects_2_objects",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] static prop sprites \u2014 multiple variants, not animation frames"
         },
         {
           "id": "frames::assest4/map_objects/2 Objects/8 Camp",
@@ -1530,8 +1530,8 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "6:57x36",
           "entity_key": "map_objects_2_objects",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] static prop sprites \u2014 multiple variants, not animation frames"
         },
         {
           "id": "frames::assest4/map_objects/2 Objects/9 Bush",
@@ -1550,8 +1550,8 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "6:26x23",
           "entity_key": "map_objects_2_objects",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] static prop sprites \u2014 multiple variants, not animation frames"
         },
         {
           "id": "frames::assest4/map_objects/2 Objects/2 Fence",
@@ -1570,8 +1570,8 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "10:27x15",
           "entity_key": "map_objects_2_objects",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] static prop sprites \u2014 multiple variants, not animation frames"
         },
         {
           "id": "frames::assest4/map_objects/2 Objects/4 Stone",
@@ -1590,8 +1590,8 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "16:11x8",
           "entity_key": "map_objects_2_objects",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] static prop sprites \u2014 multiple variants, not animation frames"
         },
         {
           "id": "frames::assest4/map_objects/2 Objects/7 Decor",
@@ -1610,8 +1610,8 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "4:17x16",
           "entity_key": "map_objects_2_objects",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] static prop sprites \u2014 multiple variants, not animation frames"
         },
         {
           "id": "frames::assest4/map_objects/2 Objects/7 Decor",
@@ -1630,8 +1630,8 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "6:10x10",
           "entity_key": "map_objects_2_objects",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] static prop sprites \u2014 multiple variants, not animation frames"
         },
         {
           "id": "frames::assest4/map_objects/2 Objects/7 Decor",
@@ -1650,8 +1650,8 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "6:20x35",
           "entity_key": "map_objects_2_objects",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] static prop sprites \u2014 multiple variants, not animation frames"
         },
         {
           "id": "frames::assest4/map_objects/2 Objects/7 Decor",
@@ -1670,8 +1670,8 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "4:34x21",
           "entity_key": "map_objects_2_objects",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] static prop sprites \u2014 multiple variants, not animation frames"
         },
         {
           "id": "frames::assest4/map_objects/2 Objects/7 Decor",
@@ -1690,8 +1690,8 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "2:66x77",
           "entity_key": "map_objects_2_objects",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] static prop sprites \u2014 multiple variants, not animation frames"
         },
         {
           "id": "frames::assest4/map_objects/2 Objects/6 Flower",
@@ -1710,8 +1710,8 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "12:6x6",
           "entity_key": "map_objects_2_objects",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] static prop sprites \u2014 multiple variants, not animation frames"
         },
         {
           "id": "frames::assest4/map_objects/2 Objects/1 Shadow",
@@ -1730,8 +1730,8 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "6:20x21",
           "entity_key": "map_objects_2_objects",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] static prop sprites \u2014 multiple variants, not animation frames"
         },
         {
           "id": "frames::assest4/map_objects/2 Objects/3 Pointer",
@@ -1750,8 +1750,8 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "6:20x36",
           "entity_key": "map_objects_2_objects",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] static prop sprites \u2014 multiple variants, not animation frames"
         },
         {
           "id": "frames::assest4/map_objects/3 Animated Objects/2 Campfire",
@@ -1766,12 +1766,14 @@
           ],
           "example": "1.png",
           "framerate": 8,
-          "loop": false,
+          "loop": true,
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "2:192x64",
-          "entity_key": "map_objects_3_animated_objects",
-          "status": "pending",
-          "remark": ""
+          "entity_key": "campfire",
+          "status": "approved",
+          "remark": "",
+          "entity_type": "prop",
+          "auto": false
         },
         {
           "id": "frames::assest4/map_objects/3 Animated Objects/1 Flag",
@@ -1786,12 +1788,14 @@
           ],
           "example": "1.png",
           "framerate": 8,
-          "loop": false,
+          "loop": true,
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "5:192x64",
-          "entity_key": "map_objects_3_animated_objects",
-          "status": "pending",
-          "remark": ""
+          "entity_key": "flag",
+          "status": "approved",
+          "remark": "",
+          "entity_type": "prop",
+          "auto": false
         }
       ]
     },
