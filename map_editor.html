@@ -1148,13 +1148,28 @@ function renderEntityTray(tab) {
 // ── Creatures: auto-discovered from docs/animations.json ─────────────────────
 // Reads the APPROVED animation entities (same data the runtime AnimationLoader
 // uses) so any approved creature can be browsed and placed without code changes.
+// True for entities that are actual creatures (placeable as living things), so
+// the Creatures tab isn't cluttered with UI / tilesets / FX / props / buildings.
+// boss/enemy/npc are always creatures; prop/vfx never are; for the catch-all
+// 'misc' bucket we keep only real characters (ninja-adventure actors, tiny-swords
+// units) and drop everything else (ui, fx, terrain, items, backgrounds…).
+function isCreatureEntity(e) {
+  const t = e.entity_type;
+  if (t === 'boss' || t === 'enemy' || t === 'npc') return true;
+  if (t === 'prop' || t === 'vfx') return false;
+  return /_actor_|_units_/.test(e.entity_key || '');
+}
+
 async function loadAnimEntities() {
   try {
     const res = await fetch('/api/animations');
     const json = await res.json();
-    S.animEntities = (json.packs || []).slice().sort((a, b) =>
+    const all = (json.packs || []).slice().sort((a, b) =>
       a.entity_key.localeCompare(b.entity_key));
-    S.animEntityMap = new Map(S.animEntities.map(e => [e.entity_key, e]));
+    // Tab shows creatures only; the map keeps ALL entities so already-placed
+    // markers still resolve their sprite regardless of type.
+    S.animEntities = all.filter(isCreatureEntity);
+    S.animEntityMap = new Map(all.map(e => [e.entity_key, e]));
     if (S.activeTrayTab === 'creatures') renderTray();
   } catch {
     S.animEntities = [];
