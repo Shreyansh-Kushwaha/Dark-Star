@@ -107,6 +107,10 @@ button.spawn-btn{border-color:#00ffcc;color:#00ffcc}button.spawn-btn:hover{backg
 .tab.npc-tab.active{color:#88ffee;border-bottom-color:#44ffcc;background:#44ffcc11}
 button.portal-btn{border-color:#00ccff;color:#66eeff}button.portal-btn:hover{background:#001a28}button.portal-btn.active{background:#00ccff22;border-color:#66eeff}
 .tab.portal-tab.active{color:#66eeff;border-bottom-color:#00ccff;background:#00ccff11}
+button.creature-btn{border-color:#cc77ff;color:#d9aaff}button.creature-btn:hover{background:#180a28}button.creature-btn.active{background:#cc77ff22;border-color:#d9aaff}
+.tab.creature-tab.active{color:#d9aaff;border-bottom-color:#cc77ff;background:#cc77ff11}
+.entity-thumb{width:48px;height:48px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.entity-thumb img,.entity-thumb canvas{max-width:48px;max-height:48px;image-rendering:pixelated}
 .portal-card{display:flex;flex-direction:column;gap:5px;padding:8px 10px;background:#080018;border:1px solid #333;border-radius:4px;min-width:120px}
 .portal-card label{font-size:9px;color:#888}
 .portal-card select{background:#0a0010;border:1px solid #333;color:#ccc;padding:2px 4px;font-size:10px;border-radius:2px;font-family:monospace;width:100%}
@@ -181,6 +185,7 @@ button.portal-btn{border-color:#00ccff;color:#66eeff}button.portal-btn:hover{bac
   <button style="border-color:#00ffcc;color:#00ffcc" id="btn-spawn-point">🟢 Spawn</button>
   <button class="enemy-btn" id="btn-enemy-tab">👾 Enemies</button>
   <button class="boss-btn"  id="btn-boss-tab">👑 Boss</button>
+  <button class="creature-btn" id="btn-creature-tab">🎬 Creatures</button>
   <button class="npc-btn"    id="btn-npc-tab">👤 NPC</button>
   <button class="portal-btn" id="btn-portal-tab">🌀 Portals</button>
   <button style="border-color:#cc88ff;color:#cc88ff" id="btn-world-view">🌐 World</button>
@@ -458,6 +463,12 @@ const S = {
   placingNpcType: null,          // 'yellow' | 'blue' while arming placement
   placingNpcType_config: null,   // config object while arming placement
   placedNpcs: [],                // [{ id, type, x, y, group, config }]
+  // ── Creatures (auto-discovered from docs/animations.json) ──────────────────
+  animEntities: null,            // [{ entity_key, entity_type, animations:[…] }] | null
+  animEntityMap: null,           // entity_key -> entity, for marker lookup
+  creatureSearchQ: '',           // filter text for the creatures tray
+  placingCreatureKey: null,      // entity_key string while arming placement
+  placedCreatures: [],           // [{ id, key, x, y, group }]
   placingPortal: null,           // { targetRegion } while arming placement
   placedPortals: [],             // [{ id, direction, targetRegion, x, y, group }]
   spawnPoint: null,              // { x, y, group } | null — player spawn for this region
@@ -658,7 +669,7 @@ function bindDrawing() {
 
 function updateCursor() {
   const cc = document.getElementById('canvas-container');
-  if (S.placingAsset || S.placingEnemyType || S.placingBossKey || S.placingNpcType || S.placingPortal || S.placingSpawn) cc.style.cursor = 'crosshair';
+  if (S.placingAsset || S.placingEnemyType || S.placingBossKey || S.placingCreatureKey || S.placingNpcType || S.placingPortal || S.placingSpawn) cc.style.cursor = 'crosshair';
   else if (S.panMode)                   cc.style.cursor = 'grab';
   else if (S.deleteMode)                cc.style.cursor = 'not-allowed';
   else if (S.noWalkMode)                cc.style.cursor = 'cell';
@@ -720,6 +731,14 @@ function bindStageClick() {
     if (S.placingBossKey && onBg) {
       const pos = S.stage.getPointerPosition();
       addBossMarker(S.placingBossKey,
+        (pos.x - S.stage.x()) / S.stage.scaleX(),
+        (pos.y - S.stage.y()) / S.stage.scaleY());
+      pushHistory();
+      return;
+    }
+    if (S.placingCreatureKey && onBg) {
+      const pos = S.stage.getPointerPosition();
+      addCreatureMarker(S.placingCreatureKey,
         (pos.x - S.stage.x()) / S.stage.scaleX(),
         (pos.y - S.stage.y()) / S.stage.scaleY());
       pushHistory();
@@ -809,6 +828,7 @@ function bindToolbar() {
   };
   document.getElementById('btn-enemy-tab').onclick = () => switchTrayTab('enemies');
   document.getElementById('btn-boss-tab').onclick  = () => switchTrayTab('boss');
+  document.getElementById('btn-creature-tab').onclick = () => switchTrayTab('creatures');
   document.getElementById('btn-npc-tab').onclick    = () => switchTrayTab('npcs');
   document.getElementById('btn-portal-tab').onclick = () => switchTrayTab('portals');
 
@@ -898,6 +918,7 @@ async function init() {
   } catch (err) {
     setStatus('⚠ Could not load assets: ' + err.message);
   }
+  loadAnimEntities();
   document.getElementById('global-search-input').addEventListener('input', e => {
     S.globalSearchQ = e.target.value.toLowerCase().trim();
     renderTray();
@@ -935,6 +956,7 @@ function switchTrayTab(tab) {
   renderTray();
   document.getElementById('btn-enemy-tab').classList.toggle('active',  tab === 'enemies');
   document.getElementById('btn-boss-tab').classList.toggle('active',   tab === 'boss');
+  document.getElementById('btn-creature-tab').classList.toggle('active', tab === 'creatures');
   document.getElementById('btn-npc-tab').classList.toggle('active',    tab === 'npcs');
   document.getElementById('btn-portal-tab').classList.toggle('active', tab === 'portals');
 }
@@ -1030,6 +1052,7 @@ function renderTray() {
     t.onclick = () => { S.activeTrayTab = 'assets'; S.activeCat = i; S.activeGrp = null;
       document.getElementById('btn-enemy-tab').classList.remove('active');
       document.getElementById('btn-boss-tab').classList.remove('active');
+      document.getElementById('btn-creature-tab').classList.remove('active');
       document.getElementById('btn-npc-tab').classList.remove('active');
       document.getElementById('btn-portal-tab').classList.remove('active');
       renderTray(); };
@@ -1038,6 +1061,7 @@ function renderTray() {
 
   if (S.activeTrayTab === 'enemies') { renderEntityTray('enemies'); return; }
   if (S.activeTrayTab === 'boss')    { renderEntityTray('boss');    return; }
+  if (S.activeTrayTab === 'creatures') { renderCreatureTray(); return; }
   if (S.activeTrayTab === 'npcs')    { renderEntityTray('npcs');    return; }
   if (S.activeTrayTab === 'portals') { renderPortalTray(); return; }
 
@@ -1119,6 +1143,179 @@ function renderEntityTray(tab) {
     };
     grid.appendChild(tile);
   }
+}
+
+// ── Creatures: auto-discovered from docs/animations.json ─────────────────────
+// Reads the APPROVED animation entities (same data the runtime AnimationLoader
+// uses) so any approved creature can be browsed and placed without code changes.
+async function loadAnimEntities() {
+  try {
+    const res = await fetch('/api/animations');
+    const json = await res.json();
+    S.animEntities = (json.packs || []).slice().sort((a, b) =>
+      a.entity_key.localeCompare(b.entity_key));
+    S.animEntityMap = new Map(S.animEntities.map(e => [e.entity_key, e]));
+    if (S.activeTrayTab === 'creatures') renderTray();
+  } catch {
+    S.animEntities = [];
+    S.animEntityMap = new Map();
+  }
+}
+
+// Pick a representative animation for a thumbnail (prefer idle/walk/run).
+function representativeAnim(entity) {
+  const anims = entity.animations || [];
+  return anims.find(a => /(^|_)(idle|walk|run)(_|$)/.test(a.name)) || anims[0] || null;
+}
+
+// Build a 48×48 thumbnail node: <img> for frame folders, sliced <canvas> for sheets.
+function entityThumb(entity) {
+  const box = document.createElement('div');
+  box.className = 'entity-thumb';
+  const a = representativeAnim(entity);
+  if (!a) return box;
+  if (a.source === 'frame_folder' && a.frames && a.frames.length) {
+    const img = document.createElement('img');
+    img.src = assetURL(a.dir, a.frames[0]);
+    img.loading = 'lazy'; img.title = entity.entity_key;
+    box.appendChild(img);
+  } else if (a.source === 'spritesheet' && a.frame_size) {
+    const [fw, fh] = a.frame_size;
+    const cv = document.createElement('canvas'); cv.width = fw; cv.height = fh;
+    const ctx = cv.getContext('2d');
+    const sheet = new Image();
+    sheet.onload = () => { ctx.clearRect(0, 0, fw, fh); ctx.drawImage(sheet, 0, 0, fw, fh, 0, 0, fw, fh); };
+    sheet.src = '/' + a.spritesheet.split('/').map(encodeURIComponent).join('/');
+    box.appendChild(cv);
+  }
+  return box;
+}
+
+function renderCreatureTray() {
+  const subEl = document.getElementById('tray-sub');
+  subEl.innerHTML = '';
+  const lbl = document.createElement('span');
+  lbl.style.cssText = 'font-size:10px;color:#d9aaff;padding:2px 4px';
+  lbl.textContent = 'Approved creatures from animations.json — click one, then click the map. Click a marker to delete.';
+  subEl.appendChild(lbl);
+  const srch = document.createElement('input');
+  srch.type = 'text'; srch.placeholder = '🔍 filter creatures…'; srch.value = S.creatureSearchQ;
+  srch.style.cssText = 'margin-left:auto;background:#0a0014;border:1px solid #333;color:#ddd;border-radius:4px;padding:3px 6px;font-size:11px';
+  srch.oninput = () => { S.creatureSearchQ = srch.value.toLowerCase().trim();
+    renderCreatureGrid(); srch.focus(); };
+  subEl.appendChild(srch);
+  renderCreatureGrid();
+}
+
+function renderCreatureGrid() {
+  const grid = document.getElementById('tray-grid');
+  grid.innerHTML = '';
+  if (S.animEntities == null) {
+    const n = document.createElement('div');
+    n.style.cssText = 'grid-column:1/-1;padding:8px;font-size:11px;color:#aaa;text-align:center';
+    n.textContent = 'Loading creatures…';
+    grid.appendChild(n); return;
+  }
+  let list = S.animEntities;
+  if (S.creatureSearchQ) list = list.filter(e => e.entity_key.toLowerCase().includes(S.creatureSearchQ));
+  if (!list.length) {
+    const n = document.createElement('div');
+    n.style.cssText = 'grid-column:1/-1;padding:8px;font-size:11px;color:#ffcc66;text-align:center';
+    n.textContent = S.animEntities.length ? 'No creature matches that filter.'
+      : 'No approved creatures yet — approve some in the Animation Reviewer and Export.';
+    grid.appendChild(n); return;
+  }
+  const TILE_CAP = 400;
+  const total = list.length;
+  if (total > TILE_CAP) list = list.slice(0, TILE_CAP);
+  for (const entity of list) {
+    const tile = document.createElement('div');
+    tile.className = 'entity-tile' + (S.placingCreatureKey === entity.entity_key ? ' selected' : '');
+    if (S.placingCreatureKey === entity.entity_key) tile.style.borderColor = '#d9aaff';
+    tile.appendChild(entityThumb(entity));
+    const lab = document.createElement('div');
+    lab.className = 'entity-label';
+    lab.style.color = '#d9aaff';
+    lab.textContent = entity.entity_key;
+    tile.appendChild(lab);
+    const sub = document.createElement('div');
+    sub.className = 'entity-label';
+    sub.style.color = '#777';
+    sub.textContent = `${entity.entity_type} · ${entity.animations.length} anims`;
+    tile.appendChild(sub);
+    tile.onclick = () => startPlacingCreature(entity.entity_key);
+    grid.appendChild(tile);
+  }
+  if (total > TILE_CAP) {
+    const note = document.createElement('div');
+    note.style.cssText = 'grid-column:1/-1;padding:8px;font-size:11px;color:#ffcc66;text-align:center';
+    note.textContent = `Showing first ${TILE_CAP} of ${total} — type in 🔍 to narrow.`;
+    grid.appendChild(note);
+  }
+}
+
+function startPlacingCreature(key) {
+  cancelPlacing();
+  S.placingCreatureKey = key;
+  updateCursor();
+  setStatus('Placing creature: ' + key + ' — click map to place, Esc to cancel');
+  renderCreatureGrid();
+}
+
+function addCreatureMarker(key, x, y, id) {
+  const markerId = id || genMarkerId();
+  const entity = S.animEntityMap && S.animEntityMap.get(key);
+  const color = '#cc77ff';
+  const group = new Konva.Group({ x, y, draggable: true, id: markerId });
+  group.add(new Konva.Circle({ radius: 18, fill: color + '33', stroke: color, strokeWidth: 2 }));
+  group.add(new Konva.Text({ text: '🎬', fontSize: 13, x: -8, y: -8, listening: false }));
+  group.add(new Konva.Text({ text: key, fontSize: 7, x: -34, y: 20, width: 68, align: 'center', fill: color, listening: false }));
+  S.markerLayer.add(group);
+
+  // Best-effort live sprite preview from the representative animation's first frame.
+  const a = entity && representativeAnim(entity);
+  if (a && a.source === 'frame_folder' && a.frames && a.frames.length) {
+    const im = new window.Image();
+    im.onload = () => {
+      const kim = new Konva.Image({ image: im, width: 32, height: 32, x: -16, y: -16, listening: false, opacity: 0.95 });
+      group.add(kim); group.find('Text')[0]?.destroy(); S.markerLayer.batchDraw();
+    };
+    im.src = assetURL(a.dir, a.frames[0]);
+  }
+  S.markerLayer.batchDraw();
+
+  group.on('dragend', () => {
+    const c = S.placedCreatures.find(c => c.id === markerId);
+    if (c) { c.x = group.x(); c.y = group.y(); }
+    pushHistory();
+  });
+  group.on('click tap', e => {
+    e.cancelBubble = true;
+    removeCreatureMarker(markerId);
+    pushHistory();
+    setStatus('Creature removed — Ctrl+Z to undo');
+  });
+
+  S.placedCreatures.push({ id: markerId, key, x, y, group });
+  setStatus('Placed ' + key + ' — click marker to delete, Esc to stop placing');
+}
+
+function removeCreatureMarker(id) {
+  const idx = S.placedCreatures.findIndex(c => c.id === id);
+  if (idx < 0) return;
+  S.placedCreatures[idx].group.destroy();
+  S.placedCreatures.splice(idx, 1);
+  S.markerLayer.batchDraw();
+}
+
+function serializeCreatures() {
+  return S.placedCreatures.map(c => ({ id: c.id, key: c.key,
+    x: Math.round(c.group.x()), y: Math.round(c.group.y()) }));
+}
+
+function restoreCreatureMarkers(list) {
+  [...S.placedCreatures].forEach(c => removeCreatureMarker(c.id));
+  for (const c of (list || [])) addCreatureMarker(c.key, c.x, c.y, c.id);
 }
 
 function renderTrayGrid() {
@@ -1637,6 +1834,7 @@ function cancelPlacing() {
   S.placingAsset = null;
   S.placingEnemyType = null;
   S.placingBossKey = null;
+  S.placingCreatureKey = null;
   S.placingNpcType = null;
   S.placingNpcType_config = null;
   S.placingPortal = null;
@@ -1979,6 +2177,7 @@ function pushHistory() {
     noWalkZones: serializeNoWalkZones(),
     enemies:     serializeEnemies(),
     boss:        serializeBoss(),
+    creatures:   serializeCreatures(),
     npcs:        serializeNpcs(),
     portals:     serializePortals(),
     spawnPos:    serializeSpawnPoint(),
@@ -1991,6 +2190,7 @@ function applySnapshot(snap) {
   restoreNoWalkZones(snap.noWalkZones || []);
   restoreEnemyMarkers(snap.enemies || []);
   restoreBossMarker(snap.boss || null);
+  restoreCreatureMarkers(snap.creatures || []);
   restoreNpcMarkers(snap.npcs || []);
   restorePortals(snap.portals || []);
   restoreSpawnPoint(snap.spawnPos || null);
@@ -2192,6 +2392,7 @@ function buildMapData() {
     noWalkZones: serializeNoWalkZones(),
     enemies:     serializeEnemies(),
     boss:        serializeBoss(),
+    creatures:   serializeCreatures(),
     npcs:        serializeNpcs(),
     portals:     serializePortals(),
     spawnPos:    serializeSpawnPoint() || undefined,
@@ -2223,6 +2424,7 @@ function loadJSON(file) {
     restoreNoWalkZones(data.noWalkZones || []);
     restoreEnemyMarkers(data.enemies || []);
     restoreBossMarker(data.boss || null);
+    restoreCreatureMarkers(data.creatures || []);
     restoreNpcMarkers(data.npcs || []);
     restorePortals(data.portals || []);
     restoreSpawnPoint(data.spawnPos || null);
@@ -2350,6 +2552,7 @@ async function loadRegionData(data, filename, regionIndex) {
   restoreNoWalkZones(data.noWalkZones || []);
   restoreEnemyMarkers(data.enemies || []);
   restoreBossMarker(data.boss || null);
+  restoreCreatureMarkers(data.creatures || []);
   restoreNpcMarkers(data.npcs || []);
   restorePortals(data.portals || []);
   restoreSpawnPoint(data.spawnPos || null);
