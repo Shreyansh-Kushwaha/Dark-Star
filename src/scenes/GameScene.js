@@ -633,7 +633,7 @@ export class GameScene extends Phaser.Scene {
       if (!this.textures.exists(key)) continue;
       const tree = track(this.add.image(wx + dx, pt.y + dy, key).setScale(scale).setDepth(1));
       tree.setAlpha(0);
-      this.tweens.add({ targets: tree, alpha: 1, duration: 220, ease: 'Quad.easeOut' });
+      this.tweens.add({ targets: tree, alpha: 1, duration: 350, ease: 'Quad.easeOut' });
     }
   }
 
@@ -1887,7 +1887,7 @@ export class GameScene extends Phaser.Scene {
       const depth = sp.spriteLayer === 'above' ? sp.y + 1 : sp.y - 1;
       // Streamed sprites pop in over several frames — a brief fade softens that.
       const reveal = (o) => {
-        if (sink) { const a = o.alpha; o.setAlpha(0); this.tweens.add({ targets: o, alpha: a, duration: 220, ease: 'Quad.easeOut' }); }
+        if (sink) { const a = o.alpha; o.setAlpha(0); this.tweens.add({ targets: o, alpha: a, duration: 350, ease: 'Quad.easeOut' }); }
         return o;
       };
 
