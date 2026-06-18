@@ -92,6 +92,11 @@ export class Enemy extends Phaser.GameObjects.Container {
       scene.anims.exists(`${tb}_${n}_left`) ||
       scene.anims.exists(`${tb}_${n}_right`) ||
       scene.anims.exists(`${tb}_${n}_back`));
+    // Directional creatures start facing a random way so a placed group doesn't
+    // all stare front; facing then tracks movement. (Front-only sprites stay front.)
+    if (this._directional) {
+      this._facing = ['front', 'back', 'left', 'right'][Math.floor(Math.random() * 4)];
+    }
 
     this._playAnim('idle');
     this.setDepth(y);
