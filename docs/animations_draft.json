@@ -284,7 +284,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_ogre",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -304,7 +304,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "6:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_ogre",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -324,7 +324,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_ogre",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -388,7 +388,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "18:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_ogre",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -408,7 +408,7 @@
           "purpose_guess": "Ranged / spell-cast action \u2014 plays once",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_ogre",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -428,7 +428,7 @@
           "purpose_guess": "Jump / leap action \u2014 plays once",
           "fingerprint": "6:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_ogre",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -448,7 +448,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_ogre",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -468,7 +468,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "6:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_ogre",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -488,7 +488,7 @@
           "purpose_guess": "Jump / leap action \u2014 plays once",
           "fingerprint": "6:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_ogre",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -530,7 +530,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_ogre",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -550,7 +550,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_ogre",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -570,7 +570,7 @@
           "purpose_guess": "Ranged / spell-cast action \u2014 plays once",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_ogre",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -590,7 +590,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "18:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_ogre",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -610,7 +610,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_ogre",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -630,7 +630,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "3:320x240",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_ogre",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -650,7 +650,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -670,7 +670,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "6:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -690,7 +690,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -754,7 +754,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "18:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -774,7 +774,7 @@
           "purpose_guess": "Ranged / spell-cast action \u2014 plays once",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -794,7 +794,7 @@
           "purpose_guess": "Jump / leap action \u2014 plays once",
           "fingerprint": "6:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -814,7 +814,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -834,7 +834,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "6:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -854,7 +854,7 @@
           "purpose_guess": "Jump / leap action \u2014 plays once",
           "fingerprint": "6:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -896,7 +896,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -916,7 +916,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -936,7 +936,7 @@
           "purpose_guess": "Ranged / spell-cast action \u2014 plays once",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -956,7 +956,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "18:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -976,7 +976,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -996,7 +996,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "3:320x240",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_goblin",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -1016,7 +1016,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_orc",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -1036,7 +1036,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "6:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_orc",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -1056,7 +1056,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_orc",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -1120,7 +1120,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "18:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_orc",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -1140,7 +1140,7 @@
           "purpose_guess": "Ranged / spell-cast action \u2014 plays once",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_orc",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -1160,7 +1160,7 @@
           "purpose_guess": "Jump / leap action \u2014 plays once",
           "fingerprint": "6:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_orc",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -1180,7 +1180,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_orc",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -1200,7 +1200,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "6:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_orc",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -1220,7 +1220,7 @@
           "purpose_guess": "Jump / leap action \u2014 plays once",
           "fingerprint": "6:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_orc",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -1262,7 +1262,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_orc",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -1282,7 +1282,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_orc",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -1302,7 +1302,7 @@
           "purpose_guess": "Ranged / spell-cast action \u2014 plays once",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_orc",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -1322,7 +1322,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "18:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_orc",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -1342,7 +1342,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:900x900",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_orc",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -1362,7 +1362,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "3:320x240",
           "entity_key": "craftpix_064112_orc_ogre_and_goblin_chibi_orc",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         }
       ]
@@ -1459,7 +1459,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "2:640x256",
           "entity_key": "mino",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         }
       ]
@@ -2119,7 +2119,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "11:87x87",
           "entity_key": "monsters_bat",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -2143,7 +2143,7 @@
           "purpose_guess": "Death sequence \u2014 plays once",
           "fingerprint": "4:87x87",
           "entity_key": "monsters_bat",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -2167,7 +2167,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "5:87x87",
           "entity_key": "monsters_bat",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -2191,7 +2191,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "11:87x87",
           "entity_key": "monsters_bat",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -2215,7 +2215,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "3:87x87",
           "entity_key": "monsters_bat",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -2239,7 +2239,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "19:156x156",
           "entity_key": "monsters_slime",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -2263,7 +2263,7 @@
           "purpose_guess": "Death sequence \u2014 plays once",
           "fingerprint": "11:156x156",
           "entity_key": "monsters_slime",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -2287,7 +2287,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "3:156x156",
           "entity_key": "monsters_slime",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -2311,7 +2311,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "14:156x156",
           "entity_key": "monsters_slime",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -2335,7 +2335,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "6:156x156",
           "entity_key": "monsters_slime",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -2381,7 +2381,7 @@
           "purpose_guess": "Death sequence \u2014 plays once",
           "fingerprint": "6:146x146",
           "entity_key": "monsters_mimic",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -2405,7 +2405,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "3:146x146",
           "entity_key": "monsters_mimic",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -2429,7 +2429,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "6:146x146",
           "entity_key": "monsters_mimic",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -2453,7 +2453,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "7:146x146",
           "entity_key": "monsters_mimic",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -2477,7 +2477,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "9:146x146",
           "entity_key": "monsters_mimic",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -2501,7 +2501,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "6:146x146",
           "entity_key": "monsters_mimic",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -2525,7 +2525,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "12:70x70",
           "entity_key": "monsters_rat",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -2549,7 +2549,7 @@
           "purpose_guess": "Death sequence \u2014 plays once",
           "fingerprint": "6:70x70",
           "entity_key": "monsters_rat",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -2573,7 +2573,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "3:70x70",
           "entity_key": "monsters_rat",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -2597,7 +2597,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "10:70x70",
           "entity_key": "monsters_rat",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -2621,7 +2621,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "8:70x70",
           "entity_key": "monsters_rat",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         }
       ]
@@ -24268,7 +24268,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:32x32",
           "entity_key": "animal_tiled",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -24292,7 +24292,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:16x16",
           "entity_key": "animal_tiled",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -24316,7 +24316,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:32x32",
           "entity_key": "animal_without_shadow_shadows",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -24340,7 +24340,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:16x16",
           "entity_key": "animal_without_shadow_shadows",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         }
       ]
@@ -24375,7 +24375,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:32x32",
           "entity_key": "animal_2_tiled",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -24399,7 +24399,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:48x48",
           "entity_key": "animal_2_tiled",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -24423,7 +24423,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:48x48",
           "entity_key": "animal_2_tiled",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -24447,7 +24447,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:32x32",
           "entity_key": "animal_2_tiled",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -24471,7 +24471,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:48x48",
           "entity_key": "animal_2_tiled",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -24495,7 +24495,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:48x48",
           "entity_key": "animal_2_without_shadow_hare",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -24519,7 +24519,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:32x32",
           "entity_key": "animal_2_without_shadow_fox",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -24543,7 +24543,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:32x32",
           "entity_key": "animal_2_without_shadow_black_grouse",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -24567,7 +24567,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:48x48",
           "entity_key": "animal_2_without_shadow_deer",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -24591,7 +24591,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:48x48",
           "entity_key": "animal_2_without_shadow_boar",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         }
       ]
@@ -24602,7 +24602,7 @@
       "category": "enemy/boss",
       "author": "itch.io free packs",
       "license": "See license.txt",
-      "entity_type": "boss",
+      "entity_type": "enemy",
       "entity_key": "enemy",
       "animations": [
         {
@@ -24622,7 +24622,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "3:896x128",
           "entity_key": "enemy",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -24646,7 +24646,7 @@
           "purpose_guess": "Death sequence \u2014 plays once",
           "fingerprint": "3:128x128",
           "entity_key": "enemy_skeleton",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -24670,7 +24670,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "3:128x128",
           "entity_key": "enemy_skeleton",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -24694,7 +24694,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "7:128x128",
           "entity_key": "enemy_skeleton",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -24718,7 +24718,7 @@
           "purpose_guess": "Jump / leap action \u2014 plays once",
           "fingerprint": "10:128x128",
           "entity_key": "enemy_skeleton",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -24742,7 +24742,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "7:128x128",
           "entity_key": "enemy_skeleton",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -24766,7 +24766,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "5:128x128",
           "entity_key": "enemy_skeleton",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -24790,7 +24790,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "8:128x128",
           "entity_key": "enemy_skeleton",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -24810,7 +24810,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "3:768x128",
           "entity_key": "enemy",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -24834,7 +24834,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "7:128x128",
           "entity_key": "enemy_plent",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -24858,7 +24858,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "9:128x128",
           "entity_key": "enemy_plent",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -24882,7 +24882,7 @@
           "purpose_guess": "Death sequence \u2014 plays once",
           "fingerprint": "2:128x128",
           "entity_key": "enemy_plent",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -24906,7 +24906,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "11:128x128",
           "entity_key": "enemy_plent",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -24930,7 +24930,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "3:128x128",
           "entity_key": "enemy_plent",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -24954,7 +24954,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "5:128x128",
           "entity_key": "enemy_plent",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -24978,7 +24978,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "7:128x128",
           "entity_key": "enemy_plent",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25002,7 +25002,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "9:128x128",
           "entity_key": "enemy_plent",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25026,7 +25026,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "14:128x128",
           "entity_key": "enemy_fire_spirit",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25050,7 +25050,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "8:64x64",
           "entity_key": "enemy_fire_spirit",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25074,7 +25074,7 @@
           "purpose_guess": "Death sequence \u2014 plays once",
           "fingerprint": "5:128x128",
           "entity_key": "enemy_fire_spirit",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25098,7 +25098,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "11:128x128",
           "entity_key": "enemy_fire_spirit",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25122,7 +25122,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "13:128x128",
           "entity_key": "enemy_fire_spirit",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25146,7 +25146,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "3:128x128",
           "entity_key": "enemy_fire_spirit",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25170,7 +25170,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "6:128x128",
           "entity_key": "enemy_fire_spirit",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25194,7 +25194,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "6:128x128",
           "entity_key": "enemy_fire_spirit",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -25218,7 +25218,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "7:128x128",
           "entity_key": "enemy_fire_spirit",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25242,7 +25242,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "8:128x128",
           "entity_key": "enemy_fire_spirit",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25266,7 +25266,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "7:128x128",
           "entity_key": "enemy_fire_spirit",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         }
       ]
@@ -25277,7 +25277,7 @@
       "category": "boss",
       "author": "itch.io free packs",
       "license": "See license.txt",
-      "entity_type": "boss",
+      "entity_type": "enemy",
       "entity_key": "enemy_2",
       "animations": [
         {
@@ -25297,7 +25297,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25317,7 +25317,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25337,7 +25337,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -25357,7 +25357,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25377,7 +25377,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25397,7 +25397,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25417,7 +25417,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -25437,7 +25437,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -25457,7 +25457,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25477,7 +25477,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -25497,7 +25497,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -25517,7 +25517,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25537,7 +25537,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -25557,7 +25557,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25599,7 +25599,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -25619,7 +25619,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -25639,7 +25639,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25659,7 +25659,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -25679,7 +25679,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25699,7 +25699,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -25719,7 +25719,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -25739,7 +25739,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -25759,7 +25759,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -25779,7 +25779,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "4:320x320",
           "entity_key": "enemy_2_maya_leader",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -25803,7 +25803,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:180x180",
           "entity_key": "enemy_2_maya_leader_vector_parts",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25823,7 +25823,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25843,7 +25843,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25863,7 +25863,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25883,7 +25883,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25903,7 +25903,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25923,7 +25923,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25943,7 +25943,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25963,7 +25963,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -25983,7 +25983,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26003,7 +26003,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26023,7 +26023,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26043,7 +26043,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26063,7 +26063,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26083,7 +26083,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26125,7 +26125,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26145,7 +26145,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26165,7 +26165,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26185,7 +26185,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26205,7 +26205,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26225,7 +26225,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26245,7 +26245,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26265,7 +26265,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26285,7 +26285,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26305,7 +26305,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "4:320x320",
           "entity_key": "enemy_2_nordic_leader",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -26329,7 +26329,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:180x180",
           "entity_key": "enemy_2_nordic_leader_vector_parts",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -26349,7 +26349,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26369,7 +26369,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26389,7 +26389,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26409,7 +26409,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26429,7 +26429,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26449,7 +26449,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26469,7 +26469,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26489,7 +26489,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26509,7 +26509,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26529,7 +26529,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26549,7 +26549,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26569,7 +26569,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26589,7 +26589,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26609,7 +26609,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26651,7 +26651,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26671,7 +26671,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26691,7 +26691,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26711,7 +26711,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26731,7 +26731,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26751,7 +26751,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26771,7 +26771,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26791,7 +26791,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26811,7 +26811,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26831,7 +26831,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "4:320x320",
           "entity_key": "enemy_2_aztec_leader",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -26855,7 +26855,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:180x180",
           "entity_key": "enemy_2_aztec_leader_vector_parts",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         }
       ]
@@ -26866,7 +26866,7 @@
       "category": "boss",
       "author": "CraftPix-style",
       "license": "See license.txt",
-      "entity_type": "boss",
+      "entity_type": "enemy",
       "entity_key": "enemy_3",
       "animations": [
         {
@@ -26886,7 +26886,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_2",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26906,7 +26906,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "6:900x900",
           "entity_key": "enemy_3_seer_2",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26926,7 +26926,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_2",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -26990,7 +26990,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "18:900x900",
           "entity_key": "enemy_3_seer_2",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27010,7 +27010,7 @@
           "purpose_guess": "Ranged / spell-cast action \u2014 plays once",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_2",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27030,7 +27030,7 @@
           "purpose_guess": "Jump / leap action \u2014 plays once",
           "fingerprint": "6:900x900",
           "entity_key": "enemy_3_seer_2",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27050,7 +27050,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_2",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27070,7 +27070,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "6:900x900",
           "entity_key": "enemy_3_seer_2",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27090,7 +27090,7 @@
           "purpose_guess": "Jump / leap action \u2014 plays once",
           "fingerprint": "6:900x900",
           "entity_key": "enemy_3_seer_2",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27132,7 +27132,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_2",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27152,7 +27152,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_2",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27172,7 +27172,7 @@
           "purpose_guess": "Ranged / spell-cast action \u2014 plays once",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_2",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27192,7 +27192,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "18:900x900",
           "entity_key": "enemy_3_seer_2",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27212,7 +27212,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_2",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27232,7 +27232,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "3:320x240",
           "entity_key": "enemy_3_seer_2",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -27252,7 +27252,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_3",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27272,7 +27272,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "6:900x900",
           "entity_key": "enemy_3_seer_3",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27292,7 +27292,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_3",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27356,7 +27356,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "18:900x900",
           "entity_key": "enemy_3_seer_3",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27376,7 +27376,7 @@
           "purpose_guess": "Ranged / spell-cast action \u2014 plays once",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_3",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27396,7 +27396,7 @@
           "purpose_guess": "Jump / leap action \u2014 plays once",
           "fingerprint": "6:900x900",
           "entity_key": "enemy_3_seer_3",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27416,7 +27416,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_3",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27436,7 +27436,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "6:900x900",
           "entity_key": "enemy_3_seer_3",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27456,7 +27456,7 @@
           "purpose_guess": "Jump / leap action \u2014 plays once",
           "fingerprint": "6:900x900",
           "entity_key": "enemy_3_seer_3",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27498,7 +27498,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_3",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27518,7 +27518,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_3",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27538,7 +27538,7 @@
           "purpose_guess": "Ranged / spell-cast action \u2014 plays once",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_3",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27558,7 +27558,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "18:900x900",
           "entity_key": "enemy_3_seer_3",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27578,7 +27578,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_3",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27598,7 +27598,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "3:320x240",
           "entity_key": "enemy_3_seer_3",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         },
         {
@@ -27618,7 +27618,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_1",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27638,7 +27638,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "6:900x900",
           "entity_key": "enemy_3_seer_1",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27658,7 +27658,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_1",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27722,7 +27722,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "18:900x900",
           "entity_key": "enemy_3_seer_1",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27742,7 +27742,7 @@
           "purpose_guess": "Ranged / spell-cast action \u2014 plays once",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_1",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27762,7 +27762,7 @@
           "purpose_guess": "Jump / leap action \u2014 plays once",
           "fingerprint": "6:900x900",
           "entity_key": "enemy_3_seer_1",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27782,7 +27782,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_1",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27802,7 +27802,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "6:900x900",
           "entity_key": "enemy_3_seer_1",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27822,7 +27822,7 @@
           "purpose_guess": "Jump / leap action \u2014 plays once",
           "fingerprint": "6:900x900",
           "entity_key": "enemy_3_seer_1",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27864,7 +27864,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_1",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27884,7 +27884,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_1",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27904,7 +27904,7 @@
           "purpose_guess": "Ranged / spell-cast action \u2014 plays once",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_1",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27924,7 +27924,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "18:900x900",
           "entity_key": "enemy_3_seer_1",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27944,7 +27944,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:900x900",
           "entity_key": "enemy_3_seer_1",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -27964,7 +27964,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "3:320x240",
           "entity_key": "enemy_3_seer_1",
-          "status": "pending",
+          "status": "rejected",
           "remark": ""
         }
       ]
@@ -27995,7 +27995,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28015,7 +28015,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28035,7 +28035,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28055,7 +28055,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28075,7 +28075,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28095,7 +28095,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28115,7 +28115,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28135,7 +28135,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28155,7 +28155,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28175,7 +28175,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28195,7 +28195,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28215,7 +28215,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28235,7 +28235,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28255,7 +28255,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28297,7 +28297,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28317,7 +28317,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28337,7 +28337,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28357,7 +28357,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28377,7 +28377,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28397,7 +28397,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28417,7 +28417,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28437,7 +28437,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28457,7 +28457,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28477,7 +28477,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "4:320x320",
           "entity_key": "enemy_4_viking_leader",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28501,7 +28501,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:180x180",
           "entity_key": "enemy_4_viking_leader_vector_parts",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28521,7 +28521,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28541,7 +28541,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28561,7 +28561,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28581,7 +28581,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28601,7 +28601,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28621,7 +28621,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28641,7 +28641,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28661,7 +28661,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28681,7 +28681,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28701,7 +28701,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28721,7 +28721,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28741,7 +28741,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28761,7 +28761,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28781,7 +28781,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28823,7 +28823,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28843,7 +28843,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28863,7 +28863,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28883,7 +28883,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28903,7 +28903,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28923,7 +28923,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28943,7 +28943,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28963,7 +28963,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -28983,7 +28983,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29003,7 +29003,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "4:320x320",
           "entity_key": "enemy_4_caveman_boss",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29027,7 +29027,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:180x180",
           "entity_key": "enemy_4_caveman_boss_vector_parts",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29047,7 +29047,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29067,7 +29067,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29087,7 +29087,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29107,7 +29107,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29127,7 +29127,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29147,7 +29147,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29167,7 +29167,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29187,7 +29187,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29207,7 +29207,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29227,7 +29227,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29247,7 +29247,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29267,7 +29267,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29287,7 +29287,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29307,7 +29307,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29349,7 +29349,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29369,7 +29369,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29389,7 +29389,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29409,7 +29409,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29429,7 +29429,7 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "12:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29449,7 +29449,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29469,7 +29469,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "10:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29489,7 +29489,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "16:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29509,7 +29509,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "20:840x720",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29529,7 +29529,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "4:320x320",
           "entity_key": "enemy_4_giant_goblin",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29553,7 +29553,7 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:180x180",
           "entity_key": "enemy_4_giant_goblin_vector_parts",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         }
       ]
@@ -29588,7 +29588,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "5:128x128",
           "entity_key": "minotaur_minotaur_2",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29612,7 +29612,7 @@
           "purpose_guess": "Death sequence \u2014 plays once",
           "fingerprint": "5:128x128",
           "entity_key": "minotaur_minotaur_2",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29636,7 +29636,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "3:128x128",
           "entity_key": "minotaur_minotaur_2",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29660,7 +29660,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "10:128x128",
           "entity_key": "minotaur_minotaur_2",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29684,7 +29684,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "12:128x128",
           "entity_key": "minotaur_minotaur_2",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29708,7 +29708,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "5:128x128",
           "entity_key": "minotaur_minotaur_1",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29732,7 +29732,7 @@
           "purpose_guess": "Death sequence \u2014 plays once",
           "fingerprint": "5:128x128",
           "entity_key": "minotaur_minotaur_1",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29756,7 +29756,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "3:128x128",
           "entity_key": "minotaur_minotaur_1",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29780,7 +29780,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "10:128x128",
           "entity_key": "minotaur_minotaur_1",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29804,7 +29804,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "12:128x128",
           "entity_key": "minotaur_minotaur_1",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29828,7 +29828,7 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "4:128x128",
           "entity_key": "minotaur_minotaur_3",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29852,7 +29852,7 @@
           "purpose_guess": "Death sequence \u2014 plays once",
           "fingerprint": "5:128x128",
           "entity_key": "minotaur_minotaur_3",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29876,7 +29876,7 @@
           "purpose_guess": "Reaction to taking damage \u2014 plays once",
           "fingerprint": "3:128x128",
           "entity_key": "minotaur_minotaur_3",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29900,7 +29900,7 @@
           "purpose_guess": "Standing / breathing loop when not acting",
           "fingerprint": "10:128x128",
           "entity_key": "minotaur_minotaur_3",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
@@ -29924,7 +29924,7 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "12:128x128",
           "entity_key": "minotaur_minotaur_3",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         }
       ]
@@ -29959,8 +29959,8 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:16x16",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Shadow_death.png",
@@ -29983,8 +29983,8 @@
           "purpose_guess": "Death sequence \u2014 plays once",
           "fingerprint": "10:64x64",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Shadow_run.png",
@@ -30007,8 +30007,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "4:64x64",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Shadow_slime1_attack.png",
@@ -30031,8 +30031,8 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "2:64x64",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Shadow_walk.png",
@@ -30055,8 +30055,8 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "6:64x64",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Slime1_Run_body.png",
@@ -30079,8 +30079,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Slime1_Run_with_shadow.png",
@@ -30103,8 +30103,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Slime1_Run_without_shadow.png",
@@ -30127,8 +30127,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Slime1_Walk_body.png",
@@ -30151,8 +30151,8 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Slime1_Walk_with_shadow.png",
@@ -30175,8 +30175,8 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Slime1_Walk_without_shadow.png",
@@ -30199,8 +30199,8 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Slime2_Run_body.png",
@@ -30223,8 +30223,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Slime2_Run_with_shadow.png",
@@ -30247,8 +30247,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Slime2_Run_without_shadow.png",
@@ -30271,8 +30271,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Slime2_Walk_body.png",
@@ -30295,8 +30295,8 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Slime2_Walk_with_shadow.png",
@@ -30319,8 +30319,8 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Slime2_Walk_without_shadow.png",
@@ -30343,8 +30343,8 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Slime3_Run_body.png",
@@ -30367,8 +30367,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Slime3_Run_with_shadow.png",
@@ -30391,8 +30391,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Slime3_Run_without_shadow.png",
@@ -30415,8 +30415,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Slime3_Walk_body.png",
@@ -30439,8 +30439,8 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Slime3_Walk_with_shadow.png",
@@ -30463,8 +30463,8 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/Tiled_files/Slime3_Walk_without_shadow.png",
@@ -30487,8 +30487,8 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_tiled_files",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime1/Parts/Slime1_Run_body.png",
@@ -30511,8 +30511,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_slime1_parts",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime1/Parts/Slime1_Run_shadow.png",
@@ -30535,8 +30535,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_slime1_parts",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime1/Parts/Slime1_Walk_body.png",
@@ -30559,8 +30559,8 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_slime1_parts",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime1/Parts/Slime1_Walk_shadow.png",
@@ -30583,8 +30583,8 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_slime1_parts",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime1/With_shadow/Slime1_Run_with_shadow.png",
@@ -30606,9 +30606,11 @@
           "loop": true,
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
-          "entity_key": "slime_slime1_with_shadow",
-          "status": "pending",
-          "remark": ""
+          "entity_key": "slime1",
+          "status": "approved",
+          "remark": "",
+          "entity_type": "enemy",
+          "auto": false
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime1/With_shadow/Slime1_Walk_with_shadow.png",
@@ -30630,9 +30632,11 @@
           "loop": true,
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
-          "entity_key": "slime_slime1_with_shadow",
-          "status": "pending",
-          "remark": ""
+          "entity_key": "slime1",
+          "status": "approved",
+          "remark": "",
+          "entity_type": "enemy",
+          "auto": false
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime1/Without_shadow/Slime1_Run_without_shadow.png",
@@ -30655,8 +30659,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_slime1_without_shadow",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime1/Without_shadow/Slime1_Walk_without_shadow.png",
@@ -30679,8 +30683,8 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_slime1_without_shadow",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime1/Without_shadow/Shadows/Shadow.png",
@@ -30703,8 +30707,8 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:16x16",
           "entity_key": "slime_slime1_without_shadow_shadows",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime1/Without_shadow/Shadows/Shadow_death.png",
@@ -30727,8 +30731,8 @@
           "purpose_guess": "Death sequence \u2014 plays once",
           "fingerprint": "10:64x64",
           "entity_key": "slime_slime1_without_shadow_shadows",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime1/Without_shadow/Shadows/Shadow_run.png",
@@ -30751,8 +30755,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "4:64x64",
           "entity_key": "slime_slime1_without_shadow_shadows",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime1/Without_shadow/Shadows/Shadow_slime1_attack.png",
@@ -30775,8 +30779,8 @@
           "purpose_guess": "Attack action \u2014 plays once per swing",
           "fingerprint": "2:64x64",
           "entity_key": "slime_slime1_without_shadow_shadows",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime2/Parts/Slime2_Run_body.png",
@@ -30799,8 +30803,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_slime2_parts",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime2/Parts/Slime2_Run_shadow.png",
@@ -30823,8 +30827,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_slime2_parts",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime2/Parts/Slime2_Walk_body.png",
@@ -30847,8 +30851,8 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_slime2_parts",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime2/Parts/Slime2_Walk_shadow.png",
@@ -30871,8 +30875,8 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_slime2_parts",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime2/With_shadow/Slime2_Run_with_shadow.png",
@@ -30894,9 +30898,11 @@
           "loop": true,
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
-          "entity_key": "slime_slime2_with_shadow",
-          "status": "pending",
-          "remark": ""
+          "entity_key": "slime2",
+          "status": "approved",
+          "remark": "",
+          "entity_type": "enemy",
+          "auto": false
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime2/With_shadow/Slime2_Walk_with_shadow.png",
@@ -30918,9 +30924,11 @@
           "loop": true,
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
-          "entity_key": "slime_slime2_with_shadow",
-          "status": "pending",
-          "remark": ""
+          "entity_key": "slime2",
+          "status": "approved",
+          "remark": "",
+          "entity_type": "enemy",
+          "auto": false
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime2/Without_shadow/Slime2_Run_without_shadow.png",
@@ -30943,8 +30951,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_slime2_without_shadow",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime2/Without_shadow/Slime2_Walk_without_shadow.png",
@@ -30967,8 +30975,8 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_slime2_without_shadow",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime2/Without_shadow/Shadows/Shadow.png",
@@ -30991,8 +30999,8 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:16x16",
           "entity_key": "slime_slime2_without_shadow_shadows",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime2/Without_shadow/Shadows/Shadow_death.png",
@@ -31015,8 +31023,8 @@
           "purpose_guess": "Death sequence \u2014 plays once",
           "fingerprint": "10:64x64",
           "entity_key": "slime_slime2_without_shadow_shadows",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime2/Without_shadow/Shadows/Shadow_run.png",
@@ -31039,8 +31047,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "4:64x64",
           "entity_key": "slime_slime2_without_shadow_shadows",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime3/Parts/Slime3_Run_body.png",
@@ -31063,8 +31071,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_slime3_parts",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime3/Parts/Slime3_Run_shadow.png",
@@ -31087,8 +31095,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_slime3_parts",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime3/Parts/Slime3_Walk_body.png",
@@ -31111,8 +31119,8 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_slime3_parts",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime3/Parts/Slime3_Walk_shadow.png",
@@ -31135,8 +31143,8 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_slime3_parts",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime3/With_shadow/Slime3_Run_with_shadow.png",
@@ -31158,9 +31166,11 @@
           "loop": true,
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
-          "entity_key": "slime_slime3_with_shadow",
-          "status": "pending",
-          "remark": ""
+          "entity_key": "slime3",
+          "status": "approved",
+          "remark": "",
+          "entity_type": "enemy",
+          "auto": false
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime3/With_shadow/Slime3_Walk_with_shadow.png",
@@ -31182,9 +31192,11 @@
           "loop": true,
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
-          "entity_key": "slime_slime3_with_shadow",
-          "status": "pending",
-          "remark": ""
+          "entity_key": "slime3",
+          "status": "approved",
+          "remark": "",
+          "entity_type": "enemy",
+          "auto": false
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime3/Without_shadow/Slime3_Run_without_shadow.png",
@@ -31207,8 +31219,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_slime3_without_shadow",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime3/Without_shadow/Slime3_Walk_without_shadow.png",
@@ -31231,8 +31243,8 @@
           "purpose_guess": "Walking movement loop",
           "fingerprint": "2:256x256",
           "entity_key": "slime_slime3_without_shadow",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime3/Without_shadow/Shadows/Shadow.png",
@@ -31255,8 +31267,8 @@
           "purpose_guess": "Unknown \u2014 single strip, please label what this is for",
           "fingerprint": "2:16x16",
           "entity_key": "slime_slime3_without_shadow_shadows",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime3/Without_shadow/Shadows/Shadow_death.png",
@@ -31279,8 +31291,8 @@
           "purpose_guess": "Death sequence \u2014 plays once",
           "fingerprint": "10:64x64",
           "entity_key": "slime_slime3_without_shadow_shadows",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         },
         {
           "id": "sheet::assets6/slime/PNG/Slime3/Without_shadow/Shadows/Shadow_run.png",
@@ -31303,8 +31315,8 @@
           "purpose_guess": "Running / charging movement loop",
           "fingerprint": "4:64x64",
           "entity_key": "slime_slime3_without_shadow_shadows",
-          "status": "pending",
-          "remark": ""
+          "status": "rejected",
+          "remark": "[fix] shadow layer/parts/tileset \u2014 not a gameplay animation"
         }
       ]
     },
@@ -31645,7 +31657,7 @@
       "category": "enemy",
       "author": "pixel_ankousse (instagram)",
       "license": "Free & commercial, credit appreciated",
-      "entity_type": "enemy",
+      "entity_type": "boss",
       "entity_key": "the",
       "animations": [
         {
@@ -31907,7 +31919,7 @@
           "purpose_guess": "Unknown \u2014 please label what this is for",
           "fingerprint": "11:100x120",
           "entity_key": "the_monsters_tree",
-          "status": "pending",
+          "status": "approved",
           "remark": ""
         },
         {
