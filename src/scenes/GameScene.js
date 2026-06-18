@@ -34,7 +34,7 @@ const STREAM_POC = {
   enabled: true,
   trigger: 520,        // px from the shared edge → start pre-loading the neighbour
   commit:  720,        // px past the boundary → old region is off-camera, unload + remap
-  buildPerFrame: 160,  // streamed-region sprites created per frame (avoids a build hitch)
+  buildPerFrame: 100,  // streamed-region sprites created per frame (avoids a build hitch)
 };
 
 // Poisson-disk sampling (returns {x,y}[] within bounds avoiding exclusion zones)
