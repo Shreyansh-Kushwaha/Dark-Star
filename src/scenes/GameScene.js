@@ -631,7 +631,9 @@ export class GameScene extends Phaser.Scene {
       else if (r < 0.60) { key = jungleKeys[Math.floor(Math.random() * jungleKeys.length)]; scale = 0.60 + Math.random() * 0.40; }
       else               { key = firKeys[Math.floor(Math.random() * firKeys.length)]; scale = 0.70 + Math.random() * 0.40; }
       if (!this.textures.exists(key)) continue;
-      track(this.add.image(wx + dx, pt.y + dy, key).setScale(scale).setDepth(1));
+      const tree = track(this.add.image(wx + dx, pt.y + dy, key).setScale(scale).setDepth(1));
+      tree.setAlpha(0);
+      this.tweens.add({ targets: tree, alpha: 1, duration: 220, ease: 'Quad.easeOut' });
     }
   }
 
@@ -1883,6 +1885,11 @@ export class GameScene extends Phaser.Scene {
     const placeSprite = (sp) => {
       const key = _mapSpriteKey(sp.dir, sp.frames[0]);
       const depth = sp.spriteLayer === 'above' ? sp.y + 1 : sp.y - 1;
+      // Streamed sprites pop in over several frames — a brief fade softens that.
+      const reveal = (o) => {
+        if (sink) { const a = o.alpha; o.setAlpha(0); this.tweens.add({ targets: o, alpha: a, duration: 220, ease: 'Quad.easeOut' }); }
+        return o;
+      };
 
       if (sp.frameW && sp.frameH && sp.frameCount > 1) {
         // Spritesheet animation
@@ -1903,6 +1910,7 @@ export class GameScene extends Phaser.Scene {
         if (sp.offsetX != null && sp.offsetY != null)
           spr.setOrigin(sp.offsetX / sp.frameW, sp.offsetY / sp.frameH);
         this._glowEmissive(spr, sp);
+        reveal(spr);
         return;
       }
 
@@ -1929,6 +1937,7 @@ export class GameScene extends Phaser.Scene {
           spr.setOrigin(sp.offsetX / w, sp.offsetY / h);
         }
         this._glowEmissive(spr, sp);
+        reveal(spr);
         return;
       }
 
@@ -1943,6 +1952,7 @@ export class GameScene extends Phaser.Scene {
         img.setOrigin(sp.offsetX / w, sp.offsetY / h);
       }
       this._glowEmissive(img, sp);
+      reveal(img);
     };
 
     const place = () => {
