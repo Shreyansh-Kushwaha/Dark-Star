@@ -1,6 +1,6 @@
 import {
   PLAYER_SPEED, LIGHT_DMG, HEAVY_DMG, ATTACK_RANGE, ATTACK_ARC,
-  LIGHT_CD, HEAVY_CD, DODGE_CD, DODGE_STAMINA, DODGE_DURATION,
+  LIGHT_CD, HEAVY_CD, LIGHT_STAMINA, HEAVY_STAMINA, DODGE_CD, DODGE_STAMINA, DODGE_DURATION,
   PERFECT_DODGE_WINDOW, PERFECT_DODGE_SLOWMO, PERFECT_DODGE_DURATION,
   WARRIOR_FRAME, XP_THRESHOLDS,
   AMRIT_MAX_DEFAULT, AMRIT_HEAL_FRAC, AMRIT_SIP_LOCKOUT,
@@ -224,15 +224,17 @@ export class Player extends Phaser.GameObjects.Container {
 
   _handleInput(time, keys, enemies, scene) {
     if (scene?.cheatConsoleOpen) return;
-    if (keys.J?.isDown && this._lightCd <= 0 && !this.dodging) {
+    if (keys.J?.isDown && this._lightCd <= 0 && !this.dodging && this.stamina >= LIGHT_STAMINA) {
       this._lightCd = LIGHT_CD;
+      this.stamina -= LIGHT_STAMINA;
       this._doAttack(LIGHT_DMG * this.abilityPow * this._nextAttackMult, 0, enemies, scene);
       this._nextAttackMult = 1;
       scene.audio.hit();
     }
 
-    if (keys.K?.isDown && this._heavyCd <= 0 && !this.dodging) {
+    if (keys.K?.isDown && this._heavyCd <= 0 && !this.dodging && this.stamina >= HEAVY_STAMINA) {
       this._heavyCd = HEAVY_CD;
+      this.stamina -= HEAVY_STAMINA;
       this._doAttack(HEAVY_DMG * this.abilityPow * this._nextAttackMult, 0, enemies, scene);
       this._nextAttackMult = 1;
       scene.audio.heavyHit();
