@@ -84,6 +84,15 @@ export class Enemy extends Phaser.GameObjects.Container {
     this.body.setOffset(-14, -14);
     if (cfg.physics) this.body.allowGravity = false;
 
+    // Directional sprites (e.g. farm animals) ship _back/_left/_right variants;
+    // if any exist, drive the anim by facing instead of mirroring with flipX.
+    this._facing = 'front';
+    const tb = this.cfg.textureBase;
+    this._directional = ['idle', 'walk', 'run'].some(n =>
+      scene.anims.exists(`${tb}_${n}_left`) ||
+      scene.anims.exists(`${tb}_${n}_right`) ||
+      scene.anims.exists(`${tb}_${n}_back`));
+
     this._playAnim('idle');
     this.setDepth(y);
   }
@@ -93,8 +102,21 @@ export class Enemy extends Phaser.GameObjects.Container {
     // "walk" not "run"); cfg.animAlias remaps the logical state to what exists.
     const alias = this.cfg.animAlias;
     const name  = (alias && alias[state]) || state;
-    const key = `${this.cfg.textureBase}_${name}`;
+    const base  = this.cfg.textureBase;
+
+    // Directional sprites: pick the variant matching current facing. front uses
+    // the bare name; back/left/right append a suffix. Falls back to the bare clip.
+    if (this._directional && this._facing && this._facing !== 'front') {
+      const dirKey = `${base}_${name}_${this._facing}`;
+      if (this.scene.anims.exists(dirKey)) {
+        this.sprite.setFlipX(false);          // directional clips already face correctly
+        this.sprite.play(dirKey, true);
+        return;
+      }
+    }
+    const key = `${base}_${name}`;
     if (this.scene.anims.exists(key)) {
+      if (this._directional) this.sprite.setFlipX(false);
       this.sprite.play(key, true);
     }
   }
@@ -107,6 +129,16 @@ export class Enemy extends Phaser.GameObjects.Container {
     if (Math.abs(this.y - this._lastDepthY) > 1) {
       this.setDepth(this.y);
       this._lastDepthY = this.y;
+    }
+
+    // Track 4-way facing from current velocity (keep last facing when stopped).
+    if (this._directional && this.body) {
+      const vx = this.body.velocity.x, vy = this.body.velocity.y;
+      if (Math.abs(vx) > 1 || Math.abs(vy) > 1) {
+        this._facing = Math.abs(vx) >= Math.abs(vy)
+          ? (vx < 0 ? 'left' : 'right')
+          : (vy < 0 ? 'back' : 'front');
+      }
     }
 
     const target = this._nearestPlayer(players);
