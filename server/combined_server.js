@@ -238,11 +238,32 @@ const ASSET_GROUPS = [
   { cat:'Assets6', grp:'Minotaur',         rel:'assets6/minotaur' },
 ];
 
+// Default prop classification for a sprite, by asset category/group. Drives both
+// Y-sort-by-base and auto-collision in the game (see GameScene placeSprite):
+//   'solid'  → trunk/base collider + base depth-sort (trees, rocks, buildings)
+//   'decor'  → base depth-sort, walk-through (bushes)
+//   'ground' → always under entities, no collider (terrain tiles)
+//   null     → untagged; legacy spriteLayer behaviour (no regression)
+// Editors can override per-sprite; this is only the auto-fill default on placement.
+function defaultProp(cat, grp) {
+  if (cat === 'Buildings') return 'solid';
+  if (cat === 'Terrain') {
+    if (grp === 'Trees' || grp === 'Rocks' || grp === 'Rocks in Water') return 'solid';
+    if (grp === 'Bushes') return 'decor';
+    if (grp === 'Tileset') return 'ground';
+    return null;
+  }
+  if (cat === 'Custom' && /rocks|structures|props/i.test(grp)) return 'solid';
+  return null;
+}
+
 function buildManifest() {
   const catMap = {};
   for (const { cat, grp, rel } of ASSET_GROUPS) {
     const sprites = spritesFromDir(path.join(GAME_ROOT, rel), rel);
     if (!sprites.length) continue;
+    const prop = defaultProp(cat, grp);
+    if (prop) for (const s of sprites) s.prop = prop;
     if (!catMap[cat]) catMap[cat] = { name: cat, groups: [] };
     catMap[cat].groups.push({ name: grp, sprites });
   }
