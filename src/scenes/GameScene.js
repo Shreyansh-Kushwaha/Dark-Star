@@ -25,16 +25,15 @@ const PORTAL_GATES = {
   34: [{ target: 39, requires: { lore: 15 }, sealedText: 'The Sixth Door is sealed. It opens only to one who has gathered the erased truth (15 lore fragments).' }],
 };
 
-// ── Seamless region streaming (proof-of-concept) ────────────────────────────
-// PoC: silently pre-load the horizontally-adjacent region beside the current
-// one so the player walks across the boundary with no portal / fade / restart.
-// Scoped to solo play and horizontal (east/west) neighbours for now.
+// ── Seamless region streaming ───────────────────────────────────────────────
+// Silently pre-load the horizontally-adjacent region beside the current one so
+// the player walks across the boundary with no portal / fade / restart. The
+// region behind is unloaded once the camera has fully left it. Solo play, and
+// horizontal (east/west) neighbours along `_streamChain` (numeric index order).
 const STREAM_POC = {
   enabled: true,
-  // Only these base regions participate in the PoC crossing (0 ⇄ 1).
-  regions: [0, 1],
-  trigger: 480,   // px from the shared edge → start pre-loading the neighbour
-  commit:  640,   // px past the boundary → unload the region behind us + remap
+  trigger: 520,   // px from the shared edge → start pre-loading the neighbour
+  commit:  720,   // px past the boundary → old region is off-camera, unload + remap
 };
 
 // Poisson-disk sampling (returns {x,y}[] within bounds avoiding exclusion zones)
@@ -136,35 +135,16 @@ export class GameScene extends Phaser.Scene {
     const _regionMaps = this.registry.get('regionMaps') || [];
     this._mapData = _regionMaps.find(e => e.regionIndex === regionIndex)?.data || null;
 
-    // Build a fallback region descriptor for editor-only regions (indices beyond REGIONS array)
-    const region = REGIONS[regionIndex] ?? (() => {
-      const md = this._mapData;
-      let bgColor = 0x2d5c28;
-      if (md?.background?.type === 'color' && md.background.value) {
-        bgColor = parseInt(md.background.value.replace('#', ''), 16);
-      }
-      return {
-        index: regionIndex,
-        name: md?.regionName || `Region ${regionIndex}`,
-        subtitle: md?.regionSubtitle || '',
-        bgColor,
-        bgColor2: bgColor,
-        borderColor: 0x111111,
-        difficulty: 1.0,
-        bossKey: null,
-        bossPos: null,
-        spawnPos: { x: 380, y: WORLD_H / 2 },
-        portalBack: null,
-        portalNext: null,
-        spawnerPositions: [],
-        platePositions: [],
-        fixedEnemies: [],
-        enemyTypes: ['melee'],
-        echoTriggers: [],
-        worldFragments: [],
-        ambientKey: 0,
-      };
-    })();
+    // Horizontal streaming chain: every real region, in numeric index order.
+    // Region 0 then the editor regions 7..49 (legacy procedural 1–6 are excluded
+    // — the authored flow bypasses them via region 0 → 7).
+    this._streamChain = _regionMaps
+      .map(e => e.regionIndex)
+      .filter(i => i === 0 || i >= 7)
+      .sort((a, b) => a - b);
+
+    // Real region (REGIONS[]) when present, else a synthesised editor descriptor.
+    const region = this._regionDescriptor(regionIndex, this._mapData);
 
     // Systems
     this.audio  = new AudioManager();
@@ -494,20 +474,65 @@ export class GameScene extends Phaser.Scene {
     for (const c of (this._mapCreatures || []))      if (c._streamRegion == null) c._streamRegion = regionIndex;
   }
 
+  // Real region (REGIONS[]) when present, else a synthesised descriptor for an
+  // editor-only region (indices 7..49) built from its map data. Shared by the
+  // initial create() build, streamed neighbours, and post-crossing commits.
+  _regionDescriptor(regionIndex, mapData) {
+    if (REGIONS[regionIndex]) return REGIONS[regionIndex];
+    const md = mapData || (this.registry.get('regionMaps') || []).find(e => e.regionIndex === regionIndex)?.data || null;
+    let bgColor = 0x2d5c28;
+    if (md?.background?.type === 'color' && md.background.value) {
+      bgColor = parseInt(md.background.value.replace('#', ''), 16);
+    }
+    return {
+      index: regionIndex,
+      name: md?.regionName || `Region ${regionIndex}`,
+      subtitle: md?.regionSubtitle || '',
+      bgColor,
+      bgColor2: bgColor,
+      borderColor: 0x111111,
+      difficulty: 1.0,
+      bossKey: null,
+      bossPos: null,
+      spawnPos: { x: 380, y: WORLD_H / 2 },
+      portalBack: null,
+      portalNext: null,
+      spawnerPositions: [],
+      platePositions: [],
+      fixedEnemies: [],
+      enemyTypes: ['melee'],
+      echoTriggers: [],
+      worldFragments: [],
+      ambientKey: 0,
+    };
+  }
+
+  // Position of a region in the horizontal chain, or -1 if not chained.
+  _chainPos(regionIndex) { return (this._streamChain || []).indexOf(regionIndex); }
+
+  // Neighbouring region index in the chain (`dir` = +1 east / -1 west), or null.
+  _chainNeighbor(regionIndex, dir) {
+    const chain = this._streamChain || [];
+    const pos = chain.indexOf(regionIndex);
+    if (pos < 0) return null;
+    const n = pos + dir;
+    return (n >= 0 && n < chain.length) ? chain[n] : null;
+  }
+
   // Build a full region's world content shifted by (dx, dy). Returns a "slice"
   // descriptor tracking everything created so it can be unloaded later. Mirrors
   // the active-region build path but offset, tagged, and without portals/UI.
   _buildRegionAtOffset(regionIndex, dx, dy) {
-    const region = REGIONS[regionIndex];
-    if (!region) return null;
     const maps = this.registry.get('regionMaps') || [];
     const mapData = maps.find(e => e.regionIndex === regionIndex)?.data || null;
+    const region = this._regionDescriptor(regionIndex, mapData);
+    if (!region) return null;
     const sink = { regionIndex, dx, dy, objects: [], enemies: [], noWalk: [] };
 
     this._paintRegionGround(region, mapData, dx, dy, sink);
 
     if (mapData) {
-      this._buildFromMapData(mapData, { dx, dy, regionIndex, sink });
+      this._buildFromMapData(mapData, { dx, dy, regionIndex, sink, difficulty: region.difficulty });
     } else if (region.denseForest) {
       this._buildForestAtOffset(region, dx, dy, sink);
     } else {
@@ -653,36 +678,34 @@ export class GameScene extends Phaser.Scene {
   // commit (unload the region behind + remap) once they're well across.
   _checkStreaming() {
     if (!STREAM_POC.enabled) return;
-    if (this.network?.connected) return;             // solo only for the PoC
+    if (this.network?.connected) return;             // solo only
     if (this._streamBusy) return;
     const lp = this.players.find(p => p?.isLocal) || this.players[0];
     if (!lp) return;
     const baseIdx = this._stream.base;
-    if (!STREAM_POC.regions.includes(baseIdx)) return;
+    if (this._chainPos(baseIdx) < 0) return;         // current region isn't chained
 
-    const fwdIdx = baseIdx + 1;
-    const backIdx = baseIdx - 1;
+    const fwdIdx  = this._chainNeighbor(baseIdx, +1);
+    const backIdx = this._chainNeighbor(baseIdx, -1);
 
     // ── Pre-load the eastern neighbour ───────────────────────────────
-    if (!this._stream.next && REGIONS[fwdIdx] && STREAM_POC.regions.includes(fwdIdx)
-        && lp.x > WORLD_W - STREAM_POC.trigger) {
+    if (!this._stream.next && fwdIdx != null && lp.x > WORLD_W - STREAM_POC.trigger) {
       this._stream.next = this._buildRegionAtOffset(fwdIdx, WORLD_W, 0);
       this._expandBounds();
     }
     // ── Pre-load the western neighbour ───────────────────────────────
-    if (!this._stream.prev && REGIONS[backIdx] && STREAM_POC.regions.includes(backIdx)
-        && lp.x < STREAM_POC.trigger) {
+    if (!this._stream.prev && backIdx != null && lp.x < STREAM_POC.trigger) {
       this._stream.prev = this._buildRegionAtOffset(backIdx, -WORLD_W, 0);
       this._expandBounds();
     }
 
     // ── Commit eastward: player is well into the next cell ───────────
     if (this._stream.next && lp.x > WORLD_W + STREAM_POC.commit) {
-      this._commitCrossing(fwdIdx, -WORLD_W);
+      this._commitCrossing(this._stream.next.regionIndex, -WORLD_W);
     }
     // ── Commit westward ──────────────────────────────────────────────
     else if (this._stream.prev && lp.x < -STREAM_POC.commit) {
-      this._commitCrossing(backIdx, WORLD_W);
+      this._commitCrossing(this._stream.prev.regionIndex, WORLD_W);
     }
   }
 
@@ -717,14 +740,16 @@ export class GameScene extends Phaser.Scene {
     this._deathEchoObj = null;
     this._worldFragmentObjects = (this._worldFragmentObjects || []).filter(f => f.gfx?.active);
 
+    const desc = this._regionDescriptor(newBaseIdx);
     this._stream = { base: newBaseIdx, next: null, prev: null };
     this._regionIndex = newBaseIdx;
-    this._region = REGIONS[newBaseIdx];
-    this._spawnerPositions = REGIONS[newBaseIdx]?.spawnerPositions || [];
+    this._region = desc;
+    this._mapData = (this.registry.get('regionMaps') || []).find(e => e.regionIndex === newBaseIdx)?.data || null;
+    this._spawnerPositions = desc.spawnerPositions || [];
     ExploredManager.markExplored(newBaseIdx);
     this.physics.world.setBounds(0, 0, WORLD_W, WORLD_H);
     this.cameras.main.setBounds(0, 0, WORLD_W, WORLD_H);
-    this.events.emit('region_title', { name: REGIONS[newBaseIdx]?.name, subtitle: REGIONS[newBaseIdx]?.subtitle });
+    this.events.emit('region_title', { name: desc.name, subtitle: desc.subtitle });
     this.audio?.startAmbient?.(newBaseIdx);
     console.log(`[stream] committed crossing → region ${newBaseIdx} now at origin`);
     this._streamBusy = false;
@@ -1896,7 +1921,7 @@ export class GameScene extends Phaser.Scene {
       const mapEnemies = mapData.enemies || [];
       const canSpawnEnemies = !this.network.connected || this.network.isHost();
       if (mapEnemies.length > 0 && canSpawnEnemies) {
-        const difficulty = REGIONS[rIdx]?.difficulty ?? (this._region || {}).difficulty ?? 1.0;
+        const difficulty = opts.difficulty ?? REGIONS[rIdx]?.difficulty ?? (this._region || {}).difficulty ?? 1.0;
         for (const e of mapEnemies) {
           const enemy = new Enemy(this, e.x + dx, e.y + dy, e.type, difficulty);
           this.enemies.push(enemy);
@@ -2518,9 +2543,9 @@ export class GameScene extends Phaser.Scene {
   _checkPortals() {
     // In co-op, only the host triggers portal transitions; client follows via REGION_CHANGE
     if (this.network?.connected && this.network.isClient()) return;
-    // During the streaming PoC the edge portals are owned by the streamer, not
-    // by scene.restart — suppress them so crossings stay seamless.
-    if (STREAM_POC.enabled && !this.network?.connected && STREAM_POC.regions.includes(this._stream?.base)) return;
+    // While streaming, edge/side portals are owned by the streamer, not by
+    // scene.restart — suppress them for chained regions so crossings stay seamless.
+    if (STREAM_POC.enabled && !this.network?.connected && this._chainPos(this._stream?.base) >= 0) return;
     const check = (portal, isNext) => {
       if (!portal || portal.locked) return;
       for (const p of this.players) {
