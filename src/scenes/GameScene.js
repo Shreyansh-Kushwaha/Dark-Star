@@ -1846,22 +1846,19 @@ export class GameScene extends Phaser.Scene {
     return this.add.image(WORLD_W / 2 + dx, WORLD_H / 2 + dy, TEX_KEY).setDepth(-5);
   }
 
-  // Invisible circular static collider at a solid prop's base, so actors are
-  // stopped by the foot/trunk rather than the whole (mostly empty) sprite box.
-  // A circle gives smooth top-down sliding against the player's foot circle
-  // (circle-vs-circle is Arcade's accurate case). `fp` is an optional { r }
-  // (or { w } → radius w/2); otherwise it's auto-sized from the on-screen
-  // sprite. Registered like a noWalkZone so streaming unload tracks it.
+  // Invisible static collider at a solid prop's base, so actors are stopped by
+  // the foot/trunk rather than the whole (mostly empty) sprite bounding box.
+  // `fp` is an optional { w, h } footprint; otherwise it's auto-sized from the
+  // on-screen sprite. Registered like a noWalkZone so streaming unload tracks it.
   _addPropFootprint(worldX, baseY, dispW, dispH, fp, rIdx, sink) {
-    const r = fp?.r ?? (fp?.w ? fp.w / 2 : Math.max(7, Math.min(Math.abs(dispW) * 0.28, 16)));
-    // Centre a touch above the contact line so the circle hugs the trunk/foot.
-    const c = this.add.circle(worldX, baseY - r * 0.4, r);
-    c.setVisible(false);
-    this.physics.add.existing(c, true);      // static body positioned at creation
-    this._noWalkGroup.add(c);
-    if (c.body?.setCircle) { c.body.setCircle(r); c.body.updateCenter?.(); }  // circular, not the 2r box
-    if (sink) { c._streamRegion = rIdx; sink.noWalk.push(c); }
-    return c;
+    const w = fp?.w ?? Math.max(12, Math.abs(dispW) * 0.5);
+    const h = fp?.h ?? Math.max(10, Math.min(Math.abs(dispH) * 0.28, 24));
+    const rect = this.add.rectangle(worldX, baseY - h / 2, w, h);
+    rect.setVisible(false);
+    this.physics.add.existing(rect, true);   // static body positioned at creation
+    this._noWalkGroup.add(rect);
+    if (sink) { rect._streamRegion = rIdx; sink.noWalk.push(rect); }
+    return rect;
   }
 
   // `opts` (streaming): { dx, dy, regionIndex, sink } where sink collects the
@@ -1881,11 +1878,20 @@ export class GameScene extends Phaser.Scene {
       this._noWalkGroup.add(rect);
       if (sink) { rect._streamRegion = rIdx; sink.noWalk.push(rect); }
     }
+    // Auto-colliders for solid props (trees, pillars, rocks…): each carries an
+    // authored footprint box at its base, turned into a static body just like a
+    // no-walk zone. Footprint is centred at (ox, oy) relative to the sprite anchor.
+    const solidProps = (mapData.sprites || []).filter(sp => sp.prop === 'solid' && sp.footprint);
+    for (const sp of solidProps) {
+      const f = sp.footprint;
+      const rect = this.add.rectangle(sp.x + (f.ox || 0) + dx, sp.y + (f.oy || 0) + dy, f.w, f.h);
+      rect.setVisible(false);
+      this.physics.add.existing(rect, true);
+      this._noWalkGroup.add(rect);
+      if (sink) { rect._streamRegion = rIdx; sink.noWalk.push(rect); }
+    }
 
-    // Solid-prop colliders are added per-sprite in placeSprite via
-    // _addPropFootprint (circular bodies at each prop's base) — the single
-    // collision path, so no separate rectangle pass here.
-    if ((mapData.noWalkZones || []).length > 0) this._noWalkGroup.refresh();
+    if ((mapData.noWalkZones || []).length > 0 || solidProps.length > 0) this._noWalkGroup.refresh();
 
     const sprites = mapData.sprites || [];
     const missing = []; // { key, url, isSheet?, frameW?, frameH? }
@@ -1936,6 +1942,9 @@ export class GameScene extends Phaser.Scene {
       // blocked by the trunk/foot, not the whole leafy bounding box.
       const addFootprint = (obj) => {
         if (kind !== 'solid') return;
+        // Authored-footprint solids already got a static body in the synchronous
+        // pass above; only auto-classified solids need one placed with the sprite.
+        if (sp.prop === 'solid' && sp.footprint) return;
         this._addPropFootprint(obj.x, baseY + dy, obj.displayWidth, obj.displayHeight,
                                sp.footprint || propFootprint(sp), rIdx, sink);
       };
@@ -2704,16 +2713,9 @@ export class GameScene extends Phaser.Scene {
   _usePortal(isNext) {
     this._portalCooldown = this.time.now + 3000;
     const portal = isNext ? this._portals?.next : this._portals?.back;
-    // Fallback when a portal has no explicit target: follow the streaming chain
-    // (0 → 7 → 8 …) so we never drop into the bypassed legacy regions 1–6.
-    const chainDir = this._chainNeighbor(this._regionIndex, isNext ? +1 : -1);
     const newIndex = portal?.targetRegion != null
       ? portal.targetRegion
-      : (chainDir != null
-          ? chainDir
-          : (isNext
-              ? (this._regionIndex === 0 ? 7 : this._regionIndex + 1)
-              : Math.max(0, this._regionIndex - 1)));
+      : (isNext ? this._regionIndex + 1 : Math.max(0, this._regionIndex - 1));
 
     if (newIndex < 0) return;
 
