@@ -24821,6 +24821,206 @@
           "entity_key": "animal_without_shadow_shadows",
           "status": "rejected",
           "remark": ""
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Bull_animation_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Bull_animation_with_shadow",
+          "name": "idle",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Bull_animation_with_shadow.png",
+          "sheet_size": [
+            384,
+            512
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            64,
+            64
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle animation",
+          "fingerprint": "6:64x64",
+          "entity_key": "bull",
+          "status": "approved",
+          "remark": "[fix] animal-1 combined 6x8 grid \u2014 using first row as idle (other rows unlabeled)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Calf_animation_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Calf_animation_with_shadow",
+          "name": "idle",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Calf_animation_with_shadow.png",
+          "sheet_size": [
+            384,
+            512
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            64,
+            64
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle animation",
+          "fingerprint": "6:64x64",
+          "entity_key": "calf",
+          "status": "approved",
+          "remark": "[fix] animal-1 combined 6x8 grid \u2014 using first row as idle (other rows unlabeled)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Chick_animation_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Chick_animation_with_shadow",
+          "name": "idle",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Chick_animation_with_shadow.png",
+          "sheet_size": [
+            96,
+            128
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            16,
+            16
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle animation",
+          "fingerprint": "6:16x16",
+          "entity_key": "chick",
+          "status": "approved",
+          "remark": "[fix] animal-1 combined 6x8 grid \u2014 using first row as idle (other rows unlabeled)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Lamb_animation_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Lamb_animation_with_shadow",
+          "name": "idle",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Lamb_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle animation",
+          "fingerprint": "6:32x32",
+          "entity_key": "lamb",
+          "status": "approved",
+          "remark": "[fix] animal-1 combined 6x8 grid \u2014 using first row as idle (other rows unlabeled)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Piglet_animation_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Piglet_animation_with_shadow",
+          "name": "idle",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Piglet_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle animation",
+          "fingerprint": "6:32x32",
+          "entity_key": "piglet",
+          "status": "approved",
+          "remark": "[fix] animal-1 combined 6x8 grid \u2014 using first row as idle (other rows unlabeled)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Rooster_animation_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Rooster_animation_with_shadow",
+          "name": "idle",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Rooster_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle animation",
+          "fingerprint": "6:32x32",
+          "entity_key": "rooster",
+          "status": "approved",
+          "remark": "[fix] animal-1 combined 6x8 grid \u2014 using first row as idle (other rows unlabeled)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Sheep_animation_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Sheep_animation_with_shadow",
+          "name": "idle",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Sheep_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle animation",
+          "fingerprint": "6:32x32",
+          "entity_key": "sheep",
+          "status": "approved",
+          "remark": "[fix] animal-1 combined 6x8 grid \u2014 using first row as idle (other rows unlabeled)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal/PNG/With_shadow/Turkey_animation_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Turkey_animation_with_shadow",
+          "name": "idle",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Turkey_animation_with_shadow.png",
+          "sheet_size": [
+            192,
+            256
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle animation",
+          "fingerprint": "6:32x32",
+          "entity_key": "turkey",
+          "status": "approved",
+          "remark": "[fix] animal-1 combined 6x8 grid \u2014 using first row as idle (other rows unlabeled)",
+          "auto": false
         }
       ]
     },
@@ -25072,6 +25272,656 @@
           "entity_key": "animal_2_without_shadow_boar",
           "status": "rejected",
           "remark": ""
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Black_grouse/Black_grouse_Death_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Black_grouse_Death_with_shadow",
+          "name": "death",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Black_grouse/Black_grouse_Death_with_shadow.png",
+          "sheet_size": [
+            192,
+            128
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": false,
+          "purpose_guess": "death animation",
+          "fingerprint": "6:32x32",
+          "entity_key": "black_grouse",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Black_grouse/Black_grouse_Flight_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Black_grouse_Flight_with_shadow",
+          "name": "fly",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Black_grouse/Black_grouse_Flight_with_shadow.png",
+          "sheet_size": [
+            192,
+            128
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 10,
+          "loop": true,
+          "purpose_guess": "fly animation",
+          "fingerprint": "6:32x32",
+          "entity_key": "black_grouse",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Black_grouse/Black_grouse_Hurt_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Black_grouse_Hurt_with_shadow",
+          "name": "hurt",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Black_grouse/Black_grouse_Hurt_with_shadow.png",
+          "sheet_size": [
+            128,
+            128
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": false,
+          "purpose_guess": "hurt animation",
+          "fingerprint": "4:32x32",
+          "entity_key": "black_grouse",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Black_grouse/Black_grouse_Idle_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Black_grouse_Idle_with_shadow",
+          "name": "idle",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Black_grouse/Black_grouse_Idle_with_shadow.png",
+          "sheet_size": [
+            128,
+            128
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle animation",
+          "fingerprint": "4:32x32",
+          "entity_key": "black_grouse",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Black_grouse/Black_grouse_Walk_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Black_grouse_Walk_with_shadow",
+          "name": "walk",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Black_grouse/Black_grouse_Walk_with_shadow.png",
+          "sheet_size": [
+            192,
+            128
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk animation",
+          "fingerprint": "6:32x32",
+          "entity_key": "black_grouse",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Boar/Boar_Attack_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Boar_Attack_with_shadow",
+          "name": "attack",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Boar/Boar_Attack_with_shadow.png",
+          "sheet_size": [
+            160,
+            128
+          ],
+          "frame_count": 5,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 12,
+          "loop": false,
+          "purpose_guess": "attack animation",
+          "fingerprint": "5:32x32",
+          "entity_key": "boar",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Boar/Boar_Death_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Boar_Death_with_shadow",
+          "name": "death",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Boar/Boar_Death_with_shadow.png",
+          "sheet_size": [
+            192,
+            128
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": false,
+          "purpose_guess": "death animation",
+          "fingerprint": "6:32x32",
+          "entity_key": "boar",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Boar/Boar_Hurt_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Boar_Hurt_with_shadow",
+          "name": "hurt",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Boar/Boar_Hurt_with_shadow.png",
+          "sheet_size": [
+            128,
+            128
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": false,
+          "purpose_guess": "hurt animation",
+          "fingerprint": "4:32x32",
+          "entity_key": "boar",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Boar/Boar_Idle_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Boar_Idle_with_shadow",
+          "name": "idle",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Boar/Boar_Idle_with_shadow.png",
+          "sheet_size": [
+            128,
+            128
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle animation",
+          "fingerprint": "4:32x32",
+          "entity_key": "boar",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Boar/Boar_Run_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Boar_Run_with_shadow",
+          "name": "run",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Boar/Boar_Run_with_shadow.png",
+          "sheet_size": [
+            160,
+            128
+          ],
+          "frame_count": 5,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 10,
+          "loop": true,
+          "purpose_guess": "run animation",
+          "fingerprint": "5:32x32",
+          "entity_key": "boar",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Boar/Boar_Walk_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Boar_Walk_with_shadow",
+          "name": "walk",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Boar/Boar_Walk_with_shadow.png",
+          "sheet_size": [
+            192,
+            128
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk animation",
+          "fingerprint": "6:32x32",
+          "entity_key": "boar",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Deer/Deer_Death_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Deer_Death_with_shadow",
+          "name": "death",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Deer/Deer_Death_with_shadow.png",
+          "sheet_size": [
+            224,
+            128
+          ],
+          "frame_count": 7,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": false,
+          "purpose_guess": "death animation",
+          "fingerprint": "7:32x32",
+          "entity_key": "deer",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Deer/Deer_Hurt_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Deer_Hurt_with_shadow",
+          "name": "hurt",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Deer/Deer_Hurt_with_shadow.png",
+          "sheet_size": [
+            128,
+            128
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": false,
+          "purpose_guess": "hurt animation",
+          "fingerprint": "4:32x32",
+          "entity_key": "deer",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Deer/Deer_Idle_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Deer_Idle_with_shadow",
+          "name": "idle",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Deer/Deer_Idle_with_shadow.png",
+          "sheet_size": [
+            128,
+            128
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle animation",
+          "fingerprint": "4:32x32",
+          "entity_key": "deer",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Deer/Deer_Run_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Deer_Run_with_shadow",
+          "name": "run",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Deer/Deer_Run_with_shadow.png",
+          "sheet_size": [
+            192,
+            128
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 10,
+          "loop": true,
+          "purpose_guess": "run animation",
+          "fingerprint": "6:32x32",
+          "entity_key": "deer",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Deer/Deer_Walk_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Deer_Walk_with_shadow",
+          "name": "walk",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Deer/Deer_Walk_with_shadow.png",
+          "sheet_size": [
+            192,
+            128
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk animation",
+          "fingerprint": "6:32x32",
+          "entity_key": "deer",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Fox/Fox_Death_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Fox_Death_with_shadow",
+          "name": "death",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Fox/Fox_Death_with_shadow.png",
+          "sheet_size": [
+            192,
+            128
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": false,
+          "purpose_guess": "death animation",
+          "fingerprint": "6:32x32",
+          "entity_key": "fox",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Fox/Fox_Hurt_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Fox_Hurt_with_shadow",
+          "name": "hurt",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Fox/Fox_Hurt_with_shadow.png",
+          "sheet_size": [
+            128,
+            128
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": false,
+          "purpose_guess": "hurt animation",
+          "fingerprint": "4:32x32",
+          "entity_key": "fox",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Fox/Fox_Idle_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Fox_Idle_with_shadow",
+          "name": "idle",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Fox/Fox_Idle_with_shadow.png",
+          "sheet_size": [
+            128,
+            128
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle animation",
+          "fingerprint": "4:32x32",
+          "entity_key": "fox",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Fox/Fox_Run_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Fox_Run_with_shadow",
+          "name": "run",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Fox/Fox_Run_with_shadow.png",
+          "sheet_size": [
+            192,
+            128
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 10,
+          "loop": true,
+          "purpose_guess": "run animation",
+          "fingerprint": "6:32x32",
+          "entity_key": "fox",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Fox/Fox_walk_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Fox_walk_with_shadow",
+          "name": "walk",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Fox/Fox_walk_with_shadow.png",
+          "sheet_size": [
+            192,
+            128
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk animation",
+          "fingerprint": "6:32x32",
+          "entity_key": "fox",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Hare/Hare_Death_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Hare_Death_with_shadow",
+          "name": "death",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Hare/Hare_Death_with_shadow.png",
+          "sheet_size": [
+            192,
+            128
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": false,
+          "purpose_guess": "death animation",
+          "fingerprint": "6:32x32",
+          "entity_key": "hare",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Hare/Hare_Hurt_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Hare_Hurt_with_shadow",
+          "name": "hurt",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Hare/Hare_Hurt_with_shadow.png",
+          "sheet_size": [
+            128,
+            128
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": false,
+          "purpose_guess": "hurt animation",
+          "fingerprint": "4:32x32",
+          "entity_key": "hare",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Hare/Hare_Idle_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Hare_Idle_with_shadow",
+          "name": "idle",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Hare/Hare_Idle_with_shadow.png",
+          "sheet_size": [
+            128,
+            128
+          ],
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true,
+          "purpose_guess": "idle animation",
+          "fingerprint": "4:32x32",
+          "entity_key": "hare",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Hare/Hare_Run_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Hare_Run_with_shadow",
+          "name": "run",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Hare/Hare_Run_with_shadow.png",
+          "sheet_size": [
+            192,
+            128
+          ],
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 10,
+          "loop": true,
+          "purpose_guess": "run animation",
+          "fingerprint": "6:32x32",
+          "entity_key": "hare",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
+        },
+        {
+          "id": "sheet::assets6/animal 2/PNG/With_Shadow/Hare/Hare_Walk_with_shadow.png",
+          "source": "spritesheet",
+          "raw_name": "Hare_Walk_with_shadow",
+          "name": "walk",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Hare/Hare_Walk_with_shadow.png",
+          "sheet_size": [
+            160,
+            128
+          ],
+          "frame_count": 5,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true,
+          "purpose_guess": "walk animation",
+          "fingerprint": "5:32x32",
+          "entity_key": "hare",
+          "status": "approved",
+          "remark": "[fix] 4-direction grid: frame 32x32, top row (one direction)",
+          "auto": false
         }
       ]
     },

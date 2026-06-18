@@ -9773,6 +9773,539 @@
       ]
     },
     {
+      "entity_key": "bull",
+      "entity_type": "enemy",
+      "pack_path": "assets6/animal",
+      "animations": [
+        {
+          "name": "idle",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Bull_animation_with_shadow.png",
+          "frame_count": 6,
+          "frame_size": [
+            64,
+            64
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true
+        }
+      ]
+    },
+    {
+      "entity_key": "calf",
+      "entity_type": "enemy",
+      "pack_path": "assets6/animal",
+      "animations": [
+        {
+          "name": "idle",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Calf_animation_with_shadow.png",
+          "frame_count": 6,
+          "frame_size": [
+            64,
+            64
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true
+        }
+      ]
+    },
+    {
+      "entity_key": "chick",
+      "entity_type": "enemy",
+      "pack_path": "assets6/animal",
+      "animations": [
+        {
+          "name": "idle",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Chick_animation_with_shadow.png",
+          "frame_count": 6,
+          "frame_size": [
+            16,
+            16
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true
+        }
+      ]
+    },
+    {
+      "entity_key": "lamb",
+      "entity_type": "enemy",
+      "pack_path": "assets6/animal",
+      "animations": [
+        {
+          "name": "idle",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Lamb_animation_with_shadow.png",
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true
+        }
+      ]
+    },
+    {
+      "entity_key": "piglet",
+      "entity_type": "enemy",
+      "pack_path": "assets6/animal",
+      "animations": [
+        {
+          "name": "idle",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Piglet_animation_with_shadow.png",
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true
+        }
+      ]
+    },
+    {
+      "entity_key": "rooster",
+      "entity_type": "enemy",
+      "pack_path": "assets6/animal",
+      "animations": [
+        {
+          "name": "idle",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Rooster_animation_with_shadow.png",
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true
+        }
+      ]
+    },
+    {
+      "entity_key": "sheep",
+      "entity_type": "enemy",
+      "pack_path": "assets6/animal",
+      "animations": [
+        {
+          "name": "idle",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Sheep_animation_with_shadow.png",
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true
+        }
+      ]
+    },
+    {
+      "entity_key": "turkey",
+      "entity_type": "enemy",
+      "pack_path": "assets6/animal",
+      "animations": [
+        {
+          "name": "idle",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal/PNG/With_shadow/Turkey_animation_with_shadow.png",
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true
+        }
+      ]
+    },
+    {
+      "entity_key": "black_grouse",
+      "entity_type": "enemy",
+      "pack_path": "assets6/animal 2",
+      "animations": [
+        {
+          "name": "death",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Black_grouse/Black_grouse_Death_with_shadow.png",
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": false
+        },
+        {
+          "name": "fly",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Black_grouse/Black_grouse_Flight_with_shadow.png",
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 10,
+          "loop": true
+        },
+        {
+          "name": "hurt",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Black_grouse/Black_grouse_Hurt_with_shadow.png",
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": false
+        },
+        {
+          "name": "idle",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Black_grouse/Black_grouse_Idle_with_shadow.png",
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true
+        },
+        {
+          "name": "walk",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Black_grouse/Black_grouse_Walk_with_shadow.png",
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true
+        }
+      ]
+    },
+    {
+      "entity_key": "boar",
+      "entity_type": "enemy",
+      "pack_path": "assets6/animal 2",
+      "animations": [
+        {
+          "name": "attack",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Boar/Boar_Attack_with_shadow.png",
+          "frame_count": 5,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 12,
+          "loop": false
+        },
+        {
+          "name": "death",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Boar/Boar_Death_with_shadow.png",
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Boar/Boar_Hurt_with_shadow.png",
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": false
+        },
+        {
+          "name": "idle",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Boar/Boar_Idle_with_shadow.png",
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true
+        },
+        {
+          "name": "run",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Boar/Boar_Run_with_shadow.png",
+          "frame_count": 5,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 10,
+          "loop": true
+        },
+        {
+          "name": "walk",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Boar/Boar_Walk_with_shadow.png",
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true
+        }
+      ]
+    },
+    {
+      "entity_key": "deer",
+      "entity_type": "enemy",
+      "pack_path": "assets6/animal 2",
+      "animations": [
+        {
+          "name": "death",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Deer/Deer_Death_with_shadow.png",
+          "frame_count": 7,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Deer/Deer_Hurt_with_shadow.png",
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": false
+        },
+        {
+          "name": "idle",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Deer/Deer_Idle_with_shadow.png",
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true
+        },
+        {
+          "name": "run",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Deer/Deer_Run_with_shadow.png",
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 10,
+          "loop": true
+        },
+        {
+          "name": "walk",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Deer/Deer_Walk_with_shadow.png",
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true
+        }
+      ]
+    },
+    {
+      "entity_key": "fox",
+      "entity_type": "enemy",
+      "pack_path": "assets6/animal 2",
+      "animations": [
+        {
+          "name": "death",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Fox/Fox_Death_with_shadow.png",
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Fox/Fox_Hurt_with_shadow.png",
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": false
+        },
+        {
+          "name": "idle",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Fox/Fox_Idle_with_shadow.png",
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true
+        },
+        {
+          "name": "run",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Fox/Fox_Run_with_shadow.png",
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 10,
+          "loop": true
+        },
+        {
+          "name": "walk",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Fox/Fox_walk_with_shadow.png",
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true
+        }
+      ]
+    },
+    {
+      "entity_key": "hare",
+      "entity_type": "enemy",
+      "pack_path": "assets6/animal 2",
+      "animations": [
+        {
+          "name": "death",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Hare/Hare_Death_with_shadow.png",
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": false
+        },
+        {
+          "name": "hurt",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Hare/Hare_Hurt_with_shadow.png",
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": false
+        },
+        {
+          "name": "idle",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Hare/Hare_Idle_with_shadow.png",
+          "frame_count": 4,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 6,
+          "loop": true
+        },
+        {
+          "name": "run",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Hare/Hare_Run_with_shadow.png",
+          "frame_count": 6,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 10,
+          "loop": true
+        },
+        {
+          "name": "walk",
+          "source": "spritesheet",
+          "spritesheet": "assets6/animal 2/PNG/With_Shadow/Hare/Hare_Walk_with_shadow.png",
+          "frame_count": 5,
+          "frame_size": [
+            32,
+            32
+          ],
+          "horizontal": true,
+          "framerate": 8,
+          "loop": true
+        }
+      ]
+    },
+    {
       "entity_key": "enemy_skeleton",
       "entity_type": "enemy",
       "pack_path": "assets6/enemy",
