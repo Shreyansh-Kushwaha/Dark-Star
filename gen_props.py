@@ -308,6 +308,46 @@ def crystal(name, base, light, dark):
     d.polygon([(46,86),(54,66),(60,86),(56,110),(48,110)], fill=base, outline=OL)
     save(im, name)
 
+def basalt_rock():
+    # big angular border boulder for the Emberwastes ridge lines
+    im, d = canvas(110, 84); rk=(56,49,46,255); rl=(84,75,70,255); rd=(40,35,32,255)
+    d.polygon([(6,62),(20,26),(52,12),(86,22),(104,56),(86,76),(26,78)], fill=rk, outline=OL)
+    d.polygon([(20,26),(52,12),(60,34),(30,42)], fill=rl)                 # top-light facet
+    d.polygon([(60,34),(86,22),(104,56),(78,52)], fill=rd)                # shadow facet
+    d.line([(34,58),(52,62)], fill=rd, width=3)
+    save(im, "basalt_rock")
+
+def basalt_small():
+    im, d = canvas(64, 48); rk=(56,49,46,255); rl=(84,75,70,255); rd=(40,35,32,255)
+    d.polygon([(4,36),(14,14),(38,6),(56,16),(60,34),(44,44),(14,44)], fill=rk, outline=OL)
+    d.polygon([(14,14),(38,6),(40,20),(20,24)], fill=rl)
+    d.polygon([(40,20),(56,16),(60,34),(46,30)], fill=rd)
+    save(im, "basalt_small")
+
+def ash_shrub():
+    # charred scrub clump — the wasteland's "tall grass" texture
+    im, d = canvas(52, 44); tw=(64,55,48,255); td=(44,38,34,255)
+    for (x0,y0,x1,y1) in [(26,40,8,16),(26,40,20,8),(26,40,38,10),(26,40,46,20),
+                          (26,40,14,26),(26,40,40,28)]:
+        d.line([x0,y0,x1,y1], fill=tw, width=3)
+        d.line([(x0+x1)//2,(y0+y1)//2,x1,y1], fill=td, width=1)
+    blob(d, 26, 40, 9, 4, td, OL)                                          # ash mound base
+    for (x,y) in [(8,16),(38,10),(46,20)]:
+        d.point([(x,y),(x+1,y)], fill=(244,138,42,255))                    # ember tips
+    save(im, "ash_shrub")
+
+def fumarole():
+    # small volcanic vent cone with a glowing mouth and a smoke wisp
+    im, d = canvas(60, 72); rk=(60,52,48,255); rl=(88,78,72,255); rd=(42,36,33,255)
+    d.polygon([(8,66),(20,34),(30,28),(40,34),(52,66),(40,70),(18,70)], fill=rk, outline=OL)
+    d.polygon([(20,34),(30,28),(34,40),(22,44)], fill=rl)
+    d.polygon([(34,40),(40,34),(52,66),(42,60)], fill=rd)
+    d.ellipse([24,30,38,38], fill=(232,108,32,255), outline=OL, width=2)   # vent mouth
+    d.ellipse([28,32,34,36], fill=(252,180,70,255))
+    for (x,y) in [(30,22),(27,16),(31,10),(28,4)]:                         # smoke wisp
+        d.point([(x,y),(x+1,y),(x,y+1)], fill=(168,160,152,200))
+    save(im, "fumarole")
+
 if __name__ == "__main__":
     cactus(); dead_tree(); scarecrow(); bone_pile(); skull(); bone_arch()
     cloud_platform(); ice_shard(); brazier(); pillar(); mural(); void_shard()
@@ -319,6 +359,7 @@ if __name__ == "__main__":
     crystal("crystal_cyan",   (108,196,210,255), (190,238,244,255), (64,140,158,255))
     crystal("crystal_purple", (140,110,196,255), (206,180,244,255), (92,64,150,255))
     crystal("crystal_amber",  (210,160,72,255),  (244,212,140,255), (150,104,40,255))
+    basalt_rock(); basalt_small(); ash_shrub(); fumarole()
     print("wrote props ->", OUT)
     for f in sorted(os.listdir(OUT)):
         w,h = Image.open(f"{OUT}/{f}").size

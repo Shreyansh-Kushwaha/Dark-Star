@@ -218,22 +218,6 @@ button.creature-btn{border-color:#cc77ff;color:#d9aaff}button.creature-btn:hover
         <option value="above">Above Player</option>
       </select>
     </div>
-    <div class="prop-row">
-      <label>Prop</label>
-      <select id="prop-prop" title="solid = blocks + sorts by base · decor = sorts, walk-through · ground = always under · none = legacy layer">
-        <option value="">None (legacy)</option>
-        <option value="solid">Solid (block + sort)</option>
-        <option value="decor">Decor (sort, no block)</option>
-        <option value="ground">Ground (always under)</option>
-      </select>
-    </div>
-    <div id="prop-fp-row" style="display:none">
-      <div style="font-size:9px;color:#666;margin-top:4px">Footprint (collision box, drag green box to move):</div>
-      <div class="prop-row"><label>FP ox</label><input type="number" id="prop-fp-ox" step="1"></div>
-      <div class="prop-row"><label>FP oy</label><input type="number" id="prop-fp-oy" step="1"></div>
-      <div class="prop-row"><label>FP w</label><input type="number" id="prop-fp-w" step="1" min="1"></div>
-      <div class="prop-row"><label>FP h</label><input type="number" id="prop-fp-h" step="1" min="1"></div>
-    </div>
     <button id="btn-select-same" title="Select all placed sprites using this same asset" style="font-size:9px;padding:3px 6px;margin-top:0">Select All Same Asset</button>
     <div style="font-size:9px;color:#666;margin-top:4px">Animation:</div>
     <div id="prop-anim"></div>
@@ -442,7 +426,6 @@ const S = {
   bgRect: null, bgImage: null,
   transformer: null,
   selectedNode: null,
-  footprintRect: null,  // draggable collision-footprint box for the selected solid prop
   placingAsset: null,
   animPaused: false,
   history: [],
@@ -1850,19 +1833,12 @@ async function placeSprite(asset, x, y, spriteId, layerAttr) {
     node.setAttr('assetFrameRow',   fr);
   }
 
-  // Default prop classification from the asset manifest (auto-fill on placement).
-  if (asset.prop) {
-    node.setAttr('prop', asset.prop);
-    if (asset.prop === 'solid') node.setAttr('footprint', defaultFootprint(node));
-  }
-
   konvaLayerFor(layer).add(node);
   bindSpriteEvents(node);
   if (!spriteId) {
     broadcast({ type: 'SPRITE_ADD', spriteId: id, dir: asset.dir, frames: asset.frames,
       name: asset.name, animated: asset.animated, x, y, offsetX: offX, offsetY: offY,
-      scaleX: 1, scaleY: 1, spriteLayer: layer, frameW: fw, frameH: fh, frameCount: fc, frameRow: fr,
-      prop: node.getAttr('prop'), footprint: node.getAttr('footprint') });
+      scaleX: 1, scaleY: 1, spriteLayer: layer, frameW: fw, frameH: fh, frameCount: fc, frameRow: fr });
     pushHistory();
     setStatus('Placed: ' + asset.name + ' [' + (layer === 'above' ? 'Above Player' : 'Below Player') + ']'
       + (isSheet ? ' ▶ animated' : ''));
@@ -1907,10 +1883,8 @@ function bindSpriteEvents(node) {
     selectNode(node);
   });
   node.draggable(!S.panMode && !S.deleteMode && !S.noWalkMode);
-  node.on('dragmove', () => { if (S.selectedNode === node && S.footprintRect) showFootprintBox(node); });
   node.on('dragend', () => {
     pushHistory(); updatePropsPanel(node);
-    if (S.selectedNode === node) showFootprintBox(node);
     broadcast({ type: 'SPRITE_MOVE', spriteId: node.getAttr('spriteId'),
       x: node.x(), y: node.y(), scaleX: node.scaleX(), scaleY: node.scaleY(),
       offsetX: node.offsetX(), offsetY: node.offsetY() });
@@ -1935,72 +1909,10 @@ function moveNodeToLayer(node, newLayerAttr) {
   newKonva.batchDraw();
 }
 
-// ── Prop type & collision footprint ───────────────────────────────────────
-// A "solid" prop carries a footprint { ox, oy, w, h } = a collision box centred
-// at (ox, oy) relative to the sprite anchor (in world px). The game turns it
-// into a static body and Y-sorts the sprite by its base (see GameScene).
-
-// Default footprint for a freshly-tagged solid sprite: a flat box at its base.
-function defaultFootprint(node) {
-  const sx = Math.abs(node.scaleX()) || 1, sy = Math.abs(node.scaleY()) || 1;
-  const w = node.width()  || Math.abs(node.offsetX()) * 2 || 32;
-  const h = node.height() || Math.abs(node.offsetY()) * 2 || 32;
-  const fw = Math.max(8, Math.round(w * 0.45 * sx));
-  const fh = Math.max(6, Math.round(h * 0.14 * sy));
-  return { ox: 0, oy: Math.round(h * 0.5 * sy - fh / 2), w: fw, h: fh };
-}
-
-// Draw / refresh the draggable green footprint box for the selected solid prop.
-function showFootprintBox(node) {
-  hideFootprintBox();
-  if (!node || node.getAttr('prop') !== 'solid') return;
-  const f = node.getAttr('footprint') || defaultFootprint(node);
-  node.setAttr('footprint', f);
-  const rect = new Konva.Rect({
-    x: node.x() + f.ox - f.w / 2, y: node.y() + f.oy - f.h / 2,
-    width: f.w, height: f.h,
-    fill: 'rgba(40,255,120,0.20)', stroke: '#28ff78', strokeWidth: 1.5, dash: [5, 3],
-    draggable: true,
-  });
-  rect.on('dragmove', () => {
-    const n = S.selectedNode; if (!n) return;
-    const ff = n.getAttr('footprint');
-    ff.ox = Math.round(rect.x() + ff.w / 2 - n.x());
-    ff.oy = Math.round(rect.y() + ff.h / 2 - n.y());
-    n.setAttr('footprint', ff);
-    syncFootprintInputs(ff);
-  });
-  rect.on('dragend', () => pushHistory());
-  S.footprintRect = rect;
-  S.selLayer.add(rect);
-  S.selLayer.batchDraw();
-  syncFootprintInputs(f);
-}
-
-function hideFootprintBox() {
-  if (S.footprintRect) { S.footprintRect.destroy(); S.footprintRect = null; S.selLayer.batchDraw(); }
-}
-
-function syncFootprintInputs(f) {
-  document.getElementById('prop-fp-ox').value = f.ox;
-  document.getElementById('prop-fp-oy').value = f.oy;
-  document.getElementById('prop-fp-w').value  = f.w;
-  document.getElementById('prop-fp-h').value  = f.h;
-}
-
-// Copy prop/footprint from a source (node or serialized data) onto a new node.
-function carryProp(node, src) {
-  const prop = src.getAttr ? src.getAttr('prop') : src.prop;
-  const fp   = src.getAttr ? src.getAttr('footprint') : src.footprint;
-  if (prop) node.setAttr('prop', prop);
-  if (fp)   node.setAttr('footprint', { ...fp });
-}
-
 // ── Selection & properties ─────────────────────────────────────────────────
 function selectNode(node) {
   S.selectedNode = node;
   S.transformer.nodes([node]);
-  showFootprintBox(node);
   S.selLayer.batchDraw();
   updatePropsPanel(node);
 }
@@ -2013,15 +1925,12 @@ function updatePropsPanel(node) {
   document.getElementById('prop-scale').value  = Math.abs(node.scaleX()).toFixed(2);
   document.getElementById('prop-flipx').checked = node.scaleX() < 0;
   document.getElementById('prop-layer').value  = node.getAttr('spriteLayer') || 'below';
-  document.getElementById('prop-prop').value   = node.getAttr('prop') || '';
-  document.getElementById('prop-fp-row').style.display = node.getAttr('prop') === 'solid' ? '' : 'none';
   document.getElementById('prop-anim').textContent = node.getAttr('assetName') || '';
 }
 
 function deselectAll() {
   S.selectedNode = null;
   S.transformer.nodes([]);
-  hideFootprintBox();
   S.selLayer.batchDraw();
   document.getElementById('props').classList.remove('visible');
 }
@@ -2031,7 +1940,6 @@ function deleteSelected() {
   const id = S.selectedNode.getAttr('spriteId');
   const kl = konvaLayerFor(S.selectedNode.getAttr('spriteLayer'));
   S.transformer.nodes([]);
-  hideFootprintBox();
   S.selectedNode.destroy();
   S.selectedNode = null;
   kl.batchDraw();
@@ -2070,7 +1978,6 @@ async function duplicateSelected() {
   newNode.setAttr('spriteLayer',  layerAttr);
   if (isSheet) { newNode.setAttr('assetFrameW', fw); newNode.setAttr('assetFrameH', fh);
     newNode.setAttr('assetFrameCount', fc); }
-  carryProp(newNode, node);
   konvaLayerFor(layerAttr).add(newNode);
   bindSpriteEvents(newNode);
   konvaLayerFor(layerAttr).batchDraw();
@@ -2079,8 +1986,7 @@ async function duplicateSelected() {
     name: asset.name, animated: asset.animated,
     x: newNode.x(), y: newNode.y(), offsetX: newNode.offsetX(), offsetY: newNode.offsetY(),
     scaleX: newNode.scaleX(), scaleY: newNode.scaleY(), spriteLayer: layerAttr,
-    frameW: fw, frameH: fh, frameCount: fc,
-    prop: newNode.getAttr('prop'), footprint: newNode.getAttr('footprint') });
+    frameW: fw, frameH: fh, frameCount: fc });
   pushHistory();
   setStatus('Duplicated: ' + asset.name + ' — Ctrl+Z to undo');
 }
@@ -2100,8 +2006,6 @@ function copySelected() {
       scaleX:  n.scaleX(),  scaleY:  n.scaleY(),
       offsetX: n.offsetX(), offsetY: n.offsetY(),
       ...(fw ? { assetFrameW: fw, assetFrameH: fh, assetFrameCount: fc } : {}),
-      ...(n.getAttr('prop') ? { prop: n.getAttr('prop') } : {}),
-      ...(n.getAttr('footprint') ? { footprint: { ...n.getAttr('footprint') } } : {}),
     };
   });
   setStatus('Copied ' + S.clipboard.length + ' sprite(s) — Ctrl+V to paste');
@@ -2133,7 +2037,6 @@ async function pasteClipboard() {
     node.setAttr('spriteLayer',  d.spriteLayer);
     if (isSheet) { node.setAttr('assetFrameW', fw); node.setAttr('assetFrameH', fh);
       node.setAttr('assetFrameCount', fc); }
-    carryProp(node, d);
     konvaLayerFor(d.spriteLayer).add(node);
     bindSpriteEvents(node);
     konvaLayerFor(d.spriteLayer).batchDraw();
@@ -2142,8 +2045,7 @@ async function pasteClipboard() {
       dir: d.assetDir, frames: d.assetFrames, name: d.assetName, animated: d.assetAnimated,
       x: node.x(), y: node.y(), offsetX: d.offsetX, offsetY: d.offsetY,
       scaleX: d.scaleX, scaleY: d.scaleY, spriteLayer: d.spriteLayer,
-      frameW: fw, frameH: fh, frameCount: fc,
-      prop: node.getAttr('prop'), footprint: node.getAttr('footprint') });
+      frameW: fw, frameH: fh, frameCount: fc });
     // advance clipboard position so repeated pastes stagger
     d.x += OFFSET; d.y += OFFSET;
   }
@@ -2176,38 +2078,8 @@ function bindPropsPanel() {
       offsetX: S.selectedNode.offsetX(), offsetY: S.selectedNode.offsetY() });
     pushHistory();
   }
-  ['prop-x','prop-y','prop-scale'].forEach(id => document.getElementById(id).addEventListener('change', () => { applyProp(); if (S.selectedNode) showFootprintBox(S.selectedNode); }));
+  ['prop-x','prop-y','prop-scale'].forEach(id => document.getElementById(id).addEventListener('change', applyProp));
   document.getElementById('prop-flipx').addEventListener('change', applyProp);
-
-  // Prop type — solid (block+sort) / decor (sort) / ground (under) / none (legacy)
-  document.getElementById('prop-prop').addEventListener('change', e => {
-    const n = S.selectedNode; if (!n) return;
-    const val = e.target.value;
-    if (val) {
-      n.setAttr('prop', val);
-      if (val === 'solid' && !n.getAttr('footprint')) n.setAttr('footprint', defaultFootprint(n));
-    } else {
-      n.setAttr('prop', undefined);
-    }
-    document.getElementById('prop-fp-row').style.display = val === 'solid' ? '' : 'none';
-    showFootprintBox(n);
-    pushHistory();
-    setStatus('Prop → ' + (val || 'none'));
-  });
-
-  // Footprint numeric inputs (size + offset); the green box can also be dragged.
-  function applyFootprint() {
-    const n = S.selectedNode; if (!n || n.getAttr('prop') !== 'solid') return;
-    n.setAttr('footprint', {
-      ox: parseFloat(document.getElementById('prop-fp-ox').value) || 0,
-      oy: parseFloat(document.getElementById('prop-fp-oy').value) || 0,
-      w:  Math.max(1, parseFloat(document.getElementById('prop-fp-w').value) || 1),
-      h:  Math.max(1, parseFloat(document.getElementById('prop-fp-h').value) || 1),
-    });
-    showFootprintBox(n);
-    pushHistory();
-  }
-  ['prop-fp-ox','prop-fp-oy','prop-fp-w','prop-fp-h'].forEach(id => document.getElementById(id).addEventListener('change', applyFootprint));
 
   // Layer change — applies to ALL currently transformer-selected nodes
   document.getElementById('prop-layer').addEventListener('change', e => {
@@ -2285,8 +2157,6 @@ function serializeSprites() {
       scaleX: n.scaleX(), scaleY: n.scaleY(),
       offsetX: n.offsetX(), offsetY: n.offsetY(),
       ...(fw ? { frameW: fw, frameH: fh, frameCount: fc, frameRow: fr || 0 } : {}),
-      ...(n.getAttr('prop') ? { prop: n.getAttr('prop') } : {}),
-      ...(n.getAttr('prop') === 'solid' && n.getAttr('footprint') ? { footprint: n.getAttr('footprint') } : {}),
     };
   });
   return [...strokes, ...sprites];
@@ -2396,7 +2266,6 @@ async function restoreSprites(list) {
       node.setAttr('spriteLayer',  la);
       if (isSheet) { node.setAttr('assetFrameW', d.frameW); node.setAttr('assetFrameH', d.frameH);
         node.setAttr('assetFrameCount', d.frameCount); node.setAttr('assetFrameRow', fr); }
-      carryProp(node, d);
       konvaLayerFor(la).add(node);
       bindSpriteEvents(node);
     } catch { /* skip missing images */ }
@@ -3015,16 +2884,11 @@ function bindRandModal() {
         node.setAttr('assetFrameCount', fc);
         node.setAttr('assetFrameRow',   fr);
       }
-      if (_randAsset.prop) {
-        node.setAttr('prop', _randAsset.prop);
-        if (_randAsset.prop === 'solid') node.setAttr('footprint', defaultFootprint(node));
-      }
       targetKonvaLayer.add(node);
       bindSpriteEvents(node);
       broadcast({ type: 'SPRITE_ADD', spriteId: id, dir: _randAsset.dir, frames: _randAsset.frames,
         name: _randAsset.name, animated: _randAsset.animated, x, y, offsetX: hw, offsetY: hh,
-        scaleX: scale, scaleY: scale, spriteLayer: layerAttr, frameW: fw, frameH: fh, frameCount: fc, frameRow: fr,
-        prop: node.getAttr('prop'), footprint: node.getAttr('footprint') });
+        scaleX: scale, scaleY: scale, spriteLayer: layerAttr, frameW: fw, frameH: fh, frameCount: fc, frameRow: fr });
       placed++;
     }
 
@@ -3126,7 +2990,6 @@ async function handleWsMsg(msg) {
     node.setAttr('currentFrame', 0); node.setAttr('spriteId', msg.spriteId); node.setAttr('spriteLayer', la);
     if (isSheet) { node.setAttr('assetFrameW', msg.frameW); node.setAttr('assetFrameH', msg.frameH);
       node.setAttr('assetFrameCount', msg.frameCount); node.setAttr('assetFrameRow', wsFr); }
-    carryProp(node, msg);
     konvaLayerFor(la).add(node); bindSpriteEvents(node); konvaLayerFor(la).batchDraw();
   }
   else if (msg.type === 'SPRITE_MOVE') {

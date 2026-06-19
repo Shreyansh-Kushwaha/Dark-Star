@@ -9,7 +9,7 @@
  "sprites": [
   {
    "type": "sprite",
-   "spriteId": "s_r37_0001",
+   "spriteId": "s_r37_d0156",
    "dir": "assets_custom/props",
    "frames": [
     "void_shard.png"
@@ -17,16 +17,16 @@
    "name": "void_shard",
    "animated": false,
    "spriteLayer": "below",
-   "x": 392.46,
-   "y": 1797.8,
-   "scaleX": 0.729,
-   "scaleY": 0.729,
+   "x": 2282,
+   "y": 900,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
    "offsetX": 60.0,
-   "offsetY": 43.0
+   "offsetY": 85
   },
   {
    "type": "sprite",
-   "spriteId": "s_r37_0002",
+   "spriteId": "s_r37_d0157",
    "dir": "assets_custom/props",
    "frames": [
     "void_shard.png"
@@ -34,301 +34,278 @@
    "name": "void_shard",
    "animated": false,
    "spriteLayer": "below",
-   "x": 313.15,
-   "y": 173.43,
-   "scaleX": 0.734,
-   "scaleY": 0.734,
+   "x": 2286,
+   "y": 1110,
+   "scaleX": 1.95,
+   "scaleY": 1.95,
    "offsetX": 60.0,
-   "offsetY": 43.0
+   "offsetY": 85
   },
   {
    "type": "sprite",
-   "spriteId": "s_r37_0003",
+   "spriteId": "s_r37_d0158",
    "dir": "assets_custom/props",
    "frames": [
-    "void_shard.png"
+    "crystal_purple.png"
    ],
-   "name": "void_shard",
+   "name": "crystal_purple",
    "animated": false,
    "spriteLayer": "below",
-   "x": 933.35,
-   "y": 774.25,
-   "scaleX": 1.048,
-   "scaleY": 1.048,
-   "offsetX": 60.0,
-   "offsetY": 43.0
+   "x": 2226,
+   "y": 1006,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 32.0,
+   "offsetY": 115
   },
   {
    "type": "sprite",
-   "spriteId": "s_r37_0004",
+   "spriteId": "s_r37_d0160",
    "dir": "assets_custom/props",
    "frames": [
-    "void_shard.png"
+    "crystal_purple.png"
    ],
-   "name": "void_shard",
+   "name": "crystal_purple",
    "animated": false,
    "spriteLayer": "below",
-   "x": 1973.71,
-   "y": 1642.09,
-   "scaleX": 0.73,
-   "scaleY": 0.73,
-   "offsetX": 60.0,
-   "offsetY": 43.0
+   "x": 560,
+   "y": 932,
+   "scaleX": 0.946,
+   "scaleY": 0.946,
+   "offsetX": 32.0,
+   "offsetY": 115
   },
   {
    "type": "sprite",
-   "spriteId": "s_r37_0005",
+   "spriteId": "s_r37_d0162",
    "dir": "assets_custom/props",
    "frames": [
-    "void_shard.png"
+    "crystal_purple.png"
    ],
-   "name": "void_shard",
+   "name": "crystal_purple",
    "animated": false,
    "spriteLayer": "below",
-   "x": 552.72,
-   "y": 22.04,
-   "scaleX": 1.157,
-   "scaleY": 1.157,
-   "offsetX": 60.0,
-   "offsetY": 43.0
+   "x": 1000,
+   "y": 932,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 32.0,
+   "offsetY": 115
   },
   {
    "type": "sprite",
-   "spriteId": "s_r37_0006",
+   "spriteId": "s_r37_d0164",
    "dir": "assets_custom/props",
    "frames": [
-    "void_shard.png"
+    "crystal_purple.png"
    ],
-   "name": "void_shard",
+   "name": "crystal_purple",
    "animated": false,
    "spriteLayer": "below",
-   "x": 78.77,
-   "y": 1818.47,
-   "scaleX": 1.448,
-   "scaleY": 1.448,
-   "offsetX": 60.0,
-   "offsetY": 43.0
+   "x": 1440,
+   "y": 932,
+   "scaleX": 0.852,
+   "scaleY": 0.852,
+   "offsetX": 32.0,
+   "offsetY": 115
   },
   {
    "type": "sprite",
-   "spriteId": "s_r37_0007",
+   "spriteId": "s_r37_d0166",
    "dir": "assets_custom/props",
    "frames": [
-    "void_shard.png"
+    "crystal_purple.png"
    ],
-   "name": "void_shard",
+   "name": "crystal_purple",
    "animated": false,
    "spriteLayer": "below",
-   "x": 2064.12,
-   "y": 592.9,
-   "scaleX": 0.772,
-   "scaleY": 0.772,
-   "offsetX": 60.0,
-   "offsetY": 43.0
+   "x": 1880,
+   "y": 932,
+   "scaleX": 0.87,
+   "scaleY": 0.87,
+   "offsetX": 32.0,
+   "offsetY": 115
   },
   {
    "type": "sprite",
-   "spriteId": "s_r37_0008",
+   "spriteId": "s_r37_d0168",
    "dir": "assets_custom/props",
    "frames": [
-    "void_shard.png"
+    "crystal_purple.png"
    ],
-   "name": "void_shard",
+   "name": "crystal_purple",
    "animated": false,
    "spriteLayer": "below",
-   "x": 819.18,
-   "y": 1574.15,
+   "x": 232,
+   "y": 1010,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0169",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_purple.png"
+   ],
+   "name": "crystal_purple",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 448,
+   "y": 1004,
    "scaleX": 0.95,
    "scaleY": 0.95,
-   "offsetX": 60.0,
-   "offsetY": 43.0
+   "offsetX": 32.0,
+   "offsetY": 115
   },
   {
-   "type": "sprite",
-   "spriteId": "s_r37_0009",
-   "dir": "assets_custom/props",
-   "frames": [
-    "void_shard.png"
-   ],
-   "name": "void_shard",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 252.05,
-   "y": 701.54,
-   "scaleX": 0.793,
-   "scaleY": 0.793,
-   "offsetX": 60.0,
-   "offsetY": 43.0
+   "type": "stroke",
+   "gen": "r37dress",
+   "stroke": "#1e0e2a",
+   "strokeWidth": 240,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2980.0,
+    1000.0,
+    2961.9,
+    1073.5,
+    2909.8,
+    1138.2,
+    2830.0,
+    1186.2,
+    2732.1,
+    1211.7,
+    2627.9,
+    1211.7,
+    2530.0,
+    1186.2,
+    2450.2,
+    1138.2,
+    2398.1,
+    1073.5,
+    2380.0,
+    1000.0,
+    2398.1,
+    926.5,
+    2450.2,
+    861.8,
+    2530.0,
+    813.8,
+    2627.9,
+    788.3,
+    2732.1,
+    788.3,
+    2830.0,
+    813.8,
+    2909.8,
+    861.8,
+    2961.9,
+    926.5,
+    2980.0,
+    1000.0
+   ]
   },
   {
-   "type": "sprite",
-   "spriteId": "s_r37_0010",
-   "dir": "assets_custom/props",
-   "frames": [
-    "void_shard.png"
-   ],
-   "name": "void_shard",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1859.03,
-   "y": 2019.28,
-   "scaleX": 0.874,
-   "scaleY": 0.874,
-   "offsetX": 60.0,
-   "offsetY": 43.0
+   "type": "stroke",
+   "gen": "r37dress",
+   "stroke": "#170a20",
+   "strokeWidth": 150,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2860.0,
+    1000.0,
+    2849.1,
+    1043.8,
+    2817.9,
+    1082.3,
+    2770.0,
+    1110.9,
+    2711.3,
+    1126.1,
+    2648.7,
+    1126.1,
+    2590.0,
+    1110.9,
+    2542.1,
+    1082.3,
+    2510.9,
+    1043.8,
+    2500.0,
+    1000.0,
+    2510.9,
+    956.2,
+    2542.1,
+    917.7,
+    2590.0,
+    889.1,
+    2648.7,
+    873.9,
+    2711.3,
+    873.9,
+    2770.0,
+    889.1,
+    2817.9,
+    917.7,
+    2849.1,
+    956.2,
+    2860.0,
+    1000.0
+   ]
   },
   {
-   "type": "sprite",
-   "spriteId": "s_r37_0011",
-   "dir": "assets_custom/props",
-   "frames": [
-    "void_shard.png"
-   ],
-   "name": "void_shard",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2177.31,
-   "y": 582.46,
-   "scaleX": 0.925,
-   "scaleY": 0.925,
-   "offsetX": 60.0,
-   "offsetY": 43.0
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r37_0012",
-   "dir": "assets_custom/props",
-   "frames": [
-    "void_shard.png"
-   ],
-   "name": "void_shard",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 982.18,
-   "y": 1682.77,
-   "scaleX": 0.728,
-   "scaleY": 0.728,
-   "offsetX": 60.0,
-   "offsetY": 43.0
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r37_0013",
-   "dir": "assets_custom/props",
-   "frames": [
-    "void_shard.png"
-   ],
-   "name": "void_shard",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 333.53,
-   "y": 179.45,
-   "scaleX": 1.358,
-   "scaleY": 1.358,
-   "offsetX": 60.0,
-   "offsetY": 43.0
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r37_0014",
-   "dir": "assets_custom/props",
-   "frames": [
-    "void_shard.png"
-   ],
-   "name": "void_shard",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 915.91,
-   "y": 285.81,
-   "scaleX": 1.432,
-   "scaleY": 1.432,
-   "offsetX": 60.0,
-   "offsetY": 43.0
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r37_0015",
-   "dir": "assets_custom/props",
-   "frames": [
-    "void_shard.png"
-   ],
-   "name": "void_shard",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 3073.59,
-   "y": 1453.12,
-   "scaleX": 0.809,
-   "scaleY": 0.809,
-   "offsetX": 60.0,
-   "offsetY": 43.0
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r37_0016",
-   "dir": "assets_custom/props",
-   "frames": [
-    "void_shard.png"
-   ],
-   "name": "void_shard",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2713.91,
-   "y": 1917.59,
-   "scaleX": 1.425,
-   "scaleY": 1.425,
-   "offsetX": 60.0,
-   "offsetY": 43.0
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r37_0017",
-   "dir": "assets_custom/props",
-   "frames": [
-    "void_shard.png"
-   ],
-   "name": "void_shard",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1738.68,
-   "y": 1541.06,
-   "scaleX": 1.279,
-   "scaleY": 1.279,
-   "offsetX": 60.0,
-   "offsetY": 43.0
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r37_0018",
-   "dir": "assets_custom/props",
-   "frames": [
-    "void_shard.png"
-   ],
-   "name": "void_shard",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2520.89,
-   "y": 1495.77,
-   "scaleX": 0.941,
-   "scaleY": 0.941,
-   "offsetX": 60.0,
-   "offsetY": 43.0
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r37_0019",
-   "dir": "assets_custom/props",
-   "frames": [
-    "void_shard.png"
-   ],
-   "name": "void_shard",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 652.43,
-   "y": 1792.06,
-   "scaleX": 1.331,
-   "scaleY": 1.331,
-   "offsetX": 60.0,
-   "offsetY": 43.0
+   "type": "stroke",
+   "gen": "r37dress",
+   "stroke": "#2a1638",
+   "strokeWidth": 60,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2760.0,
+    1000.0,
+    2755.2,
+    1018.5,
+    2741.3,
+    1034.7,
+    2720.0,
+    1046.8,
+    2693.9,
+    1053.2,
+    2666.1,
+    1053.2,
+    2640.0,
+    1046.8,
+    2618.7,
+    1034.7,
+    2604.8,
+    1018.5,
+    2600.0,
+    1000.0,
+    2604.8,
+    981.5,
+    2618.7,
+    965.3,
+    2640.0,
+    953.2,
+    2666.1,
+    946.8,
+    2693.9,
+    946.8,
+    2720.0,
+    953.2,
+    2741.3,
+    965.3,
+    2755.2,
+    981.5,
+    2760.0,
+    1000.0
+   ]
   },
   {
    "type": "sprite",
@@ -1907,6 +1884,3518 @@
    "scaleY": 1.6,
    "offsetX": 70.0,
    "offsetY": 99
+  },
+  {
+   "type": "stroke",
+   "gen": "r37dress",
+   "stroke": "#7a5a16",
+   "strokeWidth": 12,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1700,
+    1010,
+    1950,
+    990,
+    2120,
+    1000
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r37dress",
+   "stroke": "#d8b24a",
+   "strokeWidth": 6,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1700,
+    1010,
+    1950,
+    990,
+    2120,
+    1000
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r37dress",
+   "stroke": "#f4e08a",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1700,
+    1010,
+    1950,
+    990,
+    2120,
+    1000
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r37dress",
+   "stroke": "#d8b24a",
+   "strokeWidth": 5,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2150,
+    1002,
+    2210,
+    1000
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r37dress",
+   "stroke": "#f4e08a",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2150,
+    1002,
+    2210,
+    1000
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r37dress",
+   "stroke": "#d8b24a",
+   "strokeWidth": 5,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2240,
+    1002,
+    2280,
+    1000
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r37dress",
+   "stroke": "#f4e08a",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2240,
+    1002,
+    2280,
+    1000
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r37dress",
+   "stroke": "#d8b24a",
+   "strokeWidth": 5,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2300,
+    1002,
+    2320,
+    1000
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r37dress",
+   "stroke": "#f4e08a",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2300,
+    1002,
+    2320,
+    1000
+   ]
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0001",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 21.87,
+   "y": 798.26,
+   "scaleX": 2.044,
+   "scaleY": 2.044,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0002",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 92.39,
+   "y": 803.71,
+   "scaleX": 2.457,
+   "scaleY": 2.457,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0003",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 165.18,
+   "y": 812.98,
+   "scaleX": 1.241,
+   "scaleY": 1.241,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0004",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 117.91,
+   "y": 678.54,
+   "scaleX": 2.842,
+   "scaleY": 2.842,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0005",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 124.0,
+   "y": 651.36,
+   "scaleX": 2.52,
+   "scaleY": 2.52,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0006",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 22.27,
+   "y": 494.25,
+   "scaleX": 2.702,
+   "scaleY": 2.702,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0007",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 22.71,
+   "y": 1369.98,
+   "scaleX": 2.197,
+   "scaleY": 2.197,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0008",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 80.82,
+   "y": 1291.49,
+   "scaleX": 1.184,
+   "scaleY": 1.184,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0009",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 160.3,
+   "y": 1375.13,
+   "scaleX": 2.483,
+   "scaleY": 2.483,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0010",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 58.43,
+   "y": 1660.65,
+   "scaleX": 2.754,
+   "scaleY": 2.754,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0011",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 118.65,
+   "y": 1548.23,
+   "scaleX": 2.815,
+   "scaleY": 2.815,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0012",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 72.56,
+   "y": 1508.14,
+   "scaleX": 2.113,
+   "scaleY": 2.113,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0013",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 239.78,
+   "y": 834.18,
+   "scaleX": 1.217,
+   "scaleY": 1.217,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0014",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 296.31,
+   "y": 835.24,
+   "scaleX": 2.143,
+   "scaleY": 2.143,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0015",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 347.29,
+   "y": 840.17,
+   "scaleX": 2.262,
+   "scaleY": 2.262,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0016",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 325.22,
+   "y": 573.85,
+   "scaleX": 2.866,
+   "scaleY": 2.866,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0017",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 311.24,
+   "y": 724.67,
+   "scaleX": 2.695,
+   "scaleY": 2.695,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0018",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 272.06,
+   "y": 735.29,
+   "scaleX": 2.558,
+   "scaleY": 2.558,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0019",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 240.6,
+   "y": 1417.75,
+   "scaleX": 2.422,
+   "scaleY": 2.422,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0020",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 303.18,
+   "y": 1397.48,
+   "scaleX": 2.442,
+   "scaleY": 2.442,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0021",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 347.52,
+   "y": 1321.15,
+   "scaleX": 1.205,
+   "scaleY": 1.205,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0022",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 374.67,
+   "y": 1649.58,
+   "scaleX": 2.611,
+   "scaleY": 2.611,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0023",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 227.78,
+   "y": 1668.68,
+   "scaleX": 2.504,
+   "scaleY": 2.504,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0024",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 341.87,
+   "y": 1632.6,
+   "scaleX": 2.182,
+   "scaleY": 2.182,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0025",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 421.5,
+   "y": 865.3,
+   "scaleX": 1.018,
+   "scaleY": 1.018,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0026",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 479.94,
+   "y": 858.6,
+   "scaleX": 2.352,
+   "scaleY": 2.352,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0027",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 544.29,
+   "y": 826.73,
+   "scaleX": 1.983,
+   "scaleY": 1.983,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0028",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 555.74,
+   "y": 783.86,
+   "scaleX": 2.422,
+   "scaleY": 2.422,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0029",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 411.51,
+   "y": 732.28,
+   "scaleX": 2.445,
+   "scaleY": 2.445,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0030",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 556.52,
+   "y": 686.59,
+   "scaleX": 2.255,
+   "scaleY": 2.255,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0031",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 431.48,
+   "y": 1336.32,
+   "scaleX": 1.011,
+   "scaleY": 1.011,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0032",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 489.6,
+   "y": 1436.43,
+   "scaleX": 1.947,
+   "scaleY": 1.947,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0033",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 545.32,
+   "y": 1331.98,
+   "scaleX": 1.149,
+   "scaleY": 1.149,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0034",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 576.41,
+   "y": 1627.71,
+   "scaleX": 2.281,
+   "scaleY": 2.281,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0035",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 567.6,
+   "y": 1460.14,
+   "scaleX": 2.108,
+   "scaleY": 2.108,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0036",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 484.18,
+   "y": 1574.49,
+   "scaleX": 2.423,
+   "scaleY": 2.423,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0037",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 628.74,
+   "y": 858.32,
+   "scaleX": 2.207,
+   "scaleY": 2.207,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0038",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 705.77,
+   "y": 838.84,
+   "scaleX": 2.471,
+   "scaleY": 2.471,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0039",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 742.72,
+   "y": 852.21,
+   "scaleX": 1.93,
+   "scaleY": 1.93,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0040",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 717.98,
+   "y": 739.11,
+   "scaleX": 2.675,
+   "scaleY": 2.675,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0041",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 629.13,
+   "y": 616.12,
+   "scaleX": 2.692,
+   "scaleY": 2.692,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0042",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 618.19,
+   "y": 640.45,
+   "scaleX": 2.201,
+   "scaleY": 2.201,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0043",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 643.03,
+   "y": 1411.83,
+   "scaleX": 2.02,
+   "scaleY": 2.02,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0044",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 689.28,
+   "y": 1381.76,
+   "scaleX": 1.147,
+   "scaleY": 1.147,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0045",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 741.47,
+   "y": 1418.9,
+   "scaleX": 2.46,
+   "scaleY": 2.46,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0046",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 619.46,
+   "y": 1523.36,
+   "scaleX": 2.265,
+   "scaleY": 2.265,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0047",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 629.45,
+   "y": 1473.47,
+   "scaleX": 2.214,
+   "scaleY": 2.214,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0048",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 689.17,
+   "y": 1485.79,
+   "scaleX": 2.204,
+   "scaleY": 2.204,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0049",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 840.07,
+   "y": 877.62,
+   "scaleX": 1.092,
+   "scaleY": 1.092,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0050",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 880.2,
+   "y": 846.76,
+   "scaleX": 2.207,
+   "scaleY": 2.207,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0051",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 958.28,
+   "y": 874.98,
+   "scaleX": 1.101,
+   "scaleY": 1.101,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0052",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 907.54,
+   "y": 556.21,
+   "scaleX": 2.249,
+   "scaleY": 2.249,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0053",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 810.95,
+   "y": 672.97,
+   "scaleX": 2.703,
+   "scaleY": 2.703,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0054",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 952.73,
+   "y": 549.45,
+   "scaleX": 2.778,
+   "scaleY": 2.778,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0055",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 825.34,
+   "y": 1442.37,
+   "scaleX": 2.118,
+   "scaleY": 2.118,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0056",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 883.31,
+   "y": 1454.99,
+   "scaleX": 2.274,
+   "scaleY": 2.274,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0057",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 966.29,
+   "y": 1373.56,
+   "scaleX": 1.147,
+   "scaleY": 1.147,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0058",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 906.5,
+   "y": 1569.21,
+   "scaleX": 2.113,
+   "scaleY": 2.113,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0059",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 909.67,
+   "y": 1695.72,
+   "scaleX": 2.263,
+   "scaleY": 2.263,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0060",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 838.85,
+   "y": 1655.96,
+   "scaleX": 2.119,
+   "scaleY": 2.119,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0061",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1029.05,
+   "y": 870.16,
+   "scaleX": 2.399,
+   "scaleY": 2.399,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0062",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1101.32,
+   "y": 856.56,
+   "scaleX": 0.913,
+   "scaleY": 0.913,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0063",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1154.09,
+   "y": 856.07,
+   "scaleX": 1.088,
+   "scaleY": 1.088,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0064",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1171.78,
+   "y": 561.46,
+   "scaleX": 2.454,
+   "scaleY": 2.454,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0065",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1055.59,
+   "y": 711.43,
+   "scaleX": 2.623,
+   "scaleY": 2.623,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0066",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1048.36,
+   "y": 526.08,
+   "scaleX": 2.824,
+   "scaleY": 2.824,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0067",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1041.15,
+   "y": 1448.58,
+   "scaleX": 2.447,
+   "scaleY": 2.447,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0068",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1102.73,
+   "y": 1377.97,
+   "scaleX": 1.292,
+   "scaleY": 1.292,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0069",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1154.11,
+   "y": 1352.8,
+   "scaleX": 1.093,
+   "scaleY": 1.093,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0070",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1112.03,
+   "y": 1570.64,
+   "scaleX": 2.289,
+   "scaleY": 2.289,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0071",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1154.64,
+   "y": 1508.72,
+   "scaleX": 2.211,
+   "scaleY": 2.211,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0072",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1097.4,
+   "y": 1691.51,
+   "scaleX": 2.713,
+   "scaleY": 2.713,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0073",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1222.1,
+   "y": 822.91,
+   "scaleX": 2.413,
+   "scaleY": 2.413,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0074",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1292.14,
+   "y": 820.43,
+   "scaleX": 2.239,
+   "scaleY": 2.239,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0075",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1345.12,
+   "y": 850.96,
+   "scaleX": 1.085,
+   "scaleY": 1.085,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0076",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1253.89,
+   "y": 770.99,
+   "scaleX": 2.416,
+   "scaleY": 2.416,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0077",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1283.22,
+   "y": 530.92,
+   "scaleX": 2.356,
+   "scaleY": 2.356,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0078",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1346.22,
+   "y": 520.83,
+   "scaleX": 2.198,
+   "scaleY": 2.198,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0079",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1236.93,
+   "y": 1392.13,
+   "scaleX": 2.223,
+   "scaleY": 2.223,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0080",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1290.63,
+   "y": 1368.56,
+   "scaleX": 0.947,
+   "scaleY": 0.947,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0081",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1356.31,
+   "y": 1333.2,
+   "scaleX": 1.182,
+   "scaleY": 1.182,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0082",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1335.52,
+   "y": 1695.79,
+   "scaleX": 2.644,
+   "scaleY": 2.644,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0083",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1239.42,
+   "y": 1543.96,
+   "scaleX": 2.804,
+   "scaleY": 2.804,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0084",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1260.22,
+   "y": 1652.41,
+   "scaleX": 2.12,
+   "scaleY": 2.12,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0085",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1422.37,
+   "y": 806.78,
+   "scaleX": 1.035,
+   "scaleY": 1.035,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0086",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1486.96,
+   "y": 823.93,
+   "scaleX": 1.932,
+   "scaleY": 1.932,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0087",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1554.77,
+   "y": 805.9,
+   "scaleX": 2.419,
+   "scaleY": 2.419,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0088",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1431.6,
+   "y": 729.16,
+   "scaleX": 2.146,
+   "scaleY": 2.146,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0089",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1543.28,
+   "y": 535.17,
+   "scaleX": 2.195,
+   "scaleY": 2.195,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0090",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1550.84,
+   "y": 757.53,
+   "scaleX": 2.431,
+   "scaleY": 2.431,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0091",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1422.13,
+   "y": 1342.8,
+   "scaleX": 0.903,
+   "scaleY": 0.903,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0092",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1500.37,
+   "y": 1329.25,
+   "scaleX": 1.112,
+   "scaleY": 1.112,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0093",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1565.99,
+   "y": 1366.66,
+   "scaleX": 2.258,
+   "scaleY": 2.258,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0094",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1515.44,
+   "y": 1571.02,
+   "scaleX": 2.579,
+   "scaleY": 2.579,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0095",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1527.1,
+   "y": 1578.87,
+   "scaleX": 2.134,
+   "scaleY": 2.134,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0096",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1441.81,
+   "y": 1466.2,
+   "scaleX": 2.638,
+   "scaleY": 2.638,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0097",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1633.32,
+   "y": 772.38,
+   "scaleX": 1.902,
+   "scaleY": 1.902,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0098",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1688.07,
+   "y": 778.17,
+   "scaleX": 2.214,
+   "scaleY": 2.214,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0099",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1752.9,
+   "y": 764.91,
+   "scaleX": 2.408,
+   "scaleY": 2.408,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0100",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1690.13,
+   "y": 500.4,
+   "scaleX": 2.439,
+   "scaleY": 2.439,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0101",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1681.8,
+   "y": 675.14,
+   "scaleX": 2.878,
+   "scaleY": 2.878,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0102",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1688.56,
+   "y": 589.74,
+   "scaleX": 2.172,
+   "scaleY": 2.172,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0103",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1631.49,
+   "y": 1372.61,
+   "scaleX": 2.36,
+   "scaleY": 2.36,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0104",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1686.86,
+   "y": 1335.77,
+   "scaleX": 2.135,
+   "scaleY": 2.135,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0105",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1749.52,
+   "y": 1378.61,
+   "scaleX": 2.043,
+   "scaleY": 2.043,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0106",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1656.02,
+   "y": 1496.24,
+   "scaleX": 2.601,
+   "scaleY": 2.601,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0107",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1763.26,
+   "y": 1593.38,
+   "scaleX": 2.334,
+   "scaleY": 2.334,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0108",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1654.24,
+   "y": 1398.36,
+   "scaleX": 2.364,
+   "scaleY": 2.364,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0109",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1838.7,
+   "y": 749.82,
+   "scaleX": 2.144,
+   "scaleY": 2.144,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0110",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1887.18,
+   "y": 749.11,
+   "scaleX": 2.037,
+   "scaleY": 2.037,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0111",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1951.97,
+   "y": 762.46,
+   "scaleX": 1.268,
+   "scaleY": 1.268,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0112",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1916.76,
+   "y": 421.89,
+   "scaleX": 2.828,
+   "scaleY": 2.828,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0113",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1815.4,
+   "y": 587.48,
+   "scaleX": 2.568,
+   "scaleY": 2.568,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0114",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1840.29,
+   "y": 594.8,
+   "scaleX": 2.799,
+   "scaleY": 2.799,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0115",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1819.87,
+   "y": 1321.61,
+   "scaleX": 2.125,
+   "scaleY": 2.125,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0116",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1888.32,
+   "y": 1302.88,
+   "scaleX": 2.42,
+   "scaleY": 2.42,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0117",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1960.38,
+   "y": 1323.52,
+   "scaleX": 2.491,
+   "scaleY": 2.491,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0118",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1980.71,
+   "y": 1481.79,
+   "scaleX": 2.195,
+   "scaleY": 2.195,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0119",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1988.45,
+   "y": 1552.36,
+   "scaleX": 2.246,
+   "scaleY": 2.246,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0120",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1891.1,
+   "y": 1499.16,
+   "scaleX": 2.163,
+   "scaleY": 2.163,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0121",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2023.43,
+   "y": 732.08,
+   "scaleX": 2.123,
+   "scaleY": 2.123,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0122",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2094.18,
+   "y": 724.64,
+   "scaleX": 2.397,
+   "scaleY": 2.397,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0123",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2156.37,
+   "y": 720.69,
+   "scaleX": 2.105,
+   "scaleY": 2.105,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0124",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2033.25,
+   "y": 465.21,
+   "scaleX": 2.543,
+   "scaleY": 2.543,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0125",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2045.01,
+   "y": 503.14,
+   "scaleX": 2.509,
+   "scaleY": 2.509,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0126",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2138.73,
+   "y": 564.17,
+   "scaleX": 2.184,
+   "scaleY": 2.184,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0127",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2042.29,
+   "y": 1305.13,
+   "scaleX": 2.124,
+   "scaleY": 2.124,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0128",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2100.11,
+   "y": 1237.4,
+   "scaleX": 1.272,
+   "scaleY": 1.272,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0129",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2144.79,
+   "y": 1248.12,
+   "scaleX": 1.212,
+   "scaleY": 1.212,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0130",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2083.71,
+   "y": 1503.76,
+   "scaleX": 2.124,
+   "scaleY": 2.124,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0131",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2050.06,
+   "y": 1416.07,
+   "scaleX": 2.476,
+   "scaleY": 2.476,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0132",
+   "dir": "assets_custom/rocks_sand",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2149.59,
+   "y": 1459.38,
+   "scaleX": 2.116,
+   "scaleY": 2.116,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0133",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3110.0,
+   "y": 1000.0,
+   "scaleX": 1.56,
+   "scaleY": 1.56,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0134",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3067.42,
+   "y": 1130.17,
+   "scaleX": 1.361,
+   "scaleY": 1.361,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0135",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2948.1,
+   "y": 1234.55,
+   "scaleX": 1.719,
+   "scaleY": 1.719,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0136",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2775.68,
+   "y": 1292.48,
+   "scaleX": 1.508,
+   "scaleY": 1.508,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0137",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2584.32,
+   "y": 1292.48,
+   "scaleX": 1.495,
+   "scaleY": 1.495,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0138",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2411.9,
+   "y": 1234.55,
+   "scaleX": 1.645,
+   "scaleY": 1.645,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0139",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2411.9,
+   "y": 765.45,
+   "scaleX": 1.423,
+   "scaleY": 1.423,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0140",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2584.32,
+   "y": 707.52,
+   "scaleX": 1.595,
+   "scaleY": 1.595,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0141",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2775.68,
+   "y": 707.52,
+   "scaleX": 1.408,
+   "scaleY": 1.408,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0142",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2948.1,
+   "y": 765.45,
+   "scaleX": 1.641,
+   "scaleY": 1.641,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0143",
+   "dir": "assets_custom/props",
+   "frames": [
+    "void_shard.png"
+   ],
+   "name": "void_shard",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3067.42,
+   "y": 869.83,
+   "scaleX": 1.638,
+   "scaleY": 1.638,
+   "offsetX": 60.0,
+   "offsetY": 85
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0144",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2908.27,
+   "y": 1071.36,
+   "scaleX": 0.619,
+   "scaleY": 0.619,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0145",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2578.06,
+   "y": 1159.79,
+   "scaleX": 0.51,
+   "scaleY": 0.51,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0146",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2451.73,
+   "y": 928.64,
+   "scaleX": 0.614,
+   "scaleY": 0.614,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0147",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2781.94,
+   "y": 840.21,
+   "scaleX": 0.64,
+   "scaleY": 0.64,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0148",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3013.22,
+   "y": 1047.28,
+   "scaleX": 1.447,
+   "scaleY": 1.447,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0149",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2867.86,
+   "y": 1198.37,
+   "scaleX": 1.52,
+   "scaleY": 1.52,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0150",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2612.45,
+   "y": 1233.26,
+   "scaleX": 1.32,
+   "scaleY": 1.32,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0151",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2396.61,
+   "y": 1131.5,
+   "scaleX": 1.513,
+   "scaleY": 1.513,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0152",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2346.78,
+   "y": 952.72,
+   "scaleX": 1.365,
+   "scaleY": 1.365,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0153",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2492.14,
+   "y": 801.63,
+   "scaleX": 1.344,
+   "scaleY": 1.344,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0154",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2747.55,
+   "y": 766.74,
+   "scaleX": 1.391,
+   "scaleY": 1.391,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0155",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2963.39,
+   "y": 868.5,
+   "scaleX": 1.305,
+   "scaleY": 1.305,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0159",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2350,
+   "y": 1140,
+   "scaleX": 1.3,
+   "scaleY": 1.3,
+   "offsetX": 42.0,
+   "offsetY": 59
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0161",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_purple.png"
+   ],
+   "name": "crystal_purple",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 620,
+   "y": 1086,
+   "scaleX": 0.606,
+   "scaleY": 0.606,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0163",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_purple.png"
+   ],
+   "name": "crystal_purple",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1060,
+   "y": 1086,
+   "scaleX": 0.738,
+   "scaleY": 0.738,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0165",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_purple.png"
+   ],
+   "name": "crystal_purple",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1500,
+   "y": 1086,
+   "scaleX": 0.611,
+   "scaleY": 0.611,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0167",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_purple.png"
+   ],
+   "name": "crystal_purple",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1940,
+   "y": 1086,
+   "scaleX": 0.746,
+   "scaleY": 0.746,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0170",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 340,
+   "y": 1130,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0171",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3010,
+   "y": 880,
+   "scaleX": 0.8,
+   "scaleY": 0.8,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0172",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3010,
+   "y": 1060,
+   "scaleX": 0.8,
+   "scaleY": 0.8,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37_d0173",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2950,
+   "y": 760,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0001",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 350,
+   "y": 930,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0002",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 350,
+   "y": 1060,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0003",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 700,
+   "y": 880,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0004",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 700,
+   "y": 1120,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0005",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1100,
+   "y": 900,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0006",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1100,
+   "y": 1080,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0007",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1600,
+   "y": 920,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0008",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1600,
+   "y": 1060,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0009",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2100,
+   "y": 900,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0010",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2100,
+   "y": 1100,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0011",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2600,
+   "y": 930,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0012",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2600,
+   "y": 1060,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0013",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2900,
+   "y": 950,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0014",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2900,
+   "y": 1050,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0015",
+   "dir": "assets_custom/props",
+   "frames": [
+    "chain_post.png"
+   ],
+   "name": "chain_post",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 500,
+   "y": 820,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 99.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0016",
+   "dir": "assets_custom/props",
+   "frames": [
+    "chain_post.png"
+   ],
+   "name": "chain_post",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 500,
+   "y": 1180,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 99.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0017",
+   "dir": "assets_custom/props",
+   "frames": [
+    "chain_post.png"
+   ],
+   "name": "chain_post",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1000,
+   "y": 800,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 99.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0018",
+   "dir": "assets_custom/props",
+   "frames": [
+    "chain_post.png"
+   ],
+   "name": "chain_post",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1000,
+   "y": 1200,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 99.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0019",
+   "dir": "assets_custom/props",
+   "frames": [
+    "chain_post.png"
+   ],
+   "name": "chain_post",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1500,
+   "y": 820,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 99.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0020",
+   "dir": "assets_custom/props",
+   "frames": [
+    "chain_post.png"
+   ],
+   "name": "chain_post",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1500,
+   "y": 1180,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 99.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0021",
+   "dir": "assets_custom/props",
+   "frames": [
+    "chain_post.png"
+   ],
+   "name": "chain_post",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2000,
+   "y": 800,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 99.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0022",
+   "dir": "assets_custom/props",
+   "frames": [
+    "chain_post.png"
+   ],
+   "name": "chain_post",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2000,
+   "y": 1200,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 99.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0023",
+   "dir": "assets_custom/props",
+   "frames": [
+    "chain_post.png"
+   ],
+   "name": "chain_post",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2500,
+   "y": 820,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 99.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0024",
+   "dir": "assets_custom/props",
+   "frames": [
+    "chain_post.png"
+   ],
+   "name": "chain_post",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2500,
+   "y": 1180,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 99.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0025",
+   "dir": "assets_custom/props",
+   "frames": [
+    "demon_idol.png"
+   ],
+   "name": "demon_idol",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 800,
+   "y": 1000,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 30.0,
+   "offsetY": 87.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0026",
+   "dir": "assets_custom/props",
+   "frames": [
+    "demon_idol.png"
+   ],
+   "name": "demon_idol",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1600,
+   "y": 1000,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 30.0,
+   "offsetY": 87.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0027",
+   "dir": "assets_custom/props",
+   "frames": [
+    "demon_idol.png"
+   ],
+   "name": "demon_idol",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2400,
+   "y": 1000,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 30.0,
+   "offsetY": 87.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0028",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crumbled_wall.png"
+   ],
+   "name": "crumbled_wall",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 650,
+   "y": 750,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 70.0,
+   "offsetY": 71.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0029",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crumbled_wall.png"
+   ],
+   "name": "crumbled_wall",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1250,
+   "y": 1300,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 70.0,
+   "offsetY": 71.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0030",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crumbled_wall.png"
+   ],
+   "name": "crumbled_wall",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1900,
+   "y": 720,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 70.0,
+   "offsetY": 71.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r37d2_0031",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crumbled_wall.png"
+   ],
+   "name": "crumbled_wall",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2700,
+   "y": 1250,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 70.0,
+   "offsetY": 71.0
   }
  ],
  "noWalkZones": [

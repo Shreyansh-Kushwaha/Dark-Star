@@ -27,6 +27,9 @@ def render(idx, overlay=False):
         pts = s["points"]; xy = [(pts[i], pts[i+1]) for i in range(0, len(pts), 2)]
         if len(xy) >= 2:
             d.line(xy, fill=hex2(s["stroke"]), width=int(s["strokeWidth"]), joint="curve")
+            r = s["strokeWidth"] / 2  # emulate canvas round joins/caps (PIL leaves wedges)
+            for (px, py) in xy:
+                d.ellipse([px - r, py - r, px + r, py + r], fill=hex2(s["stroke"]))
     def depth(s): return s["y"] + 1 if s.get("spriteLayer") == "above" else s["y"] - 1
     imgs = [s for s in data["sprites"] if s["type"] == "sprite"]
     missing = set()
@@ -43,6 +46,9 @@ def render(idx, overlay=False):
         im = im.resize((max(1, int(im.width * sx)), max(1, int(im.height * sy))))
         ox = s.get("offsetX", im.width / 2 / sx) * sx
         oy = s.get("offsetY", im.height / 2 / sy) * sy
+        if s.get("alpha", 1) < 1:  # honor per-sprite alpha (e.g. translucent clouds)
+            a = im.getchannel("A").point(lambda v: int(v * s["alpha"]))
+            im.putalpha(a)
         canvas.alpha_composite(im, (int(s["x"] - ox), int(s["y"] - oy)))
     # also verify every animated frame exists (load-time 404 guard)
     for s in imgs:

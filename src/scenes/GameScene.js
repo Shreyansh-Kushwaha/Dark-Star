@@ -1846,14 +1846,11 @@ export class GameScene extends Phaser.Scene {
     return this.add.image(WORLD_W / 2 + dx, WORLD_H / 2 + dy, TEX_KEY).setDepth(-5);
   }
 
-  // Invisible static collider at a solid prop's base, so actors are stopped by
-  // the foot/trunk rather than the whole (mostly empty) sprite bounding box.
-  // `fp` is an optional { w, h } footprint; otherwise it's auto-sized from the
-  // on-screen sprite. Registered like a noWalkZone so streaming unload tracks it.
-  _addPropFootprint(worldX, baseY, dispW, dispH, fp, rIdx, sink) {
-    const w = fp?.w ?? Math.max(12, Math.abs(dispW) * 0.5);
-    const h = fp?.h ?? Math.max(10, Math.min(Math.abs(dispH) * 0.28, 24));
-    const rect = this.add.rectangle(worldX, baseY - h / 2, w, h);
+  // Invisible static collider rectangle centred at (cx, cy) world px, so actors
+  // are stopped by a prop's trunk/body rather than its whole (mostly empty)
+  // bounding box. Registered like a noWalkZone so streaming unload tracks it.
+  _addColliderRect(cx, cy, w, h, rIdx, sink) {
+    const rect = this.add.rectangle(cx, cy, Math.max(6, w), Math.max(6, h));
     rect.setVisible(false);
     this.physics.add.existing(rect, true);   // static body positioned at creation
     this._noWalkGroup.add(rect);
@@ -1938,15 +1935,31 @@ export class GameScene extends Phaser.Scene {
         // explicit "above" tag as a small overhead bump (e.g. tree canopies).
         depth = baseY + (sp.spriteLayer === 'above' ? 2 : 0);
       }
-      // Solid props get a small invisible collider at their base so actors are
-      // blocked by the trunk/foot, not the whole leafy bounding box.
+      // Solid props get a small invisible collider so actors are blocked by the
+      // trunk/body, not the whole leafy bounding box.
       const addFootprint = (obj) => {
         if (kind !== 'solid') return;
         // Authored-footprint solids already got a static body in the synchronous
         // pass above; only auto-classified solids need one placed with the sprite.
         if (sp.prop === 'solid' && sp.footprint) return;
-        this._addPropFootprint(obj.x, baseY + dy, obj.displayWidth, obj.displayHeight,
-                               sp.footprint || propFootprint(sp), rIdx, sink);
+        const sx = sp.scaleX ?? 1, sYY = sp.scaleY ?? 1;
+        // Per-asset footprint (source-image px) mapped to world via anchor+scale:
+        // trees → narrow box at the trunk, rocks → box over most of the body.
+        const fp = propFootprint(sp);
+        if (fp) {
+          const tw = (sp.frameW && sp.frameH) ? sp.frameW
+            : (this.textures.get(key)?.getSourceImage()?.width || (sp.offsetX ?? 0) * 2);
+          const ax = sp.offsetX ?? tw / 2;
+          const ay = sp.offsetY ?? th / 2;
+          this._addColliderRect(sp.x + dx + (fp.cx - ax) * sx,
+                                sp.y + dy + (fp.cy - ay) * sYY,
+                                fp.w * Math.abs(sx), fp.h * Math.abs(sYY), rIdx, sink);
+        } else {
+          // No table entry: small box at the rendered base (trunk/foot heuristic).
+          const w = Math.max(12, obj.displayWidth * 0.4);
+          const h = Math.max(10, Math.min(obj.displayHeight * 0.22, 22));
+          this._addColliderRect(obj.x, baseY + dy - h / 2, w, h, rIdx, sink);
+        }
       };
       // Streamed sprites pop in over several frames — a brief fade softens that.
       const reveal = (o) => {

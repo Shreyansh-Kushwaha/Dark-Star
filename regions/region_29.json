@@ -8,6 +8,69 @@
  },
  "sprites": [
   {
+   "type": "stroke",
+   "gen": "r29dress",
+   "stroke": "#bcd3e8",
+   "strokeWidth": 200,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    120,
+    1000,
+    900,
+    1004,
+    1700,
+    996,
+    2500,
+    1004,
+    3090,
+    1000
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r29dress",
+   "stroke": "#d2e3f2",
+   "strokeWidth": 130,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    120,
+    1000,
+    900,
+    1004,
+    1700,
+    996,
+    2500,
+    1004,
+    3090,
+    1000
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r29dress",
+   "stroke": "#e8f1fa",
+   "strokeWidth": 56,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    120,
+    1000,
+    900,
+    1004,
+    1700,
+    996,
+    2500,
+    1004,
+    3090,
+    1000
+   ]
+  },
+  {
    "type": "sprite",
    "spriteId": "s_r29_0001",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
@@ -2132,6 +2195,1424 @@
    "scaleY": 0.852,
    "offsetX": 64.0,
    "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0001",
+   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
+   "frames": [
+    "1.png"
+   ],
+   "name": "flag",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 280,
+   "y": 880,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0002",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 6.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 654.48,
+   "y": 1126,
+   "scaleX": 0.55,
+   "scaleY": 0.55,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0003",
+   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
+   "frames": [
+    "1.png"
+   ],
+   "name": "flag",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1040,
+   "y": 880,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0004",
+   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
+   "frames": [
+    "1.png"
+   ],
+   "name": "flag",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1800,
+   "y": 880,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0005",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 5.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2190.96,
+   "y": 1126,
+   "scaleX": 0.55,
+   "scaleY": 0.55,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0006",
+   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
+   "frames": [
+    "1.png"
+   ],
+   "name": "flag",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2560,
+   "y": 880,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0007",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1500,
+   "y": 1090,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 110.0,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0008",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1404,
+   "y": 1052,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0009",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1598,
+   "y": 1052,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0010",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 2.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1452,
+   "y": 1100,
+   "scaleX": 0.55,
+   "scaleY": 0.55,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0011",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 1.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1546,
+   "y": 1104,
+   "scaleX": 0.55,
+   "scaleY": 0.55,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0012",
+   "dir": "assest4/map_objects/2 Objects/3 Pointer",
+   "frames": [
+    "1.png"
+   ],
+   "name": "sign",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1620,
+   "y": 1108,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 10.0,
+   "offsetY": 35
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0013",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 320,
+   "y": 1064,
+   "scaleX": 0.95,
+   "scaleY": 0.95,
+   "offsetX": 110.0,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0014",
+   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
+   "frames": [
+    "1.png"
+   ],
+   "name": "flag",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 238,
+   "y": 920,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0015",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 452,
+   "y": 942,
+   "scaleX": 0.8,
+   "scaleY": 0.8,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0016",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 2.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 286,
+   "y": 1024,
+   "scaleX": 0.55,
+   "scaleY": 0.55,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0017",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2960,
+   "y": 912,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0018",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2960,
+   "y": 1108,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0019",
+   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
+   "frames": [
+    "1.png"
+   ],
+   "name": "flag",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2898,
+   "y": 896,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0020",
+   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
+   "frames": [
+    "1.png"
+   ],
+   "name": "flag",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2898,
+   "y": 1124,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0021",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 4.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3010,
+   "y": 1058,
+   "scaleX": 0.55,
+   "scaleY": 0.55,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0022",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 347.94,
+   "y": 1652,
+   "scaleX": 0.573,
+   "scaleY": 0.573,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0023",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 430.0,
+   "y": 1640,
+   "scaleX": 0.543,
+   "scaleY": 0.543,
+   "offsetX": 288.0,
+   "offsetY": 128,
+   "alpha": 0.45
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0024",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 848.43,
+   "y": 1652,
+   "scaleX": 0.535,
+   "scaleY": 0.535,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0025",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 939.1,
+   "y": 1640,
+   "scaleX": 0.537,
+   "scaleY": 0.537,
+   "offsetX": 288.0,
+   "offsetY": 128,
+   "alpha": 0.45
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0026",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1242.83,
+   "y": 1652,
+   "scaleX": 0.569,
+   "scaleY": 0.569,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0027",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 4.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1330.82,
+   "y": 1668,
+   "scaleX": 0.55,
+   "scaleY": 0.55,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0028",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1642.2,
+   "y": 1652,
+   "scaleX": 0.603,
+   "scaleY": 0.603,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0029",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 2.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1697.63,
+   "y": 1668,
+   "scaleX": 0.55,
+   "scaleY": 0.55,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0030",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2111.56,
+   "y": 1652,
+   "scaleX": 0.562,
+   "scaleY": 0.562,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0031",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 3.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2207.81,
+   "y": 1668,
+   "scaleX": 0.55,
+   "scaleY": 0.55,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0032",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2503.82,
+   "y": 1652,
+   "scaleX": 0.504,
+   "scaleY": 0.504,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0033",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 1.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2611.16,
+   "y": 1668,
+   "scaleX": 0.55,
+   "scaleY": 0.55,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0034",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2905.69,
+   "y": 1652,
+   "scaleX": 0.519,
+   "scaleY": 0.519,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0035",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3038.72,
+   "y": 1640,
+   "scaleX": 0.643,
+   "scaleY": 0.643,
+   "offsetX": 288.0,
+   "offsetY": 128,
+   "alpha": 0.45
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0036",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 2.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2985.47,
+   "y": 1668,
+   "scaleX": 0.55,
+   "scaleY": 0.55,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0037",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 500,
+   "y": 417.2,
+   "scaleX": 0.616,
+   "scaleY": 0.616,
+   "offsetX": 288.0,
+   "offsetY": 128,
+   "alpha": 0.45
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0038",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1250,
+   "y": 392.5,
+   "scaleX": 0.705,
+   "scaleY": 0.705,
+   "offsetX": 288.0,
+   "offsetY": 128,
+   "alpha": 0.45
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0039",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2050,
+   "y": 417.28,
+   "scaleX": 0.59,
+   "scaleY": 0.59,
+   "offsetX": 288.0,
+   "offsetY": 128,
+   "alpha": 0.45
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0040",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2750,
+   "y": 405.2,
+   "scaleX": 0.737,
+   "scaleY": 0.737,
+   "offsetX": 288.0,
+   "offsetY": 128,
+   "alpha": 0.45
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0041",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 600,
+   "y": 730,
+   "scaleX": 0.858,
+   "scaleY": 0.858,
+   "offsetX": 288.0,
+   "offsetY": 128,
+   "alpha": 0.5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0042",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 620,
+   "y": 660,
+   "scaleX": 0.85,
+   "scaleY": 0.85,
+   "offsetX": 110.0,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0043",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 635.23,
+   "y": 636,
+   "scaleX": 0.797,
+   "scaleY": 0.797,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0044",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 1.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 560,
+   "y": 664,
+   "scaleX": 0.55,
+   "scaleY": 0.55,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0045",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1880,
+   "y": 690,
+   "scaleX": 0.735,
+   "scaleY": 0.735,
+   "offsetX": 288.0,
+   "offsetY": 128,
+   "alpha": 0.5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0046",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1900,
+   "y": 620,
+   "scaleX": 0.85,
+   "scaleY": 0.85,
+   "offsetX": 110.0,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0047",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1885.56,
+   "y": 596,
+   "scaleX": 0.871,
+   "scaleY": 0.871,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0048",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 2.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1840,
+   "y": 624,
+   "scaleX": 0.55,
+   "scaleY": 0.55,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0049",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1080,
+   "y": 1450,
+   "scaleX": 0.851,
+   "scaleY": 0.851,
+   "offsetX": 288.0,
+   "offsetY": 128,
+   "alpha": 0.5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0050",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1100,
+   "y": 1380,
+   "scaleX": 0.85,
+   "scaleY": 0.85,
+   "offsetX": 110.0,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0051",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1100.69,
+   "y": 1356,
+   "scaleX": 0.942,
+   "scaleY": 0.942,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0052",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 3.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1040,
+   "y": 1384,
+   "scaleX": 0.55,
+   "scaleY": 0.55,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0053",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2480,
+   "y": 1470,
+   "scaleX": 0.827,
+   "scaleY": 0.827,
+   "offsetX": 288.0,
+   "offsetY": 128,
+   "alpha": 0.5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0054",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2500,
+   "y": 1400,
+   "scaleX": 0.85,
+   "scaleY": 0.85,
+   "offsetX": 110.0,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0055",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2509.16,
+   "y": 1376,
+   "scaleX": 0.797,
+   "scaleY": 0.797,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0056",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 2.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2440,
+   "y": 1404,
+   "scaleX": 0.55,
+   "scaleY": 0.55,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0057",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2930,
+   "y": 650,
+   "scaleX": 0.747,
+   "scaleY": 0.747,
+   "offsetX": 288.0,
+   "offsetY": 128,
+   "alpha": 0.5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0058",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2950,
+   "y": 580,
+   "scaleX": 0.85,
+   "scaleY": 0.85,
+   "offsetX": 110.0,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0059",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2959.35,
+   "y": 556,
+   "scaleX": 0.831,
+   "scaleY": 0.831,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0060",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 6.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2890,
+   "y": 584,
+   "scaleX": 0.55,
+   "scaleY": 0.55,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0061",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Clouds",
+   "frames": [
+    "Clouds_01.png"
+   ],
+   "name": "Clouds_01",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 480,
+   "y": 1490,
+   "scaleX": 0.893,
+   "scaleY": 0.893,
+   "offsetX": 288.0,
+   "offsetY": 128,
+   "alpha": 0.5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0062",
+   "dir": "assets_custom/props",
+   "frames": [
+    "cloud_platform.png"
+   ],
+   "name": "cloud_platform",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 500,
+   "y": 1420,
+   "scaleX": 0.85,
+   "scaleY": 0.85,
+   "offsetX": 110.0,
+   "offsetY": 52
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0063",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 506.51,
+   "y": 1396,
+   "scaleX": 0.831,
+   "scaleY": 0.831,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29_d0064",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 6.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 440,
+   "y": 1424,
+   "scaleX": 0.55,
+   "scaleY": 0.55,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29d2_0001",
+   "dir": "assets_custom/props",
+   "frames": [
+    "torii_gate.png"
+   ],
+   "name": "torii_gate",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 600,
+   "y": 1000,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 70.0,
+   "offsetY": 139.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29d2_0002",
+   "dir": "assets_custom/props",
+   "frames": [
+    "torii_gate.png"
+   ],
+   "name": "torii_gate",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1200,
+   "y": 1000,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 70.0,
+   "offsetY": 139.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29d2_0003",
+   "dir": "assets_custom/props",
+   "frames": [
+    "torii_gate.png"
+   ],
+   "name": "torii_gate",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1900,
+   "y": 1000,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 70.0,
+   "offsetY": 139.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29d2_0004",
+   "dir": "assets_custom/props",
+   "frames": [
+    "torii_gate.png"
+   ],
+   "name": "torii_gate",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2600,
+   "y": 1000,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 70.0,
+   "offsetY": 139.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29d2_0005",
+   "dir": "assets_custom/props",
+   "frames": [
+    "prayer_wheel.png"
+   ],
+   "name": "prayer_wheel",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 520,
+   "y": 1050,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 89.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29d2_0006",
+   "dir": "assets_custom/props",
+   "frames": [
+    "prayer_wheel.png"
+   ],
+   "name": "prayer_wheel",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 680,
+   "y": 1050,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 89.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29d2_0007",
+   "dir": "assets_custom/props",
+   "frames": [
+    "prayer_wheel.png"
+   ],
+   "name": "prayer_wheel",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1120,
+   "y": 1050,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 89.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29d2_0008",
+   "dir": "assets_custom/props",
+   "frames": [
+    "prayer_wheel.png"
+   ],
+   "name": "prayer_wheel",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1280,
+   "y": 1050,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 89.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29d2_0009",
+   "dir": "assets_custom/props",
+   "frames": [
+    "prayer_wheel.png"
+   ],
+   "name": "prayer_wheel",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1820,
+   "y": 1050,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 89.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29d2_0010",
+   "dir": "assets_custom/props",
+   "frames": [
+    "prayer_wheel.png"
+   ],
+   "name": "prayer_wheel",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1980,
+   "y": 1050,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 89.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29d2_0011",
+   "dir": "assets_custom/props",
+   "frames": [
+    "prayer_flags.png"
+   ],
+   "name": "prayer_flags",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 400,
+   "y": 850,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 10.0,
+   "offsetY": 79.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29d2_0012",
+   "dir": "assets_custom/props",
+   "frames": [
+    "prayer_flags.png"
+   ],
+   "name": "prayer_flags",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1000,
+   "y": 800,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 10.0,
+   "offsetY": 79.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29d2_0013",
+   "dir": "assets_custom/props",
+   "frames": [
+    "prayer_flags.png"
+   ],
+   "name": "prayer_flags",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1700,
+   "y": 850,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 10.0,
+   "offsetY": 79.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29d2_0014",
+   "dir": "assets_custom/props",
+   "frames": [
+    "prayer_flags.png"
+   ],
+   "name": "prayer_flags",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2400,
+   "y": 800,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 10.0,
+   "offsetY": 79.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29d2_0015",
+   "dir": "assets_custom/props",
+   "frames": [
+    "offering_bowl.png"
+   ],
+   "name": "offering_bowl",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 310,
+   "y": 1050,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 28.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29d2_0016",
+   "dir": "assets_custom/props",
+   "frames": [
+    "offering_bowl.png"
+   ],
+   "name": "offering_bowl",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 410,
+   "y": 1050,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 28.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r29d2_0017",
+   "dir": "assets_custom/props",
+   "frames": [
+    "offering_bowl.png"
+   ],
+   "name": "offering_bowl",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 360,
+   "y": 1100,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 28.0,
+   "offsetY": 43.0
   }
  ],
  "noWalkZones": [

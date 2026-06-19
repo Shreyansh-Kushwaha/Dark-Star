@@ -7086,6 +7086,3667 @@
    "scaleY": 2.4,
    "offsetX": 10,
    "offsetY": 35
+  },
+  {
+   "type": "stroke",
+   "gen": "r23dress",
+   "stroke": "#9a7d44",
+   "strokeWidth": 170,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1500,
+    1010,
+    1500,
+    880
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r23dress",
+   "stroke": "#b49a5e",
+   "strokeWidth": 110,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1500,
+    1010,
+    1500,
+    880
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r23dress",
+   "stroke": "#cab37a",
+   "strokeWidth": 50,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1500,
+    1010,
+    1500,
+    880
+   ]
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0501",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1410,
+   "y": 1014,
+   "scaleX": 0.85,
+   "scaleY": 0.85,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0502",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1590,
+   "y": 1014,
+   "scaleX": 0.85,
+   "scaleY": 0.85,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0503",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1408,
+   "y": 928,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 22.0,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0504",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1592,
+   "y": 928,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 22.0,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0505",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 6.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1392,
+   "y": 888,
+   "scaleX": 0.56,
+   "scaleY": 0.56,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0506",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 1.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1500,
+   "y": 888,
+   "scaleX": 0.634,
+   "scaleY": 0.634,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0507",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 5.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1608,
+   "y": 888,
+   "scaleX": 0.546,
+   "scaleY": 0.546,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0508",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "10.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1387.6,
+   "y": 943.7,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0509",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "8.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1376.9,
+   "y": 945.31,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0510",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "4.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1373.9,
+   "y": 952.94,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0511",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "4.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1650.11,
+   "y": 943.82,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0512",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "8.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1643.26,
+   "y": 944.34,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0513",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "12.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1616.11,
+   "y": 956.85,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0514",
+   "dir": "assest4/map_objects/2 Objects/3 Pointer",
+   "frames": [
+    "1.png"
+   ],
+   "name": "sign",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1404,
+   "y": 1058,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 10.0,
+   "offsetY": 35
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0515",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 170,
+   "y": 916,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0516",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 170,
+   "y": 1108,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0517",
+   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
+   "frames": [
+    "1.png"
+   ],
+   "name": "flag",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 230,
+   "y": 902,
+   "scaleX": 1.9,
+   "scaleY": 1.9,
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0518",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3040,
+   "y": 916,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0519",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3040,
+   "y": 1108,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0520",
+   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
+   "frames": [
+    "1.png"
+   ],
+   "name": "flag",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2980,
+   "y": 902,
+   "scaleX": 1.9,
+   "scaleY": 1.9,
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0521",
+   "dir": "assest4/map_objects/2 Objects/3 Pointer",
+   "frames": [
+    "1.png"
+   ],
+   "name": "sign",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 252,
+   "y": 1066,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 10.0,
+   "offsetY": 35
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0522",
+   "dir": "assest4/map_objects/2 Objects/3 Pointer",
+   "frames": [
+    "1.png"
+   ],
+   "name": "sign",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2948,
+   "y": 1066,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 10.0,
+   "offsetY": 35
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0523",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 76.97,
+   "y": 130.1,
+   "scaleX": 0.83,
+   "scaleY": 0.83,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0524",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree3.png"
+   ],
+   "name": "middle_lane_tree3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 201.59,
+   "y": 142.93,
+   "scaleX": 0.788,
+   "scaleY": 0.788,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0525",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 385.11,
+   "y": 143.72,
+   "scaleX": 0.827,
+   "scaleY": 0.827,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0526",
+   "dir": "cropped",
+   "frames": [
+    "Bushe4_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 450.6,
+   "y": 168,
+   "scaleX": 0.928,
+   "scaleY": 0.928,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0527",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree4.png"
+   ],
+   "name": "middle_lane_tree4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 532.27,
+   "y": 155.14,
+   "scaleX": 0.704,
+   "scaleY": 0.704,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0528",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree3.png"
+   ],
+   "name": "middle_lane_tree3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 682.33,
+   "y": 149.96,
+   "scaleX": 0.865,
+   "scaleY": 0.865,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0529",
+   "dir": "cropped",
+   "frames": [
+    "Bushe1_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 747.83,
+   "y": 168,
+   "scaleX": 0.927,
+   "scaleY": 0.927,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0530",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 803.09,
+   "y": 136.34,
+   "scaleX": 0.897,
+   "scaleY": 0.897,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0531",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 898.61,
+   "y": 168,
+   "scaleX": 1.065,
+   "scaleY": 1.065,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0532",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree3.png"
+   ],
+   "name": "middle_lane_tree3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 982.26,
+   "y": 129.18,
+   "scaleX": 0.719,
+   "scaleY": 0.719,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0533",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1108.43,
+   "y": 148.13,
+   "scaleX": 0.866,
+   "scaleY": 0.866,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0534",
+   "dir": "cropped",
+   "frames": [
+    "Bushe4_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1213.19,
+   "y": 168,
+   "scaleX": 0.948,
+   "scaleY": 0.948,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0535",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1297.74,
+   "y": 129.44,
+   "scaleX": 0.903,
+   "scaleY": 0.903,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0536",
+   "dir": "cropped",
+   "frames": [
+    "Bushe4_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1370.54,
+   "y": 168,
+   "scaleX": 0.902,
+   "scaleY": 0.902,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0537",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree3.png"
+   ],
+   "name": "middle_lane_tree3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1429.2,
+   "y": 136.77,
+   "scaleX": 0.735,
+   "scaleY": 0.735,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0538",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree3.png"
+   ],
+   "name": "middle_lane_tree3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1596.71,
+   "y": 144.82,
+   "scaleX": 0.834,
+   "scaleY": 0.834,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0539",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree4.png"
+   ],
+   "name": "middle_lane_tree4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1717.57,
+   "y": 138.53,
+   "scaleX": 0.737,
+   "scaleY": 0.737,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0540",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1869.0,
+   "y": 151.06,
+   "scaleX": 0.921,
+   "scaleY": 0.921,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0541",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2022.97,
+   "y": 142.42,
+   "scaleX": 0.705,
+   "scaleY": 0.705,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0542",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2201.84,
+   "y": 154.53,
+   "scaleX": 0.84,
+   "scaleY": 0.84,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0543",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2347.56,
+   "y": 146.41,
+   "scaleX": 0.823,
+   "scaleY": 0.823,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0544",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2474.97,
+   "y": 129.63,
+   "scaleX": 0.93,
+   "scaleY": 0.93,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0545",
+   "dir": "cropped",
+   "frames": [
+    "Bushe3_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2577.55,
+   "y": 168,
+   "scaleX": 0.961,
+   "scaleY": 0.961,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0546",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree3.png"
+   ],
+   "name": "middle_lane_tree3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2631.11,
+   "y": 142.0,
+   "scaleX": 0.75,
+   "scaleY": 0.75,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0547",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2802.86,
+   "y": 140.71,
+   "scaleX": 0.85,
+   "scaleY": 0.85,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0548",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2863.81,
+   "y": 168,
+   "scaleX": 1.047,
+   "scaleY": 1.047,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0549",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree4.png"
+   ],
+   "name": "middle_lane_tree4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2958.88,
+   "y": 128.58,
+   "scaleX": 0.785,
+   "scaleY": 0.785,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0550",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3042.3,
+   "y": 168,
+   "scaleX": 0.919,
+   "scaleY": 0.919,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0551",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3115.37,
+   "y": 142.24,
+   "scaleX": 0.881,
+   "scaleY": 0.881,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0552",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 59.05,
+   "y": 1958.6,
+   "scaleX": 0.822,
+   "scaleY": 0.822,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0553",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 146.06,
+   "y": 1900,
+   "scaleX": 1.063,
+   "scaleY": 1.063,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0554",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 203.58,
+   "y": 1956.43,
+   "scaleX": 0.786,
+   "scaleY": 0.786,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0555",
+   "dir": "cropped",
+   "frames": [
+    "Bushe1_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 276.35,
+   "y": 1900,
+   "scaleX": 1.041,
+   "scaleY": 1.041,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0556",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree3.png"
+   ],
+   "name": "middle_lane_tree3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 380.98,
+   "y": 1944.24,
+   "scaleX": 0.902,
+   "scaleY": 0.902,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0557",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 442.13,
+   "y": 1900,
+   "scaleX": 0.907,
+   "scaleY": 0.907,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0558",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 503.78,
+   "y": 1938.68,
+   "scaleX": 0.81,
+   "scaleY": 0.81,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0559",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 574.3,
+   "y": 1900,
+   "scaleX": 1.071,
+   "scaleY": 1.071,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0560",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 651.29,
+   "y": 1965.15,
+   "scaleX": 0.919,
+   "scaleY": 0.919,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0561",
+   "dir": "cropped",
+   "frames": [
+    "Bushe4_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 741.14,
+   "y": 1900,
+   "scaleX": 1.02,
+   "scaleY": 1.02,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0562",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 821.65,
+   "y": 1970.59,
+   "scaleX": 0.877,
+   "scaleY": 0.877,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0563",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 988.86,
+   "y": 1939.94,
+   "scaleX": 0.848,
+   "scaleY": 0.848,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0564",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1102.72,
+   "y": 1939.84,
+   "scaleX": 0.721,
+   "scaleY": 0.721,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0565",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1257.38,
+   "y": 1952.72,
+   "scaleX": 0.831,
+   "scaleY": 0.831,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0566",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1440.35,
+   "y": 1963.07,
+   "scaleX": 0.919,
+   "scaleY": 0.919,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0567",
+   "dir": "cropped",
+   "frames": [
+    "Bushe3_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1512.44,
+   "y": 1900,
+   "scaleX": 0.974,
+   "scaleY": 0.974,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0568",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1585.39,
+   "y": 1941.4,
+   "scaleX": 0.736,
+   "scaleY": 0.736,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0569",
+   "dir": "cropped",
+   "frames": [
+    "Bushe1_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1654.23,
+   "y": 1900,
+   "scaleX": 0.971,
+   "scaleY": 0.971,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0570",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1724.14,
+   "y": 1939.47,
+   "scaleX": 0.767,
+   "scaleY": 0.767,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0571",
+   "dir": "cropped",
+   "frames": [
+    "Bushe3_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1825.62,
+   "y": 1900,
+   "scaleX": 0.961,
+   "scaleY": 0.961,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0572",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree3.png"
+   ],
+   "name": "middle_lane_tree3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1870.75,
+   "y": 1945.96,
+   "scaleX": 0.82,
+   "scaleY": 0.82,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0573",
+   "dir": "cropped",
+   "frames": [
+    "Bushe1_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1928.17,
+   "y": 1900,
+   "scaleX": 1.041,
+   "scaleY": 1.041,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0574",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2039.45,
+   "y": 1964.41,
+   "scaleX": 0.719,
+   "scaleY": 0.719,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0575",
+   "dir": "cropped",
+   "frames": [
+    "Bushe4_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2087.15,
+   "y": 1900,
+   "scaleX": 0.951,
+   "scaleY": 0.951,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0576",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2171.43,
+   "y": 1956.46,
+   "scaleX": 0.704,
+   "scaleY": 0.704,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0577",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree4.png"
+   ],
+   "name": "middle_lane_tree4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2353.65,
+   "y": 1958.03,
+   "scaleX": 0.935,
+   "scaleY": 0.935,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0578",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2384.47,
+   "y": 1900,
+   "scaleX": 1.079,
+   "scaleY": 1.079,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0579",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2478.17,
+   "y": 1945.63,
+   "scaleX": 0.704,
+   "scaleY": 0.704,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0580",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2568.45,
+   "y": 1900,
+   "scaleX": 0.943,
+   "scaleY": 0.943,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0581",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree3.png"
+   ],
+   "name": "middle_lane_tree3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2663.38,
+   "y": 1971.21,
+   "scaleX": 0.906,
+   "scaleY": 0.906,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0582",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree4.png"
+   ],
+   "name": "middle_lane_tree4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2797.73,
+   "y": 1959.04,
+   "scaleX": 0.722,
+   "scaleY": 0.722,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0583",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree4.png"
+   ],
+   "name": "middle_lane_tree4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2960.82,
+   "y": 1966.21,
+   "scaleX": 0.817,
+   "scaleY": 0.817,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0584",
+   "dir": "cropped",
+   "frames": [
+    "Bushe1_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2993.17,
+   "y": 1900,
+   "scaleX": 1.087,
+   "scaleY": 1.087,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0585",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree4.png"
+   ],
+   "name": "middle_lane_tree4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3112.69,
+   "y": 1950.21,
+   "scaleX": 0.736,
+   "scaleY": 0.736,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0586",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 60.03,
+   "y": 320.0,
+   "scaleX": 0.796,
+   "scaleY": 0.796,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0587",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 72.12,
+   "y": 580.0,
+   "scaleX": 0.941,
+   "scaleY": 0.941,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0588",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree4.png"
+   ],
+   "name": "middle_lane_tree4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 70.69,
+   "y": 1360.0,
+   "scaleX": 0.754,
+   "scaleY": 0.754,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0589",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 74.89,
+   "y": 1620.0,
+   "scaleX": 0.771,
+   "scaleY": 0.771,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0590",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3150.81,
+   "y": 320.0,
+   "scaleX": 0.709,
+   "scaleY": 0.709,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0591",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3140.71,
+   "y": 580.0,
+   "scaleX": 0.868,
+   "scaleY": 0.868,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0592",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree3.png"
+   ],
+   "name": "middle_lane_tree3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3133.79,
+   "y": 1360.0,
+   "scaleX": 0.893,
+   "scaleY": 0.893,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0593",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree3.png"
+   ],
+   "name": "middle_lane_tree3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3139.17,
+   "y": 1620.0,
+   "scaleX": 0.937,
+   "scaleY": 0.937,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0594",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 940,
+   "y": 400,
+   "scaleX": 0.927,
+   "scaleY": 0.927,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0595",
+   "dir": "cropped",
+   "frames": [
+    "Bushe1_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 972.94,
+   "y": 440,
+   "scaleX": 1.078,
+   "scaleY": 1.078,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0596",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree3.png"
+   ],
+   "name": "middle_lane_tree3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1130,
+   "y": 318,
+   "scaleX": 0.842,
+   "scaleY": 0.842,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0597",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1184.98,
+   "y": 358,
+   "scaleX": 1.095,
+   "scaleY": 1.095,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0598",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree4.png"
+   ],
+   "name": "middle_lane_tree4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1010,
+   "y": 540,
+   "scaleX": 0.75,
+   "scaleY": 0.75,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0599",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree3.png"
+   ],
+   "name": "middle_lane_tree3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2040,
+   "y": 430,
+   "scaleX": 0.905,
+   "scaleY": 0.905,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0600",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree3.png"
+   ],
+   "name": "middle_lane_tree3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2240,
+   "y": 330,
+   "scaleX": 0.918,
+   "scaleY": 0.918,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0601",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree3.png"
+   ],
+   "name": "middle_lane_tree3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2430,
+   "y": 520,
+   "scaleX": 0.763,
+   "scaleY": 0.763,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0602",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2452.85,
+   "y": 560,
+   "scaleX": 1.027,
+   "scaleY": 1.027,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0603",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2880,
+   "y": 240,
+   "scaleX": 0.68,
+   "scaleY": 0.68,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0604",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2880,
+   "y": 390,
+   "scaleX": 0.68,
+   "scaleY": 0.68,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0605",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree3.png"
+   ],
+   "name": "middle_lane_tree3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2985,
+   "y": 240,
+   "scaleX": 0.68,
+   "scaleY": 0.68,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0606",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree4.png"
+   ],
+   "name": "middle_lane_tree4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2985,
+   "y": 390,
+   "scaleX": 0.68,
+   "scaleY": 0.68,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0607",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3090,
+   "y": 240,
+   "scaleX": 0.68,
+   "scaleY": 0.68,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0608",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3090,
+   "y": 390,
+   "scaleX": 0.68,
+   "scaleY": 0.68,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0609",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 2.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3021.51,
+   "y": 426.55,
+   "scaleX": 0.513,
+   "scaleY": 0.513,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0610",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 4.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2960.71,
+   "y": 437.52,
+   "scaleX": 0.596,
+   "scaleY": 0.596,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0611",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 2.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2913.96,
+   "y": 436.09,
+   "scaleX": 0.515,
+   "scaleY": 0.515,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0612",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 2.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3032.79,
+   "y": 430.25,
+   "scaleX": 0.594,
+   "scaleY": 0.594,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0613",
+   "dir": "assest4/next2/2 Objects/6 Tent",
+   "frames": [
+    "1.png"
+   ],
+   "name": "tent",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 388,
+   "y": 1642,
+   "scaleX": 1.9,
+   "scaleY": 1.9,
+   "offsetX": 36.5,
+   "offsetY": 64
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0614",
+   "dir": "assest4/next2/2 Objects/6 Tent",
+   "frames": [
+    "1.png"
+   ],
+   "name": "tent",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 528,
+   "y": 1706,
+   "scaleX": 1.9,
+   "scaleY": 1.9,
+   "offsetX": 36.5,
+   "offsetY": 64
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0615",
+   "dir": "assest4/next2/2 Objects/4 Box",
+   "frames": [
+    "1.png"
+   ],
+   "name": "crate",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 456,
+   "y": 1696,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 10.0,
+   "offsetY": 21
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0616",
+   "dir": "assest4/next2/2 Objects/4 Box",
+   "frames": [
+    "1.png"
+   ],
+   "name": "crate",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 330,
+   "y": 1700,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 10.0,
+   "offsetY": 21
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0617",
+   "dir": "assest4/map_objects/3 Animated Objects/1 Flag",
+   "frames": [
+    "1.png"
+   ],
+   "name": "flag",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 596,
+   "y": 1640,
+   "scaleX": 1.9,
+   "scaleY": 1.9,
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0618",
+   "dir": "assest4/map_objects/2 Objects/3 Pointer",
+   "frames": [
+    "1.png"
+   ],
+   "name": "sign",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 648,
+   "y": 1716,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 10.0,
+   "offsetY": 35
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0619",
+   "dir": "assets_custom/props",
+   "frames": [
+    "obelisk.png"
+   ],
+   "name": "obelisk",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2700,
+   "y": 1592,
+   "scaleX": 1.6,
+   "scaleY": 1.6,
+   "offsetX": 26.0,
+   "offsetY": 146
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0620",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2628,
+   "y": 1626,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 22.0,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0621",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2772,
+   "y": 1626,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 22.0,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0622",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "4.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2786.0,
+   "y": 1632.0,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0623",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "6.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2743.0,
+   "y": 1671.84,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0624",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "4.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2657.0,
+   "y": 1671.84,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0625",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "2.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2614.0,
+   "y": 1632.0,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0626",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "10.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2657.0,
+   "y": 1592.16,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0627",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "8.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2743.0,
+   "y": 1592.16,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0628",
+   "dir": "assest4/map_objects/2 Objects/2 Fence",
+   "frames": [
+    "4.png"
+   ],
+   "name": "fence",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2620,
+   "y": 1556,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 12.0,
+   "offsetY": 17
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0629",
+   "dir": "assest4/map_objects/2 Objects/2 Fence",
+   "frames": [
+    "4.png"
+   ],
+   "name": "fence",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2780,
+   "y": 1556,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 12.0,
+   "offsetY": 17
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0630",
+   "dir": "assest4/map_objects/2 Objects/3 Pointer",
+   "frames": [
+    "1.png"
+   ],
+   "name": "sign",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2790,
+   "y": 1680,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 10.0,
+   "offsetY": 35
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0631",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "2.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 859.09,
+   "y": 1440.52,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0632",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "1.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 966.68,
+   "y": 1501.36,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0633",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "2.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 835.9,
+   "y": 1453.23,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0634",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "3.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 956.81,
+   "y": 1460.46,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0635",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "11.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 849.3,
+   "y": 1459.74,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0636",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "1.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 968.27,
+   "y": 1440.23,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0637",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "3.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1286.3,
+   "y": 1661.21,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0638",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "6.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1280.67,
+   "y": 1701.75,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0639",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "1.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1346.54,
+   "y": 1729.78,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0640",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "2.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1258.17,
+   "y": 1718.18,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0641",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "7.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1299.22,
+   "y": 1697.59,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0642",
+   "dir": "cropped",
+   "frames": [
+    "Bushe4_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1310.02,
+   "y": 1698.96,
+   "scaleX": 1.087,
+   "scaleY": 1.087,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0643",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "1.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1733.99,
+   "y": 1471.32,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0644",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "5.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1772.61,
+   "y": 1466.14,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0645",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "1.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1669.76,
+   "y": 1400.78,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0646",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "2.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1761.47,
+   "y": 1440.99,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0647",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "9.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1699.34,
+   "y": 1402.56,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0648",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "3.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1664.62,
+   "y": 1418.06,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0649",
+   "dir": "cropped",
+   "frames": [
+    "Bushe3_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1696.06,
+   "y": 1416.2,
+   "scaleX": 0.943,
+   "scaleY": 0.943,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0650",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "1.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2068.14,
+   "y": 1714.0,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0651",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "6.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2062.22,
+   "y": 1725.53,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0652",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "6.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2066.83,
+   "y": 1743.53,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0653",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "10.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2184.39,
+   "y": 1723.62,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0654",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "4.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2170.17,
+   "y": 1674.19,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0655",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "2.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2886.02,
+   "y": 1339.11,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0656",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "1.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2912.52,
+   "y": 1361.08,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0657",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "3.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2927.08,
+   "y": 1320.11,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0658",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "5.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2942.08,
+   "y": 1353.22,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0659",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "6.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2948.63,
+   "y": 1384.19,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0660",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "10.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2811.5,
+   "y": 1364.51,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0661",
+   "dir": "cropped",
+   "frames": [
+    "Bushe1_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2946.27,
+   "y": 1343.98,
+   "scaleX": 0.988,
+   "scaleY": 0.988,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0662",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "3.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1177.11,
+   "y": 1369.91,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0663",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "2.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1222.32,
+   "y": 1301.21,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0664",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "3.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1085.79,
+   "y": 1354.46,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0665",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "4.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1158.76,
+   "y": 1341.84,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0666",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "7.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1068.06,
+   "y": 1349.38,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0667",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "1.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1152.17,
+   "y": 1362.79,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0668",
+   "dir": "cropped",
+   "frames": [
+    "Bushe3_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1153.27,
+   "y": 1322.0,
+   "scaleX": 1.072,
+   "scaleY": 1.072,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0669",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "2.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2333.92,
+   "y": 1358.99,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0670",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "3.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2275.29,
+   "y": 1385.92,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0671",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "5.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2363.43,
+   "y": 1385.95,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0672",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "4.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2357.05,
+   "y": 1406.81,
+   "scaleX": 2.7,
+   "scaleY": 2.7,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0673",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "4.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2334.32,
+   "y": 1424.39,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0674",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "1.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2411.43,
+   "y": 1342.59,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0675",
+   "dir": "cropped",
+   "frames": [
+    "Bushe2_crop.png"
+   ],
+   "name": "bush",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2340.13,
+   "y": 1401.31,
+   "scaleX": 1.018,
+   "scaleY": 1.018,
+   "offsetX": 38.5,
+   "offsetY": 66
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0676",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree2.png"
+   ],
+   "name": "middle_lane_tree2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1150,
+   "y": 1600,
+   "scaleX": 0.747,
+   "scaleY": 0.747,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0677",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree3.png"
+   ],
+   "name": "middle_lane_tree3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1900,
+   "y": 1620,
+   "scaleX": 0.763,
+   "scaleY": 0.763,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0678",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree3.png"
+   ],
+   "name": "middle_lane_tree3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2250,
+   "y": 1520,
+   "scaleX": 0.782,
+   "scaleY": 0.782,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0679",
+   "dir": "craftpix-net-168228-free-tree-pixel-art-asset-pack/trees",
+   "frames": [
+    "middle_lane_tree5.png"
+   ],
+   "name": "middle_lane_tree5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 840,
+   "y": 1740,
+   "scaleX": 0.853,
+   "scaleY": 0.853,
+   "offsetX": 104.0,
+   "offsetY": 268
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0680",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "7.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 661.97,
+   "y": 852.19,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0681",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "6.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 631.45,
+   "y": 855.11,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0682",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "6.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 615.42,
+   "y": 859.15,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0683",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "5.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1097.02,
+   "y": 1142.47,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0684",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "1.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1105.81,
+   "y": 1124.7,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0685",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "9.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1101.66,
+   "y": 1129.88,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0686",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "1.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2010.7,
+   "y": 1128.41,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0687",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "3.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2031.37,
+   "y": 1130.97,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0688",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "5.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2006.77,
+   "y": 1143.22,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0689",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "12.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2476.97,
+   "y": 866.14,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0690",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "7.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2471.39,
+   "y": 871.27,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0691",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "5.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2458.71,
+   "y": 851.9,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0692",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "2.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2939.49,
+   "y": 1132.21,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0693",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "10.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2967.49,
+   "y": 1132.88,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23_0694",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "9.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2910.66,
+   "y": 1128.11,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23d2_0001",
+   "dir": "assets_custom/props",
+   "frames": [
+    "torii_gate.png"
+   ],
+   "name": "torii_gate",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 600,
+   "y": 1000,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 70.0,
+   "offsetY": 139.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23d2_0002",
+   "dir": "assets_custom/props",
+   "frames": [
+    "torii_gate.png"
+   ],
+   "name": "torii_gate",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1400,
+   "y": 1000,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 70.0,
+   "offsetY": 139.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23d2_0003",
+   "dir": "assets_custom/props",
+   "frames": [
+    "torii_gate.png"
+   ],
+   "name": "torii_gate",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2200,
+   "y": 1000,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 70.0,
+   "offsetY": 139.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23d2_0004",
+   "dir": "assets_custom/props",
+   "frames": [
+    "torii_gate.png"
+   ],
+   "name": "torii_gate",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2850,
+   "y": 1000,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 70.0,
+   "offsetY": 139.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23d2_0005",
+   "dir": "assets_custom/props",
+   "frames": [
+    "incense_stand.png"
+   ],
+   "name": "incense_stand",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 510,
+   "y": 1060,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 26.0,
+   "offsetY": 83.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23d2_0006",
+   "dir": "assets_custom/props",
+   "frames": [
+    "incense_stand.png"
+   ],
+   "name": "incense_stand",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 690,
+   "y": 1060,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 26.0,
+   "offsetY": 83.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23d2_0007",
+   "dir": "assets_custom/props",
+   "frames": [
+    "incense_stand.png"
+   ],
+   "name": "incense_stand",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1310,
+   "y": 1060,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 26.0,
+   "offsetY": 83.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23d2_0008",
+   "dir": "assets_custom/props",
+   "frames": [
+    "incense_stand.png"
+   ],
+   "name": "incense_stand",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1490,
+   "y": 1060,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 26.0,
+   "offsetY": 83.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23d2_0009",
+   "dir": "assets_custom/props",
+   "frames": [
+    "incense_stand.png"
+   ],
+   "name": "incense_stand",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2110,
+   "y": 1060,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 26.0,
+   "offsetY": 83.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23d2_0010",
+   "dir": "assets_custom/props",
+   "frames": [
+    "incense_stand.png"
+   ],
+   "name": "incense_stand",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2290,
+   "y": 1060,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 26.0,
+   "offsetY": 83.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23d2_0011",
+   "dir": "assets_custom/props",
+   "frames": [
+    "offering_bowl.png"
+   ],
+   "name": "offering_bowl",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 270,
+   "y": 1040,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 28.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23d2_0012",
+   "dir": "assets_custom/props",
+   "frames": [
+    "offering_bowl.png"
+   ],
+   "name": "offering_bowl",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 370,
+   "y": 1040,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 28.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23d2_0013",
+   "dir": "assets_custom/props",
+   "frames": [
+    "offering_bowl.png"
+   ],
+   "name": "offering_bowl",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 320,
+   "y": 1080,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 28.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23d2_0014",
+   "dir": "assets_custom/props",
+   "frames": [
+    "spirit_bell.png"
+   ],
+   "name": "spirit_bell",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 260,
+   "y": 940,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 40.0,
+   "offsetY": 109.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23d2_0015",
+   "dir": "assets_custom/props",
+   "frames": [
+    "spirit_bell.png"
+   ],
+   "name": "spirit_bell",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2980,
+   "y": 960,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 40.0,
+   "offsetY": 109.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23d2_0016",
+   "dir": "assets_custom/props",
+   "frames": [
+    "offering_bowl.png"
+   ],
+   "name": "offering_bowl",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 900,
+   "y": 750,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 28.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23d2_0017",
+   "dir": "assets_custom/props",
+   "frames": [
+    "offering_bowl.png"
+   ],
+   "name": "offering_bowl",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1700,
+   "y": 1280,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 28.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r23d2_0018",
+   "dir": "assets_custom/props",
+   "frames": [
+    "offering_bowl.png"
+   ],
+   "name": "offering_bowl",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2500,
+   "y": 720,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 28.0,
+   "offsetY": 43.0
   }
  ],
  "noWalkZones": [

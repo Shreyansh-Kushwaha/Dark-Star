@@ -8,6 +8,127 @@
  },
  "sprites": [
   {
+   "type": "sprite",
+   "spriteId": "s_r40_d0016",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 232,
+   "y": 956,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0017",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 492,
+   "y": 952,
+   "scaleX": 0.85,
+   "scaleY": 0.85,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0020",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1404,
+   "y": 446,
+   "scaleX": 1.6,
+   "scaleY": 1.6,
+   "offsetX": 22.0,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0021",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1596,
+   "y": 446,
+   "scaleX": 1.6,
+   "scaleY": 1.6,
+   "offsetX": 22.0,
+   "offsetY": 77
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#2e4226",
+   "strokeWidth": 150,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1780.0,
+    1150.0,
+    1771.2,
+    1182.4,
+    1745.6,
+    1211.7,
+    1705.8,
+    1234.9,
+    1655.6,
+    1249.9,
+    1600.0,
+    1255.0,
+    1544.4,
+    1249.9,
+    1494.2,
+    1234.9,
+    1454.4,
+    1211.7,
+    1428.8,
+    1182.4,
+    1420.0,
+    1150.0,
+    1428.8,
+    1117.6,
+    1454.4,
+    1088.3,
+    1494.2,
+    1065.1,
+    1544.4,
+    1050.1,
+    1600.0,
+    1045.0,
+    1655.6,
+    1050.1,
+    1705.8,
+    1065.1,
+    1745.6,
+    1088.3,
+    1771.2,
+    1117.6,
+    1780.0,
+    1150.0
+   ]
+  },
+  {
    "type": "stroke",
    "stroke": "#6e5a2a",
    "strokeWidth": 200,
@@ -523,6 +644,302 @@
     1000,
     3090,
     1000
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#46381a",
+   "strokeWidth": 90,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    568.0,
+    1138.0,
+    561.6,
+    1151.0,
+    544.0,
+    1160.5,
+    520.0,
+    1164.0,
+    496.0,
+    1160.5,
+    478.4,
+    1151.0,
+    472.0,
+    1138.0,
+    478.4,
+    1125.0,
+    496.0,
+    1115.5,
+    520.0,
+    1112.0,
+    544.0,
+    1115.5,
+    561.6,
+    1125.0,
+    568.0,
+    1138.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#46381a",
+   "strokeWidth": 90,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    868.0,
+    898.0,
+    861.6,
+    911.0,
+    844.0,
+    920.5,
+    820.0,
+    924.0,
+    796.0,
+    920.5,
+    778.4,
+    911.0,
+    772.0,
+    898.0,
+    778.4,
+    885.0,
+    796.0,
+    875.5,
+    820.0,
+    872.0,
+    844.0,
+    875.5,
+    861.6,
+    885.0,
+    868.0,
+    898.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#46381a",
+   "strokeWidth": 90,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1168.0,
+    1138.0,
+    1161.6,
+    1151.0,
+    1144.0,
+    1160.5,
+    1120.0,
+    1164.0,
+    1096.0,
+    1160.5,
+    1078.4,
+    1151.0,
+    1072.0,
+    1138.0,
+    1078.4,
+    1125.0,
+    1096.0,
+    1115.5,
+    1120.0,
+    1112.0,
+    1144.0,
+    1115.5,
+    1161.6,
+    1125.0,
+    1168.0,
+    1138.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#46381a",
+   "strokeWidth": 90,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1468.0,
+    898.0,
+    1461.6,
+    911.0,
+    1444.0,
+    920.5,
+    1420.0,
+    924.0,
+    1396.0,
+    920.5,
+    1378.4,
+    911.0,
+    1372.0,
+    898.0,
+    1378.4,
+    885.0,
+    1396.0,
+    875.5,
+    1420.0,
+    872.0,
+    1444.0,
+    875.5,
+    1461.6,
+    885.0,
+    1468.0,
+    898.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#46381a",
+   "strokeWidth": 90,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1768.0,
+    1138.0,
+    1761.6,
+    1151.0,
+    1744.0,
+    1160.5,
+    1720.0,
+    1164.0,
+    1696.0,
+    1160.5,
+    1678.4,
+    1151.0,
+    1672.0,
+    1138.0,
+    1678.4,
+    1125.0,
+    1696.0,
+    1115.5,
+    1720.0,
+    1112.0,
+    1744.0,
+    1115.5,
+    1761.6,
+    1125.0,
+    1768.0,
+    1138.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#46381a",
+   "strokeWidth": 90,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2068.0,
+    898.0,
+    2061.6,
+    911.0,
+    2044.0,
+    920.5,
+    2020.0,
+    924.0,
+    1996.0,
+    920.5,
+    1978.4,
+    911.0,
+    1972.0,
+    898.0,
+    1978.4,
+    885.0,
+    1996.0,
+    875.5,
+    2020.0,
+    872.0,
+    2044.0,
+    875.5,
+    2061.6,
+    885.0,
+    2068.0,
+    898.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#46381a",
+   "strokeWidth": 90,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2368.0,
+    1138.0,
+    2361.6,
+    1151.0,
+    2344.0,
+    1160.5,
+    2320.0,
+    1164.0,
+    2296.0,
+    1160.5,
+    2278.4,
+    1151.0,
+    2272.0,
+    1138.0,
+    2278.4,
+    1125.0,
+    2296.0,
+    1115.5,
+    2320.0,
+    1112.0,
+    2344.0,
+    1115.5,
+    2361.6,
+    1125.0,
+    2368.0,
+    1138.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#46381a",
+   "strokeWidth": 90,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2668.0,
+    898.0,
+    2661.6,
+    911.0,
+    2644.0,
+    920.5,
+    2620.0,
+    924.0,
+    2596.0,
+    920.5,
+    2578.4,
+    911.0,
+    2572.0,
+    898.0,
+    2578.4,
+    885.0,
+    2596.0,
+    875.5,
+    2620.0,
+    872.0,
+    2644.0,
+    875.5,
+    2661.6,
+    885.0,
+    2668.0,
+    898.0
    ]
   },
   {
@@ -1531,6 +1948,1623 @@
    "frameH": 64,
    "frameCount": 6,
    "frameRow": 0
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#7a5a16",
+   "strokeWidth": 7,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1900.0,
+    1180.0,
+    1885.3,
+    1237.2,
+    1842.7,
+    1288.7,
+    1776.3,
+    1329.7,
+    1692.7,
+    1355.9,
+    1600.0,
+    1365.0,
+    1507.3,
+    1355.9,
+    1423.7,
+    1329.7,
+    1357.3,
+    1288.7,
+    1314.7,
+    1237.2,
+    1300.0,
+    1180.0,
+    1314.7,
+    1122.8,
+    1357.3,
+    1071.3,
+    1423.7,
+    1030.3,
+    1507.3,
+    1004.1,
+    1600.0,
+    995.0,
+    1692.7,
+    1004.1,
+    1776.3,
+    1030.3,
+    1842.7,
+    1071.3,
+    1885.3,
+    1122.8,
+    1900.0,
+    1180.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#d8b24a",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1900.0,
+    1180.0,
+    1885.3,
+    1237.2,
+    1842.7,
+    1288.7,
+    1776.3,
+    1329.7,
+    1692.7,
+    1355.9,
+    1600.0,
+    1365.0,
+    1507.3,
+    1355.9,
+    1423.7,
+    1329.7,
+    1357.3,
+    1288.7,
+    1314.7,
+    1237.2,
+    1300.0,
+    1180.0,
+    1314.7,
+    1122.8,
+    1357.3,
+    1071.3,
+    1423.7,
+    1030.3,
+    1507.3,
+    1004.1,
+    1600.0,
+    995.0,
+    1692.7,
+    1004.1,
+    1776.3,
+    1030.3,
+    1842.7,
+    1071.3,
+    1885.3,
+    1122.8,
+    1900.0,
+    1180.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#7a5a16",
+   "strokeWidth": 5,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    456.0,
+    1006.0,
+    451.3,
+    1022.1,
+    437.7,
+    1036.6,
+    416.4,
+    1048.1,
+    389.7,
+    1055.5,
+    360.0,
+    1058.0,
+    330.3,
+    1055.5,
+    303.6,
+    1048.1,
+    282.3,
+    1036.6,
+    268.7,
+    1022.1,
+    264.0,
+    1006.0,
+    268.7,
+    989.9,
+    282.3,
+    975.4,
+    303.6,
+    963.9,
+    330.3,
+    956.5,
+    360.0,
+    954.0,
+    389.7,
+    956.5,
+    416.4,
+    963.9,
+    437.7,
+    975.4,
+    451.3,
+    989.9,
+    456.0,
+    1006.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#f4e08a",
+   "strokeWidth": 2,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    456.0,
+    1006.0,
+    451.3,
+    1022.1,
+    437.7,
+    1036.6,
+    416.4,
+    1048.1,
+    389.7,
+    1055.5,
+    360.0,
+    1058.0,
+    330.3,
+    1055.5,
+    303.6,
+    1048.1,
+    282.3,
+    1036.6,
+    268.7,
+    1022.1,
+    264.0,
+    1006.0,
+    268.7,
+    989.9,
+    282.3,
+    975.4,
+    303.6,
+    963.9,
+    330.3,
+    956.5,
+    360.0,
+    954.0,
+    389.7,
+    956.5,
+    416.4,
+    963.9,
+    437.7,
+    975.4,
+    451.3,
+    989.9,
+    456.0,
+    1006.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#6e5a2a",
+   "strokeWidth": 120,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1500,
+    980,
+    1500,
+    420
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#8c7440",
+   "strokeWidth": 64,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1500,
+    980,
+    1500,
+    420
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#5a4a26",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2597.4,
+    1554.0,
+    2598.4,
+    1555.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#d8b24a",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2997.5,
+    412.1,
+    2998.5,
+    413.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#d8b24a",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    637.4,
+    1834.0,
+    638.4,
+    1835.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#d8b24a",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    287.5,
+    1478.0,
+    288.5,
+    1479.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#d8b24a",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1682.5,
+    82.1,
+    1683.5,
+    83.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#5a4a26",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    3048.8,
+    1781.2,
+    3049.8,
+    1782.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#d8b24a",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2113.3,
+    356.6,
+    2114.3,
+    357.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#5a4a26",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2916.3,
+    816.1,
+    2917.3,
+    817.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#d8b24a",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2758.0,
+    1808.1,
+    2759.0,
+    1809.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#5a4a26",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2492.9,
+    1222.6,
+    2493.9,
+    1223.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#5a4a26",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1089.0,
+    1737.0,
+    1090.0,
+    1738.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#5a4a26",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2321.7,
+    1724.0,
+    2322.7,
+    1725.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#d8b24a",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1911.6,
+    1931.8,
+    1912.6,
+    1932.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#5a4a26",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    391.6,
+    1310.8,
+    392.6,
+    1311.8
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#d8b24a",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    952.2,
+    1673.1,
+    953.2,
+    1674.1
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#8a7434",
+   "strokeWidth": 4,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2008.6,
+    1852.6,
+    2009.6,
+    1853.6
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#5a4a26",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1821.9,
+    1592.7,
+    1822.9,
+    1593.7
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#5a4a26",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    674.8,
+    297.4,
+    675.8,
+    298.4
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r40dress",
+   "stroke": "#d8b24a",
+   "strokeWidth": 3,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1632.5,
+    167.5,
+    1633.5,
+    168.5
+   ]
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0001",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "2.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1743.3,
+   "y": 1175.41,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0002",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "6.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1669.98,
+   "y": 1226.07,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0003",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "11.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1555.67,
+   "y": 1232.16,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0004",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "12.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1467.33,
+   "y": 1190.12,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0005",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "9.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1456.7,
+   "y": 1124.59,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0006",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "9.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1530.02,
+   "y": 1073.93,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0007",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "11.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1644.33,
+   "y": 1067.84,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0008",
+   "dir": "assest4/map_objects/2 Objects/6 Flower",
+   "frames": [
+    "10.png"
+   ],
+   "name": "flower",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1732.67,
+   "y": 1109.88,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 3.0,
+   "offsetY": 4
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0009",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "5.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1690.72,
+   "y": 1283.82,
+   "scaleX": 2.6,
+   "scaleY": 2.6,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0010",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "3.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1458.52,
+   "y": 1263.16,
+   "scaleX": 2.6,
+   "scaleY": 2.6,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0011",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "4.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1421.84,
+   "y": 1133.11,
+   "scaleX": 2.6,
+   "scaleY": 2.6,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0012",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "4.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1631.37,
+   "y": 1073.39,
+   "scaleX": 2.6,
+   "scaleY": 2.6,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0013",
+   "dir": "assest4/next2/2 Objects/5 Grass",
+   "frames": [
+    "1.png"
+   ],
+   "name": "grass",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1797.55,
+   "y": 1166.53,
+   "scaleX": 2.6,
+   "scaleY": 2.6,
+   "offsetX": 3.0,
+   "offsetY": 6
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0014",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 1.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1490,
+   "y": 1246,
+   "scaleX": 0.555,
+   "scaleY": 0.555,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0015",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 6.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1716,
+   "y": 1240,
+   "scaleX": 0.519,
+   "scaleY": 0.519,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0018",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 5.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 294,
+   "y": 1072,
+   "scaleX": 0.61,
+   "scaleY": 0.61,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0019",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 1.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 430,
+   "y": 1076,
+   "scaleX": 0.62,
+   "scaleY": 0.62,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0022",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 2.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1446,
+   "y": 500,
+   "scaleX": 0.508,
+   "scaleY": 0.508,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0023",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 3.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1558,
+   "y": 506,
+   "scaleX": 0.524,
+   "scaleY": 0.524,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0024",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 5.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 550,
+   "y": 856,
+   "scaleX": 0.506,
+   "scaleY": 0.506,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0025",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 3.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 910,
+   "y": 856,
+   "scaleX": 0.59,
+   "scaleY": 0.59,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0026",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1018,
+   "y": 848,
+   "scaleX": 0.709,
+   "scaleY": 0.709,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0027",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 5.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1270,
+   "y": 856,
+   "scaleX": 0.6,
+   "scaleY": 0.6,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0028",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 6.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1630,
+   "y": 856,
+   "scaleX": 0.618,
+   "scaleY": 0.618,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0029",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1738,
+   "y": 848,
+   "scaleX": 0.676,
+   "scaleY": 0.676,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0030",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 3.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1990,
+   "y": 856,
+   "scaleX": 0.643,
+   "scaleY": 0.643,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0031",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 2.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2350,
+   "y": 856,
+   "scaleX": 0.519,
+   "scaleY": 0.519,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0032",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_amber.png"
+   ],
+   "name": "crystal_amber",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2458,
+   "y": 848,
+   "scaleX": 0.666,
+   "scaleY": 0.666,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0033",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 2.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2710,
+   "y": 856,
+   "scaleX": 0.513,
+   "scaleY": 0.513,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0034",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 3.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 322,
+   "y": 766,
+   "scaleX": 0.544,
+   "scaleY": 0.544,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0035",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 2.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1118,
+   "y": 766,
+   "scaleX": 0.537,
+   "scaleY": 0.537,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0036",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 2.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1762,
+   "y": 766,
+   "scaleX": 0.592,
+   "scaleY": 0.592,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0037",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 6.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2558,
+   "y": 766,
+   "scaleX": 0.592,
+   "scaleY": 0.592,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0038",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 2.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 562,
+   "y": 1286,
+   "scaleX": 0.591,
+   "scaleY": 0.591,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0039",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 5.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1358,
+   "y": 1286,
+   "scaleX": 0.514,
+   "scaleY": 0.514,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0040",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 6.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2078,
+   "y": 1286,
+   "scaleX": 0.54,
+   "scaleY": 0.54,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40_d0041",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 3.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2798,
+   "y": 1286,
+   "scaleX": 0.601,
+   "scaleY": 0.601,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0001",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "spirit_flame.png"
+   ],
+   "name": "spirit_flame",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 396.4,
+   "y": 897.5,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0002",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "spirit_flame.png"
+   ],
+   "name": "spirit_flame",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 598.6,
+   "y": 1113.4,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0003",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "spirit_flame.png"
+   ],
+   "name": "spirit_flame",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 900.3,
+   "y": 804.7,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0004",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "spirit_flame.png"
+   ],
+   "name": "spirit_flame",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1192.6,
+   "y": 905.0,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0005",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "spirit_flame.png"
+   ],
+   "name": "spirit_flame",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1594.6,
+   "y": 995.2,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0006",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "spirit_flame.png"
+   ],
+   "name": "spirit_flame",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1992.8,
+   "y": 888.5,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0007",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "spirit_flame.png"
+   ],
+   "name": "spirit_flame",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2204.4,
+   "y": 1104.9,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0008",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "spirit_flame.png"
+   ],
+   "name": "spirit_flame",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2493.9,
+   "y": 861.7,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0009",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "spirit_flame.png"
+   ],
+   "name": "spirit_flame",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2688.4,
+   "y": 1046.6,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0010",
+   "dir": "assets_custom/props",
+   "frames": [
+    "incense_stand.png"
+   ],
+   "name": "incense_stand",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 350,
+   "y": 980,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 26.0,
+   "offsetY": 83.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0011",
+   "dir": "assets_custom/props",
+   "frames": [
+    "incense_stand.png"
+   ],
+   "name": "incense_stand",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 700,
+   "y": 950,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 26.0,
+   "offsetY": 83.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0012",
+   "dir": "assets_custom/props",
+   "frames": [
+    "incense_stand.png"
+   ],
+   "name": "incense_stand",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1000,
+   "y": 1020,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 26.0,
+   "offsetY": 83.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0013",
+   "dir": "assets_custom/props",
+   "frames": [
+    "incense_stand.png"
+   ],
+   "name": "incense_stand",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1400,
+   "y": 960,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 26.0,
+   "offsetY": 83.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0014",
+   "dir": "assets_custom/props",
+   "frames": [
+    "incense_stand.png"
+   ],
+   "name": "incense_stand",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1800,
+   "y": 1010,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 26.0,
+   "offsetY": 83.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0015",
+   "dir": "assets_custom/props",
+   "frames": [
+    "incense_stand.png"
+   ],
+   "name": "incense_stand",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2100,
+   "y": 950,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 26.0,
+   "offsetY": 83.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0016",
+   "dir": "assets_custom/props",
+   "frames": [
+    "incense_stand.png"
+   ],
+   "name": "incense_stand",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2500,
+   "y": 1000,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 26.0,
+   "offsetY": 83.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0017",
+   "dir": "assets_custom/props",
+   "frames": [
+    "incense_stand.png"
+   ],
+   "name": "incense_stand",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2800,
+   "y": 970,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 26.0,
+   "offsetY": 83.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0018",
+   "dir": "assets_custom/props",
+   "frames": [
+    "offering_bowl.png"
+   ],
+   "name": "offering_bowl",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 300,
+   "y": 1080,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 28.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0019",
+   "dir": "assets_custom/props",
+   "frames": [
+    "offering_bowl.png"
+   ],
+   "name": "offering_bowl",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 420,
+   "y": 1080,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 28.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0020",
+   "dir": "assets_custom/props",
+   "frames": [
+    "offering_bowl.png"
+   ],
+   "name": "offering_bowl",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 360,
+   "y": 1130,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 28.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0021",
+   "dir": "assets_custom/props",
+   "frames": [
+    "offering_bowl.png"
+   ],
+   "name": "offering_bowl",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 260,
+   "y": 1050,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 28.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0022",
+   "dir": "assets_custom/props",
+   "frames": [
+    "offering_bowl.png"
+   ],
+   "name": "offering_bowl",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 460,
+   "y": 1050,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 28.0,
+   "offsetY": 43.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0023",
+   "dir": "assets_custom/props",
+   "frames": [
+    "spirit_bell.png"
+   ],
+   "name": "spirit_bell",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 700,
+   "y": 950,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 40.0,
+   "offsetY": 109.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0024",
+   "dir": "assets_custom/props",
+   "frames": [
+    "spirit_bell.png"
+   ],
+   "name": "spirit_bell",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1600,
+   "y": 960,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 40.0,
+   "offsetY": 109.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r40d2_0025",
+   "dir": "assets_custom/props",
+   "frames": [
+    "spirit_bell.png"
+   ],
+   "name": "spirit_bell",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2500,
+   "y": 950,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 40.0,
+   "offsetY": 109.0
   }
  ],
  "noWalkZones": [

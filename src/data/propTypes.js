@@ -16,6 +16,8 @@
 // walks on top of it") but never silently wall off a path. Make something block
 // by adding it to the solid rules below or drawing a noWalkZone in the editor.
 
+import { PROP_FOOTPRINTS } from './propFootprints.js';
+
 // name-based rules, evaluated in order (first match wins)
 const NAME_RULES = [
   [/grass|flower|lily[_ ]?pad|shadow|pebble|puddle|\bdirt\b|footprint|decal/i, 'ground'],
@@ -32,19 +34,6 @@ const DIR_RULES = [
   [/cropped|bush/i, 'decor'],
 ];
 
-// Optional per-name collider-radius overrides (world px). When absent the circle
-// is auto-sized from the sprite's on-screen width. Tune these if a prop blocks
-// too much (smaller r) or lets the player clip its trunk (larger r).
-const FOOTPRINTS = {
-  pillar:  { r: 15 },
-  cypress: { r: 11 },
-  tree:    { r: 12 },
-  rock:    { r: 13 },
-  basalt:  { r: 13 },
-  crate:   { r: 14 },
-  brazier: { r: 12 },
-};
-
 function matchRules(rules, str) {
   if (!str) return null;
   for (const [re, kind] of rules) if (re.test(str)) return kind;
@@ -60,9 +49,11 @@ export function classifyProp(sp) {
   );
 }
 
-// Explicit footprint for a prop name, or null to auto-size from the sprite.
+// Image-alpha footprint for a placed sprite, in SOURCE-IMAGE pixel space
+// ({ cx, cy, w, h }), or null to fall back to an auto-sized box. Keyed by the
+// sprite's `dir + '/' + frame` (see src/data/propFootprints.js). Trees resolve
+// to a narrow box at the trunk base; rocks to a box covering most of the body.
 export function propFootprint(sp) {
-  if (!sp?.name) return null;
-  const key = Object.keys(FOOTPRINTS).find(k => sp.name.toLowerCase().includes(k));
-  return key ? FOOTPRINTS[key] : null;
+  if (!sp?.dir || !sp.frames?.[0]) return null;
+  return PROP_FOOTPRINTS[sp.dir + '/' + sp.frames[0]] || null;
 }

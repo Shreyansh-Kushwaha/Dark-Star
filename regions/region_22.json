@@ -8,6 +8,142 @@
  },
  "sprites": [
   {
+   "type": "sprite",
+   "spriteId": "s_r22_0501",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 354,
+   "y": 668,
+   "scaleX": 2.0,
+   "scaleY": 2.0,
+   "offsetX": 22.0,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0502",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 548,
+   "y": 762,
+   "scaleX": 1.6,
+   "scaleY": 1.6,
+   "offsetX": 22.0,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0508",
+   "dir": "assets_custom/props",
+   "frames": [
+    "fumarole.png"
+   ],
+   "name": "fumarole",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 780,
+   "y": 530,
+   "scaleX": 1.15,
+   "scaleY": 1.15,
+   "offsetX": 30.0,
+   "offsetY": 70
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0509",
+   "dir": "assets_custom/props",
+   "frames": [
+    "fumarole.png"
+   ],
+   "name": "fumarole",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1030,
+   "y": 580,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 30.0,
+   "offsetY": 70
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0511",
+   "dir": "assets_custom/props",
+   "frames": [
+    "fumarole.png"
+   ],
+   "name": "fumarole",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1580,
+   "y": 610,
+   "scaleX": 1.15,
+   "scaleY": 1.15,
+   "offsetX": 30.0,
+   "offsetY": 70
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0512",
+   "dir": "assets_custom/props",
+   "frames": [
+    "fumarole.png"
+   ],
+   "name": "fumarole",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1830,
+   "y": 660,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 30.0,
+   "offsetY": 70
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0514",
+   "dir": "assets_custom/props",
+   "frames": [
+    "fumarole.png"
+   ],
+   "name": "fumarole",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2080,
+   "y": 1390,
+   "scaleX": 1.15,
+   "scaleY": 1.15,
+   "offsetX": 30.0,
+   "offsetY": 70
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0515",
+   "dir": "assets_custom/props",
+   "frames": [
+    "fumarole.png"
+   ],
+   "name": "fumarole",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2330,
+   "y": 1440,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 30.0,
+   "offsetY": 70
+  },
+  {
    "type": "stroke",
    "stroke": "#7a1e08",
    "strokeWidth": 150,
@@ -6813,6 +6949,3543 @@
    "scaleY": 0.808,
    "offsetX": 64.0,
    "offsetY": 127
+  },
+  {
+   "type": "stroke",
+   "gen": "r22dress",
+   "stroke": "#4a423c",
+   "strokeWidth": 124,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1500,
+    790,
+    1500,
+    1190
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r22dress",
+   "stroke": "#5e544c",
+   "strokeWidth": 76,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1500,
+    790,
+    1500,
+    1190
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r22dress",
+   "stroke": "#3a2c24",
+   "strokeWidth": 56,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    120,
+    760,
+    450,
+    738,
+    800,
+    772,
+    1150,
+    748,
+    1500,
+    790
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r22dress",
+   "stroke": "#46362c",
+   "strokeWidth": 30,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    120,
+    760,
+    450,
+    738,
+    800,
+    772,
+    1150,
+    748,
+    1500,
+    790
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r22dress",
+   "stroke": "#3a2c24",
+   "strokeWidth": 56,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1500,
+    1190,
+    1900,
+    1224,
+    2300,
+    1184,
+    2700,
+    1232,
+    3090,
+    1240
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r22dress",
+   "stroke": "#46362c",
+   "strokeWidth": 30,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1500,
+    1190,
+    1900,
+    1224,
+    2300,
+    1184,
+    2700,
+    1232,
+    3090,
+    1240
+   ]
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0503",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 416,
+   "y": 712,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0504",
+   "dir": "assest4/next2/2 Objects/4 Box",
+   "frames": [
+    "3.png"
+   ],
+   "name": "crate",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 296,
+   "y": 652,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 10.0,
+   "offsetY": 21
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0505",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 2.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 522,
+   "y": 668,
+   "scaleX": 0.62,
+   "scaleY": 0.62,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0506",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
+   "frames": [
+    "Gold Stone 3.png"
+   ],
+   "name": "ware",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 258,
+   "y": 700,
+   "scaleX": 0.62,
+   "scaleY": 0.62,
+   "offsetX": 64.0,
+   "offsetY": 127
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0507",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 432,
+   "y": 806,
+   "scaleX": 1.3,
+   "scaleY": 1.3,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0510",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 945.06,
+   "y": 642.63,
+   "scaleX": 1.068,
+   "scaleY": 1.068,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0513",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1642.88,
+   "y": 721.59,
+   "scaleX": 0.875,
+   "scaleY": 0.875,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0516",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2189.19,
+   "y": 1500.73,
+   "scaleX": 1.04,
+   "scaleY": 1.04,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0517",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1448,
+   "y": 786,
+   "scaleX": 0.78,
+   "scaleY": 0.78,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0518",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1552,
+   "y": 786,
+   "scaleX": 0.78,
+   "scaleY": 0.78,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0519",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1448,
+   "y": 1228,
+   "scaleX": 0.78,
+   "scaleY": 0.78,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0520",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1552,
+   "y": 1228,
+   "scaleX": 0.78,
+   "scaleY": 0.78,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0521",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1446,
+   "y": 850.0,
+   "scaleX": 0.994,
+   "scaleY": 0.994,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0522",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1554,
+   "y": 892.0,
+   "scaleX": 1.015,
+   "scaleY": 1.015,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0523",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1446,
+   "y": 936.0,
+   "scaleX": 1.031,
+   "scaleY": 1.031,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0524",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1554,
+   "y": 978.0,
+   "scaleX": 0.853,
+   "scaleY": 0.853,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0525",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1446,
+   "y": 1022.0,
+   "scaleX": 0.962,
+   "scaleY": 0.962,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0526",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1554,
+   "y": 1064.0,
+   "scaleX": 0.949,
+   "scaleY": 0.949,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0527",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1446,
+   "y": 1108.0,
+   "scaleX": 0.855,
+   "scaleY": 0.855,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0528",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1554,
+   "y": 1150.0,
+   "scaleX": 0.875,
+   "scaleY": 0.875,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0529",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -23.43,
+   "y": 41.3,
+   "scaleX": 1.107,
+   "scaleY": 1.107,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0530",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 21.91,
+   "y": 77.74,
+   "scaleX": 1.181,
+   "scaleY": 1.181,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0531",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 91.51,
+   "y": 50.2,
+   "scaleX": 1.129,
+   "scaleY": 1.129,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0532",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 138.9,
+   "y": 80.31,
+   "scaleX": 1.24,
+   "scaleY": 1.24,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0533",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 188.0,
+   "y": 37.46,
+   "scaleX": 0.989,
+   "scaleY": 0.989,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0534",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 247.1,
+   "y": 76.45,
+   "scaleX": 1.204,
+   "scaleY": 1.204,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0535",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 305.43,
+   "y": 51.28,
+   "scaleX": 1.166,
+   "scaleY": 1.166,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0536",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 369.81,
+   "y": 81.77,
+   "scaleX": 1.009,
+   "scaleY": 1.009,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0537",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 431.75,
+   "y": 42.37,
+   "scaleX": 1.008,
+   "scaleY": 1.008,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0538",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 479.07,
+   "y": 80.01,
+   "scaleX": 1.153,
+   "scaleY": 1.153,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0539",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 525.54,
+   "y": 51.98,
+   "scaleX": 1.072,
+   "scaleY": 1.072,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0540",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 574.56,
+   "y": 87.41,
+   "scaleX": 1.163,
+   "scaleY": 1.163,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0541",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 631.98,
+   "y": 35.05,
+   "scaleX": 1.141,
+   "scaleY": 1.141,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0542",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 685.72,
+   "y": 82.83,
+   "scaleX": 1.008,
+   "scaleY": 1.008,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0543",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 752.56,
+   "y": 53.85,
+   "scaleX": 1.117,
+   "scaleY": 1.117,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0544",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 804.72,
+   "y": 77.74,
+   "scaleX": 0.992,
+   "scaleY": 0.992,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0545",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 861.55,
+   "y": 52.99,
+   "scaleX": 0.932,
+   "scaleY": 0.932,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0546",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 926.59,
+   "y": 76.48,
+   "scaleX": 0.925,
+   "scaleY": 0.925,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0547",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 962.39,
+   "y": 45.33,
+   "scaleX": 1.21,
+   "scaleY": 1.21,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0548",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1032.28,
+   "y": 87.08,
+   "scaleX": 0.995,
+   "scaleY": 0.995,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0549",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1081.43,
+   "y": 46.45,
+   "scaleX": 0.897,
+   "scaleY": 0.897,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0550",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1136.7,
+   "y": 93.79,
+   "scaleX": 0.934,
+   "scaleY": 0.934,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0551",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1201.79,
+   "y": 44.18,
+   "scaleX": 1.111,
+   "scaleY": 1.111,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0552",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1255.0,
+   "y": 94.08,
+   "scaleX": 1.004,
+   "scaleY": 1.004,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0553",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1298.94,
+   "y": 53.04,
+   "scaleX": 1.154,
+   "scaleY": 1.154,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0554",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1362.08,
+   "y": 95.3,
+   "scaleX": 1.04,
+   "scaleY": 1.04,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0555",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1420.79,
+   "y": 48.07,
+   "scaleX": 1.145,
+   "scaleY": 1.145,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0556",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1471.98,
+   "y": 83.95,
+   "scaleX": 1.248,
+   "scaleY": 1.248,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0557",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1506.98,
+   "y": 50.05,
+   "scaleX": 1.208,
+   "scaleY": 1.208,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0558",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1574.5,
+   "y": 91.23,
+   "scaleX": 1.042,
+   "scaleY": 1.042,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0559",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1617.69,
+   "y": 51.01,
+   "scaleX": 1.237,
+   "scaleY": 1.237,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0560",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1684.5,
+   "y": 83.9,
+   "scaleX": 0.853,
+   "scaleY": 0.853,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0561",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1733.38,
+   "y": 40.87,
+   "scaleX": 1.01,
+   "scaleY": 1.01,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0562",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1797.19,
+   "y": 85.43,
+   "scaleX": 1.168,
+   "scaleY": 1.168,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0563",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1845.44,
+   "y": 48.48,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0564",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1896.02,
+   "y": 77.12,
+   "scaleX": 1.128,
+   "scaleY": 1.128,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0565",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1973.15,
+   "y": 45.16,
+   "scaleX": 0.999,
+   "scaleY": 0.999,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0566",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2003.49,
+   "y": 91.52,
+   "scaleX": 1.25,
+   "scaleY": 1.25,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0567",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2080.63,
+   "y": 45.75,
+   "scaleX": 0.939,
+   "scaleY": 0.939,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0568",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2125.64,
+   "y": 87.29,
+   "scaleX": 1.129,
+   "scaleY": 1.129,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0569",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2180.27,
+   "y": 35.25,
+   "scaleX": 1.099,
+   "scaleY": 1.099,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0570",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2244.35,
+   "y": 95.18,
+   "scaleX": 1.076,
+   "scaleY": 1.076,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0571",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2293.44,
+   "y": 46.58,
+   "scaleX": 1.144,
+   "scaleY": 1.144,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0572",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2338.58,
+   "y": 94.27,
+   "scaleX": 0.942,
+   "scaleY": 0.942,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0573",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2388.82,
+   "y": 34.96,
+   "scaleX": 1.199,
+   "scaleY": 1.199,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0574",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2450.65,
+   "y": 80.16,
+   "scaleX": 0.993,
+   "scaleY": 0.993,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0575",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2512.14,
+   "y": 43.58,
+   "scaleX": 1.115,
+   "scaleY": 1.115,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0576",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2568.83,
+   "y": 87.63,
+   "scaleX": 1.112,
+   "scaleY": 1.112,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0577",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2629.89,
+   "y": 49.49,
+   "scaleX": 1.032,
+   "scaleY": 1.032,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0578",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2672.38,
+   "y": 89.22,
+   "scaleX": 1.038,
+   "scaleY": 1.038,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0579",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2732.16,
+   "y": 51.62,
+   "scaleX": 0.932,
+   "scaleY": 0.932,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0580",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2784.18,
+   "y": 88.8,
+   "scaleX": 0.961,
+   "scaleY": 0.961,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0581",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2839.99,
+   "y": 34.81,
+   "scaleX": 0.883,
+   "scaleY": 0.883,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0582",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2886.01,
+   "y": 94.34,
+   "scaleX": 1.063,
+   "scaleY": 1.063,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0583",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2942.25,
+   "y": 34.73,
+   "scaleX": 1.029,
+   "scaleY": 1.029,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0584",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3000.04,
+   "y": 91.99,
+   "scaleX": 0.967,
+   "scaleY": 0.967,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0585",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3058.48,
+   "y": 47.72,
+   "scaleX": 1.18,
+   "scaleY": 1.18,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0586",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3120.93,
+   "y": 90.44,
+   "scaleX": 1.016,
+   "scaleY": 1.016,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0587",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3172.66,
+   "y": 45.47,
+   "scaleX": 0.953,
+   "scaleY": 0.953,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0588",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3225.38,
+   "y": 95.81,
+   "scaleX": 1.085,
+   "scaleY": 1.085,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0589",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -8.3,
+   "y": 1930.78,
+   "scaleX": 1.146,
+   "scaleY": 1.146,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0590",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 43.91,
+   "y": 1976.15,
+   "scaleX": 1.038,
+   "scaleY": 1.038,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0591",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 100.45,
+   "y": 1926.48,
+   "scaleX": 0.961,
+   "scaleY": 0.961,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0592",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 152.15,
+   "y": 1991.71,
+   "scaleX": 0.874,
+   "scaleY": 0.874,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0593",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 204.0,
+   "y": 1937.07,
+   "scaleX": 1.082,
+   "scaleY": 1.082,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0594",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 247.43,
+   "y": 1989.09,
+   "scaleX": 1.092,
+   "scaleY": 1.092,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0595",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 310.72,
+   "y": 1929.35,
+   "scaleX": 0.878,
+   "scaleY": 0.878,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0596",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 370.33,
+   "y": 1978.85,
+   "scaleX": 0.87,
+   "scaleY": 0.87,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0597",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 432.22,
+   "y": 1928.53,
+   "scaleX": 1.031,
+   "scaleY": 1.031,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0598",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 487.62,
+   "y": 1979.55,
+   "scaleX": 1.176,
+   "scaleY": 1.176,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0599",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 536.52,
+   "y": 1929.63,
+   "scaleX": 1.084,
+   "scaleY": 1.084,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0600",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 595.63,
+   "y": 1988.86,
+   "scaleX": 0.99,
+   "scaleY": 0.99,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0601",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 636.15,
+   "y": 1934.52,
+   "scaleX": 1.209,
+   "scaleY": 1.209,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0602",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 684.33,
+   "y": 1985.47,
+   "scaleX": 0.934,
+   "scaleY": 0.934,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0603",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 740.06,
+   "y": 1934.11,
+   "scaleX": 1.078,
+   "scaleY": 1.078,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0604",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 814.81,
+   "y": 1986.19,
+   "scaleX": 1.002,
+   "scaleY": 1.002,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0605",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 855.72,
+   "y": 1927.59,
+   "scaleX": 1.038,
+   "scaleY": 1.038,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0606",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 920.35,
+   "y": 1981.07,
+   "scaleX": 0.877,
+   "scaleY": 0.877,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0607",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 962.25,
+   "y": 1941.74,
+   "scaleX": 0.993,
+   "scaleY": 0.993,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0608",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1023.21,
+   "y": 1984.75,
+   "scaleX": 1.116,
+   "scaleY": 1.116,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0609",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1072.22,
+   "y": 1940.6,
+   "scaleX": 1.025,
+   "scaleY": 1.025,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0610",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1141.25,
+   "y": 1991.46,
+   "scaleX": 1.053,
+   "scaleY": 1.053,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0611",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1176.29,
+   "y": 1940.19,
+   "scaleX": 1.237,
+   "scaleY": 1.237,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0612",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1231.92,
+   "y": 1988.41,
+   "scaleX": 0.92,
+   "scaleY": 0.92,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0613",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1300.54,
+   "y": 1942.18,
+   "scaleX": 0.872,
+   "scaleY": 0.872,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0614",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1367.68,
+   "y": 1983.02,
+   "scaleX": 1.249,
+   "scaleY": 1.249,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0615",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1401.44,
+   "y": 1944.47,
+   "scaleX": 1.198,
+   "scaleY": 1.198,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0616",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1460.92,
+   "y": 1984.44,
+   "scaleX": 0.852,
+   "scaleY": 0.852,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0617",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1524.97,
+   "y": 1934.78,
+   "scaleX": 0.971,
+   "scaleY": 0.971,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0618",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1570.75,
+   "y": 1978.2,
+   "scaleX": 0.937,
+   "scaleY": 0.937,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0619",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1629.01,
+   "y": 1939.98,
+   "scaleX": 1.092,
+   "scaleY": 1.092,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0620",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1681.73,
+   "y": 1979.38,
+   "scaleX": 1.097,
+   "scaleY": 1.097,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0621",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1737.14,
+   "y": 1944.3,
+   "scaleX": 0.973,
+   "scaleY": 0.973,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0622",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1792.72,
+   "y": 1973.1,
+   "scaleX": 0.869,
+   "scaleY": 0.869,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0623",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1843.24,
+   "y": 1936.06,
+   "scaleX": 0.894,
+   "scaleY": 0.894,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0624",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1917.91,
+   "y": 1975.85,
+   "scaleX": 1.091,
+   "scaleY": 1.091,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0625",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1957.8,
+   "y": 1934.95,
+   "scaleX": 0.944,
+   "scaleY": 0.944,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0626",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2007.76,
+   "y": 1977.62,
+   "scaleX": 1.145,
+   "scaleY": 1.145,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0627",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2074.08,
+   "y": 1932.29,
+   "scaleX": 1.021,
+   "scaleY": 1.021,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0628",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2110.58,
+   "y": 1985.34,
+   "scaleX": 0.943,
+   "scaleY": 0.943,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0629",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2189.09,
+   "y": 1943.54,
+   "scaleX": 1.18,
+   "scaleY": 1.18,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0630",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2239.95,
+   "y": 1979.28,
+   "scaleX": 0.962,
+   "scaleY": 0.962,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0631",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2295.73,
+   "y": 1936.43,
+   "scaleX": 1.206,
+   "scaleY": 1.206,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0632",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2332.93,
+   "y": 1981.25,
+   "scaleX": 0.967,
+   "scaleY": 0.967,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0633",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2392.52,
+   "y": 1927.31,
+   "scaleX": 1.09,
+   "scaleY": 1.09,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0634",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2440.7,
+   "y": 1984.7,
+   "scaleX": 1.033,
+   "scaleY": 1.033,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0635",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2518.15,
+   "y": 1938.61,
+   "scaleX": 0.971,
+   "scaleY": 0.971,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0636",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2562.25,
+   "y": 1974.02,
+   "scaleX": 1.229,
+   "scaleY": 1.229,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0637",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2611.79,
+   "y": 1932.42,
+   "scaleX": 1.231,
+   "scaleY": 1.231,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0638",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2682.37,
+   "y": 1979.91,
+   "scaleX": 1.178,
+   "scaleY": 1.178,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0639",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2741.29,
+   "y": 1932.71,
+   "scaleX": 0.925,
+   "scaleY": 0.925,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0640",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2795.03,
+   "y": 1984.97,
+   "scaleX": 1.15,
+   "scaleY": 1.15,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0641",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2849.07,
+   "y": 1930.88,
+   "scaleX": 1.056,
+   "scaleY": 1.056,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0642",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2890.26,
+   "y": 1990.66,
+   "scaleX": 1.131,
+   "scaleY": 1.131,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0643",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2939.35,
+   "y": 1938.18,
+   "scaleX": 1.207,
+   "scaleY": 1.207,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0644",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3012.63,
+   "y": 1979.38,
+   "scaleX": 0.852,
+   "scaleY": 0.852,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0645",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3058.65,
+   "y": 1930.39,
+   "scaleX": 0.957,
+   "scaleY": 0.957,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0646",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3103.85,
+   "y": 1976.83,
+   "scaleX": 1.188,
+   "scaleY": 1.188,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0647",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3171.41,
+   "y": 1941.83,
+   "scaleX": 1.034,
+   "scaleY": 1.034,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0648",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3218.48,
+   "y": 1991.34,
+   "scaleX": 1.168,
+   "scaleY": 1.168,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0649",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 47.3,
+   "y": 153.89,
+   "scaleX": 1.131,
+   "scaleY": 1.131,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0650",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 48.94,
+   "y": 271.15,
+   "scaleX": 1.115,
+   "scaleY": 1.115,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0651",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 46.72,
+   "y": 388.18,
+   "scaleX": 1.089,
+   "scaleY": 1.089,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0652",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 45.02,
+   "y": 516.4,
+   "scaleX": 1.106,
+   "scaleY": 1.106,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0653",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 52.36,
+   "y": 967.92,
+   "scaleX": 1.209,
+   "scaleY": 1.209,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0654",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 32.3,
+   "y": 1088.05,
+   "scaleX": 1.153,
+   "scaleY": 1.153,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0655",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 48.15,
+   "y": 1202.25,
+   "scaleX": 1.224,
+   "scaleY": 1.224,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0656",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 40.42,
+   "y": 1323.79,
+   "scaleX": 1.027,
+   "scaleY": 1.027,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0657",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 30.45,
+   "y": 1442.67,
+   "scaleX": 1.12,
+   "scaleY": 1.12,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0658",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 49.69,
+   "y": 1558.93,
+   "scaleX": 1.129,
+   "scaleY": 1.129,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0659",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 34.97,
+   "y": 1674.41,
+   "scaleX": 0.96,
+   "scaleY": 0.96,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0660",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 49.65,
+   "y": 1777.76,
+   "scaleX": 1.203,
+   "scaleY": 1.203,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0661",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3177.67,
+   "y": 158.94,
+   "scaleX": 1.065,
+   "scaleY": 1.065,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0662",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3170.83,
+   "y": 280.08,
+   "scaleX": 1.227,
+   "scaleY": 1.227,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0663",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3163.74,
+   "y": 394.82,
+   "scaleX": 0.938,
+   "scaleY": 0.938,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0664",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3161.6,
+   "y": 514.91,
+   "scaleX": 1.063,
+   "scaleY": 1.063,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0665",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3173.14,
+   "y": 619.72,
+   "scaleX": 0.968,
+   "scaleY": 0.968,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0666",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3152.89,
+   "y": 742.24,
+   "scaleX": 1.092,
+   "scaleY": 1.092,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0667",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3152.51,
+   "y": 846.07,
+   "scaleX": 0.892,
+   "scaleY": 0.892,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0668",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3174.53,
+   "y": 976.57,
+   "scaleX": 0.907,
+   "scaleY": 0.907,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0669",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3175.41,
+   "y": 1434.71,
+   "scaleX": 1.027,
+   "scaleY": 1.027,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0670",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3173.14,
+   "y": 1560.62,
+   "scaleX": 0.99,
+   "scaleY": 0.99,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0671",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3164.55,
+   "y": 1669.24,
+   "scaleX": 0.857,
+   "scaleY": 0.857,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0672",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3158.84,
+   "y": 1789.65,
+   "scaleX": 1.22,
+   "scaleY": 1.22,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0673",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 640,
+   "y": 360,
+   "scaleX": 1.6,
+   "scaleY": 1.6,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0674",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1240,
+   "y": 1560,
+   "scaleX": 1.7,
+   "scaleY": 1.7,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0675",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1960,
+   "y": 320,
+   "scaleX": 1.6,
+   "scaleY": 1.6,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0676",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2620,
+   "y": 1660,
+   "scaleX": 1.7,
+   "scaleY": 1.7,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0677",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2900,
+   "y": 420,
+   "scaleX": 1.6,
+   "scaleY": 1.6,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0678",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 211.14,
+   "y": 812.64,
+   "scaleX": 0.528,
+   "scaleY": 0.528,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0679",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 403.99,
+   "y": 677.29,
+   "scaleX": 0.634,
+   "scaleY": 0.634,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0680",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 590.19,
+   "y": 814.73,
+   "scaleX": 0.664,
+   "scaleY": 0.664,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0681",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 808.53,
+   "y": 705.9,
+   "scaleX": 0.67,
+   "scaleY": 0.67,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0682",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1000.58,
+   "y": 816.97,
+   "scaleX": 0.602,
+   "scaleY": 0.602,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0683",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1202.81,
+   "y": 690.4,
+   "scaleX": 0.527,
+   "scaleY": 0.527,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0684",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1390.44,
+   "y": 831.46,
+   "scaleX": 0.641,
+   "scaleY": 0.641,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0685",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1602.85,
+   "y": 1254.17,
+   "scaleX": 0.634,
+   "scaleY": 0.634,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0686",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1844.86,
+   "y": 1164.06,
+   "scaleX": 0.599,
+   "scaleY": 0.599,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0687",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2061.28,
+   "y": 1270.81,
+   "scaleX": 0.668,
+   "scaleY": 0.668,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0688",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2297.08,
+   "y": 1121.86,
+   "scaleX": 0.693,
+   "scaleY": 0.693,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0689",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2521.91,
+   "y": 1268.03,
+   "scaleX": 0.655,
+   "scaleY": 0.655,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0690",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2750.2,
+   "y": 1167.61,
+   "scaleX": 0.657,
+   "scaleY": 0.657,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22_0691",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2975.14,
+   "y": 1295.05,
+   "scaleX": 0.623,
+   "scaleY": 0.623,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22d2_0001",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "lava_bubble.png"
+   ],
+   "name": "lava_bubble",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 583.8,
+   "y": 721.5,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 24.0,
+   "offsetY": 47.0,
+   "frameW": 48,
+   "frameH": 48,
+   "frameCount": 4,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22d2_0002",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "lava_bubble.png"
+   ],
+   "name": "lava_bubble",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1187.8,
+   "y": 1300.1,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 24.0,
+   "offsetY": 47.0,
+   "frameW": 48,
+   "frameH": 48,
+   "frameCount": 4,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22d2_0003",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "lava_bubble.png"
+   ],
+   "name": "lava_bubble",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1829.1,
+   "y": 578.3,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 24.0,
+   "offsetY": 47.0,
+   "frameW": 48,
+   "frameH": 48,
+   "frameCount": 4,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22d2_0004",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "lava_bubble.png"
+   ],
+   "name": "lava_bubble",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2383.0,
+   "y": 1269.9,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 24.0,
+   "offsetY": 47.0,
+   "frameW": 48,
+   "frameH": 48,
+   "frameCount": 4,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22d2_0005",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "lava_bubble.png"
+   ],
+   "name": "lava_bubble",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1622.7,
+   "y": 973.8,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 24.0,
+   "offsetY": 47.0,
+   "frameW": 48,
+   "frameH": 48,
+   "frameCount": 4,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22d2_0006",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "smoke_wisp.png"
+   ],
+   "name": "smoke_wisp",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 450,
+   "y": 900,
+   "scaleX": 1.3,
+   "scaleY": 1.3,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22d2_0007",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "smoke_wisp.png"
+   ],
+   "name": "smoke_wisp",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 900,
+   "y": 650,
+   "scaleX": 1.3,
+   "scaleY": 1.3,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22d2_0008",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "smoke_wisp.png"
+   ],
+   "name": "smoke_wisp",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1500,
+   "y": 1350,
+   "scaleX": 1.3,
+   "scaleY": 1.3,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22d2_0009",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "smoke_wisp.png"
+   ],
+   "name": "smoke_wisp",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2100,
+   "y": 800,
+   "scaleX": 1.3,
+   "scaleY": 1.3,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22d2_0010",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "smoke_wisp.png"
+   ],
+   "name": "smoke_wisp",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2700,
+   "y": 1100,
+   "scaleX": 1.3,
+   "scaleY": 1.3,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22d2_0011",
+   "dir": "assets_custom/props",
+   "frames": [
+    "heat_vent.png"
+   ],
+   "name": "heat_vent",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 700,
+   "y": 1050,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 32.0,
+   "offsetY": 47.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22d2_0012",
+   "dir": "assets_custom/props",
+   "frames": [
+    "heat_vent.png"
+   ],
+   "name": "heat_vent",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1100,
+   "y": 950,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 32.0,
+   "offsetY": 47.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22d2_0013",
+   "dir": "assets_custom/props",
+   "frames": [
+    "heat_vent.png"
+   ],
+   "name": "heat_vent",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1900,
+   "y": 1000,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 32.0,
+   "offsetY": 47.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22d2_0014",
+   "dir": "assets_custom/props",
+   "frames": [
+    "heat_vent.png"
+   ],
+   "name": "heat_vent",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2300,
+   "y": 980,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 32.0,
+   "offsetY": 47.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22d2_0015",
+   "dir": "assets_custom/props",
+   "frames": [
+    "demon_anvil.png"
+   ],
+   "name": "demon_anvil",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 500,
+   "y": 820,
+   "scaleX": 1.3,
+   "scaleY": 1.3,
+   "offsetX": 40.0,
+   "offsetY": 65.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r22d2_0016",
+   "dir": "assets_custom/props",
+   "frames": [
+    "demon_anvil.png"
+   ],
+   "name": "demon_anvil",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2800,
+   "y": 1180,
+   "scaleX": 1.3,
+   "scaleY": 1.3,
+   "offsetX": 40.0,
+   "offsetY": 65.0
   }
  ],
  "noWalkZones": [
@@ -6862,13 +10535,6 @@
    "id": "z22_lava1200",
    "x": 1200,
    "y": 956.2,
-   "w": 202,
-   "h": 260
-  },
-  {
-   "id": "z22_lava1400",
-   "x": 1400,
-   "y": 858.6,
    "w": 202,
    "h": 260
   },
@@ -6999,8 +10665,8 @@
   {
    "id": "e22_05",
    "type": "elite",
-   "x": 2400,
-   "y": 1000
+   "x": 2450,
+   "y": 1180
   }
  ],
  "boss": null,
@@ -7025,14 +10691,14 @@
    "direction": "back",
    "targetRegion": 20,
    "x": 120,
-   "y": 1000
+   "y": 760
   },
   {
    "id": "portal22_next",
    "direction": "next",
    "targetRegion": 23,
    "x": 3090,
-   "y": 1000
+   "y": 1240
   }
  ],
  "regionIndex": 22

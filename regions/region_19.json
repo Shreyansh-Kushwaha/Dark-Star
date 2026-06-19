@@ -2871,6 +2871,314 @@
   },
   {
    "type": "stroke",
+   "gen": "r19dress",
+   "stroke": "#3b352e",
+   "strokeWidth": 64,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    898.8,
+    770.9,
+    886.5,
+    785.6,
+    852.2,
+    797.5,
+    802.5,
+    804.0,
+    747.5,
+    804.0,
+    697.8,
+    797.5,
+    663.5,
+    785.6,
+    651.2,
+    770.9,
+    663.5,
+    756.1,
+    697.8,
+    744.3,
+    747.5,
+    737.7,
+    802.5,
+    737.7,
+    852.2,
+    744.3,
+    886.5,
+    756.1,
+    898.8,
+    770.9
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r19dress",
+   "stroke": "#3b352e",
+   "strokeWidth": 64,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    1698.8,
+    1190.9,
+    1686.5,
+    1205.6,
+    1652.2,
+    1217.5,
+    1602.5,
+    1224.0,
+    1547.5,
+    1224.0,
+    1497.8,
+    1217.5,
+    1463.5,
+    1205.6,
+    1451.2,
+    1190.9,
+    1463.5,
+    1176.1,
+    1497.8,
+    1164.3,
+    1547.5,
+    1157.7,
+    1602.5,
+    1157.7,
+    1652.2,
+    1164.3,
+    1686.5,
+    1176.1,
+    1698.8,
+    1190.9
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r19dress",
+   "stroke": "#3b352e",
+   "strokeWidth": 64,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2498.8,
+    730.9,
+    2486.5,
+    745.6,
+    2452.2,
+    757.5,
+    2402.5,
+    764.0,
+    2347.5,
+    764.0,
+    2297.8,
+    757.5,
+    2263.5,
+    745.6,
+    2251.2,
+    730.9,
+    2263.5,
+    716.1,
+    2297.8,
+    704.3,
+    2347.5,
+    697.7,
+    2402.5,
+    697.7,
+    2452.2,
+    704.3,
+    2486.5,
+    716.1,
+    2498.8,
+    730.9
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r19dress",
+   "stroke": "#3b352e",
+   "strokeWidth": 64,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2898.8,
+    1250.9,
+    2886.5,
+    1265.6,
+    2852.2,
+    1277.5,
+    2802.5,
+    1284.0,
+    2747.5,
+    1284.0,
+    2697.8,
+    1277.5,
+    2663.5,
+    1265.6,
+    2651.2,
+    1250.9,
+    2663.5,
+    1236.1,
+    2697.8,
+    1224.3,
+    2747.5,
+    1217.7,
+    2802.5,
+    1217.7,
+    2852.2,
+    1224.3,
+    2886.5,
+    1236.1,
+    2898.8,
+    1250.9
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r19dress",
+   "stroke": "#3b352e",
+   "strokeWidth": 64,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    583.8,
+    1510.0,
+    573.7,
+    1524.8,
+    545.6,
+    1536.6,
+    505.0,
+    1543.1,
+    460.0,
+    1543.1,
+    419.4,
+    1536.6,
+    391.3,
+    1524.8,
+    381.2,
+    1510.0,
+    391.3,
+    1495.2,
+    419.4,
+    1483.4,
+    460.0,
+    1476.9,
+    505.0,
+    1476.9,
+    545.6,
+    1483.4,
+    573.7,
+    1495.2,
+    583.8,
+    1510.0
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r19dress",
+   "stroke": "#3b352e",
+   "strokeWidth": 64,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    3007.5,
+    384.2,
+    3000.8,
+    399.0,
+    2982.1,
+    410.8,
+    2955.0,
+    417.4,
+    2925.0,
+    417.4,
+    2897.9,
+    410.8,
+    2879.2,
+    399.0,
+    2872.5,
+    384.2,
+    2879.2,
+    369.5,
+    2897.9,
+    357.7,
+    2925.0,
+    351.1,
+    2955.0,
+    351.1,
+    2982.1,
+    357.7,
+    3000.8,
+    369.5,
+    3007.5,
+    384.2
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r19dress",
+   "stroke": "#3a342e",
+   "strokeWidth": 60,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    120,
+    1000,
+    450,
+    975,
+    800,
+    1005,
+    1150,
+    1045,
+    1500,
+    1080,
+    1850,
+    1050,
+    2200,
+    995,
+    2550,
+    1010,
+    2850,
+    1005,
+    3090,
+    1000
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r19dress",
+   "stroke": "#45403a",
+   "strokeWidth": 32,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    120,
+    1000,
+    450,
+    975,
+    800,
+    1005,
+    1150,
+    1045,
+    1500,
+    1080,
+    1850,
+    1050,
+    2200,
+    995,
+    2550,
+    1010,
+    2850,
+    1005,
+    3090,
+    1000
+   ]
+  },
+  {
+   "type": "stroke",
    "stroke": "#1c1512",
    "strokeWidth": 30,
    "lineCap": "round",
@@ -6509,244 +6817,6 @@
   },
   {
    "type": "sprite",
-   "spriteId": "s_r19_0199",
-   "dir": "cropped",
-   "frames": [
-    "Bushe2_crop.png"
-   ],
-   "name": "Bushe2_crop",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 488.83,
-   "y": 1635.46,
-   "scaleX": 0.762,
-   "scaleY": 0.762,
-   "offsetX": 38.5,
-   "offsetY": 50
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r19_0200",
-   "dir": "cropped",
-   "frames": [
-    "Bushe1_crop.png"
-   ],
-   "name": "Bushe1_crop",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1074.86,
-   "y": 605.32,
-   "scaleX": 0.891,
-   "scaleY": 0.891,
-   "offsetX": 40.0,
-   "offsetY": 72
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r19_0201",
-   "dir": "cropped",
-   "frames": [
-    "Bushe3_crop.png"
-   ],
-   "name": "Bushe3_crop",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2624.43,
-   "y": 962.87,
-   "scaleX": 0.777,
-   "scaleY": 0.777,
-   "offsetX": 48.0,
-   "offsetY": 88
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r19_0202",
-   "dir": "cropped",
-   "frames": [
-    "Bushe4_crop.png"
-   ],
-   "name": "Bushe4_crop",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2545.56,
-   "y": 1383.57,
-   "scaleX": 0.843,
-   "scaleY": 0.843,
-   "offsetX": 38.5,
-   "offsetY": 66
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r19_0203",
-   "dir": "cropped",
-   "frames": [
-    "Bushe3_crop.png"
-   ],
-   "name": "Bushe3_crop",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1192.24,
-   "y": 1060.81,
-   "scaleX": 0.856,
-   "scaleY": 0.856,
-   "offsetX": 48.0,
-   "offsetY": 88
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r19_0204",
-   "dir": "cropped",
-   "frames": [
-    "Bushe1_crop.png"
-   ],
-   "name": "Bushe1_crop",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1777.62,
-   "y": 605.08,
-   "scaleX": 0.882,
-   "scaleY": 0.882,
-   "offsetX": 40.0,
-   "offsetY": 72
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r19_0205",
-   "dir": "cropped",
-   "frames": [
-    "Bushe4_crop.png"
-   ],
-   "name": "Bushe4_crop",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 1580.74,
-   "y": 744.48,
-   "scaleX": 0.803,
-   "scaleY": 0.803,
-   "offsetX": 38.5,
-   "offsetY": 66
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r19_0206",
-   "dir": "cropped",
-   "frames": [
-    "Bushe1_crop.png"
-   ],
-   "name": "Bushe1_crop",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2839.48,
-   "y": 404.48,
-   "scaleX": 0.846,
-   "scaleY": 0.846,
-   "offsetX": 40.0,
-   "offsetY": 72
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r19_0207",
-   "dir": "cropped",
-   "frames": [
-    "Bushe3_crop.png"
-   ],
-   "name": "Bushe3_crop",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2878.44,
-   "y": 1343.44,
-   "scaleX": 0.745,
-   "scaleY": 0.745,
-   "offsetX": 48.0,
-   "offsetY": 88
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r19_0208",
-   "dir": "cropped",
-   "frames": [
-    "Bushe1_crop.png"
-   ],
-   "name": "Bushe1_crop",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2431.57,
-   "y": 1222.88,
-   "scaleX": 0.74,
-   "scaleY": 0.74,
-   "offsetX": 40.0,
-   "offsetY": 72
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r19_0209",
-   "dir": "cropped",
-   "frames": [
-    "Bushe4_crop.png"
-   ],
-   "name": "Bushe4_crop",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 809.51,
-   "y": 1513.47,
-   "scaleX": 0.827,
-   "scaleY": 0.827,
-   "offsetX": 38.5,
-   "offsetY": 66
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r19_0210",
-   "dir": "cropped",
-   "frames": [
-    "Bushe2_crop.png"
-   ],
-   "name": "Bushe2_crop",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2823.41,
-   "y": 489.39,
-   "scaleX": 0.632,
-   "scaleY": 0.632,
-   "offsetX": 38.5,
-   "offsetY": 50
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r19_0211",
-   "dir": "cropped",
-   "frames": [
-    "Bushe2_crop.png"
-   ],
-   "name": "Bushe2_crop",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2638.36,
-   "y": 405.58,
-   "scaleX": 0.748,
-   "scaleY": 0.748,
-   "offsetX": 38.5,
-   "offsetY": 50
-  },
-  {
-   "type": "sprite",
-   "spriteId": "s_r19_0212",
-   "dir": "cropped",
-   "frames": [
-    "Bushe4_crop.png"
-   ],
-   "name": "Bushe4_crop",
-   "animated": false,
-   "spriteLayer": "below",
-   "x": 2659.76,
-   "y": 1372.39,
-   "scaleX": 0.772,
-   "scaleY": 0.772,
-   "offsetX": 38.5,
-   "offsetY": 66
-  },
-  {
-   "type": "sprite",
    "spriteId": "s_r19_0213",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones",
    "frames": [
@@ -7016,6 +7086,6638 @@
    "scaleY": 0.63,
    "offsetX": 64.0,
    "offsetY": 127
+  },
+  {
+   "type": "stroke",
+   "gen": "r19dress",
+   "stroke": "#1c1512",
+   "strokeWidth": 30,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    250,
+    1480,
+    420,
+    1515,
+    560,
+    1500,
+    700,
+    1545
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r19dress",
+   "stroke": "#7a2c12",
+   "strokeWidth": 12,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    250,
+    1480,
+    420,
+    1515,
+    560,
+    1500,
+    700,
+    1545
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r19dress",
+   "stroke": "#1c1512",
+   "strokeWidth": 30,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2780,
+    360,
+    2900,
+    395,
+    3000,
+    372,
+    3080,
+    410
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r19dress",
+   "stroke": "#7a2c12",
+   "strokeWidth": 12,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    2780,
+    360,
+    2900,
+    395,
+    3000,
+    372,
+    3080,
+    410
+   ]
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0501",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -34.53,
+   "y": 53.53,
+   "scaleX": 0.922,
+   "scaleY": 0.922,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0502",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 29.88,
+   "y": 104.52,
+   "scaleX": 1.096,
+   "scaleY": 1.096,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0503",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 70.21,
+   "y": 39.82,
+   "scaleX": 1.123,
+   "scaleY": 1.123,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0504",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 123.49,
+   "y": 108.58,
+   "scaleX": 1.169,
+   "scaleY": 1.169,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0505",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 180.03,
+   "y": 43.51,
+   "scaleX": 0.872,
+   "scaleY": 0.872,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0506",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 227.69,
+   "y": 99.33,
+   "scaleX": 0.946,
+   "scaleY": 0.946,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0507",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 288.27,
+   "y": 55.79,
+   "scaleX": 1.346,
+   "scaleY": 1.346,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0508",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 350.93,
+   "y": 101.06,
+   "scaleX": 1.039,
+   "scaleY": 1.039,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0509",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 398.39,
+   "y": 45.05,
+   "scaleX": 1.176,
+   "scaleY": 1.176,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0510",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 444.16,
+   "y": 100.52,
+   "scaleX": 1.154,
+   "scaleY": 1.154,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0511",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 505.52,
+   "y": 51.73,
+   "scaleX": 0.994,
+   "scaleY": 0.994,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0512",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 565.0,
+   "y": 110.38,
+   "scaleX": 0.887,
+   "scaleY": 0.887,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0513",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 618.1,
+   "y": 39.06,
+   "scaleX": 0.861,
+   "scaleY": 0.861,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0514",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 656.12,
+   "y": 96.13,
+   "scaleX": 0.878,
+   "scaleY": 0.878,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0515",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 719.17,
+   "y": 43.2,
+   "scaleX": 1.244,
+   "scaleY": 1.244,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0516",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 765.2,
+   "y": 101.91,
+   "scaleX": 1.164,
+   "scaleY": 1.164,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0517",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 846.0,
+   "y": 50.15,
+   "scaleX": 1.083,
+   "scaleY": 1.083,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0518",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 894.3,
+   "y": 103.41,
+   "scaleX": 0.905,
+   "scaleY": 0.905,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0519",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 940.99,
+   "y": 50.09,
+   "scaleX": 1.255,
+   "scaleY": 1.255,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0520",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 992.11,
+   "y": 100.11,
+   "scaleX": 0.877,
+   "scaleY": 0.877,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0521",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1052.48,
+   "y": 37.37,
+   "scaleX": 1.315,
+   "scaleY": 1.315,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0522",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1098.71,
+   "y": 111.55,
+   "scaleX": 1.149,
+   "scaleY": 1.149,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0523",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1153.02,
+   "y": 47.3,
+   "scaleX": 1.377,
+   "scaleY": 1.377,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0524",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1217.19,
+   "y": 108.46,
+   "scaleX": 1.171,
+   "scaleY": 1.171,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0525",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1266.23,
+   "y": 49.32,
+   "scaleX": 1.231,
+   "scaleY": 1.231,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0526",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1319.42,
+   "y": 110.29,
+   "scaleX": 0.922,
+   "scaleY": 0.922,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0527",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1374.13,
+   "y": 39.88,
+   "scaleX": 0.955,
+   "scaleY": 0.955,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0528",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1427.22,
+   "y": 97.9,
+   "scaleX": 0.929,
+   "scaleY": 0.929,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0529",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1485.98,
+   "y": 40.01,
+   "scaleX": 1.226,
+   "scaleY": 1.226,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0530",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1536.77,
+   "y": 104.24,
+   "scaleX": 1.066,
+   "scaleY": 1.066,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0531",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1599.02,
+   "y": 42.88,
+   "scaleX": 1.216,
+   "scaleY": 1.216,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0532",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1646.32,
+   "y": 94.3,
+   "scaleX": 1.193,
+   "scaleY": 1.193,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0533",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1711.79,
+   "y": 36.34,
+   "scaleX": 1.113,
+   "scaleY": 1.113,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0534",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1738.66,
+   "y": 100.93,
+   "scaleX": 1.397,
+   "scaleY": 1.397,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0535",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1813.39,
+   "y": 39.55,
+   "scaleX": 1.234,
+   "scaleY": 1.234,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0536",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1859.21,
+   "y": 97.67,
+   "scaleX": 1.051,
+   "scaleY": 1.051,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0537",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1917.17,
+   "y": 39.19,
+   "scaleX": 0.973,
+   "scaleY": 0.973,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0538",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1975.53,
+   "y": 109.77,
+   "scaleX": 1.099,
+   "scaleY": 1.099,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0539",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2020.03,
+   "y": 48.54,
+   "scaleX": 1.171,
+   "scaleY": 1.171,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0540",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2071.22,
+   "y": 105.23,
+   "scaleX": 1.372,
+   "scaleY": 1.372,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0541",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2134.42,
+   "y": 49.82,
+   "scaleX": 1.146,
+   "scaleY": 1.146,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0542",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2187.47,
+   "y": 100.31,
+   "scaleX": 1.127,
+   "scaleY": 1.127,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0543",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2244.02,
+   "y": 48.71,
+   "scaleX": 1.209,
+   "scaleY": 1.209,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0544",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2289.03,
+   "y": 94.03,
+   "scaleX": 1.093,
+   "scaleY": 1.093,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0545",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2333.58,
+   "y": 48.12,
+   "scaleX": 1.047,
+   "scaleY": 1.047,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0546",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2393.34,
+   "y": 110.61,
+   "scaleX": 1.389,
+   "scaleY": 1.389,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0547",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2454.79,
+   "y": 46.31,
+   "scaleX": 1.103,
+   "scaleY": 1.103,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0548",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2493.62,
+   "y": 98.58,
+   "scaleX": 1.113,
+   "scaleY": 1.113,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0549",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2571.2,
+   "y": 37.68,
+   "scaleX": 1.174,
+   "scaleY": 1.174,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0550",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2605.21,
+   "y": 97.05,
+   "scaleX": 1.372,
+   "scaleY": 1.372,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0551",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2665.68,
+   "y": 54.33,
+   "scaleX": 1.266,
+   "scaleY": 1.266,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0552",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2713.53,
+   "y": 95.29,
+   "scaleX": 0.996,
+   "scaleY": 0.996,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0553",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2791.14,
+   "y": 46.99,
+   "scaleX": 1.009,
+   "scaleY": 1.009,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0554",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2838.58,
+   "y": 109.71,
+   "scaleX": 1.256,
+   "scaleY": 1.256,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0555",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2882.44,
+   "y": 46.61,
+   "scaleX": 1.094,
+   "scaleY": 1.094,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0556",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2927.54,
+   "y": 94.98,
+   "scaleX": 1.248,
+   "scaleY": 1.248,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0557",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2998.54,
+   "y": 52.79,
+   "scaleX": 1.154,
+   "scaleY": 1.154,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0558",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3057.66,
+   "y": 99.58,
+   "scaleX": 1.203,
+   "scaleY": 1.203,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0559",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3090.19,
+   "y": 55.77,
+   "scaleX": 0.916,
+   "scaleY": 0.916,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0560",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3151.89,
+   "y": 100.13,
+   "scaleX": 1.054,
+   "scaleY": 1.054,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0561",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3200.32,
+   "y": 46.76,
+   "scaleX": 1.058,
+   "scaleY": 1.058,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0562",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3252.81,
+   "y": 98.09,
+   "scaleX": 0.968,
+   "scaleY": 0.968,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0563",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": -19.31,
+   "y": 1915.08,
+   "scaleX": 1.243,
+   "scaleY": 1.243,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0564",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 32.32,
+   "y": 1981.57,
+   "scaleX": 1.107,
+   "scaleY": 1.107,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0565",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 84.65,
+   "y": 1915.28,
+   "scaleX": 1.061,
+   "scaleY": 1.061,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0566",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 135.5,
+   "y": 1979.09,
+   "scaleX": 1.101,
+   "scaleY": 1.101,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0567",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 181.78,
+   "y": 1927.82,
+   "scaleX": 0.853,
+   "scaleY": 0.853,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0568",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 224.7,
+   "y": 1985.97,
+   "scaleX": 1.118,
+   "scaleY": 1.118,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0569",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 306.32,
+   "y": 1927.0,
+   "scaleX": 0.91,
+   "scaleY": 0.91,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0570",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 354.34,
+   "y": 1982.27,
+   "scaleX": 0.865,
+   "scaleY": 0.865,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0571",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 395.99,
+   "y": 1918.26,
+   "scaleX": 1.255,
+   "scaleY": 1.255,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0572",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 458.12,
+   "y": 1982.67,
+   "scaleX": 1.14,
+   "scaleY": 1.14,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0573",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 506.07,
+   "y": 1922.4,
+   "scaleX": 0.869,
+   "scaleY": 0.869,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0574",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 569.17,
+   "y": 1978.33,
+   "scaleX": 1.359,
+   "scaleY": 1.359,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0575",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 628.75,
+   "y": 1916.76,
+   "scaleX": 0.909,
+   "scaleY": 0.909,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0576",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 679.95,
+   "y": 1978.99,
+   "scaleX": 1.035,
+   "scaleY": 1.035,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0577",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 734.23,
+   "y": 1920.69,
+   "scaleX": 1.196,
+   "scaleY": 1.196,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0578",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 779.18,
+   "y": 1981.37,
+   "scaleX": 0.949,
+   "scaleY": 0.949,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0579",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 846.42,
+   "y": 1916.42,
+   "scaleX": 0.974,
+   "scaleY": 0.974,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0580",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 888.18,
+   "y": 1985.63,
+   "scaleX": 1.005,
+   "scaleY": 1.005,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0581",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 944.57,
+   "y": 1914.41,
+   "scaleX": 1.123,
+   "scaleY": 1.123,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0582",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1002.81,
+   "y": 1984.14,
+   "scaleX": 0.942,
+   "scaleY": 0.942,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0583",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1054.62,
+   "y": 1917.81,
+   "scaleX": 1.193,
+   "scaleY": 1.193,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0584",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1102.18,
+   "y": 1987.4,
+   "scaleX": 1.084,
+   "scaleY": 1.084,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0585",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1148.07,
+   "y": 1925.49,
+   "scaleX": 1.146,
+   "scaleY": 1.146,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0586",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1214.69,
+   "y": 1989.78,
+   "scaleX": 1.06,
+   "scaleY": 1.06,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0587",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1260.38,
+   "y": 1915.35,
+   "scaleX": 1.081,
+   "scaleY": 1.081,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0588",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1305.31,
+   "y": 1990.38,
+   "scaleX": 1.091,
+   "scaleY": 1.091,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0589",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1366.93,
+   "y": 1915.02,
+   "scaleX": 0.92,
+   "scaleY": 0.92,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0590",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1427.62,
+   "y": 1976.2,
+   "scaleX": 1.026,
+   "scaleY": 1.026,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0591",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1482.82,
+   "y": 1913.77,
+   "scaleX": 1.187,
+   "scaleY": 1.187,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0592",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1535.22,
+   "y": 1978.54,
+   "scaleX": 1.144,
+   "scaleY": 1.144,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0593",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1593.19,
+   "y": 1918.56,
+   "scaleX": 1.243,
+   "scaleY": 1.243,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0594",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1647.5,
+   "y": 1976.12,
+   "scaleX": 0.988,
+   "scaleY": 0.988,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0595",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1711.71,
+   "y": 1924.31,
+   "scaleX": 1.181,
+   "scaleY": 1.181,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0596",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1749.68,
+   "y": 1975.75,
+   "scaleX": 0.963,
+   "scaleY": 0.963,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0597",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1807.22,
+   "y": 1917.71,
+   "scaleX": 1.091,
+   "scaleY": 1.091,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0598",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1844.85,
+   "y": 1988.46,
+   "scaleX": 1.096,
+   "scaleY": 1.096,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0599",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1917.73,
+   "y": 1913.4,
+   "scaleX": 1.013,
+   "scaleY": 1.013,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0600",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1976.88,
+   "y": 1976.36,
+   "scaleX": 1.091,
+   "scaleY": 1.091,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0601",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2011.47,
+   "y": 1912.48,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0602",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2084.03,
+   "y": 1984.46,
+   "scaleX": 1.088,
+   "scaleY": 1.088,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0603",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2137.12,
+   "y": 1913.4,
+   "scaleX": 1.058,
+   "scaleY": 1.058,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0604",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2178.8,
+   "y": 1975.57,
+   "scaleX": 1.064,
+   "scaleY": 1.064,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0605",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2228.19,
+   "y": 1914.11,
+   "scaleX": 1.075,
+   "scaleY": 1.075,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0606",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2295.16,
+   "y": 1984.7,
+   "scaleX": 1.213,
+   "scaleY": 1.213,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0607",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2338.51,
+   "y": 1923.93,
+   "scaleX": 1.189,
+   "scaleY": 1.189,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0608",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2403.73,
+   "y": 1984.31,
+   "scaleX": 0.97,
+   "scaleY": 0.97,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0609",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2462.0,
+   "y": 1917.35,
+   "scaleX": 1.169,
+   "scaleY": 1.169,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0610",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2503.67,
+   "y": 1985.24,
+   "scaleX": 1.037,
+   "scaleY": 1.037,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0611",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2552.22,
+   "y": 1921.88,
+   "scaleX": 0.98,
+   "scaleY": 0.98,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0612",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2614.33,
+   "y": 1979.34,
+   "scaleX": 1.095,
+   "scaleY": 1.095,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0613",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2668.18,
+   "y": 1923.96,
+   "scaleX": 1.198,
+   "scaleY": 1.198,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0614",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2727.63,
+   "y": 1976.24,
+   "scaleX": 0.958,
+   "scaleY": 0.958,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0615",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2779.71,
+   "y": 1930.81,
+   "scaleX": 1.138,
+   "scaleY": 1.138,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0616",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2826.7,
+   "y": 1977.14,
+   "scaleX": 0.993,
+   "scaleY": 0.993,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0617",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2896.77,
+   "y": 1913.15,
+   "scaleX": 1.226,
+   "scaleY": 1.226,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0618",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2944.16,
+   "y": 1981.63,
+   "scaleX": 0.869,
+   "scaleY": 0.869,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0619",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2985.26,
+   "y": 1922.2,
+   "scaleX": 1.171,
+   "scaleY": 1.171,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0620",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3032.65,
+   "y": 1980.8,
+   "scaleX": 1.165,
+   "scaleY": 1.165,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0621",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3105.28,
+   "y": 1930.05,
+   "scaleX": 1.196,
+   "scaleY": 1.196,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0622",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3148.08,
+   "y": 1984.3,
+   "scaleX": 0.993,
+   "scaleY": 0.993,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0623",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3220.39,
+   "y": 1925.58,
+   "scaleX": 1.089,
+   "scaleY": 1.089,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0624",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3252.15,
+   "y": 1985.41,
+   "scaleX": 0.996,
+   "scaleY": 0.996,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0625",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 42.7,
+   "y": 161.01,
+   "scaleX": 1.21,
+   "scaleY": 1.21,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0626",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 49.23,
+   "y": 276.42,
+   "scaleX": 1.092,
+   "scaleY": 1.092,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0627",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 26.91,
+   "y": 403.12,
+   "scaleX": 1.385,
+   "scaleY": 1.385,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0628",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 18.31,
+   "y": 502.84,
+   "scaleX": 0.979,
+   "scaleY": 0.979,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0629",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 49.78,
+   "y": 625.53,
+   "scaleX": 0.975,
+   "scaleY": 0.975,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0630",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 21.34,
+   "y": 726.85,
+   "scaleX": 1.302,
+   "scaleY": 1.302,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0631",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 21.66,
+   "y": 1185.72,
+   "scaleX": 1.219,
+   "scaleY": 1.219,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0632",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 25.94,
+   "y": 1282.7,
+   "scaleX": 1.181,
+   "scaleY": 1.181,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0633",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 30.23,
+   "y": 1401.04,
+   "scaleX": 1.164,
+   "scaleY": 1.164,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0634",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 49.31,
+   "y": 1506.77,
+   "scaleX": 0.994,
+   "scaleY": 0.994,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0635",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 40.81,
+   "y": 1628.47,
+   "scaleX": 1.372,
+   "scaleY": 1.372,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0636",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 27.95,
+   "y": 1729.9,
+   "scaleX": 1.388,
+   "scaleY": 1.388,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0637",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 26.85,
+   "y": 1841.01,
+   "scaleX": 1.269,
+   "scaleY": 1.269,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0638",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3177.38,
+   "y": 168.08,
+   "scaleX": 1.196,
+   "scaleY": 1.196,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0639",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3157.51,
+   "y": 272.97,
+   "scaleX": 1.132,
+   "scaleY": 1.132,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0640",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3164.53,
+   "y": 390.91,
+   "scaleX": 1.315,
+   "scaleY": 1.315,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0641",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3159.17,
+   "y": 500.44,
+   "scaleX": 1.17,
+   "scaleY": 1.17,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0642",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3164.83,
+   "y": 622.34,
+   "scaleX": 1.089,
+   "scaleY": 1.089,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0643",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3154.48,
+   "y": 726.61,
+   "scaleX": 1.106,
+   "scaleY": 1.106,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0644",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3172.86,
+   "y": 1183.34,
+   "scaleX": 0.999,
+   "scaleY": 0.999,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0645",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3164.13,
+   "y": 1297.38,
+   "scaleX": 0.851,
+   "scaleY": 0.851,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0646",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3174.23,
+   "y": 1411.11,
+   "scaleX": 1.153,
+   "scaleY": 1.153,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0647",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3160.6,
+   "y": 1508.98,
+   "scaleX": 1.071,
+   "scaleY": 1.071,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0648",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3173.88,
+   "y": 1626.42,
+   "scaleX": 0.909,
+   "scaleY": 0.909,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0649",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3154.27,
+   "y": 1738.01,
+   "scaleX": 1.204,
+   "scaleY": 1.204,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0650",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3170.7,
+   "y": 1858.13,
+   "scaleX": 1.214,
+   "scaleY": 1.214,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0651",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1252.62,
+   "y": 150,
+   "scaleX": 1.378,
+   "scaleY": 1.378,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0652",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1253.12,
+   "y": 246,
+   "scaleX": 1.132,
+   "scaleY": 1.132,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0653",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1265.86,
+   "y": 342,
+   "scaleX": 1.139,
+   "scaleY": 1.139,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0654",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2697.99,
+   "y": 150,
+   "scaleX": 1.151,
+   "scaleY": 1.151,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0655",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2701.82,
+   "y": 246,
+   "scaleX": 1.176,
+   "scaleY": 1.176,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0656",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2713.17,
+   "y": 342,
+   "scaleX": 1.123,
+   "scaleY": 1.123,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0657",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1979.41,
+   "y": 1850,
+   "scaleX": 1.291,
+   "scaleY": 1.291,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0658",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_rock.png"
+   ],
+   "name": "basalt_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1978.23,
+   "y": 1754,
+   "scaleX": 0.98,
+   "scaleY": 0.98,
+   "offsetX": 55.0,
+   "offsetY": 82
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0659",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1980.09,
+   "y": 1658,
+   "scaleX": 1.002,
+   "scaleY": 1.002,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0660",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 647.68,
+   "y": 1850,
+   "scaleX": 1.163,
+   "scaleY": 1.163,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0661",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 629.92,
+   "y": 1754,
+   "scaleX": 1.159,
+   "scaleY": 1.159,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0662",
+   "dir": "assets_custom/props",
+   "frames": [
+    "basalt_small.png"
+   ],
+   "name": "basalt_small",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 639.27,
+   "y": 1658,
+   "scaleX": 1.18,
+   "scaleY": 1.18,
+   "offsetX": 32.0,
+   "offsetY": 46
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0663",
+   "dir": "assest4/map_objects/3 Animated Objects/2 Campfire",
+   "frames": [
+    "1.png"
+   ],
+   "name": "1",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 262,
+   "y": 902,
+   "scaleX": 1.6,
+   "scaleY": 1.6,
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0664",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 740,
+   "y": 862,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0665",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1420,
+   "y": 1342,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0666",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2070,
+   "y": 862,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0667",
+   "dir": "assets_custom/props",
+   "frames": [
+    "brazier.png"
+   ],
+   "name": "brazier",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2470,
+   "y": 1342,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 22.0,
+   "offsetY": 77
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0668",
+   "dir": "assets_custom/props",
+   "frames": [
+    "fumarole.png"
+   ],
+   "name": "fumarole",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 520,
+   "y": 330,
+   "scaleX": 1.15,
+   "scaleY": 1.15,
+   "offsetX": 30.0,
+   "offsetY": 70
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0669",
+   "dir": "assets_custom/props",
+   "frames": [
+    "fumarole.png"
+   ],
+   "name": "fumarole",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 578.85,
+   "y": 374.66,
+   "scaleX": 0.827,
+   "scaleY": 0.827,
+   "offsetX": 30.0,
+   "offsetY": 70
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0670",
+   "dir": "assets_custom/props",
+   "frames": [
+    "fumarole.png"
+   ],
+   "name": "fumarole",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 455.5,
+   "y": 344.93,
+   "scaleX": 0.84,
+   "scaleY": 0.84,
+   "offsetX": 30.0,
+   "offsetY": 70
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0671",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 555.98,
+   "y": 414.45,
+   "scaleX": 0.958,
+   "scaleY": 0.958,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0672",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 425.67,
+   "y": 417.08,
+   "scaleX": 1.035,
+   "scaleY": 1.035,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0673",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt5.png"
+   ],
+   "name": "Dirt5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 516.86,
+   "y": 375.53,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0674",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt3.png"
+   ],
+   "name": "Dirt3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 463.28,
+   "y": 343.96,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0675",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt4.png"
+   ],
+   "name": "Dirt4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 577.82,
+   "y": 336.21,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0676",
+   "dir": "assets_custom/props",
+   "frames": [
+    "fumarole.png"
+   ],
+   "name": "fumarole",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1690,
+   "y": 1690,
+   "scaleX": 1.15,
+   "scaleY": 1.15,
+   "offsetX": 30.0,
+   "offsetY": 70
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0677",
+   "dir": "assets_custom/props",
+   "frames": [
+    "fumarole.png"
+   ],
+   "name": "fumarole",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1673.59,
+   "y": 1702.57,
+   "scaleX": 0.815,
+   "scaleY": 0.815,
+   "offsetX": 30.0,
+   "offsetY": 70
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0678",
+   "dir": "assets_custom/props",
+   "frames": [
+    "fumarole.png"
+   ],
+   "name": "fumarole",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1636.23,
+   "y": 1640.53,
+   "scaleX": 0.975,
+   "scaleY": 0.975,
+   "offsetX": 30.0,
+   "offsetY": 70
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0679",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1713.55,
+   "y": 1762.75,
+   "scaleX": 0.814,
+   "scaleY": 0.814,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0680",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1710.49,
+   "y": 1767.42,
+   "scaleX": 0.851,
+   "scaleY": 0.851,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0681",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt1.png"
+   ],
+   "name": "Dirt1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1570.22,
+   "y": 1737.73,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0682",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt4.png"
+   ],
+   "name": "Dirt4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1638.57,
+   "y": 1688.08,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0683",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt6.png"
+   ],
+   "name": "Dirt6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1577.66,
+   "y": 1730.14,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0684",
+   "dir": "assets_custom/props",
+   "frames": [
+    "fumarole.png"
+   ],
+   "name": "fumarole",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2960,
+   "y": 1560,
+   "scaleX": 1.15,
+   "scaleY": 1.15,
+   "offsetX": 30.0,
+   "offsetY": 70
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0685",
+   "dir": "assets_custom/props",
+   "frames": [
+    "fumarole.png"
+   ],
+   "name": "fumarole",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2875.5,
+   "y": 1605.13,
+   "scaleX": 0.808,
+   "scaleY": 0.808,
+   "offsetX": 30.0,
+   "offsetY": 70
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0686",
+   "dir": "assets_custom/props",
+   "frames": [
+    "fumarole.png"
+   ],
+   "name": "fumarole",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3044.48,
+   "y": 1530.44,
+   "scaleX": 0.87,
+   "scaleY": 0.87,
+   "offsetX": 30.0,
+   "offsetY": 70
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0687",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3068.08,
+   "y": 1637.23,
+   "scaleX": 0.908,
+   "scaleY": 0.908,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0688",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2923.76,
+   "y": 1638.22,
+   "scaleX": 0.976,
+   "scaleY": 0.976,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0689",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt3.png"
+   ],
+   "name": "Dirt3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3064.4,
+   "y": 1529.54,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0690",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt5.png"
+   ],
+   "name": "Dirt5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2998.08,
+   "y": 1616.5,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0691",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt4.png"
+   ],
+   "name": "Dirt4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2929.89,
+   "y": 1614.64,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0692",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 559.02,
+   "y": 776.14,
+   "scaleX": 1.202,
+   "scaleY": 1.202,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0693",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 804.21,
+   "y": 793.94,
+   "scaleX": 0.994,
+   "scaleY": 0.994,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0694",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 989.08,
+   "y": 711.55,
+   "scaleX": 1.165,
+   "scaleY": 1.165,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0695",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1359.74,
+   "y": 1200.1,
+   "scaleX": 0.893,
+   "scaleY": 0.893,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0696",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1597.4,
+   "y": 1225.18,
+   "scaleX": 1.013,
+   "scaleY": 1.013,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0697",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1792.49,
+   "y": 1138.1,
+   "scaleX": 0.977,
+   "scaleY": 0.977,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0698",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2142.77,
+   "y": 746.53,
+   "scaleX": 0.93,
+   "scaleY": 0.93,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0699",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2386.89,
+   "y": 762.71,
+   "scaleX": 1.06,
+   "scaleY": 1.06,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0700",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2599.09,
+   "y": 670.57,
+   "scaleX": 1.133,
+   "scaleY": 1.133,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0701",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2543.25,
+   "y": 1270.24,
+   "scaleX": 1.152,
+   "scaleY": 1.152,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0702",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2808.64,
+   "y": 1281.22,
+   "scaleX": 1.12,
+   "scaleY": 1.12,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0703",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2996.64,
+   "y": 1186.83,
+   "scaleX": 0.906,
+   "scaleY": 0.906,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0704",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 415.24,
+   "y": 1517.5,
+   "scaleX": 1.056,
+   "scaleY": 1.056,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0705",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 550.7,
+   "y": 1502.84,
+   "scaleX": 0.924,
+   "scaleY": 0.924,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0706",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 553.02,
+   "y": 1495.84,
+   "scaleX": 1.187,
+   "scaleY": 1.187,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0707",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2907.48,
+   "y": 396.23,
+   "scaleX": 1.203,
+   "scaleY": 1.203,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0708",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3008.32,
+   "y": 377.08,
+   "scaleX": 0.937,
+   "scaleY": 0.937,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0709",
+   "dir": "assets_custom/props",
+   "frames": [
+    "lava_rock.png"
+   ],
+   "name": "lava_rock",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2995.44,
+   "y": 380.71,
+   "scaleX": 0.856,
+   "scaleY": 0.856,
+   "offsetX": 36.0,
+   "offsetY": 55
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0710",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 581.47,
+   "y": 673.9,
+   "scaleX": 1.343,
+   "scaleY": 1.343,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0711",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 827.93,
+   "y": 706.31,
+   "scaleX": 1.598,
+   "scaleY": 1.598,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0712",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 580.85,
+   "y": 785.56,
+   "scaleX": 1.64,
+   "scaleY": 1.64,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0713",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 717.65,
+   "y": 655.3,
+   "scaleX": 1.526,
+   "scaleY": 1.526,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0714",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 598.8,
+   "y": 655.57,
+   "scaleX": 1.645,
+   "scaleY": 1.645,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0715",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 767.32,
+   "y": 778.21,
+   "scaleX": 1.394,
+   "scaleY": 1.394,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0716",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 599.59,
+   "y": 682.86,
+   "scaleX": 1.45,
+   "scaleY": 1.45,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0717",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 622.57,
+   "y": 769.11,
+   "scaleX": 1.236,
+   "scaleY": 1.236,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0718",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 779.64,
+   "y": 743.3,
+   "scaleX": 1.241,
+   "scaleY": 1.241,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0719",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 637.55,
+   "y": 701.46,
+   "scaleX": 1.355,
+   "scaleY": 1.355,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0720",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 639.11,
+   "y": 700.61,
+   "scaleX": 1.519,
+   "scaleY": 1.519,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0721",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 669.74,
+   "y": 716.57,
+   "scaleX": 1.653,
+   "scaleY": 1.653,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0722",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt6.png"
+   ],
+   "name": "Dirt6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 603.22,
+   "y": 734.37,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0723",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt2.png"
+   ],
+   "name": "Dirt2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 738.43,
+   "y": 813.7,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0724",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt4.png"
+   ],
+   "name": "Dirt4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 556.94,
+   "y": 778.55,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0725",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1190.82,
+   "y": 1219.11,
+   "scaleX": 1.407,
+   "scaleY": 1.407,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0726",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1134.04,
+   "y": 1226.8,
+   "scaleX": 1.498,
+   "scaleY": 1.498,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0727",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1189.52,
+   "y": 1203.64,
+   "scaleX": 1.261,
+   "scaleY": 1.261,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0728",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1007.97,
+   "y": 1292.82,
+   "scaleX": 1.322,
+   "scaleY": 1.322,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0729",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1191.88,
+   "y": 1294.54,
+   "scaleX": 1.271,
+   "scaleY": 1.271,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0730",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1232.7,
+   "y": 1302.67,
+   "scaleX": 1.338,
+   "scaleY": 1.338,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0731",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1042.35,
+   "y": 1319.24,
+   "scaleX": 1.355,
+   "scaleY": 1.355,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0732",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1072.15,
+   "y": 1224.69,
+   "scaleX": 1.583,
+   "scaleY": 1.583,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0733",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 982.93,
+   "y": 1305.12,
+   "scaleX": 1.55,
+   "scaleY": 1.55,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0734",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1147.61,
+   "y": 1247.21,
+   "scaleX": 1.528,
+   "scaleY": 1.528,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0735",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1027.23,
+   "y": 1226.6,
+   "scaleX": 1.394,
+   "scaleY": 1.394,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0736",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1141.83,
+   "y": 1265.47,
+   "scaleX": 1.448,
+   "scaleY": 1.448,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0737",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt3.png"
+   ],
+   "name": "Dirt3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1112.9,
+   "y": 1174.05,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0738",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt1.png"
+   ],
+   "name": "Dirt1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1212.93,
+   "y": 1296.69,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0739",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt4.png"
+   ],
+   "name": "Dirt4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1024.93,
+   "y": 1303.94,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0740",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt6.png"
+   ],
+   "name": "Dirt6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1017.8,
+   "y": 1318.01,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0741",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt3.png"
+   ],
+   "name": "Dirt3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 991.56,
+   "y": 1312.73,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0742",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1920.29,
+   "y": 1324.42,
+   "scaleX": 1.612,
+   "scaleY": 1.612,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0743",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1699.95,
+   "y": 1164.47,
+   "scaleX": 1.731,
+   "scaleY": 1.731,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0744",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1733.67,
+   "y": 1172.43,
+   "scaleX": 1.225,
+   "scaleY": 1.225,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0745",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1761.14,
+   "y": 1271.7,
+   "scaleX": 1.268,
+   "scaleY": 1.268,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0746",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1855.7,
+   "y": 1284.88,
+   "scaleX": 1.683,
+   "scaleY": 1.683,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0747",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1819.44,
+   "y": 1191.29,
+   "scaleX": 1.259,
+   "scaleY": 1.259,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0748",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1743.2,
+   "y": 1182.34,
+   "scaleX": 1.27,
+   "scaleY": 1.27,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0749",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1760.91,
+   "y": 1311.34,
+   "scaleX": 1.231,
+   "scaleY": 1.231,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0750",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1875.65,
+   "y": 1243.17,
+   "scaleX": 1.602,
+   "scaleY": 1.602,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0751",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt5.png"
+   ],
+   "name": "Dirt5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1951.11,
+   "y": 1262.13,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0752",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt2.png"
+   ],
+   "name": "Dirt2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1840.87,
+   "y": 1175.77,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0753",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt5.png"
+   ],
+   "name": "Dirt5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1704.34,
+   "y": 1324.97,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0754",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt1.png"
+   ],
+   "name": "Dirt1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1927.59,
+   "y": 1289.4,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0755",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt6.png"
+   ],
+   "name": "Dirt6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1735.53,
+   "y": 1294.01,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0756",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2125.56,
+   "y": 761.45,
+   "scaleX": 1.513,
+   "scaleY": 1.513,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0757",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2152.49,
+   "y": 731.61,
+   "scaleX": 1.206,
+   "scaleY": 1.206,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0758",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2107.53,
+   "y": 809.34,
+   "scaleX": 1.779,
+   "scaleY": 1.779,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0759",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2176.07,
+   "y": 846.11,
+   "scaleX": 1.408,
+   "scaleY": 1.408,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0760",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2121.56,
+   "y": 883.54,
+   "scaleX": 1.523,
+   "scaleY": 1.523,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0761",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2195.41,
+   "y": 873.29,
+   "scaleX": 1.442,
+   "scaleY": 1.442,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0762",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2156.76,
+   "y": 805.73,
+   "scaleX": 1.537,
+   "scaleY": 1.537,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0763",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2029.82,
+   "y": 754.67,
+   "scaleX": 1.298,
+   "scaleY": 1.298,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0764",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2212.7,
+   "y": 808.88,
+   "scaleX": 1.296,
+   "scaleY": 1.296,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0765",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt2.png"
+   ],
+   "name": "Dirt2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2129.14,
+   "y": 797.06,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0766",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt3.png"
+   ],
+   "name": "Dirt3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2280.63,
+   "y": 748.87,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0767",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt4.png"
+   ],
+   "name": "Dirt4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2268.34,
+   "y": 785.52,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0768",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1399.0,
+   "y": 593.38,
+   "scaleX": 1.226,
+   "scaleY": 1.226,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0769",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1391.19,
+   "y": 585.9,
+   "scaleX": 1.782,
+   "scaleY": 1.782,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0770",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1406.0,
+   "y": 457.56,
+   "scaleX": 1.412,
+   "scaleY": 1.412,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0771",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1609.11,
+   "y": 582.16,
+   "scaleX": 1.79,
+   "scaleY": 1.79,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0772",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1577.29,
+   "y": 467.02,
+   "scaleX": 1.244,
+   "scaleY": 1.244,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0773",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1558.98,
+   "y": 618.94,
+   "scaleX": 1.286,
+   "scaleY": 1.286,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0774",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1533.32,
+   "y": 614.24,
+   "scaleX": 1.69,
+   "scaleY": 1.69,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0775",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1492.41,
+   "y": 594.76,
+   "scaleX": 1.549,
+   "scaleY": 1.549,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0776",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1357.61,
+   "y": 586.03,
+   "scaleX": 1.544,
+   "scaleY": 1.544,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0777",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1568.13,
+   "y": 508.85,
+   "scaleX": 1.645,
+   "scaleY": 1.645,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0778",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1582.0,
+   "y": 484.44,
+   "scaleX": 1.617,
+   "scaleY": 1.617,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0779",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1347.02,
+   "y": 467.91,
+   "scaleX": 1.388,
+   "scaleY": 1.388,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0780",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt6.png"
+   ],
+   "name": "Dirt6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1403.96,
+   "y": 560.8,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0781",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt6.png"
+   ],
+   "name": "Dirt6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1568.86,
+   "y": 510.65,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0782",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt5.png"
+   ],
+   "name": "Dirt5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1513.99,
+   "y": 525.08,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0783",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt6.png"
+   ],
+   "name": "Dirt6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1437.89,
+   "y": 587.14,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0784",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2520.91,
+   "y": 1567.59,
+   "scaleX": 1.37,
+   "scaleY": 1.37,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0785",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2528.9,
+   "y": 1619.79,
+   "scaleX": 1.621,
+   "scaleY": 1.621,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0786",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2543.73,
+   "y": 1606.96,
+   "scaleX": 1.628,
+   "scaleY": 1.628,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0787",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2449.85,
+   "y": 1585.75,
+   "scaleX": 1.288,
+   "scaleY": 1.288,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0788",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2669.35,
+   "y": 1642.08,
+   "scaleX": 1.473,
+   "scaleY": 1.473,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0789",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2394.98,
+   "y": 1627.43,
+   "scaleX": 1.477,
+   "scaleY": 1.477,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0790",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2435.98,
+   "y": 1530.22,
+   "scaleX": 1.573,
+   "scaleY": 1.573,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0791",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2594.07,
+   "y": 1587.16,
+   "scaleX": 1.254,
+   "scaleY": 1.254,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0792",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2652.06,
+   "y": 1577.19,
+   "scaleX": 1.536,
+   "scaleY": 1.536,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0793",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2571.13,
+   "y": 1644.16,
+   "scaleX": 1.357,
+   "scaleY": 1.357,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0794",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2577.04,
+   "y": 1505.73,
+   "scaleX": 1.6,
+   "scaleY": 1.6,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0795",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt6.png"
+   ],
+   "name": "Dirt6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2478.46,
+   "y": 1593.57,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0796",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt3.png"
+   ],
+   "name": "Dirt3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2571.76,
+   "y": 1580.62,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0797",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt5.png"
+   ],
+   "name": "Dirt5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2401.88,
+   "y": 1487.49,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0798",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 473.24,
+   "y": 1171.03,
+   "scaleX": 1.271,
+   "scaleY": 1.271,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0799",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 494.87,
+   "y": 1281.33,
+   "scaleX": 1.712,
+   "scaleY": 1.712,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0800",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 410.06,
+   "y": 1302.06,
+   "scaleX": 1.768,
+   "scaleY": 1.768,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0801",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 287.72,
+   "y": 1225.12,
+   "scaleX": 1.552,
+   "scaleY": 1.552,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0802",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 510.46,
+   "y": 1246.35,
+   "scaleX": 1.253,
+   "scaleY": 1.253,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0803",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 487.37,
+   "y": 1206.7,
+   "scaleX": 1.699,
+   "scaleY": 1.699,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0804",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 420.34,
+   "y": 1193.6,
+   "scaleX": 1.54,
+   "scaleY": 1.54,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0805",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 373.56,
+   "y": 1155.21,
+   "scaleX": 1.434,
+   "scaleY": 1.434,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0806",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 288.79,
+   "y": 1158.67,
+   "scaleX": 1.269,
+   "scaleY": 1.269,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0807",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 365.98,
+   "y": 1259.94,
+   "scaleX": 1.659,
+   "scaleY": 1.659,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0808",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 299.04,
+   "y": 1217.67,
+   "scaleX": 1.596,
+   "scaleY": 1.596,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0809",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt4.png"
+   ],
+   "name": "Dirt4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 439.06,
+   "y": 1295.04,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0810",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt2.png"
+   ],
+   "name": "Dirt2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 285.61,
+   "y": 1225.55,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0811",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt4.png"
+   ],
+   "name": "Dirt4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 318.48,
+   "y": 1265.09,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0812",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt2.png"
+   ],
+   "name": "Dirt2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 294.85,
+   "y": 1219.84,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0813",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt1.png"
+   ],
+   "name": "Dirt1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 273.66,
+   "y": 1268.88,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0814",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2939.83,
+   "y": 717.04,
+   "scaleX": 1.589,
+   "scaleY": 1.589,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0815",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2965.48,
+   "y": 630.45,
+   "scaleX": 1.422,
+   "scaleY": 1.422,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0816",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2855.02,
+   "y": 727.64,
+   "scaleX": 1.392,
+   "scaleY": 1.392,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0817",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2999.43,
+   "y": 685.69,
+   "scaleX": 1.243,
+   "scaleY": 1.243,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0818",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2925.79,
+   "y": 653.68,
+   "scaleX": 1.473,
+   "scaleY": 1.473,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0819",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2754.77,
+   "y": 630.79,
+   "scaleX": 1.457,
+   "scaleY": 1.457,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0820",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3028.79,
+   "y": 673.01,
+   "scaleX": 1.257,
+   "scaleY": 1.257,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0821",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3041.88,
+   "y": 708.93,
+   "scaleX": 1.559,
+   "scaleY": 1.559,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0822",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2837.0,
+   "y": 688.57,
+   "scaleX": 1.53,
+   "scaleY": 1.53,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0823",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2818.69,
+   "y": 756.25,
+   "scaleX": 1.243,
+   "scaleY": 1.243,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0824",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3047.44,
+   "y": 710.5,
+   "scaleX": 1.44,
+   "scaleY": 1.44,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0825",
+   "dir": "assets_custom/props",
+   "frames": [
+    "ash_shrub.png"
+   ],
+   "name": "ash_shrub",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2756.25,
+   "y": 615.5,
+   "scaleX": 1.487,
+   "scaleY": 1.487,
+   "offsetX": 26.0,
+   "offsetY": 42
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0826",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt4.png"
+   ],
+   "name": "Dirt4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2772.81,
+   "y": 752.46,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0827",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt1.png"
+   ],
+   "name": "Dirt1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2994.49,
+   "y": 783.93,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0828",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt5.png"
+   ],
+   "name": "Dirt5",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2894.47,
+   "y": 633.18,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0829",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt3.png"
+   ],
+   "name": "Dirt3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3022.53,
+   "y": 686.33,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0830",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Dirt6.png"
+   ],
+   "name": "Dirt6",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2925.29,
+   "y": 762.81,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 5.0,
+   "offsetY": 5
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0831",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 193.93,
+   "y": 1046.34,
+   "scaleX": 0.419,
+   "scaleY": 0.419,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0832",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 341.14,
+   "y": 927.02,
+   "scaleX": 0.442,
+   "scaleY": 0.442,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0833",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 488.22,
+   "y": 1030.56,
+   "scaleX": 0.384,
+   "scaleY": 0.384,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0834",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 662.16,
+   "y": 940.63,
+   "scaleX": 0.494,
+   "scaleY": 0.494,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0835",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 804.92,
+   "y": 1050.82,
+   "scaleX": 0.411,
+   "scaleY": 0.411,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0836",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 957.65,
+   "y": 976.04,
+   "scaleX": 0.419,
+   "scaleY": 0.419,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0837",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1115.71,
+   "y": 1093.68,
+   "scaleX": 0.492,
+   "scaleY": 0.492,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0838",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1285.91,
+   "y": 1009.81,
+   "scaleX": 0.52,
+   "scaleY": 0.52,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0839",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1429.47,
+   "y": 1129.61,
+   "scaleX": 0.506,
+   "scaleY": 0.506,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0840",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1591.88,
+   "y": 1022.45,
+   "scaleX": 0.434,
+   "scaleY": 0.434,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0841",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1747.31,
+   "y": 1114.33,
+   "scaleX": 0.449,
+   "scaleY": 0.449,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0842",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1917.71,
+   "y": 983.77,
+   "scaleX": 0.511,
+   "scaleY": 0.511,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0843",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2065.38,
+   "y": 1066.54,
+   "scaleX": 0.414,
+   "scaleY": 0.414,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0844",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2225.84,
+   "y": 944.05,
+   "scaleX": 0.513,
+   "scaleY": 0.513,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0845",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2391.71,
+   "y": 1050.3,
+   "scaleX": 0.418,
+   "scaleY": 0.418,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0846",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2533.07,
+   "y": 957.54,
+   "scaleX": 0.445,
+   "scaleY": 0.445,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0847",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2671.88,
+   "y": 1059.57,
+   "scaleX": 0.516,
+   "scaleY": 0.516,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0848",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock3.png"
+   ],
+   "name": "Rock3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2824.0,
+   "y": 956.99,
+   "scaleX": 0.495,
+   "scaleY": 0.495,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0849",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2923.57,
+   "y": 1051.83,
+   "scaleX": 0.393,
+   "scaleY": 0.393,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0850",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3043.39,
+   "y": 944.49,
+   "scaleX": 0.485,
+   "scaleY": 0.485,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0851",
+   "dir": "assets_custom/props",
+   "frames": [
+    "obelisk.png"
+   ],
+   "name": "obelisk",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 540,
+   "y": 1408,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 26.0,
+   "offsetY": 146
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0852",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 452,
+   "y": 1438,
+   "scaleX": 0.45,
+   "scaleY": 0.45,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0853",
+   "dir": "assets_custom/props",
+   "frames": [
+    "pillar.png"
+   ],
+   "name": "pillar",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 628,
+   "y": 1452,
+   "scaleX": 0.4,
+   "scaleY": 0.4,
+   "offsetX": 30.0,
+   "offsetY": 195
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0854",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 488,
+   "y": 1486,
+   "scaleX": 1.25,
+   "scaleY": 1.25,
+   "offsetX": 42.0,
+   "offsetY": 59
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0855",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 596,
+   "y": 1396,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0856",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock2.png"
+   ],
+   "name": "Rock2",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 542.97,
+   "y": 1474.11,
+   "scaleX": 0.625,
+   "scaleY": 0.625,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0857",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock1.png"
+   ],
+   "name": "Rock1",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 506.69,
+   "y": 1466.0,
+   "scaleX": 0.527,
+   "scaleY": 0.527,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0858",
+   "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
+   "frames": [
+    "Rock4.png"
+   ],
+   "name": "Rock4",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 554.5,
+   "y": 1440.64,
+   "scaleX": 0.647,
+   "scaleY": 0.647,
+   "offsetX": 32.0,
+   "offsetY": 63
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0859",
+   "dir": "assets_custom/props",
+   "frames": [
+    "flag_red.png"
+   ],
+   "name": "flag_red",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 432,
+   "y": 928,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 13.0,
+   "offsetY": 110
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0860",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 218,
+   "y": 1052,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0861",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 386,
+   "y": 1066,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 42.0,
+   "offsetY": 59
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0862",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 616.83,
+   "y": 480,
+   "scaleX": 1.7,
+   "scaleY": 1.7,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0863",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1409.87,
+   "y": 640,
+   "scaleX": 1.6,
+   "scaleY": 1.6,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0864",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1006.24,
+   "y": 1520,
+   "scaleX": 1.8,
+   "scaleY": 1.8,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0865",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1935.81,
+   "y": 1500,
+   "scaleX": 1.6,
+   "scaleY": 1.6,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0866",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2887.6,
+   "y": 900,
+   "scaleX": 1.7,
+   "scaleY": 1.7,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19_0867",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2299.08,
+   "y": 1680,
+   "scaleX": 1.7,
+   "scaleY": 1.7,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19d2_0001",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "smoke_wisp.png"
+   ],
+   "name": "smoke_wisp",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 372.7,
+   "y": 677.9,
+   "scaleX": 1.3,
+   "scaleY": 1.3,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19d2_0002",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "smoke_wisp.png"
+   ],
+   "name": "smoke_wisp",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 782.5,
+   "y": 1318.4,
+   "scaleX": 1.3,
+   "scaleY": 1.3,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19d2_0003",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "smoke_wisp.png"
+   ],
+   "name": "smoke_wisp",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1299.5,
+   "y": 622.0,
+   "scaleX": 1.3,
+   "scaleY": 1.3,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19d2_0004",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "smoke_wisp.png"
+   ],
+   "name": "smoke_wisp",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1813.0,
+   "y": 1428.3,
+   "scaleX": 1.3,
+   "scaleY": 1.3,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19d2_0005",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "smoke_wisp.png"
+   ],
+   "name": "smoke_wisp",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2277.3,
+   "y": 740.3,
+   "scaleX": 1.3,
+   "scaleY": 1.3,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19d2_0006",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "smoke_wisp.png"
+   ],
+   "name": "smoke_wisp",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2685.2,
+   "y": 1272.7,
+   "scaleX": 1.3,
+   "scaleY": 1.3,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19d2_0007",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crumbled_wall.png"
+   ],
+   "name": "crumbled_wall",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 600,
+   "y": 650,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 70.0,
+   "offsetY": 71.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19d2_0008",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crumbled_wall.png"
+   ],
+   "name": "crumbled_wall",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1100,
+   "y": 1350,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 70.0,
+   "offsetY": 71.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19d2_0009",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crumbled_wall.png"
+   ],
+   "name": "crumbled_wall",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1600,
+   "y": 600,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 70.0,
+   "offsetY": 71.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19d2_0010",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crumbled_wall.png"
+   ],
+   "name": "crumbled_wall",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2100,
+   "y": 1380,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 70.0,
+   "offsetY": 71.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19d2_0011",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crumbled_wall.png"
+   ],
+   "name": "crumbled_wall",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2600,
+   "y": 680,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 70.0,
+   "offsetY": 71.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19d2_0012",
+   "dir": "assets_custom/props",
+   "frames": [
+    "broken_statue.png"
+   ],
+   "name": "broken_statue",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 431.3,
+   "y": 1351.6,
+   "scaleX": 1.296,
+   "scaleY": 1.296,
+   "offsetX": 30.0,
+   "offsetY": 129.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19d2_0013",
+   "dir": "assets_custom/props",
+   "frames": [
+    "broken_statue.png"
+   ],
+   "name": "broken_statue",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 945.2,
+   "y": 668.7,
+   "scaleX": 1.354,
+   "scaleY": 1.354,
+   "offsetX": 30.0,
+   "offsetY": 129.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19d2_0014",
+   "dir": "assets_custom/props",
+   "frames": [
+    "broken_statue.png"
+   ],
+   "name": "broken_statue",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1468.5,
+   "y": 1355.2,
+   "scaleX": 1.204,
+   "scaleY": 1.204,
+   "offsetX": 30.0,
+   "offsetY": 129.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19d2_0015",
+   "dir": "assets_custom/props",
+   "frames": [
+    "broken_statue.png"
+   ],
+   "name": "broken_statue",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2003.5,
+   "y": 715.0,
+   "scaleX": 1.225,
+   "scaleY": 1.225,
+   "offsetX": 30.0,
+   "offsetY": 129.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19d2_0016",
+   "dir": "assets_custom/props",
+   "frames": [
+    "broken_statue.png"
+   ],
+   "name": "broken_statue",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2530.2,
+   "y": 1302.5,
+   "scaleX": 1.311,
+   "scaleY": 1.311,
+   "offsetX": 30.0,
+   "offsetY": 129.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r19d2_0017",
+   "dir": "assets_custom/props",
+   "frames": [
+    "well_cap.png"
+   ],
+   "name": "well_cap",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1600,
+   "y": 1000,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 40.0,
+   "offsetY": 99.0
   }
  ],
  "noWalkZones": [
@@ -7060,6 +13762,34 @@
    "y": 1120,
    "w": 160,
    "h": 960
+  },
+  {
+   "id": "z19_dress_f0",
+   "x": 1205,
+   "y": 110,
+   "w": 100,
+   "h": 280
+  },
+  {
+   "id": "z19_dress_f1",
+   "x": 2655,
+   "y": 110,
+   "w": 100,
+   "h": 250
+  },
+  {
+   "id": "z19_dress_f2",
+   "x": 1935,
+   "y": 1520,
+   "w": 100,
+   "h": 330
+  },
+  {
+   "id": "z19_dress_f3",
+   "x": 590,
+   "y": 1580,
+   "w": 100,
+   "h": 270
   }
  ],
  "enemies": [

@@ -9,6 +9,223 @@
  "sprites": [
   {
    "type": "sprite",
+   "spriteId": "s_r31_d0001",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1500,
+   "y": 1150,
+   "scaleX": 0.8,
+   "scaleY": 0.8,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0010",
+   "dir": "assest4/map_objects/3 Animated Objects/2 Campfire",
+   "frames": [
+    "1.png"
+   ],
+   "name": "1",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 252,
+   "y": 1004,
+   "scaleX": 1.6,
+   "scaleY": 1.6,
+   "offsetX": 16.0,
+   "offsetY": 60,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0014",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2900,
+   "y": 760,
+   "scaleX": 1.3,
+   "scaleY": 1.3,
+   "offsetX": 46.0,
+   "offsetY": 123
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0015",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2990,
+   "y": 1120,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 46.0,
+   "offsetY": 123
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0016",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3050,
+   "y": 840,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 46.0,
+   "offsetY": 123
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0017",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2660,
+   "y": 1230,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 46.0,
+   "offsetY": 123
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0018",
+   "dir": "assets_custom/props",
+   "frames": [
+    "tree_teal.png"
+   ],
+   "name": "tree_teal",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2230,
+   "y": 1300,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 46.0,
+   "offsetY": 123
+  },
+  {
+   "type": "stroke",
+   "gen": "r31dress",
+   "stroke": "#241d18",
+   "strokeWidth": 74,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    120,
+    1034,
+    101,
+    1028.7,
+    301,
+    1081.8,
+    501,
+    1123.1,
+    701,
+    1146.2,
+    901,
+    1148.1,
+    1101,
+    1128.3,
+    1301,
+    1089.8,
+    1501,
+    1038.2,
+    1701,
+    980.9,
+    1901,
+    926.5,
+    2101,
+    882.8,
+    2301,
+    856.2,
+    2501,
+    850.7,
+    2701,
+    866.9,
+    2901,
+    902.7,
+    3101,
+    952.6,
+    3090,
+    950
+   ]
+  },
+  {
+   "type": "stroke",
+   "gen": "r31dress",
+   "stroke": "#2d241d",
+   "strokeWidth": 38,
+   "lineCap": "round",
+   "lineJoin": "round",
+   "composite": "source-over",
+   "points": [
+    120,
+    1034,
+    101,
+    1028.7,
+    301,
+    1081.8,
+    501,
+    1123.1,
+    701,
+    1146.2,
+    901,
+    1148.1,
+    1101,
+    1128.3,
+    1301,
+    1089.8,
+    1501,
+    1038.2,
+    1701,
+    980.9,
+    1901,
+    926.5,
+    2101,
+    882.8,
+    2301,
+    856.2,
+    2501,
+    850.7,
+    2701,
+    866.9,
+    2901,
+    902.7,
+    3101,
+    952.6,
+    3090,
+    950
+   ]
+  },
+  {
+   "type": "sprite",
    "spriteId": "s_r31_0001",
    "dir": "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Terrain/Decorations/Rocks",
    "frames": [
@@ -6683,6 +6900,870 @@
    "scaleY": 1.1,
    "offsetX": 64.0,
    "offsetY": 119
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0002",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1367.77,
+   "y": 1146,
+   "scaleX": 1.493,
+   "scaleY": 1.493,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0003",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1639.09,
+   "y": 1158,
+   "scaleX": 1.306,
+   "scaleY": 1.306,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0004",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1429.03,
+   "y": 950,
+   "scaleX": 1.449,
+   "scaleY": 1.449,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0005",
+   "dir": "assets_custom/props",
+   "frames": [
+    "skull.png"
+   ],
+   "name": "skull",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1579.78,
+   "y": 942,
+   "scaleX": 1.332,
+   "scaleY": 1.332,
+   "offsetX": 20.0,
+   "offsetY": 37
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0006",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1322,
+   "y": 1010,
+   "scaleX": 1.25,
+   "scaleY": 1.25,
+   "offsetX": 42.0,
+   "offsetY": 59
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0007",
+   "dir": "assets_custom/props",
+   "frames": [
+    "bone_pile.png"
+   ],
+   "name": "bone_pile",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1684,
+   "y": 1042,
+   "scaleX": 1.2,
+   "scaleY": 1.2,
+   "offsetX": 42.0,
+   "offsetY": 59
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0008",
+   "dir": "assest4/next2/2 Objects/4 Box",
+   "frames": [
+    "3.png"
+   ],
+   "name": "crate",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1278,
+   "y": 926,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 10.0,
+   "offsetY": 21
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0009",
+   "dir": "assest4/next2/2 Objects/4 Box",
+   "frames": [
+    "3.png"
+   ],
+   "name": "crate",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1722,
+   "y": 940,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 10.0,
+   "offsetY": 21
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0011",
+   "dir": "assest4/map_objects/2 Objects/7 Decor",
+   "frames": [
+    "Log3.png"
+   ],
+   "name": "Log3",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 208,
+   "y": 1092,
+   "scaleX": 1.8,
+   "scaleY": 1.8,
+   "offsetX": 16.5,
+   "offsetY": 31
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0012",
+   "dir": "assest4/next2/2 Objects/4 Box",
+   "frames": [
+    "3.png"
+   ],
+   "name": "crate",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 450,
+   "y": 1042,
+   "scaleX": 2.1,
+   "scaleY": 2.1,
+   "offsetX": 10.0,
+   "offsetY": 21
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0013",
+   "dir": "assest4/map_objects/2 Objects/3 Pointer",
+   "frames": [
+    "1.png"
+   ],
+   "name": "sign",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 472,
+   "y": 1130,
+   "scaleX": 2.4,
+   "scaleY": 2.4,
+   "offsetX": 10.0,
+   "offsetY": 35
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0019",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2950,
+   "y": 990,
+   "scaleX": 0.848,
+   "scaleY": 0.848,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0020",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 3000,
+   "y": 1026,
+   "scaleX": 0.692,
+   "scaleY": 0.692,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0021",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2780,
+   "y": 700,
+   "scaleX": 0.953,
+   "scaleY": 0.953,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0022",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2830,
+   "y": 736,
+   "scaleX": 0.553,
+   "scaleY": 0.553,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0023",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 700,
+   "y": 820,
+   "scaleX": 0.801,
+   "scaleY": 0.801,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0024",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 749.66,
+   "y": 846.93,
+   "scaleX": 0.583,
+   "scaleY": 0.583,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0025",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1140,
+   "y": 1290,
+   "scaleX": 0.925,
+   "scaleY": 0.925,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0026",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1198.97,
+   "y": 1314.59,
+   "scaleX": 0.619,
+   "scaleY": 0.619,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0027",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1900,
+   "y": 1170,
+   "scaleX": 0.897,
+   "scaleY": 0.897,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0028",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1937.85,
+   "y": 1201.13,
+   "scaleX": 0.512,
+   "scaleY": 0.512,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0029",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2150,
+   "y": 660,
+   "scaleX": 0.714,
+   "scaleY": 0.714,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0030",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crystal_cyan.png"
+   ],
+   "name": "crystal_cyan",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2188.94,
+   "y": 686.86,
+   "scaleX": 0.531,
+   "scaleY": 0.531,
+   "offsetX": 32.0,
+   "offsetY": 115
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0031",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 880,
+   "y": 880,
+   "scaleX": 1.311,
+   "scaleY": 1.311,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0032",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2050,
+   "y": 740,
+   "scaleX": 1.421,
+   "scaleY": 1.421,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0033",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2550,
+   "y": 1200,
+   "scaleX": 1.413,
+   "scaleY": 1.413,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31_d0034",
+   "dir": "assets_custom/props",
+   "frames": [
+    "dead_tree.png"
+   ],
+   "name": "dead_tree",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1750,
+   "y": 1250,
+   "scaleX": 1.208,
+   "scaleY": 1.208,
+   "offsetX": 48.0,
+   "offsetY": 131
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0001",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 350,
+   "y": 950,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0002",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 350,
+   "y": 1100,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0003",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 800,
+   "y": 870,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0004",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 800,
+   "y": 1130,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0005",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1300,
+   "y": 920,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0006",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1300,
+   "y": 1080,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0007",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1800,
+   "y": 880,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0008",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 1800,
+   "y": 1120,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0009",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2300,
+   "y": 920,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0010",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2300,
+   "y": 1080,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0011",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2800,
+   "y": 940,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0012",
+   "dir": "assets_custom/anim",
+   "frames": [
+    "torch_anim.png"
+   ],
+   "name": "torch_anim",
+   "animated": true,
+   "spriteLayer": "below",
+   "x": 2800,
+   "y": 1060,
+   "scaleX": 1.4,
+   "scaleY": 1.4,
+   "offsetX": 16.0,
+   "offsetY": 62.0,
+   "frameW": 32,
+   "frameH": 64,
+   "frameCount": 6,
+   "frameRow": 0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0013",
+   "dir": "assets_custom/props",
+   "frames": [
+    "well_cap.png"
+   ],
+   "name": "well_cap",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1600,
+   "y": 1000,
+   "scaleX": 1.5,
+   "scaleY": 1.5,
+   "offsetX": 40.0,
+   "offsetY": 99.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0014",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crumbled_wall.png"
+   ],
+   "name": "crumbled_wall",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 500,
+   "y": 750,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 70.0,
+   "offsetY": 71.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0015",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crumbled_wall.png"
+   ],
+   "name": "crumbled_wall",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1100,
+   "y": 1280,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 70.0,
+   "offsetY": 71.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0016",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crumbled_wall.png"
+   ],
+   "name": "crumbled_wall",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1700,
+   "y": 720,
+   "scaleX": 1.1,
+   "scaleY": 1.1,
+   "offsetX": 70.0,
+   "offsetY": 71.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0017",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crumbled_wall.png"
+   ],
+   "name": "crumbled_wall",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2200,
+   "y": 1300,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 70.0,
+   "offsetY": 71.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0018",
+   "dir": "assets_custom/props",
+   "frames": [
+    "crumbled_wall.png"
+   ],
+   "name": "crumbled_wall",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2700,
+   "y": 780,
+   "scaleX": 0.9,
+   "scaleY": 0.9,
+   "offsetX": 70.0,
+   "offsetY": 71.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0019",
+   "dir": "assets_custom/props",
+   "frames": [
+    "overgrown_column.png"
+   ],
+   "name": "overgrown_column",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 700,
+   "y": 870,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 28.0,
+   "offsetY": 169.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0020",
+   "dir": "assets_custom/props",
+   "frames": [
+    "overgrown_column.png"
+   ],
+   "name": "overgrown_column",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 1500,
+   "y": 680,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 28.0,
+   "offsetY": 169.0
+  },
+  {
+   "type": "sprite",
+   "spriteId": "s_r31d2_0021",
+   "dir": "assets_custom/props",
+   "frames": [
+    "overgrown_column.png"
+   ],
+   "name": "overgrown_column",
+   "animated": false,
+   "spriteLayer": "below",
+   "x": 2400,
+   "y": 1120,
+   "scaleX": 1.0,
+   "scaleY": 1.0,
+   "offsetX": 28.0,
+   "offsetY": 169.0
   }
  ],
  "noWalkZones": [
@@ -6916,6 +7997,13 @@
    "y": 935.8,
    "w": 322.4,
    "h": 204.6
+  },
+  {
+   "id": "z31_dress_well",
+   "x": 1372,
+   "y": 962,
+   "w": 256,
+   "h": 152
   }
  ],
  "enemies": [
