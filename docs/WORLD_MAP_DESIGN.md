@@ -1,8 +1,16 @@
 # AKHAND SUTRA — World Design: *The Fractured Realm*
-### A 36-region open world
+### A 50-region open world
 
-> Design document only. No region JSON / code changes are implied by this file — it is the
-> planning blueprint for expanding the world from the current regions to a connected 36-region map.
+> Design document: the narrative and geographic blueprint for the open world.
+>
+> **Implementation status (as of 2026-06-20):** 50 authored map-editor regions exist
+> (`regions/region_0.json` and `region_7.json`–`region_49.json`). The world graph is
+> defined in `src/data/worldMapLayout.js` and the `WorldMapScene` renders all 50 nodes.
+> Regions stream seamlessly — no loading screens between adjacent regions. The original
+> blueprint described 36 regions; implementation expanded to 50 with additional optional
+> spurs (42–49) covering all 7 Acts. The design intent below still reflects the narrative
+> and geographic structure; section headers reference the blueprint region numbers, while
+> actual engine indices are in `worldMapLayout.js`.
 
 ## Design premise (how the geography encodes the lore)
 
@@ -36,15 +44,17 @@ and Patala Guha (R10) is the heart of the underworld branch.
 
 ## The world at a glance
 
-| Act | Province | Element | Regions | Difficulty | Role |
-|----|----------|---------|---------|-----------|------|
-| I | The Mortal Vale | Prithvi (Earth) | 6 | 0.4–1.1 | Tutorial + first hub |
-| II | The Drowned Reach | Jal (Water) | 6 | 1.1–1.8 | Rivers, swamp, serpent boss |
-| III | The Emberwastes | Agni (Fire) | 6 | 1.8–2.4 | Desert, volcano, temple boss |
-| IV | The Skyward Climb | Vayu (Wind) | 6 | 2.4–3.0 | Mountains, heavens, wind boss |
-| V | The Sunless Deep | Patala (Underworld) | 5 | 2.0–3.0 | Optional vertical branch |
-| VI | The Severance | Void | 4 | 3.1–3.5 | Finale |
-| ✦ | The Erased Path | Ekatmadeva | 3 | 3.0–3.5 | **Secret — true ending** |
+| Act | Province | Element | Regions | Engine Indices | Difficulty | Role |
+|----|----------|---------|---------|---------------|-----------|------|
+| I | The Mortal Vale | Prithvi (Earth) | 6 + spur | 0, 7, 11–14, 42 | 0.4–1.1 | Tutorial + first hub |
+| II | The Drowned Reach | Jal (Water) | 6 + spur | 15–18, 8, 9, 43 | 1.1–1.8 | Rivers, swamp, serpent boss |
+| III | The Emberwastes | Agni (Fire) | 6 + spur | 19–24, 44 | 1.8–2.4 | Desert, volcano, temple boss |
+| IV | The Skyward Climb | Vayu (Wind) | 6 + spur | 25–30, 45 | 2.4–3.0 | Mountains, heavens, wind boss |
+| V | The Sunless Deep | Patala (Underworld) | 5 + spur | 31–34, 10, 46 | 2.0–3.0 | Optional vertical branch |
+| VI | The Severance | Void | 4 + spur | 35–38, 47 | 3.1–3.5 | Finale |
+| ✦ | The Erased Path | Ekatmadeva | 5 | 39–41, 48, 49 | 3.0–3.5 | **Secret — true ending** |
+
+**Total: 50 authored regions.** Optional spurs 42–49 were added during implementation beyond the original 36-region blueprint.
 
 **Legend:** 🟢 kept/existing region · ⚔️ boss/mini-boss arena · 🏘️ hub (shops/NPCs/save) ·
 🔒 gated · ★ optional side-region · ✦ secret
@@ -547,10 +557,16 @@ The **golden thread** is the priority motif to source/animate — it appears in 
 
 ---
 
-## Open design decisions (to confirm before implementation)
+## Design decisions — resolved
 
-1. **Regions 7 & 8 are redesigned, not just renamed** — R7 → *Smrtivana* (early forest), R8 →
-   *Nagaraja Sabha* (serpent boss court). Could instead stay closer to their current state.
-2. **The Sunless Deep is optional** but required for the true ending — the main open-world hook. Could
-   be moved onto the critical path instead.
-3. **Region count is 36** (target was 30–40). Can trim toward 30 or expand toward 40.
+1. **Region count is 50** — expanded from the original 36-region blueprint with 14 additional optional
+   spur regions (42–49), one per province plus two extra Erased Path rooms.
+2. **The Sunless Deep is optional** and required for the true ending — implemented as planned. The deep
+   branch is reachable from Act I (Setubandha lift, region 11) and re-joins the finale at Act VI
+   (region 35 via tunnel from Bone City).
+3. **Regions 7 & 8 follow the blueprint** — region 7 is the early forest (Smrtivana), region 8 is
+   the Nagaraja Sabha (serpent boss court in Act II).
+4. **Seamless streaming is live** — players walk between all 50 regions with no loading screens.
+   The WorldMapScene provides the high-level overview and fast-travel.
+5. **The true ending gate is 15 lore fragments** (not 20 as originally noted in some drafts).
+   The sealed door in region 34 (Vismrti Kupa) opens at 15 collected fragments.

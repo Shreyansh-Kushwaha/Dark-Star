@@ -12,30 +12,39 @@
 4. [Game Flow](#game-flow)
 5. [World & Regions](#world--regions)
 6. [Combat Mechanics](#combat-mechanics)
-7. [Enemy System](#enemy-system)
-8. [Boss System](#boss-system)
-9. [Quest System](#quest-system)
-10. [UI & HUD](#ui--hud)
-11. [Audio System](#audio-system)
-12. [Save & Progression](#save--progression)
-13. [Co-op & Networking](#co-op--networking)
-14. [Quality Settings](#quality-settings)
-15. [Code Structure](#code-structure)
+7. [Amrit & Healing](#amrit--healing)
+8. [XP & Leveling](#xp--leveling)
+9. [Death Echo](#death-echo)
+10. [Thread Shrines](#thread-shrines)
+11. [Enemy System](#enemy-system)
+12. [Boss System](#boss-system)
+13. [Quest System](#quest-system)
+14. [Codex](#codex)
+15. [Props & Collision](#props--collision)
+16. [Seamless Streaming](#seamless-streaming)
+17. [UI & HUD](#ui--hud)
+18. [Audio System](#audio-system)
+19. [Save & Progression](#save--progression)
+20. [Co-op & Networking](#co-op--networking)
+21. [Quality Settings](#quality-settings)
+22. [Code Structure](#code-structure)
 
 ---
 
 ## Overview
 
-**Akhand Sutra: The Unbroken Thread** is a 2-player co-op action RPG built with **Phaser 3**. The game is rooted in Hindu/Sanskrit mythology and follows two warriors on a journey through 7 regions to defeat a demon who has severed the sacred thread binding all souls.
+**Akhand Sutra: The Unbroken Thread** is a 1–2 player co-op action RPG built with **Phaser 3**. The game is rooted in Hindu/Sanskrit mythology and follows two warriors on a journey through 7 Acts (50+ authored regions) to defeat a demon who has severed the sacred thread binding all souls.
 
 | Detail | Value |
 |--------|-------|
 | Engine | Phaser 3 |
 | Players | 1–2 (solo or co-op) |
 | Perspective | 2D top-down |
-| World Size | 3200 × 2000 px |
+| Per-Region Size | 3200 × 2000 px |
 | Viewport | 1280 × 720 px |
-| Genre | Action RPG |
+| Genre | Action RPG / Open World |
+| Authored Regions | 50 (regions 0, 7–49) |
+| Acts | 7 (Earth → Water → Fire → Wind → Underworld → Void → Secret) |
 
 ---
 
@@ -43,32 +52,33 @@
 
 ### The Premise
 
-The **Akhand Sutra** (Unbroken Thread) is a sacred cosmic force that connects all living souls. **Viyogasur**, the Demon of Separation, has severed this thread — plunging the world into spiritual isolation, corruption, and chaos.
+The **Akhand Sutra** (Unbroken Thread) is a sacred cosmic force that connects all living souls. **Viyogasur**, the Demon of Separation, has severed this thread — plunging the world into spiritual isolation, corruption, and chaos. But as the warriors travel deeper, a darker truth emerges: Viyogasur may not be a demon at all, but a name given to a god the pantheon wished to erase.
 
 Two warriors answer the call:
 
-- **Dhruva** — a warrior who fights with elemental force
-- **Tara** — a monk who channels healing and lightning
+- **Dhruva** — *"The Unmoving Star"* — a warrior who fights with elemental force; refuses to look away from inconvenient truths
+- **Tara** — *"The Guiding Light"* — a monk who channels healing and lightning; quick, mobile, a force for restoration
 
-Their journey takes them through 7 regions, each guarded by a demon corrupted by Viyogasur's power. Only by defeating all demons and confronting Viyogasur himself can the Akhand Sutra be restored.
+Their journey takes them through 7 Acts, each corresponding to a classical element from Hindu cosmology. The real conspiracy is uncovered in fragments — environmental echoes, lore shards, NPC confessions — until the player confronts a choice about who the real villain is.
 
 ### The Elements
 
-Each region is tied to a classical element from Hindu cosmology:
+| Element | Sanskrit | Act |
+|---------|----------|-----|
+| Earth | Prithvi | Act I — The Mortal Vale |
+| Water | Jal | Act II — The Drowned Reach |
+| Fire | Agni | Act III — The Emberwastes |
+| Wind | Vayu | Act IV — The Skyward Climb |
+| Underworld | Patala | Act V — The Sunless Deep |
+| Void | — | Act VI — The Severance |
+| Soul | Ekatmadeva | Act VII — The Erased Path (secret) |
 
-| Element | Sanskrit | Region |
-|---------|----------|--------|
-| Earth | Prithvi | Vrindavana |
-| Water | Jal | Nāga Pātāl |
-| Fire | Agni | Deva Mandira |
-| Wind | Vayu | Swarga Seema |
-| Void | — | Viyoga Durga |
+### Endings
 
-### The Ending
-
-Upon defeating Viyogasur, the Akhand Sutra is restored. A narrative ending sequence plays, recounting Dhruva and Tara's journey. The game displays collected lore fragments and completed quests, then clears the save and returns to the main menu.
-
-Final title card: **"The Unbroken Thread — Restored"**
+Three endings based on player choice and lore collection:
+- **Restore the Thread** — repair the Akhand Sutra as it was
+- **Break the Thread** — sever it entirely, ending the cycle
+- **Reweave the Thread** (true ending) — requires collecting all lore fragments and walking the Erased Path; rewrites the Sutra from Ekatmadeva's erased history
 
 ---
 
@@ -134,13 +144,28 @@ Final title card: **"The Unbroken Thread — Restored"**
   - Next attack deals 1.5× damage
   - Shows "PERFECT DODGE!" toast
 
-**Stamina Regeneration**: 18 per second when not dodging
+**Stamina Costs:**
+
+| Action | Stamina Cost |
+|--------|-------------|
+| Light Attack | 12 |
+| Heavy Attack | 25 |
+| Dodge | 25 |
+| Vayu Dash (Tara Q) | 15 |
+| Prithvi Slam (Dhruva Q) | 20 |
+| Agni Shield (Dhruva E) | 25 |
+| Jal Mend (Tara E) | 30 |
+| Vayu Storm (Tara R) | 35 |
+| Agni Burst (Dhruva R) | 40 |
+
+**Stamina Regeneration**: 18 per second when not dodging  
+**Max Stamina**: 100 (upgradeable via level-up stat allocation)
 
 **Downed State**:
 - When HP reaches 0, player is downed (semi-transparent, cannot act)
 - 12-second auto-revive timer
 - Revives with 40% max HP
-- If both players are downed simultaneously → Game Over
+- If both players are downed simultaneously → Death flow (see below)
 
 ---
 
@@ -150,154 +175,140 @@ Final title card: **"The Unbroken Thread — Restored"**
 
 ```
 Main Menu
-  → New Game / Load Region
-    → Region 0 (Tutorial)
-      → Region 1 → Region 2 → ... → Region 6
-        → Defeat Viyogasur
-          → Ending Sequence
-            → Main Menu
+  → New Game
+    → PrologueScene (7 narrative lines)
+      → Region 0 (Gramavana, tutorial)
+        → Open world: walk seamlessly between 50 authored regions
+          → Defeat Viyogasur (Act VI finale)
+            → GameEndingScene (choice)
+              → Main Menu
 ```
 
 ### Per-Region Progression
 
-1. Spawn at the left side of the region (~x:380, y:1000)
-2. Explore the region — talk to NPCs, fight enemies
-3. Unlock the **Next Portal** by completing the region's main objective (boss kill or all enemies killed)
-4. (Optional) Complete side quests for items and lore
-5. Walk into the **Next Portal** → save progress → load next region
+1. Walk in from an adjacent region via seamless streaming (or spawn at save point)
+2. Explore — talk to NPCs, fight enemies, collect lore fragments, find echo triggers
+3. Visit **Thread Shrines** to heal, refill Amrit, set respawn point, and spend XP on level-ups
+4. Complete the region's main objective to unlock gated portals (boss kill, NPC talk, etc.)
+5. Walk onward — adjacent regions are pre-loaded and load seamlessly without a transition screen
 
-### Region Unlock Conditions
+### World Map (M key or TAB)
 
-| Region | Unlock Condition |
-|--------|-----------------|
-| 0 — Gramavana | Talk to Elder Mahesh |
-| 1 — Mahāvana | Talk to Hermit Veda (NPC) |
-| 2 — Vrindavana | Kill all fixed enemies |
-| 3 — Nāga Pātāl | Defeat Nagraj Kaliya (boss) |
-| 4 — Deva Mandira | Defeat Pashana Daitya (boss) |
-| 5 — Swarga Seema | Defeat Vayu Rakshasa (boss) |
-| 6 — Viyoga Durga | Defeat Viyogasur (boss) → triggers ending |
+The **WorldMapScene** shows all 50 regions as thumbnail nodes on a pannable/zoomable canvas. Explored regions display a screenshot thumbnail; unexplored ones are dark. Edges between connected regions show the Akhand Sutra thread (gold if both explored, dim otherwise). The map reveals the 7-Act structure and optional branch paths. Fast travel to any previously-visited region is available from the map.
 
-### Boss Encounter Trigger
-
-- Boss arena is in the far-right section of the region (x ≈ 2800)
-- When players enter the boss zone, the boss intro sequence plays:
-  - Camera pans to boss
-  - Full-screen dark overlay fades in
-  - Boss name slides in (gold serif text, expanding decorative lines)
-  - Boss HP/posture bars slide up from the bottom
-- After intro, combat begins
-
-### Defeat Flow
+### Death Flow
 
 1. Both players downed
-2. 1.2s delay
-3. "YOU DIED" screen fades in
-4. Player presses **R** to retry (restart region) or **ESC** for main menu
+2. Death Echo drops at P1's position (see [Death Echo](#death-echo))
+3. Amrit refills to max
+4. 1.2s delay → "YOU DIED" screen
+5. Respawn at last Thread Shrine; if no shrine visited, spawn at region start
+6. Player presses **R** to retry (respawn) or **ESC** for main menu
 
 ### Victory Flow (Final Boss)
 
 1. Viyogasur killed
 2. 1.5s delay → boss lore displayed
 3. 6s delay → UIScene stops
-4. **GameEndingScene** launches:
-   - Starfield background
-   - "✦ AKHAND SUTRA ✦" title
-   - 10-line story text fades in over 4s
-   - Stats: Lore Fragments collected, Quests Completed
-   - RETURN TO MENU button
+4. **GameEndingScene** launches with 3-choice ending + epilogue
 5. Save data cleared
 
 ---
 
 ## World & Regions
 
-### World Dimensions
+### World Structure — 7 Acts, 50 Regions
+
+The world is an open graph of 50 authored regions. Regions stream seamlessly horizontally. The world map shows their layout across 7 acts.
+
+| Act | Province | Element | Key Regions | Notes |
+|----|----------|---------|-------------|-------|
+| I | The Mortal Vale | Prithvi | 0, 7, 11, 12, 13, 14 | Tutorial + early spurs |
+| II | The Drowned Reach | Jal | 15, 16, 9, 17, 18, 8 | Serpent boss at region 8 |
+| III | The Emberwastes | Agni | 19, 20, 21, 22, 23, 24 | Stone boss at region 24 |
+| IV | The Skyward Climb | Vayu | 25, 26, 27, 28, 29, 30 | Wind boss at region 30 |
+| V | The Sunless Deep | Patala | 31, 32, 10, 33, 34 | Optional vertical branch |
+| VI | The Severance | Void | 35, 36, 37, 38 | Final boss at region 37 |
+| VII | The Erased Path | Ekatmadeva | 39, 40, 41, 48, 49 | Secret; requires 15 lore fragments |
+
+Additional optional spur regions: 42 (Act I), 43 (Act II), 44 (Act III), 45 (Act IV), 46 (Act V), 47 (Act VI).
+
+### Per-Region Dimensions
 
 | Property | Value |
 |----------|-------|
 | World Width | 3200 px |
 | World Height | 2000 px |
 | Player Spawn | x ≈ 380, y = 1000 |
-| Boss Position | x ≈ 2800, y = 1000 |
 | Camera Smoothing | 0.1 spring follow |
 
-### Region Overview
+### Narrative Regions (REGIONS[] metadata)
 
-| # | Name | Sanskrit | Boss | Difficulty | Theme |
-|---|------|----------|------|------------|-------|
-| 0 | Gramavana | The Forest Village | None | 0.4 | Tutorial; village + forest |
-| 1 | Mahāvana | The Great Forest | Vanaraksha | 0.5 | Dense dark forest |
-| 2 | Vrindavana | The Sacred Grove | Vanasur | 1.4 | Sacred grove, Prithvi element |
-| 3 | Nāga Pātāl | The Serpent Realm | Nagraj Kaliya | 1.8 | Serpent lore, Jal element |
-| 4 | Deva Mandira | Temple of the Gods | Pashana Daitya | 2.3 | Temple, Agni element |
-| 5 | Swarga Seema | Edge of Heaven | Vayu Rakshasa | 2.8 | Heavenly realm, Vayu element |
-| 6 | Viyoga Durga | Fortress of Separation | Viyogasur | 3.5 | Void, darkness, final fortress |
+| # | Name | Subtitle | Boss | Difficulty |
+|---|------|----------|------|------------|
+| 0 | Gramavana | The Village of Ash and Memory | None | 0.4 |
+| 1 | Mahāvana | The Great Forest | None | 0.5 |
+| 2 | Vrindavana | The Sacred Grove | None | 1.4 |
+| 3 | Nāga Pātāl | The Serpent Realm | Nagraj Kaliya | 1.8 |
+| 4 | Deva Mandira | The Temple of the Gods | Pashana Daitya | 2.3 |
+| 5 | Swarga Seema | The Edge of Heaven | Vayu Rakshasa | 2.8 |
+| 6 | Viyoga Durga | Fortress of Separation | Viyogasur | 3.5 |
 
-### Region Details
+Regions 1–6 are legacy narrative descriptors. The actual gameplay chain uses authored map-editor regions (7–49).
 
-**Region 0 — Gramavana (Tutorial)**
-- Village zone with NPCs: Elder Mahesh, village healer, village child, villagers
-- No boss
-- Sacred pressure plates that heal both players when stood on simultaneously
-- Teaches: movement, light attack, heavy attack, dodge, abilities, NPCs, quests
+### Map-Editor Region Format
 
-**Region 1 — Mahāvana**
-- Dense dark forest with 6 fixed enemies
-- Boss: Vanaraksha (corrupted forest guardian, green tint)
-- NPCs: Hermit Veda (unlocks portal), traveling scholar, merchant
-- Terrain: Dense tree decorations
+Each region is a JSON file (`regions/region_N.json`) authored in the map editor. The format includes:
 
-**Region 2 — Vrindavana**
-- Sacred bright-green grove; 13 fixed enemies (melee, ranged, elite mix)
-- Boss: Vanasur (demon consuming the sacred groves, brown tint)
-- NPCs: Sage and Dancer
-- Unlock: Kill all fixed enemies
+```json
+{
+  "regionName": "Ash Village",
+  "regionSubtitle": "Gramavana",
+  "version": 1,
+  "background": { "type": "color", "value": "#2d5c28" },
+  "sprites": [ ... ],        // placed props with position, dir, frames, scale, tint
+  "noWalkZones": [ ... ],    // hand-drawn collision rectangles
+  "enemies": [ ... ],        // fixed enemy placements
+  "boss": null,
+  "regionIndex": 0,
+  "portals": { "back": {...}, "next": {...} }
+}
+```
 
-**Region 3 — Nāga Pātāl**
-- Serpent underworld: mounds, amber pools, petrified dead trees
-- Boss: Nagraj Kaliya (serpent king with multiple heads)
-- Enemy mix: Spawners + fixed enemies
-- Terrain: 110 decorations — mounds, amber pools, dead trees
+### Echo Triggers
 
-**Region 4 — Deva Mandira**
-- Warm golden/amber temple aesthetic
-- Boss: Pashana Daitya (stone demon)
-- NPCs: Priest and Guardian
-- Limited decorations (30 per region type)
+Regions contain **echo triggers** — invisible circular zones that display a narrative voice line when the player walks through them. These are not NPC dialogue; they're ambient environmental storytelling embedded directly in the region config.
 
-**Region 5 — Swarga Seema**
-- Pale sky-blue heavenly atmosphere; 12 cloud decorations
-- Boss: Vayu Rakshasa (wind demon, cyan tint)
-- NPCs: Apsara guide and Deva warrior
-- Highest enemy speed in the game
+```javascript
+echoTriggers: [
+  { id: 'echo_mahavana_voice', x: 1800, y: 950, r: 220,
+    text: '⟨Voice in the Trees⟩ "They called me the problem because I refused to become their excuse."' }
+]
+```
 
-**Region 6 — Viyoga Durga**
-- Black-purple void; dark screen overlay (0.35 alpha)
-- Boss: Viyogasur (final boss, 4000 HP)
-- NPC: Voice in the Void (sole NPC)
-- No side quests
+### World Fragments
 
-### Decorations & Ambiance
-
-**Trees**: Poisson disk-sampled placement; scale 0.60–1.0; tinted per region  
-**Rabbits**: 8 brown + 4 horned; regions 0–2 only; idle 1.5–4s then wander  
-**Clouds**: 12 decorations in Region 5  
-**Village Zones**: Colored NPC huts with gates; Regions 0 and 1
+Lore shard objects placed in the world at specific coordinates. Walking into range shows a "EXAMINE [F]" prompt; interacting adds a fragment to the Codex and counts toward the 15-fragment gate for the Erased Path.
 
 ### Interactive Elements
 
+**Thread Shrines**
+- Glowing gold interactive object in each region
+- On activation: heals both players fully, refills Amrit charges, sets respawn point, triggers level-up screen if XP threshold reached
+- Only one shrine interaction per region visit (respawn, then re-enter to interact again)
+
 **Pressure Plates**
 - 2 per most regions
-- Appear as brown circles with gold border, labeled `[STEP]`
 - Both players must stand on both plates simultaneously
-- Reward: 35% HP heal to both players
-- Some linked to side quests
+- Reward: 35% HP heal; some linked to side quests
 
 **Portals**
-- **Back Portal** (blue, left side): Always unlocked, returns to previous region
-- **Next Portal** (orange, right side): Locked until region objective complete
-- Interact: Walk into portal → fade transition → save → load next region
+- **Back Portal** (blue, left side): returns to previous region in chain
+- **Next Portal** (orange, right side): locked until region objective complete
+- Some portals are gated by lore count (e.g., the Sixth Door at region 34 requires 15 lore fragments)
+- Walking into a portal triggers seamless streaming — no fade/restart for adjacent regions
+
+**Death Echo Orb** — see [Death Echo](#death-echo)
 
 ---
 
@@ -317,27 +328,6 @@ Main Menu
 
 **Boss Melee**: Players must be within 215px to hit; triggers camera shake on hit
 
-### Stamina System
-
-| Action | Stamina Cost |
-|--------|-------------|
-| Dodge | 25 |
-| Vayu Dash (Tara Q) | 15 |
-| Prithvi Slam (Dhruva Q) | 20 |
-| Agni Shield (Dhruva E) | 25 |
-| Jal Mend (Tara E) | 30 |
-| Vayu Storm (Tara R) | 35 |
-| Agni Burst (Dhruva R) | 40 |
-
-Regen rate: **18/sec** (when not dodging)  
-Max stamina: **100** (upgradeable via stat tiers)
-
-### Damage & Health
-
-- Base HP: 200 (scales with region difficulty multiplier)
-- HP bar colors: Green (>50%), Yellow (25–50%), Red (<25%)
-- Damage formula: `base_damage × difficulty_multiplier`
-
 ### Difficulty Scaling
 
 Scales enemy HP, enemy damage, boss posture regen, and player ability power:
@@ -354,9 +344,92 @@ Scales enemy HP, enemy damage, boss posture regen, and player ability power:
 
 ---
 
+## Amrit & Healing
+
+Amrit is the game's **healing flask** (analogous to Dark Souls' Estus).
+
+| Property | Value |
+|----------|-------|
+| Default Charges | 4 |
+| Heal Amount | 55% of max HP |
+| Sip Lockout | 550ms (player is vulnerable while drinking) |
+| Refill | Thread Shrine interaction, or on death |
+| Key | Configurable (default: H / secondary button) |
+
+Amrit charges are shown as pips in the HUD. Charges persist across region transitions but refill at shrines or on death.
+
+---
+
+## XP & Leveling
+
+Every enemy kill grants XP. XP accumulates across regions and saves at portals.
+
+### XP Thresholds
+
+| Level | XP Needed |
+|-------|-----------|
+| 1→2 | 100 |
+| 2→3 | 250 |
+| 3→4 | 450 |
+| 4→5 | 700 |
+| 5→6 | 1000 |
+| 6→7 | 1350 |
+| 7→8 | 1750 |
+| 8→9 | 2200 |
+| 9→10 | 2700 |
+
+### Level-Up Allocation
+
+- Reaching a threshold does **not** auto-apply stats — the UI notifies "Level up available"
+- Stats are allocated at the **Thread Shrine** (ShrineScene)
+- Each level grants **5 points** to distribute; each point is **+5%** to a chosen stat
+- Stats available: Max HP, Max Stamina, Ability Power
+
+### Enemy XP Values (per kill)
+
+| Tier | Examples | XP |
+|------|----------|-----|
+| T0 vermin | rat | 7 |
+| T1 flyer | bat, slimem | 8–12 |
+| T2 grunt | melee, goblin | 12–14 |
+| T3 bruiser | orc | 17–20 |
+| T4 elite | ogre, mimic | 28–32 |
+| T5/6 boss-tier | mini-boss, faction leader | 54–80 |
+
+---
+
+## Death Echo
+
+When both players are downed, a **Death Echo** is dropped at P1's last position before respawning.
+
+- The echo appears as a glowing orb in the world
+- It stores all XP the player had accumulated
+- Walking into the echo within 70px reclaims the XP
+- If the player dies again before reaching the echo, the echo's XP is lost permanently
+- The echo persists across region boundaries (same region only); it is not saved
+
+This creates risk/reward tension: rushing back to retrieve XP vs. playing cautiously in a hostile region.
+
+---
+
+## Thread Shrines
+
+Thread Shrines are golden interactive objects placed in regions by the map editor.
+
+**On activation:**
+1. Both players are fully healed
+2. Amrit charges refill to max
+3. Current region is set as the respawn point (saved)
+4. If level-up is available (XP threshold reached): the **ShrineScene** opens for stat allocation
+5. A narrative line plays: *"You rest. The thread steadies — wounds close, Amrit replenished, your return point is set here."*
+
+The shrine can only be activated once per visit. After respawning and re-entering a region, the shrine is active again.
+
+---
+
 ## Enemy System
 
-### Enemy Types
+### Enemy Types (built-in roster)
 
 **Melee — Forest Raksha / Goblin**
 
@@ -396,7 +469,7 @@ Behavior: Seeks cover near trees before firing arrows (speed 280, lifetime 2.5s)
 | Attack Range | 80px |
 | Attack CD | 1000ms |
 
-Special: Physics-enabled; fastest basic enemy; tint cyan
+Special: Fastest basic enemy; tint cyan
 
 ---
 
@@ -409,8 +482,6 @@ Special: Physics-enabled; fastest basic enemy; tint cyan
 | Damage | 22 |
 | Attack Range | 65px |
 | Attack CD | 1300ms |
-
-Stronger melee fighter
 
 ---
 
@@ -425,18 +496,72 @@ Stronger melee fighter
 | Attack CD | 1400ms |
 | Shockwave CD | 6s |
 | Shockwave Range | 140px |
-| Shockwave Damage | 80% of attack damage |
-
-Strongest basic enemy; has an AoE shockwave ability
 
 ---
+
+**Bat — Vayu Pakshi**
+
+| Stat | Value |
+|------|-------|
+| HP | 45 |
+| Speed | 155 |
+| Damage | 11 |
+| Attack Range | 60px |
+| Attack CD | 950ms |
+
+---
+
+**Rat — Kshetra Mooshak**
+
+| Stat | Value |
+|------|-------|
+| HP | 30 |
+| Speed | 170 |
+| Damage | 8 |
+| Attack Range | 42px |
+| Attack CD | 850ms |
+
+---
+
+**Slime — Vikrit Kshira**
+
+| Stat | Value |
+|------|-------|
+| HP | 55–75 |
+| Speed | 75 |
+| Damage | 10–14 |
+| Attack Range | 48px |
+| Attack CD | 1350ms |
+
+---
+
+**Mimic — Mayavi Peti**
+
+| Stat | Value |
+|------|-------|
+| HP | 160 |
+| Speed | 80 |
+| Damage | 26 |
+| Attack Range | 70px |
+| Attack CD | 1600ms |
+
+---
+
+### Map-Editor Creatures
+
+Regions authored in the map editor can place any approved entity from `docs/animations.json` as a creature. Each entity is classified by `entity_type` (boss/enemy/npc) and gets stats from `src/data/creatureStats.js`.
+
+**Passive Wildlife** — animals with `passive: true` never attack; they wander and flee when the player approaches or hits them. Examples: deer, fox, hare, sheep, rabbit, bull.
+
+**Combat creatures** — use the same AI state machine as the built-in enemy types. Faction leaders (Nordic, Aztec, Maya leaders; Giant Goblin, Viking Leader, Caveman Boss) serve as regional mini-bosses.
+
+Map-editor creatures spawn with a directional facing seeded from their spawn position (co-op deterministic).
 
 ### Spawning System
 
 Two modes per region:
-
-1. **Fixed Enemies** — Placed at specific positions; don't respawn once killed; killing all may trigger quest/portal unlock
-2. **Spawners** — Every 25 seconds, spawn a new enemy group (1–2 in tutorial, 2–4 in other regions)
+1. **Fixed Enemies** — placed at specific positions; don't respawn once killed
+2. **Spawners** — every 25 seconds, spawn a new enemy group (2–4 in non-tutorial regions)
 
 **Max Active Enemies by Quality:**
 
@@ -446,128 +571,71 @@ Two modes per region:
 | Medium | 12 |
 | High | 18 |
 
-**Death**: Plays death animation, 800ms fadeout, emits `enemy_killed` event
-
 ---
 
 ## Boss System
 
 ### Boss Structure
 
-Every boss has:
+Every named boss has:
 - **3 Phases** triggered at HP thresholds: 100%, 50%, 30%
-- **Posture bar** — fills as boss takes damage; when full, boss staggers
+- **Posture bar** — fills as boss takes damage; when full, boss staggers for 2.2s
 - **New attack patterns** unlocked each phase
 
 ### Posture Mechanic
 
 - Posture fills at **0.4 × damage dealt** each hit
 - Max posture: 100
-- When full: boss enters **Stagger** for 3 seconds (can't act, fully vulnerable)
+- When full: boss enters **Stagger** for 2.2 seconds (fully vulnerable)
 - After stagger: posture resets, boss resumes combat
 - Posture regens over time (rate varies per boss)
-
-**Visual**: Orange bar below HP bar; "POSTURE BROKEN — VULNERABLE —" text on stagger
 
 ### Phase Transitions
 
 - Boss becomes invincible for 2.2 seconds
-- Forced into stagger state
-- Scale pulse animation
 - Camera shakes (500ms, 0.018 intensity)
 - White flash + "PHASE II" / "FINAL PHASE" text scales in
 - Final phase: Boss sprite tinted red
 
-### Boss Attack Patterns
-
-Bosses cycle through patterns in sequence:
-
-| Category | Patterns | Effect |
-|----------|----------|--------|
-| Melee slams | `slam`, `smash`, `bite`, `void_slash`, `wind_slash` | ~6% max HP; 130px range; 400ms wind-up |
-| AoE radial | `root`, `vine_lash`, `coil`, `gust` | ~4% max HP; 160px radius |
-| Projectile | `spore_burst`, `stone_throw`, `venom_spit`, `despair_wave`, `shockwave` | 3–5 projectiles; speed 230; lifetime 2.5s |
-| Phase 3 exclusive | `rage_slam`, `frenzy`, `annihilation`, `severance`, `tornado` | 8–12 projectiles in all directions |
-
-`despair_wave` fires 5 spread projectiles (widest spread)  
-`annihilation` fires 12 projectiles (most dense, final boss only)
-
 ### Boss Roster
 
-**1. Vanaraksha** — Region 1, Mahāvana
-
-| Stat | Value |
-|------|-------|
-| HP | 1200 |
-| Sprite | Tree boss (green tint 0x2d4a1e), 2.5× scale |
-| Phase 1 | Slam, Root |
-| Phase 2 | + Spore Burst |
-| Phase 3 | + Rage Slam |
-| Posture Regen | 3/sec |
-| Reward | Forest Totem |
-
----
-
-**2. Vanasur** — Region 2, Vrindavana
-
-| Stat | Value |
-|------|-------|
-| HP | 1600 |
-| Sprite | Tree boss (brown tint 0x5c3d1e), 2.5× scale |
-| Phase 1 | Slam, Vine Lash |
-| Phase 2 | + Seed Bomb |
-| Phase 3 | + Frenzy |
-| Reward | Ashram Blessing |
-
----
-
-**3. Nagraj Kaliya** — Region 3, Nāga Pātāl *(First mandatory boss)*
+**1. Nagraj Kaliya** — Region 3 / Act II Serpent Court
 
 | Stat | Value |
 |------|-------|
 | HP | 2000 |
-| Sprite | Tree boss (green tint 0x1a6633), 2.8× scale |
 | Phase 1 | Bite, Venom Spit |
 | Phase 2 | + Coil |
 | Phase 3 | + Hydra Form |
 | Posture Regen | 5/sec |
 | Reward | Naga Scale |
 
----
-
-**4. Pashana Daitya** — Region 4, Deva Mandira
+**2. Pashana Daitya** — Region 4 / Act III
 
 | Stat | Value |
 |------|-------|
 | HP | 2400 |
-| Sprite | Minotaur (neutral), 2.5× scale |
 | Phase 1 | Smash, Shockwave |
 | Phase 2 | + Stone Throw |
 | Phase 3 | + Rock Storm |
 | Reward | Temple Offering |
 
----
-
-**5. Vayu Rakshasa** — Region 5, Swarga Seema
+**3. Vayu Rakshasa** — Region 5 / Act IV
 
 | Stat | Value |
 |------|-------|
 | HP | 2800 |
-| Sprite | Frost Guardian (cyan tint 0x88ccff), 2.2× scale |
-| Phase 1 | Wind Slash, Gust (speed 120) |
-| Phase 2 | + Cyclone (speed 155) |
-| Phase 3 | + Tornado (speed 190, 900ms CD) |
+| Phase 1 | Wind Slash, Gust |
+| Phase 2 | + Cyclone |
+| Phase 3 | + Tornado |
 | Posture Regen | 6/sec (highest) |
 | Reward | Vayu Note |
 
----
-
-**6. Viyogasur** — Region 6, Viyoga Durga *(Final Boss)*
+**4. Viyogasur** — Region 6 / Act VI (Final Boss)
 
 | Stat | Value |
 |------|-------|
 | HP | 4000 |
-| Sprite | Demon Slime (neutral), 2.8× scale |
 | Phase 1 | Void Slash, Despair Wave (5 spread) |
 | Phase 2 | + Severance |
 | Phase 3 | + Annihilation (12 projectiles) |
@@ -582,28 +650,18 @@ Bosses cycle through patterns in sequence:
 ### Structure
 
 - **Main Quests** — Auto-triggered per region; complete by defeating the region boss
-- **Side Quests** — Optional; unlocked by talking to NPCs or entering regions; rewards items
+- **Side Quests** — Optional; unlocked by talking to NPCs; rewards items
 
 Quest states: `not_started` → `active` → `completed`
 
 Tracked data: active quests (Map), completed quests (Set), kill counts per enemy type (Map)
 
-### NPC Dialogue States
-
-Each NPC has 3 dialogue lines:
-1. **First** — before quest starts (introduces quest)
-2. **Active** — while quest is in progress
-3. **Completed** — after quest finished
-
-Example (Elder Mahesh, Region 0):
-> *"The Akhand Sutra — the sacred thread binding all souls — is breaking. A demon called Viyogasur tears it apart."*
-
-### Quest List by Region
+### Quest List by Region (narrative regions)
 
 **Region 0 — Gramavana**
 - Main: "The Village Elder's Warning" (talk to Elder Mahesh)
 - Side 1: "Healing Herbs" — Kill 5 enemies → Healing Herb
-- Side 2: "The Prithvi Shard" — Kill 8 enemies → Prithvi Shard
+- Side 2: "The Prithvi Shard" — Kill 8 enemies → Prithvi Shard (+20 Max HP)
 
 **Region 1 — Mahāvana**
 - Main: Defeat Vanaraksha
@@ -612,7 +670,7 @@ Example (Elder Mahesh, Region 0):
 - Side 3: "The Merchant's Lost Goods" — Kill 3 enemies → Merchant's Coin
 
 **Region 2 — Vrindavana**
-- Main: Defeat Vanasur
+- Main: Defeat Vanasur (all fixed enemies killed)
 - Side 1: "The Sage's Blessing" — Kill 12 enemies → Ashram Blessing
 - Side 2: "Water of Life" — Activate pressure plate → Water Blessing
 
@@ -624,7 +682,7 @@ Example (Elder Mahesh, Region 0):
 **Region 4 — Deva Mandira**
 - Main: Defeat Pashana Daitya
 - Side 1: "Sacred Offering" — Kill 15 enemies → Temple Offering
-- Side 2: "The Agni Ember" — Activate pressure plate → Agni Ember
+- Side 2: "The Agni Ember" — Activate pressure plate → Agni Ember (+10% Ability Power)
 
 **Region 5 — Swarga Seema**
 - Main: Defeat Vayu Rakshasa
@@ -637,85 +695,141 @@ Example (Elder Mahesh, Region 0):
 
 ---
 
+## Codex
+
+The Codex is an in-game encyclopedia. It has three sections:
+
+**Bestiary** — unlocked per enemy type when first encountered; shows stats, lore flavour text, and a kill count.
+
+**Lore Fragments** — world fragments collected from the environment; narrative shards revealing the erased history of Ekatmadeva.
+
+**Characters** — entries for Dhruva and Tara (always visible) and met NPCs (unlocked on first dialogue interaction).
+
+The Codex is accessible from the pause menu. The lore fragment count feeds the portal gate at region 34 (15 fragments required to enter the Erased Path).
+
+---
+
+## Props & Collision
+
+### Prop Classification
+
+Every map-editor sprite is classified into one of three kinds that controls depth-sorting and collision:
+
+| Kind | Sorting | Collision | Examples |
+|------|---------|-----------|---------|
+| `solid` | Y-sorted by base | Footprint collider at base | Trees, rocks, pillars, crates, braziers |
+| `decor` | Y-sorted by base | None (walk through) | Bushes, reeds, shrubs, crystals |
+| `ground` | Always under actors | None | Grass, flowers, shadow decals, puddles |
+
+Classification is automatic, derived from the sprite's `name` field first, then its `dir` path. Unknown props default to `decor`.
+
+### Footprint Collision
+
+Solid props use image-alpha footprint data (from `src/data/propFootprints.js`) to create accurately-sized Arcade Physics static bodies at the prop's base. For example:
+- Trees get a narrow trunk-width box at the base (player walks behind the canopy, blocked at the trunk)
+- Rocks get a box covering most of the body
+
+Footprint data is auto-generated by `tools/gen_prop_footprints.py`. The system maps source-image coordinates to world space via the sprite's anchor and scale.
+
+### Depth Sorting
+
+Solid and decor props are Y-sorted every frame against the player's Y position. Props with a higher Y than the player are drawn on top (player is "behind" them); props with lower Y are drawn below.
+
+### No-Walk Zones
+
+Hand-drawn rectangles in the map editor (`noWalkZones`) are loaded as static Arcade Physics bodies. These block both players and enemies. Streaming regions load/unload their no-walk zones with the region.
+
+---
+
+## Seamless Streaming
+
+Adjacent regions in the horizontal chain are pre-loaded and unloaded invisibly as the player walks, creating a seamless open-world feel.
+
+| Parameter | Value |
+|-----------|-------|
+| Trigger distance | 520px from the shared edge |
+| Commit distance | 720px past the boundary |
+| Sprites per frame | 100 (avoids frame hitch) |
+| Fade-in duration | 350ms (streamed sprites fade in on appear) |
+
+**How it works:**
+1. When P1 reaches 520px from the right edge, the next region in the chain begins building (background, props, enemies, NPCs) in the adjacent horizontal slot
+2. At 720px past the edge, the camera remaps and the old region is unloaded
+3. The previous (leftward) region is simultaneously pre-built 520px from the left edge
+4. Only one crossing can be in-flight at a time (`_streamBusy` flag)
+
+The streaming chain includes region 0 and all authored regions (7–49), sorted by index. Legacy procedural regions 1–6 are excluded from the chain.
+
+---
+
 ## UI & HUD
 
 ### Main Menu
 
-- **Buttons**: PLAY SOLO, HOST CO-OP, JOIN CO-OP, LOAD REGION, QUALITY, FULLSCREEN
+- **Buttons**: PLAY SOLO, HOST CO-OP, JOIN CO-OP, LOAD REGION, WORLD MAP, QUALITY, FULLSCREEN
 - If save exists: CONTINUE / NEW GAME buttons
 - Region selector (0–6) for LOAD REGION
 - Background: Procedural starfield, pixel mountains, scanline overlay
-- Subtitle: *"~ THE UNBROKEN THREAD ~"*
 
 ### In-Game HUD
 
 **Top Bar:**
-- Left: P1 (Dhruva) — name, HP bar (color-coded), stamina bar
+- Left: P1 (Dhruva) — name, HP bar (color-coded), stamina bar, Amrit pips
 - Left-center: P2 (Tara) — same layout
 - Center: Region name (gold serif)
 - Bottom right: Control legend
 
 **Ability Bar (bottom center):**
-- 3 slots: Q (orange border), E (blue border), R (green border)
+- 3 slots: Q / E / R
 - Shows cooldown in seconds or "–" when ready
 - Ability name floats up and fades on use
 
+**Amrit Pips**: Row of small flasks showing remaining charges per player
+
 **Dialogue Box (bottom, when talking to NPC):**
 - 110px tall, gold top border
-- NPC name + message text
-- "[F] close" hint
+- NPC name + message text; `[F]` to close
 
-**Quest Panel (U key, right side):**
-- Active quests (▶ prefix) and completed quests (✓ prefix)
+**Quest Panel (U key, right side)**
 
-**Inventory Panel (I key, center overlay):**
-- Lists collected quest reward items
+**Inventory Panel (I key, center overlay)**
 
-**Region Title (on enter):**
-- Center screen, gold region name + tan subtitle
-- Displays 1.6s, fades in/out
+**Codex (C key or pause menu)**
 
-### Boss Bar (Dark Souls-style)
+**World Map (M key or TAB)**
 
-- Slides up from screen bottom when boss triggered
+### Boss Bar
+
+Slides up from screen bottom when boss triggered:
 - Boss name (gold serif, centered)
 - HP bar: Red fill, dark brown delay ghost
-- Phase label: Red text, fades after each phase change
 - Posture bar: Orange, below HP bar
-- Gold border lines top and bottom
+- "POSTURE BROKEN — VULNERABLE —" on stagger
 
-### Notifications & Toasts
+### Death Echo Notification
 
-Floating text, center-bottom, floats up and fades over 1.5s:
-- "PERFECT DODGE!"
-- "Quest Complete!"
-- "DHRUVA IS DOWN! (12s)"
-- "POSTURE BROKEN" / "— VULNERABLE —"
-
-### Pause Menu (ESC)
-
-- Dim overlay
-- PAUSED text
-- RESUME / MAIN MENU buttons
-- Hints: M to mute, F11 for fullscreen
+When a Death Echo orb is present in the current region, a small prompt appears near the bottom of the screen guiding the player back to it.
 
 ### You Died Screen
 
 - Black veil fades in (0.88 alpha)
-- Blood-red flanking lines
-- "YOU DIED" — 72px, blood red, scales in
+- "YOU DIED" — 72px, blood red
 - Options: Retry [R] / Main Menu [ESC]
 - Triggers 1.2s after both players are downed
 
+### Pause Menu (ESC)
+
+- RESUME / WORLD MAP / MAIN MENU buttons
+- Hints: M to mute, F11 for fullscreen
+
 ### Ending Screen (GameEndingScene)
 
-- Starfield background with twinkling stars
+- Starfield background
 - "✦ AKHAND SUTRA ✦" gold title
-- "The Unbroken Thread — Restored" subtitle
-- 10 lines of story lore, fade in over 4s
+- 3 choice buttons (based on endings unlocked)
+- Epilogue text fades in after choice
 - Stats: Lore Fragments collected, Quests Completed
 - RETURN TO MENU button
-- Any key after 5s returns to menu
 
 ---
 
@@ -723,7 +837,7 @@ Floating text, center-bottom, floats up and fades over 1.5s:
 
 All audio is **synthesized in real-time** using the Web Audio API. No pre-recorded files.
 
-**Master Volume**: 0.4 (40%)  
+**Master Volume**: 0.4  
 **Mute Toggle**: M key
 
 ### Sound Effects
@@ -744,7 +858,7 @@ All audio is **synthesized in real-time** using the Web Audio API. No pre-record
 
 ### Ambient Audio
 
-Each region plays a background drone tone generated from sine oscillators:
+Each narrative region plays a background drone tone:
 
 | Region | Frequency |
 |--------|-----------|
@@ -769,17 +883,23 @@ Each region plays a background drone tone generated from sine oscillators:
 
 | Field | Type | Description |
 |-------|------|-------------|
-| regionIndex | number | Furthest region reached |
+| regionIndex | number | Last region visited |
 | playerStats | object | maxHp, maxStamina, abilityPow |
-| statTiers | object | Upgrade level per stat (structure exists, not yet active) |
-| completedQuests | string[] | Array of completed quest IDs |
+| playerXP | number | Accumulated XP |
+| amritCharges | number | Current Amrit charges |
+| amritMax | number | Max Amrit capacity |
+| pendingLevels | number | Level-ups not yet spent |
+| completedQuests | string[] | Completed quest IDs |
 | inventory | string[] | Collected item names |
-| loreCount | number | Lore fragments collected (0–7) |
+| collectedLoreIds | string[] | Lore fragment IDs gathered |
 | bossKills | string[] | Defeated boss keys |
+| encounteredEnemyIds | string[] | Enemy types faced (Codex bestiary) |
+| metNpcs | object[] | NPCs talked to (Codex) |
 
-### Stat Progression (Structure, Not Yet Active)
+### Save Triggers
 
-Tier system exists for upgrading maxHp, stamina, and abilityPow — currently all fixed at baseline values. Framework is in place for future implementation.
+- **Portal use** — saves on entering next region
+- **Thread Shrine** — saves current location as respawn, saves Amrit and XP
 
 ---
 
@@ -788,43 +908,32 @@ Tier system exists for upgrading maxHp, stamina, and abilityPow — currently al
 ### Two-Player Modes
 
 - **Play Solo**: Single player controls Dhruva; Tara is AI-controlled
-- **Host Co-op**: Host game for P2 to join
-- **Join Co-op**: Connect to host
+- **Host Co-op**: Host game for P2 to join (4-letter room code)
+- **Join Co-op**: Connect to host by entering the code
 
-### Network Protocol (Stub — Not Fully Implemented)
+### Network Protocol
 
 - Broadcasts player state at **8 Hz** (every 125ms)
 - Payload: position, HP, stamina, facing direction, animation state
-- Enemy state: ID, position, HP
-- Designed for WebSocket relay (no relay server currently active)
+- **No server-side simulation** — server is a relay only
+- **Fallback**: If remote peer disconnects, P2 reverts to AI follow behavior
 
 ### Tether System
 
-If P2 is more than **360px** from P1, P2 is pulled toward P1 at 80px/sec. Prevents players from separating too far in co-op.
-
-### Co-op Design Notes
-
-- Pressure plates require **both players** simultaneously
-- Tara's Jal Mend heals **both players**
-- If one player is downed, the other must survive while the timer runs out
-- Tether ensures players stay in the same battle zone
+If P2 is more than **360px** from P1, P2 is pulled toward P1 at 80px/sec.
 
 ---
 
 ## Quality Settings
 
-Selectable from the main menu; persists via localStorage (`akhand_quality`):
+Selectable from main menu; persists via localStorage (`akhand_quality`):
 
 | Setting | Low | Medium (default) | High |
 |---------|-----|---------|------|
-| Shadows (ellipse under entities) | Off | On | On |
+| Shadows | Off | On | On |
 | Occlusion (fade behind trees) | Off | Off | On |
 | Max Active Enemies | 8 | 12 | 18 |
 | Rabbit Decorations | 0 | 12 | 12 |
-
-**Shadow**: Ellipse drawn at 2.5× scale under each entity  
-**Occlusion**: Entities positioned behind trees fade to 38% alpha  
-**Rabbits**: Only in Regions 0–2
 
 ---
 
@@ -832,47 +941,71 @@ Selectable from the main menu; persists via localStorage (`akhand_quality`):
 
 ```
 game/
-├── index.html                  # HTML entry point
+├── index.html                      # HTML entry point
+├── map_editor.html                 # Standalone collaborative map editor
+├── asset_viewer.html               # Asset browser
+├── animation_reviewer.html         # Animation review tool
 ├── src/
-│   ├── main.js                 # Phaser game config + scene order
-│   ├── constants.js            # Speeds, damage, cooldowns, region names
+│   ├── main.js                     # Phaser game config + scene order
+│   ├── constants.js                # Speeds, damage, cooldowns, XP thresholds, items
 │   ├── scenes/
-│   │   ├── PreloadScene.js     # Asset loading + animation definitions
-│   │   ├── MainMenuScene.js    # Main menu UI, region select, settings
-│   │   ├── GameScene.js        # Main gameplay loop (~1242 lines)
-│   │   ├── UIScene.js          # In-game HUD overlay, boss bars, dialogue
-│   │   ├── PauseScene.js       # Pause menu overlay
-│   │   └── GameEndingScene.js  # Victory ending screen
+│   │   ├── PreloadScene.js         # Asset loading + animation definitions
+│   │   ├── MainMenuScene.js        # Main menu UI, region select, settings
+│   │   ├── PrologueScene.js        # 7-line narrative intro
+│   │   ├── GameScene.js            # Main gameplay loop (~3352 lines)
+│   │   ├── UIScene.js              # In-game HUD overlay, boss bars, dialogue
+│   │   ├── PauseScene.js           # Pause menu overlay
+│   │   ├── WorldMapScene.js        # Pannable world map, fog-of-war, fast travel
+│   │   ├── ShrineScene.js          # Level-up stat allocation at Thread Shrines
+│   │   └── GameEndingScene.js      # 3-choice ending + epilogue
 │   ├── entities/
-│   │   ├── Player.js           # Character controller, combat, abilities, dodge
-│   │   ├── Enemy.js            # AI state machine (idle/pursue/attack)
-│   │   ├── Boss.js             # Boss AI, phase transitions, stagger system
-│   │   ├── NPC.js              # NPCs, dialogue triggers
-│   │   └── Projectile.js       # Projectiles from ranged units and bosses
+│   │   ├── Player.js               # Character controller, combat, Amrit, dodge, XP
+│   │   ├── Enemy.js                # AI state machine (idle/pursue/attack)
+│   │   ├── Boss.js                 # Boss AI, phase transitions, stagger system
+│   │   ├── NPC.js                  # NPCs, dialogue triggers
+│   │   └── Projectile.js           # Projectiles from ranged units and bosses
 │   ├── systems/
-│   │   ├── AbilityManager.js   # Ability definitions + execution (all 6 abilities)
-│   │   ├── SaveManager.js      # localStorage persistence
-│   │   ├── QuestManager.js     # Quest state tracking
-│   │   ├── AudioManager.js     # Synthesized SFX + ambient audio
-│   │   ├── QualitySettings.js  # Low/medium/high presets
-│   │   └── NetworkManager.js   # Co-op networking stub
-│   ├── data/
-│   │   ├── regions.js          # 7 region configs
-│   │   ├── enemies.js          # 5 enemy type definitions
-│   │   └── quests.js           # Main + side quests, NPC dialogue
-│   └── map/                    # Map-related assets/configs
-├── server/                     # Co-op server (stub)
+│   │   ├── AbilityManager.js       # Ability definitions + execution (6 abilities)
+│   │   ├── AnimationLoader.js      # Generic runtime loader for boss + JSON entities
+│   │   ├── AudioManager.js         # Synthesized SFX + ambient audio
+│   │   ├── ExploredManager.js      # Fog-of-war: tracks visited regions (localStorage)
+│   │   ├── LoreManager.js          # Fragment collection + true ending gate
+│   │   ├── NetworkManager.js       # WebSocket co-op client
+│   │   ├── QuestManager.js         # Quest state + kill tracking
+│   │   ├── QualitySettings.js      # Low/med/high presets
+│   │   └── SaveManager.js          # localStorage persistence
+│   └── data/
+│       ├── bossAssets.js           # Legacy boss animation family specs
+│       ├── bosses.js               # 4+ boss configs with phase data
+│       ├── codex.js                # Bestiary lore + character/NPC entries
+│       ├── creatureStats.js        # Per-entity stats for map-editor creatures
+│       ├── enemies.js              # 8 built-in enemy type definitions
+│       ├── propFootprints.js       # Auto-generated collision footprints per asset
+│       ├── propTypes.js            # Prop classification (solid/decor/ground)
+│       ├── quests.js               # Quests, NPC dialogue, lore fragments
+│       ├── regions.js              # 7 narrative region descriptors
+│       └── worldMapLayout.js       # Node positions + act colours for WorldMapScene
+├── regions/                        # 50 map-editor JSON files (region_0, 7–49)
+├── server/
+│   └── combined_server.js          # Node.js HTTP + WebSocket server (port 8080)
 └── docs/
-    └── GAME_DESIGN_DOCUMENT.md # This file
+    ├── GAME_DESIGN_DOCUMENT.md     # This file
+    ├── TECHNICAL_OVERVIEW.md
+    ├── WORLD_MAP_DESIGN.md
+    ├── ANIMATION_PIPELINE.md
+    └── ASSETS.md
 ```
 
 ### Scene Order
 
-1. `PreloadScene` — loads all assets
-2. `MainMenuScene` — main menu
-3. `GameScene` — runs the active region; `UIScene` launched as parallel overlay
-4. `PauseScene` — launched over `GameScene` on ESC
-5. `GameEndingScene` — final victory screen
+1. `PreloadScene` — loads all assets; parses `docs/animations.json`
+2. `MainMenuScene` — main menu, region/co-op selection
+3. `PrologueScene` — first-time narrative intro (7 lines + title card)
+4. `GameScene` — runs active region; `UIScene` as parallel overlay
+5. `WorldMapScene` — overlay/full-screen; launched from menu or M key in-game
+6. `ShrineScene` — overlay; launched from Thread Shrine when level-up pending
+7. `PauseScene` — overlay; launched on ESC
+8. `GameEndingScene` — final victory screen
 
 ---
 
