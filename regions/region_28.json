@@ -10221,5 +10221,22 @@
    "y": 1000
   }
  ],
- "regionIndex": 28
+ "regionIndex": 28,
+ "creatures": [
+  {
+   "key": "frost_guardian",
+   "x": 900,
+   "y": 960
+  },
+  {
+   "key": "deer",
+   "x": 700,
+   "y": 800
+  },
+  {
+   "key": "hare",
+   "x": 780,
+   "y": 1100
+  }
+ ]
 }

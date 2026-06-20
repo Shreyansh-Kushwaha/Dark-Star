@@ -7258,5 +7258,27 @@
    "y": 923.794893745644
   }
  ],
- "regionIndex": 15
+ "regionIndex": 15,
+ "creatures": [
+  {
+   "key": "enemy_skeleton",
+   "x": 780,
+   "y": 850
+  },
+  {
+   "key": "enemy_skeleton",
+   "x": 1250,
+   "y": 1180
+  },
+  {
+   "key": "monsters_slime",
+   "x": 900,
+   "y": 1020
+  },
+  {
+   "key": "monsters_slime",
+   "x": 1600,
+   "y": 860
+  }
+ ]
 }

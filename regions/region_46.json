@@ -1,7 +1,7 @@
 {
  "version": 1,
  "regionName": "Drowned Catacombs",
- "regionSubtitle": "Magnasamādhi",
+ "regionSubtitle": "Magnasam\u0101dhi",
  "background": {
   "type": "color",
   "value": "#241a26"
@@ -3044,5 +3044,22 @@
    "y": 1000
   }
  ],
- "regionIndex": 46
+ "regionIndex": 46,
+ "creatures": [
+  {
+   "key": "enemy_skeleton",
+   "x": 750,
+   "y": 880
+  },
+  {
+   "key": "enemy_skeleton",
+   "x": 1100,
+   "y": 1120
+  },
+  {
+   "key": "slime3",
+   "x": 1350,
+   "y": 960
+  }
+ ]
 }

@@ -1,7 +1,7 @@
 {
  "version": 1,
  "regionName": "The Unwound Waste",
- "regionSubtitle": "Vighaṭitakṣetra",
+ "regionSubtitle": "Vigha\u1e6ditak\u1e63etra",
  "background": {
   "type": "color",
   "value": "#14101e"
@@ -3769,5 +3769,22 @@
    "y": 1000
   }
  ],
- "regionIndex": 47
+ "regionIndex": 47,
+ "creatures": [
+  {
+   "key": "enemy_3_seer_3",
+   "x": 760,
+   "y": 870
+  },
+  {
+   "key": "monsters_bat",
+   "x": 900,
+   "y": 700
+  },
+  {
+   "key": "monsters_bat",
+   "x": 1150,
+   "y": 1200
+  }
+ ]
 }

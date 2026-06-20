@@ -7783,5 +7783,17 @@
    "y": 891.3080030237554
   }
  ],
- "regionIndex": 14
+ "regionIndex": 14,
+ "creatures": [
+  {
+   "key": "monsters_bat",
+   "x": 800,
+   "y": 780
+  },
+  {
+   "key": "monsters_bat",
+   "x": 1100,
+   "y": 1200
+  }
+ ]
 }

@@ -3729,5 +3729,22 @@
    "y": 1000
   }
  ],
- "regionIndex": 29
+ "regionIndex": 29,
+ "creatures": [
+  {
+   "key": "enemy_3_seer_2",
+   "x": 820,
+   "y": 850
+  },
+  {
+   "key": "enemy_3_seer_3",
+   "x": 1200,
+   "y": 1150
+  },
+  {
+   "key": "enemy_3_seer_2",
+   "x": 1600,
+   "y": 880
+  }
+ ]
 }

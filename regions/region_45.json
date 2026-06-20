@@ -1982,5 +1982,12 @@
    "y": 1000
   }
  ],
- "regionIndex": 45
+ "regionIndex": 45,
+ "creatures": [
+  {
+   "key": "frost_guardian",
+   "x": 800,
+   "y": 1000
+  }
+ ]
 }

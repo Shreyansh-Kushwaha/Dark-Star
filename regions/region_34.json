@@ -12006,5 +12006,22 @@
    "y": 952.0222894101413
   }
  ],
- "regionIndex": 34
+ "regionIndex": 34,
+ "creatures": [
+  {
+   "key": "enemy_skeleton",
+   "x": 760,
+   "y": 860
+  },
+  {
+   "key": "enemy_skeleton",
+   "x": 1200,
+   "y": 1100
+  },
+  {
+   "key": "monsters_mimic",
+   "x": 950,
+   "y": 1000
+  }
+ ]
 }

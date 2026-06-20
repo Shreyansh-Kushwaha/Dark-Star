@@ -10897,5 +10897,27 @@
    "y": 1000
   }
  ],
- "regionIndex": 23
+ "regionIndex": 23,
+ "creatures": [
+  {
+   "key": "the_monsters_tree",
+   "x": 860,
+   "y": 850
+  },
+  {
+   "key": "slime2",
+   "x": 1200,
+   "y": 1100
+  },
+  {
+   "key": "the_monsters_tree",
+   "x": 1600,
+   "y": 880
+  },
+  {
+   "key": "slime3",
+   "x": 1000,
+   "y": 1200
+  }
+ ]
 }

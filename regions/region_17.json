@@ -9004,5 +9004,32 @@
    "y": 1000
   }
  ],
- "regionIndex": 17
+ "regionIndex": 17,
+ "creatures": [
+  {
+   "key": "monsters_mimic",
+   "x": 820,
+   "y": 900
+  },
+  {
+   "key": "monsters_mimic",
+   "x": 1400,
+   "y": 1100
+  },
+  {
+   "key": "slime2",
+   "x": 1000,
+   "y": 780
+  },
+  {
+   "key": "slime3",
+   "x": 1650,
+   "y": 950
+  },
+  {
+   "key": "monsters_slime",
+   "x": 1200,
+   "y": 1220
+  }
+ ]
 }

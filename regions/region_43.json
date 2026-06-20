@@ -4716,5 +4716,22 @@
    "y": 1000
   }
  ],
- "regionIndex": 43
+ "regionIndex": 43,
+ "creatures": [
+  {
+   "key": "enemy_skeleton",
+   "x": 760,
+   "y": 900
+  },
+  {
+   "key": "monsters_slime",
+   "x": 1000,
+   "y": 1100
+  },
+  {
+   "key": "slime1",
+   "x": 1300,
+   "y": 860
+  }
+ ]
 }

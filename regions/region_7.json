@@ -1,6 +1,6 @@
 {
  "regionName": "Memory Grove",
- "regionSubtitle": "Smṛtivana",
+ "regionSubtitle": "Sm\u1e5btivana",
  "version": 1,
  "background": {
   "type": "color",
@@ -6190,5 +6190,22 @@
    "y": 1720
   }
  ],
- "regionIndex": 7
+ "regionIndex": 7,
+ "creatures": [
+  {
+   "key": "deer",
+   "x": 900,
+   "y": 680
+  },
+  {
+   "key": "hare",
+   "x": 1050,
+   "y": 1340
+  },
+  {
+   "key": "fox",
+   "x": 1400,
+   "y": 720
+  }
+ ]
 }

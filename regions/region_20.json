@@ -12220,5 +12220,22 @@
    "y": 1700
   }
  ],
- "regionIndex": 20
+ "regionIndex": 20,
+ "creatures": [
+  {
+   "key": "bull",
+   "x": 880,
+   "y": 870
+  },
+  {
+   "key": "piglet",
+   "x": 960,
+   "y": 1080
+  },
+  {
+   "key": "turkey",
+   "x": 760,
+   "y": 1000
+  }
+ ]
 }

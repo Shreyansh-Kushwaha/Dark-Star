@@ -10431,5 +10431,27 @@
    "y": 1000
   }
  ],
- "regionIndex": 9
+ "regionIndex": 9,
+ "creatures": [
+  {
+   "key": "sheep",
+   "x": 760,
+   "y": 900
+  },
+  {
+   "key": "deer",
+   "x": 950,
+   "y": 680
+  },
+  {
+   "key": "hare",
+   "x": 700,
+   "y": 1150
+  },
+  {
+   "key": "monsters_rat",
+   "x": 1300,
+   "y": 820
+  }
+ ]
 }

@@ -5073,5 +5073,27 @@
    "y": 949.8528491316342
   }
  ],
- "regionIndex": 26
+ "regionIndex": 26,
+ "creatures": [
+  {
+   "key": "monsters_bat",
+   "x": 760,
+   "y": 780
+  },
+  {
+   "key": "monsters_bat",
+   "x": 1200,
+   "y": 1150
+  },
+  {
+   "key": "enemy_3_seer_1",
+   "x": 1000,
+   "y": 920
+  },
+  {
+   "key": "enemy_3_seer_1",
+   "x": 1700,
+   "y": 1050
+  }
+ ]
 }

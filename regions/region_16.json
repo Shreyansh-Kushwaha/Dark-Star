@@ -6201,5 +6201,27 @@
    "y": 1740
   }
  ],
- "regionIndex": 16
+ "regionIndex": 16,
+ "creatures": [
+  {
+   "key": "bull",
+   "x": 860,
+   "y": 870
+  },
+  {
+   "key": "calf",
+   "x": 920,
+   "y": 980
+  },
+  {
+   "key": "rooster",
+   "x": 760,
+   "y": 1060
+  },
+  {
+   "key": "chick",
+   "x": 800,
+   "y": 1010
+  }
+ ]
 }

@@ -9672,5 +9672,17 @@
    "y": 1000
   }
  ],
- "regionIndex": 24
+ "regionIndex": 24,
+ "creatures": [
+  {
+   "key": "enemy_fire_spirit",
+   "x": 820,
+   "y": 900
+  },
+  {
+   "key": "enemy_fire_spirit",
+   "x": 1300,
+   "y": 1100
+  }
+ ]
 }

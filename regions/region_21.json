@@ -11564,5 +11564,27 @@
    "y": 1000
   }
  ],
- "regionIndex": 21
+ "regionIndex": 21,
+ "creatures": [
+  {
+   "key": "enemy_fire_spirit",
+   "x": 780,
+   "y": 820
+  },
+  {
+   "key": "monsters_mimic",
+   "x": 1100,
+   "y": 1150
+  },
+  {
+   "key": "enemy_fire_spirit",
+   "x": 1400,
+   "y": 760
+  },
+  {
+   "key": "slime2",
+   "x": 1750,
+   "y": 1050
+  }
+ ]
 }

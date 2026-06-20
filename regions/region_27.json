@@ -3466,5 +3466,27 @@
    "y": 250
   }
  ],
- "regionIndex": 27
+ "regionIndex": 27,
+ "creatures": [
+  {
+   "key": "black_grouse",
+   "x": 760,
+   "y": 870
+  },
+  {
+   "key": "black_grouse",
+   "x": 900,
+   "y": 1100
+  },
+  {
+   "key": "black_grouse",
+   "x": 1100,
+   "y": 780
+  },
+  {
+   "key": "black_grouse",
+   "x": 1300,
+   "y": 1000
+  }
+ ]
 }

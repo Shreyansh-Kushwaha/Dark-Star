@@ -10701,5 +10701,32 @@
    "y": 1240
   }
  ],
- "regionIndex": 22
+ "regionIndex": 22,
+ "creatures": [
+  {
+   "key": "enemy_fire_spirit",
+   "x": 720,
+   "y": 840
+  },
+  {
+   "key": "enemy_fire_spirit",
+   "x": 950,
+   "y": 1160
+  },
+  {
+   "key": "enemy_fire_spirit",
+   "x": 1300,
+   "y": 780
+  },
+  {
+   "key": "enemy_fire_spirit",
+   "x": 1650,
+   "y": 1050
+  },
+  {
+   "key": "slime3",
+   "x": 1100,
+   "y": 960
+  }
+ ]
 }

@@ -1,7 +1,7 @@
 {
  "version": 1,
  "regionName": "Cinder Bazaar",
- "regionSubtitle": "Bhasmahaṭṭa",
+ "regionSubtitle": "Bhasmaha\u1e6d\u1e6da",
  "background": {
   "type": "color",
   "value": "#3a3230"
@@ -3968,5 +3968,22 @@
    "y": 1000
   }
  ],
- "regionIndex": 44
+ "regionIndex": 44,
+ "creatures": [
+  {
+   "key": "enemy_fire_spirit",
+   "x": 750,
+   "y": 860
+  },
+  {
+   "key": "enemy_fire_spirit",
+   "x": 1050,
+   "y": 1140
+  },
+  {
+   "key": "slime1",
+   "x": 1350,
+   "y": 950
+  }
+ ]
 }
