@@ -3,17 +3,22 @@
 // bought so each successive tier costs more. GameScene.getMerchantOffers() turns
 // these into concrete, priced offers using live player state.
 
-export const AMRIT_CHARGE_BASE = 100;   // first extra flask charge
-export const AMRIT_CHARGE_STEP = 70;    // added per charge already bought
-export const AMRIT_POTENCY_BASE = 90;   // first potency upgrade
-export const AMRIT_POTENCY_STEP = 70;   // added per potency tier already bought
+// Amrit upgrades are steep, escalating sinks — the first is an early reward (~1
+// region of shards), maxing either track is a whole-playthrough goal. Charge track
+// (4 buys to the cap of 8): 120/210/300/390 = 1020. Potency track (5 buys):
+// 110/190/270/350/430 = 1350.
+export const AMRIT_CHARGE_BASE = 120;   // first extra flask charge
+export const AMRIT_CHARGE_STEP = 90;    // added per charge already bought
+export const AMRIT_POTENCY_BASE = 110;  // first potency upgrade
+export const AMRIT_POTENCY_STEP = 80;   // added per potency tier already bought
 
 // Consumables/passives the merchant restocks. Items are defined in constants.ITEM_DEFS.
+// Consumables are cheap and repeatable; the two permanent passives are premium.
 export const CONSUMABLE_STOCK = [
-  { item: 'forest_totem',  price: 40  },
-  { item: 'jal_tear',      price: 70  },
-  { item: 'prithvi_shard', price: 220 }, // passive: +20 max HP
-  { item: 'agni_ember',    price: 260 }, // passive: +10% ability power
+  { item: 'forest_totem',  price: 50  },
+  { item: 'jal_tear',      price: 90  },
+  { item: 'prithvi_shard', price: 300 }, // passive: +20 max HP
+  { item: 'agni_ember',    price: 350 }, // passive: +10% ability power
 ];
 
 export function amritChargePrice(currentMax, baseMax) {
