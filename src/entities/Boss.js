@@ -43,58 +43,65 @@ export class Boss extends Phaser.GameObjects.Container {
     this.setDepth(y);
   }
 
-  enter(scene) {
+  // Cinematic entrance primitive, driven by CutscenePlayer's `reveal` step:
+  // pan to the boss, then a dramatic scale-up + camera shake. Resolves once the
+  // entrance settles so the cutscene can move to its next beat. Does NOT start
+  // the fight — that's beginFight(), called when the whole cutscene ends.
+  reveal(scene) {
     this.state   = STATE.ENTER;
     this._active = false;
+    this._introActive = true;
     this.setAlpha(0);
     this.sprite.setScale(0.05);
 
     const cam = scene.cameras.main;
-    cam.pan(this.x, this.y, 1000, 'Power2');
+    cam.pan(this.x, this.y, 900, 'Power2');
 
-    // Dramatic scale-up entrance after camera pans in
-    scene.time.delayedCall(420, () => {
-      scene.tweens.add({ targets: this, alpha: 1, duration: 180 });
-      scene.tweens.add({
-        targets: this.sprite,
-        scaleX: this.cfg.scale * 1.22, scaleY: this.cfg.scale * 1.22,
-        duration: 580, ease: 'Back.Out',
-        onComplete: () => {
-          // Rebound to true size
-          scene.tweens.add({
-            targets: this.sprite,
-            scaleX: this.cfg.scale, scaleY: this.cfg.scale,
-            duration: 300, ease: 'Power2.Out',
-          });
-          cam.shake(550, 0.016);
-          this._playAnim('idle');
-
-          if (this.cfg.introLine) {
-            this._introActive = true;
-            scene.events.emit('boss_intro', { lines: [this.cfg.introLine], boss: this });
-            scene.time.delayedCall(3200, () => { this._introActive = false; });
-          }
-
-          scene.time.delayedCall(1300, () => {
-            cam.startFollow(scene.players[0], true, 0.1, 0.1);
-            this.state       = STATE.FIGHT;
-            this._active     = true;
-            this._graceTimer = 2500;
-            scene.events.emit('boss_entered', { boss: this });
-
-            // Pulsing floor aura
-            this._aura = scene.add.circle(this.x, this.y, 80 * this.cfg.scale, this.cfg.tint || 0xff4400, 0.13);
-            this._aura.setDepth(this.y - 2);
+    return new Promise(resolve => {
+      scene.time.delayedCall(360, () => {
+        scene.tweens.add({ targets: this, alpha: 1, duration: 180 });
+        scene.tweens.add({
+          targets: this.sprite,
+          scaleX: this.cfg.scale * 1.22, scaleY: this.cfg.scale * 1.22,
+          duration: 560, ease: 'Back.Out',
+          onComplete: () => {
+            // Rebound to true size
             scene.tweens.add({
-              targets: this._aura,
-              alpha:  { from: 0.07, to: 0.22 },
-              scaleX: { from: 0.82, to: 1.18 },
-              scaleY: { from: 0.82, to: 1.18 },
-              duration: 1400, yoyo: true, repeat: -1, ease: 'Sine.easeInOut',
+              targets: this.sprite,
+              scaleX: this.cfg.scale, scaleY: this.cfg.scale,
+              duration: 300, ease: 'Power2.Out',
             });
-          });
-        },
+            cam.shake(500, 0.016);
+            this._playAnim('idle');
+            scene.time.delayedCall(320, resolve);
+          },
+        });
       });
+    });
+  }
+
+  // Hands control from the intro cutscene back to gameplay: camera resumes
+  // following the player, the HP bar slides up, and the AI goes live.
+  beginFight(scene) {
+    this._introActive = false;
+    this.setAlpha(1);
+    if (!this.cfg.phaseScales) this.sprite.setScale(this.cfg.scale);
+
+    scene.cameras.main.startFollow(scene.players[0], true, 0.1, 0.1);
+    this.state       = STATE.FIGHT;
+    this._active     = true;
+    this._graceTimer = 2500;
+    scene.events.emit('boss_bar_show', { boss: this });
+
+    // Pulsing floor aura
+    this._aura = scene.add.circle(this.x, this.y, 80 * this.cfg.scale, this.cfg.tint || 0xff4400, 0.13);
+    this._aura.setDepth(this.y - 2);
+    scene.tweens.add({
+      targets: this._aura,
+      alpha:  { from: 0.07, to: 0.22 },
+      scaleX: { from: 0.82, to: 1.18 },
+      scaleY: { from: 0.82, to: 1.18 },
+      duration: 1400, yoyo: true, repeat: -1, ease: 'Sine.easeInOut',
     });
   }
 

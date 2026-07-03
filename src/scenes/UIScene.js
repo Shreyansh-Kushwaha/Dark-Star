@@ -60,7 +60,11 @@ export class UIScene extends Phaser.Scene {
     // pairs on this scene's shutdown.
     const gs = this.scene.get('GameScene');
     this._gsHandlers = [
-      ['boss_entered',       this._onBossEntered],
+      ['boss_namecard',      this._onBossNamecard],
+      ['boss_bar_show',      this._onBossBarShow],
+      ['cutscene_letterbox', this._onCutsceneLetterbox],
+      ['cutscene_blackout',  this._onCutsceneBlackout],
+      ['cutscene_flash',     this._onCutsceneFlash],
       ['boss_hp_changed',    this._onBossHpChanged],
       ['boss_phase_changed', this._onBossPhase],
       ['boss_staggered',     this._onBossStaggered],
@@ -171,7 +175,7 @@ export class UIScene extends Phaser.Scene {
     const barH  = 14;
     const postH = 12;
 
-    // Starts off-screen below; slides up on boss_entered
+    // Starts off-screen below; slides up on boss_bar_show (end of the intro cutscene)
     this._bossContainer = this.add.container(0, GAME_H + 200).setVisible(false);
 
     // Boss name — centered, gold serif
@@ -233,6 +237,7 @@ export class UIScene extends Phaser.Scene {
 
     this._bossHpDelayTween = null;
     this._createBossIntroOverlay();
+    this._createCutsceneOverlays();
   }
 
   _createBossIntroOverlay() {
@@ -270,6 +275,22 @@ export class UIScene extends Phaser.Scene {
     const topBar = this.add.rectangle(0, dy, GAME_W, 3, 0xffd700, 1).setOrigin(0, 0);
     const botBar = this.add.rectangle(0, dy + dh + 1, GAME_W, 3, 0xffd700, 0.4).setOrigin(0, 0);
 
+    // Optional VN-style portrait bust, shown to the left when a line carries a
+    // `portrait` texture key. Hidden for plain narration.
+    const pfSize = 128;
+    const pfX = 20, pfY = dy + (dh - pfSize) / 2;
+    this._portraitFrame = this.add.rectangle(pfX, pfY, pfSize, pfSize, 0x05050a, 0.9)
+      .setOrigin(0, 0).setStrokeStyle(2, 0xffd700, 0.85).setVisible(false);
+    this._dialoguePortrait = this.add.image(pfX + pfSize / 2, pfY + pfSize / 2, '__WHITE').setVisible(false);
+    this._portraitSize = pfSize;
+    this._portraitCX = pfX + pfSize / 2;
+    this._portraitCY = pfY + pfSize / 2;
+
+    this._dialogueSpeaker = this.add.text(24, dy + 12, '', {
+      fontSize: '15px', color: '#ffd700', fontFamily: 'serif', fontStyle: 'bold',
+      stroke: '#000', strokeThickness: 3,
+    }).setVisible(false);
+
     this._dialogueText = this.add.text(24, dy + 14, '', {
       fontSize: '17px', color: '#ffe8a0', fontFamily: 'serif',
       wordWrap: { width: GAME_W - 48 }, lineSpacing: 8,
@@ -278,7 +299,14 @@ export class UIScene extends Phaser.Scene {
       fontSize: '10px', color: '#888', fontFamily: 'monospace',
     }).setOrigin(1, 1);
 
-    this._dialogueContainer.add([bg, topBar, botBar, this._dialogueText, hint]);
+    // Text anchors: X shifts right when a portrait is present; Y drops when a
+    // speaker label sits above the line.
+    this._dlgTextX0 = 24;
+    this._dlgTextXP = pfX + pfSize + 20;
+    this._dlgTextY0 = dy + 14;
+    this._dlgTextY1 = dy + 36;
+
+    this._dialogueContainer.add([bg, topBar, botBar, this._portraitFrame, this._dialoguePortrait, this._dialogueSpeaker, this._dialogueText, hint]);
   }
 
   // ── Region title ───────────────────────────────────────────────────────────
@@ -506,7 +534,55 @@ export class UIScene extends Phaser.Scene {
 
   // ── Boss events ────────────────────────────────────────────────────────────
 
-  _onBossEntered(data) {
+  // Cinematic overlays owned by this fixed (screen-space) layer, driven by
+  // CutscenePlayer via GameScene events. Hidden until a cutscene toggles them.
+  _createCutsceneOverlays() {
+    const barH = 72;
+    this._letterbox = this.add.container(0, 0).setDepth(9985).setVisible(false);
+    this._lbTop = this.add.rectangle(0, -barH, GAME_W, barH, 0x000000, 1).setOrigin(0, 0);
+    this._lbBot = this.add.rectangle(0, GAME_H, GAME_W, barH, 0x000000, 1).setOrigin(0, 0);
+    this._letterbox.add([this._lbTop, this._lbBot]);
+    this._lbBarH = barH;
+
+    // Full-screen veil for VN / "separate scene" style beats. Kept at fillAlpha
+    // 1 with GameObject alpha driving visibility (tweening alpha is reliable).
+    this._blackout = this.add.rectangle(0, 0, GAME_W, GAME_H, 0x000000, 1)
+      .setOrigin(0).setAlpha(0).setDepth(9986).setVisible(false);
+  }
+
+  _onCutsceneLetterbox(data) {
+    const on = data?.on !== false;
+    const h  = this._lbBarH;
+    this._letterbox.setVisible(true);
+    this.tweens.add({ targets: this._lbTop, y: on ? 0 : -h, duration: 420, ease: 'Sine.easeInOut' });
+    this.tweens.add({
+      targets: this._lbBot, y: on ? GAME_H - h : GAME_H, duration: 420, ease: 'Sine.easeInOut',
+      onComplete: () => { if (!on) this._letterbox.setVisible(false); },
+    });
+  }
+
+  _onCutsceneBlackout(data) {
+    const on = data?.on !== false;
+    const ms = data?.ms ?? 400;
+    this._blackout.setVisible(true);
+    this.tweens.add({
+      targets: this._blackout, alpha: on ? (data?.alpha ?? 0.94) : 0, duration: ms,
+      onComplete: () => { if (!on) this._blackout.setVisible(false); },
+    });
+  }
+
+  _onCutsceneFlash(data) {
+    const flash = this.add.rectangle(GAME_W / 2, GAME_H / 2, GAME_W, GAME_H, data?.color ?? 0xffffff, 0.6)
+      .setOrigin(0.5).setDepth(9987);
+    this.tweens.add({ targets: flash, alpha: 0, duration: data?.ms ?? 500, onComplete: () => flash.destroy() });
+  }
+
+  _onBossBarShow(data) { this._showBossBar(data.boss); }
+
+  // The gold name-card overlay (dark veil + expanding lines + name + subtitle).
+  // Unlike the old flow, this NO LONGER shows the HP bar — the cutscene calls
+  // that separately (boss_bar_show) once the whole intro finishes.
+  _onBossNamecard(data) {
     const { boss } = data;
     const name = boss.cfg.name.toUpperCase();
     const lore = boss.cfg.lore || '';
@@ -541,15 +617,13 @@ export class UIScene extends Phaser.Scene {
       duration: 400, delay: 750,
     });
 
-    // 5. After 2.8s fade out overlay, then slide bar up
+    // 5. After 2.8s fade the name-card out. The HP bar is raised later, by the
+    //    cutscene's boss_bar_show step once the full intro has played.
     this.time.delayedCall(2800, () => {
       this.tweens.add({
         targets: [this._introFade, this._introName, this._introSub, this._introLineTop, this._introLineBot],
         alpha: 0, duration: 420,
-        onComplete: () => {
-          this._introOverlay.setVisible(false);
-          this._showBossBar(boss);
-        },
+        onComplete: () => this._introOverlay.setVisible(false),
       });
     });
   }
@@ -1028,7 +1102,30 @@ export class UIScene extends Phaser.Scene {
 
   _showDialogue(data) {
     this._dialogueContainer.setVisible(true);
-    this._dialogueText.setText(data.text || '');
+
+    const pKey = data?.portrait;
+    const hasPortrait = !!pKey && this.textures.exists(pKey);
+    if (hasPortrait) {
+      // Player portraits are spritesheets (use frame 0); boss frames are single
+      // images (use __BASE). Picking the right one avoids rendering a whole sheet.
+      const tex = this.textures.get(pKey);
+      const frameKey = tex && tex.has('0') ? '0' : '__BASE';
+      const img = this._dialoguePortrait.setTexture(pKey, frameKey).setVisible(true).setScale(1);
+      const fit = this._portraitSize - 12;
+      const sc  = Math.min(fit / img.frame.width, fit / img.frame.height);
+      img.setScale(sc).setPosition(this._portraitCX, this._portraitCY);
+      this._portraitFrame.setVisible(true);
+    } else {
+      this._dialoguePortrait.setVisible(false);
+      this._portraitFrame.setVisible(false);
+    }
+
+    const speaker = data?.speaker || '';
+    const tx = hasPortrait ? this._dlgTextXP : this._dlgTextX0;
+    this._dialogueSpeaker.setText(speaker).setVisible(!!speaker).setX(tx);
+    this._dialogueText.setX(tx).setY(speaker ? this._dlgTextY1 : this._dlgTextY0);
+    this._dialogueText.setWordWrapWidth(GAME_W - tx - 24);
+    this._dialogueText.setText(data?.text || '');
   }
 
   _hideDialogue() {

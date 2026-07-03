@@ -18,6 +18,7 @@ import { SaveManager } from '../systems/SaveManager.js';
 import { NetworkManager } from '../systems/NetworkManager.js';
 import { QualitySettings } from '../systems/QualitySettings.js';
 import { ExploredManager } from '../systems/ExploredManager.js';
+import { CutscenePlayer, defaultBossCutscene } from '../systems/CutscenePlayer.js';
 import { NPC } from '../entities/NPC.js';
 import { classifyProp, propFootprint } from '../data/propTypes.js';
 
@@ -2721,29 +2722,16 @@ export class GameScene extends Phaser.Scene {
     const boss = new Boss(this, bossPos.x, bossPos.y, bossKey);
     boss.enablePhysics(this);
     this._boss = boss;
-
-    boss.enter(this);
     this.audio.bossPhase();
 
-    // Subtle cinematic zoom — camera stays on player, just zooms in slightly
-    this.tweens.add({
-      targets: this.cameras.main,
-      zoom: 1.18,
-      duration: 600,
-      ease: 'Sine.easeInOut',
-    });
-    this.time.delayedCall(3400, () => {
-      this.tweens.add({
-        targets: this.cameras.main,
-        zoom: 1.0,
-        duration: 700,
-        ease: 'Sine.easeInOut',
-      });
-    });
-
-    if (boss.cfg.introLines?.length) {
-      this._startBossIntro(boss);
-    }
+    // Data-driven intro cutscene. A boss may author its own `cutscene` step
+    // list (camera work, VN portraits, blackout beats); otherwise we synthesise
+    // the classic reveal → name-card → intro-lines flow from its intro text.
+    // CutscenePlayer freezes the world for the duration (this._bossIntroActive)
+    // and hands control back via boss.beginFight() when it finishes.
+    const steps = boss.cfg.cutscene?.length ? boss.cfg.cutscene : defaultBossCutscene(boss);
+    this._cutscene = new CutscenePlayer(this);
+    this._cutscene.play(steps, { boss });
   }
 
   _checkPressurePlates() {
@@ -3304,29 +3292,6 @@ export class GameScene extends Phaser.Scene {
       this.events.emit('show_dialogue', { text: '⟨Pashana Daitya⟩ "You dare chip the stone? Then feel the mountain\'s RAGE!"' });
       this.time.delayedCall(2800, () => this.events.emit('hide_dialogue'));
     });
-  }
-
-  _startBossIntro(boss) {
-    if (!boss.cfg.introLines?.length) return;
-    this._bossIntroActive = true;
-    boss._introActive = true;
-
-    const lines = boss.cfg.introLines;
-    let i = 0;
-    const showNext = () => {
-      if (i >= lines.length) {
-        this.time.delayedCall(800, () => {
-          this._bossIntroActive = false;
-          boss._introActive = false;
-          this.events.emit('hide_dialogue');
-        });
-        return;
-      }
-      this.events.emit('show_dialogue', { text: lines[i++] });
-      this.time.delayedCall(3000, showNext);
-    };
-    // Delay to let the boss name-card overlay finish (~2.8s in UIScene)
-    this.time.delayedCall(3200, showNext);
   }
 
   _updateRevival(delta) {
