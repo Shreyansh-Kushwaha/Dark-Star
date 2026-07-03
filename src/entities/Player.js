@@ -3,10 +3,11 @@ import {
   LIGHT_CD, HEAVY_CD, LIGHT_STAMINA, HEAVY_STAMINA, DODGE_CD, DODGE_STAMINA, DODGE_DURATION,
   PERFECT_DODGE_WINDOW, PERFECT_DODGE_SLOWMO, PERFECT_DODGE_DURATION,
   XP_THRESHOLDS,
-  AMRIT_MAX_DEFAULT, AMRIT_HEAL_FRAC, AMRIT_SIP_LOCKOUT,
+  AMRIT_MAX_DEFAULT, AMRIT_HEAL_FRAC, AMRIT_SIP_LOCKOUT, AMRIT_POTENCY_STEP,
 } from '../constants.js';
 import { AbilityManager } from '../systems/AbilityManager.js';
 import { QualitySettings } from '../systems/QualitySettings.js';
+import { SKILL_TREES } from '../data/skills.js';
 
 export class Player extends Phaser.GameObjects.Container {
   constructor(scene, x, y, isP1, saveData, charKey) {
@@ -28,9 +29,24 @@ export class Player extends Phaser.GameObjects.Container {
     this.level      = saveData?.playerLevel ?? 1;
     this.xp         = saveData?.playerXP    ?? 0;
 
+    // Stat model: skill-tree % modifiers stack on the saved base. Passive items add
+    // flat/mult on top. applySkills()/addPassive() recompute the finals via
+    // recomputeStats(). dmg/defense/stamina-regen are pure skill multipliers read by
+    // combat. See src/data/skills.js. (applySkills is called by GameScene once the
+    // HP bar exists.)
+    this._baseMaxHp      = this.maxHp;
+    this._baseStamina    = this.maxStamina;
+    this._baseAbilityPow = this.abilityPow;
+    this._passiveHpFlat  = 0;
+    this._passiveAbAdd   = 0;
+    this._skillHpPct = 0; this._skillStaPct = 0; this._skillAbPct = 0;
+    this.dmgMult = 1; this.defenseMult = 1; this._staRegenMult = 1;
+    this._skillNodes = [];
+
     // Amrit — healing flask (Estus equivalent)
     this.amritMax     = saveData?.amritMax     ?? AMRIT_MAX_DEFAULT;
     this.amritCharges = saveData?.amritCharges ?? this.amritMax;
+    this.amritPotencyTier = saveData?.amritPotencyTier ?? 0; // merchant heal-% upgrades
     this._amritLockout = 0;
 
     // State
@@ -135,9 +151,9 @@ export class Player extends Phaser.GameObjects.Container {
 
     this._updateHpBar();
 
-    // Stamina regen
+    // Stamina regen (skill tree can boost the rate)
     if (!this.dodging && this.stamina < this.maxStamina) {
-      this.stamina = Math.min(this.maxStamina, this.stamina + 18 * delta / 1000);
+      this.stamina = Math.min(this.maxStamina, this.stamina + 18 * delta / 1000 * (this._staRegenMult || 1));
     }
   }
 
@@ -256,6 +272,7 @@ export class Player extends Phaser.GameObjects.Container {
 
   _doAttack(damage, isHeavy, enemies, scene) {
     if (this.oneShotMode) damage *= 9999;
+    else damage *= (this.dmgMult || 1);   // skill-tree attack-damage bonus
     this.attacking = true;
     // Heavy is an explicit flag from the caller — inferring it from the damage
     // number was wrong once abilityPow / perfect-dodge (×1.5) / one-shot scaled it.
@@ -381,6 +398,7 @@ export class Player extends Phaser.GameObjects.Container {
 
     if (this.godMode) return;
     if (this.dodging && this.checkPerfectDodge(scene)) return;
+    amount *= (this.defenseMult || 1);   // skill-tree damage reduction
     if (this._guardStance) amount *= 0.5;
     if (this._agniShieldTimer > 0) {
       amount *= 0.5;
@@ -606,19 +624,59 @@ export class Player extends Phaser.GameObjects.Container {
     });
   }
 
-  applyStat(stat, tier) {
-    // Each allocated point = +5%. A full 5-point level pumped into one stat = +25%,
-    // matching the pre-points-system per-level growth.
-    const mult = 1 + tier * 0.05;
-    if (stat === 'maxHp') {
-      this.maxHp = Math.floor(200 * mult);
-      this.hp = Math.min(this.hp, this.maxHp);
-    } else if (stat === 'stamina') {
-      this.maxStamina = Math.floor(100 * mult);
-    } else if (stat === 'abilityPow') {
-      this.abilityPow = mult;
+  // Apply the unlocked skill-tree nodes (only those matching this character).
+  applySkills(nodeIds) {
+    this._skillNodes = Array.isArray(nodeIds) ? [...nodeIds] : [];
+    const owned = new Set(this._skillNodes);
+    let hpPct = 0, staPct = 0, abPct = 0, dmgPct = 0, defPct = 0, staRegPct = 0;
+    const tree = SKILL_TREES[this.charKey];
+    if (tree) {
+      for (const branch of tree.branches) {
+        for (const n of branch.nodes) {
+          if (!owned.has(n.id)) continue;
+          const m = n.mods || {};
+          hpPct += m.hpPct || 0;   staPct += m.staminaPct || 0;  abPct += m.abilityPct || 0;
+          dmgPct += m.dmgPct || 0; defPct += m.defensePct || 0;  staRegPct += m.staRegenPct || 0;
+        }
+      }
     }
+    this._skillHpPct = hpPct;
+    this._skillStaPct = staPct;
+    this._skillAbPct = abPct;
+    this.dmgMult = 1 + dmgPct;
+    this.defenseMult = Math.max(0.1, 1 - defPct);
+    this._staRegenMult = 1 + staRegPct;
+    this.recomputeStats();
+  }
+
+  // Recompute finals from base + passive items + skill percentages. Grants the
+  // delta of any max-HP increase so a fresh node/upgrade feels like a heal.
+  recomputeStats() {
+    const prevMax = this.maxHp;
+    this.maxHp = Math.floor((this._baseMaxHp + this._passiveHpFlat) * (1 + this._skillHpPct));
+    this.maxStamina = Math.floor(this._baseStamina * (1 + this._skillStaPct));
+    this.abilityPow = Math.round((this._baseAbilityPow + this._passiveAbAdd) * (1 + this._skillAbPct) * 100) / 100;
+    if (this.maxHp > prevMax) this.hp += (this.maxHp - prevMax);
+    this.hp = Math.min(this.hp, this.maxHp);
+    this.stamina = Math.min(this.stamina, this.maxStamina);
     this._updateHpBar();
+  }
+
+  // The pre-skill base (incl. permanent passive items) to persist — saving the
+  // skill-multiplied finals would compound the % bonuses on every reload.
+  getBaseStats() {
+    return {
+      maxHp:      this._baseMaxHp + this._passiveHpFlat,
+      maxStamina: this._baseStamina,
+      abilityPow: Math.round((this._baseAbilityPow + this._passiveAbAdd) * 100) / 100,
+    };
+  }
+
+  // Permanent stat item pickup (folds into the base so skills recompute correctly).
+  addPassive(stat, amount) {
+    if (stat === 'maxHp') this._passiveHpFlat += amount;
+    else if (stat === 'abilityPow') this._passiveAbAdd += amount;
+    this.recomputeStats();
   }
 
   quaffAmrit(scene) {
@@ -631,7 +689,8 @@ export class Player extends Phaser.GameObjects.Container {
     if (this.hp >= this.maxHp) return false;   // don't waste a sip at full HP
     this.amritCharges--;
     this._amritLockout = AMRIT_SIP_LOCKOUT;
-    this.hp = Math.min(this.maxHp, this.hp + Math.floor(this.maxHp * AMRIT_HEAL_FRAC));
+    const healFrac = AMRIT_HEAL_FRAC + (this.amritPotencyTier || 0) * AMRIT_POTENCY_STEP;
+    this.hp = Math.min(this.maxHp, this.hp + Math.floor(this.maxHp * healFrac));
     this._updateHpBar();
     scene?.events?.emit('amrit_used', { player: this, x: this.x, y: this.y });
     scene?.events?.emit('amrit_changed', { player: this, charges: this.amritCharges, max: this.amritMax });

@@ -25,6 +25,13 @@ export const PERFECT_DODGE_DURATION = 500;
 export const AMRIT_MAX_DEFAULT = 4;     // starting charges
 export const AMRIT_HEAL_FRAC   = 0.55;  // fraction of max HP restored per sip
 export const AMRIT_SIP_LOCKOUT = 550;   // ms you're vulnerable while drinking
+export const AMRIT_POTENCY_STEP = 0.06; // extra heal fraction per merchant potency upgrade
+export const AMRIT_MAX_CAP      = 8;    // hard cap on flask charges (merchant upgrades)
+export const AMRIT_POTENCY_CAP  = 5;    // max potency upgrades
+
+// ── Thread Shards — the merchant currency ────────────────────────────────────
+export const SHARDS_PER_ENEMY = 5;      // base drop per normal enemy kill
+export const SHARDS_PER_BOSS  = 120;    // bonus for felling a boss
 
 export const BOSS_TRIGGER_DIST = 300;
 export const TETHER_DIST = 360;
@@ -47,10 +54,9 @@ export const REGION_NAMES = [
 // the XP needed to go from level 1 → 2 (100), index 1 for 2 → 3 (250), and so on.
 export const XP_THRESHOLDS = [100, 250, 450, 700, 1000, 1350, 1750, 2200, 2700, Infinity];
 
-// Level-up stat allocation. Each level grants POINTS_PER_LEVEL points to spend
-// across stats; each point applied to a stat is +5% (see Player.applyStat).
+// Each banked level grants POINTS_PER_LEVEL skill points, spent in the character
+// skill tree (see src/data/skills.js and Player.applySkills).
 export const POINTS_PER_LEVEL = 5;
-export const POINT_PCT = 5; // display only: % gained per point
 
 // Item definitions — type: 'consumable' | 'passive' | 'token'
 // consumable: used from inventory for immediate effect

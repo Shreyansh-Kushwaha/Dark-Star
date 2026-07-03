@@ -1,4 +1,5 @@
-import { GAME_W, GAME_H, ITEM_DEFS, XP_THRESHOLDS, POINTS_PER_LEVEL, POINT_PCT } from '../constants.js';
+import { GAME_W, GAME_H, ITEM_DEFS, XP_THRESHOLDS, POINTS_PER_LEVEL } from '../constants.js';
+import { SKILL_TREES } from '../data/skills.js';
 
 const BAR_L     = 52;          // HP bar left x
 const BAR_R     = GAME_W - 30; // HP bar right x
@@ -36,8 +37,7 @@ export class UIScene extends Phaser.Scene {
     this._createCheatConsole();
     this._createVignette();
 
-    this._statTiers = { ...(this.scene.get('GameScene')?._save?.statTiers || {}) };
-    this._statPoints = this.scene.get('GameScene')?._save?.statPoints || 0; // banked, unspent points
+    this._statPoints = this.scene.get('GameScene')?._save?.statPoints || 0; // banked, unspent skill points
     this._levelUpActive = false;
 
     this._keyEsc       = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
@@ -88,6 +88,7 @@ export class UIScene extends Phaser.Scene {
       ['item_acquired',      this._onItemAcquired],
       ['xp_changed',         this._onXpChanged],
       ['amrit_changed',      this._onAmritChanged],
+      ['shards_changed',     this._onShardsChanged],
     ];
     for (const [evt, fn] of this._gsHandlers) gs.events.on(evt, fn, this);
     this.events.once('shutdown', () => {
@@ -137,6 +138,14 @@ export class UIScene extends Phaser.Scene {
     this._loreLabel = this.add.text(GAME_W - pad, 36, '◈ 0 / 20', {
       fontSize: '10px', color: '#ffd700', fontFamily: 'monospace',
     }).setOrigin(1, 0.5);
+
+    // Thread Shards balance (merchant currency) — sits just below the HUD bar so it
+    // doesn't collide with the packed top row.
+    const shards0 = this.scene.get('GameScene')?._save?.threadShards || 0;
+    this._shardLabel = this.add.text(GAME_W - pad, 72, `✦ ${shards0} shards`, {
+      fontSize: '11px', color: '#8fe3ff', fontFamily: 'monospace', fontStyle: 'bold',
+      stroke: '#000', strokeThickness: 3,
+    }).setOrigin(1, 0);
 
     this.add.text(GAME_W - pad, 52,
       '[J] Atk [K] Heavy [Q/E/R] Ability [Shift] Dodge [F] Talk/Use [I] Inv [U] Quests', {
@@ -810,122 +819,116 @@ export class UIScene extends Phaser.Scene {
     if (this._levelUpActive) return;
     this._levelUpActive = true;
 
-    // Grant points for every banked level at once, so the player allocates
-    // a single pool instead of re-opening the panel per level.
+    // Grant a shared point pool for every banked level, then spend it in the tree.
     const levels = Math.max(1, gs._pendingLevels || 0);
     this._statPoints += levels * POINTS_PER_LEVEL;
     this._levelsConsumed = levels;
 
-    // Quick toast, then pause physics one frame later so the toast renders first.
-    this.toast(`⚔  LEVEL UP!  ${this._statPoints} points to spend`, '#ffd700', 1800);
-    this.time.delayedCall(16, () => {
-      gs._paused = true;
-      gs.physics?.pause();
-    });
+    // Show the local primary player's character tree.
+    const player = gs.players?.find(p => p?.isLocal) || gs.players?.[0];
+    const charKey = player?.charKey || 'dhruva';
+    const tree = SKILL_TREES[charKey];
+    const branches = tree?.branches || [];
+
+    this.toast(`⚔  LEVEL UP!  ${this._statPoints} skill points`, '#ffd700', 1800);
+    this.time.delayedCall(16, () => { gs._paused = true; gs.physics?.pause(); });
 
     const depth = 9993;
-    const stats = [
-      { stat: 'maxHp',      label: 'VITALITY',  blurb: 'Max HP' },
-      { stat: 'stamina',    label: 'ENDURANCE', blurb: 'Stamina' },
-      { stat: 'abilityPow', label: 'POWER',     blurb: 'Ability Power' },
-    ];
-
-    // Points spent this session per stat — used to allow refunds before closing.
-    const sessionSpent = { maxHp: 0, stamina: 0, abilityPow: 0 };
-    let selected = 0;
+    const owned = new Set(gs._save?.skillNodes || []);
     let closed = false;
+    let selBi = 0, selTi = 0;
 
-    // Veil
     const veil = this.add.rectangle(0, 0, GAME_W, GAME_H, 0x000000, 0).setOrigin(0).setDepth(depth);
-    this.tweens.add({ targets: veil, alpha: 0.82, duration: 120 });
+    this.tweens.add({ targets: veil, alpha: 0.85, duration: 120 });
 
-    const title = this.add.text(GAME_W / 2, GAME_H / 2 - 150, '⚔  LEVEL UP', {
-      fontSize: '36px', color: '#ffd700', fontFamily: 'serif',
-      stroke: '#000', strokeThickness: 6, letterSpacing: 6,
-    }).setOrigin(0.5).setDepth(depth + 1).setAlpha(0);
-    this.tweens.add({ targets: title, alpha: 1, duration: 150, delay: 60 });
+    const title = this.add.text(GAME_W / 2, 74, `⚔  SKILL TREE — ${tree?.name || charKey}`, {
+      fontSize: '30px', color: '#ffd700', fontFamily: 'serif', stroke: '#000', strokeThickness: 6,
+    }).setOrigin(0.5).setDepth(depth + 1);
 
-    // Available-points readout
-    const pointsLabel = this.add.text(GAME_W / 2, GAME_H / 2 - 104, '', {
-      fontSize: '16px', color: '#ffe8a0', fontFamily: 'monospace',
-    }).setOrigin(0.5).setDepth(depth + 1).setAlpha(0);
-    this.tweens.add({ targets: pointsLabel, alpha: 1, duration: 150, delay: 90 });
+    const pointsLabel = this.add.text(GAME_W / 2, 112, '', {
+      fontSize: '15px', color: '#ffe8a0', fontFamily: 'monospace',
+    }).setOrigin(0.5).setDepth(depth + 1);
 
-    // One row per stat
-    const rowH = 64, rowW = 460;
-    const rowObjs = [];
-    for (let i = 0; i < stats.length; i++) {
-      const s  = stats[i];
-      const ry = GAME_H / 2 - 56 + i * (rowH + 8);
+    // One column per branch, one row per tier.
+    const colW = 300, colGap = 44;
+    const totalW = branches.length * colW + Math.max(0, branches.length - 1) * colGap;
+    const x0 = GAME_W / 2 - totalW / 2 + colW / 2;
+    const nodeH = 64, nodeGap = 12, gridTop = 176;
 
-      const bg = this.add.rectangle(GAME_W / 2, ry, rowW, rowH, 0x1a1000, 0.92)
-        .setDepth(depth + 1).setAlpha(0).setStrokeStyle(2, 0x886633)
-        .setInteractive({ useHandCursor: true });
-      const lbl = this.add.text(GAME_W / 2 - rowW / 2 + 18, ry - 12, s.label, {
-        fontSize: '18px', color: '#ffffff', fontFamily: 'serif', fontStyle: 'bold',
-      }).setOrigin(0, 0.5).setDepth(depth + 2).setAlpha(0);
-      const val = this.add.text(GAME_W / 2 - rowW / 2 + 18, ry + 14, '', {
-        fontSize: '12px', color: '#ccaa77', fontFamily: 'monospace',
-      }).setOrigin(0, 0.5).setDepth(depth + 2).setAlpha(0);
-      // Pip strip showing total invested tiers
-      const pips = this.add.text(GAME_W / 2 + rowW / 2 - 18, ry, '', {
-        fontSize: '14px', color: '#ffd700', fontFamily: 'monospace',
-      }).setOrigin(1, 0.5).setDepth(depth + 2).setAlpha(0);
+    const objs = [veil, title, pointsLabel];
+    const cells = [];
+    branches.forEach((br, bi) => {
+      const cx = x0 + bi * (colW + colGap);
+      const hdrColor = '#' + (br.color ?? 0xffffff).toString(16).padStart(6, '0');
+      const hdr = this.add.text(cx, gridTop - 30, br.name.toUpperCase(), {
+        fontSize: '15px', color: hdrColor, fontFamily: 'serif', fontStyle: 'bold',
+      }).setOrigin(0.5).setDepth(depth + 1);
+      objs.push(hdr);
+      br.nodes.forEach((n, ti) => {
+        const ny = gridTop + ti * (nodeH + nodeGap);
+        const bg = this.add.rectangle(cx, ny, colW, nodeH, 0x0e0e12, 0.9)
+          .setStrokeStyle(2, 0x333333).setDepth(depth + 1).setInteractive({ useHandCursor: true });
+        const name = this.add.text(cx - colW / 2 + 14, ny - 12, n.name, {
+          fontSize: '15px', color: '#ffffff', fontFamily: 'serif', fontStyle: 'bold',
+        }).setOrigin(0, 0.5).setDepth(depth + 2);
+        const desc = this.add.text(cx - colW / 2 + 14, ny + 11, n.desc, {
+          fontSize: '10px', color: '#9a9a9a', fontFamily: 'monospace',
+        }).setOrigin(0, 0.5).setDepth(depth + 2);
+        const cost = this.add.text(cx + colW / 2 - 12, ny, '', {
+          fontSize: '12px', color: '#ffe8a0', fontFamily: 'monospace',
+        }).setOrigin(1, 0.5).setDepth(depth + 2);
+        bg.on('pointerover', () => { selBi = bi; selTi = ti; render(); });
+        bg.on('pointerdown', () => { selBi = bi; selTi = ti; buy(); });
+        cells.push({ bi, ti, node: n, bg, name, desc, cost });
+        objs.push(bg, name, desc, cost);
+      });
+    });
 
-      const rowIdx = i;
-      bg.on('pointerover', () => { selected = rowIdx; render(); });
-      bg.on('pointerdown', () => { selected = rowIdx; spend(); });
-
-      this.tweens.add({ targets: [bg, lbl, val, pips], alpha: 1, duration: 180, delay: 110 + i * 40 });
-      rowObjs.push({ bg, lbl, val, pips, ...s });
-    }
-
-    const hint = this.add.text(GAME_W / 2, GAME_H / 2 + 150,
-      '[↑/↓] Select   [→ / Enter] Spend   [←] Refund   [ESC] Done', {
+    const hint = this.add.text(GAME_W / 2, GAME_H - 40,
+      '[↑/↓] Node   [←/→] Branch   [Enter] Unlock   [ESC] Done', {
         fontSize: '12px', color: '#aa8855', fontFamily: 'monospace',
-      }).setOrigin(0.5).setDepth(depth + 1).setAlpha(0);
-    this.tweens.add({ targets: hint, alpha: 1, duration: 150, delay: 160 });
+      }).setOrigin(0.5).setDepth(depth + 1);
+    objs.push(hint);
 
-    const allObjs = [veil, title, pointsLabel, hint, ...rowObjs.flatMap(r => [r.bg, r.lbl, r.val, r.pips])];
+    const isOwned  = n => owned.has(n.id);
+    const prereqOk = (bi, ti) => ti === 0 || isOwned(branches[bi].nodes[ti - 1]);
+    const cellAt   = (bi, ti) => cells.find(c => c.bi === bi && c.ti === ti);
 
     const render = () => {
-      pointsLabel.setText(`Available Points: ${this._statPoints}`);
+      pointsLabel.setText(`Skill Points: ${this._statPoints}`);
       pointsLabel.setColor(this._statPoints > 0 ? '#ffe8a0' : '#888888');
-      for (let i = 0; i < rowObjs.length; i++) {
-        const r = rowObjs[i];
-        const tier = this._statTiers?.[r.stat] || 0;
-        r.val.setText(`+${tier * POINT_PCT}%  ${r.blurb}`);
-        r.pips.setText('◆'.repeat(Math.min(tier, 20)) || '–');
-        const isSel = i === selected;
-        r.bg.setStrokeStyle(isSel ? 3 : 2, isSel ? 0xffd700 : 0x886633);
-        r.bg.setFillStyle(isSel ? 0x2a1c08 : 0x1a1000, isSel ? 0.96 : 0.92);
+      for (const c of cells) {
+        const on = c.bi === selBi && c.ti === selTi;
+        const ownedN = isOwned(c.node);
+        const avail  = !ownedN && prereqOk(c.bi, c.ti);
+        const afford = avail && this._statPoints >= c.node.cost;
+        const border = on ? 0xffd700 : (ownedN ? 0x66cc66 : (avail ? 0x886633 : 0x2a2a2a));
+        c.bg.setStrokeStyle(on ? 3 : 2, border);
+        c.bg.setFillStyle(ownedN ? 0x13240f : (avail ? 0x1a1000 : 0x0e0e12), on ? 0.98 : 0.9);
+        c.name.setText((ownedN ? '✓ ' : '') + c.node.name);
+        c.name.setColor(ownedN ? '#9fe08a' : (avail ? '#ffffff' : '#5a5a5a'));
+        c.desc.setColor(ownedN || avail ? '#9a9a9a' : '#555555');
+        c.cost.setText(ownedN ? 'OWNED' : `${c.node.cost} pt${c.node.cost > 1 ? 's' : ''}`);
+        c.cost.setColor(ownedN ? '#9fe08a' : (afford ? '#ffe8a0' : '#996666'));
       }
     };
 
-    const spend = () => {
-      if (closed || this._statPoints <= 0) {
-        if (this._statPoints <= 0) this.tweens.add({ targets: pointsLabel, alpha: 0.4, duration: 80, yoyo: true });
+    const buy = () => {
+      if (closed) return;
+      const c = cellAt(selBi, selTi);
+      if (!c) return;
+      if (isOwned(c.node) || !prereqOk(c.bi, c.ti) || this._statPoints < c.node.cost) {
+        gs.audio?.denied?.();
+        this.tweens.add({ targets: pointsLabel, alpha: 0.4, duration: 80, yoyo: true });
         return;
       }
-      const r = rowObjs[selected];
-      const tier = (this._statTiers?.[r.stat] || 0) + 1;
-      this._statTiers[r.stat] = tier;
-      this._statPoints--;
-      sessionSpent[r.stat]++;
-      gs.players?.forEach(p => p?.applyStat?.(r.stat, tier));
-      this.tweens.add({ targets: r.pips, scale: 1.4, duration: 70, yoyo: true });
-      render();
-    };
-
-    const refund = () => {
-      if (closed) return;
-      const r = rowObjs[selected];
-      if (sessionSpent[r.stat] <= 0) return; // can't refund points from past levels
-      const tier = Math.max(0, (this._statTiers?.[r.stat] || 0) - 1);
-      this._statTiers[r.stat] = tier;
-      this._statPoints++;
-      sessionSpent[r.stat]--;
-      gs.players?.forEach(p => p?.applyStat?.(r.stat, tier));
+      owned.add(c.node.id);
+      this._statPoints -= c.node.cost;
+      gs._skillNodes = [...owned];
+      if (gs._save) gs._save.skillNodes = [...owned];
+      gs.players?.forEach(p => p?.applySkills?.(gs._skillNodes));
+      gs.audio?.purchase?.();
+      this.tweens.add({ targets: c.bg, scaleY: 1.12, duration: 80, yoyo: true });
       render();
     };
 
@@ -933,11 +936,11 @@ export class UIScene extends Phaser.Scene {
       if (closed) return;
       closed = true;
       keys.forEach(k => { k.removeAllListeners('down'); k.destroy(); });
-      rowObjs.forEach(r => r.bg.disableInteractive());
+      cells.forEach(c => c.bg.disableInteractive());
       this.tweens.add({
-        targets: allObjs, alpha: 0, duration: 200,
+        targets: objs, alpha: 0, duration: 200,
         onComplete: () => {
-          allObjs.forEach(o => { try { o.destroy(); } catch {} });
+          objs.forEach(o => { try { o.destroy(); } catch {} });
           this._levelUpActive = false;
           gs._paused = false;
           gs.physics?.resume();
@@ -949,28 +952,25 @@ export class UIScene extends Phaser.Scene {
 
     render();
 
-    // Keyboard bindings — bound after a short delay so the toast's keypress
-    // (if any) doesn't leak into the panel.
     const KC = Phaser.Input.Keyboard.KeyCodes;
-    const kUp    = this.input.keyboard.addKey(KC.UP);
-    const kDown  = this.input.keyboard.addKey(KC.DOWN);
-    const kW     = this.input.keyboard.addKey(KC.W);
-    const kS     = this.input.keyboard.addKey(KC.S);
-    const kRight = this.input.keyboard.addKey(KC.RIGHT);
-    const kLeft  = this.input.keyboard.addKey(KC.LEFT);
-    const kEnter = this.input.keyboard.addKey(KC.ENTER);
-    const kSpace = this.input.keyboard.addKey(KC.SPACE);
-    const kEsc   = this.input.keyboard.addKey(KC.ESC);
-    const keys = [kUp, kDown, kW, kS, kRight, kLeft, kEnter, kSpace, kEsc];
+    const kUp = this.input.keyboard.addKey(KC.UP),   kDown = this.input.keyboard.addKey(KC.DOWN);
+    const kW  = this.input.keyboard.addKey(KC.W),    kS = this.input.keyboard.addKey(KC.S);
+    const kLeft = this.input.keyboard.addKey(KC.LEFT), kRight = this.input.keyboard.addKey(KC.RIGHT);
+    const kA  = this.input.keyboard.addKey(KC.A),    kD = this.input.keyboard.addKey(KC.D);
+    const kEnter = this.input.keyboard.addKey(KC.ENTER), kSpace = this.input.keyboard.addKey(KC.SPACE);
+    const kEsc = this.input.keyboard.addKey(KC.ESC);
+    const keys = [kUp, kDown, kW, kS, kLeft, kRight, kA, kD, kEnter, kSpace, kEsc];
+
+    const moveTier   = d => { const len = branches[selBi]?.nodes.length || 1; selTi = (selTi + d + len) % len; gs.audio?.uiClick?.(); render(); };
+    const moveBranch = d => { if (!branches.length) return; selBi = (selBi + d + branches.length) % branches.length; const len = branches[selBi]?.nodes.length || 1; if (selTi >= len) selTi = len - 1; gs.audio?.uiClick?.(); render(); };
 
     this.time.delayedCall(180, () => {
       if (closed) return;
-      const moveUp   = () => { selected = (selected + stats.length - 1) % stats.length; render(); };
-      const moveDown = () => { selected = (selected + 1) % stats.length; render(); };
-      kUp.on('down', moveUp);     kW.on('down', moveUp);
-      kDown.on('down', moveDown); kS.on('down', moveDown);
-      kRight.on('down', spend);   kEnter.on('down', spend);  kSpace.on('down', spend);
-      kLeft.on('down', refund);
+      kUp.on('down', () => moveTier(-1));    kW.on('down', () => moveTier(-1));
+      kDown.on('down', () => moveTier(1));    kS.on('down', () => moveTier(1));
+      kLeft.on('down', () => moveBranch(-1)); kA.on('down', () => moveBranch(-1));
+      kRight.on('down', () => moveBranch(1)); kD.on('down', () => moveBranch(1));
+      kEnter.on('down', buy); kSpace.on('down', buy);
       kEsc.on('down', close);
     });
   }
@@ -1015,6 +1015,13 @@ export class UIScene extends Phaser.Scene {
     const isP1 = p ? (p === players[0]) : null;
     if (isP1 === false) this._renderAmritPips(this._taraAmritPips, p.amritCharges, p.amritMax);
     else if (p)         this._renderAmritPips(this._dhruvaAmritPips, p.amritCharges, p.amritMax);
+  }
+
+  _onShardsChanged(data) {
+    if (!this._shardLabel) return;
+    this._shardLabel.setText(`✦ ${data?.shards ?? 0} shards`);
+    // Brief pop on gain so pickups read at a glance.
+    if (data?.delta > 0) this.tweens.add({ targets: this._shardLabel, scale: 1.25, duration: 90, yoyo: true });
   }
 
   // ── Dialogue ───────────────────────────────────────────────────────────────

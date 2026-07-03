@@ -27,8 +27,24 @@ won't load).
 - `systems/` — `AbilityManager`, `AudioManager` (procedural WebAudio, no files),
   `AnimationLoader`, `SaveManager` (localStorage), `QuestManager`, `NetworkManager`,
   `QualitySettings`.
-- `data/` — regions, quests, enemies, bosses, creature stats, codex, prop tables.
-- `constants.js` — tuning values, XP curve, item defs.
+- `data/` — regions, quests, enemies, bosses, creature stats, codex, prop tables,
+  `skills.js` (per-character skill trees), `merchant.js` (shop catalog/pricing).
+- `constants.js` — tuning values, XP curve, item defs, Amrit + Thread-Shard economy.
+
+### Progression systems
+- **Thread Shards** — currency on `save.threadShards`, earned from enemy/boss kills
+  (`GameScene.grantShards/spendShards`, HUD counter, `shards_changed` event).
+- **Merchant** (`MerchantScene`, opened from a Thread Shrine) — spends shards on
+  Amrit charge/potency upgrades and consumables. Offers/effects come from
+  `GameScene.getMerchantOffers()` / `buyOffer()`; the scene is just the storefront.
+- **Amrit upgrades** — `save.amritMax` (+ charges) and `save.amritPotencyTier`
+  (+heal %, applied in `Player.quaffAmrit`).
+- **Skill tree** (replaces the old flat +5% stat allocation) — `data/skills.js`
+  defines two branches × four tiered nodes per character. Points come from banked
+  levels (`POINTS_PER_LEVEL`), spent in the tree panel (`UIScene._onLevelUpAvailable`,
+  opened by attuning at a shrine). Unlocked node ids live on `save.skillNodes`;
+  `Player.applySkills()` recomputes stats from base + passives + skill %s (never
+  persist the multiplied finals — persist `Player.getBaseStats()`).
 
 ### Two region systems (don't confuse them)
 - `src/data/regions.js` `REGIONS[]` holds only indices **0–6** (the legacy hand-authored

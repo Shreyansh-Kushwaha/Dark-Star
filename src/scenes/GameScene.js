@@ -1,4 +1,6 @@
-import { WORLD_W, WORLD_H, GAME_W, GAME_H, NET_INTERVAL, TETHER_DIST, TETHER_SPEED, BOSS_TRIGGER_DIST, ITEM_DEFS } from '../constants.js';
+import { WORLD_W, WORLD_H, GAME_W, GAME_H, NET_INTERVAL, TETHER_DIST, TETHER_SPEED, BOSS_TRIGGER_DIST, ITEM_DEFS, SHARDS_PER_ENEMY, SHARDS_PER_BOSS,
+  AMRIT_MAX_DEFAULT, AMRIT_MAX_CAP, AMRIT_POTENCY_CAP, AMRIT_HEAL_FRAC, AMRIT_POTENCY_STEP } from '../constants.js';
+import { CONSUMABLE_STOCK, amritChargePrice, amritPotencyPrice } from '../data/merchant.js';
 import { REGIONS } from '../data/regions.js';
 import { _mapSpriteKey } from './PreloadScene.js';
 import { QUESTS, LORE_FRAGMENTS } from '../data/quests.js';
@@ -198,11 +200,10 @@ export class GameScene extends Phaser.Scene {
     this.players.push(p2);
     this.physics.add.collider(this.players, this._noWalkGroup);
 
-    // Re-apply persisted level-up stat tiers so character growth survives reloads.
-    const tiers = saveData.statTiers || {};
-    for (const [stat, tier] of Object.entries(tiers)) {
-      if (tier > 0) this.players.forEach(p => p?.applyStat?.(stat, tier));
-    }
+    // Apply unlocked skill-tree nodes so character growth survives reloads. Each
+    // player only picks up the nodes matching its own character.
+    this._skillNodes = [...(saveData.skillNodes || [])];
+    this.players.forEach(p => p?.applySkills?.(this._skillNodes));
     this.players.forEach(p => { if (p) p.hp = p.maxHp; });
 
     // Seed the HUD Amrit pips from each player's actual charges.
@@ -414,6 +415,7 @@ export class GameScene extends Phaser.Scene {
     });
     this.questManager.addEventListener('quest_completed', (e) => {
       this.events.emit('quest_completed', e.detail);
+      this.audio?.questComplete?.();
       const reward = e.detail?.quest?.reward;
       if (reward?.item) {
         SaveManager.addItem(this._save, reward.item);
@@ -1406,6 +1408,115 @@ export class GameScene extends Phaser.Scene {
     this.physics.resume();
   }
 
+  // ── Thread Shards (merchant currency) ────────────────────────────────────────
+  get shards() { return this._save?.threadShards || 0; }
+
+  grantShards(n) {
+    if (!this._save || !n) return;
+    this._save.threadShards = Math.max(0, (this._save.threadShards || 0) + n);
+    this.events.emit('shards_changed', { shards: this._save.threadShards, delta: n });
+  }
+
+  // Deduct `n` shards if affordable. Returns true on success. Persists immediately
+  // so a purchase survives even if the player quits before the next checkpoint.
+  spendShards(n) {
+    if (!this._save || (this._save.threadShards || 0) < n) return false;
+    this._save.threadShards -= n;
+    this.events.emit('shards_changed', { shards: this._save.threadShards, delta: -n });
+    SaveManager.save(this._save);
+    return true;
+  }
+
+  // ── Merchant ─────────────────────────────────────────────────────────────────
+  // Build the current, priced merchant offers from live save/player state. The
+  // MerchantScene renders these verbatim and calls buyOffer(id) — all pricing and
+  // effect logic stays here.
+  getMerchantOffers() {
+    const s = this._save || {};
+    const amritMax  = s.amritMax ?? AMRIT_MAX_DEFAULT;
+    const potTier   = s.amritPotencyTier ?? 0;
+    const shards    = s.threadShards ?? 0;
+    const offers = [];
+
+    const chargeMaxed = amritMax >= AMRIT_MAX_CAP;
+    const chargePrice = amritChargePrice(amritMax, AMRIT_MAX_DEFAULT);
+    offers.push({
+      id: 'amrit_charge', name: 'Amrit Vessel  (+1 charge)',
+      desc: chargeMaxed ? `Flask at maximum (${amritMax} charges).` : `Carry one more Amrit sip.  Now: ${amritMax}`,
+      price: chargePrice, maxed: chargeMaxed,
+      affordable: !chargeMaxed && shards >= chargePrice,
+    });
+
+    const potMaxed = potTier >= AMRIT_POTENCY_CAP;
+    const potPrice = amritPotencyPrice(potTier);
+    const curPct = Math.round((AMRIT_HEAL_FRAC + potTier * AMRIT_POTENCY_STEP) * 100);
+    offers.push({
+      id: 'amrit_potency', name: 'Amrit Potency  (+heal)',
+      desc: potMaxed ? `Potency at maximum (${curPct}% heal).` : `Each sip heals more.  Now: ${curPct}% HP`,
+      price: potPrice, maxed: potMaxed,
+      affordable: !potMaxed && shards >= potPrice,
+    });
+
+    for (const stock of CONSUMABLE_STOCK) {
+      const def = ITEM_DEFS[stock.item];
+      if (!def) continue;
+      offers.push({
+        id: `buy:${stock.item}`, name: def.name, desc: def.desc,
+        price: stock.price, maxed: false, affordable: shards >= stock.price,
+      });
+    }
+    return offers;
+  }
+
+  // Attempt a purchase. Returns { ok, reason }. Persists on success.
+  buyOffer(id) {
+    const s = this._save;
+    if (!s) return { ok: false, reason: 'no save' };
+
+    if (id === 'amrit_charge') {
+      const amritMax = s.amritMax ?? AMRIT_MAX_DEFAULT;
+      if (amritMax >= AMRIT_MAX_CAP) return { ok: false, reason: 'maxed' };
+      const price = amritChargePrice(amritMax, AMRIT_MAX_DEFAULT);
+      if (!this.spendShards(price)) return { ok: false, reason: 'poor' };
+      s.amritMax = amritMax + 1;
+      for (const p of (this.players || [])) {
+        if (!p) continue;
+        p.amritMax = s.amritMax;
+        p.amritCharges = Math.min(p.amritMax, (p.amritCharges || 0) + 1); // hand over the new charge, filled
+        this.events.emit('amrit_changed', { player: p, charges: p.amritCharges, max: p.amritMax });
+      }
+      s.amritCharges = this.players?.[0]?.amritCharges ?? s.amritCharges;
+      this._persist();
+      return { ok: true };
+    }
+
+    if (id === 'amrit_potency') {
+      const tier = s.amritPotencyTier ?? 0;
+      if (tier >= AMRIT_POTENCY_CAP) return { ok: false, reason: 'maxed' };
+      const price = amritPotencyPrice(tier);
+      if (!this.spendShards(price)) return { ok: false, reason: 'poor' };
+      s.amritPotencyTier = tier + 1;
+      for (const p of (this.players || [])) { if (p) p.amritPotencyTier = s.amritPotencyTier; }
+      this._persist();
+      return { ok: true };
+    }
+
+    if (id.startsWith('buy:')) {
+      const item = id.slice(4);
+      const stock = CONSUMABLE_STOCK.find(x => x.item === item);
+      if (!stock) return { ok: false, reason: 'unknown' };
+      if (!this.spendShards(stock.price)) return { ok: false, reason: 'poor' };
+      SaveManager.addItem(s, item);
+      const def = ITEM_DEFS[item];
+      if (def?.type === 'passive') this._applyPassiveItem(def);
+      this.events.emit('item_acquired', { itemId: item, name: def?.name || item });
+      this._persist();
+      return { ok: true };
+    }
+
+    return { ok: false, reason: 'unknown' };
+  }
+
   restAtShrine() {
     // Recover the party, refill Amrit, and save this shrine as the respawn point.
     for (const p of this.players) {
@@ -1442,14 +1553,16 @@ export class GameScene extends Phaser.Scene {
     if (regionIndex != null) s.regionIndex = regionIndex;
     const p = this.players?.find(x => x) || this.players?.[0];
     if (p) {
-      s.playerStats  = { maxHp: p.maxHp, maxStamina: p.maxStamina, abilityPow: p.abilityPow };
+      // Persist the pre-skill base so skill %s don't compound across reloads.
+      s.playerStats  = p.getBaseStats ? p.getBaseStats() : { maxHp: p.maxHp, maxStamina: p.maxStamina, abilityPow: p.abilityPow };
       s.playerLevel  = p.level;
       s.playerXP     = p.xp;
       s.amritCharges = p.amritCharges;
       s.amritMax     = p.amritMax;
+      s.amritPotencyTier = p.amritPotencyTier ?? s.amritPotencyTier ?? 0;
     }
     s.pendingLevels    = this._pendingLevels || 0;
-    s.statTiers        = { ...(this.scene.get('UIScene')?._statTiers || s.statTiers || {}) };
+    s.skillNodes       = [...(this._skillNodes || s.skillNodes || [])];
     s.statPoints       = this.scene.get('UIScene')?._statPoints ?? s.statPoints ?? 0;
     s.completedQuests  = [...(this.questManager?.completed ?? s.completedQuests ?? [])];
     s.collectedLoreIds = this.loreManager?.toArray?.() ?? s.collectedLoreIds;
@@ -3018,6 +3131,9 @@ export class GameScene extends Phaser.Scene {
       this._save.playerLevel = primaryPlayer.level;
     }
 
+    // Thread Shards: base drop, scaled a little by the enemy's worth (xp).
+    this.grantShards(SHARDS_PER_ENEMY + Math.floor(xpGain / 4));
+
     // Item drop from enemy loot table
     const drops = e.cfg?.drops || [];
     for (const drop of drops) {
@@ -3037,13 +3153,8 @@ export class GameScene extends Phaser.Scene {
     if (!def?.effect) return;
     for (const p of (this.players || [])) {
       if (!p?.alive) continue;
-      if (def.effect.stat === 'maxHp') {
-        p.maxHp += def.effect.amount;
-        p.hp = Math.min(p.hp + def.effect.amount, p.maxHp);
-        p._updateHpBar?.();
-      } else if (def.effect.stat === 'abilityPow') {
-        p.abilityPow = Math.round((p.abilityPow + def.effect.amount) * 100) / 100;
-      }
+      // Fold into the player's base so skill-tree percentages recompute correctly.
+      p.addPassive?.(def.effect.stat, def.effect.amount);
     }
     if (this._save?.playerStats) {
       if (def.effect.stat === 'maxHp') this._save.playerStats.maxHp = (this._save.playerStats.maxHp || 200) + def.effect.amount;
@@ -3096,6 +3207,9 @@ export class GameScene extends Phaser.Scene {
       this._save.playerXP = primaryPlayer.xp;
       this._save.playerLevel = primaryPlayer.level;
     }
+
+    // Thread Shards windfall for the kill.
+    this.grantShards(SHARDS_PER_BOSS);
 
     // Boss reward item
     const bossRewardItem = BOSSES[bossKey]?.rewardItem;

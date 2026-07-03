@@ -84,8 +84,9 @@ export class PauseScene extends Phaser.Scene {
   // ── Menu helpers ─────────────────────────────────────────────────────────
 
   _onEsc()    { if (this._bookOpen) { this._closeBook(); return; } this._resume(); }
-  _move(d)    { if (this._bookOpen) return; this._selIdx = (this._selIdx + d + this._menuItems.length) % this._menuItems.length; this._updateCursor(); }
-  _confirm()  { if (this._bookOpen) return; this._menuItems[this._selIdx].action(); }
+  _move(d)    { if (this._bookOpen) return; this._selIdx = (this._selIdx + d + this._menuItems.length) % this._menuItems.length; this._audio()?.uiClick?.(); this._updateCursor(); }
+  _confirm()  { if (this._bookOpen) return; this._audio()?.uiClick?.(); this._menuItems[this._selIdx].action(); }
+  _audio()    { return this.scene.get('GameScene')?.audio; }
 
   _updateCursor() {
     this._cursor.setPosition(GAME_W / 2 - 140, GAME_H / 2 - 50 +this._selIdx * 58);

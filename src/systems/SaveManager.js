@@ -43,6 +43,9 @@ export class SaveManager {
       bossKills: [],
       amritCharges: 4,
       amritMax: 4,
+      amritPotencyTier: 0,   // each tier = +AMRIT_POTENCY_STEP heal fraction (bought from the merchant)
+      threadShards: 0,       // currency earned from kills; spent at the merchant
+      skillNodes: [],        // unlocked skill-tree node ids
       lastShrineRegion: null,
     };
   }

@@ -37,6 +37,8 @@ export class ShrineScene extends Phaser.Scene {
       { label: `Attune the Thread — Level Up${this._pending ? `  (${this._pending})` : ''}`,
         desc: this._pending ? 'Spend banked attunement to strengthen the party.' : 'No attunement banked. Slay foes to earn it.',
         enabled: this._pending > 0, action: () => this._attune() },
+      { label: `Trade with the Weaver — Merchant  (✦ ${this._gs?.shards ?? 0})`,
+        desc: 'Spend Thread Shards on Amrit upgrades and supplies.', action: () => this._merchant() },
       { label: 'Travel the Thread — Fast Travel', desc: 'Journey to any region you have already explored.', action: () => this._travel() },
       { label: 'Leave', desc: 'Rise and continue your journey.', action: () => this._leave() },
     ];
@@ -64,8 +66,8 @@ export class ShrineScene extends Phaser.Scene {
     }).setOrigin(0.5);
 
     const kb = this.input.keyboard;
-    kb.on('keydown-UP',    () => { this._sel = (this._sel + this._items.length - 1) % this._items.length; this._refresh(); });
-    kb.on('keydown-DOWN',  () => { this._sel = (this._sel + 1) % this._items.length; this._refresh(); });
+    kb.on('keydown-UP',    () => { this._sel = (this._sel + this._items.length - 1) % this._items.length; this._gs?.audio?.uiClick?.(); this._refresh(); });
+    kb.on('keydown-DOWN',  () => { this._sel = (this._sel + 1) % this._items.length; this._gs?.audio?.uiClick?.(); this._refresh(); });
     kb.on('keydown-ENTER', () => this._choose(this._sel));
     kb.on('keydown-SPACE', () => this._choose(this._sel));
     kb.on('keydown-ESC',   () => this._leave());
@@ -84,7 +86,8 @@ export class ShrineScene extends Phaser.Scene {
 
   _choose(i) {
     const it = this._items[i];
-    if (!it || it.enabled === false) return;
+    if (!it || it.enabled === false) { this._gs?.audio?.denied?.(); return; }
+    this._gs?.audio?.uiClick?.();
     it.action();
   }
 
@@ -97,6 +100,17 @@ export class ShrineScene extends Phaser.Scene {
 
   _rest()   { this._restoreInput(); this._gs?.closeShrine(); this._gs?.restAtShrine(); this.scene.stop(); }
   _leave()  { this._restoreInput(); this._gs?.closeShrine(); this.scene.stop(); }
+  // Open the merchant. GameScene stays paused (no closeShrine / no input restore);
+  // MerchantScene relaunches this Shrine on Back.
+  _merchant() {
+    this.scene.launch('MerchantScene', {
+      regionIndex: this._regionIndex,
+      regionName: this._regionName,
+      pendingLevels: this._pending,
+    });
+    this.scene.bringToTop('MerchantScene');
+    this.scene.stop();
+  }
   _attune() { this._restoreInput(); this._gs?.closeShrine(); this.scene.stop(); this._gs?.attuneAtShrine(); }
   _travel() {
     this._restoreInput();

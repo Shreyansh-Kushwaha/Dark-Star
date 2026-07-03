@@ -114,6 +114,26 @@ export class AudioManager {
     });
   }
 
+  questComplete() {
+    [440, 550, 660, 880].forEach((f, i) => {
+      this._tone(f, 'sine', 0.25, 0.25, 0.01, 0.1, i * 0.08);
+    });
+  }
+
+  uiClick() {
+    this._tone(500, 'sine', 0.06, 0.2);
+  }
+
+  // Bright coin/chime for a successful purchase; soft thud when you can't afford it.
+  purchase() {
+    this._tone(660, 'sine', 0.1, 0.25);
+    this._tone(990, 'sine', 0.14, 0.2, 0.01, 0.1, 0.06);
+  }
+
+  denied() {
+    this._tone(160, 'square', 0.14, 0.2);
+  }
+
   portal() {
     const ctx = this._getCtx();
     for (let i = 0; i < 6; i++) {
