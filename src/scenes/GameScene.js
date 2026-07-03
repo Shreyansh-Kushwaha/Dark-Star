@@ -239,6 +239,15 @@ export class GameScene extends Phaser.Scene {
       this.network.on('PLAYER_DAMAGE', onPlayerDamage);
       _netCleanup.push(['PLAYER_DAMAGE', onPlayerDamage]);
 
+      // Synchronised boss intro: whichever player reaches the arena first fires
+      // the trigger and tells the other so both watch the cutscene together and
+      // begin the fight in step. _triggerBoss is idempotent (guards on
+      // _bossTriggered), so a duplicate or crossed message can't double-fire, and
+      // each client's own proximity check remains a fallback if this is missed.
+      const onBossTrigger = () => { if (!this._bossTriggered) this._triggerBoss(); };
+      this.network.on('BOSS_TRIGGER', onBossTrigger);
+      _netCleanup.push(['BOSS_TRIGGER', onBossTrigger]);
+
       // Client: apply enemy states broadcast by host
       if (this.network.isClient()) {
         const onRegionChange = ({ newIndex }) => {
@@ -2712,6 +2721,10 @@ export class GameScene extends Phaser.Scene {
     // later frame (proximity check) or once the load completes.
     if (this._bossAssetsReady === false) { this._ensureBossAssets(bossKey); return; }
     this._bossTriggered = true;
+
+    // Co-op: mirror the trigger to the other client so both intros play in sync.
+    // Guarded by _bossTriggered on the receiver, so the echo back is a no-op.
+    if (this.network?.connected) this.network.send('BOSS_TRIGGER', { bossKey });
 
     this._bossArenaGfx?.setVisible(false);
     this._bossArenaLabel?.setVisible(false);

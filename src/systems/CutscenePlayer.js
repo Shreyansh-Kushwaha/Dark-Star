@@ -22,9 +22,11 @@
 //   { type: 'hide', wait }                              hide the dialogue box
 //   { type: 'wait', ms }                                pause
 //
-// `say`: pass `who:'boss'` to auto-fill the portrait with the boss's idle frame.
-// Otherwise give an explicit `portrait` texture key (e.g. 'dhruva_idle' for a
-// player line). `speaker` renders a name label above the text.
+// `say`: pass `who:'boss'` to auto-fill the portrait with the boss's idle frame,
+// or `who:'player'` to auto-fill it with the LOCAL player's character (portrait
+// + name resolve per-client, so each co-op player sees themselves speak). An
+// explicit `portrait` texture key overrides either. `speaker` renders a name
+// label above the text (auto-set for player lines).
 
 const DEFAULT_LINE_MS = 3000;
 
@@ -108,8 +110,18 @@ export class CutscenePlayer {
 
       case 'say': {
         let portrait = step.portrait;
-        if (!portrait && step.who === 'boss' && boss) portrait = boss.cfg.textureBase + '_idle_01';
-        scene.events.emit('show_dialogue', { text: step.text || '', portrait, speaker: step.speaker });
+        let speaker  = step.speaker;
+        if (step.who === 'boss') {
+          if (!portrait && boss) portrait = boss.cfg.textureBase + '_idle_01';
+        } else if (step.who === 'player') {
+          // Resolve to whoever is playing on THIS client (per-screen in co-op):
+          // the local player's character drives both the portrait and the name,
+          // so a Tara player sees Tara say the line, a Dhruva player sees Dhruva.
+          const base = (scene.players?.find(p => p?.isLocal)?.baseKey) || 'dhruva';
+          if (!portrait) portrait = base + '_idle';
+          speaker = base.charAt(0).toUpperCase() + base.slice(1);
+        }
+        scene.events.emit('show_dialogue', { text: step.text || '', portrait, speaker });
         return this._delay(step.ms ?? DEFAULT_LINE_MS);
       }
 
