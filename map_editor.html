@@ -219,6 +219,18 @@ button.creature-btn{border-color:#cc77ff;color:#d9aaff}button.creature-btn:hover
       </select>
     </div>
     <button id="btn-select-same" title="Select all placed sprites using this same asset" style="font-size:9px;padding:3px 6px;margin-top:0">Select All Same Asset</button>
+    <div id="collision-section" style="border-top:1px solid #333;margin-top:6px;padding-top:6px;display:none">
+      <div class="prop-row"><label style="color:#44ff88">Collision</label><input type="checkbox" id="prop-solid"></div>
+      <div id="collision-fields" style="display:none;flex-direction:column;gap:4px;margin-top:2px">
+        <div class="prop-row"><label>Box X</label><input type="number" id="col-x" step="1"></div>
+        <div class="prop-row"><label>Box Y</label><input type="number" id="col-y" step="1"></div>
+        <div class="prop-row"><label>Box W</label><input type="number" id="col-w" step="1" min="2"></div>
+        <div class="prop-row"><label>Box H</label><input type="number" id="col-h" step="1" min="2"></div>
+        <button id="btn-col-autofit" style="font-size:9px;padding:2px 6px">Auto-fit base</button>
+        <div id="col-count" style="font-size:8px;color:#44aa77;line-height:1.4"></div>
+        <div style="font-size:8px;color:#666;line-height:1.4">Drag the green box on the canvas, or type values. Box is in source-image pixels and shared by every copy of this asset.</div>
+      </div>
+    </div>
     <div style="font-size:9px;color:#666;margin-top:4px">Animation:</div>
     <div id="prop-anim"></div>
     <div style="flex:1"></div>
@@ -452,6 +464,14 @@ const S = {
   clipboard: [],
   noWalkDrag: { active: false, startX: 0, startY: 0, previewRect: null },
   noWalkZones: [], // [{ id, x, y, w, h, konvaRect, konvaLabel }]
+  // Per-asset collision boxes, keyed by "assetDir/firstFrame" and shared by every
+  // placed copy of that asset. Value is an axis-aligned box in the source image's
+  // own pixel space: { lx, ly, lw, lh } (top-left + size). At save time each box is
+  // stamped onto every matching sprite as prop:'solid' + a world-space footprint
+  // (see serializeSprites), so the runtime blocks movement without any code change.
+  assetCollision: {},
+  colRect: null,   // Konva.Rect overlay used to edit the selected asset's box
+  colTr: null,     // Konva.Transformer for resizing that overlay
   redoStack: [],
   // ── Entity placement ──────────────────────────────────────────────────────
   markerLayer: null,
@@ -530,6 +550,22 @@ function initStage() {
     anchorFill: '#ffd700', anchorStroke: '#000', anchorSize: 8,
   });
   S.selLayer.add(S.transformer);
+
+  // Collision-box overlay: an editable green rectangle that maps to the selected
+  // asset's footprint. Lives on the top (selection) layer so it sits above sprites.
+  S.colRect = new Konva.Rect({
+    fill: 'rgba(68,255,136,0.20)', stroke: '#44ff88', strokeWidth: 1.5, dash: [4, 3],
+    visible: false, draggable: true, listening: true,
+  });
+  S.colTr = new Konva.Transformer({
+    rotateEnabled: false, keepRatio: false,
+    enabledAnchors: ['top-left','top-right','bottom-left','bottom-right','middle-left','middle-right','top-center','bottom-center'],
+    borderStroke: '#44ff88', borderStrokeWidth: 1, anchorFill: '#44ff88',
+    anchorStroke: '#004422', anchorSize: 7,
+  });
+  S.selLayer.add(S.colRect);
+  S.selLayer.add(S.colTr);
+  bindCollisionOverlay();
 
   fitStage();
   bindZoomPan();
@@ -1883,6 +1919,12 @@ function bindSpriteEvents(node) {
     selectNode(node);
   });
   node.draggable(!S.panMode && !S.deleteMode && !S.noWalkMode);
+  // Keep the collision overlay glued to the sprite as it moves/scales.
+  node.on('dragmove transform', () => {
+    if (node !== S.selectedNode || !S.colRect.visible()) return;
+    const box = S.assetCollision[collisionKey(node)];
+    if (box) showCollisionOverlay(node, box);
+  });
   node.on('dragend', () => {
     pushHistory(); updatePropsPanel(node);
     broadcast({ type: 'SPRITE_MOVE', spriteId: node.getAttr('spriteId'),
@@ -1926,11 +1968,13 @@ function updatePropsPanel(node) {
   document.getElementById('prop-flipx').checked = node.scaleX() < 0;
   document.getElementById('prop-layer').value  = node.getAttr('spriteLayer') || 'below';
   document.getElementById('prop-anim').textContent = node.getAttr('assetName') || '';
+  refreshCollisionUI(node);
 }
 
 function deselectAll() {
   S.selectedNode = null;
   S.transformer.nodes([]);
+  hideCollisionOverlay();
   S.selLayer.batchDraw();
   document.getElementById('props').classList.remove('visible');
 }
@@ -2106,6 +2150,140 @@ function bindPropsPanel() {
     document.getElementById('props').classList.add('visible');
     setStatus('Selected ' + matches.length + ' × "' + (S.selectedNode.getAttr('assetName') || dir) + '" — use Layer dropdown to change all');
   };
+
+  // ── Collision box (per-asset) ────────────────────────────────────────────
+  document.getElementById('prop-solid').addEventListener('change', e => {
+    const node = S.selectedNode;
+    if (!node || !(node instanceof Konva.Image)) return;
+    const key = collisionKey(node);
+    if (e.target.checked) {
+      if (!S.assetCollision[key]) S.assetCollision[key] = defaultCollisionBox(node);
+    } else {
+      delete S.assetCollision[key];
+    }
+    refreshCollisionUI(node);
+    pushHistory();
+    setStatus(e.target.checked
+      ? 'Collision on — drag the green box to fit; applies to every copy of this asset'
+      : 'Collision removed from this asset');
+  });
+  ['col-x','col-y','col-w','col-h'].forEach(id =>
+    document.getElementById(id).addEventListener('change', applyCollisionFields));
+  document.getElementById('btn-col-autofit').onclick = () => {
+    const node = S.selectedNode;
+    if (!node || !(node instanceof Konva.Image)) return;
+    S.assetCollision[collisionKey(node)] = defaultCollisionBox(node);
+    refreshCollisionUI(node);
+    pushHistory();
+  };
+}
+
+// A placed sprite's collision key: shared by every copy of the same asset so a box
+// authored on one instance blocks movement for all of them.
+function collisionKey(node) {
+  const frames = node.getAttr('assetFrames');
+  const first = Array.isArray(frames) ? frames[0] : frames;
+  return node.getAttr('assetDir') + '/' + first;
+}
+
+// Sensible starting box: a strip across the bottom-centre of the source image
+// (the part that touches the ground — trunk/base/foot).
+function defaultCollisionBox(node) {
+  const w = node.width() || 32, h = node.height() || 32;
+  const lw = Math.max(4, Math.round(w * 0.5));
+  const lh = Math.max(4, Math.round(h * 0.22));
+  return { lx: Math.round((w - lw) / 2), ly: Math.round(h - lh), lw, lh };
+}
+
+// Source-image px box → world-space rect (layer coords, same space as sprite.x()).
+function colWorldRect(node, box) {
+  const t = node.getTransform();
+  const p1 = t.point({ x: box.lx, y: box.ly });
+  const p2 = t.point({ x: box.lx + box.lw, y: box.ly + box.lh });
+  return { x: Math.min(p1.x, p2.x), y: Math.min(p1.y, p2.y),
+           w: Math.abs(p2.x - p1.x), h: Math.abs(p2.y - p1.y) };
+}
+
+// World-space rect → source-image px box (inverse of colWorldRect).
+function colSourceBox(node, wr) {
+  const inv = node.getTransform().copy().invert();
+  const p1 = inv.point({ x: wr.x, y: wr.y });
+  const p2 = inv.point({ x: wr.x + wr.w, y: wr.y + wr.h });
+  return { lx: Math.round(Math.min(p1.x, p2.x)), ly: Math.round(Math.min(p1.y, p2.y)),
+           lw: Math.max(2, Math.round(Math.abs(p2.x - p1.x))),
+           lh: Math.max(2, Math.round(Math.abs(p2.y - p1.y))) };
+}
+
+// Reflect the collision state of `node`'s asset into the panel + canvas overlay.
+function refreshCollisionUI(node) {
+  const sect = document.getElementById('collision-section');
+  const single = node && (node instanceof Konva.Image);
+  if (!single) { sect.style.display = 'none'; hideCollisionOverlay(); return; }
+  sect.style.display = 'block';
+  const key = collisionKey(node);
+  const box = S.assetCollision[key];
+  document.getElementById('prop-solid').checked = !!box;
+  document.getElementById('collision-fields').style.display = box ? 'flex' : 'none';
+  if (!box) { hideCollisionOverlay(); return; }
+  document.getElementById('col-x').value = Math.round(box.lx);
+  document.getElementById('col-y').value = Math.round(box.ly);
+  document.getElementById('col-w').value = Math.round(box.lw);
+  document.getElementById('col-h').value = Math.round(box.lh);
+  const count = getAllSpriteNodes().filter(n => collisionKey(n) === key).length;
+  document.getElementById('col-count').textContent =
+    'Blocks movement on ' + count + ' cop' + (count === 1 ? 'y' : 'ies') + ' of this asset';
+  showCollisionOverlay(node, box);
+}
+
+function showCollisionOverlay(node, box) {
+  const wr = colWorldRect(node, box);
+  S.colRect.setAttrs({ x: wr.x, y: wr.y, width: wr.w, height: wr.h, scaleX: 1, scaleY: 1, visible: true });
+  S.colRect.moveToTop();
+  S.colTr.nodes([S.colRect]);
+  S.colTr.moveToTop();
+  S.selLayer.batchDraw();
+}
+
+function hideCollisionOverlay() {
+  if (!S.colRect) return;
+  S.colRect.visible(false);
+  S.colTr.nodes([]);
+  S.selLayer.batchDraw();
+}
+
+// Overlay drag/resize → write the box back into the selected asset (source px).
+function bindCollisionOverlay() {
+  const commit = () => {
+    const node = S.selectedNode;
+    if (!node || !(node instanceof Konva.Image) || !S.colRect.visible()) return;
+    const w = Math.max(4, S.colRect.width() * S.colRect.scaleX());
+    const h = Math.max(4, S.colRect.height() * S.colRect.scaleY());
+    S.colRect.setAttrs({ width: w, height: h, scaleX: 1, scaleY: 1 });
+    const box = colSourceBox(node, { x: S.colRect.x(), y: S.colRect.y(), w, h });
+    S.assetCollision[collisionKey(node)] = box;
+    document.getElementById('col-x').value = box.lx;
+    document.getElementById('col-y').value = box.ly;
+    document.getElementById('col-w').value = box.lw;
+    document.getElementById('col-h').value = box.lh;
+    pushHistory();
+  };
+  S.colRect.on('dragend transformend', commit);
+}
+
+// Numeric field edit → update the box + overlay.
+function applyCollisionFields() {
+  const node = S.selectedNode;
+  if (!node || !(node instanceof Konva.Image)) return;
+  if (!document.getElementById('prop-solid').checked) return;
+  const box = {
+    lx: Math.round(parseFloat(document.getElementById('col-x').value) || 0),
+    ly: Math.round(parseFloat(document.getElementById('col-y').value) || 0),
+    lw: Math.max(2, Math.round(parseFloat(document.getElementById('col-w').value) || 2)),
+    lh: Math.max(2, Math.round(parseFloat(document.getElementById('col-h').value) || 2)),
+  };
+  S.assetCollision[collisionKey(node)] = box;
+  showCollisionOverlay(node, box);
+  pushHistory();
 }
 
 // ── Animation play/pause ───────────────────────────────────────────────────
@@ -2145,6 +2323,22 @@ function serializeSprites() {
   }));
   const sprites = getAllSpriteNodes().map(n => {
     const fw = n.getAttr('assetFrameW'), fh = n.getAttr('assetFrameH'), fc = n.getAttr('assetFrameCount'), fr = n.getAttr('assetFrameRow');
+    // If this asset has an authored collision box, convert it (source px) to the
+    // runtime's world-space footprint for THIS instance's scale/flip and mark it
+    // solid. GameScene._buildFromMapData reads prop:'solid' + footprint directly.
+    const box = S.assetCollision[collisionKey(n)];
+    let solid = {};
+    if (box) {
+      const c = n.getTransform().point({ x: box.lx + box.lw / 2, y: box.ly + box.lh / 2 });
+      solid = {
+        prop: 'solid',
+        footprint: {
+          ox: Math.round(c.x - n.x()), oy: Math.round(c.y - n.y()),
+          w: Math.max(2, Math.round(box.lw * Math.abs(n.scaleX()))),
+          h: Math.max(2, Math.round(box.lh * Math.abs(n.scaleY()))),
+        },
+      };
+    }
     return {
       type: 'sprite',
       spriteId:    n.getAttr('spriteId'),
@@ -2157,6 +2351,7 @@ function serializeSprites() {
       scaleX: n.scaleX(), scaleY: n.scaleY(),
       offsetX: n.offsetX(), offsetY: n.offsetY(),
       ...(fw ? { frameW: fw, frameH: fh, frameCount: fc, frameRow: fr || 0 } : {}),
+      ...solid,
     };
   });
   return [...strokes, ...sprites];
@@ -2196,11 +2391,13 @@ function pushHistory() {
     npcs:        serializeNpcs(),
     portals:     serializePortals(),
     spawnPos:    serializeSpawnPoint(),
+    assetCollision: S.assetCollision,
   }));
   if (S.history.length > 20) S.history.shift();
 }
 
 function applySnapshot(snap) {
+  S.assetCollision = snap.assetCollision ? JSON.parse(JSON.stringify(snap.assetCollision)) : {};
   restoreSprites(snap.sprites);
   restoreNoWalkZones(snap.noWalkZones || []);
   restoreEnemyMarkers(snap.enemies || []);
@@ -2411,6 +2608,7 @@ function buildMapData() {
     npcs:        serializeNpcs(),
     portals:     serializePortals(),
     spawnPos:    serializeSpawnPoint() || undefined,
+    assetCollision: Object.keys(S.assetCollision).length ? S.assetCollision : undefined,
   };
 }
 
@@ -2435,6 +2633,7 @@ function loadJSON(file) {
       document.getElementById('bg-color').value = data.background.value;
       setBgColor(data.background.value);
     }
+    S.assetCollision = data.assetCollision || {};
     await restoreSprites(data.sprites);
     restoreNoWalkZones(data.noWalkZones || []);
     restoreEnemyMarkers(data.enemies || []);
@@ -2563,6 +2762,7 @@ async function loadRegionData(data, filename, regionIndex) {
     document.getElementById('bg-color').value = data.background.value;
     setBgColor(data.background.value);
   }
+  S.assetCollision = data.assetCollision || {};
   await restoreSprites(data.sprites);
   restoreNoWalkZones(data.noWalkZones || []);
   restoreEnemyMarkers(data.enemies || []);
@@ -2953,6 +3153,7 @@ function sendFullState() {
     background: { type: 'color', value: document.getElementById('bg-color').value },
     sprites: serializeSprites(),
     noWalkZones: serializeNoWalkZones(),
+    assetCollision: S.assetCollision,
   });
 }
 
@@ -2969,6 +3170,7 @@ async function handleWsMsg(msg) {
   else if (msg.type === 'ROOM_ERROR') { setStatus('⚠ Room error: ' + (msg.reason || 'unknown')); }
   else if (msg.type === 'FULL_STATE') {
     if (msg.background?.type === 'color') { document.getElementById('bg-color').value = msg.background.value; setBgColor(msg.background.value, true); }
+    S.assetCollision = msg.assetCollision || {};
     await restoreSprites(msg.sprites);
     restoreNoWalkZones(msg.noWalkZones || []);
     S.history = []; pushHistory(); S.peerConnected = true; updatePeerIndicator();
