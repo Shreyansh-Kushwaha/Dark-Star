@@ -327,7 +327,6 @@ export class GameScene extends Phaser.Scene {
     this._dialogueActive = false;
     this._dialogueLine = '';
     this._interactTarget = null;
-    this._pendingPortalUnlock = false;
     this._firedEchoes = new Set();
     this._worldFragmentObjects = [];
     this._bossIntroActive = false;
@@ -389,16 +388,26 @@ export class GameScene extends Phaser.Scene {
     this._spawnDeathEcho();
 
     // ── Event listeners ───────────────────────────────────────────
-    this.events.on('spawn_projectile',  this._onSpawnProjectile, this);
-    this.events.on('healing_aura',      this._onHealingAura, this);
-    this.events.on('ability_fx',        this._onAbilityFx, this);
-    this.events.on('amrit_used',        this._onAmritUsed, this);
-    this.events.on('level_banked',      this._onLevelBanked, this);
-    this.events.on('level_up_done',     this._onLevelUpDone, this);
-    this.events.on('enemy_killed',      this._onEnemyKilled, this);
-    this.events.on('boss_killed',       this._onBossKilled,    this);
-    this.events.on('boss_wall_break',   this._onBossWallBreak, this);
-    this.events.on('boss_phase_changed',this._onBossPhaseChanged, this);
+    // this.events persists across scene.restart() (region transitions), so these
+    // must be removed on shutdown or they stack a duplicate set every region change
+    // (duplicated XP / loot / lore). off() the exact (event, fn, this) triples so a
+    // shared event like 'boss_phase_changed' (also listened by UIScene) isn't nuked.
+    const _sceneHandlers = [
+      ['spawn_projectile',   this._onSpawnProjectile],
+      ['healing_aura',       this._onHealingAura],
+      ['ability_fx',         this._onAbilityFx],
+      ['amrit_used',         this._onAmritUsed],
+      ['level_banked',       this._onLevelBanked],
+      ['level_up_done',      this._onLevelUpDone],
+      ['enemy_killed',       this._onEnemyKilled],
+      ['boss_killed',        this._onBossKilled],
+      ['boss_wall_break',    this._onBossWallBreak],
+      ['boss_phase_changed', this._onBossPhaseChanged],
+    ];
+    for (const [evt, fn] of _sceneHandlers) this.events.on(evt, fn, this);
+    this.events.once('shutdown', () => {
+      for (const [evt, fn] of _sceneHandlers) this.events.off(evt, fn, this);
+    });
 
     this.questManager.addEventListener('quest_started', (e) => {
       this.events.emit('quest_started', e.detail);
@@ -1290,16 +1299,6 @@ export class GameScene extends Phaser.Scene {
 
     const portal = { x, y, color, label, unlocked, visual: gfx, text, glowRing };
     return portal;
-  }
-
-  _unlockPortalNext() {
-    if (this._portals?.next) {
-      this._portals.next.locked = false;
-      this._portals.next.visual.setAlpha(1);
-      this.audio.portal();
-      this.events.emit('show_dialogue', { text: '⟨Portal⟩ The path forward is open.' });
-      this.time.delayedCall(2500, () => this.events.emit('hide_dialogue'));
-    }
   }
 
   // ── Gated shortcuts ─────────────────────────────────────────────────────────
@@ -2390,7 +2389,6 @@ export class GameScene extends Phaser.Scene {
     // ── Boss ──────────────────────────────────────────────────────
     if (this._boss?.active) {
       this._boss.update(time, delta, this.players, this);
-      this._checkBossProjectileHit();
     } else if (!this._bossTriggered && this._bossArenaPos) {
       this._checkBossTrigger();
     }
@@ -2465,14 +2463,16 @@ export class GameScene extends Phaser.Scene {
     const dy = p1.y - p2.y;
     const dist = Math.sqrt(dx * dx + dy * dy);
 
+    // Use P2's actual character prefix — P2 may be Dhruva, not Tara.
+    const base = p2.baseKey || 'tara';
     if (dist > 100) {
       const speed = 180;
       p2.body?.setVelocity(dx / dist * speed, dy / dist * speed);
       p2.sprite?.setFlipX(dx < 0);
-      p2.sprite?.play('tara_run', true);
+      p2.sprite?.play(base + '_run', true);
     } else {
       p2.body?.setVelocity(0, 0);
-      p2.sprite?.play('tara_idle', true);
+      p2.sprite?.play(base + '_idle', true);
     }
     p2.setDepth(p2.y);
   }
@@ -2570,11 +2570,6 @@ export class GameScene extends Phaser.Scene {
         }
       }
     }
-  }
-
-  _checkBossProjectileHit() {
-    // Boss hitbox vs player melee (already handled in Player._doAttack via enemy list)
-    // This checks if boss should be hit by player attacks (boss is not in enemies array)
   }
 
   _checkBossTrigger() {
@@ -2717,6 +2712,10 @@ export class GameScene extends Phaser.Scene {
   _usePortalDirect(newIndex) {
     this._portalCooldown = this.time.now + 3000;
     if (newIndex < 0) return;
+    // Complete any quest waiting on reaching this region's portal (must run before
+    // _saveProgress so the completion is persisted, and before scene.restart drops
+    // this region's QuestManager).
+    this.questManager?.onPortalUnlock(newIndex);
     if (this.network?.connected && this.network.isHost()) this.network.send('REGION_CHANGE', { newIndex });
     this._saveProgress(newIndex);
     this.audio.portal();
@@ -2731,6 +2730,11 @@ export class GameScene extends Phaser.Scene {
       : (isNext ? this._regionIndex + 1 : Math.max(0, this._regionIndex - 1));
 
     if (newIndex < 0) return;
+
+    // Complete any quest waiting on reaching this region's portal (e.g. the opening
+    // gramavana_main → 'portal_unlock:1'). Must run before _saveProgress persists and
+    // before scene.restart drops this region's QuestManager.
+    if (isNext) this.questManager?.onPortalUnlock(newIndex);
 
     // In co-op, host broadcasts region change so client transitions simultaneously
     if (this.network?.connected && this.network.isHost()) {
@@ -2828,7 +2832,6 @@ export class GameScene extends Phaser.Scene {
       if (nearest >= 80) continue;
 
       this.loreManager.collect(wf.fragmentId);
-      this._saveCollectedLore();
       this.events.emit('lore_collected', { count: this.loreManager.count(), total: this.loreManager.total() });
 
       const fragData = LORE_FRAGMENTS.find(f => f.id === wf.fragmentId);
@@ -2843,10 +2846,6 @@ export class GameScene extends Phaser.Scene {
       return;
     }
 
-  }
-
-  _saveCollectedLore() {
-    // Save removed — session-only lore tracking
   }
 
   _enforceTether() {
@@ -3111,7 +3110,6 @@ export class GameScene extends Phaser.Scene {
     const bossFragId = data.boss?.cfg?.loreFragment;
     if (bossFragId && !this.loreManager.has(bossFragId)) {
       this.loreManager.collect(bossFragId);
-      this._saveCollectedLore();
       this.events.emit('lore_collected', { count: this.loreManager.count(), total: this.loreManager.total() });
     }
 

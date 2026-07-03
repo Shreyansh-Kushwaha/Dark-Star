@@ -65,6 +65,17 @@ export class QuestManager extends EventTarget {
     }
   }
 
+  // Completes any active quest waiting on the player opening/using the portal that
+  // leads to `regionId` (quest `complete: 'portal_unlock:<regionId>'`). Called by
+  // GameScene when a forward portal transition fires.
+  onPortalUnlock(regionId) {
+    for (const [id, q] of this.active) {
+      if (q.complete === `portal_unlock:${regionId}`) {
+        this.complete(id);
+      }
+    }
+  }
+
   onNpcTalk(npcId) {
     this.dispatch('npc_talked', { npcId });
   }

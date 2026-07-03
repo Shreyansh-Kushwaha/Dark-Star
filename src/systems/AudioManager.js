@@ -11,7 +11,8 @@ export class AudioManager {
     if (!this._ctx) {
       this._ctx = new (window.AudioContext || window.webkitAudioContext)();
       this._masterGain = this._ctx.createGain();
-      this._masterGain.gain.value = 0.4;
+      // Respect a mute toggled before the context was lazily created.
+      this._masterGain.gain.value = this._muted ? 0 : 0.4;
       this._masterGain.connect(this._ctx.destination);
     }
     return this._ctx;
@@ -113,12 +114,6 @@ export class AudioManager {
     });
   }
 
-  questComplete() {
-    [440, 550, 660, 880].forEach((f, i) => {
-      this._tone(f, 'sine', 0.25, 0.25, 0.01, 0.1, i * 0.08);
-    });
-  }
-
   portal() {
     const ctx = this._getCtx();
     for (let i = 0; i < 6; i++) {
@@ -140,10 +135,6 @@ export class AudioManager {
     [440, 550, 660, 550, 440, 660, 880].forEach((f, i) => {
       this._tone(f, 'square', 0.3, 0.3, 0.01, 0.1, i * 0.1);
     });
-  }
-
-  interact() {
-    this._tone(700, 'sine', 0.08, 0.2);
   }
 
   startAmbient(regionIndex) {
@@ -184,8 +175,8 @@ export class AudioManager {
     this._tone(440, 'sine', 0.25, 0.25);
   }
 
-  uiClick() {
-    this._tone(500, 'sine', 0.06, 0.2);
+  interact() {
+    this._tone(700, 'sine', 0.08, 0.2);
   }
 
   bossStagger() {

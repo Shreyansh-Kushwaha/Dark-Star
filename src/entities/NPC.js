@@ -29,7 +29,6 @@ export class NPC extends Phaser.GameObjects.Container {
     this.add(this._indicator);
 
     this._playerNear = false;
-    this._talkState = 'first';
     this.setDepth(y);
 
     // Gentle bob

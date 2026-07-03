@@ -94,7 +94,6 @@ export class AbilityManager {
     player._agniShieldTimer = 3000;
     // Clean up any prior instance
     if (player._agniShieldFx) { player.remove(player._agniShieldFx, true); player._agniShieldFx = null; }
-    if (player._agniShieldLoopTimer) { player._agniShieldLoopTimer.remove(false); player._agniShieldLoopTimer = null; }
 
     // Attach looping VFX as a child of the player container so it follows movement
     if (scene.anims.exists('vfx_lightning5')) {

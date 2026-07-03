@@ -4,3 +4,10 @@ temp/
 docs/superpowers/brainstorm/
 screenshot_regions.py
 screenshot_regions.mjs
+
+# OS / Python junk (were previously committed by accident)
+.DS_Store
+._*
+__MACOSX/
+__pycache__/
+*.pyc

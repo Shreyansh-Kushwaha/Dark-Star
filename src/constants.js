@@ -4,9 +4,6 @@ export const GAME_W  = 1280;
 export const GAME_H  = 720;
 
 export const PLAYER_SPEED   = 200;
-export const ENEMY_SPEED    = 110;
-export const FLYING_SPEED   = 135;
-export const ELITE_SPEED    = 95;
 
 export const LIGHT_DMG      = 20;
 export const HEAVY_DMG      = 45;
@@ -29,7 +26,6 @@ export const AMRIT_MAX_DEFAULT = 4;     // starting charges
 export const AMRIT_HEAL_FRAC   = 0.55;  // fraction of max HP restored per sip
 export const AMRIT_SIP_LOCKOUT = 550;   // ms you're vulnerable while drinking
 
-export const SPAWNER_INTERVAL = 25000; // ms
 export const BOSS_TRIGGER_DIST = 300;
 export const TETHER_DIST = 360;
 export const TETHER_SPEED = 80;
@@ -47,15 +43,8 @@ export const REGION_NAMES = [
   'Viyoga Durga — Fortress of Separation',
 ];
 
-// Tiny Swords spritesheet frame sizes
-export const WARRIOR_FRAME = 192;
-export const LANCER_FRAME  = 320;
-
-// THE PACK frame sizes
-export const PACK_FRAME_W = 100;
-export const PACK_FRAME_H = 120;
-
-// XP thresholds per level (index = current level, value = XP needed to reach next)
+// XP thresholds per level. Consumers read XP_THRESHOLDS[level - 1], i.e. index 0 is
+// the XP needed to go from level 1 → 2 (100), index 1 for 2 → 3 (250), and so on.
 export const XP_THRESHOLDS = [100, 250, 450, 700, 1000, 1350, 1750, 2200, 2700, Infinity];
 
 // Level-up stat allocation. Each level grants POINTS_PER_LEVEL points to spend

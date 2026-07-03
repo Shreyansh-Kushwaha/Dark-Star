@@ -37,7 +37,6 @@ export class Enemy extends Phaser.GameObjects.Container {
     this.attackCd  = cfg.attackCd;
     this._atkTimer = 0;
     this._shockwaveTimer = cfg.shockwaveCd || Infinity;
-    this._coverTree = null;
     this._lastDepthY = y;
 
     this._spawnX = x;

@@ -2,13 +2,11 @@ import {
   PLAYER_SPEED, LIGHT_DMG, HEAVY_DMG, ATTACK_RANGE, ATTACK_ARC,
   LIGHT_CD, HEAVY_CD, LIGHT_STAMINA, HEAVY_STAMINA, DODGE_CD, DODGE_STAMINA, DODGE_DURATION,
   PERFECT_DODGE_WINDOW, PERFECT_DODGE_SLOWMO, PERFECT_DODGE_DURATION,
-  WARRIOR_FRAME, XP_THRESHOLDS,
+  XP_THRESHOLDS,
   AMRIT_MAX_DEFAULT, AMRIT_HEAL_FRAC, AMRIT_SIP_LOCKOUT,
 } from '../constants.js';
 import { AbilityManager } from '../systems/AbilityManager.js';
 import { QualitySettings } from '../systems/QualitySettings.js';
-
-const ABILITY_CDS = { Q: 8000, E: 10000, R: 12000 };
 
 export class Player extends Phaser.GameObjects.Container {
   constructor(scene, x, y, isP1, saveData, charKey) {
@@ -47,17 +45,16 @@ export class Player extends Phaser.GameObjects.Container {
     this._incomingAttackTimer = -1;
     this._perfectDodgeReady  = false;
     this._nextAttackMult     = 1;
-    this._hitstopTimer       = 0;
     this._downTimer          = 0;
     this._dodgeTimer         = 0;
     this._guardStance        = false;
     this._questKillCount     = 0;
     this._agniShieldTimer     = 0;
     this._agniShieldFx        = null;
-    this._agniShieldLoopTimer = null;
     this._slowMult   = 1.0;
     this._burnTimer  = null;
     this._slowTimer  = null;
+    this._poisonTimer = null;
     this._dustTimer  = 0;
 
     this.godMode     = false;
@@ -120,10 +117,6 @@ export class Player extends Phaser.GameObjects.Container {
 
   update(time, delta, cursors, keys, enemies, scene) {
     if (!this.alive && !this.downed) return;
-    if (this._hitstopTimer > 0) {
-      this._hitstopTimer -= delta;
-      return;
-    }
 
     this.setDepth(this.y);
 
@@ -140,7 +133,6 @@ export class Player extends Phaser.GameObjects.Container {
     if (keys) this._handleInput(time, keys, enemies, scene);
     if (keys?.H && Phaser.Input.Keyboard.JustDown(keys.H)) this.quaffAmrit(scene);
 
-    this._regen(delta);
     this._updateHpBar();
 
     // Stamina regen
@@ -169,12 +161,9 @@ export class Player extends Phaser.GameObjects.Container {
       if (this._agniShieldTimer <= 0) {
         this._agniShieldTimer = 0;
         if (this._agniShieldFx) { this._agniShieldFx.destroy(); this._agniShieldFx = null; }
-        if (this._agniShieldLoopTimer) { this._agniShieldLoopTimer.remove(false); this._agniShieldLoopTimer = null; }
       }
     }
   }
-
-  _regen() {}
 
   _move(delta, cursors, keys) {
     if (this.dodging) return;
@@ -186,10 +175,10 @@ export class Player extends Phaser.GameObjects.Container {
     if (this.scene?.cheatConsoleOpen) { this.body.setVelocity(0, 0); return; }
 
     let vx = 0, vy = 0;
-    const left  = (cursors?.left.isDown)  || (keys?.A?.isDown) || (keys?.LEFT?.isDown);
-    const right = (cursors?.right.isDown) || (keys?.D?.isDown) || (keys?.RIGHT?.isDown);
-    const up    = (cursors?.up.isDown)    || (keys?.W?.isDown) || (keys?.UP?.isDown);
-    const down  = (cursors?.down.isDown)  || (keys?.S?.isDown) || (keys?.DOWN?.isDown);
+    const left  = (cursors?.left?.isDown)  || (keys?.A?.isDown) || (keys?.LEFT?.isDown);
+    const right = (cursors?.right?.isDown) || (keys?.D?.isDown) || (keys?.RIGHT?.isDown);
+    const up    = (cursors?.up?.isDown)    || (keys?.W?.isDown) || (keys?.UP?.isDown);
+    const down  = (cursors?.down?.isDown)  || (keys?.S?.isDown) || (keys?.DOWN?.isDown);
 
     if (left)  vx = -PLAYER_SPEED;
     if (right) vx =  PLAYER_SPEED;
@@ -231,7 +220,7 @@ export class Player extends Phaser.GameObjects.Container {
     if (keys.J?.isDown && this._lightCd <= 0 && !this.dodging && this.stamina >= LIGHT_STAMINA) {
       this._lightCd = LIGHT_CD;
       this.stamina -= LIGHT_STAMINA;
-      this._doAttack(LIGHT_DMG * this.abilityPow * this._nextAttackMult, 0, enemies, scene);
+      this._doAttack(LIGHT_DMG * this.abilityPow * this._nextAttackMult, false, enemies, scene);
       this._nextAttackMult = 1;
       scene.audio.hit();
     }
@@ -239,7 +228,7 @@ export class Player extends Phaser.GameObjects.Container {
     if (keys.K?.isDown && this._heavyCd <= 0 && !this.dodging && this.stamina >= HEAVY_STAMINA) {
       this._heavyCd = HEAVY_CD;
       this.stamina -= HEAVY_STAMINA;
-      this._doAttack(HEAVY_DMG * this.abilityPow * this._nextAttackMult, 0, enemies, scene);
+      this._doAttack(HEAVY_DMG * this.abilityPow * this._nextAttackMult, true, enemies, scene);
       this._nextAttackMult = 1;
       scene.audio.heavyHit();
     }
@@ -265,10 +254,12 @@ export class Player extends Phaser.GameObjects.Container {
     }
   }
 
-  _doAttack(damage, hitstop, enemies, scene) {
+  _doAttack(damage, isHeavy, enemies, scene) {
     if (this.oneShotMode) damage *= 9999;
     this.attacking = true;
-    const heavy  = damage > 25;
+    // Heavy is an explicit flag from the caller — inferring it from the damage
+    // number was wrong once abilityPow / perfect-dodge (×1.5) / one-shot scaled it.
+    const heavy  = isHeavy;
     const atkKey = heavy ? '_attack2' : '_attack1';
     this.sprite.play(this.baseKey + atkKey, true).once('animationcomplete', () => {
       this.attacking = false;
@@ -279,7 +270,6 @@ export class Player extends Phaser.GameObjects.Container {
     // squash/stretch on the swing (player sprite base scale is a constant 1.0)
     scene._popSprite?.(this.sprite, 1, 1, heavy ? 1.22 : 1.14, heavy ? 0.80 : 0.90, heavy ? 110 : 80);
 
-    this._hitstopTimer = hitstop;
     let _hitLanded = false;
 
     // Arc hit detection
@@ -394,7 +384,14 @@ export class Player extends Phaser.GameObjects.Container {
     if (this._guardStance) amount *= 0.5;
     if (this._agniShieldTimer > 0) {
       amount *= 0.5;
-      if (source?.takeDamage) source.takeDamage(10, this, scene);
+      // Reflect 10 back at the attacker. The boss isn't in scene.enemies and has a
+      // different takeDamage(amount, scene) signature, so route boss reflects through
+      // scene.hitBoss(); only enemies use the 3-arg (amount, source, scene) form.
+      if (source && scene?._boss && source === scene._boss) {
+        scene.hitBoss(10);
+      } else if (source?.takeDamage) {
+        source.takeDamage(10, this, scene);
+      }
     }
 
     this.hp = Math.max(0, this.hp - amount);

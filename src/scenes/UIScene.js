@@ -52,36 +52,47 @@ export class UIScene extends Phaser.Scene {
     this._youDiedActive      = false;
     this._youDiedRetryRegion = null;
 
+    // GameScene emits on its own events emitter, which PERSISTS across its
+    // scene.restart() (region transitions) while this UIScene is stopped and
+    // relaunched. Registering here without removing on shutdown would stack a
+    // fresh copy of every handler each region change, so HUD/toasts/YOU-DIED
+    // would fire N times. Register from a table and off() the exact (event, fn)
+    // pairs on this scene's shutdown.
     const gs = this.scene.get('GameScene');
-    gs.events.on('boss_entered',       this._onBossEntered,    this);
-    gs.events.on('boss_hp_changed',    this._onBossHpChanged,  this);
-    gs.events.on('boss_phase_changed', this._onBossPhase,      this);
-    gs.events.on('boss_staggered',     this._onBossStaggered,  this);
-    gs.events.on('boss_killed',        this._onBossKilled,     this);
-    gs.events.on('boss_armor_changed', this._onBossArmorChanged, this);
-    gs.events.on('boss_armor_broken',  this._onBossArmorBroken,  this);
-    gs.events.on('player_damaged',     this._onPlayerDamaged,  this);
-    gs.events.on('player_downed',      this._onPlayerDowned,   this);
-    gs.events.on('player_revived',     this._onPlayerRevived,  this);
-    gs.events.on('perfect_dodge',      this._onPerfectDodge,   this);
-    gs.events.on('quest_started',      this._onQuestStarted,   this);
-    gs.events.on('quest_completed',    this._onQuestCompleted, this);
-    gs.events.on('show_dialogue',      this._showDialogue,     this);
-    gs.events.on('hide_dialogue',      this._hideDialogue,     this);
-    gs.events.on('region_title',       this._showRegionTitle,  this);
-    gs.events.on('update_ui',          this._updateHUD,        this);
-    gs.events.on('ability_used',       this._onAbilityUsed,    this);
-    gs.events.on('show_inventory',     this._showInventory,    this);
-    gs.events.on('game_over',          this._onGameOver,       this);
-    gs.events.on('lore_collected',     this._onLoreCollected,  this);
-    gs.events.on('revival_prompt',     this._onRevivalPrompt,  this);
-    gs.events.on('revival_progress',   this._onRevivalProgress, this);
-    gs.events.on('level_up_available', this._onLevelUpAvailable, this);
-    gs.events.on('kill_combo',         this._onKillCombo,       this);
-    gs.events.on('status_flash',       this._onStatusFlash,     this);
-    gs.events.on('item_acquired',      this._onItemAcquired,    this);
-    gs.events.on('xp_changed',         this._onXpChanged,       this);
-    gs.events.on('amrit_changed',      this._onAmritChanged,    this);
+    this._gsHandlers = [
+      ['boss_entered',       this._onBossEntered],
+      ['boss_hp_changed',    this._onBossHpChanged],
+      ['boss_phase_changed', this._onBossPhase],
+      ['boss_staggered',     this._onBossStaggered],
+      ['boss_killed',        this._onBossKilled],
+      ['boss_armor_changed', this._onBossArmorChanged],
+      ['boss_armor_broken',  this._onBossArmorBroken],
+      ['player_damaged',     this._onPlayerDamaged],
+      ['player_downed',      this._onPlayerDowned],
+      ['player_revived',     this._onPlayerRevived],
+      ['perfect_dodge',      this._onPerfectDodge],
+      ['quest_started',      this._onQuestStarted],
+      ['quest_completed',    this._onQuestCompleted],
+      ['show_dialogue',      this._showDialogue],
+      ['hide_dialogue',      this._hideDialogue],
+      ['region_title',       this._showRegionTitle],
+      ['update_ui',          this._updateHUD],
+      ['ability_used',       this._onAbilityUsed],
+      ['game_over',          this._onGameOver],
+      ['lore_collected',     this._onLoreCollected],
+      ['revival_prompt',     this._onRevivalPrompt],
+      ['revival_progress',   this._onRevivalProgress],
+      ['level_up_available', this._onLevelUpAvailable],
+      ['kill_combo',         this._onKillCombo],
+      ['status_flash',       this._onStatusFlash],
+      ['item_acquired',      this._onItemAcquired],
+      ['xp_changed',         this._onXpChanged],
+      ['amrit_changed',      this._onAmritChanged],
+    ];
+    for (const [evt, fn] of this._gsHandlers) gs.events.on(evt, fn, this);
+    this.events.once('shutdown', () => {
+      for (const [evt, fn] of this._gsHandlers) gs.events.off(evt, fn, this);
+    });
 
     // Cache lore fragment data for the lore tab
     import('/src/data/quests.js').then(m => { this._loreFragCache = m.LORE_FRAGMENTS; });
@@ -397,7 +408,9 @@ export class UIScene extends Phaser.Scene {
     if (escDown || homeDown || backspaceDown) {
       if (this._questVisible) { this._questPanel.setVisible(false); this._questVisible = false; }
       else if (this._invVisible) { this._invPanel.setVisible(false); this._invVisible = false; }
-      else if (!this._levelUpActive && !backspaceDown) this.scene.get('GameScene')?.togglePause();
+      // Only OPEN the pause menu from here. While paused, PauseScene's own ESC/HOME
+      // handler owns resume — toggling here too would double-fire and re-pause.
+      else if (!this._levelUpActive && !backspaceDown && !gs?._paused) gs?.togglePause();
     }
     if (Phaser.Input.Keyboard.JustDown(this._keyU)) {
       this._questVisible = !this._questVisible;
@@ -1056,12 +1069,6 @@ export class UIScene extends Phaser.Scene {
 
   // ── Inventory ──────────────────────────────────────────────────────────────
 
-  _showInventory(data) {
-    this._refreshInventory({ saveData: data });
-    this._invVisible = true;
-    this._invPanel.setVisible(true);
-  }
-
   _refreshLoreTab(gs) {
     const lm = gs?.loreManager;
     if (!lm || !this._loreFragTitles) return;
@@ -1091,7 +1098,7 @@ export class UIScene extends Phaser.Scene {
   }
 
   _refreshInventory(gs) {
-    const items = gs?.saveData?.inventory || [];
+    const items = gs?._save?.inventory || [];
     if (!items.length) {
       this._invText.setText('No items yet.');
       this._invUseHint?.setText('');
@@ -1120,7 +1127,7 @@ export class UIScene extends Phaser.Scene {
   }
 
   _useFirstConsumable(gs) {
-    const saveData = gs?.saveData;
+    const saveData = gs?._save;
     if (!saveData?.inventory?.length) return;
     const idx = saveData.inventory.findIndex(id => ITEM_DEFS[id]?.type === 'consumable');
     if (idx === -1) return;

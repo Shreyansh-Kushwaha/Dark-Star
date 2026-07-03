@@ -12,10 +12,21 @@ export class NetworkManager {
   connect() {
     return new Promise((resolve, reject) => {
       this.ws = new WebSocket(WS_URL);
-      this.ws.onopen = () => { this.connected = true; resolve(); };
-      this.ws.onerror = (e) => reject(e);
-      this.ws.onmessage = (e) => this._onMessage(JSON.parse(e.data));
+      // Fail fast if the socket opens but the server never responds (or never
+      // opens) — otherwise `await net.connect()` callers hang forever.
+      const timer = setTimeout(() => {
+        if (!this.connected) { try { this.ws.close(); } catch (_) {} reject(new Error('connect timeout')); }
+      }, 8000);
+      this.ws.onopen = () => { clearTimeout(timer); this.connected = true; resolve(); };
+      this.ws.onerror = (e) => { clearTimeout(timer); reject(e); };
+      this.ws.onmessage = (e) => {
+        // A single malformed/non-JSON frame must not kill the socket handler.
+        let msg;
+        try { msg = JSON.parse(e.data); } catch { return; }
+        this._onMessage(msg);
+      };
       this.ws.onclose = () => {
+        clearTimeout(timer);
         this.connected = false;
         this._emit('disconnected', {});
       };

@@ -143,24 +143,6 @@ export function assetsReady(scene, key) {
   return true;
 }
 
-// Queue this family's image loads onto the scene loader. Returns the number of
-// NEW files queued (0 if everything is already cached). Caller starts the load.
-export function queueLoads(scene, key) {
-  const fam = FAMILIES[key];
-  if (!fam) return 0;
-  let queued = 0;
-  for (const l of fam.loads) {
-    if (scene.textures.exists(l.key)) continue;
-    if (l.frameWidth) {
-      scene.load.spritesheet(l.key, l.url, { frameWidth: l.frameWidth, frameHeight: l.frameHeight });
-    } else {
-      scene.load.image(l.key, l.url);
-    }
-    queued++;
-  }
-  return queued;
-}
-
 // Define this family's animations (idempotent). Call only after its textures
 // have finished loading.
 export function defineAnims(scene, key) {

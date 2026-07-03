@@ -165,7 +165,9 @@ export class PauseScene extends Phaser.Scene {
     const RMX = BX + 6;         // right page left edge
 
     // ── Full-screen dim behind book ─────────────────────────────────────
-    this._add(this.add.rectangle(BX, BY, GAME_W, GAME_H, 0x000000, 0.6).setDepth(D));
+    // setInteractive so it swallows clicks — otherwise pointer events fall through
+    // to the RESUME/MAP/CODEX/MENU zones still active behind the open book.
+    this._add(this.add.rectangle(BX, BY, GAME_W, GAME_H, 0x000000, 0.6).setDepth(D).setInteractive());
 
     // ── Leather cover (slightly oversized) ──────────────────────────────
     const g = this._add(this.add.graphics().setDepth(D + 1));

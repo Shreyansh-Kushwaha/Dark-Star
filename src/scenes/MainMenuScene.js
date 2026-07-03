@@ -427,22 +427,6 @@ export class MainMenuScene extends Phaser.Scene {
     });
   }
 
-  _continueGame() {
-    const save = SaveManager.load();
-    const regionIndex = save?.regionIndex || 0;
-    // Refresh region maps in parallel with the fade so editor-saved data is current
-    const mapsPromise = fetch('/api/regions')
-      .then(r => r.json())
-      .then(list => { this.registry.set('regionMaps', list); })
-      .catch(() => {});
-    this.cameras.main.fadeOut(400, 0, 0, 0);
-    this.cameras.main.once('camerafadeoutcomplete', () => {
-      this.scene.stop('MainMenuScene');
-      const doStart = () => this.scene.start('GameScene', { regionIndex });
-      mapsPromise.then(doStart).catch(doStart);
-    });
-  }
-
   async _hostCoop() {
     this._cancelCoopScreen();
     this._roomPrompt.setText('CONNECTING...  [Backspace=cancel]').setAlpha(1);

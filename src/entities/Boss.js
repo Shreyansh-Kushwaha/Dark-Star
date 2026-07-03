@@ -919,7 +919,7 @@ export class Boss extends Phaser.GameObjects.Container {
     }
 
     scene.cameras.main.shake(500, 0.018);
-    scene.events.emit('boss_phase_changed', { phase: newPhase, label: labels[newPhase], boss: this, phaseIndex: newPhase });
+    scene.events.emit('boss_phase_changed', { phase: newPhase, label: labels[newPhase] ?? `PHASE ${newPhase + 1}`, boss: this, phaseIndex: newPhase });
     scene.audio?.bossPhase?.();
   }
 
@@ -1025,6 +1025,7 @@ export class Boss extends Phaser.GameObjects.Container {
       x:       this.x,
       y:       this.y,
       hp:      this.hp,
+      alive:   this.alive,
       posture: this.posture,
       phase:   this.phase,
       state:   this.state,
@@ -1034,6 +1035,10 @@ export class Boss extends Phaser.GameObjects.Container {
   }
 
   applyNetState(state) {
+    // Mirror the host's death so the client runs _die (death VFX + tears down the
+    // aura tween, decoys, wind corridors, split shadows). Without this the client's
+    // boss freezes on its last frame with all its effects still running.
+    if (state.alive === false && this.alive) { this._die(this.scene); return; }
     if (!this.alive) return;
 
     this.hp      = state.hp;
