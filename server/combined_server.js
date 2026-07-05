@@ -261,6 +261,19 @@ const server = http.createServer((req, res) => {
   // ── Region map list ────────────────────────────────────────────────────────
   if (req.method === 'GET' && req.url === '/api/regions') {
     const files = fs.readdirSync(REGIONS_DIR).filter(f => f.endsWith('.json'));
+    // Cheap validator: the newest region-file mtime. Lets the browser revalidate
+    // with a 304 instead of re-downloading ~5.8 MB of region JSON every reload;
+    // saving a region in the editor bumps the mtime, so changes still show.
+    let newest = 0;
+    for (const f of files) {
+      try { newest = Math.max(newest, fs.statSync(path.join(REGIONS_DIR, f)).mtimeMs); } catch {}
+    }
+    const lastMod = new Date(newest).toUTCString();
+    if (req.headers['if-modified-since'] === lastMod) {
+      res.writeHead(304, { 'Cache-Control': 'no-cache', 'Last-Modified': lastMod });
+      res.end();
+      return;
+    }
     const result = [];
     for (const file of files) {
       try {
@@ -272,7 +285,7 @@ const server = http.createServer((req, res) => {
         result.push({ filename: file, regionIndex, data });
       } catch {}
     }
-    res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' });
+    res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache', 'Last-Modified': lastMod });
     res.end(JSON.stringify(result));
     return;
   }
@@ -519,8 +532,17 @@ const server = http.createServer((req, res) => {
   // ── Serve the approved animation definitions (for the runtime loader) ────────
   if (req.method === 'GET' && req.url === '/api/animations') {
     try {
-      const data = fs.readFileSync(path.join(GAME_ROOT, 'docs', 'animations.json'), 'utf8');
-      res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' });
+      const p = path.join(GAME_ROOT, 'docs', 'animations.json');
+      // 304 revalidation so the 640 KB anim registry isn't re-downloaded every
+      // reload; re-exporting from the reviewer bumps the mtime so it refreshes.
+      const lastMod = fs.statSync(p).mtime.toUTCString();
+      if (req.headers['if-modified-since'] === lastMod) {
+        res.writeHead(304, { 'Cache-Control': 'no-cache', 'Last-Modified': lastMod });
+        res.end();
+        return;
+      }
+      const data = fs.readFileSync(p, 'utf8');
+      res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache', 'Last-Modified': lastMod });
       res.end(data);
     } catch {
       res.writeHead(404, { 'Content-Type': 'application/json' });
@@ -538,14 +560,38 @@ const server = http.createServer((req, res) => {
     res.writeHead(403); res.end('Forbidden'); return;
   }
 
-  fs.readFile(filePath, (err, data) => {
-    if (err) {
+  fs.stat(filePath, (serr, stat) => {
+    if (serr || !stat.isFile()) {
       res.writeHead(404); res.end('Not found: ' + urlPath); return;
     }
     const ext = path.extname(filePath).toLowerCase();
     const ct = MIME[ext] || 'application/octet-stream';
-    res.writeHead(200, { 'Content-Type': ct, 'Cache-Control': 'no-cache' });
-    res.end(data);
+    const mtime = stat.mtime.toUTCString();
+
+    // Conditional request: if the browser's cached copy is current, reply 304 with
+    // no body. Turns a full re-download into a header-only round-trip. The browser
+    // echoes back exactly the Last-Modified we sent, so string equality is safe
+    // (both are second-precision).
+    if (req.headers['if-modified-since'] === mtime) {
+      res.writeHead(304, { 'Last-Modified': mtime, 'Cache-Control': 'no-cache' });
+      res.end();
+      return;
+    }
+
+    // Images/audio effectively never change during play, so let the browser reuse
+    // them for a day with NO revalidation round-trip — this is what makes reloads
+    // fast (hundreds of PNGs otherwise re-fetched every time). Code/markup stays
+    // no-cache so edits always show, but revalidation is cheap via Last-Modified.
+    const IMMUTABLE = ['.png', '.jpg', '.wav', '.ogg'];
+    const cache = IMMUTABLE.includes(ext) ? 'public, max-age=86400' : 'no-cache';
+
+    fs.readFile(filePath, (err, data) => {
+      if (err) {
+        res.writeHead(404); res.end('Not found: ' + urlPath); return;
+      }
+      res.writeHead(200, { 'Content-Type': ct, 'Cache-Control': cache, 'Last-Modified': mtime });
+      res.end(data);
+    });
   });
 });
 

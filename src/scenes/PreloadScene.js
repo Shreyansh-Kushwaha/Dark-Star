@@ -61,18 +61,10 @@ export class PreloadScene extends Phaser.Scene {
     this.load.spritesheet('lancer_idle', `${TS}/Units/Black Units/Lancer/Lancer_Idle.png`, { frameWidth: L, frameHeight: L });
     this.load.spritesheet('lancer_run',  `${TS}/Units/Black Units/Lancer/Lancer_Run.png`,  { frameWidth: L, frameHeight: L });
 
-    // ── ORC (Melee enemy) ─────────────────────────────────────────
-    for (let i = 1; i <= 4; i++) this.load.image(`orc_idle_${String(i).padStart(2,'0')}`, `${PK}/ORC/Idel/${String(i).padStart(2,'0')}.png`);
-    for (let i = 1; i <= 6; i++) this.load.image(`orc_run_${String(i).padStart(2,'0')}`,  `${PK}/ORC/Run/${String(i).padStart(2,'0')}.png`);
-    for (let i = 1; i <= 9; i++) this.load.image(`orc_attack_${String(i).padStart(2,'0')}`,`${PK}/ORC/ATTACK/${String(i).padStart(2,'0')}.png`);
-    const orcDeadFrames = [1,2,3,5,6,7,8,9];
-    for (const i of orcDeadFrames) this.load.image(`orc_dead_${String(i).padStart(2,'0')}`, `${PK}/ORC/dead/${String(i).padStart(2,'0')}.png`);
-
-    // ── ORC2 (Elite enemy) ────────────────────────────────────────
-    for (let i = 1; i <= 6; i++) this.load.image(`orc2_idle_${String(i).padStart(2,'0')}`, `${PK}/ORC2/IDEL/${String(i).padStart(2,'0')}.png`);
-    for (let i = 1; i <= 6; i++) this.load.image(`orc2_run_${String(i).padStart(2,'0')}`,  `${PK}/ORC2/Run/${String(i).padStart(2,'0')}.png`);
-    for (let i = 1; i <= 8; i++) this.load.image(`orc2_attack_${String(i).padStart(2,'0')}`,`${PK}/ORC2/attack/${String(i).padStart(2,'0')}.png`);
-    for (let i = 1; i <= 10; i++) this.load.image(`orc2_dead_${String(i).padStart(2,'0')}`, `${PK}/ORC2/DEAD/${String(i).padStart(2,'0')}.png`);
+    // ── THE PACK ORC / ORC2 packs are NOT loaded here: no roster enemy uses them
+    // (the melee/elite enemies use goblin_*/ogre_*), and the ORC2 boss lazy-loads
+    // its own orc2_boss_* keys from src/data/bossAssets.js on region entry. These
+    // ~57 boot images were dead weight, so they've been removed.
 
     // ── Boss frames (slime_boss, tree_boss, orc2_boss, mino, frost, dslime) ──
     // Loaded lazily per-region via src/data/bossAssets.js when the player enters
@@ -255,44 +247,16 @@ export class PreloadScene extends Phaser.Scene {
   }
 
   _loadRegionMaps() {
+    // We used to eagerly preload the sprite textures for ALL 44 regions here —
+    // ~370 extra HTTP requests that blocked the main menu on every boot. That was
+    // pure redundancy: GameScene._buildRegionFromMap loads whatever a region needs
+    // on entry (its `missing` loader self-heals any not-yet-cached texture). So we
+    // now only stash the region JSON in the registry and open the menu immediately.
     fetch('/api/regions')
       .then(r => r.json())
-      .then(list => {
-        // Collect unique sprite URLs to preload — value is { url, isSheet?, frameW?, frameH? }
-        const toLoad = new Map();
-        for (const entry of list) {
-          for (const sp of entry.data?.sprites || []) {
-            if (!sp.frames) continue; // skip non-image entries (e.g. strokes)
-            const key = _mapSpriteKey(sp.dir, sp.frames[0]);
-            if (!this.textures.exists(key)) {
-              if (sp.frameW && sp.frameH) {
-                toLoad.set(key, { url: sp.dir + '/' + sp.frames[0], isSheet: true, frameW: sp.frameW, frameH: sp.frameH });
-              } else {
-                toLoad.set(key, { url: sp.dir + '/' + sp.frames[0] });
-              }
-            }
-            // For multi-frame (numbered) animated sprites, preload all frames
-            if (sp.animated && sp.frames.length > 1 && !sp.frameW) {
-              for (const frame of sp.frames) {
-                const fkey = _mapSpriteKey(sp.dir, frame);
-                if (!this.textures.exists(fkey)) toLoad.set(fkey, { url: sp.dir + '/' + frame });
-              }
-            }
-          }
-        }
-        this.registry.set('regionMaps', list);
-        if (toLoad.size === 0) { this.scene.start('MainMenuScene'); return; }
-        toLoad.forEach(({ url, isSheet, frameW, frameH }, key) => {
-          if (isSheet) this.load.spritesheet(key, url, { frameWidth: frameW, frameHeight: frameH });
-          else this.load.image(key, url);
-        });
-        this.load.once('complete', () => this.scene.start('MainMenuScene'));
-        this.load.start();
-      })
-      .catch(() => {
-        this.registry.set('regionMaps', []);
-        this.scene.start('MainMenuScene');
-      });
+      .then(list => { this.registry.set('regionMaps', list); })
+      .catch(() => { this.registry.set('regionMaps', []); })
+      .finally(() => { this.scene.start('MainMenuScene'); });
   }
 
   _defineAnimations() {
@@ -324,16 +288,8 @@ export class PreloadScene extends Phaser.Scene {
     anims.create({ key: 'lancer_idle', frames: anims.generateFrameNumbers('lancer_idle', { start: 0, end: 11 }), frameRate: 10, repeat: -1 });
     anims.create({ key: 'lancer_run',  frames: anims.generateFrameNumbers('lancer_run',  { start: 0, end: 5  }), frameRate: 12, repeat: -1 });
 
-    // ── Build multi-texture animations for THE PACK sprites ─────
-    this._buildMultiAnim('orc_idle',   this._frames('orc_idle',   [1,2,3,4]));
-    this._buildMultiAnim('orc_run',    this._frames('orc_run',    [1,2,3,4,5,6]));
-    this._buildMultiAnim('orc_attack', this._frames('orc_attack', [1,2,3,4,5,6,7,8,9]));
-    this._buildMultiAnim('orc_dead',   this._frames('orc_dead',   [1,2,3,5,6,7,8,9]));
-
-    this._buildMultiAnim('orc2_idle',   this._frames('orc2_idle',   [1,2,3,4,5,6]));
-    this._buildMultiAnim('orc2_run',    this._frames('orc2_run',    [1,2,3,4,5,6]));
-    this._buildMultiAnim('orc2_attack', this._frames('orc2_attack', [1,2,3,4,5,6,7,8]));
-    this._buildMultiAnim('orc2_dead',   this._frames('orc2_dead',   [1,2,3,4,5,6,7,8,9,10]));
+    // (THE PACK orc_*/orc2_* animations removed — their textures are no longer
+    // loaded at boot; nothing in the game references these anim keys.)
 
     // ── Boss animations (slime_boss/tree_boss/orc2_boss/mino/frost/dslime) ──
     // Defined lazily alongside their textures in src/data/bossAssets.js when a
