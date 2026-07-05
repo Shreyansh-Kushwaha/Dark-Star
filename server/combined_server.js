@@ -285,6 +285,10 @@ const server = http.createServer((req, res) => {
         result.push({ filename: file, regionIndex, data });
       } catch {}
     }
+    // readdirSync order is filesystem/alphabetical (region_10 before region_2), not
+    // numeric — GameScene builds its seamless-streaming chain straight from this
+    // array's order, so an unsorted list scrambles which regions border which.
+    result.sort((a, b) => (a.regionIndex ?? 0) - (b.regionIndex ?? 0));
     res.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache', 'Last-Modified': lastMod });
     res.end(JSON.stringify(result));
     return;
