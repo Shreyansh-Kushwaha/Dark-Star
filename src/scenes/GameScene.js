@@ -810,12 +810,31 @@ export class GameScene extends Phaser.Scene {
     this._deathEchoObj = null;
     this._worldFragmentObjects = (this._worldFragmentObjects || []).filter(f => f.gfx?.active);
 
+    // Likewise for the previous region's boss (if any) — its arena/label/entity
+    // were just destroyed by _unloadRegion above (tagged with the old region's
+    // index), so drop the stale references the same way portals/shrine do.
+    this._boss = null;
+    this._bossTriggered = false;
+    this._bossAssetsReady = true;
+    this._bossLoadingFamily = null;
+    this._bossArenaPos = null;
+    this._bossArenaGfx = null;
+    this._bossArenaLabel = null;
+
     const desc = this._regionDescriptor(newBaseIdx);
     this._stream = { base: newBaseIdx, next: null, prev: null };
     this._regionIndex = newBaseIdx;
     this._region = desc;
     this._mapData = (this.registry.get('regionMaps') || []).find(e => e.regionIndex === newBaseIdx)?.data || null;
     this._spawnerPositions = desc.spawnerPositions || [];
+
+    // Map editor boss override for the newly-committed region (mirrors the same
+    // assignment create() makes before its own _createBossArena call). Without
+    // this, a boss placed in a streamed-in region (7..49) never got an arena/
+    // trigger — the whole reason this region never spawned its boss.
+    this._mapBossOverride = this._mapData?.boss || null;
+    this._createBossArena(desc);
+
     ExploredManager.markExplored(newBaseIdx);
     this.physics.world.setBounds(0, 0, WORLD_W, WORLD_H);
     this.cameras.main.setBounds(0, 0, WORLD_W, WORLD_H);
@@ -1927,6 +1946,12 @@ export class GameScene extends Phaser.Scene {
       stroke: '#000', strokeThickness: 3,
     }).setOrigin(0.5, 1).setDepth(1);
 
+    // Tag so seamless-streaming cleanup (_unloadRegion) destroys these along with
+    // the rest of the region's objects once this region is left behind — this
+    // function can now run from _commitCrossing, not just the initial create().
+    arena._streamRegion = region.index;
+    bossLabel._streamRegion = region.index;
+
     this._bossArenaPos = bp;
     this._bossArenaGfx = arena;
     this._bossArenaLabel = bossLabel;
@@ -2810,6 +2835,7 @@ export class GameScene extends Phaser.Scene {
       : region.bossPos;
     const boss = new Boss(this, bossPos.x, bossPos.y, bossKey);
     boss.enablePhysics(this);
+    boss._streamRegion = this._regionIndex;   // cleaned up by _unloadRegion if left mid-fight
     this._boss = boss;
     this.audio.bossPhase();
 
