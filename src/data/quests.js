@@ -339,4 +339,11 @@ export const LORE_FRAGMENTS = [
     title: 'The Prison Echo Stone',
     text: '⟨Lore Fragment⟩ The stone whispers: "I did not destroy the thread. I was punished for protecting it. The gods called me a demon because I refused to become their instrument. Remember this. Tell it to those who come after. The truth is not dead. It is only waiting."',
   },
+
+  // ── Region 17 — Whisper Mire (hidden, found by cross-referencing 3 NPCs) ──
+  {
+    id: 'lore_kardama_hollow', region: 17, source: 'world',
+    title: 'The Hollow of Kardama',
+    text: '⟨Lore Fragment⟩ Sunk beneath the widest pool, a half-buried tablet reads: "Ekatmadeva walked here once, before the naming. The mire remembers what the temples erased."',
+  },
 ];

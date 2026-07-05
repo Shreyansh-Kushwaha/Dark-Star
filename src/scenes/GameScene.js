@@ -338,8 +338,7 @@ export class GameScene extends Phaser.Scene {
     this._bossAssetsReady = true;     // flipped to false by _ensureBossAssets if a stream is needed
     this._bossLoadingFamily = null;
     this._pressurePlates = [];
-    this._plateTriggered = [false, false];
-    this._plateRewardGiven = false;
+    this._plateGroupsDone = new Set();
     this._dialogueActive = false;
     this._dialogueLine = '';
     this._interactTarget = null;
@@ -529,11 +528,14 @@ export class GameScene extends Phaser.Scene {
       portalBack: null,
       portalNext: null,
       spawnerPositions: [],
-      platePositions: [],
+      // Map-editor field names are `plates`/`fragments` (short, matches npcs/
+      // enemies/sprites); translated here to the names the rest of GameScene
+      // already reads (platePositions/worldFragments).
+      platePositions: md?.plates || [],
       fixedEnemies: [],
       enemyTypes: ['melee'],
       echoTriggers: [],
-      worldFragments: [],
+      worldFragments: md?.fragments || [],
       ambientKey: 0,
     };
   }
@@ -821,6 +823,11 @@ export class GameScene extends Phaser.Scene {
     this._bossArenaGfx = null;
     this._bossArenaLabel = null;
 
+    // Pressure plates similarly only ever got created in the initial create() —
+    // drop stale entries (their gfx/label are destroyed by _unloadRegion above).
+    this._pressurePlates = [];
+    this._plateGroupsDone = new Set();
+
     const desc = this._regionDescriptor(newBaseIdx);
     this._stream = { base: newBaseIdx, next: null, prev: null };
     this._regionIndex = newBaseIdx;
@@ -834,6 +841,10 @@ export class GameScene extends Phaser.Scene {
     // trigger — the whole reason this region never spawned its boss.
     this._mapBossOverride = this._mapData?.boss || null;
     this._createBossArena(desc);
+    // Same gap for plates/fragments: create() built them once at boot, but a
+    // region reached by walking across the world never got them either.
+    this._createPressurePlates(desc);
+    this._createWorldFragments(desc);
 
     ExploredManager.markExplored(newBaseIdx);
     this.physics.world.setBounds(0, 0, WORLD_W, WORLD_H);
@@ -1240,6 +1251,11 @@ export class GameScene extends Phaser.Scene {
         fontSize: '12px', color: '#ffd700', fontFamily: 'monospace',
         stroke: '#000', strokeThickness: 2,
       }).setOrigin(0.5, 1).setAlpha(0).setDepth(frag.y + 2);
+
+      // Tag for seamless-streaming cleanup — this function can now run from
+      // _commitCrossing (JSON regions), not just the initial create().
+      gfx._streamRegion = region.index;
+      prompt._streamRegion = region.index;
 
       this._worldFragmentObjects.push({ fragmentId: frag.fragmentId, x: frag.x, y: frag.y, gfx, prompt });
     }
@@ -1703,16 +1719,26 @@ export class GameScene extends Phaser.Scene {
     this.time.delayedCall(2000, () => this.events.emit('hide_dialogue'));
   }
 
+  // Plates default to player-triggered (co-op "stand together" puzzles, e.g. the
+  // heal shrine). A plate with `requires: <enemyTypeKey>` only triggers for that
+  // enemy type — a "lure the ogre onto the plate" combat puzzle instead. Plates
+  // share `group` (default 'default') with the others they must trigger
+  // alongside; unrelated puzzles in one region complete independently.
   _createPressurePlates(region) {
     for (let i = 0; i < (region.platePositions || []).length; i++) {
       const pos = region.platePositions[i];
-      const plate = this.add.circle(pos.x, pos.y, 20, 0x886644, 0.7);
-      plate.setStrokeStyle(2, 0xddaa66);
+      const isWeightClass = !!pos.requires;
+      const plate = this.add.circle(pos.x, pos.y, 20, isWeightClass ? 0x5a3a1a : 0x886644, 0.7);
+      plate.setStrokeStyle(2, isWeightClass ? 0xcc8844 : 0xddaa66);
       plate.setDepth(-3);
-      const label = this.add.text(pos.x, pos.y - 28, '[STEP]', {
-        fontSize: '10px', color: '#ccaa66', fontFamily: 'monospace',
+      const label = this.add.text(pos.x, pos.y - 28, isWeightClass ? '[HEAVY]' : '[STEP]', {
+        fontSize: '10px', color: isWeightClass ? '#e0a860' : '#ccaa66', fontFamily: 'monospace',
       }).setOrigin(0.5);
-      this._pressurePlates.push({ ...pos, gfx: plate, label, triggered: false });
+      // Tag for seamless-streaming cleanup — this function can now run from
+      // _commitCrossing (JSON regions), not just the initial create().
+      plate._streamRegion = region.index;
+      label._streamRegion = region.index;
+      this._pressurePlates.push({ ...pos, group: pos.group || 'default', gfx: plate, label, triggered: false });
     }
   }
 
@@ -2850,36 +2876,64 @@ export class GameScene extends Phaser.Scene {
   }
 
   _checkPressurePlates() {
-    if (this._plateRewardGiven || this._pressurePlates.length < 2) return;
+    if (!this._pressurePlates.length) return;
 
-    const triggered = this._pressurePlates.map((plate, i) => {
-      let any = false;
-      for (const p of this.players) {
-        if (!p?.alive || p.downed) continue;
-        const d = Phaser.Math.Distance.Between(p.x, p.y, plate.x, plate.y);
-        if (d < 30) { any = true; break; }
-      }
-      if (any !== this._plateTriggered[i]) {
-        this._plateTriggered[i] = any;
-        plate.gfx.setFillStyle(any ? 0xffcc44 : 0x886644, 0.7);
-      }
-      return any;
-    });
+    // Group so unrelated plate puzzles in the same region (e.g. the co-op heal
+    // plates and a separate weight-class lure plate) complete independently.
+    const groups = new Map();
+    for (const plate of this._pressurePlates) {
+      if (!groups.has(plate.group)) groups.set(plate.group, []);
+      groups.get(plate.group).push(plate);
+    }
 
-    if (triggered.every(t => t)) {
-      this._plateRewardGiven = true;
-      this._onPlateActivated();
+    for (const [group, plates] of groups) {
+      if (this._plateGroupsDone.has(group)) continue;
+
+      for (const plate of plates) {
+        let any = false;
+        if (plate.requires) {
+          for (const e of this.enemies) {
+            if (!e?.alive || e.typeKey !== plate.requires) continue;
+            if (Phaser.Math.Distance.Between(e.x, e.y, plate.x, plate.y) < 34) { any = true; break; }
+          }
+        } else {
+          for (const p of this.players) {
+            if (!p?.alive || p.downed) continue;
+            if (Phaser.Math.Distance.Between(p.x, p.y, plate.x, plate.y) < 30) { any = true; break; }
+          }
+        }
+        if (any !== plate.triggered) {
+          plate.triggered = any;
+          const onColor  = plate.requires ? 0xffaa44 : 0xffcc44;
+          const offColor = plate.requires ? 0x5a3a1a : 0x886644;
+          plate.gfx.setFillStyle(any ? onColor : offColor, 0.7);
+        }
+      }
+
+      if (plates.every(p => p.triggered)) {
+        this._plateGroupsDone.add(group);
+        this._onPlateActivated(plates);
+      }
     }
   }
 
-  _onPlateActivated() {
-    // 35% HP heal
+  _onPlateActivated(plates) {
+    this.audio.pressurePlate();
+    const isWeightClass = plates.some(p => p.requires);
+    if (isWeightClass) {
+      // Combat puzzle payoff: no heal (a heavy enemy did the "work"), reward is
+      // handed out directly rather than through the co-op heal-plate flow.
+      this.grantShards(50);
+      this.events.emit('show_dialogue', { text: '⟨Stone Mechanism⟩ The old lock groans — something heavy enough has finally stood upon it. (+50 Thread Shards)' });
+      this.time.delayedCall(3000, () => this.events.emit('hide_dialogue'));
+      return;
+    }
+    // 35% HP heal (co-op plates)
     for (const p of this.players) {
       if (!p?.alive || p.downed) continue;
       p.hp = Math.min(p.maxHp, p.hp + Math.floor(p.maxHp * 0.35));
       p._updateHpBar?.();
     }
-    this.audio.pressurePlate();
     this.events.emit('show_dialogue', { text: '⟨Sacred Stone⟩ The bond of unity heals your wounds. +35% HP restored.' });
     this.time.delayedCall(3000, () => this.events.emit('hide_dialogue'));
     this.questManager.onPressurePlate();
