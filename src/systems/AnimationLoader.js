@@ -23,11 +23,15 @@
 // both run them on region entry — co-op safe.
 
 import { BOSS_FAMILIES } from '../data/bossAssets.js';
+import { ENEMY_FAMILIES } from '../data/enemyAssets.js';
 
 const pad = n => String(n).padStart(2, '0');
 
-// Merged registry. Legacy boss families are seeded first and never overwritten.
-const FAMILIES = { ...BOSS_FAMILIES };
+// Merged registry. Legacy boss families + lazy roster-enemy families are seeded
+// first and never overwritten (approved animations.json entities can't clobber a
+// hand-tuned family — same guard as bosses). GameScene loads an enemy family on
+// region entry via _ensureEnemyAssets → _loadFamilyAssets → defineAnims.
+const FAMILIES = { ...BOSS_FAMILIES, ...ENEMY_FAMILIES };
 
 // entity_key -> entity_type ('boss'|'enemy'|'npc'|…) for merged JSON entities.
 // Lets callers (e.g. creature spawning) pick stats without re-reading the JSON.

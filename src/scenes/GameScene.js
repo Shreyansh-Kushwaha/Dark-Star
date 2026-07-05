@@ -9,6 +9,7 @@ import { Player } from '../entities/Player.js';
 import { Enemy  } from '../entities/Enemy.js';
 import { Boss   } from '../entities/Boss.js';
 import { BOSSES } from '../data/bosses.js';
+import { ENEMY_TYPES } from '../data/enemies.js';
 import { familyForKey, familyLoads, familyAnimKeys, entityType, assetsReady, defineAnims, loadAnimationsJSON } from '../systems/AnimationLoader.js';
 import { statsFor } from '../data/creatureStats.js';
 import { Projectile } from '../entities/Projectile.js';
@@ -265,6 +266,10 @@ export class GameScene extends Phaser.Scene {
             seenIds.add(state.id);
             let e = this._remoteEnemyMap.get(state.id);
             if (!e) {
+              // The host may sync an enemy whose lazy pack hasn't loaded on this
+              // client yet — stream it in and skip this frame; the next sync (sent
+              // continuously) creates it once ready. Boot/creature types pass through.
+              if (!this._enemyFamilyReady(state.typeKey)) { this._ensureEnemyAssets(state.typeKey); continue; }
               e = new Enemy(this, state.x, state.y, state.typeKey, 1);
               e._id   = state.id;
               e.maxHp = state.maxHp;
@@ -590,8 +595,16 @@ export class GameScene extends Phaser.Scene {
     // spawner timers are intentionally skipped to avoid orphaned timers.
     if (!this.network.connected || this.network.isHost()) {
       const track = (e) => { e._streamRegion = regionIndex; sink.enemies.push(e); this.enemies.push(e); };
-      for (const cfg of (region.fixedEnemies || [])) {
-        track(new Enemy(this, cfg.x + dx, cfg.y + dy, cfg.type, region.difficulty));
+      const fixed = region.fixedEnemies || [];
+      const spawnFixed = () => { for (const cfg of fixed) track(new Enemy(this, cfg.x + dx, cfg.y + dy, cfg.type, region.difficulty)); };
+      const pending = [...new Set(fixed.map(c => c.type))].filter(t => !this._enemyFamilyReady(t));
+      if (!pending.length) {
+        spawnFixed();
+      } else {
+        // Lazy pack loading — spawn once ready, but only if this neighbour is still streamed.
+        Promise.all(pending.map(t => this._ensureEnemyAssets(t))).then(() => {
+          if (this._stream.next === sink || this._stream.prev === sink) spawnFixed();
+        });
       }
     }
 
@@ -1217,6 +1230,23 @@ export class GameScene extends Phaser.Scene {
     // In co-op: only host spawns and simulates enemies
     if (this.network.connected && !this.network.isHost()) return;
 
+    // Stream in any lazy enemy packs this region can spawn, then re-enter so every
+    // spawn below runs synchronously with textures present. Nothing is spawned on
+    // the deferred first pass, so re-entry never double-spawns. (Boot packs report
+    // ready immediately, so regions using only them skip straight through.)
+    const lazyTypes = new Set([
+      ...(region.enemyTypes || []),
+      ...(region.fixedEnemies || []).map(c => c.type),
+    ]);
+    const pending = [...lazyTypes].filter(t => !this._enemyFamilyReady(t));
+    if (pending.length) {
+      const rIdx = this._regionIndex;
+      Promise.all(pending.map(t => this._ensureEnemyAssets(t))).then(() => {
+        if (this._regionIndex === rIdx && this.scene.isActive()) this._createSpawners(region);
+      });
+      return;
+    }
+
     if (region.fixedEnemies?.length) {
       this._spawnFixedEnemies(region);
     }
@@ -1254,6 +1284,9 @@ export class GameScene extends Phaser.Scene {
     if (this.enemies.length >= QualitySettings.maxEnemies) return;
     const types = region.enemyTypes || ['melee'];
     const type  = types[Math.floor(Math.random() * types.length)];
+    // Lazy pack not present yet (a spawner tick before its region prewarm landed):
+    // stream it in and skip this tick rather than spawn a textureless enemy.
+    if (!this._enemyFamilyReady(type)) { this._ensureEnemyAssets(type); return; }
     // Region 0 is a tutorial — spawn only 1–2 per group
     const isTutorial = this._regionIndex === 0;
     const count = isTutorial ? (1 + Math.floor(Math.random() * 2)) : (2 + Math.floor(Math.random() * 2));
@@ -1662,6 +1695,34 @@ export class GameScene extends Phaser.Scene {
       }).setOrigin(0.5);
       this._pressurePlates.push({ ...pos, gfx: plate, label, triggered: false });
     }
+  }
+
+  // ── Lazy roster-enemy asset loading ─────────────────────────────────────────
+  // The narrow-footprint enemy packs (orc_new + bat/rat/slime/mimic) load on
+  // region entry instead of at boot (src/data/enemyAssets.js). These two helpers
+  // let every spawn site check readiness and stream a pack in before it builds an
+  // Enemy — the ubiquitous packs (goblin/ogre/archer/lancer) have no family, so
+  // both helpers short-circuit to "ready"/no-op for them, keeping behavior
+  // identical whenever assets are already present.
+
+  // The lazy family for a roster type ('orc'→'orc_new'), or null if it boot-loads.
+  _enemyFamily(type) {
+    if (typeof type !== 'string') return null;   // synthesized creature cfg — not a roster type
+    return familyForKey(ENEMY_TYPES[type]?.textureBase);
+  }
+
+  // True if this type is safe to construct now (boot pack, or lazy pack fully loaded).
+  _enemyFamilyReady(type) {
+    const family = this._enemyFamily(type);
+    return !family || assetsReady(this, family);
+  }
+
+  // Load + define a type's lazy pack (idempotent). Resolves immediately when the
+  // family is absent (boot pack) or already loaded. Reuses the creature loader.
+  _ensureEnemyAssets(type) {
+    const family = this._enemyFamily(type);
+    if (!family) return Promise.resolve();
+    return this._loadFamilyAssets(family);
   }
 
   // Lazily load this region's boss art (frames + anims) the first time the
@@ -2175,10 +2236,25 @@ export class GameScene extends Phaser.Scene {
       const canSpawnEnemies = !this.network.connected || this.network.isHost();
       if (mapEnemies.length > 0 && canSpawnEnemies) {
         const difficulty = opts.difficulty ?? REGIONS[rIdx]?.difficulty ?? (this._region || {}).difficulty ?? 1.0;
-        for (const e of mapEnemies) {
-          const enemy = new Enemy(this, e.x + dx, e.y + dy, e.type, difficulty);
-          this.enemies.push(enemy);
-          if (sink) { enemy._streamRegion = rIdx; sink.enemies.push(enemy); }
+        const spawnMapEnemies = () => {
+          for (const e of mapEnemies) {
+            const enemy = new Enemy(this, e.x + dx, e.y + dy, e.type, difficulty);
+            this.enemies.push(enemy);
+            if (sink) { enemy._streamRegion = rIdx; sink.enemies.push(enemy); }
+          }
+        };
+        // Stream in any lazy enemy pack first; when a pack must load, defer the
+        // spawn and re-check the region/neighbour is still current on completion.
+        const pending = [...new Set(mapEnemies.map(e => e.type))].filter(t => !this._enemyFamilyReady(t));
+        if (!pending.length) {
+          spawnMapEnemies();
+        } else {
+          Promise.all(pending.map(t => this._ensureEnemyAssets(t))).then(() => {
+            const stillCurrent = sink
+              ? (this._stream.next === sink || this._stream.prev === sink)
+              : (this._regionIndex === rIdx && this.scene.isActive());
+            if (stillCurrent) spawnMapEnemies();
+          });
         }
       }
 

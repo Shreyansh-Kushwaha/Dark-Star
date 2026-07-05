@@ -114,12 +114,9 @@ export class PreloadScene extends Phaser.Scene {
     for (let i = 1; i <= 12; i++) this.load.image(`goblin_attack_${String(i).padStart(2,'0')}`, `${GBL}/Slashing/0_Goblin_Slashing_${String(i-1).padStart(3,'0')}.png`);
     for (let i = 1; i <= 15; i++) this.load.image(`goblin_dead_${String(i).padStart(2,'0')}`,   `${GBL}/Dying/0_Goblin_Dying_${String(i-1).padStart(3,'0')}.png`);
 
-    // ── Orc (Mid enemy — regions 2,3,4) ──────────────────────────
-    const ORCP = `${CX}/Orc/PNG/PNG Sequences`;
-    for (let i = 1; i <= 18; i++) this.load.image(`orc_new_idle_${String(i).padStart(2,'0')}`,   `${ORCP}/Idle/0_Orc_Idle_${String(i-1).padStart(3,'0')}.png`);
-    for (let i = 1; i <= 12; i++) this.load.image(`orc_new_run_${String(i).padStart(2,'0')}`,    `${ORCP}/Running/0_Orc_Running_${String(i-1).padStart(3,'0')}.png`);
-    for (let i = 1; i <= 12; i++) this.load.image(`orc_new_attack_${String(i).padStart(2,'0')}`, `${ORCP}/Slashing/0_Orc_Slashing_${String(i-1).padStart(3,'0')}.png`);
-    for (let i = 1; i <= 15; i++) this.load.image(`orc_new_dead_${String(i).padStart(2,'0')}`,   `${ORCP}/Dying/0_Orc_Dying_${String(i-1).padStart(3,'0')}.png`);
+    // ── Orc (orc_new) is loaded lazily per-region — see src/data/enemyAssets.js
+    // + GameScene._ensureEnemyAssets. It's a heavy pack (~5 MB of 900×900 frames)
+    // used in only a few regions, so it no longer bloats the boot load.
 
     // ── Ogre (Elite enemy — regions 2–6) ─────────────────────────
     const OGR = `${CX}/Ogre/PNG/PNG Sequences`;
@@ -190,37 +187,9 @@ export class PreloadScene extends Phaser.Scene {
     for (let i = 1; i <= 12; i++) this.load.image(`vfx_fb2_${i}`,  `${A3}/vfx/fireball/fb2_${i}.png`);
     for (let i = 1; i <= 4;  i++) this.load.image(`vfx_fb3_${i}`,  `${A3}/vfx/fireball/fb3_${i}.png`);
 
-    // ── Monsters: Bat (87×87 frames) ─────────────────────────────
-    this.load.spritesheet('bat_ss_fly',    `${A3}/monsters/bat/fly.png`,    { frameWidth: 87, frameHeight: 87 });
-    this.load.spritesheet('bat_ss_attack', `${A3}/monsters/bat/attack.png`, { frameWidth: 87, frameHeight: 87 });
-    this.load.spritesheet('bat_ss_hurt',   `${A3}/monsters/bat/hurt.png`,   { frameWidth: 87, frameHeight: 87 });
-    this.load.spritesheet('bat_ss_death',  `${A3}/monsters/bat/death.png`,  { frameWidth: 87, frameHeight: 87 });
-    this.load.spritesheet('bat_ss_fall',   `${A3}/monsters/bat/fall.png`,   { frameWidth: 87, frameHeight: 87 });
-
-    // ── Monsters: Rat (70×70 frames) ─────────────────────────────
-    this.load.spritesheet('rat_ss_idle',   `${A3}/monsters/rat/idle.png`,   { frameWidth: 70, frameHeight: 70 });
-    this.load.spritesheet('rat_ss_run',    `${A3}/monsters/rat/run.png`,    { frameWidth: 70, frameHeight: 70 });
-    this.load.spritesheet('rat_ss_attack', `${A3}/monsters/rat/attack.png`, { frameWidth: 70, frameHeight: 70 });
-    this.load.spritesheet('rat_ss_hurt',   `${A3}/monsters/rat/hurt.png`,   { frameWidth: 70, frameHeight: 70 });
-    this.load.spritesheet('rat_ss_dead',   `${A3}/monsters/rat/dead.png`,   { frameWidth: 70, frameHeight: 70 });
-
-    // ── Monsters: Slime (156×156 frames) ─────────────────────────
-    this.load.spritesheet('slimem_ss_idle',   `${A3}/monsters/slime/idle.png`,   { frameWidth: 156, frameHeight: 156 });
-    this.load.spritesheet('slimem_ss_walk',   `${A3}/monsters/slime/walk.png`,   { frameWidth: 156, frameHeight: 156 });
-    this.load.spritesheet('slimem_ss_attack', `${A3}/monsters/slime/attack.png`, { frameWidth: 156, frameHeight: 156 });
-    this.load.spritesheet('slimem_ss_hurt',   `${A3}/monsters/slime/hurt.png`,   { frameWidth: 156, frameHeight: 156 });
-    this.load.spritesheet('slimem_ss_death',  `${A3}/monsters/slime/death.png`,  { frameWidth: 156, frameHeight: 156 });
-
-    // ── Monsters: Mimic (146×146 frames) ─────────────────────────
-    this.load.spritesheet('mimic_ss_closed',  `${A3}/monsters/mimic/closed.png`,      { frameWidth: 146, frameHeight: 146 });
-    this.load.spritesheet('mimic_ss_open',    `${A3}/monsters/mimic/open.png`,         { frameWidth: 146, frameHeight: 146 });
-    this.load.spritesheet('mimic_ss_opening', `${A3}/monsters/mimic/opening.png`,      { frameWidth: 146, frameHeight: 146 });
-    this.load.spritesheet('mimic_ss_transform',`${A3}/monsters/mimic/transform.png`,   { frameWidth: 146, frameHeight: 146 });
-    this.load.spritesheet('mimic_ss_attack1', `${A3}/monsters/mimic/attack1.png`,      { frameWidth: 146, frameHeight: 146 });
-    this.load.spritesheet('mimic_ss_attack2', `${A3}/monsters/mimic/attack2.png`,      { frameWidth: 146, frameHeight: 146 });
-    this.load.spritesheet('mimic_ss_hurt',    `${A3}/monsters/mimic/hurt.png`,         { frameWidth: 146, frameHeight: 146 });
-    this.load.spritesheet('mimic_ss_death',   `${A3}/monsters/mimic/death.png`,        { frameWidth: 146, frameHeight: 146 });
-    this.load.spritesheet('mimic_ss_walk',    `${A3}/monsters/mimic/walk.png`,         { frameWidth: 146, frameHeight: 146 });
+    // ── Monsters bat / rat / slime / mimic are loaded lazily per-region
+    // (src/data/enemyAssets.js + GameScene._ensureEnemyAssets). Each appears in
+    // only a handful of regions, so their spritesheets stay off the boot load.
 
   }
 
@@ -301,11 +270,8 @@ export class PreloadScene extends Phaser.Scene {
     this._buildMultiAnim('goblin_attack', this._frames('goblin_attack', [1,2,3,4,5,6,7,8,9,10,11,12]));
     this._buildMultiAnim('goblin_dead',   this._frames('goblin_dead',   [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]), 10, 0);
 
-    // ── Orc enemy animations ───────────────────────────────────
-    this._buildMultiAnim('orc_new_idle',   this._frames('orc_new_idle',   [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]));
-    this._buildMultiAnim('orc_new_run',    this._frames('orc_new_run',    [1,2,3,4,5,6,7,8,9,10,11,12]));
-    this._buildMultiAnim('orc_new_attack', this._frames('orc_new_attack', [1,2,3,4,5,6,7,8,9,10,11,12]));
-    this._buildMultiAnim('orc_new_dead',   this._frames('orc_new_dead',   [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]), 10, 0);
+    // (Orc/orc_new animations are defined lazily by defineAnims() when the pack
+    // loads on region entry — see src/data/enemyAssets.js.)
 
     // ── Ogre enemy animations ──────────────────────────────────
     this._buildMultiAnim('ogre_idle',   this._frames('ogre_idle',   [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]));
@@ -349,35 +315,8 @@ export class PreloadScene extends Phaser.Scene {
     _vfx('vfx_fire2',  'vfx_fb2_',  12, 16);
     _vfx('vfx_fire3',  'vfx_fb3_',  4,  16);
 
-    // ── Bat animations ────────────────────────────────────────
-    anims.create({ key: 'bat_idle',   frames: anims.generateFrameNumbers('bat_ss_fly',    { start: 0, end: 10 }), frameRate: 12, repeat: -1 });
-    anims.create({ key: 'bat_run',    frames: anims.generateFrameNumbers('bat_ss_fly',    { start: 0, end: 10 }), frameRate: 14, repeat: -1 });
-    anims.create({ key: 'bat_attack', frames: anims.generateFrameNumbers('bat_ss_attack', { start: 0, end: 10 }), frameRate: 14, repeat: 0  });
-    anims.create({ key: 'bat_hurt',   frames: anims.generateFrameNumbers('bat_ss_hurt',   { start: 0, end: 2  }), frameRate: 12, repeat: 0  });
-    anims.create({ key: 'bat_dead',   frames: anims.generateFrameNumbers('bat_ss_death',  { start: 0, end: 3  }), frameRate: 10, repeat: 0  });
-
-    // ── Rat animations ────────────────────────────────────────
-    anims.create({ key: 'rat_idle',   frames: anims.generateFrameNumbers('rat_ss_idle',   { start: 0, end: 9  }), frameRate: 10, repeat: -1 });
-    anims.create({ key: 'rat_run',    frames: anims.generateFrameNumbers('rat_ss_run',    { start: 0, end: 7  }), frameRate: 12, repeat: -1 });
-    anims.create({ key: 'rat_attack', frames: anims.generateFrameNumbers('rat_ss_attack', { start: 0, end: 11 }), frameRate: 14, repeat: 0  });
-    anims.create({ key: 'rat_hurt',   frames: anims.generateFrameNumbers('rat_ss_hurt',   { start: 0, end: 2  }), frameRate: 12, repeat: 0  });
-    anims.create({ key: 'rat_dead',   frames: anims.generateFrameNumbers('rat_ss_dead',   { start: 0, end: 5  }), frameRate: 10, repeat: 0  });
-
-    // ── Slime enemy animations ────────────────────────────────
-    anims.create({ key: 'slimem_idle',   frames: anims.generateFrameNumbers('slimem_ss_idle',   { start: 0, end: 13 }), frameRate: 10, repeat: -1 });
-    anims.create({ key: 'slimem_run',    frames: anims.generateFrameNumbers('slimem_ss_walk',   { start: 0, end: 5  }), frameRate: 10, repeat: -1 });
-    anims.create({ key: 'slimem_attack', frames: anims.generateFrameNumbers('slimem_ss_attack', { start: 0, end: 18 }), frameRate: 14, repeat: 0  });
-    anims.create({ key: 'slimem_hurt',   frames: anims.generateFrameNumbers('slimem_ss_hurt',   { start: 0, end: 2  }), frameRate: 12, repeat: 0  });
-    anims.create({ key: 'slimem_dead',   frames: anims.generateFrameNumbers('slimem_ss_death',  { start: 0, end: 10 }), frameRate: 10, repeat: 0  });
-
-    // ── Mimic animations ──────────────────────────────────────
-    anims.create({ key: 'mimic_idle',      frames: anims.generateFrameNumbers('mimic_ss_closed',    { start: 0, end: 0  }), frameRate: 4,  repeat: -1 });
-    anims.create({ key: 'mimic_run',       frames: anims.generateFrameNumbers('mimic_ss_walk',      { start: 0, end: 5  }), frameRate: 8,  repeat: -1 });
-    anims.create({ key: 'mimic_opening',   frames: anims.generateFrameNumbers('mimic_ss_opening',   { start: 0, end: 5  }), frameRate: 8,  repeat: 0  });
-    anims.create({ key: 'mimic_transform', frames: anims.generateFrameNumbers('mimic_ss_transform', { start: 0, end: 6  }), frameRate: 8,  repeat: 0  });
-    anims.create({ key: 'mimic_attack',    frames: anims.generateFrameNumbers('mimic_ss_attack1',   { start: 0, end: 13 }), frameRate: 14, repeat: 0  });
-    anims.create({ key: 'mimic_hurt',      frames: anims.generateFrameNumbers('mimic_ss_hurt',      { start: 0, end: 2  }), frameRate: 12, repeat: 0  });
-    anims.create({ key: 'mimic_dead',      frames: anims.generateFrameNumbers('mimic_ss_death',     { start: 0, end: 5  }), frameRate: 10, repeat: 0  });
+    // (Bat / Rat / Slime / Mimic animations are defined lazily by defineAnims()
+    // when each pack loads on region entry — see src/data/enemyAssets.js.)
 
   }
 
