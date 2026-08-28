@@ -24,7 +24,7 @@ export class Enemy extends Phaser.GameObjects.Container {
     const cfg = (typeKey && typeof typeKey === 'object') ? typeKey : ENEMY_TYPES[typeKey];
     this.typeKey   = cfg.key;
     this.cfg       = cfg;
-    if (typeof typeKey === 'string') scene._markEnemyEncountered?.(typeKey); // Codex bestiary
+    scene._markEnemyEncountered?.(cfg.key);   // Codex bestiary (roster + creatures)
     this.alive     = true;
     this.passive   = !!cfg.passive;   // wildlife: never attacks; flees instead
     this._fleeTimer = 0;

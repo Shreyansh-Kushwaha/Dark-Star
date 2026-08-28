@@ -252,6 +252,26 @@ export class AudioManager {
     this._noise(1.6, 0.05);
   }
 
+  // Paper swish for codex page/tab turns — band-swept noise from the shared buffer.
+  pageTurn() {
+    if (this._muted) return;
+    const ctx = this._getCtx();
+    const src = ctx.createBufferSource();
+    src.buffer = this._getNoiseBuf();
+    const bp = ctx.createBiquadFilter();
+    bp.type = 'bandpass';
+    bp.Q.value = 0.9;
+    bp.frequency.setValueAtTime(1100, ctx.currentTime);
+    bp.frequency.exponentialRampToValueAtTime(3400, ctx.currentTime + 0.13);
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(0.0001, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.11, ctx.currentTime + 0.04);
+    g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.2);
+    src.connect(bp); bp.connect(g); g.connect(this._masterGain);
+    src.onended = () => { src.disconnect(); bp.disconnect(); g.disconnect(); };
+    src.start(0, Math.random() * 1.5, 0.22);
+  }
+
   uiHover() {
     this._tone(700, 'sine', 0.03, 0.08);
   }

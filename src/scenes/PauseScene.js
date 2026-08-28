@@ -2,6 +2,8 @@ import { GAME_W, GAME_H } from '../constants.js';
 import { QUESTS, LORE_FRAGMENTS } from '../data/quests.js';
 import { ENEMY_TYPES } from '../data/enemies.js';
 import { ENEMY_LORE, CHARACTERS, NPC_CODEX } from '../data/codex.js';
+import { BOSSES } from '../data/bosses.js';
+import { CREATURE_STATS } from '../data/creatureStats.js';
 
 const REGION_LABELS = [
   'Gramavana', 'Mahāvana', 'Vrindavana',
@@ -133,7 +135,7 @@ export class PauseScene extends Phaser.Scene {
   }
 
   // Tab order for ← / → navigation.
-  get _tabKeys() { return ['quests', 'lore', 'enemies', 'characters', 'npcs']; }
+  get _tabKeys() { return ['quests', 'lore', 'enemies', 'bosses', 'characters', 'npcs']; }
 
   _bookTabStep(d) {
     if (!this._bookRenderAllowed()) return;
@@ -141,13 +143,14 @@ export class PauseScene extends Phaser.Scene {
     const i = Math.max(0, keys.indexOf(this._bookTab));
     this._bookTab  = keys[(i + d + keys.length) % keys.length];
     this._bookPage = 0;
+    this._audio()?.pageTurn?.();
     this._renderBook();
   }
 
   _bookPageStep(d) {
     const tp = this._bookTotalPages || 1;
     const np = Phaser.Math.Clamp(this._bookPage + d, 0, tp - 1);
-    if (np !== this._bookPage && this._bookRenderAllowed()) { this._bookPage = np; this._renderBook(); }
+    if (np !== this._bookPage && this._bookRenderAllowed()) { this._bookPage = np; this._audio()?.pageTurn?.(); this._renderBook(); }
   }
 
   _closeBook() {
@@ -242,13 +245,14 @@ export class PauseScene extends Phaser.Scene {
 
     // ── Tabs ─────────────────────────────────────────────────────────────
     const tabs = [
-      { k: 'quests',     label: '📜  Quests'   },
-      { k: 'lore',       label: '📖  Lore'     },
-      { k: 'enemies',    label: '🗡  Bestiary' },
-      { k: 'characters', label: '👤  Heroes'   },
-      { k: 'npcs',       label: '💬  NPCs'     },
+      { k: 'quests',     label: '📜 Quests'   },
+      { k: 'lore',       label: '📖 Lore'     },
+      { k: 'enemies',    label: '🗡 Bestiary' },
+      { k: 'bosses',     label: '☠ Bosses'   },
+      { k: 'characters', label: '👤 Heroes'   },
+      { k: 'npcs',       label: '💬 NPCs'     },
     ];
-    const tabW = 150, tabH = 26, tabY = T + 52, tabStep = 168;
+    const tabW = 138, tabH = 26, tabY = T + 52, tabStep = 152;
     const tabStartX = BX - tabStep * (tabs.length - 1) / 2;
     tabs.forEach((tab, i) => {
       const tx = tabStartX + i * tabStep;
@@ -263,7 +267,7 @@ export class PauseScene extends Phaser.Scene {
         color: isActive ? '#1a0800' : '#5a3a10',
       }).setOrigin(0.5).setDepth(D + 5));
       const tz = this._add(this.add.zone(tx, tabY, tabW, tabH).setInteractive({ useHandCursor: true }).setDepth(D + 6));
-      tz.on('pointerdown', () => { this._bookTab = tab.k; this._bookPage = 0; this._renderBook(); });
+      tz.on('pointerdown', () => { this._bookTab = tab.k; this._bookPage = 0; this._audio()?.pageTurn?.(); this._renderBook(); });
     });
     // Tab underline
     const tu = this._add(this.add.graphics().setDepth(D + 4));
@@ -283,13 +287,19 @@ export class PauseScene extends Phaser.Scene {
     const CT = T + 72;   // content top
     const CB = T + BH - 22; // content bottom
     this._bookTotalPages = 1;   // tabs that paginate override this
+    const contentStart = this._bookObjs.length;
     switch (this._bookTab) {
       case 'lore':       this._renderLore(LMX, RMX, PW, CT, CB, D);       break;
       case 'enemies':    this._renderEnemies(LMX, RMX, PW, CT, CB, D);    break;
+      case 'bosses':     this._renderBosses(LMX, RMX, PW, CT, CB, D);     break;
       case 'characters': this._renderCharacters(LMX, RMX, PW, CT, CB, D); break;
       case 'npcs':       this._renderNpcs(LMX, RMX, PW, CT, CB, D);       break;
       default:           this._renderQuests(LMX, RMX, PW, CT, CB, D);     break;
     }
+    // Page-turn feel: the fresh content settles in with a quick fade.
+    const fresh = this._bookObjs.slice(contentStart);
+    fresh.forEach(o => { if (o.setAlpha) o.setAlpha(0); });
+    this.tweens.add({ targets: fresh, alpha: 1, duration: 110, ease: 'Quad.easeOut' });
 
     // ── Keyboard hint ─────────────────────────────────────────────────────
     this._add(this.add.text(BX, T + BH + 4,
@@ -315,30 +325,38 @@ export class PauseScene extends Phaser.Scene {
     const PAD = 16;
     const entryW = PW - PAD * 2 - 6;
 
+    // Both columns page together so every quest is reachable (the old fill
+    // loop silently dropped whatever ran past the page bottom).
+    const PER_COL = 8;
+    const totalPages = Math.max(1,
+      Math.ceil(mainQuests.length / PER_COL), Math.ceil(sideQuests.length / PER_COL));
+    this._bookTotalPages = totalPages;
+    const mainPage = mainQuests.slice(this._bookPage * PER_COL, (this._bookPage + 1) * PER_COL);
+    const sidePage = sideQuests.slice(this._bookPage * PER_COL, (this._bookPage + 1) * PER_COL);
+
     // Left — Main Quests
     let y = CT;
     this._sectionHeader(LMX + PAD, y, 'MAIN  QUESTS', D); y += 20;
-    for (const q of mainQuests) {
+    for (const q of mainPage) {
       const h = this._questEntry(LMX + PAD, y, entryW, q, stateOf(q.id), D);
       y += h + 5;
       if (y + 40 > CB) break;
     }
-    // Footer stats
     const mainDone = mainQuests.filter(q => stateOf(q.id) === 'done').length;
-    this._add(this.add.text(LMX + PW / 2, CB, `${mainDone} / ${mainQuests.length} completed`, {
+    this._add(this.add.text(LMX + PW / 2, CB - 14, `${mainDone} / ${mainQuests.length} completed`, {
       fontSize: '9px', fontFamily: 'monospace', color: '#7a5a30',
     }).setOrigin(0.5, 1).setDepth(D + 5));
+    this._pageNav(LMX, PAD, PW, CB - 2, totalPages, D);
 
     // Right — Side Quests
     y = CT;
     this._sectionHeader(RMX + PAD, y, 'SIDE  QUESTS', D); y += 20;
-    for (const q of sideQuests) {
+    for (const q of sidePage) {
       const h = this._questEntry(RMX + PAD, y, entryW, q, stateOf(q.id), D);
       y += h + 5;
       if (y + 40 > CB) break;
     }
     const sideDone = sideQuests.filter(q => stateOf(q.id) === 'done').length;
-    this._ornament(RMX + PW / 2, CB - 16, D);
     this._add(this.add.text(RMX + PW / 2, CB, `${sideDone} / ${sideQuests.length} completed`, {
       fontSize: '9px', fontFamily: 'monospace', color: '#7a5a30',
     }).setOrigin(0.5, 1).setDepth(D + 5));
@@ -492,17 +510,39 @@ export class PauseScene extends Phaser.Scene {
 
   // ── Bestiary tab ────────────────────────────────────────────────────────
   // All enemies, with stats + lore once faced. Foes you have not met read "???".
+  // Raw creature entity_keys → readable names ('enemy_4_giant_goblin' →
+  // 'Giant Goblin', 'minotaur_minotaur_2' → 'Minotaur 2').
+  _prettyCreatureName(k) {
+    return String(k)
+      .replace(/^enemy_\d+_/, '').replace(/^boss_/, '')
+      .replace(/^craftpix_\d+_[a-z_]*chibi_/, 'chibi ')
+      .replace(/_/g, ' ').trim()
+      .replace(/\b(\w+) \1\b/gi, '$1')
+      .replace(/\b\w/g, c => c.toUpperCase());
+  }
+
   _renderEnemies(LMX, RMX, PW, CT, CB, D) {
     const faced = this._gs()?._encounteredEnemies || new Set();
-    const defs  = Object.values(ENEMY_TYPES);
+    // Full roster: the hand-tuned enemy types, then every map-editor creature.
+    const defs = [
+      ...Object.values(ENEMY_TYPES),
+      ...Object.keys(CREATURE_STATS).map(k => ({
+        key: k, label: this._prettyCreatureName(k), _creature: true,
+        maxHp: CREATURE_STATS[k].maxHp, attackDmg: CREATURE_STATS[k].attackDmg,
+        speed: CREATURE_STATS[k].speed, xpValue: CREATURE_STATS[k].xpValue,
+      })),
+    ];
     const PAD = 16;
     const entryW = PW - PAD * 2 - 6;
 
-    // Left page = first half, right page = second half (single spread).
-    const half = Math.ceil(defs.length / 2);
+    const PER_COL = 5;
+    const perSpread = PER_COL * 2;
+    const totalPages = Math.max(1, Math.ceil(defs.length / perSpread));
+    this._bookTotalPages = totalPages;
+    const spread = defs.slice(this._bookPage * perSpread, (this._bookPage + 1) * perSpread);
     const cols = [
-      { x: LMX + PAD, list: defs.slice(0, half) },
-      { x: RMX + PAD, list: defs.slice(half)    },
+      { x: LMX + PAD, list: spread.slice(0, PER_COL) },
+      { x: RMX + PAD, list: spread.slice(PER_COL)    },
     ];
 
     this._sectionHeader(LMX + PAD, CT, 'BESTIARY  ·  FOES  FACED', D);
@@ -518,8 +558,10 @@ export class PauseScene extends Phaser.Scene {
       }
     }
 
+    this._pageNav(LMX, PAD, PW, CB - 2, totalPages, D);
+    const recorded = defs.filter(d => faced.has(d.key)).length;
     this._ornament(RMX + PW / 2, CB - 16, D);
-    this._add(this.add.text(RMX + PW / 2, CB, `${faced.size} / ${defs.length} foes recorded`, {
+    this._add(this.add.text(RMX + PW / 2, CB, `${recorded} / ${defs.length} foes recorded`, {
       fontSize: '9px', fontFamily: 'monospace', color: '#7a5a30',
     }).setOrigin(0.5, 1).setDepth(D + 5));
   }
@@ -535,7 +577,8 @@ export class PauseScene extends Phaser.Scene {
       }).setOrigin(0, 0.5).setDepth(D + 5));
       return H;
     }
-    const H = 86;
+    const lore = ENEMY_LORE[def.key] || '';
+    const H = lore ? 86 : 40;
     const eg = this._add(this.add.graphics().setDepth(D + 4));
     eg.fillStyle(C.loreBg, 0.45); eg.fillRoundedRect(x, y, w, H, 3);
     eg.fillStyle(0x8b2a1a, 0.7); eg.fillRect(x, y, 3, H);
@@ -543,13 +586,85 @@ export class PauseScene extends Phaser.Scene {
     this._add(this.add.text(x + 8, y + 6, def.label || def.key, {
       fontSize: '10.5px', fontFamily: 'serif', fontStyle: 'bold', color: '#3d1f05',
     }).setDepth(D + 5));
+    const st = v => (v ?? '—');
     this._add(this.add.text(x + 8, y + 20,
-      `HP ${def.maxHp}    DMG ${def.attackDmg}    SPD ${def.speed}    XP ${def.xpValue}`, {
+      `HP ${st(def.maxHp)}    DMG ${st(def.attackDmg)}    SPD ${st(def.speed)}    XP ${st(def.xpValue)}`, {
         fontSize: '7.5px', fontFamily: 'monospace', color: '#6a4520',
       }).setDepth(D + 5));
-    this._add(this.add.text(x + 8, y + 32, ENEMY_LORE[def.key] || '', {
+    if (lore) {
+      this._add(this.add.text(x + 8, y + 32, lore, {
+        fontSize: '8px', fontFamily: 'serif', color: '#2a1a08',
+        wordWrap: { width: w - 16 },
+      }).setDepth(D + 5));
+    }
+    return H;
+  }
+
+  // ── Bosses tab ──────────────────────────────────────────────────────────
+  // The six great foes — name, epithet and lore once felled; sealed before.
+  _renderBosses(LMX, RMX, PW, CT, CB, D) {
+    const kills = new Set(this._gs()?._save?.bossKills || []);
+    const defs  = Object.values(BOSSES);
+    const PAD = 16;
+    const entryW = PW - PAD * 2 - 6;
+
+    const half = Math.ceil(defs.length / 2);
+    const cols = [
+      { x: LMX + PAD, list: defs.slice(0, half) },
+      { x: RMX + PAD, list: defs.slice(half)    },
+    ];
+    this._sectionHeader(LMX + PAD, CT, 'GREAT  FOES  ·  FELLED', D);
+    this._sectionHeader(RMX + PAD, CT, 'GREAT  FOES  ·  CONTINUED', D);
+
+    for (const col of cols) {
+      let y = CT + 20;
+      for (const def of col.list) {
+        const h = this._bossEntry(col.x, y, entryW, def, kills.has(def.key), D);
+        y += h + 6;
+        if (y + 20 > CB) break;
+      }
+    }
+
+    this._ornament(RMX + PW / 2, CB - 16, D);
+    this._add(this.add.text(RMX + PW / 2, CB, `${kills.size} / ${defs.length} great foes felled`, {
+      fontSize: '9px', fontFamily: 'monospace', color: '#7a5a30',
+    }).setOrigin(0.5, 1).setDepth(D + 5));
+  }
+
+  _bossEntry(x, y, w, def, felled, D) {
+    if (!felled) {
+      const H = 34;
+      const eg = this._add(this.add.graphics().setDepth(D + 4));
+      eg.fillStyle(C.missedBg, 0.4); eg.fillRoundedRect(x, y, w, H, 3);
+      eg.fillStyle(C.lockedGrey, 0.5); eg.fillRect(x, y, 3, H);
+      this._add(this.add.text(x + 10, y + H / 2, '☠  ???  —  a great foe still draws breath', {
+        fontSize: '9px', fontFamily: 'serif', fontStyle: 'italic', color: '#888866',
+      }).setOrigin(0, 0.5).setDepth(D + 5));
+      return H;
+    }
+    const H = 96;
+    const eg = this._add(this.add.graphics().setDepth(D + 4));
+    eg.fillStyle(C.loreBg, 0.5); eg.fillRoundedRect(x, y, w, H, 3);
+    eg.fillStyle(0x6b1a1a, 0.85); eg.fillRect(x, y, 3, H);
+    eg.lineStyle(1, C.gold, 0.45); eg.strokeRoundedRect(x, y, w, H, 3);
+
+    this._add(this.add.text(x + 8, y + 6, `☠  ${def.name.toUpperCase()}`, {
+      fontSize: '12px', fontFamily: 'serif', fontStyle: 'bold', color: '#5a1508',
+    }).setDepth(D + 5));
+    this._add(this.add.text(x + w - 8, y + 8, 'FELLED', {
+      fontSize: '8px', fontFamily: 'monospace', fontStyle: 'bold', color: '#2d6e2d',
+    }).setOrigin(1, 0).setDepth(D + 5));
+    if (def.subtitle) {
+      this._add(this.add.text(x + 8, y + 22, def.subtitle, {
+        fontSize: '8.5px', fontFamily: 'serif', fontStyle: 'italic', color: '#7a5030',
+      }).setDepth(D + 5));
+    }
+    this._add(this.add.text(x + 8, y + 36, def.lore || '', {
       fontSize: '8px', fontFamily: 'serif', color: '#2a1a08',
       wordWrap: { width: w - 16 },
+    }).setDepth(D + 5));
+    this._add(this.add.text(x + 8, y + H - 12, `HP ${def.maxHp}    XP ${def.xpValue ?? '—'}`, {
+      fontSize: '7.5px', fontFamily: 'monospace', color: '#6a4520',
     }).setDepth(D + 5));
     return H;
   }

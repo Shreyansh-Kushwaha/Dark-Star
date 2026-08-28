@@ -3860,6 +3860,12 @@ export class GameScene extends Phaser.Scene {
     // Trial bosses are echoes — XP/shards are real, but story progression
     // (quests, reward items, lore) only moves in the world itself.
     if (!this._trial) this.questManager.onBossKill(bossKey, this._regionIndex);
+    // Record the kill on the save — bossKills was read by portal gates and the
+    // codex but never written, so boss-gated shortcuts could never open.
+    if (!this._trial && this._save) {
+      const bk = this._save.bossKills = this._save.bossKills || [];
+      if (!bk.includes(bossKey)) { bk.push(bossKey); this._persist(); }
+    }
     this.audio.victory();
 
     // Clear arena hazards
