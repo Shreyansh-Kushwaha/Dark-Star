@@ -387,11 +387,12 @@ export class Player extends Phaser.GameObjects.Container {
     this._nextAttackMult = 1.5;
     this.stamina = Math.min(this.maxStamina, this.stamina + 25);
 
-    scene.tweens.add({ targets: { v: 1 }, v: 0, duration: 1, onStart: () => {
-      scene.physics.world.timeScale = PERFECT_DODGE_SLOWMO;
-      scene.time.addEvent({ delay: PERFECT_DODGE_DURATION, callback: () => {
-        scene.physics.world.timeScale = 1;
-      }});
+    // Arcade timeScale is inverted (>1 = slower). Setting the raw 0.25 here
+    // ran physics 4x FASTER during the "slow-mo" — enemies lunged at quadruple
+    // speed right after every perfect dodge instead of crawling.
+    scene.physics.world.timeScale = 1 / PERFECT_DODGE_SLOWMO;
+    scene.time.addEvent({ delay: PERFECT_DODGE_DURATION, callback: () => {
+      scene.physics.world.timeScale = 1;
     }});
 
     scene.audio.perfectDodge();
