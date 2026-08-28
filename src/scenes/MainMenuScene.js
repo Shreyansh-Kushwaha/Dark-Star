@@ -255,6 +255,14 @@ export class MainMenuScene extends Phaser.Scene {
     addNav(cx, ys.map,  '>  WORLD MAP',   () => this._openWorldMap(),
       { bg: 0x14122a, border: 0xc8a040, text: '#e8c860', w: 200 });
 
+    // Echo Trials — roguelite arena runs; rides beside the stack so the main
+    // column keeps its layout. Solo only (runs are built on the local save).
+    addNav(cx + 336, 284, '◆  ECHO TRIALS', () => this._startGame(false, 900, { trial: true }),
+      { bg: 0x160f22, border: 0xb070e0, text: '#d9aaff', w: 210 });
+    this.add.text(cx + 336, 310, 'Survive 5 waves · keep the shards', {
+      fontSize: '9px', fontFamily: 'monospace', color: '#6a5a7a',
+    }).setOrigin(0.5).setDepth(6);
+
     this._qualityBtn = addNav(cx, ys.quality, this._qualityLabel(), () => this._cycleQuality(),
       { bg: 0x0c1428, border: 0x2244aa, text: '#88aaff', w: 200 });
 

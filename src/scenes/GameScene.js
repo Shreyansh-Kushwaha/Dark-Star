@@ -5,6 +5,34 @@ import { REGIONS } from '../data/regions.js';
 import { _mapSpriteKey } from './PreloadScene.js';
 import { QUESTS, LORE_FRAGMENTS, NPC_DIALOGUE } from '../data/quests.js';
 import { STORY_NPC_BINDINGS, MAIN_QUEST_BY_REGION, STORY_FRAGMENTS, STORY_ECHOES, BOSS_HOME_REGION } from '../data/storyBindings.js';
+
+// ── Echo Trials (roguelite arena mode) ───────────────────────────────────────
+// A run of escalating waves in a pocket arena (synthetic region 900), fought
+// with the real save's build. Shards and XP earned persist (the meta hook into
+// the merchant/skill economy); boons last only for the run.
+export const TRIAL_REGION = 900;
+const TRIAL_WAVES = [
+  { types: ['melee', 'melee', 'melee', 'ranged'],                                   diff: 1.0  },
+  { types: ['melee', 'melee', 'ranged', 'ranged', 'flying'],                        diff: 1.15 },
+  { types: ['melee', 'elite', 'ranged', 'flying', 'flying', 'melee'],               diff: 1.3  },
+  { types: ['elite', 'elite', 'ranged', 'ranged', 'flying', 'melee', 'melee'],      diff: 1.45 },
+  { boss: true },
+];
+const TRIAL_BOSS_POOL = ['vanaraksha', 'nagraj_kaliya', 'pashana_daitya', 'vayu_rakshasa', 'vanasur'];
+const TRIAL_BOONS = [
+  { name: 'Sharpened Thread', desc: '+15% damage for this run',
+    apply: (p) => { p.dmgMult *= 1.15; } },
+  { name: 'Woven Aegis', desc: 'Take 12% less damage for this run',
+    apply: (p) => { p.defenseMult *= 0.88; } },
+  { name: 'Breath of Vayu', desc: '+40% stamina regen for this run',
+    apply: (p) => { p._staRegenMult *= 1.4; } },
+  { name: 'Amrit Surge', desc: 'Refill Amrit and heal 40% now',
+    apply: (p, scene) => { p.refillAmrit?.(scene); p.hp = Math.min(p.maxHp, p.hp + p.maxHp * 0.4); p._updateHpBar?.(); } },
+  { name: 'Second Wind', desc: '+20% max HP for this run',
+    apply: (p) => { p.maxHp = Math.floor(p.maxHp * 1.2); p.hp = Math.min(p.maxHp, p.hp + Math.floor(p.maxHp * 0.17)); p._updateHpBar?.(); } },
+  { name: 'Shard Fortune', desc: '+50% Thread Shards for the rest of the run',
+    apply: (p, scene) => { if (scene._trial) scene._trial.shardMult += 0.5; } },
+];
 import { LoreManager } from '../systems/LoreManager.js';
 import { Player } from '../entities/Player.js';
 import { Enemy  } from '../entities/Enemy.js';
@@ -140,11 +168,14 @@ export class GameScene extends Phaser.Scene {
     this._playtimeMark = performance.now();
     // One-time contextual tutorial hints already shown to this save.
     this._hintsSeen = new Set(saveData.hintsSeen || []);
-    const regionIndex = data.regionIndex ?? saveData.regionIndex ?? 0;
+    // Echo Trials run state (null in the normal game).
+    this._trial = data.trial ? { wave: 0, shardMult: 1, spawned: 0, waveSize: 0, boonPending: false, done: false } : null;
+    const regionIndex = this._trial ? TRIAL_REGION : (data.regionIndex ?? saveData.regionIndex ?? 0);
     this._regionIndex = regionIndex;
 
     // Permanently record this region as explored for the world map (fog-of-war).
-    ExploredManager.markExplored(regionIndex);
+    // The trial arena is a pocket dimension, not a place on the map.
+    if (!this._trial) ExploredManager.markExplored(regionIndex);
 
     // Look up map-editor layout first so we can use it for the fallback region
     const _regionMaps = this.registry.get('regionMaps') || [];
@@ -160,6 +191,12 @@ export class GameScene extends Phaser.Scene {
 
     // Real region (REGIONS[]) when present, else a synthesised editor descriptor.
     const region = this._regionDescriptor(regionIndex, this._mapData);
+    if (this._trial) {
+      region.name = 'Echo Trials';
+      region.subtitle = 'The thread remembers every battle';
+      region.bgColor = 0x140a20;
+      region.bgColor2 = 0x0a0512;
+    }
 
     // Systems
     // One AudioManager per browser tab (shared via registry) so music started
@@ -389,7 +426,7 @@ export class GameScene extends Phaser.Scene {
     this._createWorldFragments(region);
     this._createSpawners(region);
     this._createPortals(region);
-    this._createShrine(region);
+    if (!this._trial) this._createShrine(region);   // no checkpoints inside a run
     this._createPressurePlates(region);
     // Apply map-editor entity overrides before arena/spawner setup
     this._mapBossOverride = this._bossForRegion(regionIndex);
@@ -466,16 +503,20 @@ export class GameScene extends Phaser.Scene {
       this.events.emit('region_title', { name: titleName, subtitle: titleSub });
     });
 
-    // Start ambient audio + per-act exploration music
+    // Start ambient audio + per-act exploration music (trials borrow the dark
+    // late-act palette).
     this.audio.startAmbient(regionIndex);
-    this.audio.playMusic('explore', { act: MAP_LAYOUT[regionIndex]?.act ?? 1 });
+    this.audio.playMusic('explore', { act: this._trial ? 6 : (MAP_LAYOUT[regionIndex]?.act ?? 1) });
 
     // Auto-trigger the region's main quest (bound to where each boss actually
-    // lives in the editor world; region 0 starts the opening quest).
+    // lives in the editor world; region 0 starts the opening quest). Trials
+    // exist outside the story — no quests start there.
     const mainQuestKey = regionIndex === 0 ? 'gramavana_main' : MAIN_QUEST_BY_REGION[regionIndex];
-    if (mainQuestKey && QUESTS[mainQuestKey]) {
+    if (!this._trial && mainQuestKey && QUESTS[mainQuestKey]) {
       this.questManager.start(mainQuestKey, QUESTS[mainQuestKey]);
     }
+
+    if (this._trial) this.time.delayedCall(1600, () => this._trialNextWave());
 
     // Flush pending tree decorations as individual images at depth=1.
     // All same-depth images batch together per texture in Phaser's WebGL pipeline
@@ -1019,6 +1060,7 @@ export class GameScene extends Phaser.Scene {
 
   // Per-region biome → drives both weather particles and the colour grade.
   _regionBiome(i) {
+    if (i === TRIAL_REGION) return 'void';
     const B = ['pollen','pollen','leaves','leaves','sand','mist','ember',   // 0-6 (1-6 legacy)
                'leaves','mist','leaves','cave','pollen',                    // 7-11
                'pollen','leaves','sand',                                    // 12-14  Act I
@@ -3131,6 +3173,116 @@ export class GameScene extends Phaser.Scene {
     }
   }
 
+  // ── Echo Trials run flow ────────────────────────────────────────────────────
+
+  _trialNextWave() {
+    const t = this._trial;
+    if (!t || t.done) return;
+    t.boonPending = false;
+    t.wave++;
+    const spec = TRIAL_WAVES[t.wave - 1];
+    if (!spec) return;
+    if (spec.boss) { this._trialSpawnBoss(); return; }
+
+    t.spawned = 0;
+    t.waveSize = spec.types.length;
+    this.events.emit('show_dialogue', {
+      text: `⟨Echo Trials⟩ Wave ${t.wave} of ${TRIAL_WAVES.length}. The threads coil into old shapes...`,
+    });
+    this.time.delayedCall(2400, () => this.events.emit('hide_dialogue'));
+
+    // Ring of spawns around the local player, staggered so they materialise
+    // one by one. Wave-clear waits for every spawn (see _trialCheckWave).
+    const c = this.players?.find(pl => pl?.isLocal) || this.players?.[0];
+    const cx = c?.x ?? 380, cy = c?.y ?? WORLD_H / 2;
+    spec.types.forEach((type, i) => {
+      this.time.delayedCall(900 + i * 260, () => {
+        if (!this._trial || this._trial.done) return;
+        const a = (i / spec.types.length) * Math.PI * 2 + t.wave;
+        const x = Phaser.Math.Clamp(cx + Math.cos(a) * (300 + Math.random() * 120), 100, WORLD_W - 100);
+        const y = Phaser.Math.Clamp(cy + Math.sin(a) * (220 + Math.random() * 80), 100, WORLD_H - 100);
+        const e = new Enemy(this, x, y, type, spec.diff);
+        this.enemies.push(e);
+        this._impactDust?.(x, y, 0xb070e0, 8);
+        this._trial.spawned++;
+      });
+    });
+  }
+
+  // Called after every enemy death while a trial runs — advances to the boon
+  // pick once the wave is fully spawned and fully dead.
+  _trialCheckWave() {
+    const t = this._trial;
+    if (!t || t.done || t.boonPending) return;
+    if (t.wave < 1 || t.wave >= TRIAL_WAVES.length) return;   // boss wave ends via _onBossKilled
+    if (t.spawned < t.waveSize) return;
+    if (this.enemies.some(e => e?.alive)) return;
+    t.boonPending = true;
+    const reward = Math.round(20 * t.wave * t.shardMult);
+    this.grantShards(reward);
+    this.events.emit('show_dialogue', {
+      text: `⟨Echo Trials⟩ Wave ${t.wave} cleared. +${reward} Thread Shards. An echo offers its strength...`,
+    });
+    this.time.delayedCall(1500, () => {
+      this.events.emit('hide_dialogue');
+      this._trialOfferBoons();
+    });
+  }
+
+  _trialOfferBoons() {
+    if (!this._trial || this._trial.done) return;
+    const pool = Phaser.Utils.Array.Shuffle([...TRIAL_BOONS]).slice(0, 3);
+    this.events.emit('trial_boons', {
+      choices: pool.map(b => ({ name: b.name, desc: b.desc })),
+      onPick: (i) => {
+        const boon = pool[i] || pool[0];
+        for (const pl of (this.players || [])) if (pl) boon.apply(pl, this);
+        this.audio?.levelUp?.();
+        this.haptics?.play('unlock');
+        this.events.emit('update_ui', { players: this.players });
+        this.time.delayedCall(900, () => this._trialNextWave());
+      },
+    });
+  }
+
+  _trialSpawnBoss() {
+    const t = this._trial;
+    if (!t || t.done) return;
+    const c = this.players?.find(pl => pl?.isLocal) || this.players?.[0];
+    const key = TRIAL_BOSS_POOL[Math.floor(Math.random() * TRIAL_BOSS_POOL.length)];
+    const bx = Phaser.Math.Clamp((c?.x ?? 380) + 560, 320, WORLD_W - 320);
+    const by = Phaser.Math.Clamp(c?.y ?? WORLD_H / 2, 320, WORLD_H - 320);
+    this._mapBossOverride = { key, x: bx, y: by };
+    this._bossTriggered = false;
+    this._createBossArena(this._region);   // streams the boss art + arms the trigger
+    this.events.emit('show_dialogue', {
+      text: `⟨Echo Trials⟩ Final trial — an echo of ${BOSSES[key]?.name || key} takes shape ahead. Enter the arena.`,
+    });
+    this.time.delayedCall(3200, () => this.events.emit('hide_dialogue'));
+  }
+
+  _trialEnd(victory) {
+    const t = this._trial;
+    if (!t || t.done) return;
+    t.done = true;
+    const bonus = victory ? Math.round(250 * t.shardMult) : Math.round(30 * Math.max(0, t.wave - 1));
+    if (bonus > 0) this.grantShards(bonus);
+    this._persist();   // shards + XP earned in the run survive it
+    this.events.emit('show_dialogue', {
+      text: victory
+        ? `⟨Echo Trials⟩ Every echo felled. +${bonus} Thread Shards claimed — the thread returns stronger.`
+        : `⟨Echo Trials⟩ The echoes take you at wave ${t.wave}. +${bonus} shards kept. Return stronger.`,
+    });
+    this.time.delayedCall(4200, () => {
+      this.cameras.main.fadeOut(600, 0, 0, 0);
+      this.cameras.main.once('camerafadeoutcomplete', () => {
+        this.scene.stop('UIScene');
+        this.scene.stop('GameScene');
+        this.scene.start('MainMenuScene');
+      });
+    });
+  }
+
   _checkPressurePlates() {
     if (!this._pressurePlates.length || !this._plateGroups) return;
 
@@ -3472,6 +3624,7 @@ export class GameScene extends Phaser.Scene {
     if (allDown && !this._gameOverTimer) {
       // Short delay so players see themselves go down before the screen appears
       this._gameOverTimer = this.time.delayedCall(1200, () => {
+        if (this._trial) { this._trialEnd(false); return; }
         this.events.emit('game_over', { regionIndex: this._regionIndex });
       });
     } else if (!allDown && this._gameOverTimer) {
@@ -3645,6 +3798,7 @@ export class GameScene extends Phaser.Scene {
       }
     }
 
+    if (this._trial) this._trialCheckWave();
   }
 
   _applyPassiveItem(def) {
@@ -3690,7 +3844,9 @@ export class GameScene extends Phaser.Scene {
 
   _onBossKilled(data) {
     const { bossKey } = data;
-    this.questManager.onBossKill(bossKey, this._regionIndex);
+    // Trial bosses are echoes — XP/shards are real, but story progression
+    // (quests, reward items, lore) only moves in the world itself.
+    if (!this._trial) this.questManager.onBossKill(bossKey, this._regionIndex);
     this.audio.victory();
 
     // Clear arena hazards
@@ -3711,7 +3867,7 @@ export class GameScene extends Phaser.Scene {
     this.grantShards(Math.round(SHARDS_PER_BOSS * (1 + (bossShardP?._charm?.shards || 0))));
 
     // Boss reward item
-    const bossRewardItem = BOSSES[bossKey]?.rewardItem;
+    const bossRewardItem = this._trial ? null : BOSSES[bossKey]?.rewardItem;
     if (bossRewardItem) {
       SaveManager.addItem(this._save, bossRewardItem);
       this._persist();
@@ -3720,14 +3876,19 @@ export class GameScene extends Phaser.Scene {
     }
 
     // Collect boss lore fragment
-    const bossFragId = data.boss?.cfg?.loreFragment;
+    const bossFragId = this._trial ? null : data.boss?.cfg?.loreFragment;
     if (bossFragId && !this.loreManager.has(bossFragId)) {
       this.loreManager.collect(bossFragId);
       this.events.emit('lore_collected', { count: this.loreManager.count(), total: this.loreManager.total() });
     }
 
     // Back to exploration music once the fight is won.
-    this.audio?.playMusic?.('explore', { act: MAP_LAYOUT[this._regionIndex]?.act ?? 1 });
+    this.audio?.playMusic?.('explore', { act: this._trial ? 6 : (MAP_LAYOUT[this._regionIndex]?.act ?? 1) });
+
+    if (this._trial) {
+      this.time.delayedCall(1800, () => this._trialEnd(true));
+      return;
+    }
 
     // Show boss lore (non-final only — final boss uses UIScene defeat speech)
     if (bossKey !== 'viyogasur') {

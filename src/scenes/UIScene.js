@@ -100,6 +100,7 @@ export class UIScene extends Phaser.Scene {
       ['shards_changed',     this._onShardsChanged],
       ['game_saved',         this._onGameSaved],
       ['show_hint',          this._onShowHint],
+      ['trial_boons',        this._onTrialBoons],
     ];
     for (const [evt, fn] of this._gsHandlers) gs.events.on(evt, fn, this);
     this.events.once('shutdown', () => {
@@ -1529,6 +1530,99 @@ export class UIScene extends Phaser.Scene {
       kDown.on('down', () => move(1));  kS.on('down', () => move(1));
       kEnter.on('down', answer); kSpace.on('down', answer);
       kEsc.on('down', close);
+    });
+  }
+
+  // ── Echo Trials boon pick ──────────────────────────────────────────────────
+  // Between-wave choice of one run-only boon. Same overlay language as the
+  // riddle/skill panels; the world pauses until a boon is chosen.
+  _onTrialBoons(data) {
+    const gs = this.scene.get('GameScene');
+    if (!gs || this._boonActive || !data?.choices?.length) return;
+    this._boonActive = true;
+    this.time.delayedCall(16, () => { gs._paused = true; gs.physics?.pause(); });
+
+    const depth = 9993;
+    let closed = false;
+    let sel = 0;
+
+    const veil = this.add.rectangle(0, 0, GAME_W, GAME_H, 0x000000, 0).setOrigin(0).setDepth(depth);
+    this.tweens.add({ targets: veil, alpha: 0.85, duration: 150 });
+
+    const title = this.add.text(GAME_W / 2, 130, '◆  CHOOSE AN ECHO BOON  ◆', {
+      fontSize: '26px', color: '#d9aaff', fontFamily: 'serif', stroke: '#000', strokeThickness: 5,
+    }).setOrigin(0.5).setDepth(depth + 1);
+
+    const subtitle = this.add.text(GAME_W / 2, 164, 'Its strength is yours until the run ends', {
+      fontSize: '12px', color: '#8a7a9a', fontFamily: 'serif', fontStyle: 'italic',
+    }).setOrigin(0.5).setDepth(depth + 1);
+
+    const objs = [veil, title, subtitle];
+    const rowH = 64, rowW = 560, gap = 14;
+    const top = 240;
+    const rows = data.choices.map((c, i) => {
+      const cy = top + i * (rowH + gap);
+      const bg = this.add.rectangle(GAME_W / 2, cy, rowW, rowH, 0x14101c, 0.92)
+        .setStrokeStyle(2, 0x4a3a5a).setDepth(depth + 1).setInteractive({ useHandCursor: true });
+      const name = this.add.text(GAME_W / 2 - rowW / 2 + 18, cy - 12, c.name, {
+        fontSize: '17px', color: '#ffe8a0', fontFamily: 'serif', fontStyle: 'bold',
+      }).setOrigin(0, 0.5).setDepth(depth + 2);
+      const desc = this.add.text(GAME_W / 2 - rowW / 2 + 18, cy + 13, c.desc, {
+        fontSize: '11px', color: '#9a8aaa', fontFamily: 'monospace',
+      }).setOrigin(0, 0.5).setDepth(depth + 2);
+      bg.on('pointerover', () => { sel = i; render(); });
+      bg.on('pointerdown', () => { sel = i; pick(); });
+      objs.push(bg, name, desc);
+      return { bg, name };
+    });
+
+    const hint = this.add.text(GAME_W / 2, top + rows.length * (rowH + gap) + 18,
+      '[↑/↓] Choose   [Enter] Claim', {
+        fontSize: '12px', color: '#aa8855', fontFamily: 'monospace',
+      }).setOrigin(0.5).setDepth(depth + 1);
+    objs.push(hint);
+
+    const render = () => {
+      rows.forEach((r, i) => {
+        const on = i === sel;
+        r.bg.setStrokeStyle(on ? 3 : 2, on ? 0xd9aaff : 0x4a3a5a);
+        r.bg.setFillStyle(on ? 0x1e1628 : 0x14101c, 0.92);
+      });
+    };
+
+    const pick = () => {
+      if (closed) return;
+      closed = true;
+      const chosen = sel;
+      keys.forEach(k => { k.removeAllListeners('down'); k.destroy(); });
+      rows.forEach(r => r.bg.disableInteractive());
+      this._unlockBurst(GAME_W / 2, top + chosen * (rowH + gap));
+      this.tweens.add({
+        targets: objs, alpha: 0, duration: 220,
+        onComplete: () => {
+          objs.forEach(o => { try { o.destroy(); } catch {} });
+          this._boonActive = false;
+          gs._paused = false;
+          gs.physics?.resume();
+          data.onPick?.(chosen);
+        },
+      });
+    };
+
+    render();
+
+    const KC = Phaser.Input.Keyboard.KeyCodes;
+    const kUp = this.input.keyboard.addKey(KC.UP), kDown = this.input.keyboard.addKey(KC.DOWN);
+    const kW  = this.input.keyboard.addKey(KC.W),  kS    = this.input.keyboard.addKey(KC.S);
+    const kEnter = this.input.keyboard.addKey(KC.ENTER), kSpace = this.input.keyboard.addKey(KC.SPACE);
+    const keys = [kUp, kDown, kW, kS, kEnter, kSpace];
+
+    const move = d => { sel = (sel + d + rows.length) % rows.length; gs.audio?.uiClick?.(); render(); };
+    this.time.delayedCall(180, () => {
+      if (closed) return;
+      kUp.on('down', () => move(-1));   kW.on('down', () => move(-1));
+      kDown.on('down', () => move(1));  kS.on('down', () => move(1));
+      kEnter.on('down', pick); kSpace.on('down', pick);
     });
   }
 
