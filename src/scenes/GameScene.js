@@ -1251,8 +1251,19 @@ export class GameScene extends Phaser.Scene {
   // frozen clocks; overlapping calls just extend the window.
   _hitStop(ms = 60, slow = 0.05) {
     const now = performance.now();
-    if (this._hitStopUntil) { this._hitStopUntil = Math.max(this._hitStopUntil, now + ms); return; }
+    if (this._hitStopUntil) {
+      // Rapid follow-up hits may extend the beat, but never past a hard cap
+      // from the chain's start. Attack cooldowns tick in real time while the
+      // world is frozen, so against a crowd every swing kept landing and
+      // re-extending the window — an unbounded freeze that read as a hang.
+      this._hitStopUntil = Math.min(
+        Math.max(this._hitStopUntil, now + ms),
+        (this._hitStopStart || now) + 220
+      );
+      return;
+    }
     if (this.physics.world.timeScale !== 1) return;   // perfect-dodge slowmo owns time
+    this._hitStopStart = now;
     this._hitStopUntil = now + ms;
     this.physics.world.timeScale = 1 / Math.max(slow, 0.02);  // arcade: >1 = slower
     this.anims.globalTimeScale = slow;
@@ -1261,6 +1272,7 @@ export class GameScene extends Phaser.Scene {
 
   _hitStopRestore() {
     this._hitStopUntil = 0;
+    this._hitStopStart = 0;
     this.physics.world.timeScale = 1;
     this.anims.globalTimeScale = 1;
     this.tweens.timeScale = 1;
@@ -3440,6 +3452,7 @@ export class GameScene extends Phaser.Scene {
           this.anims.globalTimeScale = 1;
           this.tweens.timeScale = 1;
           this._hitStopUntil = 0;
+          this._hitStopStart = 0;
           this.scene.stop('UIScene');
           if (this.network?.connected) {
             this.registry.set('network', this.network);
