@@ -2393,7 +2393,12 @@ export class GameScene extends Phaser.Scene {
       const mapNpcs = mapData.npcs || [];
       for (const n of mapNpcs) {
         const dialogueId = n.config?.id || n.id;
-        const npc = new NPC(this, n.x + dx, n.y + dy, { id: dialogueId, type: n.type || 'yellow' });
+        // Story-bound NPCs wear their script name; others keep the map name.
+        const storyId = STORY_NPC_BINDINGS[dialogueId];
+        const storyName = storyId ? NPC_DIALOGUE[storyId]?.first?.match(/^⟨([^⟩]+)⟩/)?.[1] : null;
+        const npc = new NPC(this, n.x + dx, n.y + dy, {
+          id: dialogueId, type: n.type || 'yellow', name: storyName || n.config?.name || null,
+        });
         npc._embeddedDialogue = n.config || null;
         this._mapNpcs.push(npc);
         if (sink) { npc._streamRegion = rIdx; sink.objects.push(npc); }

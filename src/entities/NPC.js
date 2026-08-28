@@ -28,6 +28,19 @@ export class NPC extends Phaser.GameObjects.Container {
     }).setOrigin(0.5, 1).setAlpha(0);
     this.add(this._indicator);
 
+    // Name label just below the [F] prompt; fades in/out with it.
+    if (config.name) {
+      this._nameLabel = scene.add.text(0, -34, String(config.name).replace(/_/g, ' '), {
+        fontSize: '10px',
+        color: '#ffe8a0',
+        fontFamily: 'serif',
+        fontStyle: 'bold',
+        stroke: '#000',
+        strokeThickness: 3,
+      }).setOrigin(0.5, 1).setAlpha(0);
+      this.add(this._nameLabel);
+    }
+
     this._playerNear = false;
     this.setDepth(y);
 
@@ -56,13 +69,13 @@ export class NPC extends Phaser.GameObjects.Container {
 
     if (this._playerNear && !wasNear) {
       this.scene.tweens.add({
-        targets: this._indicator,
+        targets: [this._indicator, this._nameLabel].filter(Boolean),
         alpha: 1,
         duration: 200,
       });
     } else if (!this._playerNear && wasNear) {
       this.scene.tweens.add({
-        targets: this._indicator,
+        targets: [this._indicator, this._nameLabel].filter(Boolean),
         alpha: 0,
         duration: 200,
       });
