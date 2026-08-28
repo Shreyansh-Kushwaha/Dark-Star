@@ -138,6 +138,8 @@ export class GameScene extends Phaser.Scene {
     // span into save.playtimeMs and re-marks. Restarts (region transitions)
     // re-enter create(), so unsaved spans never double-count.
     this._playtimeMark = performance.now();
+    // One-time contextual tutorial hints already shown to this save.
+    this._hintsSeen = new Set(saveData.hintsSeen || []);
     const regionIndex = data.regionIndex ?? saveData.regionIndex ?? 0;
     this._regionIndex = regionIndex;
 
@@ -1705,6 +1707,45 @@ export class GameScene extends Phaser.Scene {
     }
   }
 
+  // ── Contextual tutorial hints ───────────────────────────────────────────────
+  // Each hint fires once per save, at the moment the mechanic first matters,
+  // and is remembered on save.hintsSeen so veterans never see them again.
+  _hint(id, text) {
+    if (!this._hintsSeen || this._hintsSeen.has(id)) return;
+    this._hintsSeen.add(id);
+    this._persist();
+    this.events.emit('show_hint', { text });
+  }
+
+  _checkHints(){
+    if (!this._hintsSeen || this._hintsSeen.size >= 5) return;
+    const p = this.players?.find(x => x?.isLocal) || this.players?.[0];
+    if (!p || !p.alive) return;
+
+    if (!this._hintsSeen.has('combat')) {
+      for (const e of (this.enemies || [])) {
+        if (!e?.active || e.passive || (e.state !== 'pursue' && e.state !== 'attack')) continue;
+        const dx = e.x - p.x, dy = e.y - p.y;
+        if (dx * dx + dy * dy < 300 * 300) {
+          this._hint('combat', 'J — light attack      K — heavy attack');
+          break;
+        }
+      }
+    }
+    if (!this._hintsSeen.has('dodge') && this._hintsSeen.has('combat') && p.hp < p.maxHp) {
+      this._hint('dodge', 'SHIFT — dodge through attacks. Dodge at the last instant for a Perfect Dodge');
+    }
+    if (!this._hintsSeen.has('amrit') && p.hp < p.maxHp * 0.4 && p.amritCharges > 0) {
+      this._hint('amrit', 'H — drink Amrit to restore health');
+    }
+    if (!this._hintsSeen.has('shrine') && this._playerNearShrine()) {
+      this._hint('shrine', 'Thread Shrines heal you, refill Amrit and set your respawn point');
+    }
+    if (!this._hintsSeen.has('attune') && (this._pendingLevels || 0) > 0) {
+      this._hint('attune', 'Level gained — attune at a Thread Shrine to spend skill points');
+    }
+  }
+
   // ── Persistence ─────────────────────────────────────────────────────────────
   _persist(regionIndex) {
     const s = this._save;
@@ -1731,6 +1772,7 @@ export class GameScene extends Phaser.Scene {
     if (this._encounteredEnemies) s.encounteredEnemyIds = [...this._encounteredEnemies];
     if (this._metNpcs)            s.metNpcs             = [...this._metNpcs.values()];
     if (this._solvedRiddles)      s.solvedRiddles       = [...this._solvedRiddles];
+    if (this._hintsSeen)          s.hintsSeen           = [...this._hintsSeen];
     SaveManager.save(s);
     // Checkpoint-grade saves (shrine rest, region crossing, respawn) surface a
     // small "saved" flash in the HUD; routine progress writes stay silent.
@@ -2779,6 +2821,7 @@ export class GameScene extends Phaser.Scene {
       this._checkEchoTriggers();
       this._checkShrineProximity();
       this._checkDeathEcho();
+      this._checkHints();
     }
 
     // ── Interact ─────────────────────────────────────────────────

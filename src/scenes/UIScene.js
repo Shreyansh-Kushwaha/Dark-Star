@@ -96,6 +96,7 @@ export class UIScene extends Phaser.Scene {
       ['amrit_changed',      this._onAmritChanged],
       ['shards_changed',     this._onShardsChanged],
       ['game_saved',         this._onGameSaved],
+      ['show_hint',          this._onShowHint],
     ];
     for (const [evt, fn] of this._gsHandlers) gs.events.on(evt, fn, this);
     this.events.once('shutdown', () => {
@@ -1197,6 +1198,45 @@ export class UIScene extends Phaser.Scene {
     } else if (p.amritCharges > old) {
       this.tweens.add({ targets: cont, scaleX: 1.25, scaleY: 1.25, duration: 110, yoyo: true, ease: 'Quad.easeOut' });
     }
+  }
+
+  // ── Tutorial hint banner ───────────────────────────────────────────────────
+  // One-time contextual teaching moments from GameScene. Framed like the
+  // dialogue box, top-centre under the HUD, queued so hints never overlap.
+  _onShowHint(data) {
+    const text = data?.text;
+    if (!text) return;
+    this._hintQueue = this._hintQueue || [];
+    this._hintQueue.push(text);
+    if (!this._hintActive) this._nextHint();
+  }
+
+  _nextHint() {
+    const text = this._hintQueue?.shift();
+    if (!text) { this._hintActive = false; return; }
+    this._hintActive = true;
+
+    const c = this.add.container(GAME_W / 2, 84).setDepth(9940).setAlpha(0);
+    const t = this.add.text(0, 0, text, {
+      fontSize: '12px', color: '#ffe8a0', fontFamily: "'Silkscreen', monospace",
+      align: 'center', wordWrap: { width: 620 },
+    }).setOrigin(0.5);
+    const w = t.width + 48, h = t.height + 20;
+    const g = this.add.graphics();
+    g.fillStyle(0x0a0a14, 0.92).fillRect(-w / 2, -h / 2, w, h);
+    g.lineStyle(2, 0x8a6a3a, 1).strokeRect(-w / 2, -h / 2, w, h);
+    g.lineStyle(1, 0xffd700, 0.25).strokeRect(-w / 2 + 3, -h / 2 + 3, w - 6, h - 6);
+    const gemL = this.add.rectangle(-w / 2, 0, 6, 6, 0xffd700).setAngle(45);
+    const gemR = this.add.rectangle(w / 2, 0, 6, 6, 0xffd700).setAngle(45);
+    c.add([g, gemL, gemR, t]);
+
+    this.tweens.add({ targets: c, alpha: 1, y: 94, duration: 240, ease: 'Cubic.Out' });
+    this.time.delayedCall(4800, () => {
+      this.tweens.add({
+        targets: c, alpha: 0, y: 84, duration: 280, ease: 'Cubic.In',
+        onComplete: () => { c.destroy(); this._nextHint(); },
+      });
+    });
   }
 
   // Soulslike save flash, bottom-right: reassures without stealing attention.
