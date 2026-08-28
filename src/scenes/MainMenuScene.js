@@ -61,6 +61,15 @@ export class MainMenuScene extends Phaser.Scene {
       fontSize: '15px', color: '#ffdd00', fontFamily: 'monospace',
     }).setOrigin(1, 0.5).setDepth(20);
     this._updateMenuCursor();
+
+    // ?room=XXXX invite link: jump straight into the join flow so a friend
+    // only has to click the link the host copied — no code typing. The param
+    // is stripped from the URL so a refresh doesn't silently rejoin.
+    const room = new URLSearchParams(location.search).get('room');
+    if (room && /^[A-Za-z]{4}$/.test(room)) {
+      try { history.replaceState(null, '', location.pathname); } catch {}
+      this.time.delayedCall(60, () => this._joinWithCode(room));
+    }
   }
 
   // ── Background ─────────────────────────────────────────────────────────────
@@ -486,6 +495,7 @@ export class MainMenuScene extends Phaser.Scene {
       this._netOn(net, 'ROOM_READY', ({ code }) => {
         this._roomInput.setText(code);
         this._roomPrompt.setText('WAITING FOR PARTNER...');
+        this._showInviteLink(code);
       });
       this._netOn(net, 'CLIENT_JOINED', () => {
         this._showCharSelect(net, true);
@@ -508,6 +518,7 @@ export class MainMenuScene extends Phaser.Scene {
     this._joinCode    = '';
     this._roomInput.setAlpha(0);
     this._roomPrompt.setAlpha(0);
+    this._hideInviteLink();
     if (this._hostNet) {
       // NetworkManager has no close() — the optional call silently did nothing
       // and leaked the socket + server room on every cancelled host attempt.
@@ -580,29 +591,7 @@ export class MainMenuScene extends Phaser.Scene {
       return;
     }
     if (e.key === 'Enter' && this._joinCode.length === 4) {
-      this._joiningMode = false;
-      const code = this._joinCode;
-      this._roomPrompt.setText('JOINING ' + code + '...');
-      (async () => {
-        try {
-          const net = new NetworkManager();
-          await net.connect();
-          net.joinRoom(code);
-          this._netOn(net, 'ROOM_READY', () => {
-            this._showCharSelect(net, false);
-          });
-          this._netOn(net, 'ROOM_ERROR', ({ reason }) => {
-            this._roomPrompt.setText('ERROR: ' + reason);
-            this._roomInput.setText('____');
-            this._joiningMode = true;
-            this._joinCode = '';
-          });
-        } catch (err) {
-          this._roomPrompt.setText('CONNECTION FAILED');
-          this._joiningMode = true;
-          this._joinCode = '';
-        }
-      })();
+      this._joinWithCode(this._joinCode);
       return;
     }
     if (e.key === 'Backspace') {
@@ -613,9 +602,68 @@ export class MainMenuScene extends Phaser.Scene {
     this._roomInput.setText(this._joinCode.padEnd(4, '_'));
   }
 
+  // Connect and join a room by code — used by both the typed-code flow and
+  // ?room=XXXX invite links.
+  _joinWithCode(code) {
+    this._joiningMode = false;
+    this._joinCode = String(code).toUpperCase();
+    this._roomPrompt.setText('JOINING ' + this._joinCode + '...').setAlpha(1);
+    this._roomInput.setText(this._joinCode).setAlpha(1);
+    (async () => {
+      try {
+        const net = new NetworkManager();
+        await net.connect();
+        net.joinRoom(this._joinCode);
+        this._netOn(net, 'ROOM_READY', () => {
+          this._showCharSelect(net, false);
+        });
+        this._netOn(net, 'ROOM_ERROR', ({ reason }) => {
+          this._roomPrompt.setText('ERROR: ' + reason);
+          this._roomInput.setText('____');
+          this._joiningMode = true;
+          this._joinCode = '';
+        });
+      } catch (err) {
+        this._roomPrompt.setText('CONNECTION FAILED');
+        this._joiningMode = true;
+        this._joinCode = '';
+      }
+    })();
+  }
+
+  _inviteLink(code) {
+    return `${location.origin}${location.pathname}?room=${code}`;
+  }
+
+  // Clickable "copy invite link" under the room code — sharing a URL beats
+  // dictating a 4-letter code. Clipboard write needs the click gesture, so it
+  // copies on pointerdown rather than automatically.
+  _showInviteLink(code) {
+    const link = this._inviteLink(code);
+    if (!this._copyLinkBtn) {
+      this._copyLinkBtn = this.add.text(GAME_W / 2, 640, '', {
+        fontSize: '12px', fontFamily: 'monospace', color: '#8fe3ff',
+        backgroundColor: '#0a1422', padding: { x: 10, y: 6 },
+      }).setOrigin(0.5).setDepth(10).setInteractive({ useHandCursor: true });
+      this._copyLinkBtn.on('pointerdown', () => {
+        const l = this._copyLinkBtn._link;
+        if (!l) return;
+        try { navigator.clipboard?.writeText(l); } catch {}
+        this._copyLinkBtn.setText('✓ Link copied — send it to your partner');
+      });
+    }
+    this._copyLinkBtn._link = link;
+    this._copyLinkBtn.setText('📋 Copy invite link  ·  ' + link).setAlpha(1);
+  }
+
+  _hideInviteLink() {
+    this._copyLinkBtn?.setAlpha(0);
+  }
+
   _showCharSelect(net, isHost) {
     this._roomPrompt.setAlpha(0);
     this._roomInput.setAlpha(0);
+    this._hideInviteLink();
 
     const D = 20;
     this.add.rectangle(GAME_W / 2, GAME_H / 2, GAME_W, GAME_H, 0x000000, 0.88).setDepth(D);
