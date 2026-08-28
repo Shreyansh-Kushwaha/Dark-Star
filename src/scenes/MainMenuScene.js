@@ -33,6 +33,17 @@ export class MainMenuScene extends Phaser.Scene {
     this.input.once('pointerdown', () => this.audio.resume());
     this.input.keyboard.once('keydown', () => this.audio.resume());
 
+    // NetworkManager outlives this scene (it's handed to GameScene via the
+    // registry), so every handler registered here must be detached on shutdown
+    // — the closures capture menu display objects, and a late CHAR_SELECT /
+    // disconnected frame would setText on destroyed Texts and pin the whole
+    // dead menu display list in memory. Register through _netOn only.
+    this._netHandlers = [];
+    this.events.once('shutdown', () => {
+      for (const [net, type, fn] of this._netHandlers) { try { net.off(type, fn); } catch {} }
+      this._netHandlers = [];
+    });
+
     this._drawSky();
     this._drawStars();
     this._drawMountains();
@@ -472,11 +483,11 @@ export class MainMenuScene extends Phaser.Scene {
       this._hostNet = net;
       await net.connect();
       net.createRoom();
-      net.on('ROOM_READY', ({ code }) => {
+      this._netOn(net, 'ROOM_READY', ({ code }) => {
         this._roomInput.setText(code);
         this._roomPrompt.setText('WAITING FOR PARTNER...');
       });
-      net.on('CLIENT_JOINED', () => {
+      this._netOn(net, 'CLIENT_JOINED', () => {
         this._showCharSelect(net, true);
       });
     } catch (err) {
@@ -577,10 +588,10 @@ export class MainMenuScene extends Phaser.Scene {
           const net = new NetworkManager();
           await net.connect();
           net.joinRoom(code);
-          net.on('ROOM_READY', () => {
+          this._netOn(net, 'ROOM_READY', () => {
             this._showCharSelect(net, false);
           });
-          net.on('ROOM_ERROR', ({ reason }) => {
+          this._netOn(net, 'ROOM_ERROR', ({ reason }) => {
             this._roomPrompt.setText('ERROR: ' + reason);
             this._roomInput.setText('____');
             this._joiningMode = true;
@@ -675,7 +686,7 @@ export class MainMenuScene extends Phaser.Scene {
         this.time.delayedCall(400, () => this._showCoopRegionSelect(net, p1Char, p2Char, D));
       } else {
         statusTxt.setText('Waiting for host to select region...');
-        net.on('REGION_SELECT', ({ regionIndex }) => {
+        this._netOn(net, 'REGION_SELECT', ({ regionIndex }) => {
           this.registry.set('network', net);
           this._startGame(true, regionIndex, { p1Char, p2Char });
         });
@@ -697,7 +708,7 @@ export class MainMenuScene extends Phaser.Scene {
       tryStart();
     };
 
-    net.on('CHAR_SELECT', ({ char }) => {
+    this._netOn(net, 'CHAR_SELECT', ({ char }) => {
       partnerChar = char;
       partnerTxt.setText(`Partner chose: ${char.toUpperCase()}`).setStyle({ color: hex[char] });
       tryStart();
@@ -734,7 +745,7 @@ export class MainMenuScene extends Phaser.Scene {
       allBgs.forEach(b => b.disableInteractive());
       titleTxt.setText('PARTNER DISCONNECTED').setStyle({ color: '#ff4444', fontSize: '18px' });
     };
-    net.on('disconnected', onDisconnect);
+    this._netOn(net, 'disconnected', onDisconnect);
 
     // Loading hint while we fetch the live region list
     const loadingTxt = this.add.text(cx, panelY, 'Loading regions…', {
@@ -799,6 +810,11 @@ export class MainMenuScene extends Phaser.Scene {
   }
 
   // "Silent Shrine · LV 12 · 3h 41m" caption under the CONTINUE button.
+  _netOn(net, type, fn) {
+    net.on(type, fn);
+    this._netHandlers.push([net, type, fn]);
+  }
+
   _saveSummary(save, nameOverride) {
     const idx  = save.regionIndex ?? 0;
     const name = nameOverride || REGION_NAMES[idx] || `Region ${idx}`;

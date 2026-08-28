@@ -39,7 +39,6 @@ export class PreloadScene extends Phaser.Scene {
     this.load.spritesheet('dhruva_run',     `${TS}/Units/Purple Units/Warrior/Warrior_Run.png`,     { frameWidth: W, frameHeight: W });
     this.load.spritesheet('dhruva_attack1', `${TS}/Units/Purple Units/Warrior/Warrior_Attack1.png`, { frameWidth: W, frameHeight: W });
     this.load.spritesheet('dhruva_attack2', `${TS}/Units/Purple Units/Warrior/Warrior_Attack2.png`, { frameWidth: W, frameHeight: W });
-    this.load.spritesheet('dhruva_guard',   `${TS}/Units/Purple Units/Warrior/Warrior_Guard.png`,   { frameWidth: W, frameHeight: W });
 
     // ── Player: Tara (Blue Monk) ──────────────────────────────────
     this.load.spritesheet('tara_idle',    `${TS}/Units/Blue Units/Monk/Idle.png`,       { frameWidth: W, frameHeight: W });
@@ -73,26 +72,8 @@ export class PreloadScene extends Phaser.Scene {
 
     // ── Particle FX ───────────────────────────────────────────────
     this.load.image('explosion_01', `${TS}/Particle FX/Explosion_01.png`);
-    this.load.image('explosion_02', `${TS}/Particle FX/Explosion_02.png`);
     this.load.image('fire_01',      `${TS}/Particle FX/Fire_01.png`);
-    this.load.image('fire_02',      `${TS}/Particle FX/Fire_02.png`);
-    this.load.image('fire_03',      `${TS}/Particle FX/Fire_03.png`);
     this.load.image('dust_01',      `${TS}/Particle FX/Dust_01.png`);
-    this.load.image('dust_02',      `${TS}/Particle FX/Dust_02.png`);
-    this.load.image('water_splash', `${TS}/Particle FX/Water Splash.png`);
-
-    // ── UI ────────────────────────────────────────────────────────
-    this.load.image('bar_big_base',  `${TS}/UI Elements/UI Elements/Bars/BigBar_Base.png`);
-    this.load.image('bar_big_fill',  `${TS}/UI Elements/UI Elements/Bars/BigBar_Fill.png`);
-    this.load.image('bar_sm_base',   `${TS}/UI Elements/UI Elements/Bars/SmallBar_Base.png`);
-    this.load.image('bar_sm_fill',   `${TS}/UI Elements/UI Elements/Bars/SmallBar_Fill.png`);
-    this.load.image('btn_blue',      `${TS}/UI Elements/UI Elements/Buttons/BigBlueButton_Regular.png`);
-    this.load.image('btn_blue_p',    `${TS}/UI Elements/UI Elements/Buttons/BigBlueButton_Pressed.png`);
-    this.load.image('paper_regular', `${TS}/UI Elements/UI Elements/Papers/RegularPaper.png`);
-    this.load.image('paper_special', `${TS}/UI Elements/UI Elements/Papers/SpecialPaper.png`);
-    this.load.image('banner',        `${TS}/UI Elements/UI Elements/Banners/Banner.png`);
-    this.load.image('wood_slots',    `${TS}/UI Elements/UI Elements/Wood Table/WoodTable_Slots.png`);
-    this.load.image('ribbon_blue',   `${TS}/UI Elements/UI Banners from the store page/Ribbons/Ribbon_Blue.png`);
 
     // ── Decorations ───────────────────────────────────────────────
     this.load.image('bush1', `${TS}/Terrain/Decorations/Bushes/Bushe1.png`);
@@ -103,8 +84,6 @@ export class PreloadScene extends Phaser.Scene {
     this.load.image('rock2', `${TS}/Terrain/Decorations/Rocks/Rock2.png`);
     this.load.image('cloud1', `${TS}/Terrain/Decorations/Clouds/Clouds_01.png`);
     this.load.image('cloud2', `${TS}/Terrain/Decorations/Clouds/Clouds_02.png`);
-    this.load.image('water_rock1', `${TS}/Terrain/Decorations/Rocks in the Water/Water Rocks_01.png`);
-    this.load.image('water_rock2', `${TS}/Terrain/Decorations/Rocks in the Water/Water Rocks_02.png`);
 
     // ── Goblin (Melee enemy — regions 0,1,2) ─────────────────────
     // 256px downscales of the craftpix 900x900 chibi frames (assets_opt/ is
@@ -240,7 +219,6 @@ export class PreloadScene extends Phaser.Scene {
     anims.create({ key: 'dhruva_run',     frames: anims.generateFrameNumbers('dhruva_run',     { start: 0, end: 5 }), frameRate: 10, repeat: -1 });
     anims.create({ key: 'dhruva_attack1', frames: anims.generateFrameNumbers('dhruva_attack1', { start: 0, end: 3 }), frameRate: 12, repeat: 0  });
     anims.create({ key: 'dhruva_attack2', frames: anims.generateFrameNumbers('dhruva_attack2', { start: 0, end: 3 }), frameRate: 10, repeat: 0  });
-    anims.create({ key: 'dhruva_guard',   frames: anims.generateFrameNumbers('dhruva_guard',   { start: 0, end: 5 }), frameRate: 8,  repeat: -1 });
 
     // Monk (Tara) animations
     anims.create({ key: 'tara_idle',    frames: anims.generateFrameNumbers('tara_idle',    { start: 0, end: 5 }), frameRate: 8,  repeat: -1 });

@@ -4,14 +4,18 @@
 const KEY = 'akhand_sutra_explored';
 
 export class ExploredManager {
+  static _cache = null;   // parsed once; invalidated by markExplored/clear
+
   static _read() {
+    if (this._cache) return this._cache;
     try {
       const raw = localStorage.getItem(KEY);
       const arr = raw ? JSON.parse(raw) : [];
-      return Array.isArray(arr) ? arr : [];
+      this._cache = Array.isArray(arr) ? arr : [];
     } catch {
-      return [];
+      this._cache = [];
     }
+    return this._cache;
   }
 
   /** Set of region indices the player has visited. */
@@ -42,6 +46,7 @@ export class ExploredManager {
   }
 
   static clear() {
+    this._cache = null;
     try { localStorage.removeItem(KEY); } catch {}
   }
 }

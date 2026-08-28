@@ -92,6 +92,7 @@ export class MerchantScene extends Phaser.Scene {
     this._balanceText.setText(`✦  ${shards} Thread Shards`);
     this._offers.forEach((o, i) => {
       const r = this._rows[i];
+      if (!r) return;   // offers list can outgrow the rows built at create()
       const on = i === this._sel;
       r.name.setText(o.name);
       r.desc.setText(o.desc);

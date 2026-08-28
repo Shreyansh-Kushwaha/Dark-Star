@@ -136,6 +136,7 @@ export class PauseScene extends Phaser.Scene {
   get _tabKeys() { return ['quests', 'lore', 'enemies', 'characters', 'npcs']; }
 
   _bookTabStep(d) {
+    if (!this._bookRenderAllowed()) return;
     const keys = this._tabKeys;
     const i = Math.max(0, keys.indexOf(this._bookTab));
     this._bookTab  = keys[(i + d + keys.length) % keys.length];
@@ -146,7 +147,7 @@ export class PauseScene extends Phaser.Scene {
   _bookPageStep(d) {
     const tp = this._bookTotalPages || 1;
     const np = Phaser.Math.Clamp(this._bookPage + d, 0, tp - 1);
-    if (np !== this._bookPage) { this._bookPage = np; this._renderBook(); }
+    if (np !== this._bookPage && this._bookRenderAllowed()) { this._bookPage = np; this._renderBook(); }
   }
 
   _closeBook() {
@@ -159,6 +160,16 @@ export class PauseScene extends Phaser.Scene {
   _add(o){ this._bookObjs.push(o); return o; }
 
   // ── Core book shell ───────────────────────────────────────────────────────
+
+  // A full book render creates ~50 Text canvases + GL textures; a held arrow
+  // key at OS repeat rate would churn ~1500 of them per second. One rebuild per
+  // 120ms is indistinguishable to the eye and bounds the cost.
+  _bookRenderAllowed() {
+    const now = this.time.now;
+    if (now - (this._lastBookRender || 0) < 120) return false;
+    this._lastBookRender = now;
+    return true;
+  }
 
   _renderBook() {
     this._bookObjs.forEach(o => o.destroy());
