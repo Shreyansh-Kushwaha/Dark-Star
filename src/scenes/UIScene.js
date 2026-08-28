@@ -1024,6 +1024,7 @@ export class UIScene extends Phaser.Scene {
       if (gs._save) gs._save.skillNodes = [...owned];
       gs.players?.forEach(p => p?.applySkills?.(gs._skillNodes));
       gs.audio?.purchase?.();
+      gs.haptics?.play('unlock');
       this.tweens.add({ targets: c.bg, scaleY: 1.12, duration: 80, yoyo: true });
       render();
     };

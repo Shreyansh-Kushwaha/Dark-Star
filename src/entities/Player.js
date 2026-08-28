@@ -328,8 +328,14 @@ export class Player extends Phaser.GameObjects.Container {
       }
     }
 
-    // weighty hits give a short, subtle camera punch
-    if (_hitLanded && heavy) scene._cameraPunch?.(0.006, 80);
+    // Landed-hit feedback bundle: hitstop, directional camera kick along the
+    // swing, rumble — heavier on heavy attacks, plus the old shake on heavy.
+    if (_hitLanded) {
+      scene._hitStop?.(heavy ? 90 : 45, 0.05);
+      scene._cameraKick?.(angle, heavy ? 6 : 3);
+      scene.haptics?.play(heavy ? 'heavyHit' : 'lightHit');
+      if (heavy) scene._cameraPunch?.(0.006, 80);
+    }
   }
 
   _doDodge(scene) {
@@ -379,6 +385,7 @@ export class Player extends Phaser.GameObjects.Container {
     }});
 
     scene.audio.perfectDodge();
+    scene.haptics?.play('perfectDodge');
     scene.events.emit('perfect_dodge');
     return true;
   }
@@ -416,6 +423,7 @@ export class Player extends Phaser.GameObjects.Container {
     this._updateHpBar();
 
     if (scene?.audio) scene.audio.playerDamage();
+    if (this.isLocal) scene?.haptics?.play('playerDamage');
 
     this.sprite.setTint(0xff6666);
     this.scene.time.delayedCall(150, () => this.sprite.clearTint());
@@ -448,6 +456,7 @@ export class Player extends Phaser.GameObjects.Container {
   _goDown(scene) {
     this.downed = true;
     this._downTimer = 12000;
+    if (this.isLocal) scene?.haptics?.play('death');
     this.body.setVelocity(0, 0);
     this.sprite.setAlpha(0.4);
     this.sprite.play(this.baseKey + '_idle', true);

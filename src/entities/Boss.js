@@ -928,6 +928,7 @@ export class Boss extends Phaser.GameObjects.Container {
     scene.cameras.main.shake(500, 0.018);
     scene.events.emit('boss_phase_changed', { phase: newPhase, label: labels[newPhase] ?? `PHASE ${newPhase + 1}`, boss: this, phaseIndex: newPhase });
     scene.audio?.bossPhase?.();
+    scene.haptics?.play('bossPhase');
   }
 
   _triggerStagger(scene) {
@@ -956,6 +957,14 @@ export class Boss extends Phaser.GameObjects.Container {
     for (const sh of this._splitShadows) { try { sh.sprite?.destroy(); } catch {} }
     this._splitShadows = [];
     if (this._aura) { this._aura.destroy(); this._aura = null; }
+
+    // Final-blow beat: long slow-mo, a zoom punch toward the arena, heavy
+    // rumble — the camera settles back before the fade-out at ~3s.
+    scene._hitStop?.(420, 0.18);
+    scene.haptics?.play('bossDeath');
+    const cam = scene.cameras.main;
+    cam.zoomTo(1.12, 260, 'Sine.easeOut');
+    scene.time.delayedCall(1100, () => cam.zoomTo(1, 800, 'Sine.easeInOut'));
 
     scene.cameras.main.shake(700, 0.025);
     scene.audio?.victory?.();

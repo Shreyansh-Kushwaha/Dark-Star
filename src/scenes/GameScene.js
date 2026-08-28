@@ -14,6 +14,7 @@ import { familyForKey, familyLoads, familyAnimKeys, entityType, assetsReady, def
 import { statsFor } from '../data/creatureStats.js';
 import { Projectile } from '../entities/Projectile.js';
 import { AudioManager } from '../systems/AudioManager.js';
+import { HapticsManager } from '../systems/HapticsManager.js';
 import { QuestManager } from '../systems/QuestManager.js';
 import { SaveManager } from '../systems/SaveManager.js';
 import { NetworkManager } from '../systems/NetworkManager.js';
@@ -154,6 +155,7 @@ export class GameScene extends Phaser.Scene {
 
     // Systems
     this.audio  = new AudioManager();
+    this.haptics = new HapticsManager();
     this.questManager = new QuestManager();
     this.questManager.load(saveData.completedQuests || []);
     this.loreManager = new LoreManager();
@@ -1138,12 +1140,16 @@ export class GameScene extends Phaser.Scene {
     });
   }
 
-  // A small kick of dust/spark motes at an impact point.
-  _impactDust(x, y, color = 0xfff0d0, n = 5) {
+  // A small kick of dust/spark motes at an impact point. With `angle`, debris
+  // erupts in a cone along the strike vector, bright motes first, dimmer after.
+  _impactDust(x, y, color = 0xfff0d0, n = 5, angle = null) {
     for (let i = 0; i < n; i++) {
-      const a = Math.random() * Math.PI * 2;
-      const reach = 16 + Math.random() * 16;
-      const dot = this.add.circle(x, y, 2 + Math.random() * 2, color, 0.7).setDepth(y + 8);
+      const a = angle === null
+        ? Math.random() * Math.PI * 2
+        : angle + (Math.random() - 0.5) * 1.2;
+      const reach = (angle === null ? 16 : 24) + Math.random() * (angle === null ? 16 : 22);
+      const c = angle !== null && i < n / 2 ? 0xffffff : color;
+      const dot = this.add.circle(x, y, 2 + Math.random() * 2, c, 0.7).setDepth(y + 8);
       this.tweens.add({
         targets: dot, x: x + Math.cos(a) * reach, y: y + Math.sin(a) * reach - 6,
         alpha: 0, scale: 0.2, duration: 240 + Math.random() * 140, ease: 'Quad.easeOut',
@@ -1155,6 +1161,37 @@ export class GameScene extends Phaser.Scene {
   // Very short, subtle camera shake for weighty hits (heavy melee / boss).
   _cameraPunch(amp = 0.004, dur = 70) {
     this.cameras?.main?.shake(dur, amp);
+  }
+
+  // Hitstop: freeze physics/anims/tweens for a few frames on impact so hits
+  // read as connecting with mass. `slow` near 0 is a full freeze; ~0.25 is the
+  // kill-shot slow-mo. Restored by wall clock in update() so it survives the
+  // frozen clocks; overlapping calls just extend the window.
+  _hitStop(ms = 60, slow = 0.05) {
+    const now = performance.now();
+    if (this._hitStopUntil) { this._hitStopUntil = Math.max(this._hitStopUntil, now + ms); return; }
+    if (this.physics.world.timeScale !== 1) return;   // perfect-dodge slowmo owns time
+    this._hitStopUntil = now + ms;
+    this.physics.world.timeScale = 1 / Math.max(slow, 0.02);  // arcade: >1 = slower
+    this.anims.globalTimeScale = slow;
+    this.tweens.timeScale = slow;
+  }
+
+  _hitStopRestore() {
+    this._hitStopUntil = 0;
+    this.physics.world.timeScale = 1;
+    this.anims.globalTimeScale = 1;
+    this.tweens.timeScale = 1;
+  }
+
+  // Directional camera kick — the view lurches along the strike vector, then
+  // eases back. Layered on top of the shake, this reads as force, not rattle.
+  _cameraKick(angle, dist = 5) {
+    const cam = this.cameras?.main;
+    if (!cam?.followOffset) return;
+    this.tweens.killTweensOf(cam.followOffset);
+    cam.followOffset.set(-Math.cos(angle) * dist, -Math.sin(angle) * dist);
+    this.tweens.add({ targets: cam.followOffset, x: 0, y: 0, duration: 150, ease: 'Sine.easeOut' });
   }
 
   // Glow a placed map sprite if it is an emissive prop (fire / radiant gate).
@@ -2578,6 +2615,8 @@ export class GameScene extends Phaser.Scene {
   update(time, delta) {
     if (this._paused) return;
 
+    if (this._hitStopUntil && performance.now() >= this._hitStopUntil) this._hitStopRestore();
+
     // ── Boss cutscene freeze ──────────────────────────────────────
     // While the boss intro/name-card plays, hold every actor in place: zero
     // their velocities and skip their AI/input updates so nobody drifts or
@@ -3037,6 +3076,9 @@ export class GameScene extends Phaser.Scene {
         this.cameras.main.once('camerafadeoutcomplete', () => {
           this.physics.world.timeScale = 1;
           this.time.timeScale = 1;
+          this.anims.globalTimeScale = 1;
+          this.tweens.timeScale = 1;
+          this._hitStopUntil = 0;
           this.scene.stop('UIScene');
           if (this.network?.connected) {
             this.registry.set('network', this.network);

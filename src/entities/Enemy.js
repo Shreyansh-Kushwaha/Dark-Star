@@ -152,6 +152,13 @@ export class Enemy extends Phaser.GameObjects.Container {
       }
     }
 
+    // Knockback wins over AI steering for its brief duration.
+    if (this._kbTimer > 0) {
+      this._kbTimer -= delta;
+      if (this._kbTimer <= 0 && this.body) this.body.setVelocity(0, 0);
+      return;
+    }
+
     const target = this._nearestPlayer(players);
 
     // Mimic: awaken sequence when player steps close
@@ -405,10 +412,13 @@ export class Enemy extends Phaser.GameObjects.Container {
     this._updateHpBar();
     this._spawnDamageNumber(scene, amount);
 
-    // hit juice: sharp white flash, squash/stretch pop, impact dust kick
+    // hit juice: sharp white flash, squash/stretch pop, debris erupting along
+    // the strike vector, and a shove away from the attacker.
     const _base = this.cfg.scale || 1;
+    const hitAngle = source ? Math.atan2(this.y - source.y, this.x - source.x) : null;
     scene._popSprite?.(this.sprite, _base, _base, 1.18, 0.82, 80);
-    scene._impactDust?.(this.x, this.y - 10, 0xffe6b0, amount >= 20 ? 6 : 4);
+    scene._impactDust?.(this.x, this.y - 10, 0xffe6b0, amount >= 20 ? 6 : 4, hitAngle);
+    if (hitAngle !== null && this.hp > 0) this.knockback(hitAngle, amount >= 20 ? 160 : 90);
     this.sprite.setTint(0xffffff);
     scene.time.delayedCall(70, () => {
       if (this.alive) this.sprite.clearTint();
@@ -423,6 +433,7 @@ export class Enemy extends Phaser.GameObjects.Container {
 
   knockback(angle, force) {
     if (!this.body) return;
+    this._kbTimer = 180;   // update() yields to this so AI steering can't cancel it
     this.body.setVelocity(Math.cos(angle) * force, Math.sin(angle) * force);
     this.scene.time.delayedCall(200, () => {
       if (this.body) this.body.setVelocity(0, 0);
@@ -439,6 +450,9 @@ export class Enemy extends Phaser.GameObjects.Container {
 
     this._playAnim('dead');
     scene?.audio?.enemyDeath?.();
+    // Kill-shot beat: a longer, softer slow-mo than a normal hit's freeze.
+    scene?._hitStop?.(140, 0.25);
+    scene?.haptics?.play('kill');
     scene?.events?.emit('enemy_killed', { enemy: this });
 
     if (scene) {
