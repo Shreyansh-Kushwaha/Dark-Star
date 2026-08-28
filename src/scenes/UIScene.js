@@ -135,38 +135,68 @@ export class UIScene extends Phaser.Scene {
 
   // ── Top HUD ────────────────────────────────────────────────────────────────
 
+  // One modern vitals block: layered rounded plate with a character-accent
+  // edge, capped HP bar with glass highlight, slim stamina bar, diamond Amrit
+  // pips. Returns the handles the HUD logic (chip bars, shake, pips) drives —
+  // their names and fill semantics (origin 0,0.5 + scaleX) are unchanged.
+  _buildVitals(x, name, accentHex, accent) {
+    const barW = 190, barH = 13, smW = 140, smH = 6;
+    const plate = this.add.graphics();
+    plate.fillStyle(0x05050b, 0.78).fillRoundedRect(x - 8, 3, 288, 60, 8);
+    plate.fillStyle(0x11111e, 0.5).fillRoundedRect(x - 8, 3, 288, 18, { tl: 8, tr: 8, bl: 0, br: 0 });
+    plate.lineStyle(1, accent, 0.30).strokeRoundedRect(x - 8, 3, 288, 60, 8);
+    plate.fillStyle(accent, 0.85).fillRoundedRect(x - 8, 3, 3, 60, { tl: 8, bl: 8, tr: 0, br: 0 });
+
+    const label = this.add.text(x + 4, 8, name, {
+      fontSize: '10px', color: accentHex, fontFamily: "'Silkscreen', monospace", fontStyle: 'bold',
+    });
+
+    this.add.rectangle(x - 1, 26, barW + 2, barH + 2, 0x000000, 0.9)
+      .setOrigin(0, 0.5).setStrokeStyle(1, 0x8a6a3a, 0.75);
+    const hpBg    = this.add.rectangle(x, 26, barW, barH, 0x150808).setOrigin(0, 0.5);
+    const hpDelay = this.add.rectangle(x, 26, barW, barH, 0x882200).setOrigin(0, 0.5);
+    const hpFill  = this.add.rectangle(x, 26, barW, barH, 0x22cc66).setOrigin(0, 0.5);
+    this.add.rectangle(x, 23, barW, 4, 0xffffff, 0.10).setOrigin(0, 0.5);   // glass highlight
+    this.add.rectangle(x - 1, 26, 7, 7, accent).setAngle(45);               // cap gem
+    const hpText = this.add.text(x + barW + 8, 26, '200/200', {
+      fontSize: '10px', color: '#d8ccb0', fontFamily: "'Silkscreen', monospace",
+    }).setOrigin(0, 0.5);
+
+    this.add.rectangle(x - 1, 40, smW + 2, smH + 2, 0x000000, 0.9)
+      .setOrigin(0, 0.5).setStrokeStyle(1, 0x2a3a4a, 0.9);
+    const stamBg   = this.add.rectangle(x, 40, smW, smH, 0x0e1620).setOrigin(0, 0.5);
+    const stamFill = this.add.rectangle(x, 40, smW, smH, 0x4499ff).setOrigin(0, 0.5);
+    this.add.rectangle(x, 39, smW, 2, 0xffffff, 0.08).setOrigin(0, 0.5);
+
+    this.add.text(x, 47, '⚕', { fontSize: '10px', color: '#ffcc44', fontFamily: 'monospace' }).setOrigin(0, 0);
+    const pips = this.add.container(x + 16, 53);
+    this._renderAmritPips(pips, 4, 4);
+
+    return { label, hpBg, hpDelay, hpFill, hpText, stamBg, stamFill, pips };
+  }
+
   _createTopHUD() {
     const pad = 12;
-    const barW = 180, barH = 14, smW = 120, smH = 8;
 
-    this.add.rectangle(0, 0, GAME_W, 64, 0x0a0a0a, 0.75).setOrigin(0, 0);
+    this.add.rectangle(0, 0, GAME_W, 66, 0x08080d, 0.62).setOrigin(0, 0);
 
-    this._d1Label = this.add.text(pad, 10, 'DHRUVA', { fontSize: '10px', color: '#cc99ff', fontFamily: "'Silkscreen', monospace", fontStyle: 'bold' });
-    this.add.rectangle(pad - 1, 26, barW + 2, barH + 2, 0x8a6a3a).setOrigin(0, 0.5);
-    this._dhruvaHpBg    = this.add.rectangle(pad, 26, barW, barH, 0x150808).setOrigin(0, 0.5);
-    this._dhruvaHpDelay = this.add.rectangle(pad, 26, barW, barH, 0x882200).setOrigin(0, 0.5);
-    this._dhruvaHpFill  = this.add.rectangle(pad, 26, barW, barH, 0x22cc66).setOrigin(0, 0.5);
-    this._dhruvaHpText = this.add.text(pad + barW + 4, 26, '200/200', { fontSize: '10px', color: '#aaa', fontFamily: 'monospace' }).setOrigin(0, 0.5);
-    this._dhruvaStamBg   = this.add.rectangle(pad, 40, smW, smH, 0x333333).setOrigin(0, 0.5);
-    this._dhruvaStamFill = this.add.rectangle(pad, 40, smW, smH, 0x4499ff).setOrigin(0, 0.5);
+    const d = this._buildVitals(pad, 'DHRUVA', '#cc99ff', 0xcc99ff);
+    this._d1Label = d.label;
+    this._dhruvaHpBg = d.hpBg;       this._dhruvaHpDelay = d.hpDelay;
+    this._dhruvaHpFill = d.hpFill;   this._dhruvaHpText = d.hpText;
+    this._dhruvaStamBg = d.stamBg;   this._dhruvaStamFill = d.stamFill;
+    this._dhruvaAmritPips = d.pips;
 
-    const tx = pad + barW + 80;
-    this._d2Label = this.add.text(tx, 10, 'TARA', { fontSize: '10px', color: '#88ccff', fontFamily: "'Silkscreen', monospace", fontStyle: 'bold' });
-    this.add.rectangle(tx - 1, 26, barW + 2, barH + 2, 0x8a6a3a).setOrigin(0, 0.5);
-    this._taraHpBg    = this.add.rectangle(tx, 26, barW, barH, 0x150808).setOrigin(0, 0.5);
-    this._taraHpDelay = this.add.rectangle(tx, 26, barW, barH, 0x882200).setOrigin(0, 0.5);
-    this._taraHpFill  = this.add.rectangle(tx, 26, barW, barH, 0x22aaee).setOrigin(0, 0.5);
-    this._taraHpText = this.add.text(tx + barW + 4, 26, '200/200', { fontSize: '10px', color: '#aaa', fontFamily: 'monospace' }).setOrigin(0, 0.5);
-    this._taraStamBg   = this.add.rectangle(tx, 40, smW, smH, 0x333333).setOrigin(0, 0.5);
-    this._taraStamFill = this.add.rectangle(tx, 40, smW, smH, 0x66ccff).setOrigin(0, 0.5);
+    const tx = pad + 298;
+    const t = this._buildVitals(tx, 'TARA', '#88ccff', 0x88ccff);
+    this._d2Label = t.label;
+    this._taraHpBg = t.hpBg;         this._taraHpDelay = t.hpDelay;
+    this._taraHpFill = t.hpFill;     this._taraHpText = t.hpText;
+    this._taraStamBg = t.stamBg;     this._taraStamFill = t.stamFill;
+    this._taraAmritPips = t.pips;
 
-    // Amrit flask pips (one row per player, below the bars)
-    this.add.text(pad, 49, '⚕', { fontSize: '10px', color: '#ffcc44', fontFamily: 'monospace' }).setOrigin(0, 0);
-    this.add.text(tx,  49, '⚕', { fontSize: '10px', color: '#ffcc44', fontFamily: 'monospace' }).setOrigin(0, 0);
-    this._dhruvaAmritPips = this.add.container(pad + 14, 54);
-    this._taraAmritPips   = this.add.container(tx  + 14, 54);
-    this._renderAmritPips(this._dhruvaAmritPips, 4, 4);
-    this._renderAmritPips(this._taraAmritPips,   4, 4);
+    t.hpFill.setFillStyle(0x22aaee);
+    t.stamFill.setFillStyle(0x66ccff);
 
     this._regionLabel = this.add.text(GAME_W - pad, 10, 'Region 0', {
       fontSize: '13px', color: '#ffd700', fontFamily: 'serif',
@@ -190,12 +220,14 @@ export class UIScene extends Phaser.Scene {
         fontSize: '9px', color: '#666', fontFamily: 'monospace',
       }).setOrigin(1, 0.5);
 
-    // XP bar and level badge (below Dhruva's stamina bar)
-    const xpBarX = pad, xpBarY = 54, xpBarW = 120, xpBarH = 5;
-    this.add.rectangle(xpBarX + xpBarW / 2, xpBarY, xpBarW, xpBarH, 0x222222).setOrigin(0.5, 0.5);
+    // XP bar and level badge — bottom row of Dhruva's plate, after the pips
+    const xpBarX = pad + 84, xpBarY = 53, xpBarW = 120, xpBarH = 4;
+    this.add.rectangle(xpBarX + xpBarW / 2, xpBarY, xpBarW + 2, xpBarH + 2, 0x000000, 0.9)
+      .setOrigin(0.5, 0.5).setStrokeStyle(1, 0x3a2a4a, 0.9);
+    this.add.rectangle(xpBarX + xpBarW / 2, xpBarY, xpBarW, xpBarH, 0x161226).setOrigin(0.5, 0.5);
     this._xpBarFill = this.add.rectangle(xpBarX, xpBarY, 0, xpBarH, 0x9966ff).setOrigin(0, 0.5);
-    this._levelLabel = this.add.text(xpBarX + xpBarW + 4, xpBarY, 'LVL 1', {
-      fontSize: '9px', color: '#bb99ff', fontFamily: 'monospace',
+    this._levelLabel = this.add.text(xpBarX + xpBarW + 6, xpBarY, 'LVL 1', {
+      fontSize: '9px', color: '#bb99ff', fontFamily: "'Silkscreen', monospace",
     }).setOrigin(0, 0.5);
   }
 
@@ -1223,11 +1255,11 @@ export class UIScene extends Phaser.Scene {
   _renderAmritPips(container, charges, max) {
     if (!container) return;
     container.removeAll(true);
-    const pw = 7, ph = 9, gap = 3;
+    const size = 8, step = 12;
     for (let i = 0; i < max; i++) {
       const filled = i < charges;
-      container.add(this.add.rectangle(i * (pw + gap), 0, pw, ph, filled ? 0xffcc44 : 0x4a3a18)
-        .setOrigin(0, 0).setStrokeStyle(1, 0x2a1e08));
+      container.add(this.add.rectangle(i * step + size / 2, 0, size, size, filled ? 0xffcc44 : 0x3a2c10)
+        .setAngle(45).setStrokeStyle(1, filled ? 0xffe8a0 : 0x241a08, 0.9));
     }
     container._charges = charges;
   }
@@ -1244,8 +1276,8 @@ export class UIScene extends Phaser.Scene {
 
     if (p.amritCharges < old) {
       // Drained pip leaves a ghost that flashes, swells and floats away.
-      const gx = cont.x + p.amritCharges * 10, gy = cont.y;
-      const ghost = this.add.rectangle(gx, gy, 7, 9, 0xffffff, 1).setOrigin(0, 0).setDepth(10);
+      const gx = cont.x + p.amritCharges * 12 + 4, gy = cont.y;
+      const ghost = this.add.rectangle(gx, gy, 8, 8, 0xffffff, 1).setAngle(45).setDepth(10);
       this.tweens.add({
         targets: ghost, alpha: 0, scaleX: 2.2, scaleY: 2.2, y: gy - 8,
         duration: 320, ease: 'Cubic.Out', onComplete: () => ghost.destroy(),
