@@ -21,6 +21,18 @@ export const CONSUMABLE_STOCK = [
   { item: 'agni_ember',    price: 350 }, // passive: +10% ability power
 ];
 
+// Charms — one-time purchases (owning a second copy does nothing, so the
+// merchant greys them out once bought). Priced as mid-game build pivots:
+// cheaper than a permanent passive, dear enough to be a decision.
+export const CHARM_STOCK = [
+  { item: 'charm_agni_bead',    price: 220 },
+  { item: 'charm_prithvi_seal', price: 220 },
+  { item: 'charm_vayu_feather', price: 180 },
+  { item: 'charm_jal_pearl',    price: 180 },
+  { item: 'charm_naga_fang',    price: 260 },
+  { item: 'charm_thread_knot',  price: 200 },
+];
+
 export function amritChargePrice(currentMax, baseMax) {
   return AMRIT_CHARGE_BASE + AMRIT_CHARGE_STEP * Math.max(0, currentMax - baseMax);
 }

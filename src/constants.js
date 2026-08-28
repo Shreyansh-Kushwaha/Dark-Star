@@ -74,4 +74,43 @@ export const ITEM_DEFS = {
   vayu_note:       { name: 'Vayu Note',       type: 'token',      effect: null, desc: 'A fragment of wind-inscribed scripture.' },
   cloud_crystal:   { name: 'Cloud Crystal',   type: 'token',      effect: null, desc: 'A crystallised shard of storm cloud.' },
   akhand_fragment: { name: 'Akhand Fragment', type: 'token',      effect: null, desc: 'A piece of the Akhand Sutra itself.' },
+
+  // ── Charms ──────────────────────────────────────────────────────────────────
+  // Build-defining tradeoff talismans. Own as many as you like; wear at most
+  // CHARM_SLOTS at once (save.equippedCharms, toggled from the inventory).
+  // mods are additive fractions aggregated by Player.setCharms():
+  //   hp/dmg (+good), def (+ = take less damage, − = take more),
+  //   staRegen, amrit (heal per sip), xp, shards (kill payout).
+  charm_agni_bead: {
+    name: 'Agni Bead', type: 'charm', effect: null,
+    mods: { dmg: 0.20, def: -0.15 },
+    desc: '+20% damage dealt · +15% damage taken',
+  },
+  charm_prithvi_seal: {
+    name: 'Prithvi Seal', type: 'charm', effect: null,
+    mods: { hp: 0.25, dmg: -0.10 },
+    desc: '+25% max HP · -10% damage dealt',
+  },
+  charm_vayu_feather: {
+    name: 'Vayu Feather', type: 'charm', effect: null,
+    mods: { staRegen: 0.50, hp: -0.15 },
+    desc: '+50% stamina regen · -15% max HP',
+  },
+  charm_jal_pearl: {
+    name: 'Jal Pearl', type: 'charm', effect: null,
+    mods: { amrit: 0.30, staRegen: -0.15 },
+    desc: 'Amrit heals +30% more · -15% stamina regen',
+  },
+  charm_naga_fang: {
+    name: 'Naga Fang', type: 'charm', effect: null,
+    mods: { shards: 0.30, def: -0.10 },
+    desc: '+30% Thread Shards from kills · +10% damage taken',
+  },
+  charm_thread_knot: {
+    name: 'Thread Knot', type: 'charm', effect: null,
+    mods: { xp: 0.25, hp: -0.10 },
+    desc: '+25% XP gained · -10% max HP',
+  },
 };
+
+export const CHARM_SLOTS = 2;

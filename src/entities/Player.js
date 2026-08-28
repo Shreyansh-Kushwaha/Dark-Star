@@ -2,7 +2,7 @@ import {
   PLAYER_SPEED, LIGHT_DMG, HEAVY_DMG, ATTACK_RANGE, ATTACK_ARC,
   LIGHT_CD, HEAVY_CD, LIGHT_STAMINA, HEAVY_STAMINA, DODGE_CD, DODGE_STAMINA, DODGE_DURATION,
   PERFECT_DODGE_WINDOW, PERFECT_DODGE_SLOWMO, PERFECT_DODGE_DURATION,
-  XP_THRESHOLDS,
+  XP_THRESHOLDS, ITEM_DEFS,
   AMRIT_MAX_DEFAULT, AMRIT_HEAL_FRAC, AMRIT_SIP_LOCKOUT, AMRIT_POTENCY_STEP,
 } from '../constants.js';
 import { AbilityManager } from '../systems/AbilityManager.js';
@@ -42,6 +42,9 @@ export class Player extends Phaser.GameObjects.Container {
     this._skillHpPct = 0; this._skillStaPct = 0; this._skillAbPct = 0;
     this.dmgMult = 1; this.defenseMult = 1; this._staRegenMult = 1;
     this._skillNodes = [];
+    // Aggregated charm modifiers (see ITEM_DEFS charm_* mods) — zeros until
+    // GameScene calls setCharms with save.equippedCharms.
+    this._charm = { hp: 0, dmg: 0, def: 0, staRegen: 0, amrit: 0, xp: 0, shards: 0 };
 
     // Amrit — healing flask (Estus equivalent)
     this.amritMax     = saveData?.amritMax     ?? AMRIT_MAX_DEFAULT;
@@ -640,6 +643,19 @@ export class Player extends Phaser.GameObjects.Container {
     });
   }
 
+  // Aggregate the equipped charms' mods, then recompute finals via applySkills,
+  // which folds them into the combat multipliers.
+  setCharms(charmIds) {
+    const c = { hp: 0, dmg: 0, def: 0, staRegen: 0, amrit: 0, xp: 0, shards: 0 };
+    for (const id of (charmIds || [])) {
+      const mods = ITEM_DEFS[id]?.mods;
+      if (!mods) continue;
+      for (const k in c) c[k] += mods[k] || 0;
+    }
+    this._charm = c;
+    this.applySkills(this._skillNodes);
+  }
+
   // Apply the unlocked skill-tree nodes (only those matching this character).
   applySkills(nodeIds) {
     this._skillNodes = Array.isArray(nodeIds) ? [...nodeIds] : [];
@@ -659,9 +675,10 @@ export class Player extends Phaser.GameObjects.Container {
     this._skillHpPct = hpPct;
     this._skillStaPct = staPct;
     this._skillAbPct = abPct;
-    this.dmgMult = 1 + dmgPct;
-    this.defenseMult = Math.max(0.1, 1 - defPct);
-    this._staRegenMult = 1 + staRegPct;
+    const c = this._charm;
+    this.dmgMult = (1 + dmgPct) * (1 + c.dmg);
+    this.defenseMult = Math.max(0.1, (1 - defPct) * (1 - c.def));
+    this._staRegenMult = Math.max(0.1, (1 + staRegPct) * (1 + c.staRegen));
     this.recomputeStats();
   }
 
@@ -669,7 +686,7 @@ export class Player extends Phaser.GameObjects.Container {
   // delta of any max-HP increase so a fresh node/upgrade feels like a heal.
   recomputeStats() {
     const prevMax = this.maxHp;
-    this.maxHp = Math.floor((this._baseMaxHp + this._passiveHpFlat) * (1 + this._skillHpPct));
+    this.maxHp = Math.max(1, Math.floor((this._baseMaxHp + this._passiveHpFlat) * (1 + this._skillHpPct) * (1 + this._charm.hp)));
     this.maxStamina = Math.floor(this._baseStamina * (1 + this._skillStaPct));
     this.abilityPow = Math.round((this._baseAbilityPow + this._passiveAbAdd) * (1 + this._skillAbPct) * 100) / 100;
     if (this.maxHp > prevMax) this.hp += (this.maxHp - prevMax);
@@ -705,7 +722,7 @@ export class Player extends Phaser.GameObjects.Container {
     if (this.hp >= this.maxHp) return false;   // don't waste a sip at full HP
     this.amritCharges--;
     this._amritLockout = AMRIT_SIP_LOCKOUT;
-    const healFrac = AMRIT_HEAL_FRAC + (this.amritPotencyTier || 0) * AMRIT_POTENCY_STEP;
+    const healFrac = (AMRIT_HEAL_FRAC + (this.amritPotencyTier || 0) * AMRIT_POTENCY_STEP) * (1 + this._charm.amrit);
     this.hp = Math.min(this.maxHp, this.hp + Math.floor(this.maxHp * healFrac));
     this._updateHpBar();
     scene?.events?.emit('amrit_used', { player: this, x: this.x, y: this.y });
@@ -720,7 +737,7 @@ export class Player extends Phaser.GameObjects.Container {
 
   gainXP(amount) {
     if (!this.alive) return;
-    this.xp += amount;
+    this.xp += Math.round(amount * (1 + this._charm.xp));
     const threshold = XP_THRESHOLDS[this.level - 1];
     if (threshold && this.xp >= threshold) {
       this.level++;

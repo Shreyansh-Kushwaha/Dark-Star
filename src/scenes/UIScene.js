@@ -49,6 +49,9 @@ export class UIScene extends Phaser.Scene {
     this._keyF11  = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F11);
     this._keyR    = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
     this._keyF    = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
+    const KC = Phaser.Input.Keyboard.KeyCodes;
+    this._numKeys = [KC.ONE, KC.TWO, KC.THREE, KC.FOUR, KC.FIVE, KC.SIX]
+      .map(k => this.input.keyboard.addKey(k));
     this._youDiedActive      = false;
     this._youDiedRetryRegion = null;
 
@@ -429,7 +432,7 @@ export class UIScene extends Phaser.Scene {
   }
 
   _createInventoryPanel() {
-    const pw = 300, ph = 320;
+    const pw = 340, ph = 440;   // roomy enough for the charm list + items
     const panel = this.add.container(GAME_W / 2 - pw / 2, GAME_H / 2 - ph / 2);
 
     const frame  = this._goldFrame(pw, ph);
@@ -516,6 +519,11 @@ export class UIScene extends Phaser.Scene {
     }
     if (Phaser.Input.Keyboard.JustDown(this._keyF) && this._invVisible) {
       this._useFirstConsumable(gs);
+    }
+    if (this._invVisible && this._invCharmIds?.length) {
+      for (let i = 0; i < this._numKeys.length; i++) {
+        if (Phaser.Input.Keyboard.JustDown(this._numKeys[i])) { this._toggleCharmAt(gs, i); break; }
+      }
     }
     if (Phaser.Input.Keyboard.JustDown(this._keyM)) {
       gs.audio?.toggleMute();
@@ -1598,6 +1606,7 @@ export class UIScene extends Phaser.Scene {
     if (!items.length) {
       this._invText.setText('No items yet.');
       this._invUseHint?.setText('');
+      this._invCharmIds = [];
       return;
     }
     const lines = [];
@@ -1606,9 +1615,24 @@ export class UIScene extends Phaser.Scene {
     for (const id of items) {
       seen[id] = (seen[id] || 0) + 1;
     }
+
+    // Charms first, numbered — the number key toggles worn/stowed.
+    const equipped = gs?._save?.equippedCharms || [];
+    this._invCharmIds = Object.keys(seen).filter(id => ITEM_DEFS[id]?.type === 'charm');
+    if (this._invCharmIds.length) {
+      lines.push(`── CHARMS (wear 2 · press number) ──`);
+      this._invCharmIds.forEach((id, i) => {
+        const def = ITEM_DEFS[id];
+        const worn = equipped.includes(id);
+        lines.push(`${i + 1}. ◆ ${def.name}${worn ? '   [WORN]' : ''}`);
+        lines.push(`   ${def.desc}`);
+      });
+      lines.push('');
+    }
+
     const listed = [];
     for (const [id, count] of Object.entries(seen)) {
-      if (listed.includes(id)) continue;
+      if (listed.includes(id) || ITEM_DEFS[id]?.type === 'charm') continue;
       listed.push(id);
       const def = ITEM_DEFS[id];
       if (!def) { lines.push(`• ${id}`); continue; }
@@ -1620,6 +1644,22 @@ export class UIScene extends Phaser.Scene {
     }
     this._invText.setText(lines.join('\n'));
     this._invUseHint?.setText(hasConsumable ? '[F] Use first consumable' : '');
+  }
+
+  _toggleCharmAt(gs, i) {
+    const id = this._invCharmIds?.[i];
+    if (!id) return;
+    const res = gs?.toggleCharm?.(id);
+    if (!res) return;
+    if (res.ok) {
+      gs.audio?.[res.equipped ? 'purchase' : 'uiClick']?.();
+      this.toast(res.equipped ? `◆ ${ITEM_DEFS[id].name} worn` : `${ITEM_DEFS[id].name} stowed`,
+        res.equipped ? '#ffd700' : '#aabbcc', 1400);
+    } else if (res.reason === 'full') {
+      gs.audio?.denied?.();
+      this.toast('Only 2 charms can be worn — stow one first', '#ff8866', 1800);
+    }
+    this._refreshInventory(gs);
   }
 
   _useFirstConsumable(gs) {

@@ -1,6 +1,6 @@
-import { WORLD_W, WORLD_H, GAME_W, GAME_H, NET_INTERVAL, TETHER_DIST, TETHER_SPEED, BOSS_TRIGGER_DIST, ITEM_DEFS, SHARDS_PER_ENEMY, SHARDS_PER_BOSS,
+import { WORLD_W, WORLD_H, GAME_W, GAME_H, NET_INTERVAL, TETHER_DIST, TETHER_SPEED, BOSS_TRIGGER_DIST, ITEM_DEFS, CHARM_SLOTS, SHARDS_PER_ENEMY, SHARDS_PER_BOSS,
   AMRIT_MAX_DEFAULT, AMRIT_MAX_CAP, AMRIT_POTENCY_CAP, AMRIT_HEAL_FRAC, AMRIT_POTENCY_STEP } from '../constants.js';
-import { CONSUMABLE_STOCK, amritChargePrice, amritPotencyPrice } from '../data/merchant.js';
+import { CONSUMABLE_STOCK, CHARM_STOCK, amritChargePrice, amritPotencyPrice } from '../data/merchant.js';
 import { REGIONS } from '../data/regions.js';
 import { _mapSpriteKey } from './PreloadScene.js';
 import { QUESTS, LORE_FRAGMENTS, NPC_DIALOGUE } from '../data/quests.js';
@@ -219,7 +219,7 @@ export class GameScene extends Phaser.Scene {
     // Apply unlocked skill-tree nodes so character growth survives reloads. Each
     // player only picks up the nodes matching its own character.
     this._skillNodes = [...(saveData.skillNodes || [])];
-    this.players.forEach(p => p?.applySkills?.(this._skillNodes));
+    this.players.forEach(p => { p?.setCharms?.(this._save?.equippedCharms); p?.applySkills?.(this._skillNodes); });
     this.players.forEach(p => { if (p) p.hp = p.maxHp; });
 
     // Seed the HUD Amrit pips from each player's actual charges.
@@ -1620,6 +1620,26 @@ export class GameScene extends Phaser.Scene {
   // Build the current, priced merchant offers from live save/player state. The
   // MerchantScene renders these verbatim and calls buyOffer(id) — all pricing and
   // effect logic stays here.
+  // Equip/unequip a charm from the inventory. At most CHARM_SLOTS worn at
+  // once; equipping re-aggregates every player's charm modifiers immediately.
+  toggleCharm(charmId) {
+    const s = this._save;
+    if (!s || ITEM_DEFS[charmId]?.type !== 'charm') return { ok: false, reason: 'unknown' };
+    const eq = s.equippedCharms = s.equippedCharms || [];
+    const i = eq.indexOf(charmId);
+    let equipped;
+    if (i > -1) { eq.splice(i, 1); equipped = false; }
+    else {
+      if (!(s.inventory || []).includes(charmId)) return { ok: false, reason: 'unowned' };
+      if (eq.length >= CHARM_SLOTS) return { ok: false, reason: 'full' };
+      eq.push(charmId);
+      equipped = true;
+    }
+    for (const p of (this.players || [])) p?.setCharms?.(eq);
+    this._persist();
+    return { ok: true, equipped };
+  }
+
   getMerchantOffers() {
     const s = this._save || {};
     const amritMax  = s.amritMax ?? AMRIT_MAX_DEFAULT;
@@ -1652,6 +1672,18 @@ export class GameScene extends Phaser.Scene {
       offers.push({
         id: `buy:${stock.item}`, name: def.name, desc: def.desc,
         price: stock.price, maxed: false, affordable: shards >= stock.price,
+      });
+    }
+    // Charms are one-time purchases — grey out once owned. Equipping happens
+    // from the inventory ([I], number keys), not here.
+    for (const stock of CHARM_STOCK) {
+      const def = ITEM_DEFS[stock.item];
+      if (!def) continue;
+      const owned = (s.inventory || []).includes(stock.item);
+      offers.push({
+        id: `buy:${stock.item}`, name: `◆ ${def.name}`,
+        desc: owned ? `Owned — equip it from your inventory. ${def.desc}` : def.desc,
+        price: stock.price, maxed: owned, affordable: !owned && shards >= stock.price,
       });
     }
     return offers;
@@ -1692,8 +1724,11 @@ export class GameScene extends Phaser.Scene {
 
     if (id.startsWith('buy:')) {
       const item = id.slice(4);
-      const stock = CONSUMABLE_STOCK.find(x => x.item === item);
+      const stock = CONSUMABLE_STOCK.find(x => x.item === item) || CHARM_STOCK.find(x => x.item === item);
       if (!stock) return { ok: false, reason: 'unknown' };
+      if (ITEM_DEFS[item]?.type === 'charm' && (s.inventory || []).includes(item)) {
+        return { ok: false, reason: 'maxed' };   // charms are one-time
+      }
       if (!this.spendShards(stock.price)) return { ok: false, reason: 'poor' };
       SaveManager.addItem(s, item);
       const def = ITEM_DEFS[item];
@@ -3593,7 +3628,8 @@ export class GameScene extends Phaser.Scene {
     }
 
     // Thread Shards: base drop, scaled a little by the enemy's worth (xp).
-    this.grantShards(SHARDS_PER_ENEMY + Math.floor(xpGain / 4));
+    const shardMult = 1 + (primaryPlayer?._charm?.shards || 0);
+    this.grantShards(Math.round((SHARDS_PER_ENEMY + Math.floor(xpGain / 4)) * shardMult));
     this._spawnShardMotes(e.x, e.y);
 
     // Item drop from enemy loot table
@@ -3671,7 +3707,8 @@ export class GameScene extends Phaser.Scene {
     }
 
     // Thread Shards windfall for the kill.
-    this.grantShards(SHARDS_PER_BOSS);
+    const bossShardP = this.players?.find(x => x?.isLocal) || this.players?.[0];
+    this.grantShards(Math.round(SHARDS_PER_BOSS * (1 + (bossShardP?._charm?.shards || 0))));
 
     // Boss reward item
     const bossRewardItem = BOSSES[bossKey]?.rewardItem;
