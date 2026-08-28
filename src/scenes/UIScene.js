@@ -524,8 +524,12 @@ export class UIScene extends Phaser.Scene {
       this._toggleFullscreen();
     }
 
-    // Low-HP vignette pulse
-    const localP = gs?.players?.find(p => p?.isLocal) || gs?.players?.[0];
+    // Low-HP vignette pulse (local player cached — find() allocates a closure
+    // per call and this runs every frame)
+    if (!this._localP?.active) {
+      this._localP = gs?.players?.find(p => p?.isLocal) || gs?.players?.[0] || null;
+    }
+    const localP = this._localP;
     if (localP && localP.alive && this._hpVignette) {
       const hpPct = localP.hp / localP.maxHp;
       let target;
@@ -565,25 +569,41 @@ export class UIScene extends Phaser.Scene {
       const hpPct = Math.max(0, p1.hp / p1.maxHp);
       this._chipBar(this._dhruvaHpFill, this._dhruvaHpDelay, hpPct);
       this._dhruvaHpFill.setFillStyle(hpPct > 0.5 ? 0x22cc66 : hpPct > 0.25 ? 0xffcc00 : 0xff4444);
-      this._dhruvaHpText.setText(`${Math.ceil(p1.hp)}/${p1.maxHp}`);
-      const st1 = p1.stamina / p1.maxStamina;
-      this._dhruvaStamFill.scaleX += (st1 - this._dhruvaStamFill.scaleX) * 0.3;
-      this._dhruvaStamFill.setAlpha(p1.downed ? 0.3 : 1);
+      const hp1 = Math.ceil(p1.hp);
+      if (hp1 !== this._lastHp1 || p1.maxHp !== this._lastMax1) {
+        this._lastHp1 = hp1; this._lastMax1 = p1.maxHp;
+        this._dhruvaHpText.setText(`${hp1}/${p1.maxHp}`);
+      }
+      this._lerpBar(this._dhruvaStamFill, p1.stamina / p1.maxStamina);
+      const a1 = p1.downed ? 0.3 : 1;
+      if (this._dhruvaStamFill.alpha !== a1) this._dhruvaStamFill.setAlpha(a1);
     }
 
     if (p2) {
       const hpPct = Math.max(0, p2.hp / p2.maxHp);
       this._chipBar(this._taraHpFill, this._taraHpDelay, hpPct);
       this._taraHpFill.setFillStyle(hpPct > 0.5 ? 0x22aaee : hpPct > 0.25 ? 0xffcc00 : 0xff4444);
-      this._taraHpText.setText(`${Math.ceil(p2.hp)}/${p2.maxHp}`);
-      const st2 = p2.stamina / p2.maxStamina;
-      this._taraStamFill.scaleX += (st2 - this._taraStamFill.scaleX) * 0.3;
+      const hp2 = Math.ceil(p2.hp);
+      if (hp2 !== this._lastHp2 || p2.maxHp !== this._lastMax2) {
+        this._lastHp2 = hp2; this._lastMax2 = p2.maxHp;
+        this._taraHpText.setText(`${hp2}/${p2.maxHp}`);
+      }
+      this._lerpBar(this._taraStamFill, p2.stamina / p2.maxStamina);
     }
 
     if (data.boss && this._bossContainer.visible) {
       this._bossHpFill.scaleX = data.boss.getHpPct();
       this._bossPostureFill.scaleX = data.boss.getPosturePct();
     }
+  }
+
+  // Asymptotic bar lerp that actually settles — without the snap the scaleX
+  // never reaches its target, dirtying the transform matrix every frame even
+  // for a full, idle bar.
+  _lerpBar(fill, target) {
+    const diff = target - fill.scaleX;
+    if (diff === 0) return;
+    fill.scaleX = Math.abs(diff) < 0.004 ? target : fill.scaleX + diff * 0.3;
   }
 
   // Chip-damage treatment (same idea as the boss bar): the fill snaps down and
@@ -1350,12 +1370,15 @@ export class UIScene extends Phaser.Scene {
     const page  = this._dlgPages[idx];
     const audio = this.scene.get('GameScene')?.audio;
     let ch = 0;
+    // Every setText re-rasterizes the whole text canvas and re-uploads its GL
+    // texture, so reveal 2 chars per 28ms tick — same reading speed as the old
+    // 1-per-14ms, at half the rasterization cost.
     this._dlgTimer = this.time.addEvent({
-      delay: 14, loop: true,
+      delay: 28, loop: true,
       callback: () => {
-        ch++;
-        if (ch % 3 === 0) audio?.dialogueBlip?.();
-        this._dialogueText.setText(page.slice(0, ch));
+        ch += 2;
+        if (ch % 4 === 0) audio?.dialogueBlip?.();
+        this._dialogueText.setText(ch >= page.length ? page : page.slice(0, ch));
         if (ch >= page.length) this._dlgFinishPage();
       },
     });
