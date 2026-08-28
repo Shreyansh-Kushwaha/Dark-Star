@@ -436,6 +436,9 @@ export class GameScene extends Phaser.Scene {
     for (const [evt, fn] of _sceneHandlers) this.events.on(evt, fn, this);
     this.events.once('shutdown', () => {
       for (const [evt, fn] of _sceneHandlers) this.events.off(evt, fn, this);
+      // The region drone otherwise keeps humming under the main menu forever —
+      // nothing outside startAmbient() ever stopped it. Restarts re-start it.
+      this.audio?.stopAmbient?.();
     });
 
     this.questManager.addEventListener('quest_started', (e) => {

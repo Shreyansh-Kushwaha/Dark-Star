@@ -498,7 +498,9 @@ export class MainMenuScene extends Phaser.Scene {
     this._roomInput.setAlpha(0);
     this._roomPrompt.setAlpha(0);
     if (this._hostNet) {
-      try { this._hostNet.close?.(); } catch {}
+      // NetworkManager has no close() — the optional call silently did nothing
+      // and leaked the socket + server room on every cancelled host attempt.
+      try { this._hostNet.disconnect?.(); } catch {}
       this._hostNet = null;
     }
   }

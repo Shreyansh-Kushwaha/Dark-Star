@@ -5,6 +5,8 @@ export class AudioManager {
     this._masterGain = null;
     this._ambientNode = null;
     this._ambientGain = null;
+    this._music = null;
+    this._noiseBuf = null;
   }
 
   _getCtx() {
@@ -41,24 +43,41 @@ export class AudioManager {
     g.gain.exponentialRampToValueAtTime(0.001, t0 + duration);
     osc.connect(g);
     g.connect(this._masterGain);
+    // Deterministic teardown — thousands of fire-and-forget nodes otherwise
+    // pile up for GC to find, showing up as periodic main-thread pauses.
+    osc.onended = () => { osc.disconnect(); g.disconnect(); };
     osc.start(t0);
     osc.stop(t0 + duration + 0.05);
+  }
+
+  // One shared 2s white-noise buffer for every noise-based sound. Building a
+  // fresh buffer per call meant tens of thousands of Math.random() samples on
+  // the main thread at the exact frame of a death sting or boss stagger.
+  _getNoiseBuf() {
+    if (!this._noiseBuf) {
+      const ctx = this._getCtx();
+      this._noiseBuf = ctx.createBuffer(1, ctx.sampleRate * 2, ctx.sampleRate);
+      const data = this._noiseBuf.getChannelData(0);
+      for (let i = 0; i < data.length; i++) data[i] = Math.random() * 2 - 1;
+    }
+    return this._noiseBuf;
   }
 
   _noise(duration, gain = 0.2) {
     if (this._muted) return;
     const ctx = this._getCtx();
-    const buf = ctx.createBuffer(1, ctx.sampleRate * duration, ctx.sampleRate);
-    const data = buf.getChannelData(0);
-    for (let i = 0; i < data.length; i++) data[i] = Math.random() * 2 - 1;
+    const buf = this._getNoiseBuf();
     const src = ctx.createBufferSource();
     src.buffer = buf;
+    // Random window into the shared buffer so overlapping noises don't phase.
+    const offset = Math.random() * Math.max(0.001, buf.duration - duration);
     const g = ctx.createGain();
     g.gain.setValueAtTime(gain, ctx.currentTime);
     g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
     src.connect(g);
     g.connect(this._masterGain);
-    src.start();
+    src.onended = () => { src.disconnect(); g.disconnect(); };
+    src.start(0, offset, Math.min(duration, buf.duration));
   }
 
   hit() {
@@ -79,6 +98,7 @@ export class AudioManager {
     g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25);
     osc.connect(g);
     g.connect(this._masterGain);
+    osc.onended = () => { osc.disconnect(); g.disconnect(); };
     osc.start(); osc.stop(ctx.currentTime + 0.3);
   }
 
@@ -152,6 +172,7 @@ export class AudioManager {
       g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.05 + 0.4);
       osc.connect(g);
       g.connect(this._masterGain);
+      osc.onended = () => { osc.disconnect(); g.disconnect(); };
       osc.start(ctx.currentTime + i * 0.05);
       osc.stop(ctx.currentTime + i * 0.05 + 0.5);
     }
@@ -188,7 +209,7 @@ export class AudioManager {
 
   stopAmbient() {
     if (this._ambientNode) {
-      try { this._ambientNode.stop(); } catch {}
+      try { this._ambientNode.stop(); this._ambientNode.disconnect(); } catch {}
       this._ambientNode = null;
     }
     if (this._ambientGain) {
@@ -310,7 +331,9 @@ export class AudioManager {
     if (this._music !== m) return;
     const ctx = this._ctx;
     if (!ctx || ctx.state !== 'running') return;   // waiting for gesture resume
-    while (m.nextTime < ctx.currentTime + 0.2) {
+    // 0.5s lookahead: a throttled/backgrounded tab fires the 40ms interval
+    // late, and a short lookahead would leave audible gaps on return.
+    while (m.nextTime < ctx.currentTime + 0.5) {
       if (!this._muted) this._musicStep(m, m.nextTime);
       m.nextTime += m.stepDur;
       m.step++;
@@ -357,6 +380,7 @@ export class AudioManager {
     g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
     osc.connect(g);
     g.connect(m.bus);
+    osc.onended = () => { osc.disconnect(); g.disconnect(); };
     osc.start(t);
     osc.stop(t + dur + 0.05);
   }
@@ -372,6 +396,7 @@ export class AudioManager {
     g.gain.exponentialRampToValueAtTime(0.001, t + 0.13);
     osc.connect(g);
     g.connect(m.bus);
+    osc.onended = () => { osc.disconnect(); g.disconnect(); };
     osc.start(t);
     osc.stop(t + 0.15);
   }
@@ -379,19 +404,21 @@ export class AudioManager {
   _musicHat(m, t) {
     const ctx = this._ctx;
     const dur = 0.04;
-    const buf = ctx.createBuffer(1, ctx.sampleRate * dur, ctx.sampleRate);
-    const d = buf.getChannelData(0);
-    for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / d.length);
+    // Shared noise buffer + a gain envelope replaces the per-hat buffer
+    // synthesis (a fresh 1920-sample buffer ~2x/sec for a whole boss fight).
+    const buf = this._getNoiseBuf();
     const src = ctx.createBufferSource();
     src.buffer = buf;
     const hp = ctx.createBiquadFilter();
     hp.type = 'highpass';
     hp.frequency.value = 6000;
     const g = ctx.createGain();
-    g.gain.value = 0.06;
+    g.gain.setValueAtTime(0.06, t);
+    g.gain.linearRampToValueAtTime(0.0001, t + dur);
     src.connect(hp);
     hp.connect(g);
     g.connect(m.bus);
-    src.start(t);
+    src.onended = () => { src.disconnect(); hp.disconnect(); g.disconnect(); };
+    src.start(t, Math.random() * 1.5, dur);
   }
 }
