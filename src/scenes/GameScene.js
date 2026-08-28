@@ -4,7 +4,7 @@ import { CONSUMABLE_STOCK, amritChargePrice, amritPotencyPrice } from '../data/m
 import { REGIONS } from '../data/regions.js';
 import { _mapSpriteKey } from './PreloadScene.js';
 import { QUESTS, LORE_FRAGMENTS, NPC_DIALOGUE } from '../data/quests.js';
-import { STORY_NPC_BINDINGS, MAIN_QUEST_BY_REGION, STORY_FRAGMENTS, STORY_ECHOES } from '../data/storyBindings.js';
+import { STORY_NPC_BINDINGS, MAIN_QUEST_BY_REGION, STORY_FRAGMENTS, STORY_ECHOES, BOSS_HOME_REGION } from '../data/storyBindings.js';
 import { LoreManager } from '../systems/LoreManager.js';
 import { Player } from '../entities/Player.js';
 import { Enemy  } from '../entities/Enemy.js';
@@ -385,9 +385,7 @@ export class GameScene extends Phaser.Scene {
     this._createShrine(region);
     this._createPressurePlates(region);
     // Apply map-editor entity overrides before arena/spawner setup
-    if (this._mapData?.boss) {
-      this._mapBossOverride = this._mapData.boss;
-    }
+    this._mapBossOverride = this._bossForRegion(regionIndex);
 
     this._createBossArena(region);
 
@@ -856,7 +854,7 @@ export class GameScene extends Phaser.Scene {
     // assignment create() makes before its own _createBossArena call). Without
     // this, a boss placed in a streamed-in region (7..49) never got an arena/
     // trigger — the whole reason this region never spawned its boss.
-    this._mapBossOverride = this._mapData?.boss || null;
+    this._mapBossOverride = this._bossForRegion(newBaseIdx);
     this._createBossArena(desc);
     // Same gap for plates/fragments: create() built them once at boot, but a
     // region reached by walking across the world never got them either.
@@ -2028,6 +2026,17 @@ export class GameScene extends Phaser.Scene {
     this.tweens.killTweensOf(this._debugText);
     this.tweens.add({ targets: this._debugText, alpha: 0, delay: 3500, duration: 600,
       onComplete: () => this._debugText?.setVisible(false) });
+  }
+
+  // The map-editor boss entry for the current region, unless this region is a
+  // stray duplicate of a boss whose canonical home is elsewhere (see
+  // BOSS_HOME_REGION) — those copies never spawn.
+  _bossForRegion(regionIndex) {
+    const b = this._mapData?.boss;
+    if (!b) return null;
+    const home = BOSS_HOME_REGION[b.key];
+    if (home != null && home !== regionIndex) return null;
+    return b;
   }
 
   _createBossArena(region) {

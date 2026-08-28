@@ -33,11 +33,21 @@ export const STORY_NPC_BINDINGS = {
 export const MAIN_QUEST_BY_REGION = {
   12: 'mahavana_main',    13: 'mahavana_main',
   18: 'nagapatal_main',    8: 'nagapatal_main',
-  23: 'devamandira_main',  9: 'devamandira_main',
+  23: 'devamandira_main', 24: 'devamandira_main',
   29: 'swargaseema_main', 30: 'swargaseema_main',
   36: 'vrindavana_main',  37: 'vrindavana_main',
   33: 'viyogadurga_main', 38: 'viyogadurga_main',
-  10: 'viyogadurga_main', 40: 'viyogadurga_main', 41: 'viyogadurga_main',
+  40: 'viyogadurga_main', 41: 'viyogadurga_main',
+};
+
+// A few bosses were placed in two regions' JSON (same key, same cinematic),
+// so players met the identical intro twice and the second kill re-fired quest
+// completion. Each duplicated boss gets one canonical home — the world-map
+// node tagged as that act's boss/finale — and the stray copy never spawns.
+// Bosses not listed here are unique and unaffected.
+export const BOSS_HOME_REGION = {
+  pashana_daitya: 24,   // Act III boss node (stray copy: region 9)
+  viyogasur:      38,   // Act VI finale     (stray copy: region 10)
 };
 
 // regionIndex → world lore-fragment pickups relocated from the unreachable
