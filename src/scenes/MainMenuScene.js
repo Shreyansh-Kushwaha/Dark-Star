@@ -204,17 +204,41 @@ export class MainMenuScene extends Phaser.Scene {
       return btn;
     };
 
-    addNav(cx, 232, '>  PLAY SOLO',   () => this._startGame(false));
-    addNav(cx, 284, '>  HOST CO-OP',  () => this._hostCoop());
-    addNav(cx, 336, '>  JOIN CO-OP',  () => this._joinCoop());
-    addNav(cx, 388, '>  LOAD REGION', () => this._toggleRegionSelect());
-    addNav(cx, 440, '>  WORLD MAP',   () => this._openWorldMap(),
+    // A saved run gets a CONTINUE button on top (with a where/level/playtime
+    // caption) and the rest of the stack shifts down to fit.
+    const save = SaveManager.load();
+    if (save) {
+      addNav(cx, 210, '>  CONTINUE', () => this._startGame(false, save.regionIndex ?? 0),
+        { bg: 0x141020, border: 0xc8a040, text: '#ffd700' });
+      this._continueCaption = this.add.text(cx, 236, this._saveSummary(save), {
+        fontSize: '9px', fontFamily: 'monospace', color: '#8a7a4a',
+      }).setOrigin(0.5, 0.5).setDepth(6);
+      // Editor regions (7+) aren't in REGION_NAMES — refine the caption once
+      // the live region list arrives.
+      fetch('/api/regions').then(r => r.json()).then(list => {
+        const entry = list.find(e => e.regionIndex === (save.regionIndex ?? 0));
+        const name = entry?.data?.regionName;
+        if (name && this._continueCaption?.active) {
+          this._continueCaption.setText(this._saveSummary(save, name));
+        }
+      }).catch(() => {});
+    }
+
+    const ys = save
+      ? { solo: 262, host: 308, join: 354, load: 400, map: 446, quality: 496, fs: 544 }
+      : { solo: 232, host: 284, join: 336, load: 388, map: 440, quality: 496, fs: 544 };
+
+    addNav(cx, ys.solo, '>  PLAY SOLO',  () => this._startGame(false));
+    addNav(cx, ys.host, '>  HOST CO-OP',  () => this._hostCoop());
+    addNav(cx, ys.join, '>  JOIN CO-OP',  () => this._joinCoop());
+    addNav(cx, ys.load, '>  LOAD REGION', () => this._toggleRegionSelect());
+    addNav(cx, ys.map,  '>  WORLD MAP',   () => this._openWorldMap(),
       { bg: 0x14122a, border: 0xc8a040, text: '#e8c860', w: 200 });
 
-    this._qualityBtn = addNav(cx, 496, this._qualityLabel(), () => this._cycleQuality(),
+    this._qualityBtn = addNav(cx, ys.quality, this._qualityLabel(), () => this._cycleQuality(),
       { bg: 0x0c1428, border: 0x2244aa, text: '#88aaff', w: 200 });
 
-    this._fsBtn = addNav(cx, 544, this._fsLabel(), () => this._toggleFullscreen(),
+    this._fsBtn = addNav(cx, ys.fs, this._fsLabel(), () => this._toggleFullscreen(),
       { bg: 0x0c1428, border: 0x334466, text: '#7799bb', w: 200 });
 
     this._regionSelectPanel  = null;
@@ -770,6 +794,16 @@ export class MainMenuScene extends Phaser.Scene {
         this._startGame(true, entry.index, { p1Char, p2Char });
       });
     });
+  }
+
+  // "Silent Shrine · LV 12 · 3h 41m" caption under the CONTINUE button.
+  _saveSummary(save, nameOverride) {
+    const idx  = save.regionIndex ?? 0;
+    const name = nameOverride || REGION_NAMES[idx] || `Region ${idx}`;
+    const parts = [String(name).split(' — ')[0], `LV ${save.playerLevel ?? 1}`];
+    const mins = Math.floor((save.playtimeMs || 0) / 60000);
+    if (mins > 0) parts.push(mins >= 60 ? `${Math.floor(mins / 60)}h ${mins % 60}m` : `${mins}m`);
+    return parts.join('  ·  ');
   }
 
   _qualityLabel() {

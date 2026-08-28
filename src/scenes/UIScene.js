@@ -95,6 +95,7 @@ export class UIScene extends Phaser.Scene {
       ['xp_changed',         this._onXpChanged],
       ['amrit_changed',      this._onAmritChanged],
       ['shards_changed',     this._onShardsChanged],
+      ['game_saved',         this._onGameSaved],
     ];
     for (const [evt, fn] of this._gsHandlers) gs.events.on(evt, fn, this);
     this.events.once('shutdown', () => {
@@ -1196,6 +1197,26 @@ export class UIScene extends Phaser.Scene {
     } else if (p.amritCharges > old) {
       this.tweens.add({ targets: cont, scaleX: 1.25, scaleY: 1.25, duration: 110, yoyo: true, ease: 'Quad.easeOut' });
     }
+  }
+
+  // Soulslike save flash, bottom-right: reassures without stealing attention.
+  // Throttled — shrine rest and the crossing persist can fire back to back.
+  _onGameSaved() {
+    const now = this.time.now;
+    if (this._lastSavedFlash && now - this._lastSavedFlash < 4000) return;
+    this._lastSavedFlash = now;
+    if (!this._savedFlashText) {
+      this._savedFlashText = this.add.text(GAME_W - 14, GAME_H - 14, '✦ Progress saved', {
+        fontSize: '11px', color: '#c8b060', fontFamily: "'Silkscreen', monospace",
+        stroke: '#000', strokeThickness: 3,
+      }).setOrigin(1, 1).setDepth(9950).setAlpha(0);
+    }
+    this.tweens.killTweensOf(this._savedFlashText);
+    this._savedFlashText.setAlpha(0);
+    this.tweens.add({
+      targets: this._savedFlashText, alpha: 1, duration: 250,
+      yoyo: true, hold: 1600, ease: 'Sine.easeInOut',
+    });
   }
 
   _onShardsChanged(data) {

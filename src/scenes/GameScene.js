@@ -134,6 +134,10 @@ export class GameScene extends Phaser.Scene {
     const saveData = { ...SaveManager.defaults(), ...(SaveManager.load() || {}) };
     this._save = saveData;
     this._pendingLevels = saveData.pendingLevels ?? 0;
+    // Wall-clock mark for the playtime counter; _persist folds the elapsed
+    // span into save.playtimeMs and re-marks. Restarts (region transitions)
+    // re-enter create(), so unsaved spans never double-count.
+    this._playtimeMark = performance.now();
     const regionIndex = data.regionIndex ?? saveData.regionIndex ?? 0;
     this._regionIndex = regionIndex;
 
@@ -1706,6 +1710,9 @@ export class GameScene extends Phaser.Scene {
     const s = this._save;
     if (!s) return;
     if (regionIndex != null) s.regionIndex = regionIndex;
+    const now = performance.now();
+    s.playtimeMs = (s.playtimeMs || 0) + Math.max(0, now - (this._playtimeMark ?? now));
+    this._playtimeMark = now;
     const p = this.players?.find(x => x) || this.players?.[0];
     if (p) {
       // Persist the pre-skill base so skill %s don't compound across reloads.
@@ -1725,6 +1732,9 @@ export class GameScene extends Phaser.Scene {
     if (this._metNpcs)            s.metNpcs             = [...this._metNpcs.values()];
     if (this._solvedRiddles)      s.solvedRiddles       = [...this._solvedRiddles];
     SaveManager.save(s);
+    // Checkpoint-grade saves (shrine rest, region crossing, respawn) surface a
+    // small "saved" flash in the HUD; routine progress writes stay silent.
+    if (regionIndex != null) this.events.emit('game_saved');
   }
 
   // ── Codex tracking ──────────────────────────────────────────────────────────
