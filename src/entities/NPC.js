@@ -80,8 +80,8 @@ export class NPC extends Phaser.GameObjects.Container {
         duration: 200,
       });
     }
-
-    this.setDepth(this.y);
+    // NPCs never move — depth is set once in the constructor. Re-setting it
+    // here every frame forced a full display-list depth sort per NPC per frame.
   }
 
   interact(questManager, questData) {

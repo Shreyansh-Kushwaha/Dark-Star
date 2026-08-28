@@ -78,6 +78,9 @@ export class Player extends Phaser.GameObjects.Container {
 
     const base = this.charKey;
     this.baseKey = base;
+    // Hot-path anim keys, precomputed so _move doesn't build strings per frame.
+    this._runKey  = base + '_run';
+    this._idleKey = base + '_idle';
 
     // Sprite
     this.sprite = scene.add.sprite(0, 0, base + '_idle', 0);
@@ -134,7 +137,11 @@ export class Player extends Phaser.GameObjects.Container {
   update(time, delta, cursors, keys, enemies, scene) {
     if (!this.alive && !this.downed) return;
 
-    this.setDepth(this.y);
+    // Only dirty the display-list sort when we actually moved vertically.
+    if (Math.abs(this.y - (this._lastDepthY ?? -1)) > 1) {
+      this.setDepth(this.y);
+      this._lastDepthY = this.y;
+    }
 
     if (this.downed) {
       this._downTimer -= delta;
@@ -214,7 +221,7 @@ export class Player extends Phaser.GameObjects.Container {
       if (vx !== 0) { this.facingX = Math.sign(vx); this.facingY = 0; }
       else if (vy !== 0) { this.facingY = Math.sign(vy); }
       this.sprite.setFlipX(this.facingX < 0);
-      if (!this.attacking) this.sprite.play(this.baseKey + '_run', true);
+      if (!this.attacking) this.sprite.play(this._runKey, true);
 
       // Footstep dust puffs
       if (this.isLocal) {
@@ -227,7 +234,7 @@ export class Player extends Phaser.GameObjects.Container {
     } else {
       this.body.setVelocity(0, 0);
       this._dustTimer = 0;
-      if (!this.attacking) this.sprite.play(this.baseKey + '_idle', true);
+      if (!this.attacking) this.sprite.play(this._idleKey, true);
     }
   }
 

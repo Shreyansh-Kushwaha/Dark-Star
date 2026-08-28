@@ -114,8 +114,14 @@ export class Boss extends Phaser.GameObjects.Container {
   update(time, delta, players, scene) {
     if (!this.alive || !this._active) return;
     if (this._introActive) return;
-    this.setDepth(this.y);
-    if (this._aura) { this._aura.setPosition(this.x, this.y); this._aura.setDepth(this.y - 2); }
+    // Guard the depth writes — each unconditional setDepth forces a full
+    // display-list sort at render time, twice per frame with the aura.
+    if (Math.abs(this.y - (this._lastDepthY ?? -1)) > 1) {
+      this.setDepth(this.y);
+      this._aura?.setDepth(this.y - 2);
+      this._lastDepthY = this.y;
+    }
+    if (this._aura) this._aura.setPosition(this.x, this.y);
 
     if (this._graceTimer > 0) { this._graceTimer -= delta; return; }
 

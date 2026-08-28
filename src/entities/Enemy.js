@@ -109,27 +109,36 @@ export class Enemy extends Phaser.GameObjects.Container {
   }
 
   _playAnim(state) {
-    // Creatures may name their anims differently (e.g. "death" not "dead",
-    // "walk" not "run"); cfg.animAlias remaps the logical state to what exists.
-    const alias = this.cfg.animAlias;
-    const name  = (alias && alias[state]) || state;
-    const base  = this.cfg.textureBase;
-
-    // Directional sprites: pick the variant matching current facing. front uses
-    // the bare name; back/left/right append a suffix. Falls back to the bare clip.
-    if (this._directional && this._facing && this._facing !== 'front') {
-      const dirKey = `${base}_${name}_${this._facing}`;
-      if (this.scene.anims.exists(dirKey)) {
-        this.sprite.setFlipX(false);          // directional clips already face correctly
-        this.sprite.play(dirKey, true);
-        return;
+    // Called every frame from the AI states, so the resolved key (state name →
+    // alias → optional facing suffix → exists check) is memoized per
+    // (state, facing). '' marks "no such clip" so misses stay cheap too.
+    const facing = (this._directional && this._facing) || 'front';
+    const cacheKey = state + '|' + facing;
+    const cache = this._animKeyCache || (this._animKeyCache = {});
+    let key = cache[cacheKey];
+    if (key === undefined) {
+      // Creatures may name their anims differently (e.g. "death" not "dead",
+      // "walk" not "run"); cfg.animAlias remaps the logical state to what exists.
+      const alias = this.cfg.animAlias;
+      const name  = (alias && alias[state]) || state;
+      const base  = this.cfg.textureBase;
+      key = '';
+      // Directional sprites: pick the variant matching current facing. front
+      // uses the bare name; back/left/right append a suffix. Falls back to the
+      // bare clip.
+      if (facing !== 'front') {
+        const dirKey = `${base}_${name}_${facing}`;
+        if (this.scene.anims.exists(dirKey)) key = dirKey;
       }
+      if (!key) {
+        const bare = `${base}_${name}`;
+        if (this.scene.anims.exists(bare)) key = bare;
+      }
+      cache[cacheKey] = key;
     }
-    const key = `${base}_${name}`;
-    if (this.scene.anims.exists(key)) {
-      if (this._directional) this.sprite.setFlipX(false);
-      this.sprite.play(key, true);
-    }
+    if (!key) return;
+    if (this._directional) this.sprite.setFlipX(false);   // directional clips face correctly
+    this.sprite.play(key, true);
   }
 
   update(time, delta, players, treePositions) {

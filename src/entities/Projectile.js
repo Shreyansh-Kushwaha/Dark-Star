@@ -14,6 +14,7 @@ export class Projectile extends Phaser.GameObjects.Sprite {
     const angle = config.angle || 0;
     this.vx = Math.cos(angle) * this.speed;
     this.vy = Math.sin(angle) * this.speed;
+    this.rotation = angle;   // velocity never changes, so orient once here
 
     this.setScale(config.scale || 0.6);
     if (config.tint) this.setTint(config.tint);
@@ -30,10 +31,10 @@ export class Projectile extends Phaser.GameObjects.Sprite {
     const dt = delta / 1000;
     this.x += this.vx * dt;
     this.y += this.vy * dt;
-    this.setDepth(this.y);
-
-    // Orient to direction
-    this.rotation = Math.atan2(this.vy, this.vx);
+    if (Math.abs(this.y - (this._lastDepthY ?? -1)) > 1) {
+      this.setDepth(this.y + 10);
+      this._lastDepthY = this.y;
+    }
 
     if (time - this._born > this.lifetime) this.destroy();
     if (this.x < 0 || this.x > WORLD_W || this.y < 0 || this.y > WORLD_H) this.destroy();

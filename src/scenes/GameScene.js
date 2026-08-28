@@ -383,6 +383,7 @@ export class GameScene extends Phaser.Scene {
     // Deferred sprite creation for streamed neighbours: { regionIndex, fn }
     // entries drained a few-hundred-per-frame so heavy regions don't hitch.
     this._streamBuildQueue = [];
+    this._streamBuildHead  = 0;   // read cursor into the queue (see _drainBuildQueue)
 
     this._shrineOpen = false;
     this._createWorldFragments(region);
@@ -573,25 +574,40 @@ export class GameScene extends Phaser.Scene {
     return (n >= 0 && n < chain.length) ? chain[n] : null;
   }
 
-  // Create up to `budget` queued streamed-region sprites this frame.
+  // Create up to `budget` queued streamed-region sprites this frame. A read
+  // cursor walks the array instead of shift()ing the head — shift() re-indexes
+  // the whole remaining queue (O(n²) across a multi-thousand-sprite stream-in,
+  // right when the frame budget is tightest).
   _drainBuildQueue(budget) {
     const q = this._streamBuildQueue;
-    let n = Math.min(budget, q.length);
-    for (let i = 0; i < n; i++) q.shift().fn();
+    const start = this._streamBuildHead || 0;
+    const end = Math.min(start + budget, q.length);
+    for (let i = start; i < end; i++) q[i].fn();
+    this._streamBuildHead = end;
+    if (end >= q.length) { q.length = 0; this._streamBuildHead = 0; }
   }
 
   // Create all remaining queued sprites for a region immediately (used right
   // before a remap so the survivor's pending sprites get shifted with it).
   _flushBuildQueue(regionIndex) {
     const q = this._streamBuildQueue;
+    const start = this._streamBuildHead || 0;
     const keep = [];
-    for (const item of q) { if (item.regionIndex === regionIndex) item.fn(); else keep.push(item); }
+    for (let i = start; i < q.length; i++) {
+      const item = q[i];
+      if (item.regionIndex === regionIndex) item.fn(); else keep.push(item);
+    }
     this._streamBuildQueue = keep;
+    this._streamBuildHead = 0;
   }
 
   // Discard queued sprites for a region that is being unloaded (never created).
   _dropBuildQueue(regionIndex) {
-    this._streamBuildQueue = this._streamBuildQueue.filter(item => item.regionIndex !== regionIndex);
+    const start = this._streamBuildHead || 0;
+    this._streamBuildQueue = this._streamBuildQueue
+      .slice(start)
+      .filter(item => item.regionIndex !== regionIndex);
+    this._streamBuildHead = 0;
   }
 
   // Build a full region's world content shifted by (dx, dy). Returns a "slice"
@@ -828,6 +844,7 @@ export class GameScene extends Phaser.Scene {
     // base region is driven purely by streaming for the PoC.
     this._portals = {};
     this._portalList = [];
+    this._gatedPortals = [];
     this._shrine = null;
     this._shrinePrompt = null;
     this._deathEchoObj = null;
@@ -1418,6 +1435,7 @@ export class GameScene extends Phaser.Scene {
   _createPortals(region) {
     this._portals = {};
     this._portalList = [];
+    this._gatedPortals = [];
 
     if (region.portalBack) {
       this._portals.back = this._makePortal(region.portalBack.x, region.portalBack.y, 0x44aaff, 'BACK', true);
@@ -1485,6 +1503,9 @@ export class GameScene extends Phaser.Scene {
       portal.requires   = gate.requires;
       portal.sealedText = gate.sealedText;
       this._refreshPortalGate(portal);
+      // Cache for _checkPortals so the slow tick doesn't rebuild the portal
+      // array just to find the gated ones.
+      (this._gatedPortals = this._gatedPortals || []).push(portal);
     }
   }
 
@@ -1502,6 +1523,11 @@ export class GameScene extends Phaser.Scene {
   _refreshPortalGate(portal) {
     if (!portal?.requires) return;
     const met = this._portalReqMet(portal.requires);
+    // Runs every slow tick — only touch display objects on an actual state
+    // change. Text.setColor has no equality guard and re-rasterizes the whole
+    // text texture on every call.
+    if (portal._gateMet === met) return;
+    portal._gateMet = met;
     portal.locked = !met;
     if (portal.text) {
       portal.text.setText(met ? (portal.label || 'PORTAL') : '🔒 SEALED');
@@ -1869,6 +1895,13 @@ export class GameScene extends Phaser.Scene {
       plate._streamRegion = region.index;
       label._streamRegion = region.index;
       this._pressurePlates.push({ ...pos, group: pos.group || 'default', gfx: plate, label, triggered: false });
+    }
+    // Grouping is static once plates exist — build the group map here instead
+    // of reconstructing it on every slow tick in _checkPressurePlates.
+    this._plateGroups = new Map();
+    for (const plate of this._pressurePlates) {
+      if (!this._plateGroups.has(plate.group)) this._plateGroups.set(plate.group, []);
+      this._plateGroups.get(plate.group).push(plate);
     }
   }
 
@@ -2510,6 +2543,7 @@ export class GameScene extends Phaser.Scene {
       }
       this._portals = {};
       this._portalList = [];
+      this._gatedPortals = [];
       for (const p of mapPortals) {
         if (p.direction === 'back' || p.direction === 'next') {
           // legacy directional portals — keep working as before
@@ -2796,18 +2830,6 @@ export class GameScene extends Phaser.Scene {
       this._checkProjectileCollisions(p);
     }
 
-    // ── World fragment proximity prompts ──────────────────────────
-    for (const wf of this._worldFragmentObjects) {
-      let nearestSq = Infinity;
-      for (const p of this.players) {
-        if (!p?.active) continue;
-        const dx = wf.x - p.x, dy = wf.y - p.y;
-        const dSq = dx * dx + dy * dy;
-        if (dSq < nearestSq) nearestSq = dSq;
-      }
-      wf.prompt.setAlpha(nearestSq < 80 * 80 ? 1 : 0);
-    }
-
     // ── Boss ──────────────────────────────────────────────────────
     if (this._boss?.active) {
       this._boss.update(time, delta, this.players, this);
@@ -2846,6 +2868,7 @@ export class GameScene extends Phaser.Scene {
       this._checkShrineProximity();
       this._checkDeathEcho();
       this._checkHints();
+      this._checkFragmentPrompts();
     }
 
     // ── Interact ─────────────────────────────────────────────────
@@ -2886,18 +2909,20 @@ export class GameScene extends Phaser.Scene {
     const dy = p1.y - p2.y;
     const dist = Math.sqrt(dx * dx + dy * dy);
 
-    // Use P2's actual character prefix — P2 may be Dhruva, not Tara.
-    const base = p2.baseKey || 'tara';
+    // Precomputed on Player — P2 may be Dhruva, not Tara.
     if (dist > 100) {
       const speed = 180;
       p2.body?.setVelocity(dx / dist * speed, dy / dist * speed);
       p2.sprite?.setFlipX(dx < 0);
-      p2.sprite?.play(base + '_run', true);
+      p2.sprite?.play(p2._runKey || 'tara_run', true);
     } else {
       p2.body?.setVelocity(0, 0);
-      p2.sprite?.play(base + '_idle', true);
+      p2.sprite?.play(p2._idleKey || 'tara_idle', true);
     }
-    p2.setDepth(p2.y);
+    if (Math.abs(p2.y - (p2._lastDepthY ?? -1)) > 1) {
+      p2.setDepth(p2.y);
+      p2._lastDepthY = p2.y;
+    }
   }
 
   // Adaptive quality: if the running FPS stays below target for a sustained
@@ -3048,18 +3073,33 @@ export class GameScene extends Phaser.Scene {
     this._cutscene.play(steps, { boss });
   }
 
-  _checkPressurePlates() {
-    if (!this._pressurePlates.length) return;
-
-    // Group so unrelated plate puzzles in the same region (e.g. the co-op heal
-    // plates and a separate weight-class lure plate) complete independently.
-    const groups = new Map();
-    for (const plate of this._pressurePlates) {
-      if (!groups.has(plate.group)) groups.set(plate.group, []);
-      groups.get(plate.group).push(plate);
+  // World lore-fragment "[F]" prompts — same proximity-check class as shrines
+  // and death echoes, so it runs on the slow tick, and only touches alpha on
+  // an actual near/far transition.
+  _checkFragmentPrompts() {
+    for (const wf of this._worldFragmentObjects) {
+      let nearestSq = Infinity;
+      for (const p of this.players) {
+        if (!p?.active) continue;
+        const dx = wf.x - p.x, dy = wf.y - p.y;
+        const dSq = dx * dx + dy * dy;
+        if (dSq < nearestSq) nearestSq = dSq;
+      }
+      const near = nearestSq < 80 * 80;
+      if (wf._promptNear !== near) {
+        wf._promptNear = near;
+        wf.prompt.setAlpha(near ? 1 : 0);
+      }
     }
+  }
 
-    for (const [group, plates] of groups) {
+  _checkPressurePlates() {
+    if (!this._pressurePlates.length || !this._plateGroups) return;
+
+    // Groups are prebuilt in _createPressurePlates; unrelated plate puzzles in
+    // the same region (e.g. co-op heal plates and a weight-class lure plate)
+    // still complete independently.
+    for (const [group, plates] of this._plateGroups) {
       if (this._plateGroupsDone.has(group)) continue;
 
       for (const plate of plates) {
@@ -3129,10 +3169,10 @@ export class GameScene extends Phaser.Scene {
         }
       }
     };
-    // Re-evaluate gated portals so they open the instant their requirement is met.
-    for (const portal of this._allPortals()) {
-      if (portal.requires) this._refreshPortalGate(portal);
-    }
+    // Re-evaluate gated portals so they open the instant their requirement is
+    // met. Uses the list cached by _applyPortalGates — rebuilding the full
+    // portal array here allocated two arrays every slow tick for nothing.
+    for (const portal of (this._gatedPortals || [])) this._refreshPortalGate(portal);
 
     if (!this._portalCooldown || this.time.now > this._portalCooldown) {
       check(this._portals?.back, false);
@@ -3734,6 +3774,7 @@ export class GameScene extends Phaser.Scene {
         const d = Phaser.Math.Distance.Between(player.x, player.y, ally.x, ally.y);
         if (d < 70) {
           revivalPossible = true;
+          this._revivalUiShown = true;
           if (this._keys.F.isDown) {
             player._revivalTimer = (player._revivalTimer || 0) + delta;
             const progress = Math.min(1, player._revivalTimer / 1800);
@@ -3755,6 +3796,11 @@ export class GameScene extends Phaser.Scene {
       }
     }
     if (!revivalPossible) {
+      // Solo play hits this branch every frame — only emit the hide events on
+      // the shown→hidden transition instead of allocating two payloads and
+      // waking the UI layer 60×/sec for nothing.
+      if (this._revivalUiShown === false) return;
+      this._revivalUiShown = false;
       for (const p of this.players) { if (p) p._revivalTimer = 0; }
       this.events.emit('revival_prompt', { show: false });
       this.events.emit('revival_progress', { progress: 0 });
