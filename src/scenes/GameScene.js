@@ -3263,12 +3263,16 @@ export class GameScene extends Phaser.Scene {
             p1Char: this._p1Char,
             p2Char: this._p2Char,
           });
-          // Refresh region maps from disk so editor-saved regions are always current
+          // Refresh region maps from disk in the background so editor-saved
+          // regions stay reasonably current. This used to gate doRestart, which
+          // held the player on a black screen while ~5.7 MB of JSON downloaded
+          // and parsed on EVERY crossing — the refreshed list now simply applies
+          // to the next transition instead (menu launch still fetches fresh).
           fetch('/api/regions')
             .then(r => r.json())
             .then(list => { this.registry.set('regionMaps', list); })
-            .catch(() => {})
-            .finally(doRestart);
+            .catch(() => {});
+          doRestart();
         });
       },
     });
