@@ -2080,6 +2080,29 @@ export class GameScene extends Phaser.Scene {
       onComplete: () => this._debugText?.setVisible(false) });
   }
 
+  // Gentle wind sway for base-anchored plant props (trees, grass, bushes…).
+  // Rotation pivots at the authored ground anchor, so trunks stay planted
+  // while the canopy leans. Skipped on low quality; capped so a dense forest
+  // doesn't accumulate thousands of live tweens.
+  _maybeSway(obj, sp, kind) {
+    if (QualitySettings.level === 'low') return;
+    if (sp.offsetY == null || kind === 'ground') return;   // needs a base pivot
+    if ((this._swayCount || 0) >= 320) return;
+    const name = (sp.dir + '/' + sp.frames[0]).toLowerCase();
+    if (!/tree|bush|grass|plant|flower|fern|palm|shrub|leaf|vine|weed|sapling|reed/.test(name)) return;
+    this._swayCount = (this._swayCount || 0) + 1;
+    const big = obj.displayHeight > 80;                    // trees lean less than grass
+    const amp = big ? 0.5 + Math.random() * 0.4 : 0.9 + Math.random() * 0.8;
+    obj.setAngle(-amp);
+    const tw = this.tweens.add({
+      targets: obj, angle: amp,
+      duration: 2200 + Math.random() * 1600,
+      delay: Math.random() * 1800,
+      yoyo: true, repeat: -1, ease: 'Sine.easeInOut',
+    });
+    obj.once('destroy', () => { tw.remove(); this._swayCount--; });
+  }
+
   // The map-editor boss entry for the current region, unless this region is a
   // stray duplicate of a boss whose canonical home is elsewhere (see
   // BOSS_HOME_REGION) — those copies never spawn.
@@ -2406,6 +2429,7 @@ export class GameScene extends Phaser.Scene {
       }
       addFootprint(img);
       this._glowEmissive(img, sp);
+      this._maybeSway(img, sp, kind);
       reveal(img);
     };
 
