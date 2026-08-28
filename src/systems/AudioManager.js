@@ -169,8 +169,9 @@ export class AudioManager {
     const ctx = this._getCtx();
     const freqs = [60, 80, 55, 45, 70, 50, 40];
     const types = ['sine', 'sine', 'triangle', 'sine', 'sine', 'triangle', 'sine'];
-    const freq = freqs[regionIndex] || 60;
-    const type = types[regionIndex] || 'sine';
+    // Wrap instead of falling through so regions 7+ don't all share one drone.
+    const freq = freqs[regionIndex % freqs.length] || 60;
+    const type = types[regionIndex % types.length] || 'sine';
 
     this._ambientNode = ctx.createOscillator();
     this._ambientNode.type = type;
@@ -208,5 +209,189 @@ export class AudioManager {
   bossStagger() {
     this._noise(0.3, 0.3);
     this._tone(120, 'sawtooth', 0.4, 0.3, 0.01, 0.1, 0.1);
+  }
+
+  // ── Stingers ───────────────────────────────────────────────────────────────
+
+  heal() {
+    [420, 560, 700].forEach((f, i) => this._tone(f, 'sine', 0.22, 0.16, 0.02, 0.1, i * 0.07));
+  }
+
+  levelUp() {
+    [523, 659, 784, 1047].forEach((f, i) => this._tone(f, 'triangle', 0.3, 0.2, 0.01, 0.12, i * 0.09));
+  }
+
+  shrineRest() {
+    this._tone(110, 'sine', 1.2, 0.18, 0.3, 0.5);
+    [660, 880].forEach((f, i) => this._tone(f, 'triangle', 0.5, 0.12, 0.02, 0.2, 0.3 + i * 0.25));
+  }
+
+  deathSting() {
+    [220, 174, 147, 110].forEach((f, i) => this._tone(f, 'sawtooth', 0.9, 0.12, 0.05, 0.4, i * 0.45));
+    this._noise(1.6, 0.05);
+  }
+
+  uiHover() {
+    this._tone(700, 'sine', 0.03, 0.08);
+  }
+
+  // Browsers create the AudioContext suspended until a user gesture; call this
+  // from a first pointer/key handler so queued music starts.
+  resume() {
+    try { this._ctx?.resume?.(); } catch (e) { /* ignore */ }
+  }
+
+  // ── Generative music ───────────────────────────────────────────────────────
+  // A lookahead scheduler over the shared AudioContext (schedule ~0.2s ahead on
+  // a 40ms JS timer — the standard WebAudio pattern). Each mood is a chord
+  // progression + tempo + layer recipe; every voice is synthesized, no files.
+  // Chords are semitone offsets from the mood's root; steps are 8th notes and
+  // the chord advances every 16 steps (2 bars).
+
+  _moodRecipe(mood, act = 1) {
+    // Per-act roots walk darker as the story descends (A, G, B♭, B, F, A♭, F♯).
+    const roots = { 1: 110.0, 2: 98.0, 3: 116.54, 4: 123.47, 5: 87.31, 6: 103.83, 7: 92.5 };
+    if (mood === 'menu') return {
+      root: 110, bpm: 54, gain: 0.16,
+      prog: [[0, 3, 7, 12], [8, 12, 15, 20], [3, 7, 10, 15], [10, 14, 17, 22]],
+      pad: 'triangle', arpEvery: 2, arpType: 'sine', drums: false,
+    };
+    if (mood === 'boss') return {
+      root: 92.5, bpm: 132, gain: 0.2,
+      prog: [[0, 3, 6, 12], [1, 4, 7, 13], [0, 3, 6, 12], [6, 9, 13, 18]],
+      pad: 'sawtooth', arpEvery: 1, arpType: 'square', drums: true,
+    };
+    return {
+      root: roots[act] || 110, bpm: 58 + act * 2, gain: 0.14,
+      prog: [[0, 3, 7, 12], [5, 8, 12, 17], [8, 12, 15, 20], [7, 10, 14, 19]],
+      pad: act >= 5 ? 'sawtooth' : 'triangle', arpEvery: 2,
+      arpType: act >= 3 ? 'triangle' : 'sine', drums: false,
+    };
+  }
+
+  playMusic(mood, opts = {}) {
+    const act = opts.act ?? 1;
+    if (this._music && this._music.mood === mood && this._music.act === act) return;
+    const ctx = this._getCtx();
+    this.stopMusic(1.2);
+
+    const recipe = this._moodRecipe(mood, act);
+    const bus = ctx.createGain();
+    bus.gain.setValueAtTime(0.0001, ctx.currentTime);
+    bus.gain.exponentialRampToValueAtTime(recipe.gain, ctx.currentTime + 1.5);
+    bus.connect(this._masterGain);
+
+    const m = {
+      mood, act, bus, recipe,
+      step: 0, chordIdx: -1,
+      nextTime: ctx.currentTime + 0.1,
+      stepDur: 60 / recipe.bpm / 2,
+    };
+    m.timer = setInterval(() => this._musicTick(m), 40);
+    this._music = m;
+  }
+
+  stopMusic(fadeSec = 1) {
+    const m = this._music;
+    if (!m) return;
+    this._music = null;
+    clearInterval(m.timer);
+    const ctx = this._ctx;
+    if (ctx && m.bus) {
+      const t = ctx.currentTime;
+      m.bus.gain.cancelScheduledValues(t);
+      m.bus.gain.setValueAtTime(Math.max(m.bus.gain.value, 0.0001), t);
+      m.bus.gain.exponentialRampToValueAtTime(0.0001, t + fadeSec);
+      setTimeout(() => { try { m.bus.disconnect(); } catch (e) {} }, fadeSec * 1000 + 100);
+    }
+  }
+
+  _musicTick(m) {
+    if (this._music !== m) return;
+    const ctx = this._ctx;
+    if (!ctx || ctx.state !== 'running') return;   // waiting for gesture resume
+    while (m.nextTime < ctx.currentTime + 0.2) {
+      if (!this._muted) this._musicStep(m, m.nextTime);
+      m.nextTime += m.stepDur;
+      m.step++;
+    }
+  }
+
+  _musicStep(m, t) {
+    const r = m.recipe;
+    const semiF = (s) => r.root * Math.pow(2, s / 12);
+
+    if (m.step % 16 === 0) {
+      m.chordIdx = (m.chordIdx + 1) % r.prog.length;
+      const chord = r.prog[m.chordIdx];
+      const chordDur = 16 * m.stepDur;
+      for (const s of chord) this._musicVoice(m, semiF(s) * 2, r.pad, t, chordDur, 0.028, 1.0);
+      this._musicVoice(m, semiF(chord[0]) / 2, 'sine', t, chordDur, 0.06, 0.4);
+    }
+
+    const chord = r.prog[m.chordIdx < 0 ? 0 : m.chordIdx];
+
+    if (m.step % r.arpEvery === 0) {
+      // Deterministic wander through the chord — repeats, but never loops short.
+      const pick = chord[(m.step * 7 + m.chordIdx * 3) % chord.length];
+      const oct = ((m.step >> 2) % 2) + 1;
+      this._musicVoice(m, semiF(pick) * Math.pow(2, oct), r.arpType, t, m.stepDur * 1.8, 0.03, 0.01);
+    }
+
+    if (r.drums) {
+      if (m.step % 4 === 0) this._musicKick(m, t);
+      else if (m.step % 2 === 0) this._musicHat(m, t);
+      const bs = m.step % 8 < 4 ? chord[0] : chord[2] - 12;
+      this._musicVoice(m, semiF(bs), 'sawtooth', t, m.stepDur * 0.9, 0.045, 0.005);
+    }
+  }
+
+  _musicVoice(m, freq, type, t, dur, gain, attack = 0.02) {
+    const ctx = this._ctx;
+    const osc = ctx.createOscillator();
+    const g = ctx.createGain();
+    osc.type = type;
+    osc.frequency.setValueAtTime(freq, t);
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.linearRampToValueAtTime(gain, t + attack);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    osc.connect(g);
+    g.connect(m.bus);
+    osc.start(t);
+    osc.stop(t + dur + 0.05);
+  }
+
+  _musicKick(m, t) {
+    const ctx = this._ctx;
+    const osc = ctx.createOscillator();
+    const g = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(110, t);
+    osc.frequency.exponentialRampToValueAtTime(38, t + 0.11);
+    g.gain.setValueAtTime(0.22, t);
+    g.gain.exponentialRampToValueAtTime(0.001, t + 0.13);
+    osc.connect(g);
+    g.connect(m.bus);
+    osc.start(t);
+    osc.stop(t + 0.15);
+  }
+
+  _musicHat(m, t) {
+    const ctx = this._ctx;
+    const dur = 0.04;
+    const buf = ctx.createBuffer(1, ctx.sampleRate * dur, ctx.sampleRate);
+    const d = buf.getChannelData(0);
+    for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / d.length);
+    const src = ctx.createBufferSource();
+    src.buffer = buf;
+    const hp = ctx.createBiquadFilter();
+    hp.type = 'highpass';
+    hp.frequency.value = 6000;
+    const g = ctx.createGain();
+    g.gain.value = 0.06;
+    src.connect(hp);
+    hp.connect(g);
+    g.connect(m.bus);
+    src.start(t);
   }
 }

@@ -92,6 +92,7 @@ export class Boss extends Phaser.GameObjects.Container {
     this._active     = true;
     this._graceTimer = 2500;
     scene.events.emit('boss_bar_show', { boss: this });
+    scene.audio?.playMusic?.('boss');
 
     // Pulsing floor aura
     this._aura = scene.add.circle(this.x, this.y, 80 * this.cfg.scale, this.cfg.tint || 0xff4400, 0.13);

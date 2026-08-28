@@ -20,6 +20,7 @@ import { SaveManager } from '../systems/SaveManager.js';
 import { NetworkManager } from '../systems/NetworkManager.js';
 import { QualitySettings } from '../systems/QualitySettings.js';
 import { ExploredManager } from '../systems/ExploredManager.js';
+import { MAP_LAYOUT } from '../data/worldMapLayout.js';
 import { CutscenePlayer, defaultBossCutscene } from '../systems/CutscenePlayer.js';
 import { NPC } from '../entities/NPC.js';
 import { classifyProp, propFootprint } from '../data/propTypes.js';
@@ -154,7 +155,10 @@ export class GameScene extends Phaser.Scene {
     const region = this._regionDescriptor(regionIndex, this._mapData);
 
     // Systems
-    this.audio  = new AudioManager();
+    // One AudioManager per browser tab (shared via registry) so music started
+    // in the menu crossfades into the game instead of stacking AudioContexts.
+    this.audio = this.registry.get('audio') || new AudioManager();
+    this.registry.set('audio', this.audio);
     this.haptics = new HapticsManager();
     this.questManager = new QuestManager();
     this.questManager.load(saveData.completedQuests || []);
@@ -453,8 +457,9 @@ export class GameScene extends Phaser.Scene {
       this.events.emit('region_title', { name: titleName, subtitle: titleSub });
     });
 
-    // Start ambient audio
+    // Start ambient audio + per-act exploration music
     this.audio.startAmbient(regionIndex);
+    this.audio.playMusic('explore', { act: MAP_LAYOUT[regionIndex]?.act ?? 1 });
 
     // Auto-trigger region main quest
     const QUEST_PREFIXES = ['gramavana','mahavana','vrindavana','nagapatal','devamandira','swargaseema','viyogadurga'];
@@ -855,6 +860,7 @@ export class GameScene extends Phaser.Scene {
     this.cameras.main.setBounds(0, 0, WORLD_W, WORLD_H);
     this.events.emit('region_title', { name: desc.name, subtitle: desc.subtitle });
     this.audio?.startAmbient?.(newBaseIdx);
+    this.audio?.playMusic?.('explore', { act: MAP_LAYOUT[newBaseIdx]?.act ?? 1 });
     console.log(`[stream] committed crossing → region ${newBaseIdx} now at origin`);
     this._streamBusy = false;
   }
@@ -1669,6 +1675,7 @@ export class GameScene extends Phaser.Scene {
     }
     this._save.lastShrineRegion = this._regionIndex;
     this._persist(this._regionIndex);
+    this.audio?.shrineRest?.();
     if (this._shrine?.flame) {
       const burst = this.add.circle(this._shrine.x, this._shrine.y - 44, 14, 0xffe9a0, 0.6).setDepth(9999);
       this.tweens.add({ targets: burst, alpha: 0, scale: 3, duration: 600, onComplete: () => burst.destroy() });
@@ -3268,6 +3275,7 @@ export class GameScene extends Phaser.Scene {
   _onLevelBanked() {
     this._pendingLevels = (this._pendingLevels || 0) + 1;
     this._persist();
+    this.audio?.levelUp?.();
     this.events.emit('status_flash', { color: 0xffd700, alpha: 0.18, duration: 280 });
     this.events.emit('show_dialogue', { text: `⚔ Attunement earned (${this._pendingLevels} ready) — rest at a Thread Shrine to grow stronger.` });
     this.time.delayedCall(2600, () => this.events.emit('hide_dialogue'));
@@ -3484,6 +3492,9 @@ export class GameScene extends Phaser.Scene {
       this.loreManager.collect(bossFragId);
       this.events.emit('lore_collected', { count: this.loreManager.count(), total: this.loreManager.total() });
     }
+
+    // Back to exploration music once the fight is won.
+    this.audio?.playMusic?.('explore', { act: MAP_LAYOUT[this._regionIndex]?.act ?? 1 });
 
     // Show boss lore (non-final only — final boss uses UIScene defeat speech)
     if (bossKey !== 'viyogasur') {

@@ -1544,6 +1544,7 @@ export class UIScene extends Phaser.Scene {
 
   _onGameOver(data) {
     const regionIndex = data?.regionIndex ?? 0;
+    this.scene.get('GameScene')?.audio?.deathSting?.();
 
     // Layer order: overlay → divider lines → main text → subtitle → hint
     const depth = 9995;

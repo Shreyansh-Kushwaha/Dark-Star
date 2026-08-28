@@ -2,6 +2,7 @@ import { GAME_W, GAME_H, REGION_NAMES } from '../constants.js';
 import { SaveManager } from '../systems/SaveManager.js';
 import { QualitySettings } from '../systems/QualitySettings.js';
 import { NetworkManager } from '../systems/NetworkManager.js';
+import { AudioManager } from '../systems/AudioManager.js';
 
 const PAL = {
   sky:      0x05050f,
@@ -23,6 +24,15 @@ export class MainMenuScene extends Phaser.Scene {
   constructor() { super('MainMenuScene'); }
 
   create() {
+    // Shared per-tab AudioManager (GameScene reuses it) — menu theme starts
+    // here and crossfades into exploration music when a run begins. The
+    // AudioContext stays suspended until the first gesture, so resume on it.
+    this.audio = this.registry.get('audio') || new AudioManager();
+    this.registry.set('audio', this.audio);
+    this.audio.playMusic('menu');
+    this.input.once('pointerdown', () => this.audio.resume());
+    this.input.keyboard.once('keydown', () => this.audio.resume());
+
     this._drawSky();
     this._drawStars();
     this._drawMountains();
@@ -261,10 +271,10 @@ export class MainMenuScene extends Phaser.Scene {
     const zone = this.add.zone(x, y, w, h).setInteractive({ useHandCursor: true }).setDepth(6);
     // Press state: darken + nudge the label down on press, fire on release.
     zone
-      .on('pointerover',  () => { draw(0x18185a, 0xffdd00); txt.setColor('#ffdd00'); })
+      .on('pointerover',  () => { draw(0x18185a, 0xffdd00); txt.setColor('#ffdd00'); this.audio?.uiHover?.(); })
       .on('pointerout',   () => { draw(bgCol, borCol);       txt.setColor(txCol); txt.setY(y); })
       .on('pointerdown',  () => { draw(0x08081c, 0xffdd00);  txt.setY(y + 2); })
-      .on('pointerup',    () => { draw(0x18185a, 0xffdd00);  txt.setY(y); onClick(); });
+      .on('pointerup',    () => { draw(0x18185a, 0xffdd00);  txt.setY(y); this.audio?.uiClick?.(); onClick(); });
 
     return { border, fill, txt, zone };
   }
