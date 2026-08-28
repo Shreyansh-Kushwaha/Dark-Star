@@ -114,6 +114,21 @@ export class UIScene extends Phaser.Scene {
     });
   }
 
+  // ── Shared panel chrome ────────────────────────────────────────────────────
+  // The antique-gold frame the dialogue box and boss bar established: dark
+  // fill, bronze border, faint gold hairline inset, corner gems. Returns the
+  // display objects (drawn from 0,0) for adding into a panel container.
+  _goldFrame(w, h) {
+    const g = this.add.graphics();
+    g.fillStyle(0x0a0a14, 0.94).fillRect(0, 0, w, h);
+    g.fillStyle(0x1a1a2e, 0.5).fillRect(0, 0, w, 3);
+    g.lineStyle(2, 0x8a6a3a, 1).strokeRect(0, 0, w, h);
+    g.lineStyle(1, 0xffd700, 0.25).strokeRect(4, 4, w - 8, h - 8);
+    const gems = [[0, 0], [w, 0], [0, h], [w, h]]
+      .map(([x, y]) => this.add.rectangle(x, y, 7, 7, 0xffd700, 1).setAngle(45));
+    return [g, ...gems];
+  }
+
   // ── Top HUD ────────────────────────────────────────────────────────────────
 
   _createTopHUD() {
@@ -122,8 +137,9 @@ export class UIScene extends Phaser.Scene {
 
     this.add.rectangle(0, 0, GAME_W, 64, 0x0a0a0a, 0.75).setOrigin(0, 0);
 
-    this._d1Label = this.add.text(pad, 10, 'DHRUVA', { fontSize: '11px', color: '#cc99ff', fontFamily: 'monospace', fontStyle: 'bold' });
-    this._dhruvaHpBg    = this.add.rectangle(pad, 26, barW, barH, 0x333333).setOrigin(0, 0.5);
+    this._d1Label = this.add.text(pad, 10, 'DHRUVA', { fontSize: '10px', color: '#cc99ff', fontFamily: "'Silkscreen', monospace", fontStyle: 'bold' });
+    this.add.rectangle(pad - 1, 26, barW + 2, barH + 2, 0x8a6a3a).setOrigin(0, 0.5);
+    this._dhruvaHpBg    = this.add.rectangle(pad, 26, barW, barH, 0x150808).setOrigin(0, 0.5);
     this._dhruvaHpDelay = this.add.rectangle(pad, 26, barW, barH, 0x882200).setOrigin(0, 0.5);
     this._dhruvaHpFill  = this.add.rectangle(pad, 26, barW, barH, 0x22cc66).setOrigin(0, 0.5);
     this._dhruvaHpText = this.add.text(pad + barW + 4, 26, '200/200', { fontSize: '10px', color: '#aaa', fontFamily: 'monospace' }).setOrigin(0, 0.5);
@@ -131,8 +147,9 @@ export class UIScene extends Phaser.Scene {
     this._dhruvaStamFill = this.add.rectangle(pad, 40, smW, smH, 0x4499ff).setOrigin(0, 0.5);
 
     const tx = pad + barW + 80;
-    this._d2Label = this.add.text(tx, 10, 'TARA', { fontSize: '11px', color: '#88ccff', fontFamily: 'monospace', fontStyle: 'bold' });
-    this._taraHpBg    = this.add.rectangle(tx, 26, barW, barH, 0x333333).setOrigin(0, 0.5);
+    this._d2Label = this.add.text(tx, 10, 'TARA', { fontSize: '10px', color: '#88ccff', fontFamily: "'Silkscreen', monospace", fontStyle: 'bold' });
+    this.add.rectangle(tx - 1, 26, barW + 2, barH + 2, 0x8a6a3a).setOrigin(0, 0.5);
+    this._taraHpBg    = this.add.rectangle(tx, 26, barW, barH, 0x150808).setOrigin(0, 0.5);
     this._taraHpDelay = this.add.rectangle(tx, 26, barW, barH, 0x882200).setOrigin(0, 0.5);
     this._taraHpFill  = this.add.rectangle(tx, 26, barW, barH, 0x22aaee).setOrigin(0, 0.5);
     this._taraHpText = this.add.text(tx + barW + 4, 26, '200/200', { fontSize: '10px', color: '#aaa', fontFamily: 'monospace' }).setOrigin(0, 0.5);
@@ -346,7 +363,9 @@ export class UIScene extends Phaser.Scene {
 
   _createRegionTitle() {
     this._regionTitle = this.add.container(GAME_W / 2, GAME_H / 2 - 60).setAlpha(0);
-    const bg = this.add.rectangle(0, 0, 600, 60, 0x000000, 0.6).setOrigin(0.5);
+    const frame = this._goldFrame(600, 64);
+    frame.forEach(o => { o.x -= 300; o.y -= 32; });
+    const bg = this.add.container(0, 0, frame);
     this._regionTitleText = this.add.text(0, -8, '', {
       fontSize: '28px', color: '#ffd700', fontFamily: 'serif',
       stroke: '#000', strokeThickness: 4,
@@ -385,8 +404,7 @@ export class UIScene extends Phaser.Scene {
     const px = GAME_W - pw - 10, py = 70;
     const panel = this.add.container(px, py);
 
-    const bg     = this.add.rectangle(0, 0, pw, ph, 0x111111, 0.92).setOrigin(0, 0);
-    const border = this.add.rectangle(0, 0, pw, ph, 0xffd700, 0).setOrigin(0, 0).setStrokeStyle(2, 0xffd700);
+    const frame  = this._goldFrame(pw, ph);
     const title  = this.add.text(pw / 2, 12, 'QUEST LOG', { fontSize: '14px', fontStyle: 'bold', color: '#ffd700', fontFamily: 'serif' }).setOrigin(0.5, 0);
     const close  = this.add.text(pw - 10, 12, '[U]', { fontSize: '11px', color: '#666', fontFamily: 'monospace' }).setOrigin(1, 0);
 
@@ -406,7 +424,7 @@ export class UIScene extends Phaser.Scene {
       wordWrap: { width: pw - 24 }, lineSpacing: 2,
     });
 
-    panel.add([bg, border, title, close, this._questText, this._loreDivider, this._loreCountLabel, this._loreFragTitles]);
+    panel.add([...frame, title, close, this._questText, this._loreDivider, this._loreCountLabel, this._loreFragTitles]);
     return panel;
   }
 
@@ -414,8 +432,7 @@ export class UIScene extends Phaser.Scene {
     const pw = 300, ph = 320;
     const panel = this.add.container(GAME_W / 2 - pw / 2, GAME_H / 2 - ph / 2);
 
-    const bg     = this.add.rectangle(0, 0, pw, ph, 0x1a1000, 0.96).setOrigin(0, 0);
-    const border = this.add.rectangle(0, 0, pw, ph, 0xcc9933, 0).setOrigin(0, 0).setStrokeStyle(2, 0xcc9933);
+    const frame  = this._goldFrame(pw, ph);
     const title  = this.add.text(pw / 2, 10, 'INVENTORY', { fontSize: '14px', fontStyle: 'bold', color: '#ffd700', fontFamily: 'serif' }).setOrigin(0.5, 0);
     const close  = this.add.text(pw - 10, 10, '[I] close', { fontSize: '10px', color: '#666', fontFamily: 'monospace' }).setOrigin(1, 0);
 
@@ -428,7 +445,7 @@ export class UIScene extends Phaser.Scene {
       fontSize: '10px', color: '#88ff88', fontFamily: 'monospace',
     }).setOrigin(0.5, 1);
 
-    panel.add([bg, border, title, close, this._invText, this._invUseHint]);
+    panel.add([...frame, title, close, this._invText, this._invUseHint]);
     return panel;
   }
 
