@@ -450,7 +450,7 @@ export class GameScene extends Phaser.Scene {
       const reward = e.detail?.quest?.reward;
       if (reward?.item) {
         SaveManager.addItem(this._save, reward.item);
-        SaveManager.save(this._save);
+        this._persist();
         const def = ITEM_DEFS[reward.item];
         if (def?.type === 'passive') this._applyPassiveItem(def);
         this.events.emit('item_acquired', { itemId: reward.item, name: def?.name || reward.name });
@@ -1612,7 +1612,7 @@ export class GameScene extends Phaser.Scene {
     if (!this._save || (this._save.threadShards || 0) < n) return false;
     this._save.threadShards -= n;
     this.events.emit('shards_changed', { shards: this._save.threadShards, delta: -n });
-    SaveManager.save(this._save);
+    this._persist();
     return true;
   }
 
@@ -3601,7 +3601,7 @@ export class GameScene extends Phaser.Scene {
     for (const drop of drops) {
       if (Math.random() < drop.chance) {
         SaveManager.addItem(this._save, drop.item);
-        SaveManager.save(this._save);
+        this._persist();
         const def = ITEM_DEFS[drop.item];
         if (def?.type === 'passive') this._applyPassiveItem(def);
         this.events.emit('item_acquired', { itemId: drop.item, name: def?.name || drop.item });
@@ -3677,7 +3677,7 @@ export class GameScene extends Phaser.Scene {
     const bossRewardItem = BOSSES[bossKey]?.rewardItem;
     if (bossRewardItem) {
       SaveManager.addItem(this._save, bossRewardItem);
-      SaveManager.save(this._save);
+      this._persist();
       const def = ITEM_DEFS[bossRewardItem];
       this.events.emit('item_acquired', { itemId: bossRewardItem, name: def?.name || bossRewardItem });
     }
