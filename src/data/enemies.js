@@ -8,7 +8,7 @@ export const ENEMY_TYPES = {
     attackDmg: 15,
     attackCd: 1200,
     xpValue: 10,
-    scale: 0.21,
+    scale: 0.738,   // 0.21 at the old 900px frames; frames are now 256px
     tint: null,
     physics: false,
     label: 'Forest Raksha',
@@ -53,7 +53,7 @@ export const ENEMY_TYPES = {
     attackDmg: 22,
     attackCd: 1300,
     xpValue: 18,
-    scale: 0.21,
+    scale: 0.738,   // 0.21 at the old 900px frames; frames are now 256px
     tint: null,
     physics: false,
     label: 'Vana Raksha',
@@ -68,7 +68,7 @@ export const ENEMY_TYPES = {
     attackDmg: 32,
     attackCd: 1400,
     xpValue: 28,
-    scale: 0.28,
+    scale: 0.984,   // 0.28 at the old 900px frames; frames are now 256px
     tint: null,
     shockwaveCd: 6000,
     physics: false,

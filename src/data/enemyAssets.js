@@ -11,8 +11,7 @@
 // repeats below mirror the removed _defineAnimations() calls exactly.
 
 const A3   = 'assets3';
-const CX   = 'assest2/craftpix-064112-free-orc-ogre-and-goblin-chibi-2d-game-sprites';
-const ORCP = `${CX}/Orc/PNG/PNG Sequences`;
+const ORCP = 'assets_opt/chibi256/Orc';   // 256px downscale, see PreloadScene note
 
 const pad2  = n => String(n).padStart(2, '0');
 const pad3  = n => String(n).padStart(3, '0');

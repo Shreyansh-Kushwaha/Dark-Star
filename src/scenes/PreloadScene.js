@@ -107,8 +107,12 @@ export class PreloadScene extends Phaser.Scene {
     this.load.image('water_rock2', `${TS}/Terrain/Decorations/Rocks in the Water/Water Rocks_02.png`);
 
     // ── Goblin (Melee enemy — regions 0,1,2) ─────────────────────
-    const CX  = 'assest2/craftpix-064112-free-orc-ogre-and-goblin-chibi-2d-game-sprites';
-    const GBL = `${CX}/Goblin/PNG/PNG Sequences`;
+    // 256px downscales of the craftpix 900x900 chibi frames (assets_opt/ is
+    // generated from assest2/ — the originals stay untouched). The raw frames
+    // cost ~3 MB of GPU texture EACH; at render scale ~0.2 that VRAM (350+ MB
+    // across the packs) was pure waste and the prime WebGL context-loss risk
+    // on low-memory machines.
+    const GBL = 'assets_opt/chibi256/Goblin';
     for (let i = 1; i <= 18; i++) this.load.image(`goblin_idle_${String(i).padStart(2,'0')}`,   `${GBL}/Idle/0_Goblin_Idle_${String(i-1).padStart(3,'0')}.png`);
     for (let i = 1; i <= 12; i++) this.load.image(`goblin_run_${String(i).padStart(2,'0')}`,    `${GBL}/Running/0_Goblin_Running_${String(i-1).padStart(3,'0')}.png`);
     for (let i = 1; i <= 12; i++) this.load.image(`goblin_attack_${String(i).padStart(2,'0')}`, `${GBL}/Slashing/0_Goblin_Slashing_${String(i-1).padStart(3,'0')}.png`);
@@ -119,7 +123,7 @@ export class PreloadScene extends Phaser.Scene {
     // used in only a few regions, so it no longer bloats the boot load.
 
     // ── Ogre (Elite enemy — regions 2–6) ─────────────────────────
-    const OGR = `${CX}/Ogre/PNG/PNG Sequences`;
+    const OGR = 'assets_opt/chibi256/Ogre';
     for (let i = 1; i <= 18; i++) this.load.image(`ogre_idle_${String(i).padStart(2,'0')}`,   `${OGR}/Idle/0_Ogre_Idle_${String(i-1).padStart(3,'0')}.png`);
     for (let i = 1; i <= 12; i++) this.load.image(`ogre_run_${String(i).padStart(2,'0')}`,    `${OGR}/Running/0_Ogre_Running_${String(i-1).padStart(3,'0')}.png`);
     for (let i = 1; i <= 12; i++) this.load.image(`ogre_attack_${String(i).padStart(2,'0')}`, `${OGR}/Slashing/0_Ogre_Slashing_${String(i-1).padStart(3,'0')}.png`);
