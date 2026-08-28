@@ -114,16 +114,18 @@ export class UIScene extends Phaser.Scene {
     this.add.rectangle(0, 0, GAME_W, 64, 0x0a0a0a, 0.75).setOrigin(0, 0);
 
     this._d1Label = this.add.text(pad, 10, 'DHRUVA', { fontSize: '11px', color: '#cc99ff', fontFamily: 'monospace', fontStyle: 'bold' });
-    this._dhruvaHpBg   = this.add.rectangle(pad, 26, barW, barH, 0x333333).setOrigin(0, 0.5);
-    this._dhruvaHpFill = this.add.rectangle(pad, 26, barW, barH, 0x22cc66).setOrigin(0, 0.5);
+    this._dhruvaHpBg    = this.add.rectangle(pad, 26, barW, barH, 0x333333).setOrigin(0, 0.5);
+    this._dhruvaHpDelay = this.add.rectangle(pad, 26, barW, barH, 0x882200).setOrigin(0, 0.5);
+    this._dhruvaHpFill  = this.add.rectangle(pad, 26, barW, barH, 0x22cc66).setOrigin(0, 0.5);
     this._dhruvaHpText = this.add.text(pad + barW + 4, 26, '200/200', { fontSize: '10px', color: '#aaa', fontFamily: 'monospace' }).setOrigin(0, 0.5);
     this._dhruvaStamBg   = this.add.rectangle(pad, 40, smW, smH, 0x333333).setOrigin(0, 0.5);
     this._dhruvaStamFill = this.add.rectangle(pad, 40, smW, smH, 0x4499ff).setOrigin(0, 0.5);
 
     const tx = pad + barW + 80;
     this._d2Label = this.add.text(tx, 10, 'TARA', { fontSize: '11px', color: '#88ccff', fontFamily: 'monospace', fontStyle: 'bold' });
-    this._taraHpBg   = this.add.rectangle(tx, 26, barW, barH, 0x333333).setOrigin(0, 0.5);
-    this._taraHpFill = this.add.rectangle(tx, 26, barW, barH, 0x22aaee).setOrigin(0, 0.5);
+    this._taraHpBg    = this.add.rectangle(tx, 26, barW, barH, 0x333333).setOrigin(0, 0.5);
+    this._taraHpDelay = this.add.rectangle(tx, 26, barW, barH, 0x882200).setOrigin(0, 0.5);
+    this._taraHpFill  = this.add.rectangle(tx, 26, barW, barH, 0x22aaee).setOrigin(0, 0.5);
     this._taraHpText = this.add.text(tx + barW + 4, 26, '200/200', { fontSize: '10px', color: '#aaa', fontFamily: 'monospace' }).setOrigin(0, 0.5);
     this._taraStamBg   = this.add.rectangle(tx, 40, smW, smH, 0x333333).setOrigin(0, 0.5);
     this._taraStamFill = this.add.rectangle(tx, 40, smW, smH, 0x66ccff).setOrigin(0, 0.5);
@@ -473,16 +475,18 @@ export class UIScene extends Phaser.Scene {
     }
     if (Phaser.Input.Keyboard.JustDown(this._keyU)) {
       this._questVisible = !this._questVisible;
-      this._questPanel.setVisible(this._questVisible);
       if (this._questVisible) {
         this._refreshQuestLog(gs);
         this._refreshLoreTab(gs);
-      }
+        this._panelIn(this._questPanel);
+      } else this._questPanel.setVisible(false);
     }
     if (Phaser.Input.Keyboard.JustDown(this._keyI)) {
       this._invVisible = !this._invVisible;
-      this._invPanel.setVisible(this._invVisible);
-      if (this._invVisible) this._refreshInventory(gs);
+      if (this._invVisible) {
+        this._refreshInventory(gs);
+        this._panelIn(this._invPanel);
+      } else this._invPanel.setVisible(false);
     }
     if (Phaser.Input.Keyboard.JustDown(this._keyF) && this._invVisible) {
       this._useFirstConsumable(gs);
@@ -533,24 +537,63 @@ export class UIScene extends Phaser.Scene {
 
     if (p1) {
       const hpPct = Math.max(0, p1.hp / p1.maxHp);
-      this._dhruvaHpFill.scaleX = hpPct;
+      this._chipBar(this._dhruvaHpFill, this._dhruvaHpDelay, hpPct);
       this._dhruvaHpFill.setFillStyle(hpPct > 0.5 ? 0x22cc66 : hpPct > 0.25 ? 0xffcc00 : 0xff4444);
       this._dhruvaHpText.setText(`${Math.ceil(p1.hp)}/${p1.maxHp}`);
-      this._dhruvaStamFill.scaleX = p1.stamina / p1.maxStamina;
+      const st1 = p1.stamina / p1.maxStamina;
+      this._dhruvaStamFill.scaleX += (st1 - this._dhruvaStamFill.scaleX) * 0.3;
       this._dhruvaStamFill.setAlpha(p1.downed ? 0.3 : 1);
     }
 
     if (p2) {
       const hpPct = Math.max(0, p2.hp / p2.maxHp);
-      this._taraHpFill.scaleX = hpPct;
+      this._chipBar(this._taraHpFill, this._taraHpDelay, hpPct);
       this._taraHpFill.setFillStyle(hpPct > 0.5 ? 0x22aaee : hpPct > 0.25 ? 0xffcc00 : 0xff4444);
       this._taraHpText.setText(`${Math.ceil(p2.hp)}/${p2.maxHp}`);
-      this._taraStamFill.scaleX = p2.stamina / p2.maxStamina;
+      const st2 = p2.stamina / p2.maxStamina;
+      this._taraStamFill.scaleX += (st2 - this._taraStamFill.scaleX) * 0.3;
     }
 
     if (data.boss && this._bossContainer.visible) {
       this._bossHpFill.scaleX = data.boss.getHpPct();
       this._bossPostureFill.scaleX = data.boss.getPosturePct();
+    }
+  }
+
+  // Chip-damage treatment (same idea as the boss bar): the fill snaps down and
+  // a dark trailing bar lingers, then drains after it. Healing snaps both up.
+  _chipBar(fill, delay, pct) {
+    if (pct < fill.scaleX - 0.0001) {
+      fill.scaleX = pct;
+      this.tweens.killTweensOf(delay);
+      this.tweens.add({ targets: delay, scaleX: pct, delay: 300, duration: 500, ease: 'Cubic.Out' });
+    } else if (pct > fill.scaleX + 0.0001) {
+      fill.scaleX = pct;
+      this.tweens.killTweensOf(delay);
+      delay.scaleX = pct;
+    }
+  }
+
+  // Standard overlay-panel entrance: fade in while settling up from a small
+  // offset — same language as the dialogue box.
+  _panelIn(panel) {
+    if (panel._baseY === undefined) panel._baseY = panel.y;
+    this.tweens.killTweensOf(panel);
+    panel.setVisible(true).setAlpha(0).setY(panel._baseY + 10);
+    this.tweens.add({ targets: panel, alpha: 1, y: panel._baseY, duration: 150, ease: 'Cubic.Out' });
+  }
+
+  // Gold burst on a skill-node unlock: expanding ring + radial sparks.
+  _unlockBurst(x, y) {
+    const ring = this.add.circle(x, y, 6, 0xffd700, 0).setStrokeStyle(2, 0xffd700, 1).setDepth(10001);
+    this.tweens.add({ targets: ring, radius: 34, alpha: 0, duration: 380, ease: 'Cubic.Out', onComplete: () => ring.destroy() });
+    for (let i = 0; i < 8; i++) {
+      const a = (i / 8) * Math.PI * 2;
+      const s = this.add.rectangle(x, y, 3, 3, 0xffd700, 1).setDepth(10001);
+      this.tweens.add({
+        targets: s, x: x + Math.cos(a) * 30, y: y + Math.sin(a) * 30,
+        alpha: 0, duration: 320, ease: 'Quad.easeOut', onComplete: () => s.destroy(),
+      });
     }
   }
 
@@ -864,7 +907,24 @@ export class UIScene extends Phaser.Scene {
 
   // ── Player events ──────────────────────────────────────────────────────────
 
-  _onPlayerDamaged() {}
+  // Shake the hurt player's HUD bar block so damage reads even mid-fight.
+  _onPlayerDamaged(data) {
+    const gs = this.scene.get('GameScene');
+    const isP2 = !!data?.player && data.player === gs?.players?.[1];
+    const parts = isP2
+      ? [this._taraHpBg, this._taraHpDelay, this._taraHpFill, this._taraHpText]
+      : [this._dhruvaHpBg, this._dhruvaHpDelay, this._dhruvaHpFill, this._dhruvaHpText];
+    parts.forEach(o => { if (o._baseX === undefined) o._baseX = o.x; });
+    this._hudShake?.complete();
+    this._hudShake = this.tweens.add({
+      targets: { t: 0 }, t: 1, duration: 160,
+      onUpdate: (tw, tgt) => {
+        const off = Math.sin(tgt.t * Math.PI * 4) * 3 * (1 - tgt.t);
+        parts.forEach(o => { o.x = o._baseX + off; });
+      },
+      onComplete: () => parts.forEach(o => { o.x = o._baseX; }),
+    });
+  }
 
   _onPlayerDowned(data) {
     const name = (data.player?.charKey || (data.player?.isP1 ? 'dhruva' : 'tara')).toUpperCase();
@@ -1026,6 +1086,8 @@ export class UIScene extends Phaser.Scene {
       gs.audio?.purchase?.();
       gs.haptics?.play('unlock');
       this.tweens.add({ targets: c.bg, scaleY: 1.12, duration: 80, yoyo: true });
+      const ctr = c.bg.getCenter();
+      this._unlockBurst(ctr.x, ctr.y);
       render();
     };
 
@@ -1103,15 +1165,30 @@ export class UIScene extends Phaser.Scene {
       container.add(this.add.rectangle(i * (pw + gap), 0, pw, ph, filled ? 0xffcc44 : 0x4a3a18)
         .setOrigin(0, 0).setStrokeStyle(1, 0x2a1e08));
     }
+    container._charges = charges;
   }
 
   _onAmritChanged(data) {
     const gs = this.scene.get('GameScene');
     const players = gs?.players || [];
     const p = data?.player;
-    const isP1 = p ? (p === players[0]) : null;
-    if (isP1 === false) this._renderAmritPips(this._taraAmritPips, p.amritCharges, p.amritMax);
-    else if (p)         this._renderAmritPips(this._dhruvaAmritPips, p.amritCharges, p.amritMax);
+    if (!p) return;
+    const isP1 = p === players[0];
+    const cont = isP1 === false ? this._taraAmritPips : this._dhruvaAmritPips;
+    const old  = cont._charges ?? p.amritCharges;
+    this._renderAmritPips(cont, p.amritCharges, p.amritMax);
+
+    if (p.amritCharges < old) {
+      // Drained pip leaves a ghost that flashes, swells and floats away.
+      const gx = cont.x + p.amritCharges * 10, gy = cont.y;
+      const ghost = this.add.rectangle(gx, gy, 7, 9, 0xffffff, 1).setOrigin(0, 0).setDepth(10);
+      this.tweens.add({
+        targets: ghost, alpha: 0, scaleX: 2.2, scaleY: 2.2, y: gy - 8,
+        duration: 320, ease: 'Cubic.Out', onComplete: () => ghost.destroy(),
+      });
+    } else if (p.amritCharges > old) {
+      this.tweens.add({ targets: cont, scaleX: 1.25, scaleY: 1.25, duration: 110, yoyo: true, ease: 'Quad.easeOut' });
+    }
   }
 
   _onShardsChanged(data) {

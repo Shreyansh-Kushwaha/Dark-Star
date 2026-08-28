@@ -1184,6 +1184,29 @@ export class GameScene extends Phaser.Scene {
     this.tweens.timeScale = 1;
   }
 
+  // Cosmetic shard motes: scatter from the kill, then home into the player
+  // with accelerating ease. The grant itself is already applied — this just
+  // makes collecting the reward feel physical.
+  _spawnShardMotes(x, y, n = 4) {
+    const target = this.players?.find(p => p?.alive) || this.players?.[0];
+    if (!target) return;
+    for (let i = 0; i < n; i++) {
+      const a = Math.random() * Math.PI * 2;
+      const m = this.add.circle(x, y - 8, 2.5, 0x8fe3ff, 0.95).setDepth(y + 20);
+      this.tweens.add({
+        targets: m, x: x + Math.cos(a) * (14 + Math.random() * 16), y: y - 8 + Math.sin(a) * 14,
+        duration: 150 + i * 40, ease: 'Quad.easeOut',
+        onComplete: () => {
+          this.tweens.add({
+            targets: m, x: () => target.x, y: () => target.y - 20, alpha: 0.6,
+            duration: 240 + i * 50, ease: 'Cubic.easeIn',
+            onComplete: () => m.destroy(),
+          });
+        },
+      });
+    }
+  }
+
   // Directional camera kick — the view lurches along the strike vector, then
   // eases back. Layered on top of the shake, this reads as force, not rattle.
   _cameraKick(angle, dist = 5) {
@@ -3367,6 +3390,7 @@ export class GameScene extends Phaser.Scene {
 
     // Thread Shards: base drop, scaled a little by the enemy's worth (xp).
     this.grantShards(SHARDS_PER_ENEMY + Math.floor(xpGain / 4));
+    this._spawnShardMotes(e.x, e.y);
 
     // Item drop from enemy loot table
     const drops = e.cfg?.drops || [];

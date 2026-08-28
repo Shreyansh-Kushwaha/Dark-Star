@@ -22,6 +22,11 @@ export class MerchantScene extends Phaser.Scene {
 
     this.add.rectangle(0, 0, GAME_W, GAME_H, 0x05060a, 0.85).setOrigin(0).setInteractive();
 
+    // Entrance: fade in with a slight zoom settle.
+    const cam = this.cameras.main;
+    cam.alpha = 0; cam.setZoom(1.04);
+    this.tweens.add({ targets: cam, alpha: 1, zoom: 1, duration: 160, ease: 'Cubic.easeOut' });
+
     const glow = this.add.circle(GAME_W / 2, 120, 110, 0x66c8ff, 0.10);
     this.tweens.add({ targets: glow, alpha: 0.20, scale: 1.15, duration: 1300, yoyo: true, repeat: -1 });
 
@@ -55,7 +60,9 @@ export class MerchantScene extends Phaser.Scene {
         fontSize: '15px', fontFamily: 'monospace', fontStyle: 'bold', color: '#8fe3ff',
       }).setOrigin(1, 0.5);
       bg.on('pointerover', () => { this._sel = i; this._refresh(); });
-      bg.on('pointerup',   () => { this._sel = i; this._buy(); });
+      bg.on('pointerdown', () => bg.setScale(0.98));
+      bg.on('pointerout',  () => bg.setScale(1));
+      bg.on('pointerup',   () => { bg.setScale(1); this._sel = i; this._buy(); });
       this._rows.push({ bg, name, desc, price });
     });
 

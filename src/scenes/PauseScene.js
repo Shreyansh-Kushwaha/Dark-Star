@@ -41,6 +41,11 @@ export class PauseScene extends Phaser.Scene {
     this.add.rectangle(GAME_W / 2, GAME_H / 2, GAME_W, GAME_H, 0x000000, 0.68)
       .setOrigin(0.5);
 
+    // Entrance: fade in with a slight zoom settle.
+    const cam = this.cameras.main;
+    cam.alpha = 0; cam.setZoom(1.04);
+    this.tweens.add({ targets: cam, alpha: 1, zoom: 1, duration: 160, ease: 'Cubic.easeOut' });
+
     this.add.text(GAME_W / 2, GAME_H / 2 - 90, 'PAUSED', {
       fontSize: '36px', color: '#ffd700', fontFamily: 'serif',
       stroke: '#000', strokeThickness: 5,
@@ -101,7 +106,9 @@ export class PauseScene extends Phaser.Scene {
     const bg  = this.add.rectangle(x, y, w, h, 0x1a1a2e, 0.9).setOrigin(0.5).setStrokeStyle(2, 0xffd700, 0.7);
     const txt = this.add.text(x, y, label, { fontSize: '16px', color: '#aaaaaa', fontFamily: 'serif', fontStyle: 'bold' }).setOrigin(0.5);
     const zone = this.add.zone(x, y, w, h).setInteractive({ useHandCursor: true });
-    zone.on('pointerover', () => { this._selIdx = idx; this._updateCursor(); }).on('pointerdown', onClick);
+    zone.on('pointerover', () => { this._selIdx = idx; this._updateCursor(); })
+      .on('pointerdown', () => { bg.setScale(0.96); txt.setScale(0.96); })
+      .on('pointerup',   () => { bg.setScale(1); txt.setScale(1); onClick(); });
     return { bg, txt, zone };
   }
 

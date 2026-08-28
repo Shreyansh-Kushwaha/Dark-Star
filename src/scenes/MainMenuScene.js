@@ -259,10 +259,12 @@ export class MainMenuScene extends Phaser.Scene {
     draw(bgCol, borCol);
 
     const zone = this.add.zone(x, y, w, h).setInteractive({ useHandCursor: true }).setDepth(6);
+    // Press state: darken + nudge the label down on press, fire on release.
     zone
       .on('pointerover',  () => { draw(0x18185a, 0xffdd00); txt.setColor('#ffdd00'); })
-      .on('pointerout',   () => { draw(bgCol, borCol);       txt.setColor(txCol);    })
-      .on('pointerdown',  onClick);
+      .on('pointerout',   () => { draw(bgCol, borCol);       txt.setColor(txCol); txt.setY(y); })
+      .on('pointerdown',  () => { draw(0x08081c, 0xffdd00);  txt.setY(y + 2); })
+      .on('pointerup',    () => { draw(0x18185a, 0xffdd00);  txt.setY(y); onClick(); });
 
     return { border, fill, txt, zone };
   }

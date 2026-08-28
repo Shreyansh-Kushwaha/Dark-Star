@@ -20,6 +20,11 @@ export class ShrineScene extends Phaser.Scene {
 
     this.add.rectangle(0, 0, GAME_W, GAME_H, 0x05060a, 0.82).setOrigin(0).setInteractive();
 
+    // Entrance: fade in with a slight zoom settle.
+    const cam = this.cameras.main;
+    cam.alpha = 0; cam.setZoom(1.04);
+    this.tweens.add({ targets: cam, alpha: 1, zoom: 1, duration: 160, ease: 'Cubic.easeOut' });
+
     // Warm glow behind the title
     const glow = this.add.circle(GAME_W / 2, 150, 120, 0xe8c860, 0.12);
     this.tweens.add({ targets: glow, alpha: 0.22, scale: 1.15, duration: 1200, yoyo: true, repeat: -1 });
@@ -57,7 +62,9 @@ export class ShrineScene extends Phaser.Scene {
         fontSize: '11px', fontFamily: 'monospace', color: '#8a8568',
       }).setOrigin(0.5);
       bg.on('pointerover', () => { this._sel = i; this._refresh(); });
-      bg.on('pointerup',   () => this._choose(i));
+      bg.on('pointerdown', () => bg.setScale(0.98));
+      bg.on('pointerout',  () => bg.setScale(1));
+      bg.on('pointerup',   () => { bg.setScale(1); this._choose(i); });
       this._rows.push({ bg, lbl, desc, it });
     });
 
