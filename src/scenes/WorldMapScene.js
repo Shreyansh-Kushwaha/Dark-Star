@@ -49,7 +49,6 @@ export class WorldMapScene extends Phaser.Scene {
     this._world = this.add.container(0, 0).setDepth(5);   // pan/zoom layer
     this._nodes = {};          // index -> { container, explored, data }
     this._selected = null;
-    this._fullKeys = new Set(); // loaded full-image texture keys
 
     this._loadingTxt = this.add.text(GAME_W / 2, GAME_H / 2, 'Unrolling the map…', {
       fontSize: '18px', fontFamily: 'serif', color: C.gold,
@@ -296,25 +295,13 @@ export class WorldMapScene extends Phaser.Scene {
     add(this.add.rectangle(px + PANEL_W / 2, imgY, imgW + 4, imgH + 4, 0x000000)
       .setStrokeStyle(2, ACT_COLORS[MAP_LAYOUT[idx]?.act] || 0x888888).setDepth(31));
 
-    const fkey = 'rfull_' + idx;
-    const placeThumb = () => {
-      const tkey = 'rthumb_' + idx;
-      if (this.textures.exists(tkey)) {
-        add(this.add.image(px + PANEL_W / 2, imgY, tkey).setDisplaySize(imgW, imgH).setDepth(31));
-      }
-    };
-    if (this.textures.exists(fkey)) {
-      add(this.add.image(px + PANEL_W / 2, imgY, fkey).setDisplaySize(imgW, imgH).setDepth(32));
-    } else {
-      placeThumb();  // show thumb immediately, swap to full when loaded
-      const m = this._manifest?.[String(idx)];
-      if (m?.full) {
-        this.load.image(fkey, encodeURI(m.full));
-        this.load.once('complete', () => {
-          if (this._selected === idx && this.textures.exists(fkey)) this._showDetail(idx);
-        });
-        this.load.start();
-      }
+    // The 420×262 thumbnail is already sharper than this ~300×188 panel slot,
+    // so the old full-res (3200×2000) swap-in bought nothing visually while
+    // permanently pinning ~24 MB of GPU texture per region browsed — Phaser's
+    // TextureManager is global and outlives the scene.
+    const tkey = 'rthumb_' + idx;
+    if (this.textures.exists(tkey)) {
+      add(this.add.image(px + PANEL_W / 2, imgY, tkey).setDisplaySize(imgW, imgH).setDepth(31));
     }
 
     const name = data.regionName || REGION_NAMES[idx]?.split(' — ')[0] || `Region ${idx}`;
