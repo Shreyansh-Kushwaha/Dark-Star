@@ -5376,5 +5376,33 @@
    "x": 1720,
    "y": 1230
   }
+ ],
+ "npcs": [
+  {
+   "id": "npc0_elder",
+   "type": "yellow",
+   "x": 520,
+   "y": 940,
+   "config": {
+    "id": "npc0_elder",
+    "name": "Elder Mahesh",
+    "first": "",
+    "active": "",
+    "completed": ""
+   }
+  },
+  {
+   "id": "npc0_warrior",
+   "type": "yellow",
+   "x": 620,
+   "y": 1120,
+   "config": {
+    "id": "npc0_warrior",
+    "name": "Arjun, Village Guard",
+    "first": "",
+    "active": "",
+    "completed": ""
+   }
+  }
  ]
 }

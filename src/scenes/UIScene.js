@@ -101,8 +101,15 @@ export class UIScene extends Phaser.Scene {
       for (const [evt, fn] of this._gsHandlers) gs.events.off(evt, fn, this);
     });
 
-    // Cache lore fragment data for the lore tab
-    import('/src/data/quests.js').then(m => { this._loreFragCache = m.LORE_FRAGMENTS; });
+    // Cache lore fragment data for the lore tab, and correct the hardcoded
+    // placeholder totals once the real fragment count is known.
+    import('/src/data/quests.js').then(m => {
+      this._loreFragCache = m.LORE_FRAGMENTS;
+      const lm = this.scene.get('GameScene')?.loreManager;
+      const total = m.LORE_FRAGMENTS.length;
+      this._loreLabel?.setText(`◈ ${lm?.count() ?? 0} / ${total}`);
+      this._loreCountLabel?.setText(`${lm?.count() ?? 0} / ${total} collected`);
+    });
   }
 
   // ── Top HUD ────────────────────────────────────────────────────────────────

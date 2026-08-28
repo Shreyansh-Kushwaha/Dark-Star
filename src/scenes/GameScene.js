@@ -3,7 +3,8 @@ import { WORLD_W, WORLD_H, GAME_W, GAME_H, NET_INTERVAL, TETHER_DIST, TETHER_SPE
 import { CONSUMABLE_STOCK, amritChargePrice, amritPotencyPrice } from '../data/merchant.js';
 import { REGIONS } from '../data/regions.js';
 import { _mapSpriteKey } from './PreloadScene.js';
-import { QUESTS, LORE_FRAGMENTS } from '../data/quests.js';
+import { QUESTS, LORE_FRAGMENTS, NPC_DIALOGUE } from '../data/quests.js';
+import { STORY_NPC_BINDINGS, MAIN_QUEST_BY_REGION, STORY_FRAGMENTS, STORY_ECHOES } from '../data/storyBindings.js';
 import { LoreManager } from '../systems/LoreManager.js';
 import { Player } from '../entities/Player.js';
 import { Enemy  } from '../entities/Enemy.js';
@@ -461,10 +462,10 @@ export class GameScene extends Phaser.Scene {
     this.audio.startAmbient(regionIndex);
     this.audio.playMusic('explore', { act: MAP_LAYOUT[regionIndex]?.act ?? 1 });
 
-    // Auto-trigger region main quest
-    const QUEST_PREFIXES = ['gramavana','mahavana','vrindavana','nagapatal','devamandira','swargaseema','viyogadurga'];
-    const mainQuestKey = QUEST_PREFIXES[regionIndex] + '_main';
-    if (QUESTS[mainQuestKey]) {
+    // Auto-trigger the region's main quest (bound to where each boss actually
+    // lives in the editor world; region 0 starts the opening quest).
+    const mainQuestKey = regionIndex === 0 ? 'gramavana_main' : MAIN_QUEST_BY_REGION[regionIndex];
+    if (mainQuestKey && QUESTS[mainQuestKey]) {
       this.questManager.start(mainQuestKey, QUESTS[mainQuestKey]);
     }
 
@@ -517,7 +518,14 @@ export class GameScene extends Phaser.Scene {
   // editor-only region (indices 7..49) built from its map data. Shared by the
   // initial create() build, streamed neighbours, and post-crossing commits.
   _regionDescriptor(regionIndex, mapData) {
-    if (REGIONS[regionIndex]) return REGIONS[regionIndex];
+    const legacy = REGIONS[regionIndex];
+    if (legacy) {
+      return {
+        ...legacy,
+        echoTriggers: [...(legacy.echoTriggers || []), ...(STORY_ECHOES[regionIndex] || [])],
+        worldFragments: [...(legacy.worldFragments || []), ...(STORY_FRAGMENTS[regionIndex] || [])],
+      };
+    }
     const md = mapData || (this.registry.get('regionMaps') || []).find(e => e.regionIndex === regionIndex)?.data || null;
     let bgColor = 0x2d5c28;
     if (md?.background?.type === 'color' && md.background.value) {
@@ -543,8 +551,8 @@ export class GameScene extends Phaser.Scene {
       platePositions: md?.plates || [],
       fixedEnemies: [],
       enemyTypes: ['melee'],
-      echoTriggers: [],
-      worldFragments: md?.fragments || [],
+      echoTriggers: STORY_ECHOES[regionIndex] || [],
+      worldFragments: [...(md?.fragments || []), ...(STORY_FRAGMENTS[regionIndex] || [])],
       ambientKey: 0,
     };
   }
@@ -861,6 +869,8 @@ export class GameScene extends Phaser.Scene {
     this.events.emit('region_title', { name: desc.name, subtitle: desc.subtitle });
     this.audio?.startAmbient?.(newBaseIdx);
     this.audio?.playMusic?.('explore', { act: MAP_LAYOUT[newBaseIdx]?.act ?? 1 });
+    const crossQuest = MAIN_QUEST_BY_REGION[newBaseIdx];
+    if (crossQuest && QUESTS[crossQuest]) this.questManager.start(crossQuest, QUESTS[crossQuest]);
     console.log(`[stream] committed crossing → region ${newBaseIdx} now at origin`);
     this._streamBusy = false;
   }
@@ -3134,6 +3144,45 @@ export class GameScene extends Phaser.Scene {
     this._dialogueActive = false;
   }
 
+  // A story-bound NPC: pick first/active/completed from their quest's state,
+  // start any quest they give, and grant their lore fragment on first talk.
+  _talkStoryNpc(storyId) {
+    const dlg = NPC_DIALOGUE[storyId];
+
+    // The quest this character gives (trigger npc_talk:<id>), else the
+    // region's main quest arc, decides which line they speak.
+    const ownEntry = Object.entries(QUESTS).find(([, q]) => q.trigger === `npc_talk:${storyId}`);
+    const refId = ownEntry ? ownEntry[0]
+      : (this._regionIndex === 0 ? 'gramavana_main' : MAIN_QUEST_BY_REGION[this._regionIndex]);
+    let state = 'first';
+    if (refId) {
+      if (this.questManager.isComplete(refId)) state = 'completed';
+      else if (this.questManager.isActive(refId)) state = 'active';
+    }
+    const line = dlg[state] || dlg.first;
+
+    // Start their quest(s) after choosing the line, so the first talk still
+    // reads the 'first' text.
+    for (const [qid, q] of Object.entries(QUESTS)) {
+      if (q.trigger === `npc_talk:${storyId}`) this.questManager.start(qid, q);
+    }
+    this.questManager.onNpcTalk(storyId);
+
+    // NPC-source lore fragments had no grant path anywhere — first talk grants.
+    const frag = LORE_FRAGMENTS.find(f => f.source === 'npc' && f.npcId === storyId);
+    if (frag && !this.loreManager.has(frag.id)) {
+      this.loreManager.collect(frag.id);
+      this._persist();
+      this.events.emit('lore_collected', { count: this.loreManager.count(), total: this.loreManager.total() });
+    }
+
+    const name = line.match(/^⟨([^⟩]+)⟩/)?.[1] || storyId;
+    this._markNpcMet(storyId, name, line.replace(/^⟨[^⟩]+⟩\s*/, ''));
+
+    this._dialogueActive = true;
+    this.events.emit('show_dialogue', { text: line });
+  }
+
   _handleInteract() {
     // Revival takes priority: F held near downed ally is handled in _updateRevival
     for (const player of this.players) {
@@ -3163,6 +3212,15 @@ export class GameScene extends Phaser.Scene {
     const npcDialogueMap = this.registry.get('npcDialogue') || {};
     for (const npc of (this._mapNpcs || [])) {
       if (!npc?.active || !npc.isPlayerNear) continue;
+
+      // Story-bound NPCs speak the hand-authored quest script instead of
+      // their single map line.
+      const storyId = STORY_NPC_BINDINGS[npc.npcId];
+      if (storyId && NPC_DIALOGUE[storyId]) {
+        this._talkStoryNpc(storyId);
+        return;
+      }
+
       const dlg = npcDialogueMap[npc.npcId] || npc._embeddedDialogue || {};
       const line = dlg.first || dlg.name && `⟨${dlg.name}⟩ "..."` || '⟨NPC⟩ "..."';
       // Record this NPC in the Codex roster (name + lore from their dialogue).

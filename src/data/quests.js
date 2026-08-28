@@ -4,7 +4,7 @@ export const QUESTS = {
     id: 'gramavana_main', type: 'main',
     title: "The Elder's Warning",
     desc: 'Elder Mahesh speaks of Viyogasur and the breaking of the Akhand Sutra. He believes the old stories may hide broken lies.',
-    trigger: 'npc_talk:elder_mahesh', complete: 'portal_unlock:1', reward: null,
+    trigger: 'npc_talk:elder_mahesh', complete: 'portal_unlock:7', reward: null,
   },
   mahavana_main: {
     id: 'mahavana_main', type: 'main',
