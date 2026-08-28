@@ -124,6 +124,12 @@ export class AudioManager {
     this._tone(500, 'sine', 0.06, 0.2);
   }
 
+  // Per-character tick for the dialogue typewriter — quiet and pitch-jittered so
+  // a stream of them reads as a murmur rather than beeping.
+  dialogueBlip() {
+    this._tone(600 + Math.random() * 180, 'triangle', 0.035, 0.05, 0.002, 0.02);
+  }
+
   // Bright coin/chime for a successful purchase; soft thud when you can't afford it.
   purchase() {
     this._tone(660, 'sine', 0.1, 0.25);

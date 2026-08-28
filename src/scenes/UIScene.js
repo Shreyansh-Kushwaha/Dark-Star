@@ -79,6 +79,8 @@ export class UIScene extends Phaser.Scene {
       ['quest_completed',    this._onQuestCompleted],
       ['show_dialogue',      this._showDialogue],
       ['hide_dialogue',      this._hideDialogue],
+      ['advance_dialogue',   this._advanceDialogue],
+      ['show_riddle',        this._onShowRiddle],
       ['region_title',       this._showRegionTitle],
       ['update_ui',          this._updateHUD],
       ['ability_used',       this._onAbilityUsed],
@@ -268,17 +270,33 @@ export class UIScene extends Phaser.Scene {
   // ── Dialogue ───────────────────────────────────────────────────────────────
 
   _createDialogueBox() {
-    const dh = 160, dy = GAME_H - dh - 4;
+    const M = 16, dh = 150;
+    const dy = GAME_H - dh - 14;
+    this._dlgM = M;
     this._dialogueContainer = this.add.container(0, 0).setVisible(false).setDepth(9999);
 
-    const bg     = this.add.rectangle(0, dy, GAME_W, dh + 4, 0x0a0a14, 0.96).setOrigin(0, 0);
-    const topBar = this.add.rectangle(0, dy, GAME_W, 3, 0xffd700, 1).setOrigin(0, 0);
-    const botBar = this.add.rectangle(0, dy + dh + 1, GAME_W, 3, 0xffd700, 0.4).setOrigin(0, 0);
+    // Framed inset panel — antique-gold double border + corner gems, matching
+    // the boss bar's design language.
+    const frame = this.add.graphics();
+    frame.fillStyle(0x0a0a14, 0.94).fillRect(M, dy, GAME_W - M * 2, dh);
+    frame.fillStyle(0x1a1a2e, 0.5).fillRect(M, dy, GAME_W - M * 2, 3);
+    frame.lineStyle(2, 0x8a6a3a, 1).strokeRect(M, dy, GAME_W - M * 2, dh);
+    frame.lineStyle(1, 0xffd700, 0.25).strokeRect(M + 4, dy + 4, GAME_W - M * 2 - 8, dh - 8);
+    const gems = [[M, dy], [GAME_W - M, dy], [M, dy + dh], [GAME_W - M, dy + dh]]
+      .map(([x, y]) => this.add.rectangle(x, y, 7, 7, 0xffd700, 1).setAngle(45));
+
+    // Speaker nameplate — a tab riding the panel's top edge; width fits the name.
+    this._dlgNameBg = this.add.rectangle(M + 20, dy, 10, 26, 0x14101c, 1)
+      .setOrigin(0, 0.5).setStrokeStyle(2, 0x8a6a3a, 1).setVisible(false);
+    this._dialogueSpeaker = this.add.text(M + 32, dy, '', {
+      fontSize: '15px', color: '#ffd700', fontFamily: 'serif', fontStyle: 'bold',
+      stroke: '#000', strokeThickness: 3,
+    }).setOrigin(0, 0.5).setVisible(false);
 
     // Optional VN-style portrait bust, shown to the left when a line carries a
     // `portrait` texture key. Hidden for plain narration.
-    const pfSize = 128;
-    const pfX = 20, pfY = dy + (dh - pfSize) / 2;
+    const pfSize = 108;
+    const pfX = M + 16, pfY = dy + (dh - pfSize) / 2 + 4;
     this._portraitFrame = this.add.rectangle(pfX, pfY, pfSize, pfSize, 0x05050a, 0.9)
       .setOrigin(0, 0).setStrokeStyle(2, 0xffd700, 0.85).setVisible(false);
     this._dialoguePortrait = this.add.image(pfX + pfSize / 2, pfY + pfSize / 2, '__WHITE').setVisible(false);
@@ -286,27 +304,31 @@ export class UIScene extends Phaser.Scene {
     this._portraitCX = pfX + pfSize / 2;
     this._portraitCY = pfY + pfSize / 2;
 
-    this._dialogueSpeaker = this.add.text(24, dy + 12, '', {
-      fontSize: '15px', color: '#ffd700', fontFamily: 'serif', fontStyle: 'bold',
-      stroke: '#000', strokeThickness: 3,
-    }).setVisible(false);
-
-    this._dialogueText = this.add.text(24, dy + 14, '', {
+    this._dialogueText = this.add.text(M + 24, dy + 22, '', {
       fontSize: '17px', color: '#ffe8a0', fontFamily: 'serif',
-      wordWrap: { width: GAME_W - 48 }, lineSpacing: 8,
+      wordWrap: { width: GAME_W - M * 2 - 48 }, lineSpacing: 8,
     });
-    const hint = this.add.text(GAME_W - 16, dy + dh - 8, '[F] close', {
-      fontSize: '10px', color: '#888', fontFamily: 'monospace',
-    }).setOrigin(1, 1);
-
-    // Text anchors: X shifts right when a portrait is present; Y drops when a
-    // speaker label sits above the line.
-    this._dlgTextX0 = 24;
+    this._dlgTextX0 = M + 24;
     this._dlgTextXP = pfX + pfSize + 20;
-    this._dlgTextY0 = dy + 14;
-    this._dlgTextY1 = dy + 36;
+    this._dlgTextY  = dy + 22;
 
-    this._dialogueContainer.add([bg, topBar, botBar, this._portraitFrame, this._dialoguePortrait, this._dialogueSpeaker, this._dialogueText, hint]);
+    // Page-turn cue: bobbing arrow while more pages remain, [F] on the last.
+    this._dlgMoreArrow = this.add.text(GAME_W - M - 22, dy + dh - 20, '▼', {
+      fontSize: '14px', color: '#ffd700', stroke: '#000', strokeThickness: 2,
+    }).setOrigin(0.5).setVisible(false);
+    this.tweens.add({
+      targets: this._dlgMoreArrow, y: '+=5', duration: 420, yoyo: true, repeat: -1, ease: 'Sine.InOut',
+    });
+    this._dlgHint = this.add.text(GAME_W - M - 12, dy + dh - 10, '[F]', {
+      fontSize: '10px', color: '#888', fontFamily: 'monospace',
+    }).setOrigin(1, 1).setVisible(false);
+
+    this._dialogueContainer.add([frame, ...gems, this._portraitFrame, this._dialoguePortrait,
+      this._dlgNameBg, this._dialogueSpeaker, this._dialogueText, this._dlgMoreArrow, this._dlgHint]);
+    this._dlgPages = [];
+    this._dlgPageIdx = 0;
+    this._dlgTyping = false;
+    this._dlgTimer = null;
   }
 
   // ── Region title ───────────────────────────────────────────────────────────
@@ -1101,7 +1123,15 @@ export class UIScene extends Phaser.Scene {
   // ── Dialogue ───────────────────────────────────────────────────────────────
 
   _showDialogue(data) {
-    this._dialogueContainer.setVisible(true);
+    // Map-authored lines sometimes arrive underscore-joined; normalize first.
+    let text = String(data?.text ?? '').replace(/_/g, ' ').replace(/ {2,}/g, ' ').trim();
+
+    // A leading ⟨Name⟩ tag becomes the nameplate instead of body text.
+    let speaker = data?.speaker || '';
+    if (!speaker) {
+      const m = text.match(/^⟨([^⟩]+)⟩\s*/);
+      if (m) { speaker = m[1]; text = text.slice(m[0].length); }
+    }
 
     const pKey = data?.portrait;
     const hasPortrait = !!pKey && this.textures.exists(pKey);
@@ -1120,16 +1150,192 @@ export class UIScene extends Phaser.Scene {
       this._portraitFrame.setVisible(false);
     }
 
-    const speaker = data?.speaker || '';
+    this._dialogueSpeaker.setText(speaker).setVisible(!!speaker);
+    this._dlgNameBg.setVisible(!!speaker);
+    if (speaker) this._dlgNameBg.setSize(this._dialogueSpeaker.width + 24, 26);
+
     const tx = hasPortrait ? this._dlgTextXP : this._dlgTextX0;
-    this._dialogueSpeaker.setText(speaker).setVisible(!!speaker).setX(tx);
-    this._dialogueText.setX(tx).setY(speaker ? this._dlgTextY1 : this._dlgTextY0);
-    this._dialogueText.setWordWrapWidth(GAME_W - tx - 24);
-    this._dialogueText.setText(data?.text || '');
+    this._dialogueText.setX(tx).setY(this._dlgTextY);
+    this._dialogueText.setWordWrapWidth(GAME_W - this._dlgM - 24 - tx);
+
+    // Pre-wrap into fixed lines so the typewriter never reflows a word
+    // mid-reveal, then split into 3-line pages.
+    const lines = this._dialogueText.getWrappedText(text);
+    this._dlgPages = [];
+    for (let i = 0; i < lines.length; i += 3) this._dlgPages.push(lines.slice(i, i + 3).join('\n'));
+    if (!this._dlgPages.length) this._dlgPages = [''];
+    this._dlgStartPage(0);
+
+    this.tweens.killTweensOf(this._dialogueContainer);
+    if (!this._dialogueContainer.visible) {
+      this._dialogueContainer.setVisible(true).setAlpha(0).setY(18);
+      this.tweens.add({
+        targets: this._dialogueContainer, alpha: 1, y: 0, duration: 180, ease: 'Cubic.Out',
+      });
+    } else {
+      this._dialogueContainer.setAlpha(1).setY(0);
+    }
+  }
+
+  _dlgStartPage(idx) {
+    this._dlgPageIdx = idx;
+    this._dlgTimer?.remove();
+    this._dlgTyping = true;
+    this._dlgMoreArrow.setVisible(false);
+    this._dlgHint.setVisible(false);
+    this._dialogueText.setText('');
+    const page  = this._dlgPages[idx];
+    const audio = this.scene.get('GameScene')?.audio;
+    let ch = 0;
+    this._dlgTimer = this.time.addEvent({
+      delay: 14, loop: true,
+      callback: () => {
+        ch++;
+        if (ch % 3 === 0) audio?.dialogueBlip?.();
+        this._dialogueText.setText(page.slice(0, ch));
+        if (ch >= page.length) this._dlgFinishPage();
+      },
+    });
+  }
+
+  _dlgFinishPage() {
+    this._dlgTimer?.remove();
+    this._dlgTimer = null;
+    this._dlgTyping = false;
+    this._dialogueText.setText(this._dlgPages[this._dlgPageIdx]);
+    const more = this._dlgPageIdx < this._dlgPages.length - 1;
+    this._dlgMoreArrow.setVisible(more);
+    this._dlgHint.setVisible(!more);
+  }
+
+  // [F] while open: skip the typewriter, then page forward, then close.
+  _advanceDialogue() {
+    if (!this._dialogueContainer.visible) return;
+    if (this._dlgTyping) { this._dlgFinishPage(); return; }
+    if (this._dlgPageIdx < this._dlgPages.length - 1) {
+      this.scene.get('GameScene')?.audio?.uiClick();
+      this._dlgStartPage(this._dlgPageIdx + 1);
+      return;
+    }
+    this._hideDialogue();
+    this.scene.get('GameScene')?.events.emit('dialogue_closed');
   }
 
   _hideDialogue() {
-    this._dialogueContainer.setVisible(false);
+    this._dlgTimer?.remove();
+    this._dlgTimer = null;
+    this._dlgTyping = false;
+    if (!this._dialogueContainer.visible) return;
+    this.tweens.killTweensOf(this._dialogueContainer);
+    this.tweens.add({
+      targets: this._dialogueContainer, alpha: 0, y: 14, duration: 140, ease: 'Cubic.In',
+      onComplete: () => { this._dialogueContainer.setVisible(false).setY(0); },
+    });
+  }
+
+  // ── Dialogue riddle (simple text puzzle NPCs) ───────────────────────────────
+  _onShowRiddle(data) {
+    const gs = this.scene.get('GameScene');
+    if (!gs || this._riddleActive) return;
+    this._riddleActive = true;
+    this.time.delayedCall(16, () => { gs._paused = true; gs.physics?.pause(); });
+
+    const depth = 9993;
+    let closed = false;
+    let sel = 0;
+    const choices = data.choices;
+
+    const veil = this.add.rectangle(0, 0, GAME_W, GAME_H, 0x000000, 0).setOrigin(0).setDepth(depth);
+    this.tweens.add({ targets: veil, alpha: 0.85, duration: 120 });
+
+    const title = this.add.text(GAME_W / 2, 90, `🧩  ${data.speaker || 'Riddle'}`, {
+      fontSize: '24px', color: '#ffd700', fontFamily: 'serif', stroke: '#000', strokeThickness: 5,
+    }).setOrigin(0.5).setDepth(depth + 1);
+
+    const question = this.add.text(GAME_W / 2, 160, data.question || '', {
+      fontSize: '16px', color: '#ffe8a0', fontFamily: 'serif', align: 'center',
+      wordWrap: { width: 700 }, lineSpacing: 6,
+    }).setOrigin(0.5, 0).setDepth(depth + 1);
+
+    const objs = [veil, title, question];
+    const rowH = 46, rowW = 560, gap = 12;
+    const top = 260;
+    const rows = choices.map((text, i) => {
+      const cy = top + i * (rowH + gap);
+      const bg = this.add.rectangle(GAME_W / 2, cy, rowW, rowH, 0x0e0e12, 0.9)
+        .setStrokeStyle(2, 0x333333).setDepth(depth + 1).setInteractive({ useHandCursor: true });
+      const label = this.add.text(GAME_W / 2, cy, text, {
+        fontSize: '14px', color: '#ffffff', fontFamily: 'monospace',
+      }).setOrigin(0.5).setDepth(depth + 2);
+      bg.on('pointerover', () => { sel = i; render(); });
+      bg.on('pointerdown', () => { sel = i; answer(); });
+      objs.push(bg, label);
+      return { bg, label };
+    });
+
+    const hint = this.add.text(GAME_W / 2, top + rows.length * (rowH + gap) + 16,
+      '[↑/↓] Choose   [Enter] Answer   [ESC] Leave', {
+        fontSize: '12px', color: '#aa8855', fontFamily: 'monospace',
+      }).setOrigin(0.5).setDepth(depth + 1);
+    objs.push(hint);
+
+    const render = () => {
+      rows.forEach((r, i) => {
+        const on = i === sel;
+        r.bg.setStrokeStyle(on ? 3 : 2, on ? 0xffd700 : 0x333333);
+        r.bg.setFillStyle(0x0e0e12, on ? 0.98 : 0.9);
+        r.label.setColor(on ? '#ffd700' : '#ffffff');
+      });
+    };
+
+    const close = () => {
+      if (closed) return;
+      closed = true;
+      keys.forEach(k => { k.removeAllListeners('down'); k.destroy(); });
+      rows.forEach(r => r.bg.disableInteractive());
+      this.tweens.add({
+        targets: objs, alpha: 0, duration: 200,
+        onComplete: () => {
+          objs.forEach(o => { try { o.destroy(); } catch {} });
+          this._riddleActive = false;
+          gs._paused = false;
+          gs.physics?.resume();
+          data.onClose?.();
+        },
+      });
+    };
+
+    const answer = () => {
+      if (closed) return;
+      const resultText = data.onAnswer?.(sel);
+      rows.forEach(r => { r.bg.disableInteractive().setVisible(false); r.label.setVisible(false); });
+      question.setText(resultText || '');
+      hint.setY(top).setText('[Enter] Continue');
+      const proceed = () => close();
+      kEnter.removeAllListeners('down'); kSpace.removeAllListeners('down');
+      kEnter.on('down', proceed); kSpace.on('down', proceed);
+      kUp.removeAllListeners('down'); kDown.removeAllListeners('down');
+      kW.removeAllListeners('down'); kS.removeAllListeners('down');
+    };
+
+    render();
+
+    const KC = Phaser.Input.Keyboard.KeyCodes;
+    const kUp = this.input.keyboard.addKey(KC.UP), kDown = this.input.keyboard.addKey(KC.DOWN);
+    const kW  = this.input.keyboard.addKey(KC.W),  kS    = this.input.keyboard.addKey(KC.S);
+    const kEnter = this.input.keyboard.addKey(KC.ENTER), kSpace = this.input.keyboard.addKey(KC.SPACE);
+    const kEsc = this.input.keyboard.addKey(KC.ESC);
+    const keys = [kUp, kDown, kW, kS, kEnter, kSpace, kEsc];
+
+    const move = d => { sel = (sel + d + rows.length) % rows.length; gs.audio?.uiClick?.(); render(); };
+
+    this.time.delayedCall(180, () => {
+      if (closed) return;
+      kUp.on('down', () => move(-1));   kW.on('down', () => move(-1));
+      kDown.on('down', () => move(1));  kS.on('down', () => move(1));
+      kEnter.on('down', answer); kSpace.on('down', answer);
+      kEsc.on('down', close);
+    });
   }
 
   // ── Region title ───────────────────────────────────────────────────────────

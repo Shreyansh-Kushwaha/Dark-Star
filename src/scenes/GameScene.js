@@ -161,6 +161,7 @@ export class GameScene extends Phaser.Scene {
     // Codex tracking: enemies faced and NPCs met (for the Bestiary / NPC pages).
     this._encounteredEnemies = new Set(saveData.encounteredEnemyIds || []);
     this._metNpcs = new Map((saveData.metNpcs || []).map(n => [n.id, n]));
+    this._solvedRiddles = new Set(saveData.solvedRiddles || []);
     this.network = this.registry.get('network') || new NetworkManager();
     this.registry.remove('network');
 
@@ -418,6 +419,7 @@ export class GameScene extends Phaser.Scene {
       ['boss_killed',        this._onBossKilled],
       ['boss_wall_break',    this._onBossWallBreak],
       ['boss_phase_changed', this._onBossPhaseChanged],
+      ['dialogue_closed',    this._onDialogueClosed],
     ];
     for (const [evt, fn] of _sceneHandlers) this.events.on(evt, fn, this);
     this.events.once('shutdown', () => {
@@ -1646,6 +1648,7 @@ export class GameScene extends Phaser.Scene {
     s.collectedLoreIds = this.loreManager?.toArray?.() ?? s.collectedLoreIds;
     if (this._encounteredEnemies) s.encounteredEnemyIds = [...this._encounteredEnemies];
     if (this._metNpcs)            s.metNpcs             = [...this._metNpcs.values()];
+    if (this._solvedRiddles)      s.solvedRiddles       = [...this._solvedRiddles];
     SaveManager.save(s);
   }
 
@@ -3055,6 +3058,10 @@ export class GameScene extends Phaser.Scene {
     });
   }
 
+  _onDialogueClosed() {
+    this._dialogueActive = false;
+  }
+
   _handleInteract() {
     // Revival takes priority: F held near downed ally is handled in _updateRevival
     for (const player of this.players) {
@@ -3071,9 +3078,12 @@ export class GameScene extends Phaser.Scene {
     // Reclaim a Lost Echo (recovered souls dropped on death)
     if (this._deathEchoObj && this._playerNearEcho()) { this._reclaimDeathEcho(); return; }
 
+    if (this._riddleActive) return;
+
     if (this._dialogueActive) {
-      this._dialogueActive = false;
-      this.events.emit('hide_dialogue');
+      // UIScene decides: skip the typewriter → next page → close (then it
+      // emits 'dialogue_closed' back to clear the flag).
+      this.events.emit('advance_dialogue');
       return;
     }
 
@@ -3086,8 +3096,33 @@ export class GameScene extends Phaser.Scene {
       // Record this NPC in the Codex roster (name + lore from their dialogue).
       const npcName = dlg.name || line.match(/⟨([^⟩]+)⟩/)?.[1] || 'Wanderer';
       this._markNpcMet(npc.npcId, npcName, line.replace(/^⟨[^⟩]+⟩\s*/, ''));
+
+      const riddle = dlg.riddle;
+      const solved = riddle && this._solvedRiddles.has(npc.npcId);
+      if (riddle && riddle.choices?.length >= 2 && !solved) {
+        this._riddleActive = true;
+        this.events.emit('show_riddle', {
+          speaker: npcName,
+          question: riddle.question || line,
+          choices: riddle.choices,
+          onAnswer: (idx) => {
+            const correct = idx === riddle.correct;
+            if (correct) {
+              this._solvedRiddles.add(npc.npcId);
+              this._persist();
+              if (riddle.reward) this.grantShards(riddle.reward);
+            }
+            return correct
+              ? (dlg.completed || '✓ Correct.')
+              : (dlg.active || '✗ Not quite. Think on it and come back.');
+          },
+          onClose: () => { this._riddleActive = false; },
+        });
+        return;
+      }
+
       this._dialogueActive = true;
-      this.events.emit('show_dialogue', { text: line });
+      this.events.emit('show_dialogue', { text: solved && dlg.completed ? dlg.completed : line });
       return;
     }
 
