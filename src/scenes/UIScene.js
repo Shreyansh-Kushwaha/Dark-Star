@@ -970,9 +970,18 @@ export class UIScene extends Phaser.Scene {
       ? [this._taraHpBg, this._taraHpDelay, this._taraHpFill, this._taraHpText]
       : [this._dhruvaHpBg, this._dhruvaHpDelay, this._dhruvaHpFill, this._dhruvaHpText];
     parts.forEach(o => { if (o._baseX === undefined) o._baseX = o.x; });
-    this._hudShake?.complete();
+    // Restart the shake via killTweensOf on a persistent proxy target.
+    // The old `_hudShake.complete()` threw once the previous shake had
+    // finished — Phaser destroys finished tweens (parent/callbacks nulled),
+    // and the exception unwound through the synchronous player_damaged emit
+    // into the game step, killing the RAF loop: a permanent hard freeze on
+    // the second hit taken more than ~160ms after the first.
+    this._hudShakeT = this._hudShakeT || { t: 0 };
+    this.tweens.killTweensOf(this._hudShakeT);
+    this._hudShakeT.t = 0;
+    parts.forEach(o => { o.x = o._baseX; });
     this._hudShake = this.tweens.add({
-      targets: { t: 0 }, t: 1, duration: 160,
+      targets: this._hudShakeT, t: 1, duration: 160,
       onUpdate: (tw, tgt) => {
         const off = Math.sin(tgt.t * Math.PI * 4) * 3 * (1 - tgt.t);
         parts.forEach(o => { o.x = o._baseX + off; });
