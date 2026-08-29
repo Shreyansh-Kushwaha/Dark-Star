@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { WebSocketServer } = require('ws');
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 const GAME_ROOT = path.join(__dirname, '..');
 
 const MIME = {
