@@ -24,6 +24,11 @@ export class TouchControls {
       J: { isDown: false },
       K: { isDown: false },
       SHIFT: { isDown: false, _justDown: false },
+      Q: { isDown: false, _justDown: false },
+      E: { isDown: false, _justDown: false },
+      R: { isDown: false, _justDown: false },
+      F: { isDown: false, _justDown: false },
+      H: { isDown: false, _justDown: false },
     };
 
     this._joyPointerId = null;
@@ -60,24 +65,47 @@ export class TouchControls {
     const heavyBtn = this._makeButton(w - 70, h - 150, BTN_RADIUS, 0xff5a5a, 'K');
     const lightBtn = this._makeButton(w - 150, h - 90, BTN_RADIUS, 0xffcf5a, 'J');
     const dodgeBtn = this._makeButton(w - 70, h - 70, BTN_RADIUS * 0.8, 0x5ad1ff, 'DODGE');
+    this._bindHold(heavyBtn, 'K');
+    this._bindHold(lightBtn, 'J');
+    this._bindTap(dodgeBtn, 'SHIFT');
 
-    heavyBtn.on('pointerdown', () => { this.keys.K.isDown = true; });
-    heavyBtn.on('pointerup',   () => { this.keys.K.isDown = false; });
-    heavyBtn.on('pointerout',  () => { this.keys.K.isDown = false; });
+    // Ability row (Q/E/R), smaller, above the attack cluster.
+    const abilRadius = BTN_RADIUS * 0.72;
+    const qBtn = this._makeButton(w - 230, h - 230, abilRadius, 0x9a5aff, 'Q');
+    const eBtn = this._makeButton(w - 150, h - 230, abilRadius, 0x9a5aff, 'E');
+    const rBtn = this._makeButton(w - 70,  h - 230, abilRadius, 0x9a5aff, 'R');
+    this._bindTap(qBtn, 'Q');
+    this._bindTap(eBtn, 'E');
+    this._bindTap(rBtn, 'R');
 
-    lightBtn.on('pointerdown', () => { this.keys.J.isDown = true; });
-    lightBtn.on('pointerup',   () => { this.keys.J.isDown = false; });
-    lightBtn.on('pointerout',  () => { this.keys.J.isDown = false; });
-
-    dodgeBtn.on('pointerdown', () => { this.keys.SHIFT.isDown = true; this.keys.SHIFT._justDown = true; });
-    dodgeBtn.on('pointerup',   () => { this.keys.SHIFT.isDown = false; });
-    dodgeBtn.on('pointerout',  () => { this.keys.SHIFT.isDown = false; });
+    // Interact (hold-to-revive, tap-to-interact) + Amrit heal, centered above the joystick.
+    const interactBtn = this._makeButton(w / 2, h - 70, abilRadius, 0x8aff8a, 'F');
+    const amritBtn    = this._makeButton(w / 2, h - 150, abilRadius, 0x5affc8, 'H');
+    this._bindHold(interactBtn, 'F', /* alsoJustDown */ true);
+    this._bindTap(amritBtn, 'H');
 
     scene.input.on('pointermove', this._onPointerMove);
     scene.input.on('pointerup', this._onPointerUp);
     scene.input.on('pointerupoutside', this._onPointerUp);
 
     scene.events.once('shutdown', () => this.destroy());
+  }
+
+  // isDown only for as long as held (attack buttons, and F which is also
+  // polled via .isDown for the co-op revival hold).
+  _bindHold(btn, keyName, alsoJustDown = false) {
+    const key = this.keys[keyName];
+    btn.on('pointerdown', () => { key.isDown = true; if (alsoJustDown) key._justDown = true; });
+    btn.on('pointerup',   () => { key.isDown = false; });
+    btn.on('pointerout',  () => { key.isDown = false; });
+  }
+
+  // Single JustDown() pulse per press (dodge, abilities, item use).
+  _bindTap(btn, keyName) {
+    const key = this.keys[keyName];
+    btn.on('pointerdown', () => { key.isDown = true; key._justDown = true; });
+    btn.on('pointerup',   () => { key.isDown = false; });
+    btn.on('pointerout',  () => { key.isDown = false; });
   }
 
   _makeButton(x, y, radius, color, label) {

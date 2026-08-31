@@ -2903,9 +2903,12 @@ export class GameScene extends Phaser.Scene {
         this._cursors.down.isDown  = this._cursors.down.isDown  || t.cursors.down.isDown;
         this._keys.J.isDown = this._keys.J.isDown || t.keys.J.isDown;
         this._keys.K.isDown = this._keys.K.isDown || t.keys.K.isDown;
-        if (t.keys.SHIFT._justDown) {
-          this._keys.SHIFT._justDown = true;
-          t.keys.SHIFT._justDown = false;
+        this._keys.F.isDown = this._keys.F.isDown || t.keys.F.isDown;
+        for (const k of ['SHIFT', 'Q', 'E', 'R', 'F', 'H']) {
+          if (t.keys[k]._justDown) {
+            this._keys[k]._justDown = true;
+            t.keys[k]._justDown = false;
+          }
         }
       }
       if (p1 && p1.isLocal)  p1.update(time, delta, this._cursors, this._keys, this.enemies, this);
