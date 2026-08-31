@@ -242,6 +242,7 @@ export class UIScene extends Phaser.Scene {
       { y: 100, label: '☰', color: 0xffd700, onTap: () => this._openPauseMenu() },
       { y: 148, label: '📜', color: 0xddaa66, onTap: () => this._toggleQuestPanel(this.scene.get('GameScene')) },
       { y: 196, label: '🎒', color: 0x8fe3ff, onTap: () => this._toggleInventoryPanel(this.scene.get('GameScene')) },
+      { y: 244, label: '⛶',  color: 0xaaaaaa, onTap: () => this._toggleFullscreen() },
     ];
     for (const d of defs) {
       const bg = this.add.circle(x, d.y, 22, 0x0a0a14, 0.75).setStrokeStyle(2, d.color, 0.7).setDepth(9500);
