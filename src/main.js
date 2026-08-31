@@ -25,6 +25,11 @@ const config = {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
+  // Touch controls need the joystick and an attack/dodge button held down
+  // simultaneously — Phaser only tracks 1 pointer by default.
+  input: {
+    activePointers: 3,
+  },
   render: {
     powerPreference: 'high-performance',
     batchSize: 4096,

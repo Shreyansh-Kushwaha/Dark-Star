@@ -52,6 +52,7 @@ import { ExploredManager } from '../systems/ExploredManager.js';
 import { MAP_LAYOUT } from '../data/worldMapLayout.js';
 import { CutscenePlayer, defaultBossCutscene } from '../systems/CutscenePlayer.js';
 import { NPC } from '../entities/NPC.js';
+import { TouchControls } from '../systems/TouchControls.js';
 import { classifyProp, propFootprint } from '../data/propTypes.js';
 
 // Gated shortcuts: portals sealed until a requirement is met. Keyed by region index,
@@ -364,6 +365,11 @@ export class GameScene extends Phaser.Scene {
       H: Phaser.Input.Keyboard.KeyCodes.H,
       SHIFT: Phaser.Input.Keyboard.KeyCodes.SHIFT,
     });
+
+    // Touch/tablet on-screen joystick + attack/dodge buttons. Feeds into the
+    // real keyboard Key objects above each frame (see update()) so Player.js
+    // needs no touch-specific code at all.
+    this._touchControls = TouchControls.isSupported() ? new TouchControls(this) : null;
 
     // World map overlay — open with M (when not already paused / mid-dialogue).
     this.input.keyboard.on('keydown-M', () => {
@@ -2889,6 +2895,19 @@ export class GameScene extends Phaser.Scene {
     const p2 = this.players[1];
 
     if (!this._bossIntroActive) {
+      if (this._touchControls) {
+        const t = this._touchControls;
+        this._cursors.left.isDown  = this._cursors.left.isDown  || t.cursors.left.isDown;
+        this._cursors.right.isDown = this._cursors.right.isDown || t.cursors.right.isDown;
+        this._cursors.up.isDown    = this._cursors.up.isDown    || t.cursors.up.isDown;
+        this._cursors.down.isDown  = this._cursors.down.isDown  || t.cursors.down.isDown;
+        this._keys.J.isDown = this._keys.J.isDown || t.keys.J.isDown;
+        this._keys.K.isDown = this._keys.K.isDown || t.keys.K.isDown;
+        if (t.keys.SHIFT._justDown) {
+          this._keys.SHIFT._justDown = true;
+          t.keys.SHIFT._justDown = false;
+        }
+      }
       if (p1 && p1.isLocal)  p1.update(time, delta, this._cursors, this._keys, this.enemies, this);
       if (p2 && p2.isLocal)  p2.update(time, delta, this._cursors, this._keys, this.enemies, this);
       // Solo only: Tara follows P1 via AI when there is no network connection
