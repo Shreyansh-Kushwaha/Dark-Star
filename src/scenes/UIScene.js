@@ -1,5 +1,6 @@
 import { GAME_W, GAME_H, ITEM_DEFS, XP_THRESHOLDS, POINTS_PER_LEVEL } from '../constants.js';
 import { SKILL_TREES } from '../data/skills.js';
+import { QualitySettings } from '../systems/QualitySettings.js';
 
 const BAR_L     = 52;          // HP bar left x
 const BAR_R     = GAME_W - 30; // HP bar right x
@@ -36,6 +37,7 @@ export class UIScene extends Phaser.Scene {
 
     this._createCheatConsole();
     this._createVignette();
+    if (QualitySettings._isTouchDevice()) this._createTouchMenuButtons();
 
     this._statPoints = this.scene.get('GameScene')?._save?.statPoints || 0; // banked, unspent skill points
     this._levelUpActive = false;
@@ -229,6 +231,52 @@ export class UIScene extends Phaser.Scene {
     this._levelLabel = this.add.text(xpBarX + xpBarW + 6, xpBarY, 'LVL 1', {
       fontSize: '9px', color: '#bb99ff', fontFamily: "'Silkscreen', monospace",
     }).setOrigin(0, 0.5);
+  }
+
+  // On-screen pause/quest/inventory buttons for touch devices — the physical
+  // ESC/U/I shortcuts these mirror have no on-screen equivalent otherwise.
+  // Stacked along the right edge, just under the shard counter.
+  _createTouchMenuButtons() {
+    const x = GAME_W - 30;
+    const defs = [
+      { y: 100, label: '☰', color: 0xffd700, onTap: () => this._openPauseMenu() },
+      { y: 148, label: '📜', color: 0xddaa66, onTap: () => this._toggleQuestPanel(this.scene.get('GameScene')) },
+      { y: 196, label: '🎒', color: 0x8fe3ff, onTap: () => this._toggleInventoryPanel(this.scene.get('GameScene')) },
+    ];
+    for (const d of defs) {
+      const bg = this.add.circle(x, d.y, 22, 0x0a0a14, 0.75).setStrokeStyle(2, d.color, 0.7).setDepth(9500);
+      const txt = this.add.text(x, d.y, d.label, { fontSize: '18px' }).setOrigin(0.5).setDepth(9501);
+      bg.setInteractive({ useHandCursor: true });
+      bg.on('pointerdown', () => { bg.setScale(0.9); txt.setScale(0.9); });
+      bg.on('pointerup',   () => { bg.setScale(1); txt.setScale(1); d.onTap(); });
+      bg.on('pointerout',  () => { bg.setScale(1); txt.setScale(1); });
+    }
+  }
+
+  // Shared by the ESC/U/I keyboard handling in update() and the touch buttons
+  // above, so both paths stay in sync.
+  _openPauseMenu() {
+    const gs = this.scene.get('GameScene');
+    if (this._questVisible) { this._questPanel.setVisible(false); this._questVisible = false; return; }
+    if (this._invVisible) { this._invPanel.setVisible(false); this._invVisible = false; return; }
+    if (!this._levelUpActive && !gs?._paused) gs?.togglePause();
+  }
+
+  _toggleQuestPanel(gs) {
+    this._questVisible = !this._questVisible;
+    if (this._questVisible) {
+      this._refreshQuestLog(gs);
+      this._refreshLoreTab(gs);
+      this._panelIn(this._questPanel);
+    } else this._questPanel.setVisible(false);
+  }
+
+  _toggleInventoryPanel(gs) {
+    this._invVisible = !this._invVisible;
+    if (this._invVisible) {
+      this._refreshInventory(gs);
+      this._panelIn(this._invPanel);
+    } else this._invPanel.setVisible(false);
   }
 
   // ── Boss bar (Dark Souls style) ────────────────────────────────────────────
@@ -529,27 +577,12 @@ export class UIScene extends Phaser.Scene {
     const homeDown      = Phaser.Input.Keyboard.JustDown(this._keyHome);
     const backspaceDown = Phaser.Input.Keyboard.JustDown(this._keyBackspace);
     if (escDown || homeDown || backspaceDown) {
-      if (this._questVisible) { this._questPanel.setVisible(false); this._questVisible = false; }
-      else if (this._invVisible) { this._invPanel.setVisible(false); this._invVisible = false; }
       // Only OPEN the pause menu from here. While paused, PauseScene's own ESC/HOME
       // handler owns resume — toggling here too would double-fire and re-pause.
-      else if (!this._levelUpActive && !backspaceDown && !gs?._paused) gs?.togglePause();
+      if (!backspaceDown || this._questVisible || this._invVisible) this._openPauseMenu();
     }
-    if (Phaser.Input.Keyboard.JustDown(this._keyU)) {
-      this._questVisible = !this._questVisible;
-      if (this._questVisible) {
-        this._refreshQuestLog(gs);
-        this._refreshLoreTab(gs);
-        this._panelIn(this._questPanel);
-      } else this._questPanel.setVisible(false);
-    }
-    if (Phaser.Input.Keyboard.JustDown(this._keyI)) {
-      this._invVisible = !this._invVisible;
-      if (this._invVisible) {
-        this._refreshInventory(gs);
-        this._panelIn(this._invPanel);
-      } else this._invPanel.setVisible(false);
-    }
+    if (Phaser.Input.Keyboard.JustDown(this._keyU)) this._toggleQuestPanel(gs);
+    if (Phaser.Input.Keyboard.JustDown(this._keyI)) this._toggleInventoryPanel(gs);
     if (Phaser.Input.Keyboard.JustDown(this._keyF) && this._invVisible) {
       this._useFirstConsumable(gs);
     }
