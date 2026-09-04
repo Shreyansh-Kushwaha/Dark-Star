@@ -1,7 +1,7 @@
 // On-screen virtual joystick + attack/dodge buttons for touch devices.
-// Owns plain {isDown}/{isDown,_justDown} state objects that GameScene ORs
-// into the real keyboard Key objects each frame — Player.js itself never
-// needs to know touch controls exist.
+// Owns plain {isDown}/{isDown,_justDown} state objects that GameScene merges
+// with the real keyboard Keys into per-frame view objects — Player.js itself
+// never needs to know touch controls exist.
 import { QualitySettings } from './QualitySettings.js';
 
 const JOY_RADIUS = 55;
@@ -33,9 +33,11 @@ export class TouchControls {
 
     this._joyPointerId = null;
     this._joyOrigin = { x: 0, y: 0 };
+    this._holdOwner = {}; // keyName -> pointer id currently holding that button
 
     this._onPointerMove = (p) => this._joyMove(p);
     this._onPointerUp = (p) => this._joyEnd(p);
+    this._onSceneUpdate = () => this._releaseLostPointers();
 
     this._buildUI();
   }
@@ -87,17 +89,51 @@ export class TouchControls {
     scene.input.on('pointermove', this._onPointerMove);
     scene.input.on('pointerup', this._onPointerUp);
     scene.input.on('pointerupoutside', this._onPointerUp);
+    scene.events.on('update', this._onSceneUpdate);
 
     scene.events.once('shutdown', () => this.destroy());
   }
 
+  // A touch that ends in touchcancel (notification shade, browser edge
+  // gesture, palm swipe) marks its Pointer up but never reaches our
+  // pointerup handlers, which would leave the stick or a held button latched
+  // on. Verify every pointer we've claimed is still really down each frame.
+  _releaseLostPointers() {
+    const pointers = this.scene.input.manager.pointers;
+    if (this._joyPointerId !== null) {
+      const p = pointers.find((pt) => pt.id === this._joyPointerId);
+      if (!p || !p.isDown) this._joyEnd(p || { id: this._joyPointerId });
+    }
+    for (const keyName in this._holdOwner) {
+      const id = this._holdOwner[keyName];
+      if (id === null) continue;
+      const p = pointers.find((pt) => pt.id === id);
+      if (!p || !p.isDown) {
+        this.keys[keyName].isDown = false;
+        this._holdOwner[keyName] = null;
+      }
+    }
+  }
+
   // isDown only for as long as held (attack buttons, and F which is also
-  // polled via .isDown for the co-op revival hold).
+  // polled via .isDown for the co-op revival hold). Tracks the holding
+  // pointer so another finger passing over the button can't release it, and
+  // so _releaseLostPointers can clean up after a cancelled touch.
   _bindHold(btn, keyName, alsoJustDown = false) {
     const key = this.keys[keyName];
-    btn.on('pointerdown', () => { key.isDown = true; if (alsoJustDown) key._justDown = true; });
-    btn.on('pointerup',   () => { key.isDown = false; });
-    btn.on('pointerout',  () => { key.isDown = false; });
+    this._holdOwner[keyName] = null;
+    btn.on('pointerdown', (p) => {
+      key.isDown = true;
+      this._holdOwner[keyName] = p.id;
+      if (alsoJustDown) key._justDown = true;
+    });
+    const release = (p) => {
+      if (this._holdOwner[keyName] !== null && p.id !== this._holdOwner[keyName]) return;
+      key.isDown = false;
+      this._holdOwner[keyName] = null;
+    };
+    btn.on('pointerup',  release);
+    btn.on('pointerout', release);
   }
 
   // Single JustDown() pulse per press (dodge, abilities, item use).
@@ -161,6 +197,7 @@ export class TouchControls {
     this.scene.input.off('pointermove', this._onPointerMove);
     this.scene.input.off('pointerup', this._onPointerUp);
     this.scene.input.off('pointerupoutside', this._onPointerUp);
+    this.scene.events.off('update', this._onSceneUpdate);
     this.container?.destroy();
   }
 }

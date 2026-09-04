@@ -366,9 +366,22 @@ export class GameScene extends Phaser.Scene {
       SHIFT: Phaser.Input.Keyboard.KeyCodes.SHIFT,
     });
 
-    // Touch/tablet on-screen joystick + attack/dodge buttons. Feeds into the
-    // real keyboard Key objects above each frame (see update()) so Player.js
-    // needs no touch-specific code at all.
+    // Per-frame merged view of keyboard + touch input (recomputed in update()).
+    // Player and all in-scene input reads consume THESE, never the raw Key
+    // objects: writing touch state into a real Key latches isDown because no
+    // DOM keyup ever clears it on a touch device (the stuck-joystick bug).
+    this._mergedCursors = {
+      left: { isDown: false }, right: { isDown: false },
+      up: { isDown: false }, down: { isDown: false },
+    };
+    this._mergedKeys = {};
+    for (const name of Object.keys(this._keys)) {
+      this._mergedKeys[name] = { isDown: false, _justDown: false };
+    }
+
+    // Touch/tablet on-screen joystick + attack/dodge buttons. Merged with the
+    // keyboard into the view objects above each frame (see update()) so
+    // Player.js needs no touch-specific code at all.
     this._touchControls = TouchControls.isSupported() ? new TouchControls(this) : null;
 
     // World map overlay — open with M (when not already paused / mid-dialogue).
@@ -2894,25 +2907,27 @@ export class GameScene extends Phaser.Scene {
     const p1 = this.players[0];
     const p2 = this.players[1];
 
-    if (!this._bossIntroActive) {
-      if (this._touchControls) {
-        const t = this._touchControls;
-        this._cursors.left.isDown  = this._cursors.left.isDown  || t.cursors.left.isDown;
-        this._cursors.right.isDown = this._cursors.right.isDown || t.cursors.right.isDown;
-        this._cursors.up.isDown    = this._cursors.up.isDown    || t.cursors.up.isDown;
-        this._cursors.down.isDown  = this._cursors.down.isDown  || t.cursors.down.isDown;
-        this._keys.J.isDown = this._keys.J.isDown || t.keys.J.isDown;
-        this._keys.K.isDown = this._keys.K.isDown || t.keys.K.isDown;
-        this._keys.F.isDown = this._keys.F.isDown || t.keys.F.isDown;
-        for (const k of ['SHIFT', 'Q', 'E', 'R', 'F', 'H']) {
-          if (t.keys[k]._justDown) {
-            this._keys[k]._justDown = true;
-            t.keys[k]._justDown = false;
-          }
-        }
+    // Recompute the merged input view: keyboard OR touch, without ever
+    // mutating the real Key objects (see the note where these are created).
+    const touch = this._touchControls;
+    for (const dir of ['left', 'right', 'up', 'down']) {
+      this._mergedCursors[dir].isDown =
+        this._cursors[dir].isDown || (touch ? touch.cursors[dir].isDown : false);
+    }
+    for (const name in this._mergedKeys) {
+      const merged = this._mergedKeys[name];
+      const tKey = touch ? touch.keys[name] : undefined;
+      merged.isDown = this._keys[name].isDown || (tKey ? tKey.isDown : false);
+      if (Phaser.Input.Keyboard.JustDown(this._keys[name])) merged._justDown = true;
+      if (tKey && tKey._justDown) {
+        merged._justDown = true;
+        tKey._justDown = false;
       }
-      if (p1 && p1.isLocal)  p1.update(time, delta, this._cursors, this._keys, this.enemies, this);
-      if (p2 && p2.isLocal)  p2.update(time, delta, this._cursors, this._keys, this.enemies, this);
+    }
+
+    if (!this._bossIntroActive) {
+      if (p1 && p1.isLocal)  p1.update(time, delta, this._mergedCursors, this._mergedKeys, this.enemies, this);
+      if (p2 && p2.isLocal)  p2.update(time, delta, this._mergedCursors, this._mergedKeys, this.enemies, this);
       // Solo only: Tara follows P1 via AI when there is no network connection
       if (p2 && !p2.isLocal && !this.network.connected) this._taraAI(p1, p2, delta);
     }
@@ -2986,7 +3001,7 @@ export class GameScene extends Phaser.Scene {
     }
 
     // ── Interact ─────────────────────────────────────────────────
-    if (Phaser.Input.Keyboard.JustDown(this._keys.F)) {
+    if (Phaser.Input.Keyboard.JustDown(this._mergedKeys.F)) {
       this._handleInteract();
     }
 
@@ -4021,7 +4036,7 @@ export class GameScene extends Phaser.Scene {
         if (d < 70) {
           revivalPossible = true;
           this._revivalUiShown = true;
-          if (this._keys.F.isDown) {
+          if (this._mergedKeys.F.isDown) {
             player._revivalTimer = (player._revivalTimer || 0) + delta;
             const progress = Math.min(1, player._revivalTimer / 1800);
             this.events.emit('revival_progress', { progress });
