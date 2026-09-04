@@ -417,8 +417,20 @@ export class Enemy extends Phaser.GameObjects.Container {
 
   takeDamage(amount, source, scene) {
     if (!this.alive) return;
-    this.hp = Math.max(0, this.hp - amount);
-    this._updateHpBar();
+
+    // Co-op client: enemies here are host-simulated puppets, so forward the hit
+    // to the host (which owns hp/death and echoes both back via ENEMY_SYNC) the
+    // same way BOSS_HIT does for bosses. Mutating hp locally desynced the two
+    // sides: a client kill destroyed the puppet on this device while the host
+    // kept the enemy alive and broadcasting. Hit juice still plays locally.
+    const net = (scene || this.scene)?.network;
+    const isPuppet = !!(net?.connected && net.isClient?.());
+    if (isPuppet) {
+      net.send('ENEMY_HIT', { id: this._id, damage: amount, sx: source?.x, sy: source?.y });
+    } else {
+      this.hp = Math.max(0, this.hp - amount);
+      this._updateHpBar();
+    }
     this._spawnDamageNumber(scene, amount);
 
     // hit juice: sharp white flash, squash/stretch pop, debris erupting along
@@ -427,11 +439,15 @@ export class Enemy extends Phaser.GameObjects.Container {
     const hitAngle = source ? Math.atan2(this.y - source.y, this.x - source.x) : null;
     scene._popSprite?.(this.sprite, _base, _base, 1.18, 0.82, 80);
     scene._impactDust?.(this.x, this.y - 10, 0xffe6b0, amount >= 20 ? 6 : 4, hitAngle);
-    if (hitAngle !== null && this.hp > 0) this.knockback(hitAngle, amount >= 20 ? 160 : 90);
+    // Puppet positions glide toward the host's sync — a local shove would just
+    // rubber-band back, so only the authoritative side knocks back.
+    if (hitAngle !== null && this.hp > 0 && !isPuppet) this.knockback(hitAngle, amount >= 20 ? 160 : 90);
     this.sprite.setTint(0xffffff);
     scene.time.delayedCall(70, () => {
       if (this.alive) this.sprite.clearTint();
     });
+
+    if (isPuppet) return;   // aggro and death are the host's decisions
 
     // Aggro on hit — but passive wildlife bolts instead of fighting back.
     if (this.passive) { this.state = STATE.FLEE; this._fleeTimer = 1500; }
@@ -528,7 +544,9 @@ export class Enemy extends Phaser.GameObjects.Container {
   }
 
   applyNetState(state) {
-    if (!state.alive && this.alive) { this._die(null); return; }
+    // Real scene ref (matches Boss.applyNetState) so a host-side kill plays the
+    // death VFX here and emits enemy_killed — the client's XP/shard/quest credit.
+    if (!state.alive && this.alive) { this._die(this.scene); return; }
     if (!this.alive) return;
 
     this.hp = state.hp;

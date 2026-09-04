@@ -311,6 +311,17 @@ export class GameScene extends Phaser.Scene {
         };
         this.network.on('BOSS_HIT', onBossHit);
         _netCleanup.push(['BOSS_HIT', onBossHit]);
+
+        // Host: apply the client's hits to the authoritative enemies (the client
+        // only plays hit feedback locally — see Enemy.takeDamage). sx/sy carry
+        // the attacker's position so knockback pushes the right way here.
+        const onEnemyHit = ({ id, damage, sx, sy }) => {
+          if (!(damage > 0)) return;
+          const e = this.enemies.find(x => x?._id === id);
+          if (e?.alive) e.takeDamage(damage, sx != null ? { x: sx, y: sy } : null, this);
+        };
+        this.network.on('ENEMY_HIT', onEnemyHit);
+        _netCleanup.push(['ENEMY_HIT', onEnemyHit]);
       }
 
       // Client: apply enemy states broadcast by host
@@ -345,7 +356,7 @@ export class GameScene extends Phaser.Scene {
           // Remove enemies that are gone on host (killed)
           for (const [id, e] of this._remoteEnemyMap) {
             if (!seenIds.has(id)) {
-              if (e.alive) e._die(null);
+              if (e.alive) e._die(this);
               const idx = this.enemies.indexOf(e);
               if (idx > -1) this.enemies.splice(idx, 1);
               this._remoteEnemyMap.delete(id);
