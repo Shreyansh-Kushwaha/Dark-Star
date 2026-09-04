@@ -87,7 +87,7 @@ export class CutscenePlayer {
 
       case 'shake': {
         const ms = step.ms ?? 400;
-        scene.cameras.main.shake(ms, step.intensity ?? 0.015);
+        scene._cameraPunch?.(step.intensity ?? 0.015, ms);
         return this._delay(step.wait ?? ms);
       }
 

@@ -130,7 +130,7 @@ export class AbilityManager {
     }
     // Central fireball explosion (VFX2 = large 12-frame burst)
     _vfxPlay(scene, 'vfx_fire2', player.x, player.y - 20, 3.0, player.depth - 1);
-    scene.cameras.main.shake(300, 0.012);
+    scene._cameraPunch?.(0.012, 300);
     scene.audio.ability();
   }
 

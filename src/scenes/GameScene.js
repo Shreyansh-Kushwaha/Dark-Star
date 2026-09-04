@@ -44,6 +44,7 @@ import { statsFor } from '../data/creatureStats.js';
 import { Projectile } from '../entities/Projectile.js';
 import { AudioManager } from '../systems/AudioManager.js';
 import { RegionCatalog } from '../systems/RegionCatalog.js';
+import { Settings } from '../systems/Settings.js';
 import { HapticsManager } from '../systems/HapticsManager.js';
 import { QuestManager } from '../systems/QuestManager.js';
 import { SaveManager } from '../systems/SaveManager.js';
@@ -1262,6 +1263,7 @@ export class GameScene extends Phaser.Scene {
 
   // Very short, subtle camera shake for weighty hits (heavy melee / boss).
   _cameraPunch(amp = 0.004, dur = 70) {
+    if (Settings.reducedMotion) return;
     this.cameras?.main?.shake(dur, amp);
   }
 
@@ -1270,6 +1272,7 @@ export class GameScene extends Phaser.Scene {
   // kill-shot slow-mo. Restored by wall clock in update() so it survives the
   // frozen clocks; overlapping calls just extend the window.
   _hitStop(ms = 60, slow = 0.05) {
+    if (Settings.reducedMotion) return;
     const now = performance.now();
     if (this._hitStopUntil) {
       // Rapid follow-up hits may extend the beat, but never past a hard cap
@@ -1324,6 +1327,7 @@ export class GameScene extends Phaser.Scene {
   // Directional camera kick — the view lurches along the strike vector, then
   // eases back. Layered on top of the shake, this reads as force, not rattle.
   _cameraKick(angle, dist = 5) {
+    if (Settings.reducedMotion) return;
     const cam = this.cameras?.main;
     if (!cam?.followOffset) return;
     this.tweens.killTweensOf(cam.followOffset);
@@ -3992,7 +3996,7 @@ export class GameScene extends Phaser.Scene {
 
   _onBossWallBreak(data) {
     const { boss } = data;
-    this.cameras.main.shake(900, 0.022);
+    this._cameraPunch(0.022, 900);
 
     // Screen flash
     const flash = this.add.rectangle(0, 0, GAME_W, GAME_H, 0xffffff, 0.35)

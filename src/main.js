@@ -10,8 +10,10 @@ import { MerchantScene }    from './scenes/MerchantScene.js';
 import { GameEndingScene }  from './scenes/GameEndingScene.js';
 import { GAME_W, GAME_H }   from './constants.js';
 import { QualitySettings }  from './systems/QualitySettings.js';
+import { Settings }         from './systems/Settings.js';
 
 QualitySettings.load();
+Settings.load();
 
 const config = {
   type: Phaser.AUTO,

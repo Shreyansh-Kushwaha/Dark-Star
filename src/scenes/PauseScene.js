@@ -4,6 +4,8 @@ import { ENEMY_TYPES } from '../data/enemies.js';
 import { ENEMY_LORE, CHARACTERS, NPC_CODEX } from '../data/codex.js';
 import { BOSSES } from '../data/bosses.js';
 import { CREATURE_STATS } from '../data/creatureStats.js';
+import { Settings } from '../systems/Settings.js';
+import { QualitySettings } from '../systems/QualitySettings.js';
 
 const REGION_LABELS = [
   'Gramavana', 'Mahāvana', 'Vrindavana',
@@ -54,10 +56,11 @@ export class PauseScene extends Phaser.Scene {
     }).setOrigin(0.5);
 
     this._menuItems = [
-      { label: 'RESUME',    action: () => this._resume()    },
-      { label: 'WORLD MAP', action: () => this._openMap()   },
-      { label: 'CODEX',     action: () => this._openBook()  },
-      { label: 'MAIN MENU', action: () => this._mainMenu()  },
+      { label: 'RESUME',    action: () => this._resume()       },
+      { label: 'WORLD MAP', action: () => this._openMap()      },
+      { label: 'CODEX',     action: () => this._openBook()     },
+      { label: 'SETTINGS',  action: () => this._openSettings() },
+      { label: 'MAIN MENU', action: () => this._mainMenu()     },
     ];
     this._selIdx = 0;
     this._buttons = this._menuItems.map((item, i) =>
@@ -68,7 +71,7 @@ export class PauseScene extends Phaser.Scene {
     }).setOrigin(0.5);
     this._updateCursor();
 
-    this.add.text(GAME_W / 2, GAME_H / 2 + 160,
+    this.add.text(GAME_W / 2, GAME_H / 2 + 218,
       '↑↓ Navigate   Enter / Space — Confirm   Esc / Backspace — Back', {
         fontSize: '11px', color: '#555', fontFamily: 'monospace',
       }).setOrigin(0.5);
@@ -77,22 +80,24 @@ export class PauseScene extends Phaser.Scene {
     kb.on('keydown-ESC',       () => this._onEsc());
     kb.on('keydown-BACKSPACE', () => this._onEsc());
     kb.on('keydown-HOME',      () => this._resume());
-    kb.on('keydown-UP',        () => this._bookOpen ? this._bookPageStep(-1) : this._move(-1));
-    kb.on('keydown-DOWN',      () => this._bookOpen ? this._bookPageStep(1)  : this._move(1));
-    kb.on('keydown-LEFT',      () => { if (this._bookOpen) this._bookTabStep(-1); });
-    kb.on('keydown-RIGHT',     () => { if (this._bookOpen) this._bookTabStep(1); });
+    kb.on('keydown-UP',        () => this._bookOpen ? this._bookPageStep(-1) : this._settingsOpen ? this._settingsMove(-1) : this._move(-1));
+    kb.on('keydown-DOWN',      () => this._bookOpen ? this._bookPageStep(1)  : this._settingsOpen ? this._settingsMove(1)  : this._move(1));
+    kb.on('keydown-LEFT',      () => { if (this._bookOpen) this._bookTabStep(-1); else if (this._settingsOpen) this._settingsAdjust(-1); });
+    kb.on('keydown-RIGHT',     () => { if (this._bookOpen) this._bookTabStep(1);  else if (this._settingsOpen) this._settingsAdjust(1); });
     kb.on('keydown-ENTER',     () => this._confirm());
     kb.on('keydown-SPACE',     () => this._confirm());
 
     this._bookOpen = false;
     this._bookObjs = [];
+    this._settingsOpen = false;
+    this._setObjs = [];
   }
 
   // ── Menu helpers ─────────────────────────────────────────────────────────
 
-  _onEsc()    { if (this._bookOpen) { this._closeBook(); return; } this._resume(); }
-  _move(d)    { if (this._bookOpen) return; this._selIdx = (this._selIdx + d + this._menuItems.length) % this._menuItems.length; this._audio()?.uiClick?.(); this._updateCursor(); }
-  _confirm()  { if (this._bookOpen) return; this._audio()?.uiClick?.(); this._menuItems[this._selIdx].action(); }
+  _onEsc()    { if (this._bookOpen) { this._closeBook(); return; } if (this._settingsOpen) { this._closeSettings(); return; } this._resume(); }
+  _move(d)    { if (this._bookOpen || this._settingsOpen) return; this._selIdx = (this._selIdx + d + this._menuItems.length) % this._menuItems.length; this._audio()?.uiClick?.(); this._updateCursor(); }
+  _confirm()  { if (this._bookOpen) return; if (this._settingsOpen) { this._settingsAdjust(1); return; } this._audio()?.uiClick?.(); this._menuItems[this._selIdx].action(); }
   _audio()    { return this.scene.get('GameScene')?.audio; }
 
   _updateCursor() {
@@ -112,6 +117,104 @@ export class PauseScene extends Phaser.Scene {
       .on('pointerdown', () => { bg.setScale(0.96); txt.setScale(0.96); })
       .on('pointerup',   () => { bg.setScale(1); txt.setScale(1); onClick(); });
     return { bg, txt, zone };
+  }
+
+  // ── Settings panel ────────────────────────────────────────────────────────
+
+  _openSettings() {
+    if (this._settingsOpen) return;
+    this._settingsOpen = true;
+    this._setIdx = 0;
+    this._setObjs = [];
+    const D = 60, cx = GAME_W / 2;
+
+    const pct = v => `${Math.round(v * 100)}%`;
+    const vol = (key, d) => {
+      Settings.set(key, Math.min(1, Math.max(0, Math.round((Settings[key] + d * 0.1) * 10) / 10)));
+      this._audio()?.applyVolumes?.();
+    };
+    this._setRows = [
+      { label: 'MASTER VOLUME',  get: () => pct(Settings.masterVol), adjust: d => vol('masterVol', d) },
+      { label: 'MUSIC VOLUME',   get: () => pct(Settings.musicVol),  adjust: d => vol('musicVol', d) },
+      { label: 'SFX VOLUME',     get: () => pct(Settings.sfxVol),    adjust: d => vol('sfxVol', d) },
+      { label: 'REDUCED MOTION', get: () => (Settings.reducedMotion ? 'ON' : 'OFF'),
+        adjust: () => Settings.set('reducedMotion', !Settings.reducedMotion) },
+      { label: 'QUALITY',        get: () => QualitySettings.level.toUpperCase(),
+        adjust: () => QualitySettings.cycle(), note: 'applies fully on next region' },
+    ];
+
+    const add = o => { o.setDepth(D + 1); this._setObjs.push(o); return o; };
+    this._setObjs.push(this.add.rectangle(cx, GAME_H / 2, GAME_W, GAME_H, 0x000000, 0.86).setDepth(D));
+    add(this.add.text(cx, 120, 'SETTINGS', {
+      fontSize: '30px', color: '#ffd700', fontFamily: 'serif', stroke: '#000', strokeThickness: 5,
+    }).setOrigin(0.5));
+
+    const rowY = i => 210 + i * 64;
+    this._setCells = this._setRows.map((row, i) => {
+      const y = rowY(i);
+      const bg = add(this.add.rectangle(cx, y, 520, 48, 0x1a1a2e, 0.9).setStrokeStyle(2, 0x8a6a3a, 0.8)
+        .setInteractive({ useHandCursor: true }));
+      const label = add(this.add.text(cx - 240, y, row.label, {
+        fontSize: '15px', color: '#cccccc', fontFamily: 'serif', fontStyle: 'bold',
+      }).setOrigin(0, 0.5));
+      const value = add(this.add.text(cx + 150, y, '', {
+        fontSize: '15px', color: '#ffe8a0', fontFamily: 'monospace',
+      }).setOrigin(0.5));
+      const left = add(this.add.text(cx + 78, y, '◄', {
+        fontSize: '18px', color: '#aa8855', fontFamily: 'monospace',
+      }).setOrigin(0.5).setInteractive({ useHandCursor: true }));
+      const right = add(this.add.text(cx + 222, y, '►', {
+        fontSize: '18px', color: '#aa8855', fontFamily: 'monospace',
+      }).setOrigin(0.5).setInteractive({ useHandCursor: true }));
+      if (row.note) add(this.add.text(cx - 240, y + 30, row.note, {
+        fontSize: '9px', color: '#665533', fontFamily: 'monospace',
+      }).setOrigin(0, 0.5));
+      bg.on('pointerover', () => { this._setIdx = i; this._renderSettings(); });
+      left.on('pointerdown',  () => { this._setIdx = i; this._settingsAdjust(-1); });
+      right.on('pointerdown', () => { this._setIdx = i; this._settingsAdjust(1); });
+      return { bg, label, value };
+    });
+
+    add(this.add.text(cx, rowY(this._setRows.length) + 8, '↑↓ Select   ◄ ► Adjust   Esc — Back', {
+      fontSize: '11px', color: '#555', fontFamily: 'monospace',
+    }).setOrigin(0.5));
+    const backBg = add(this.add.rectangle(cx, rowY(this._setRows.length) + 52, 160, 38, 0x1a1a2e, 0.9)
+      .setStrokeStyle(2, 0xffd700, 0.7).setInteractive({ useHandCursor: true }));
+    add(this.add.text(cx, rowY(this._setRows.length) + 52, '✕  BACK', {
+      fontSize: '14px', color: '#ffd700', fontFamily: 'serif', fontStyle: 'bold',
+    }).setOrigin(0.5));
+    backBg.on('pointerup', () => this._closeSettings());
+    this._renderSettings();
+  }
+
+  _renderSettings() {
+    if (!this._settingsOpen) return;
+    this._setCells.forEach((c, i) => {
+      const on = i === this._setIdx;
+      c.bg.setStrokeStyle(on ? 3 : 2, on ? 0xffd700 : 0x8a6a3a, on ? 1 : 0.8);
+      c.bg.setFillStyle(on ? 0x2a2a4e : 0x1a1a2e, 0.9);
+      c.label.setColor(on ? '#ffd700' : '#cccccc');
+      c.value.setText(this._setRows[i].get());
+    });
+  }
+
+  _settingsMove(d) {
+    this._setIdx = (this._setIdx + d + this._setRows.length) % this._setRows.length;
+    this._audio()?.uiClick?.();
+    this._renderSettings();
+  }
+
+  _settingsAdjust(d) {
+    this._setRows[this._setIdx].adjust(d);
+    this._audio()?.uiClick?.();
+    this._renderSettings();
+  }
+
+  _closeSettings() {
+    this._settingsOpen = false;
+    this._setObjs.forEach(o => { try { o.destroy(); } catch {} });
+    this._setObjs = [];
+    this._setCells = [];
   }
 
   _resume()   { this.scene.get('GameScene')?.togglePause(); }

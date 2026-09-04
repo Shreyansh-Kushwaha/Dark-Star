@@ -71,7 +71,7 @@ export class Boss extends Phaser.GameObjects.Container {
               scaleX: this.cfg.scale, scaleY: this.cfg.scale,
               duration: 300, ease: 'Power2.Out',
             });
-            cam.shake(500, 0.016);
+            scene._cameraPunch?.(0.016, 500);
             this._playAnim('idle');
             scene.time.delayedCall(320, resolve);
           },
@@ -343,7 +343,7 @@ export class Boss extends Phaser.GameObjects.Container {
                   onComplete: () => {
                     this._invincible = false;
                     this.state = STATE.FIGHT;
-                    scene.cameras.main.shake(300, 0.015);
+                    scene._cameraPunch?.(0.015, 300);
                     const d = Phaser.Math.Distance.Between(this.x, this.y, target.x, target.y);
                     if (d <= 140) {
                       target.takeDamage(this.cfg.maxHp * 0.09, this, scene);
@@ -364,7 +364,7 @@ export class Boss extends Phaser.GameObjects.Container {
           scene.time.delayedCall(165, () => {
             this.body?.setVelocity(0, 0);
             this._invincible = false;
-            scene.cameras.main.shake(210, 0.009);
+            scene._cameraPunch?.(0.009, 210);
             if (!this.alive || !target.alive) return;
             const d = Phaser.Math.Distance.Between(this.x, this.y, target.x, target.y);
             if (d <= 165) target.takeDamage(this.cfg.maxHp * 0.07, this, scene);
@@ -393,7 +393,7 @@ export class Boss extends Phaser.GameObjects.Container {
         }
 
         case 'coil': {
-          scene.cameras.main.shake(210, 0.008);
+          scene._cameraPunch?.(0.008, 210);
           const count  = 12;
           const radius = 235;
           for (let i = 0; i < count; i++) {
@@ -414,7 +414,7 @@ export class Boss extends Phaser.GameObjects.Container {
           const faceAng = Math.atan2(target.y - this.y, target.x - this.x);
           const rearAng = faceAng + Math.PI;
           const sweepR  = 190;
-          scene.cameras.main.shake(260, 0.009);
+          scene._cameraPunch?.(0.009, 260);
           scene.events.emit('ability_fx', { type: 'tail_sweep', x: this.x, y: this.y, angle: rearAng, r: sweepR });
           scene.time.delayedCall(180, () => {
             for (const p of scene.players) {
@@ -432,7 +432,7 @@ export class Boss extends Phaser.GameObjects.Container {
         }
 
         case 'hydra_form': {
-          scene.cameras.main.shake(360, 0.014);
+          scene._cameraPunch?.(0.014, 360);
           this._refreshDecoys(scene);
           for (let i = 0; i < 8; i++) {
             const a = (Math.PI * 2 / 8) * i;
@@ -452,7 +452,7 @@ export class Boss extends Phaser.GameObjects.Container {
 
         case 'soul_split': {
           // Separates a void shadow from the player — it chases and attacks them
-          scene.cameras.main.shake(220, 0.008);
+          scene._cameraPunch?.(0.008, 220);
           const tx = target.x, ty = target.y;
           const burst = scene.add.circle(tx, ty, 48, 0x9900ff, 0.55).setDepth(ty + 1);
           scene.tweens.add({ targets: burst, alpha: 0, scaleX: 2.2, scaleY: 2.2, duration: 360, onComplete: () => burst.destroy() });
@@ -475,7 +475,7 @@ export class Boss extends Phaser.GameObjects.Container {
           target.notifyIncomingAttack?.();
           const ang = Math.atan2(target.y - this.y, target.x - this.x);
           this._invincible = true;
-          scene.cameras.main.shake(180, 0.009);
+          scene._cameraPunch?.(0.009, 180);
           scene.time.delayedCall(160, () => {
             if (!this.alive) return;
             this.body?.setVelocity(Math.cos(ang) * 1500, Math.sin(ang) * 1500);
@@ -492,7 +492,7 @@ export class Boss extends Phaser.GameObjects.Container {
               if (!this.alive) return;
               this.body?.setVelocity(0, 0);
               this._invincible = false;
-              scene.cameras.main.shake(280, 0.012);
+              scene._cameraPunch?.(0.012, 280);
               for (const p of scene.players) {
                 if (!p?.alive || p.downed) continue;
                 if (Phaser.Math.Distance.Between(this.x, this.y, p.x, p.y) <= 140) {
@@ -510,7 +510,7 @@ export class Boss extends Phaser.GameObjects.Container {
     switch (pattern) {
       case 'slam': case 'smash': case 'bite': case 'void_slash': case 'wind_slash': {
         target.notifyIncomingAttack?.();
-        scene.cameras.main.shake(180, 0.006);
+        scene._cameraPunch?.(0.006, 180);
         scene.time.delayedCall(400, () => {
           if (!this.alive || !target.alive) return;
           const d = Phaser.Math.Distance.Between(this.x, this.y, target.x, target.y);
@@ -523,7 +523,7 @@ export class Boss extends Phaser.GameObjects.Container {
       }
       case 'root': case 'vine_lash': case 'coil': case 'gust': {
         const r = 160;
-        scene.cameras.main.shake(250, 0.008);
+        scene._cameraPunch?.(0.008, 250);
         scene.events.emit('ability_fx', { type: 'explosion', x: this.x, y: this.y, r });
         for (const p of scene.players) {
           if (!p?.alive || p.downed) continue;
@@ -554,7 +554,7 @@ export class Boss extends Phaser.GameObjects.Container {
       }
       case 'rage_slam': case 'frenzy': case 'hydra_form':
       case 'rock_storm': case 'tornado': case 'annihilation': case 'severance': {
-        scene.cameras.main.shake(350, 0.014);
+        scene._cameraPunch?.(0.014, 350);
         const count = pattern === 'annihilation' ? 12 : 8;
         const burnProj = pattern === 'rage_slam' || pattern === 'frenzy' || pattern === 'rock_storm';
         for (let i = 0; i < count; i++) {
@@ -596,7 +596,7 @@ export class Boss extends Phaser.GameObjects.Container {
           gfx.strokeRect(cx - hw, cy - hh, hw * 2, hh * 2);
           gfx.setAlpha(1);
           corridor.active = true;
-          scene.cameras.main.shake(150, 0.005);
+          scene._cameraPunch?.(0.005, 150);
         });
         this._windCorridors.push(corridor);
         return;
@@ -625,7 +625,7 @@ export class Boss extends Phaser.GameObjects.Container {
 
       case 'ice_storm': {
         // Phase 3 ultimate: 12 frost projectiles + frost burst at player's position = freeze
-        scene.cameras.main.shake(380, 0.015);
+        scene._cameraPunch?.(0.015, 380);
         for (let i = 0; i < 12; i++) {
           const a = (Math.PI * 2 / 12) * i;
           scene.events.emit('spawn_projectile', {
@@ -679,7 +679,7 @@ export class Boss extends Phaser.GameObjects.Container {
             if (!this.alive) return;
             const burst = scene.add.circle(wx, wy, 55, 0x88ff44, 0.65).setDepth(wy + 2);
             scene.tweens.add({ targets: burst, alpha: 0, scaleX: 1.6, scaleY: 1.6, duration: 320, onComplete: () => burst.destroy() });
-            scene.cameras.main.shake(110, 0.004);
+            scene._cameraPunch?.(0.004, 110);
             for (const p of scene.players) {
               if (!p?.alive || p.downed) continue;
               if (Phaser.Math.Distance.Between(wx, wy, p.x, p.y) < 55) {
@@ -696,7 +696,7 @@ export class Boss extends Phaser.GameObjects.Container {
 
       case 'vine_berserk': {
         // Phase 3 berserk: 5 vine traps scattered around the arena + radial poison burst
-        scene.cameras.main.shake(400, 0.016);
+        scene._cameraPunch?.(0.016, 400);
         for (let i = 0; i < 5; i++) {
           const ang = (Math.PI * 2 / 5) * i + Phaser.Math.FloatBetween(-0.4, 0.4);
           const rad = Phaser.Math.Between(90, 210);
@@ -808,7 +808,7 @@ export class Boss extends Phaser.GameObjects.Container {
 
       if (sh.timer <= 0) {
         // Shadow expires: void burst at its position
-        scene.cameras.main.shake(180, 0.007);
+        scene._cameraPunch?.(0.007, 180);
         for (let j = 0; j < 6; j++) {
           const a = (Math.PI * 2 / 6) * j;
           scene.events.emit('spawn_projectile', {
@@ -834,7 +834,7 @@ export class Boss extends Phaser.GameObjects.Container {
         } else if (sh.atkTimer <= 0) {
           sh.atkTimer = 950;
           t.takeDamage(this.cfg.maxHp * 0.042, this, scene);
-          scene.cameras.main.shake(130, 0.005);
+          scene._cameraPunch?.(0.005, 130);
         }
       }
 
@@ -922,7 +922,7 @@ export class Boss extends Phaser.GameObjects.Container {
           if (!this.alive) return;
           scene.events.emit('hide_dialogue');
           this.sprite.setTint(0x5500cc);
-          scene.cameras.main.shake(550, 0.024);
+          scene._cameraPunch?.(0.024, 550);
         });
       } else {
         this.sprite.setTint(0xff2222);
@@ -932,7 +932,7 @@ export class Boss extends Phaser.GameObjects.Container {
       }
     }
 
-    scene.cameras.main.shake(500, 0.018);
+    scene._cameraPunch?.(0.018, 500);
     scene.events.emit('boss_phase_changed', { phase: newPhase, label: labels[newPhase] ?? `PHASE ${newPhase + 1}`, boss: this, phaseIndex: newPhase });
     scene.audio?.bossPhase?.();
     scene.haptics?.play('bossPhase');
@@ -944,7 +944,7 @@ export class Boss extends Phaser.GameObjects.Container {
     this._staggerTimer = 3000;
     this._playAnim('idle');
     this.sprite.setTint(0xffffff);
-    scene.cameras.main.shake(300, 0.01);
+    scene._cameraPunch?.(0.01, 300);
     scene.events.emit('boss_staggered');
     scene.audio?.bossStagger?.();
     if (this._decoys?.length) {
@@ -973,7 +973,7 @@ export class Boss extends Phaser.GameObjects.Container {
     cam.zoomTo(1.12, 260, 'Sine.easeOut');
     scene.time.delayedCall(1100, () => cam.zoomTo(1, 800, 'Sine.easeInOut'));
 
-    scene.cameras.main.shake(700, 0.025);
+    scene._cameraPunch?.(0.025, 700);
     scene.audio?.victory?.();
     scene.events.emit('boss_killed', { bossKey: this.bossKey, boss: this });
 
@@ -1001,7 +1001,7 @@ export class Boss extends Phaser.GameObjects.Container {
           key: 'fire_01', speed: 190, tint: bossColor,
         });
       }
-      scene.cameras.main.shake(380, 0.016);
+      scene._cameraPunch?.(0.016, 380);
     });
 
     // Wave 3 (t=700ms): smoke burst

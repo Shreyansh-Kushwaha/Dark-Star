@@ -1,8 +1,12 @@
+import { Settings } from './Settings.js';
+
 export class AudioManager {
   constructor() {
     this._ctx = null;
     this._muted = false;
     this._masterGain = null;
+    this._musicBus = null;   // ambient drone + generative music (music volume)
+    this._sfxBus = null;     // every one-shot effect (sfx volume)
     this._ambientNode = null;
     this._ambientGain = null;
     this._music = null;
@@ -13,18 +17,29 @@ export class AudioManager {
     if (!this._ctx) {
       this._ctx = new (window.AudioContext || window.webkitAudioContext)();
       this._masterGain = this._ctx.createGain();
-      // Respect a mute toggled before the context was lazily created.
-      this._masterGain.gain.value = this._muted ? 0 : 0.4;
       this._masterGain.connect(this._ctx.destination);
+      this._musicBus = this._ctx.createGain();
+      this._musicBus.connect(this._masterGain);
+      this._sfxBus = this._ctx.createGain();
+      this._sfxBus.connect(this._masterGain);
+      // Respect a mute toggled before the context was lazily created.
+      this.applyVolumes();
     }
     return this._ctx;
   }
 
+  // Fold the Settings sliders into the buses. 0.4 is the historical overall
+  // level everything was mixed against — masterVol scales from there.
+  applyVolumes() {
+    if (!this._masterGain) return;
+    this._masterGain.gain.value = this._muted ? 0 : 0.4 * Settings.masterVol;
+    this._musicBus.gain.value = Settings.musicVol;
+    this._sfxBus.gain.value = Settings.sfxVol;
+  }
+
   toggleMute() {
     this._muted = !this._muted;
-    if (this._masterGain) {
-      this._masterGain.gain.value = this._muted ? 0 : 0.4;
-    }
+    this.applyVolumes();
     return this._muted;
   }
 
@@ -42,7 +57,7 @@ export class AudioManager {
     g.gain.linearRampToValueAtTime(gain, t0 + attack);
     g.gain.exponentialRampToValueAtTime(0.001, t0 + duration);
     osc.connect(g);
-    g.connect(this._masterGain);
+    g.connect(this._sfxBus);
     // Deterministic teardown — thousands of fire-and-forget nodes otherwise
     // pile up for GC to find, showing up as periodic main-thread pauses.
     osc.onended = () => { osc.disconnect(); g.disconnect(); };
@@ -75,7 +90,7 @@ export class AudioManager {
     g.gain.setValueAtTime(gain, ctx.currentTime);
     g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
     src.connect(g);
-    g.connect(this._masterGain);
+    g.connect(this._sfxBus);
     src.onended = () => { src.disconnect(); g.disconnect(); };
     src.start(0, offset, Math.min(duration, buf.duration));
   }
@@ -97,7 +112,7 @@ export class AudioManager {
     g.gain.setValueAtTime(0.5, ctx.currentTime);
     g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25);
     osc.connect(g);
-    g.connect(this._masterGain);
+    g.connect(this._sfxBus);
     osc.onended = () => { osc.disconnect(); g.disconnect(); };
     osc.start(); osc.stop(ctx.currentTime + 0.3);
   }
@@ -171,7 +186,7 @@ export class AudioManager {
       g.gain.setValueAtTime(0.15, ctx.currentTime + i * 0.05);
       g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.05 + 0.4);
       osc.connect(g);
-      g.connect(this._masterGain);
+      g.connect(this._sfxBus);
       osc.onended = () => { osc.disconnect(); g.disconnect(); };
       osc.start(ctx.currentTime + i * 0.05);
       osc.stop(ctx.currentTime + i * 0.05 + 0.5);
@@ -203,7 +218,7 @@ export class AudioManager {
     this._ambientGain.gain.linearRampToValueAtTime(0.06, ctx.currentTime + 2);
 
     this._ambientNode.connect(this._ambientGain);
-    this._ambientGain.connect(this._masterGain);
+    this._ambientGain.connect(this._musicBus);
     this._ambientNode.start();
   }
 
@@ -267,7 +282,7 @@ export class AudioManager {
     g.gain.setValueAtTime(0.0001, ctx.currentTime);
     g.gain.exponentialRampToValueAtTime(0.11, ctx.currentTime + 0.04);
     g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.2);
-    src.connect(bp); bp.connect(g); g.connect(this._masterGain);
+    src.connect(bp); bp.connect(g); g.connect(this._sfxBus);
     src.onended = () => { src.disconnect(); bp.disconnect(); g.disconnect(); };
     src.start(0, Math.random() * 1.5, 0.22);
   }
@@ -320,7 +335,7 @@ export class AudioManager {
     const bus = ctx.createGain();
     bus.gain.setValueAtTime(0.0001, ctx.currentTime);
     bus.gain.exponentialRampToValueAtTime(recipe.gain, ctx.currentTime + 1.5);
-    bus.connect(this._masterGain);
+    bus.connect(this._musicBus);
 
     const m = {
       mood, act, bus, recipe,
