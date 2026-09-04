@@ -107,6 +107,13 @@ export const QUESTS = {
     trigger: 'npc_talk:vrindavana_dancer', complete: 'pressure_plate',
     reward: null,
   },
+  vrindavana_sq3: {
+    id: 'vrindavana_sq3', type: 'side',
+    title: 'The Sixth Note',
+    desc: "Six resonance stones stand in the eastern grove, each carved with a numeral. Ishani's dance names the order of the hymn: third, first, fourth, second, fifth — and last of all, the lowest.",
+    trigger: 'npc_talk:vrindavana_dancer', complete: 'sequence:hymn_of_six',
+    reward: { item: 'sixth_note', name: 'The Sixth Note' },
+  },
   nagapatal_sq1: {
     id: 'nagapatal_sq1', type: 'side',
     title: 'The Naga Scale',

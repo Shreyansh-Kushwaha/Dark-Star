@@ -46,6 +46,8 @@ export class SaveManager {
       amritPotencyTier: 0,   // each tier = +AMRIT_POTENCY_STEP heal fraction (bought from the merchant)
       threadShards: 0,       // currency earned from kills; spent at the merchant
       skillNodes: [],        // unlocked skill-tree node ids
+      solvedRiddles: [],      // npc ids whose dialogue riddle has been answered correctly
+      solvedSequences: [],    // sequence-puzzle ids completed (e.g. the Vrindavana hymn stones)
       lastShrineRegion: null,
     };
   }

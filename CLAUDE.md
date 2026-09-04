@@ -27,7 +27,9 @@ won't load).
 - `systems/` — `AbilityManager`, `AudioManager` (procedural WebAudio, no files;
   music/sfx buses scaled by `Settings` volumes), `AnimationLoader`, `SaveManager`
   (localStorage), `QuestManager` (predicates: `boss_kill:` / `enemy_kills:N` /
-  `portal_unlock:N` / `pressure_plate` / `talk:<npcId>` / `collect:<item>:<N>`),
+  `portal_unlock:N` / `pressure_plate` / `talk:<npcId>` / `collect:<item>:<N>` /
+  `sequence:<puzzleId>` — sequence puzzles like the Vrindavana hymn stones,
+  solved ids persist on `save.solvedSequences`),
   `NetworkManager`, `QualitySettings`, `Settings` (volumes + reduced motion —
   pause-menu Settings panel; shake/hitstop go through `GameScene._cameraPunch` /
   `_hitStop`, never call `cameras.main.shake` directly), `RegionCatalog` (the one

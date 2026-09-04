@@ -215,6 +215,7 @@ export class GameScene extends Phaser.Scene {
     this._encounteredEnemies = new Set(saveData.encounteredEnemyIds || []);
     this._metNpcs = new Map((saveData.metNpcs || []).map(n => [n.id, n]));
     this._solvedRiddles = new Set(saveData.solvedRiddles || []);
+    this._solvedSequences = new Set(saveData.solvedSequences || []);
     this.network = this.registry.get('network') || new NetworkManager();
     this.registry.remove('network');
 
@@ -467,6 +468,7 @@ export class GameScene extends Phaser.Scene {
     this._createPortals(region);
     if (!this._trial) this._createShrine(region);   // no checkpoints inside a run
     this._createPressurePlates(region);
+    this._createHymnStones(region);
     // Apply map-editor entity overrides before arena/spawner setup
     this._mapBossOverride = this._bossForRegion(regionIndex);
 
@@ -519,9 +521,13 @@ export class GameScene extends Phaser.Scene {
 
     this.questManager.addEventListener('quest_started', (e) => {
       this.events.emit('quest_started', e.detail);
-      // A collect quest may already be satisfied by items in the bag.
+      // A collect quest may already be satisfied by items in the bag; a sequence
+      // quest by a puzzle solved before the quest was picked up.
       const comp = e.detail?.quest?.complete;
       if (comp?.startsWith('collect:')) this._notifyItemCollected(comp.split(':')[1]);
+      if (comp?.startsWith('sequence:') && this._solvedSequences?.has(comp.split(':')[1])) {
+        this.questManager.onSequenceSolved(comp.split(':')[1]);
+      }
     });
     this.questManager.addEventListener('quest_completed', (e) => {
       this.events.emit('quest_completed', e.detail);
@@ -970,6 +976,7 @@ export class GameScene extends Phaser.Scene {
     // region reached by walking across the world never got them either.
     this._createPressurePlates(desc);
     this._createWorldFragments(desc);
+    this._createHymnStones(desc);   // old region's stones were destroyed by _unloadRegion
 
     ExploredManager.markExplored(newBaseIdx);
     this.physics.world.setBounds(0, 0, WORLD_W, WORLD_H);
@@ -1937,6 +1944,7 @@ export class GameScene extends Phaser.Scene {
     if (this._encounteredEnemies) s.encounteredEnemyIds = [...this._encounteredEnemies];
     if (this._metNpcs)            s.metNpcs             = [...this._metNpcs.values()];
     if (this._solvedRiddles)      s.solvedRiddles       = [...this._solvedRiddles];
+    if (this._solvedSequences)    s.solvedSequences     = [...this._solvedSequences];
     if (this._hintsSeen)          s.hintsSeen           = [...this._hintsSeen];
     SaveManager.save(s);
     // Checkpoint-grade saves (shrine rest, region crossing, respawn) surface a
@@ -2041,6 +2049,105 @@ export class GameScene extends Phaser.Scene {
     for (const plate of this._pressurePlates) {
       if (!this._plateGroups.has(plate.group)) this._plateGroups.set(plate.group, []);
       this._plateGroups.get(plate.group).push(plate);
+    }
+  }
+
+  // ── Hymn resonance stones (sequence puzzle) ─────────────────────────────────
+  // Six strikeable stones (regions.js `hymnStones`); striking them in the order
+  // the quest text teaches completes any quest waiting on `sequence:<id>`.
+  // Solved ids persist on save.solvedSequences so the grove stays sung.
+  _createHymnStones(region) {
+    this._hymnStones = [];
+    this._hymnPuzzle = null;
+    const cfg = region.hymnStones;
+    if (!cfg?.stones?.length) return;
+
+    const solved = this._solvedSequences.has(cfg.id);
+    this._hymnPuzzle = { id: cfg.id, order: cfg.order, progress: 0, solved };
+    const NUMERALS = ['I', 'II', 'III', 'IV', 'V', 'VI'];
+    cfg.stones.forEach((s, i) => {
+      const gfx = this.add.circle(s.x, s.y, 18, 0x3a5a6a, 0.85).setDepth(-3);
+      const glyph = this.add.text(s.x, s.y, NUMERALS[i] || `${i + 1}`, {
+        fontSize: '11px', color: '#bcdde8', fontFamily: 'monospace',
+      }).setOrigin(0.5).setDepth(-2);
+      const prompt = this.add.text(s.x, s.y - 30, '[F]', {
+        fontSize: '12px', color: '#aaddee', fontFamily: 'monospace',
+        stroke: '#000', strokeThickness: 2,
+      }).setOrigin(0.5, 1).setAlpha(0).setDepth(s.y + 2);
+      // Tag for seamless-streaming cleanup, same as plates/fragments.
+      gfx._streamRegion = region.index;
+      glyph._streamRegion = region.index;
+      prompt._streamRegion = region.index;
+      const stone = { idx: i, x: s.x, y: s.y, freq: s.freq, gfx, glyph, prompt, lit: !solved };
+      this._setHymnStoneLit(stone, solved);
+      this._hymnStones.push(stone);
+    });
+  }
+
+  _setHymnStoneLit(stone, lit) {
+    if (stone.lit === lit) return;
+    stone.lit = lit;
+    stone.gfx.setFillStyle(lit ? 0x66ccee : 0x3a5a6a, 0.85);
+    stone.gfx.setStrokeStyle(2, lit ? 0xaaeeff : 0x88bbcc);
+    stone.glyph.setColor(lit ? '#eaffff' : '#bcdde8');
+  }
+
+  _strikeHymnStone(stone) {
+    const puz = this._hymnPuzzle;
+    this.audio.hymnNote(stone.freq);
+    this.tweens.add({ targets: stone.gfx, scale: { from: 1.35, to: 1 }, duration: 260, ease: 'Sine.easeOut' });
+    if (!puz || puz.solved) return;   // solved stones stay playable, just for the music
+
+    if (stone.idx === puz.order[puz.progress]) {
+      puz.progress++;
+      this._setHymnStoneLit(stone, true);
+      if (puz.progress >= puz.order.length) this._solveHymn(puz);
+      return;
+    }
+
+    // Wrong stone. Striking the opening note restarts the hymn cleanly (no
+    // discord); anything else is a discord and the whole phrase resets.
+    for (const s of this._hymnStones) this._setHymnStoneLit(s, false);
+    if (stone.idx === puz.order[0]) {
+      puz.progress = 1;
+      this._setHymnStoneLit(stone, true);
+      return;
+    }
+    puz.progress = 0;
+    this.audio.hymnFail();
+    this.events.emit('show_dialogue', { text: '⟨The Grove⟩ The stones fall silent — a discord. The hymn must begin again.' });
+    this.time.delayedCall(1800, () => this.events.emit('hide_dialogue'));
+  }
+
+  _solveHymn(puz) {
+    puz.solved = true;
+    this._solvedSequences.add(puz.id);
+    this.audio.hymnComplete(puz.order.map(i => this._hymnStones[i]?.freq || 440));
+    this.grantShards(75);
+    this._persist();
+    this.questManager.onSequenceSolved(puz.id);
+    this.events.emit('show_dialogue', {
+      text: '⟨The Grove⟩ Six notes sound as one — the last, the lowest, settles like the final stone in an arch. For a breath, every living thing here breathes together. (+75 Thread Shards)',
+    });
+    this.time.delayedCall(4200, () => this.events.emit('hide_dialogue'));
+  }
+
+  // Same proximity-prompt class as _checkFragmentPrompts — slow tick, alpha
+  // touched only on a near/far transition.
+  _checkHymnStonePrompts() {
+    for (const st of (this._hymnStones || [])) {
+      let nearestSq = Infinity;
+      for (const p of this.players) {
+        if (!p?.active) continue;
+        const dx = st.x - p.x, dy = st.y - p.y;
+        const dSq = dx * dx + dy * dy;
+        if (dSq < nearestSq) nearestSq = dSq;
+      }
+      const near = nearestSq < 70 * 70;
+      if (st._promptNear !== near) {
+        st._promptNear = near;
+        st.prompt.setAlpha(near ? 1 : 0);
+      }
     }
   }
 
@@ -3030,6 +3137,7 @@ export class GameScene extends Phaser.Scene {
       this._checkDeathEcho();
       this._checkHints();
       this._checkFragmentPrompts();
+      this._checkHymnStonePrompts();
     }
 
     // ── Interact ─────────────────────────────────────────────────
@@ -3659,6 +3767,19 @@ export class GameScene extends Phaser.Scene {
 
       this._dialogueActive = true;
       this.events.emit('show_dialogue', { text: solved && dlg.completed ? dlg.completed : line });
+      return;
+    }
+
+    // ── Hymn resonance stones ─────────────────────────────────────
+    for (const stone of (this._hymnStones || [])) {
+      let nearest = Infinity;
+      for (const p of this.players) {
+        if (!p?.active) continue;
+        const d = Phaser.Math.Distance.Between(stone.x, stone.y, p.x, p.y);
+        if (d < nearest) nearest = d;
+      }
+      if (nearest >= 70) continue;
+      this._strikeHymnStone(stone);
       return;
     }
 

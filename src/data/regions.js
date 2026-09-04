@@ -115,6 +115,22 @@ export const REGIONS = [
       { x: 1500, y: 850 },
       { x: 1500, y: 1150 },
     ],
+    // The Six-Note Hymn puzzle (quest vrindavana_sq3). Stones carry glyphs I..VI
+    // left-to-right; `order` indexes into `stones` — the sequence Ishani's dance
+    // teaches (third, first, fourth, second, fifth, then the lowest). Stone VI
+    // is the removed root note, an octave below everything else.
+    hymnStones: {
+      id: 'hymn_of_six',
+      order: [2, 0, 3, 1, 4, 5],
+      stones: [
+        { x: 2106, y: 1261, freq: 440.00 },   // I  — A4
+        { x: 2176, y: 1157, freq: 493.88 },   // II — B4
+        { x: 2287, y: 1098, freq: 523.25 },   // III— C5
+        { x: 2413, y: 1098, freq: 587.33 },   // IV — D5
+        { x: 2524, y: 1157, freq: 659.25 },   // V  — E5
+        { x: 2594, y: 1261, freq: 220.00 },   // VI — A2, the sixth note
+      ],
+    },
     enemyTypes: ['melee', 'ranged', 'orc', 'slimem'],
     echoTriggers: [],
     worldFragments: [

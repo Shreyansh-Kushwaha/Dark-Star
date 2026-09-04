@@ -76,6 +76,16 @@ export class QuestManager extends EventTarget {
     }
   }
 
+  // Sequence puzzles (`complete: 'sequence:<puzzleId>'`), e.g. the Vrindavana
+  // hymn stones. Called by GameScene when the full sequence is struck correctly.
+  onSequenceSolved(seqId) {
+    for (const [id, q] of this.active) {
+      if (q.complete === `sequence:${seqId}`) {
+        this.complete(id);
+      }
+    }
+  }
+
   onNpcTalk(npcId) {
     this.dispatch('npc_talked', { npcId });
     // Delivery/talk quests: complete when the player speaks to the target NPC

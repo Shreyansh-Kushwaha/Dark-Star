@@ -238,6 +238,27 @@ export class AudioManager {
     this._tone(440, 'sine', 0.25, 0.25);
   }
 
+  // Resonance-stone strike for the hymn puzzle — fundamental plus a quieter,
+  // faster-decaying octave so repeated strikes read as music, not UI beeps.
+  hymnNote(freq) {
+    this._tone(freq, 'triangle', 0.7, 0.22, 0.005, 0.3);
+    this._tone(freq * 2, 'sine', 0.35, 0.08, 0.005, 0.15);
+  }
+
+  // Minor-second cluster: the grove rejecting a wrong note.
+  hymnFail() {
+    this._tone(196, 'sawtooth', 0.5, 0.14, 0.01, 0.2);
+    this._tone(207.65, 'sawtooth', 0.5, 0.14, 0.01, 0.2);
+  }
+
+  // Full hymn played back on solve, in the order it was struck.
+  hymnComplete(freqs) {
+    (freqs || []).forEach((f, i) => {
+      this._tone(f, 'triangle', 0.6, 0.2, 0.01, 0.25, i * 0.28);
+      this._tone(f * 2, 'sine', 0.3, 0.06, 0.01, 0.12, i * 0.28);
+    });
+  }
+
   interact() {
     this._tone(700, 'sine', 0.08, 0.2);
   }

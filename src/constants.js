@@ -74,6 +74,7 @@ export const ITEM_DEFS = {
   vayu_note:       { name: 'Vayu Note',       type: 'token',      effect: null, desc: 'A fragment of wind-inscribed scripture.' },
   cloud_crystal:   { name: 'Cloud Crystal',   type: 'token',      effect: null, desc: 'A crystallised shard of storm cloud.' },
   akhand_fragment: { name: 'Akhand Fragment', type: 'token',      effect: null, desc: 'A piece of the Akhand Sutra itself.' },
+  sixth_note:      { name: 'The Sixth Note',  type: 'token',      effect: null, desc: 'The hymn’s missing root note, restored to the sacred grove. The arch stands.' },
 
   // ── Charms ──────────────────────────────────────────────────────────────────
   // Build-defining tradeoff talismans. Own as many as you like; wear at most
