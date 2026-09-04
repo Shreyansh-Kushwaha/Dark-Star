@@ -563,7 +563,18 @@ export class Player extends Phaser.GameObjects.Container {
   applyNetState(state) {
     this.hp      = state.hp;
     this.stamina = state.stamina;
-    this.downed  = state.downed;
+    // Mirror downed/revive as real transitions — copying the flag alone left a
+    // collapsed partner standing upright at full opacity on this screen.
+    if (state.downed !== this.downed) {
+      this.downed = state.downed;
+      this.sprite.setAlpha(this.downed ? 0.4 : 1);
+      if (this.downed) {
+        this.body?.setVelocity(0, 0);
+        this.scene?.events?.emit('player_downed', { player: this });
+      } else {
+        this.scene?.events?.emit('player_revived', { player: this });
+      }
+    }
     if (state.amritCharges != null) this.amritCharges = state.amritCharges;
     if (state.amritMax != null)     this.amritMax     = state.amritMax;
     this.facingX = state.facingX;

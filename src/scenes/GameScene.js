@@ -304,6 +304,41 @@ export class GameScene extends Phaser.Scene {
       this.network.on('BOSS_TRIGGER', onBossTrigger);
       _netCleanup.push(['BOSS_TRIGGER', onBossTrigger]);
 
+      // Both roles: mirror the other device's projectiles (cosmetic here — see
+      // _onSpawnProjectile). Strip the message's `type` before reusing it as
+      // the projectile config.
+      const onProjSpawn = (msg) => {
+        if (typeof msg?.x !== 'number' || typeof msg?.y !== 'number') return;
+        const { type, ...data } = msg;
+        this._onSpawnProjectile(data);
+      };
+      this.network.on('PROJECTILE_SPAWN', onProjSpawn);
+      _netCleanup.push(['PROJECTILE_SPAWN', onProjSpawn]);
+
+      // Mid-game disconnect (only the menu handled it before): the host's world
+      // is self-sufficient — Tara AI reclaims P2 the moment `connected` drops —
+      // but the client's world is host-simulated and dies with the link
+      // (frozen, unkillable puppets), so it says goodbye and returns to the
+      // menu. Role is captured now: NetworkManager clears it on disconnect().
+      const wasClient = this.network.isClient();
+      const onDisconnected = () => {
+        if (wasClient) {
+          this._persist();
+          this.events.emit('show_dialogue', { text: '⟨Connection Lost⟩ The thread to your ally has snapped. Returning to the beginning...' });
+          this.time.delayedCall(2400, () => {
+            this.network.disconnect();
+            this.scene.stop('UIScene');
+            this.scene.stop('GameScene');
+            this.scene.start('MainMenuScene');
+          });
+        } else {
+          this.network.disconnect();
+          try { this.scene.get('UIScene')?.toast?.('Ally disconnected — continuing solo', '#ffcc44', 3000); } catch (e) {}
+        }
+      };
+      this.network.on('disconnected', onDisconnected);
+      _netCleanup.push(['disconnected', onDisconnected]);
+
       // Host: apply the client's melee/projectile damage to the authoritative boss.
       if (this.network.isHost()) {
         const onBossHit = ({ damage }) => {
@@ -327,6 +362,19 @@ export class GameScene extends Phaser.Scene {
       // Client: apply enemy states broadcast by host
       if (this.network.isClient()) {
         const onRegionChange = ({ newIndex }) => {
+          // A wipe respawn arrives as a region change too — run this side's
+          // death bookkeeping (echo drop, Amrit refill) if it hasn't clicked
+          // its own respawn button yet.
+          const isRespawn = this._gameOverActive;
+          if (isRespawn && !this._respawning) {
+            this._respawning = true;
+            this._dropDeathEcho();
+            this._save.amritCharges = this._save.amritMax;
+          }
+          // The client is barred from triggering portals, so its portal_unlock
+          // quest credit and crossing checkpoint arrive with the follow.
+          if (!isRespawn) this.questManager?.onPortalUnlock(newIndex);
+          this._persist(newIndex);
           this.audio.portal();
           this._fadeAndTransition(newIndex);
         };
@@ -334,6 +382,7 @@ export class GameScene extends Phaser.Scene {
         _netCleanup.push(['REGION_CHANGE', onRegionChange]);
 
         this._remoteEnemyMap = new Map();
+        this._creatureCfgCache = new Map();   // key -> null (loading) | cfg | false (unknown)
         const onEnemySync = ({ enemies }) => {
           if (!enemies) return;
           const seenIds = new Set();
@@ -341,11 +390,29 @@ export class GameScene extends Phaser.Scene {
             seenIds.add(state.id);
             let e = this._remoteEnemyMap.get(state.id);
             if (!e) {
-              // The host may sync an enemy whose lazy pack hasn't loaded on this
-              // client yet — stream it in and skip this frame; the next sync (sent
-              // continuously) creates it once ready. Boot/creature types pass through.
-              if (!this._enemyFamilyReady(state.typeKey)) { this._ensureEnemyAssets(state.typeKey); continue; }
-              e = new Enemy(this, state.x, state.y, state.typeKey, 1);
+              let spawnType = state.typeKey;
+              if (!ENEMY_TYPES[spawnType]) {
+                // Map-editor creature: the host sends only its key string, which
+                // ENEMY_TYPES can't resolve. Rebuild the host's synthesized cfg
+                // (async asset load) and spawn on a later sync once it's ready.
+                const cached = this._creatureCfgCache.get(spawnType);
+                if (cached === undefined) {
+                  this._creatureCfgCache.set(spawnType, null);
+                  this._creatureCfg(spawnType)
+                    .then(cfg => this._creatureCfgCache.set(spawnType, cfg || false))
+                    .catch(() => this._creatureCfgCache.set(spawnType, false));
+                  continue;
+                }
+                if (!cached) continue;   // null = still loading, false = unknown key
+                spawnType = cached;
+              } else if (!this._enemyFamilyReady(spawnType)) {
+                // Roster enemy whose lazy pack hasn't loaded on this client yet —
+                // stream it in and skip this frame; the next sync (sent
+                // continuously) creates it once ready. Boot types pass through.
+                this._ensureEnemyAssets(spawnType);
+                continue;
+              }
+              e = new Enemy(this, state.x, state.y, spawnType, 1);
               e._id   = state.id;
               e.maxHp = state.maxHp;
               this.enemies.push(e);
@@ -463,6 +530,10 @@ export class GameScene extends Phaser.Scene {
     this._paused = false;
     this._fixedEnemyMode = false;
     this._anyEnemyKilled = false;
+    // Death-loop flags live on the scene instance, which survives restart —
+    // without this reset the SECOND death's respawn button was a no-op.
+    this._respawning = false;
+    this._gameOverActive = false;
 
     // Seamless streaming state. `base` is the region occupying world-cell 0
     // (x: 0..WORLD_W). `next`/`prev` hold a pre-loaded neighbour (or null).
@@ -1937,7 +2008,10 @@ export class GameScene extends Phaser.Scene {
     const now = performance.now();
     s.playtimeMs = (s.playtimeMs || 0) + Math.max(0, now - (this._playtimeMark ?? now));
     this._playtimeMark = now;
-    const p = this.players?.find(x => x) || this.players?.[0];
+    // The LOCAL player owns this device's save. On a co-op client, players[0]
+    // is the remote copy of the host's character — its stats/amrit are driven
+    // by the host's broadcasts and must never be written into this save.
+    const p = this.players?.find(x => x?.isLocal) || this.players?.find(x => x) || this.players?.[0];
     if (p) {
       // Persist the pre-skill base so skill %s don't compound across reloads.
       s.playerStats  = p.getBaseStats ? p.getBaseStats() : { maxHp: p.maxHp, maxStamina: p.maxStamina, abilityPow: p.abilityPow };
@@ -1984,6 +2058,11 @@ export class GameScene extends Phaser.Scene {
     this._save.amritCharges = this._save.amritMax;  // Amrit refills on death
     const target = this._save.lastShrineRegion ?? this._regionIndex;
     this._persist(target);
+    // Co-op: the pair must wake at the SAME shrine — each device's own
+    // lastShrineRegion can differ. The host's target is broadcast as a region
+    // change; the client's click only does its bookkeeping and follows.
+    if (this.network?.connected && this.network.isClient()) return;
+    if (this.network?.connected) this.network.send('REGION_CHANGE', { newIndex: target });
     this._fadeAndTransition(target);
   }
 
@@ -2278,7 +2357,6 @@ export class GameScene extends Phaser.Scene {
     const creatures = mapData?.creatures || [];
     if (!creatures.length) return;
     if (this.network?.connected && !this.network.isHost()) return;
-    await loadAnimationsJSON();   // ensure approved families are merged
 
     const difficulty = (this._region || {}).difficulty ?? 1.0;
 
@@ -2289,43 +2367,53 @@ export class GameScene extends Phaser.Scene {
       byKey.get(c.key).push(c);
     }
     for (const [key, list] of byKey) {
-      const entity = familyForKey(key);
-      if (!entity) continue;                       // unknown/rejected — skip
+      const cfg = await this._creatureCfg(key);
+      if (!cfg) continue;                          // unknown/rejected — skip
       if (!this.scene.isActive()) return;          // region changed mid-load
-      await this._loadFamilyAssets(key);
-      const restName = this._creatureRestName(key);
-      const restKey  = restName && `${key}_${restName}`;
-      if (!restKey || !this.anims.exists(restKey)) continue;
-
-      const stats = statsFor(key, entityType(key) || 'enemy');
-      const f0 = this.anims.get(restKey).frames[0];
-      const fh = f0?.frame?.height || 64;
-      const targetPx = stats.sizePx || 80;
-      const scale = Math.min(3, Math.max(0.1, targetPx / fh));   // fit to target height
-      const cfg = {
-        key,
-        textureBase:   key,
-        spriteTexture: f0.textureKey,
-        animAlias:     this._creatureAnimAlias(key, restName),
-        maxHp:       stats.maxHp,
-        speed:       stats.speed,
-        attackDmg:   stats.attackDmg,
-        attackRange: stats.attackRange,
-        attackCd:    stats.attackCd,
-        xpValue:     stats.xpValue,
-        scale,
-        tint:    stats.tint ?? null,
-        physics: false,
-        passive: !!stats.passive,
-        label:   key,
-        drops:   [],
-      };
       for (const c of list) {
         const enemy = new Enemy(this, c.x, c.y, cfg, difficulty);
         this.enemies.push(enemy);
         this._mapCreatures.push(enemy);
       }
     }
+  }
+
+  // Synthesized Enemy cfg for a map-editor creature key. Shared by the host's
+  // spawner above and the co-op client's ENEMY_SYNC handler — the host only
+  // broadcasts the key string, so the client rebuilds the same cfg here
+  // (spawning a synced creature through ENEMY_TYPES crashed on unknown keys).
+  // Resolves null for unknown/rejected entities.
+  async _creatureCfg(key) {
+    await loadAnimationsJSON();   // ensure approved families are merged
+    if (!familyForKey(key)) return null;
+    await this._loadFamilyAssets(key);
+    const restName = this._creatureRestName(key);
+    const restKey  = restName && `${key}_${restName}`;
+    if (!restKey || !this.anims.exists(restKey)) return null;
+
+    const stats = statsFor(key, entityType(key) || 'enemy');
+    const f0 = this.anims.get(restKey).frames[0];
+    const fh = f0?.frame?.height || 64;
+    const targetPx = stats.sizePx || 80;
+    const scale = Math.min(3, Math.max(0.1, targetPx / fh));   // fit to target height
+    return {
+      key,
+      textureBase:   key,
+      spriteTexture: f0.textureKey,
+      animAlias:     this._creatureAnimAlias(key, restName),
+      maxHp:       stats.maxHp,
+      speed:       stats.speed,
+      attackDmg:   stats.attackDmg,
+      attackRange: stats.attackRange,
+      attackCd:    stats.attackCd,
+      xpValue:     stats.xpValue,
+      scale,
+      tint:    stats.tint ?? null,
+      physics: false,
+      passive: !!stats.passive,
+      label:   key,
+      drops:   [],
+    };
   }
 
   // Debug aid for balancing: print the stats of the enemy nearest the player.
@@ -3265,16 +3353,18 @@ export class GameScene extends Phaser.Scene {
         if (!p?.alive || p.downed) continue;
         const dx = proj.x - p.x, dy = proj.y - p.y;
         if (dx * dx + dy * dy < 24 * 24) {
-          p.takeDamage(proj.damage, null, this);
-          if (proj.poisonOnHit) {
-            const dps = (this._boss?.cfg.maxHp || 2000) * 0.004;
-            p.applyPoison?.(this, dps, 3000);
+          if (!proj.cosmetic) {
+            p.takeDamage(proj.damage, null, this);
+            if (proj.poisonOnHit) {
+              const dps = (this._boss?.cfg.maxHp || 2000) * 0.004;
+              p.applyPoison?.(this, dps, 3000);
+            }
+            if (proj.burnOnHit) {
+              const dps = (this._boss?.cfg.maxHp || 2000) * 0.006;
+              p.applyBurn?.(this, dps, 2200);
+            }
+            if (proj.slowOnHit) p.applySlow?.(this, 2500);
           }
-          if (proj.burnOnHit) {
-            const dps = (this._boss?.cfg.maxHp || 2000) * 0.006;
-            p.applyBurn?.(this, dps, 2200);
-          }
-          if (proj.slowOnHit) p.applySlow?.(this, 2500);
           proj.hit();
           return;
         }
@@ -3285,7 +3375,7 @@ export class GameScene extends Phaser.Scene {
         if (!e?.alive) continue;
         const dx = proj.x - e.x, dy = proj.y - e.y;
         if (dx * dx + dy * dy < 28 * 28) {
-          e.takeDamage(proj.damage, null, this);
+          if (!proj.cosmetic) e.takeDamage(proj.damage, null, this);
           if (!proj.piercing) { proj.hit(); return; }
         }
       }
@@ -3293,7 +3383,7 @@ export class GameScene extends Phaser.Scene {
       if (this._boss?.alive) {
         const dx = proj.x - this._boss.x, dy = proj.y - this._boss.y;
         if (dx * dx + dy * dy < 60 * 60) {
-          this.hitBoss(proj.damage);
+          if (!proj.cosmetic) this.hitBoss(proj.damage);
           proj.hit();
         }
       }
@@ -3838,6 +3928,7 @@ export class GameScene extends Phaser.Scene {
       // Short delay so players see themselves go down before the screen appears
       this._gameOverTimer = this.time.delayedCall(1200, () => {
         if (this._trial) { this._trialEnd(false); return; }
+        this._gameOverActive = true;
         this.events.emit('game_over', { regionIndex: this._regionIndex });
       });
     } else if (!allDown && this._gameOverTimer) {
@@ -3870,7 +3961,18 @@ export class GameScene extends Phaser.Scene {
 
   _onSpawnProjectile(data) {
     const proj = new Projectile(this, data.x, data.y, data.key || 'fire_01', data);
+    // A projectile mirrored from the other device is visual-only: its damage
+    // already flows through the authoritative relays (PLAYER_DAMAGE / ENEMY_HIT
+    // / BOSS_HIT), so applying it here again would double every hit.
+    proj.cosmetic = !!data.netRelay;
     this.projectiles.push(proj);
+    // Mirror to the other device — enemy/boss AI runs host-only, so without
+    // this relay the client faces invisible shots. Zero-damage projectiles are
+    // pure FX (e.g. boss-death fireworks) that both devices already generate
+    // locally — relaying them would double the show.
+    if (this.network?.connected && !data.netRelay && (data.damage || 0) > 0) {
+      this.network.send('PROJECTILE_SPAWN', { ...data, netRelay: true });
+    }
   }
 
   _onLevelBanked() {
@@ -3987,10 +4089,11 @@ export class GameScene extends Phaser.Scene {
     this._comboTimer = this.time.delayedCall(3000, () => { this._comboCount = 0; this._comboTimer = null; });
     if (this._comboCount >= 2) this.events.emit('kill_combo', { count: this._comboCount });
 
-    // XP gain
+    // XP gain — always to the LOCAL player (on a co-op client, the first alive
+    // player is the remote host copy; crediting it leaked into the wrong save).
     const e = data.enemy;
     const xpGain = e.cfg?.xpValue ?? 10;
-    const primaryPlayer = this.players?.find(p => p?.alive) || this.players?.[0];
+    const primaryPlayer = this.players?.find(p => p?.isLocal) || this.players?.find(p => p?.alive) || this.players?.[0];
     if (primaryPlayer?.gainXP) {
       primaryPlayer.gainXP(xpGain);
       this._save.playerXP = primaryPlayer.xp;
@@ -4077,9 +4180,9 @@ export class GameScene extends Phaser.Scene {
     for (const h of this._arenaHazards) h.gfx?.destroy();
     this._arenaHazards = [];
 
-    // Boss XP reward
+    // Boss XP reward — local player only (same rule as _onEnemyKilled).
     const bossXp = BOSSES[bossKey]?.xpValue ?? 200;
-    const primaryPlayer = this.players?.find(p => p?.alive) || this.players?.[0];
+    const primaryPlayer = this.players?.find(p => p?.isLocal) || this.players?.find(p => p?.alive) || this.players?.[0];
     if (primaryPlayer?.gainXP) {
       primaryPlayer.gainXP(bossXp);
       this._save.playerXP = primaryPlayer.xp;
@@ -4279,6 +4382,11 @@ export class GameScene extends Phaser.Scene {
       if (time - h.lastDmgTime > 550) {
         for (const p of this.players) {
           if (!p?.alive || p.downed) continue;
+          // Co-op: hazard angles are random per device, so each device's copy
+          // damages only its OWN player — the one the hazard visually chases.
+          // (The host hitting the remote copy would relay damage from a hazard
+          // the client sees somewhere else entirely.)
+          if (this.network?.connected && !p.isLocal) continue;
           if (Phaser.Math.Distance.Between(hx, hy, p.x, p.y) < 34) {
             p.takeDamage(h.boss.cfg.maxHp * 0.016, h.boss, this);
             h.lastDmgTime = time;
@@ -4321,6 +4429,17 @@ export class GameScene extends Phaser.Scene {
   // Fast travel from the world map to an explored region's shrine.
   fastTravelTo(regionIndex) {
     if (regionIndex == null || regionIndex === this._regionIndex) { this.closeWorldMap(); return; }
+    // Co-op: travel must move BOTH devices — a solo transition split the pair
+    // into different regions while ENEMY_SYNC kept broadcasting across them.
+    // The client can't drive region changes (same rule as portals); the host's
+    // travel is broadcast exactly like a portal crossing.
+    if (this.network?.connected && this.network.isClient()) {
+      this.closeWorldMap();
+      this.events.emit('show_dialogue', { text: '⟨Thread Shrine⟩ Only the host may guide travel — the thread follows their step.' });
+      this.time.delayedCall(2600, () => this.events.emit('hide_dialogue'));
+      return;
+    }
+    if (this.network?.connected) this.network.send('REGION_CHANGE', { newIndex: regionIndex });
     this._mapOpen = false;   // map scene stops itself
     this._persist(regionIndex);
     this.audio?.portal?.();

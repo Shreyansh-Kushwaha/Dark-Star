@@ -1078,7 +1078,19 @@ export class Boss extends Phaser.GameObjects.Container {
 
     this.hp      = state.hp;
     this.posture = state.posture;
-    this.phase   = state.phase;
+    // Mirror the host's phase advance as the real event — the silent copy left
+    // the client without the phase banner, the sting, and (worst) without its
+    // own arena hazards while the host's invisible ones dealt relayed damage.
+    if (state.phase != null && state.phase !== this.phase) {
+      const labels = ['', 'PHASE II', 'FINAL PHASE'];
+      this.phase = state.phase;
+      this.scene?.events?.emit('boss_phase_changed', {
+        phase: state.phase, label: labels[state.phase] ?? `PHASE ${state.phase + 1}`,
+        boss: this, phaseIndex: state.phase,
+      });
+      this.scene?.audio?.bossPhase?.();
+      this.scene?._cameraPunch?.(0.018, 500);
+    }
     this.state   = state.state;
 
     // Apply animation and direction
