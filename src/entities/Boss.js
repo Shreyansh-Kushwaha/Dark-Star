@@ -1042,6 +1042,18 @@ export class Boss extends Phaser.GameObjects.Container {
   // --- NETWORK SYNC METHODS ADDED BELOW ---
   // --------------------------------------------------------
 
+  // Per-frame upkeep for a network-puppeted boss (co-op client). The full
+  // update() runs AI/attack patterns — on the client the host owns those and
+  // this just keeps depth-sort and the floor aura tracking the synced position.
+  puppetUpdate() {
+    if (Math.abs(this.y - (this._lastDepthY ?? -1)) > 1) {
+      this.setDepth(this.y);
+      this._aura?.setDepth(this.y - 2);
+      this._lastDepthY = this.y;
+    }
+    if (this._aura) this._aura.setPosition(this.x, this.y);
+  }
+
   getNetState() {
     return {
       bossKey: this.bossKey,

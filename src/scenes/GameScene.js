@@ -303,6 +303,15 @@ export class GameScene extends Phaser.Scene {
       this.network.on('BOSS_TRIGGER', onBossTrigger);
       _netCleanup.push(['BOSS_TRIGGER', onBossTrigger]);
 
+      // Host: apply the client's melee/projectile damage to the authoritative boss.
+      if (this.network.isHost()) {
+        const onBossHit = ({ damage }) => {
+          if (this._boss?.alive && damage > 0) this._boss.takeDamage(damage, this);
+        };
+        this.network.on('BOSS_HIT', onBossHit);
+        _netCleanup.push(['BOSS_HIT', onBossHit]);
+      }
+
       // Client: apply enemy states broadcast by host
       if (this.network.isClient()) {
         const onRegionChange = ({ newIndex }) => {
@@ -344,6 +353,15 @@ export class GameScene extends Phaser.Scene {
         };
         this.network.on('ENEMY_SYNC', onEnemySync);
         _netCleanup.push(['ENEMY_SYNC', onEnemySync]);
+
+        // Client: mirror the host's authoritative boss (HP/phase/position/death).
+        // The intro cutscene owns the boss until beginFight, so skip during it.
+        const onBossSync = ({ state }) => {
+          if (!state || !this._boss || this._boss._introActive) return;
+          this._boss.applyNetState(state);
+        };
+        this.network.on('BOSS_SYNC', onBossSync);
+        _netCleanup.push(['BOSS_SYNC', onBossSync]);
       }
 
       this.events.once('shutdown', () => {
@@ -2971,7 +2989,11 @@ export class GameScene extends Phaser.Scene {
 
     // ── Boss ──────────────────────────────────────────────────────
     if (this._boss?.active) {
-      this._boss.update(time, delta, this.players, this);
+      // Co-op client: the host simulates the boss; we just puppet the synced
+      // state (running the AI on both sides made two diverging fights, with
+      // each boss double-dipping damage on both players via PLAYER_DAMAGE).
+      if (this.network?.connected && this.network.isClient()) this._boss.puppetUpdate();
+      else this._boss.update(time, delta, this.players, this);
     } else if (!this._bossTriggered && this._bossArenaPos) {
       this._checkBossTrigger();
     }
@@ -3148,11 +3170,11 @@ export class GameScene extends Phaser.Scene {
           if (!proj.piercing) { proj.hit(); return; }
         }
       }
-      // Hit boss
+      // Hit boss (hitBoss routes a co-op client's damage through the host)
       if (this._boss?.alive) {
         const dx = proj.x - this._boss.x, dy = proj.y - this._boss.y;
         if (dx * dx + dy * dy < 60 * 60) {
-          this._boss.takeDamage(proj.damage, this);
+          this.hitBoss(proj.damage);
           proj.hit();
         }
       }
@@ -3707,6 +3729,10 @@ export class GameScene extends Phaser.Scene {
         .filter(e => e?.active)
         .map(e => e.getNetState());
       this.network.send('ENEMY_SYNC', { enemies: enemyStates });
+      // Boss too — keep sending after death once so the client mirrors _die.
+      if (this._boss?.active) {
+        this.network.send('BOSS_SYNC', { state: this._boss.getNetState() });
+      }
     }
   }
 
@@ -4179,6 +4205,18 @@ export class GameScene extends Phaser.Scene {
   // Called by Player.js when player melee hits boss
   hitBoss(damage) {
     if (!this._boss?.alive) return;
+    // Co-op client: the host owns boss HP/posture — forward the hit and show
+    // only local feedback (the authoritative numbers arrive via BOSS_SYNC).
+    if (this.network?.connected && this.network.isClient()) {
+      this.network.send('BOSS_HIT', { damage });
+      this._impactDust?.(this._boss.x, this._boss.y - 20, 0xffe6b0, 4);
+      const sprite = this._boss.sprite;
+      sprite?.setTint(0xffffff);
+      this.time.delayedCall(80, () => {
+        if (this._boss?.alive) sprite?.setTint(this._boss.cfg.tint || 0xffffff);
+      });
+      return;
+    }
     this._boss.takeDamage(damage, this);
   }
 }
