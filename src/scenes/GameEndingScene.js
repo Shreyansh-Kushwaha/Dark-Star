@@ -129,11 +129,27 @@ export class GameEndingScene extends Phaser.Scene {
 
       this.tweens.add({ targets: [bg2, border, label, sub], alpha: 1, duration: 600, delay: 900 + i * 200 });
       this._panels.push({ bg: bg2, border, label, sub, locked, endingIdx: i, py });
+
+      // Touch/mouse: hover highlights, tap on the highlighted panel confirms.
+      if (!locked) {
+        bg2.setInteractive({ useHandCursor: true });
+        bg2.on('pointerover', () => {
+          if (this._choiceConfirmed) return;
+          this._selectedIdx = i;
+          this._updateSelection();
+        });
+        bg2.on('pointerup', () => {
+          if (this._choiceConfirmed) return;
+          this._selectedIdx = i;
+          this._updateSelection();
+          this._confirmChoice();
+        });
+      }
     }
 
     // Navigation hint
     this._navHint = this.add.text(GAME_W / 2, startY + ENDINGS.length * gap + 20,
-      '[W/S] Navigate    [Enter] Confirm', {
+      '[W/S] Navigate    [Enter] Confirm    (or tap a path)', {
         fontSize: '11px', color: '#666', fontFamily: 'monospace',
       }).setOrigin(0.5).setAlpha(0);
     this.tweens.add({ targets: this._navHint, alpha: 1, duration: 600, delay: 1600 });

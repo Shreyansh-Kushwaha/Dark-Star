@@ -41,6 +41,7 @@ export class PrologueScene extends Phaser.Scene {
     });
 
     this.input.keyboard.once('keydown', () => this._skip());
+    this.input.once('pointerdown', () => this._skip());
     this.time.delayedCall(SKIP_TIMEOUT, () => this._skip());
   }
 
