@@ -4,9 +4,9 @@
 // never needs to know touch controls exist.
 import { QualitySettings } from './QualitySettings.js';
 
-const JOY_RADIUS = 55;
+const JOY_RADIUS = 70;
 const JOY_DEAD = 12;
-const BTN_RADIUS = 38;
+const BTN_RADIUS = 48;
 
 export class TouchControls {
   static isSupported() {
@@ -49,12 +49,12 @@ export class TouchControls {
 
     this.container = scene.add.container(0, 0).setScrollFactor(0).setDepth(10000);
 
-    const joyX = 110, joyY = h - 110;
+    const joyX = 130, joyY = h - 130;
     this._joyHome = { x: joyX, y: joyY };
     this._joyOrigin = { x: joyX, y: joyY };
-    this._joyBase = scene.add.circle(joyX, joyY, JOY_RADIUS, 0xffffff, 0.12)
-      .setStrokeStyle(2, 0xffffff, 0.35).setScrollFactor(0);
-    this._joyThumb = scene.add.circle(joyX, joyY, JOY_RADIUS * 0.5, 0xffffff, 0.28)
+    this._joyBase = scene.add.circle(joyX, joyY, JOY_RADIUS, 0xffffff, 0.09)
+      .setStrokeStyle(2, 0xffffff, 0.25).setScrollFactor(0);
+    this._joyThumb = scene.add.circle(joyX, joyY, JOY_RADIUS * 0.5, 0xffffff, 0.2)
       .setScrollFactor(0);
     this.container.add([this._joyBase, this._joyThumb]);
 
@@ -65,25 +65,25 @@ export class TouchControls {
     joyZone.on('pointerdown', (p) => this._joyStart(p));
     this.container.add(joyZone);
 
-    const heavyBtn = this._makeButton(w - 70, h - 150, BTN_RADIUS, 0xff5a5a, 'K');
-    const lightBtn = this._makeButton(w - 150, h - 90, BTN_RADIUS, 0xffcf5a, 'J');
-    const dodgeBtn = this._makeButton(w - 70, h - 70, BTN_RADIUS * 0.8, 0x5ad1ff, 'DODGE');
+    const heavyBtn = this._makeButton(w - 85, h - 175, BTN_RADIUS, 0xff5a5a, 'K');
+    const lightBtn = this._makeButton(w - 175, h - 105, BTN_RADIUS, 0xffcf5a, 'J');
+    const dodgeBtn = this._makeButton(w - 80, h - 80, BTN_RADIUS * 0.8, 0x5ad1ff, 'DODGE');
     this._bindHold(heavyBtn, 'K');
     this._bindHold(lightBtn, 'J');
     this._bindTap(dodgeBtn, 'SHIFT');
 
     // Ability row (Q/E/R), smaller, above the attack cluster.
     const abilRadius = BTN_RADIUS * 0.72;
-    const qBtn = this._makeButton(w - 230, h - 230, abilRadius, 0x9a5aff, 'Q');
-    const eBtn = this._makeButton(w - 150, h - 230, abilRadius, 0x9a5aff, 'E');
-    const rBtn = this._makeButton(w - 70,  h - 230, abilRadius, 0x9a5aff, 'R');
+    const qBtn = this._makeButton(w - 270, h - 270, abilRadius, 0x9a5aff, 'Q');
+    const eBtn = this._makeButton(w - 180, h - 270, abilRadius, 0x9a5aff, 'E');
+    const rBtn = this._makeButton(w - 90,  h - 270, abilRadius, 0x9a5aff, 'R');
     this._bindTap(qBtn, 'Q');
     this._bindTap(eBtn, 'E');
     this._bindTap(rBtn, 'R');
 
     // Interact (hold-to-revive, tap-to-interact) + Amrit heal, centered above the joystick.
-    const interactBtn = this._makeButton(w / 2, h - 70, abilRadius, 0x8aff8a, 'F');
-    const amritBtn    = this._makeButton(w / 2, h - 150, abilRadius, 0x5affc8, 'H');
+    const interactBtn = this._makeButton(w / 2, h - 85, abilRadius, 0x8aff8a, 'F');
+    const amritBtn    = this._makeButton(w / 2, h - 180, abilRadius, 0x5affc8, 'H');
     this._bindHold(interactBtn, 'F', /* alsoJustDown */ true);
     this._bindTap(amritBtn, 'H');
 
@@ -156,11 +156,11 @@ export class TouchControls {
 
   _makeButton(x, y, radius, color, label) {
     const scene = this.scene;
-    const circle = scene.add.circle(x, y, radius, color, 0.32)
-      .setStrokeStyle(2, color, 0.7).setScrollFactor(0).setInteractive();
+    const circle = scene.add.circle(x, y, radius, color, 0.22)
+      .setStrokeStyle(2, color, 0.5).setScrollFactor(0).setInteractive();
     const text = scene.add.text(x, y, label, {
-      fontFamily: 'Silkscreen', fontSize: label.length > 1 ? '11px' : '16px', color: '#fff',
-    }).setOrigin(0.5).setScrollFactor(0);
+      fontFamily: 'Silkscreen', fontSize: label.length > 1 ? '13px' : '20px', color: '#fff',
+    }).setOrigin(0.5).setScrollFactor(0).setAlpha(0.85);
     this.container.add([circle, text]);
     return circle;
   }
