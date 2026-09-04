@@ -1,4 +1,5 @@
 import { loadAnimationsJSON } from '../systems/AnimationLoader.js';
+import { RegionCatalog } from '../systems/RegionCatalog.js';
 
 const TS  = "Tiny Swords (Free Pack)/Tiny Swords (Free Pack)";
 const PK  = "THE PACK/Monsters";
@@ -204,11 +205,46 @@ export class PreloadScene extends Phaser.Scene {
     // pure redundancy: GameScene._buildRegionFromMap loads whatever a region needs
     // on entry (its `missing` loader self-heals any not-yet-cached texture). So we
     // now only stash the region JSON in the registry and open the menu immediately.
-    fetch('/api/regions')
-      .then(r => r.json())
-      .then(list => { this.registry.set('regionMaps', list); })
-      .catch(() => { this.registry.set('regionMaps', []); })
-      .finally(() => { this.scene.start('MainMenuScene'); });
+    RegionCatalog.get().then(list => {
+      this.registry.set('regionMaps', list);
+      if (RegionCatalog.failed) this._showLoadError();
+      else this.scene.start('MainMenuScene');
+    });
+  }
+
+  // The editor world (regions 7+) only exists behind the dev server's /api
+  // endpoints; on a plain static host every fetch used to .catch() into an
+  // empty array and the player got a silently empty world. Say so instead.
+  _showLoadError() {
+    const cam = this.cameras.main;
+    const cx = cam.width / 2, cy = cam.height / 2;
+    const objs = [];
+    objs.push(this.add.rectangle(cx, cy, cam.width, cam.height, 0x000000, 0.85));
+    objs.push(this.add.text(cx, cy - 70, '⚠  COULD NOT LOAD WORLD DATA', {
+      fontSize: '22px', color: '#ff8866', fontFamily: 'serif', stroke: '#000', strokeThickness: 4,
+    }).setOrigin(0.5));
+    objs.push(this.add.text(cx, cy - 24,
+      'The game server (/api/regions) did not respond.\n' +
+      'Run "node server/combined_server.js" and open the game through it —\n' +
+      'a plain static file host cannot serve the world.', {
+        fontSize: '13px', color: '#ccbbaa', fontFamily: 'monospace', align: 'center', lineSpacing: 6,
+      }).setOrigin(0.5));
+
+    const mkBtn = (y, label, onTap) => {
+      const bg = this.add.rectangle(cx, y, 260, 40, 0x1a1a2e, 0.95).setStrokeStyle(2, 0xffd700, 0.8)
+        .setInteractive({ useHandCursor: true });
+      const txt = this.add.text(cx, y, label, {
+        fontSize: '14px', color: '#ffd700', fontFamily: 'serif', fontStyle: 'bold',
+      }).setOrigin(0.5);
+      bg.on('pointerup', onTap);
+      objs.push(bg, txt);
+    };
+    mkBtn(cy + 48, 'RETRY', () => {
+      objs.forEach(o => o.destroy());
+      RegionCatalog.refresh();
+      this._loadRegionMaps();
+    });
+    mkBtn(cy + 100, 'CONTINUE ANYWAY', () => this.scene.start('MainMenuScene'));
   }
 
   _defineAnimations() {

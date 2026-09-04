@@ -43,6 +43,7 @@ import { familyForKey, familyLoads, familyAnimKeys, entityType, assetsReady, def
 import { statsFor } from '../data/creatureStats.js';
 import { Projectile } from '../entities/Projectile.js';
 import { AudioManager } from '../systems/AudioManager.js';
+import { RegionCatalog } from '../systems/RegionCatalog.js';
 import { HapticsManager } from '../systems/HapticsManager.js';
 import { QuestManager } from '../systems/QuestManager.js';
 import { SaveManager } from '../systems/SaveManager.js';
@@ -3505,8 +3506,7 @@ export class GameScene extends Phaser.Scene {
           // held the player on a black screen while ~5.7 MB of JSON downloaded
           // and parsed on EVERY crossing — the refreshed list now simply applies
           // to the next transition instead (menu launch still fetches fresh).
-          fetch('/api/regions')
-            .then(r => r.json())
+          RegionCatalog.refresh()
             .then(list => { this.registry.set('regionMaps', list); })
             .catch(() => {});
           doRestart();

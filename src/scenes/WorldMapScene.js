@@ -1,5 +1,6 @@
 import { GAME_W, GAME_H, REGION_NAMES } from '../constants.js';
 import { ExploredManager } from '../systems/ExploredManager.js';
+import { RegionCatalog } from '../systems/RegionCatalog.js';
 import { MAP_LAYOUT, ACT_COLORS, fallbackPos } from '../data/worldMapLayout.js';
 
 // ── palette ─────────────────────────────────────────────────────────────────
@@ -66,8 +67,7 @@ export class WorldMapScene extends Phaser.Scene {
     // Live region list (authoritative names + portal graph). Fall back gracefully.
     let regions = [];
     try {
-      const res = await fetch('/api/regions');
-      regions = await res.json();
+      regions = await RegionCatalog.get();
     } catch { regions = []; }
     if (!this.scene.isActive()) return;
 

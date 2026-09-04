@@ -3,6 +3,7 @@ import { SaveManager } from '../systems/SaveManager.js';
 import { QualitySettings } from '../systems/QualitySettings.js';
 import { NetworkManager } from '../systems/NetworkManager.js';
 import { AudioManager } from '../systems/AudioManager.js';
+import { RegionCatalog } from '../systems/RegionCatalog.js';
 
 const PAL = {
   sky:      0x05050f,
@@ -48,6 +49,15 @@ export class MainMenuScene extends Phaser.Scene {
     this._drawStars();
     this._drawMountains();
     this._drawScanlines();
+
+    // The player chose "continue anyway" on a failed world load — keep a
+    // persistent reminder up so a mysteriously tiny world isn't a head-scratcher.
+    if (RegionCatalog.failed) {
+      this.add.text(GAME_W / 2, 16, '⚠ World data failed to load — only built-in regions available. Is the server running?', {
+        fontSize: '11px', color: '#ff9977', fontFamily: 'monospace',
+        backgroundColor: '#20080455', padding: { x: 8, y: 4 },
+      }).setOrigin(0.5, 0).setDepth(50);
+    }
     this._drawTitle();
     this._drawButtons();
     this._drawHud();
@@ -235,7 +245,7 @@ export class MainMenuScene extends Phaser.Scene {
       }).setOrigin(0.5, 0.5).setDepth(6);
       // Editor regions (7+) aren't in REGION_NAMES — refine the caption once
       // the live region list arrives.
-      fetch('/api/regions').then(r => r.json()).then(list => {
+      RegionCatalog.get().then(list => {
         const entry = list.find(e => e.regionIndex === (save.regionIndex ?? 0));
         const name = entry?.data?.regionName;
         if (name && this._continueCaption?.active) {
@@ -373,8 +383,7 @@ export class MainMenuScene extends Phaser.Scene {
       // Fetch the live region list from the server so editor-saved regions appear
       let entries = [];
       try {
-        const res = await fetch('/api/regions');
-        const list = await res.json();
+        const list = [...await RegionCatalog.get()];
         // Sort by regionIndex ascending; fall back to filename order
         list.sort((a, b) => (a.regionIndex ?? 999) - (b.regionIndex ?? 999));
         entries = list.map(r => ({
@@ -385,6 +394,7 @@ export class MainMenuScene extends Phaser.Scene {
         // Offline fallback: show hardcoded list
         entries = REGION_NAMES.map((name, i) => ({ index: i, name }));
       }
+      if (entries.length === 0) entries = REGION_NAMES.map((name, i) => ({ index: i, name }));
       if (!this._regionSelectOpen) return; // closed while fetching
       this._regionCursor = 0;
       this._regionSelectPanel = this._makeRegionSelect(entries);
@@ -471,8 +481,7 @@ export class MainMenuScene extends Phaser.Scene {
 
   _startGame(isCoop, regionIndex = 0, charData = {}) {
     // Refresh region maps in parallel with the fade so editor-saved data is current
-    const mapsPromise = fetch('/api/regions')
-      .then(r => r.json())
+    const mapsPromise = RegionCatalog.refresh()
       .then(list => { this.registry.set('regionMaps', list); })
       .catch(() => {});
     this.cameras.main.fadeOut(400, 0, 0, 0);
@@ -811,8 +820,7 @@ export class MainMenuScene extends Phaser.Scene {
     // Fetch the live region list from the server so editor-saved regions appear
     let entries = [];
     try {
-      const res = await fetch('/api/regions');
-      const list = await res.json();
+      const list = [...await RegionCatalog.get()];
       list.sort((a, b) => (a.regionIndex ?? 999) - (b.regionIndex ?? 999));
       entries = list
         .filter(r => r.regionIndex != null)
