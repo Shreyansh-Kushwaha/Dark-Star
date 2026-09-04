@@ -81,9 +81,10 @@ export class TouchControls {
     this._bindTap(eBtn, 'E');
     this._bindTap(rBtn, 'R');
 
-    // Interact (hold-to-revive, tap-to-interact) + Amrit heal, centered above the joystick.
-    const interactBtn = this._makeButton(w / 2, h - 100, abilRadius, 0x8aff8a, 'F');
-    const amritBtn    = this._makeButton(w / 2, h - 210, abilRadius, 0x5affc8, 'H');
+    // Interact (hold-to-revive, tap-to-interact) + Amrit heal, top-left just
+    // below the 66px vitals bar so they don't cover the HP/stamina readout.
+    const amritBtn    = this._makeButton(60, 125, abilRadius, 0x5affc8, 'H');
+    const interactBtn = this._makeButton(170, 125, abilRadius, 0x8aff8a, 'F');
     this._bindHold(interactBtn, 'F', /* alsoJustDown */ true);
     this._bindTap(amritBtn, 'H');
 
