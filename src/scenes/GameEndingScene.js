@@ -70,6 +70,13 @@ export class GameEndingScene extends Phaser.Scene {
   create() {
     SaveManager.clear();
 
+    // Co-op: the session's socket would otherwise stay open forever. Both
+    // players enter the ending within a sync tick of each other, so a short
+    // delay guarantees the partner's GameScene (and its disconnect handlers)
+    // is gone before the close — nothing interrupts their finale.
+    const net = this.scene.get('GameScene')?.network;
+    if (net?.connected) this.time.delayedCall(3000, () => net.disconnect());
+
     // Background
     const bg = this.add.graphics();
     bg.fillGradientStyle(0x000008, 0x000008, 0x1a0030, 0x1a0030, 1);

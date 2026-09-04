@@ -322,6 +322,13 @@ export class GameScene extends Phaser.Scene {
       this.network.on('PROJECTILE_SPAWN', onProjSpawn);
       _netCleanup.push(['PROJECTILE_SPAWN', onProjSpawn]);
 
+      // Both roles: mirrored ability FX (shockwaves, venom pools, telegraphs).
+      const onAbilityFxNet = ({ fx }) => {
+        if (fx && typeof fx.x === 'number' && typeof fx.y === 'number') this._onAbilityFx(fx);
+      };
+      this.network.on('ABILITY_FX', onAbilityFxNet);
+      _netCleanup.push(['ABILITY_FX', onAbilityFxNet]);
+
       // Mid-game co-op teardown. Two distinct signals matter: the socket-level
       // 'disconnected' (the relay server itself died), and the server's
       // peer-drop MESSAGE (HOST_/CLIENT_DISCONNECTED) — when the partner
@@ -4153,6 +4160,13 @@ export class GameScene extends Phaser.Scene {
 
   _onAbilityFx(data) {
     const { type, x, y, r } = data;
+    // Mirror to the partner — these come from host-only AI, so shockwaves,
+    // venom pools, and sweep telegraphs were invisible on the client while
+    // their damage still arrived via the relays. Nested under `fx` because the
+    // payload's own `type` would collide with the message envelope's.
+    if (this.network?.connected && !data.netRelay) {
+      this.network.send('ABILITY_FX', { fx: { ...data, netRelay: true } });
+    }
     if (type === 'shockwave') {
       // Elite shockwave — lightning burst
       if (this.anims?.exists('vfx_lightning6')) {
@@ -4185,6 +4199,9 @@ export class GameScene extends Phaser.Scene {
         callback: () => {
           for (const p of this.players) {
             if (!p?.alive || p.downed) continue;
+            // Co-op: the pool exists on both devices (mirrored above), so each
+            // one damages only its OWN player — no double-hit via the relay.
+            if (this.network?.connected && !p.isLocal) continue;
             if (Phaser.Math.Distance.Between(x, y, p.x, p.y) < poolR) {
               p.takeDamage(tickDmg, null, this);
             }

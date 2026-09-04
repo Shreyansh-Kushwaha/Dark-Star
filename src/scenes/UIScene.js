@@ -564,6 +564,9 @@ export class UIScene extends Phaser.Scene {
       }
       if (Phaser.Input.Keyboard.JustDown(this._keyEsc)) {
         this._youDiedRetryRegion = null;
+        // Co-op: closing the socket lets the server notify the partner we left
+        // (ghost ally + rejoin code on the host; clean exit on the client).
+        this.scene.get('GameScene')?.network?.disconnect?.();
         this.cameras.main.fadeOut(500, 0, 0, 0);
         this.cameras.main.once('camerafadeoutcomplete', () => {
           this.scene.stop('UIScene');

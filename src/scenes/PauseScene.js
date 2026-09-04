@@ -220,7 +220,13 @@ export class PauseScene extends Phaser.Scene {
   }
 
   _resume()   { this.scene.get('GameScene')?.togglePause(); }
-  _mainMenu() { this.scene.stop('GameScene'); this.scene.stop('UIScene'); this.scene.stop('PauseScene'); this.scene.start('MainMenuScene'); }
+  _mainMenu() {
+    // Co-op: close the socket so the server tells the partner we left —
+    // without this their world just froze with no notice (host gets a ghost
+    // ally + rejoin code, client gets the connection-lost exit).
+    this.scene.get('GameScene')?.network?.disconnect?.();
+    this.scene.stop('GameScene'); this.scene.stop('UIScene'); this.scene.stop('PauseScene'); this.scene.start('MainMenuScene');
+  }
   _openMap()  {
     const cur = this.scene.get('GameScene')?._regionIndex ?? 0;
     this.scene.launch('WorldMapScene', { from: 'pause', currentRegion: cur });
