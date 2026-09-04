@@ -501,6 +501,9 @@ export class GameScene extends Phaser.Scene {
 
     this.questManager.addEventListener('quest_started', (e) => {
       this.events.emit('quest_started', e.detail);
+      // A collect quest may already be satisfied by items in the bag.
+      const comp = e.detail?.quest?.complete;
+      if (comp?.startsWith('collect:')) this._notifyItemCollected(comp.split(':')[1]);
     });
     this.questManager.addEventListener('quest_completed', (e) => {
       this.events.emit('quest_completed', e.detail);
@@ -512,6 +515,7 @@ export class GameScene extends Phaser.Scene {
         const def = ITEM_DEFS[reward.item];
         if (def?.type === 'passive') this._applyPassiveItem(def);
         this.events.emit('item_acquired', { itemId: reward.item, name: def?.name || reward.name });
+        this._notifyItemCollected(reward.item);
       }
     });
     // ── Region title ──────────────────────────────────────────────
@@ -1812,6 +1816,7 @@ export class GameScene extends Phaser.Scene {
       const def = ITEM_DEFS[item];
       if (def?.type === 'passive') this._applyPassiveItem(def);
       this.events.emit('item_acquired', { itemId: item, name: def?.name || item });
+      this._notifyItemCollected(item);
       this._persist();
       return { ok: true };
     }
@@ -3844,6 +3849,7 @@ export class GameScene extends Phaser.Scene {
     for (const drop of drops) {
       if (Math.random() < drop.chance) {
         SaveManager.addItem(this._save, drop.item);
+        this._notifyItemCollected(drop.item);
         this._persist();
         const def = ITEM_DEFS[drop.item];
         if (def?.type === 'passive') this._applyPassiveItem(def);
@@ -3930,6 +3936,7 @@ export class GameScene extends Phaser.Scene {
     const bossRewardItem = this._trial ? null : BOSSES[bossKey]?.rewardItem;
     if (bossRewardItem) {
       SaveManager.addItem(this._save, bossRewardItem);
+      this._notifyItemCollected(bossRewardItem);
       this._persist();
       const def = ITEM_DEFS[bossRewardItem];
       this.events.emit('item_acquired', { itemId: bossRewardItem, name: def?.name || bossRewardItem });
@@ -4160,6 +4167,13 @@ export class GameScene extends Phaser.Scene {
     this._persist(regionIndex);
     this.audio?.portal?.();
     this._fadeAndTransition(regionIndex);
+  }
+
+  // Tell the quest system how many of this item the inventory now holds, so
+  // fetch quests (`complete: 'collect:<item>:<n>'`) can check their target.
+  _notifyItemCollected(itemId) {
+    const count = (this._save?.inventory || []).filter(i => i === itemId).length;
+    this.questManager?.onItemCollected(itemId, count);
   }
 
   // Called by Player.js when player melee hits boss

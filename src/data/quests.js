@@ -58,6 +58,13 @@ export const QUESTS = {
     trigger: 'npc_talk:elder_mahesh', complete: 'enemy_kills:8',
     reward: { item: 'prithvi_shard', name: 'Prithvi Shard' },
   },
+  gramavana_sq3: {
+    id: 'gramavana_sq3', type: 'side',
+    title: "Word for the Hermit",
+    desc: 'Elder Mahesh asks you to carry his warning to Hermit Veda, who keeps watch in the deep forest. Some truths must travel by mouth, not by thread.',
+    trigger: 'npc_talk:elder_mahesh', complete: 'talk:mahavana_hermit',
+    reward: null,
+  },
   mahavana_sq1: {
     id: 'mahavana_sq1', type: 'side',
     title: "The Hermit's Totem",
@@ -78,6 +85,13 @@ export const QUESTS = {
     desc: 'Merchant Gopal was ambushed near a broken shrine that reacted to the presence of outsiders.',
     trigger: 'npc_talk:lost_merchant', complete: 'enemy_kills:3',
     reward: { item: 'merchants_coin', name: "Merchant's Coin" },
+  },
+  mahavana_sq4: {
+    id: 'mahavana_sq4', type: 'side',
+    title: 'Embers in the Dark',
+    desc: 'Scholar Priya needs an Agni Ember for her study of the erased god. The strongest rakshasas hoard them — bring her one still burning.',
+    trigger: 'npc_talk:forest_scholar', complete: 'collect:agni_ember:1',
+    reward: null,
   },
   vrindavana_sq1: {
     id: 'vrindavana_sq1', type: 'side',

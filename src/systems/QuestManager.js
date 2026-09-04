@@ -78,6 +78,27 @@ export class QuestManager extends EventTarget {
 
   onNpcTalk(npcId) {
     this.dispatch('npc_talked', { npcId });
+    // Delivery/talk quests: complete when the player speaks to the target NPC
+    // (quest `complete: 'talk:<storyNpcId>'`).
+    for (const [id, q] of this.active) {
+      if (q.complete === `talk:${npcId}`) {
+        this.complete(id);
+      }
+    }
+  }
+
+  // Fetch quests (`complete: 'collect:<itemId>:<N>'`). `ownedCount` is how many
+  // of that item the save inventory now holds — the caller owns the inventory,
+  // this just compares against each active quest's target.
+  onItemCollected(itemId, ownedCount) {
+    for (const [id, q] of this.active) {
+      if (!q.complete || !q.complete.startsWith('collect:')) continue;
+      const [, target, nStr] = q.complete.split(':');
+      if (target !== itemId) continue;
+      if (ownedCount >= (parseInt(nStr) || 1)) {
+        this.complete(id);
+      }
+    }
   }
 
   dispatch(eventType, detail) {
