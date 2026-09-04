@@ -32,12 +32,12 @@ export class TouchControls {
     };
 
     this._joyPointerId = null;
-    this._joyOrigin = { x: 0, y: 0 };
+    this._joyHome = { x: 0, y: 0 };   // resting position of the stick
+    this._joyOrigin = { x: 0, y: 0 }; // steering center for the current touch
     this._holdOwner = {}; // keyName -> pointer id currently holding that button
 
-    this._onPointerMove = (p) => this._joyMove(p);
     this._onPointerUp = (p) => this._joyEnd(p);
-    this._onSceneUpdate = () => this._releaseLostPointers();
+    this._onSceneUpdate = () => { this._pollJoystick(); this._releaseLostPointers(); };
 
     this._buildUI();
   }
@@ -50,6 +50,7 @@ export class TouchControls {
     this.container = scene.add.container(0, 0).setScrollFactor(0).setDepth(10000);
 
     const joyX = 110, joyY = h - 110;
+    this._joyHome = { x: joyX, y: joyY };
     this._joyOrigin = { x: joyX, y: joyY };
     this._joyBase = scene.add.circle(joyX, joyY, JOY_RADIUS, 0xffffff, 0.12)
       .setStrokeStyle(2, 0xffffff, 0.35).setScrollFactor(0);
@@ -86,7 +87,6 @@ export class TouchControls {
     this._bindHold(interactBtn, 'F', /* alsoJustDown */ true);
     this._bindTap(amritBtn, 'H');
 
-    scene.input.on('pointermove', this._onPointerMove);
     scene.input.on('pointerup', this._onPointerUp);
     scene.input.on('pointerupoutside', this._onPointerUp);
     scene.events.on('update', this._onSceneUpdate);
@@ -94,16 +94,26 @@ export class TouchControls {
     scene.events.once('shutdown', () => this.destroy());
   }
 
+  // Steer from the claimed pointer's live position every frame instead of
+  // listening for the scene's pointermove events: on real touch devices those
+  // can be dropped or throttled mid-drag (the "direction frozen at the press"
+  // bug), while the InputManager keeps pointer.x/y fresh at the DOM level.
+  // This also releases the stick when the touch ended without a pointerup.
+  _pollJoystick() {
+    if (this._joyPointerId === null) return;
+    const p = this.scene.input.manager.pointers
+      .find((pt) => pt.id === this._joyPointerId);
+    if (!p || !p.isDown) { this._joyEnd(p || { id: this._joyPointerId }); return; }
+    this._updateJoyFromPointer(p);
+  }
+
   // A touch that ends in touchcancel (notification shade, browser edge
   // gesture, palm swipe) marks its Pointer up but never reaches our
-  // pointerup handlers, which would leave the stick or a held button latched
-  // on. Verify every pointer we've claimed is still really down each frame.
+  // pointerup handlers, which would leave a held button latched on. Verify
+  // every pointer we've claimed is still really down each frame. (The stick
+  // itself is covered by _pollJoystick above.)
   _releaseLostPointers() {
     const pointers = this.scene.input.manager.pointers;
-    if (this._joyPointerId !== null) {
-      const p = pointers.find((pt) => pt.id === this._joyPointerId);
-      if (!p || !p.isDown) this._joyEnd(p || { id: this._joyPointerId });
-    }
     for (const keyName in this._holdOwner) {
       const id = this._holdOwner[keyName];
       if (id === null) continue;
@@ -155,21 +165,25 @@ export class TouchControls {
     return circle;
   }
 
+  // Floating stick: the base re-centers under wherever the touch lands in the
+  // grab zone, and steering is measured from that point. Measuring from the
+  // touch's own start position (rather than a fixed screen spot) means any
+  // constant offset in reported pointer coordinates cancels out instead of
+  // reading as a permanent full-tilt in one direction.
   _joyStart(pointer) {
     if (this._joyPointerId !== null) return;
     this._joyPointerId = pointer.id;
-    this._updateJoyFromPointer(pointer);
-  }
-
-  _joyMove(pointer) {
-    if (pointer.id !== this._joyPointerId) return;
+    this._joyOrigin = { x: pointer.x, y: pointer.y };
+    this._joyBase.setPosition(this._joyOrigin.x, this._joyOrigin.y);
     this._updateJoyFromPointer(pointer);
   }
 
   _joyEnd(pointer) {
     if (pointer.id !== this._joyPointerId) return;
     this._joyPointerId = null;
-    this._joyThumb.setPosition(this._joyOrigin.x, this._joyOrigin.y);
+    this._joyOrigin = { x: this._joyHome.x, y: this._joyHome.y };
+    this._joyBase.setPosition(this._joyHome.x, this._joyHome.y);
+    this._joyThumb.setPosition(this._joyHome.x, this._joyHome.y);
     this.cursors.left.isDown = this.cursors.right.isDown = false;
     this.cursors.up.isDown = this.cursors.down.isDown = false;
   }
@@ -194,7 +208,6 @@ export class TouchControls {
   }
 
   destroy() {
-    this.scene.input.off('pointermove', this._onPointerMove);
     this.scene.input.off('pointerup', this._onPointerUp);
     this.scene.input.off('pointerupoutside', this._onPointerUp);
     this.scene.events.off('update', this._onSceneUpdate);
