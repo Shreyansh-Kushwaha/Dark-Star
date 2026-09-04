@@ -232,6 +232,14 @@ export class AbilityManager {
     const healAmt = 60;
     for (const p of scene.players) {
       if (!p?.alive || p.downed) continue;
+      // Co-op: the partner's hp is authoritative on their device — forward the
+      // heal (PLAYER_HEAL) instead of writing their remote copy, which the
+      // owner's next broadcast overwrote. The glow still plays here.
+      if (!p.isLocal && scene.network?.connected) {
+        scene.network.send('PLAYER_HEAL', { amount: healAmt });
+        _vfxPlay(scene, 'vfx_yellow1', p.x, p.y - 30, 1.2, p.depth + 2);
+        continue;
+      }
       p.hp = Math.min(p.maxHp, p.hp + healAmt);
       p._updateHpBar();
       // Golden heal glow on each healed player

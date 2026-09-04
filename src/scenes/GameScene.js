@@ -315,13 +315,20 @@ export class GameScene extends Phaser.Scene {
       this.network.on('PROJECTILE_SPAWN', onProjSpawn);
       _netCleanup.push(['PROJECTILE_SPAWN', onProjSpawn]);
 
-      // Mid-game disconnect (only the menu handled it before): the host's world
-      // is self-sufficient — Tara AI reclaims P2 the moment `connected` drops —
-      // but the client's world is host-simulated and dies with the link
-      // (frozen, unkillable puppets), so it says goodbye and returns to the
-      // menu. Role is captured now: NetworkManager clears it on disconnect().
+      // Mid-game co-op teardown. Two distinct signals end a session: the
+      // socket-level 'disconnected' (the relay server itself died), and the
+      // server's peer-drop MESSAGE (HOST_/CLIENT_DISCONNECTED) — when the
+      // partner leaves, the survivor's socket stays open, so only the message
+      // arrives. Both were unhandled in-game. The host's world is
+      // self-sufficient (Tara AI reclaims P2 once `connected` drops); the
+      // client's world is host-simulated and dies with the link, so it says
+      // goodbye and returns to the menu. Role is captured now:
+      // NetworkManager clears it on disconnect().
       const wasClient = this.network.isClient();
-      const onDisconnected = () => {
+      let coopEnded = false;
+      const endCoop = () => {
+        if (coopEnded) return;
+        coopEnded = true;
         if (wasClient) {
           this._persist();
           this.events.emit('show_dialogue', { text: '⟨Connection Lost⟩ The thread to your ally has snapped. Returning to the beginning...' });
@@ -336,8 +343,24 @@ export class GameScene extends Phaser.Scene {
           try { this.scene.get('UIScene')?.toast?.('Ally disconnected — continuing solo', '#ffcc44', 3000); } catch (e) {}
         }
       };
-      this.network.on('disconnected', onDisconnected);
-      _netCleanup.push(['disconnected', onDisconnected]);
+      this.network.on('disconnected', endCoop);
+      _netCleanup.push(['disconnected', endCoop]);
+      const peerGoneMsg = wasClient ? 'HOST_DISCONNECTED' : 'CLIENT_DISCONNECTED';
+      this.network.on(peerGoneMsg, endCoop);
+      _netCleanup.push([peerGoneMsg, endCoop]);
+
+      // Heals cast by the partner (e.g. Tara's Jal Mend): a direct hp write on
+      // their remote copy is overwritten by the owner's next broadcast, so the
+      // heal is forwarded here and applied to the authoritative local player.
+      const onPlayerHeal = ({ amount = 0, frac = 0 }) => {
+        const local = this.players.find(p => p?.isLocal);
+        if (!local?.alive || local.downed) return;
+        local.hp = Math.min(local.maxHp, local.hp + Math.floor(amount + local.maxHp * frac));
+        local._updateHpBar?.();
+        this.events.emit('status_flash', { color: 0x66ffaa, alpha: 0.12, duration: 240 });
+      };
+      this.network.on('PLAYER_HEAL', onPlayerHeal);
+      _netCleanup.push(['PLAYER_HEAL', onPlayerHeal]);
 
       // Host: apply the client's melee/projectile damage to the authoritative boss.
       if (this.network.isHost()) {
@@ -4009,6 +4032,13 @@ export class GameScene extends Phaser.Scene {
     const { players } = data;
     for (const p of (players || [])) {
       if (!p?.alive || p.downed) continue;
+      // Co-op: the partner's hp is authoritative on their device — forward the
+      // heal instead of writing their remote copy (the write was cosmetic and
+      // vanished on the next sync).
+      if (!p.isLocal && this.network?.connected) {
+        this.network.send('PLAYER_HEAL', { frac: 0.2 });
+        continue;
+      }
       p.hp = Math.min(p.maxHp, p.hp + Math.floor(p.maxHp * 0.2));
       p._updateHpBar?.();
     }

@@ -737,6 +737,19 @@ export class MainMenuScene extends Phaser.Scene {
       fontSize: '13px', fontFamily: 'monospace', color: '#556677',
     }).setOrigin(0.5).setDepth(D + 1);
 
+    // A partner dropping out arrives as a server MESSAGE (the surviving socket
+    // stays open), so the socket-level 'disconnected' never fires for it —
+    // previously both signals left this screen waiting forever.
+    let peerGone = false;
+    const onPeerGone = () => {
+      if (peerGone) return;
+      peerGone = true;
+      try { statusTxt.setText('PARTNER DISCONNECTED — returning to menu...').setStyle({ color: '#ff4444' }); } catch (e) {}
+      this.time.delayedCall(2200, () => { net.disconnect(); this.scene.restart(); });
+    };
+    this._netOn(net, isHost ? 'CLIENT_DISCONNECTED' : 'HOST_DISCONNECTED', onPeerGone);
+    this._netOn(net, 'disconnected', onPeerGone);
+
     let myChar = null;
     let partnerChar = null;
 
@@ -804,13 +817,17 @@ export class MainMenuScene extends Phaser.Scene {
     let started = false;
     const allBgs = [];
 
-    // If connection drops while host is choosing, show error instead of launching solo silently
+    // If connection drops while host is choosing, show error instead of launching
+    // solo silently. The partner leaving arrives as a CLIENT_DISCONNECTED message
+    // (this socket stays open), so listen for both signals.
     const onDisconnect = () => {
       started = true;
       allBgs.forEach(b => b.disableInteractive());
       titleTxt.setText('PARTNER DISCONNECTED').setStyle({ color: '#ff4444', fontSize: '18px' });
+      this.time.delayedCall(2200, () => { net.disconnect(); this.scene.restart(); });
     };
     this._netOn(net, 'disconnected', onDisconnect);
+    this._netOn(net, 'CLIENT_DISCONNECTED', onDisconnect);
 
     // Loading hint while we fetch the live region list
     const loadingTxt = this.add.text(cx, panelY, 'Loading regions…', {

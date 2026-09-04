@@ -1838,7 +1838,10 @@ export class UIScene extends Phaser.Scene {
     if (idx === -1) return;
     const itemId = saveData.inventory[idx];
     const def = ITEM_DEFS[itemId];
-    const player = gs?.players?.find(p => p?.alive) || gs?.players?.[0];
+    // Local player only — on a co-op client the first alive player is the
+    // remote host copy, so the effect vanished on the next sync while the
+    // item was still consumed.
+    const player = gs?.players?.find(p => p?.isLocal) || gs?.players?.find(p => p?.alive) || gs?.players?.[0];
     if (!player) return;
 
     if (def.effect.stat === 'hp') {
