@@ -4,6 +4,7 @@ import {
   PERFECT_DODGE_WINDOW, PERFECT_DODGE_SLOWMO, PERFECT_DODGE_DURATION,
   XP_THRESHOLDS, ITEM_DEFS,
   AMRIT_MAX_DEFAULT, AMRIT_HEAL_FRAC, AMRIT_SIP_LOCKOUT, AMRIT_POTENCY_STEP,
+  NET_INTERVAL,
 } from '../constants.js';
 import { AbilityManager } from '../systems/AbilityManager.js';
 import { QualitySettings } from '../systems/QualitySettings.js';
@@ -609,7 +610,7 @@ export class Player extends Phaser.GameObjects.Container {
         targets: this,
         x: state.x,
         y: state.y,
-        duration: 100, // Matches standard network tick rates
+        duration: NET_INTERVAL, // one sync tick (NET_HZ), so glides join seamlessly
         ease: 'Linear',
         onUpdate: () => {
           // Tell Phaser's physics engine NOT to fight the slide

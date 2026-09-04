@@ -1,4 +1,5 @@
 import { ENEMY_TYPES } from '../data/enemies.js';
+import { NET_INTERVAL } from '../constants.js';
 import { QualitySettings } from '../systems/QualitySettings.js';
 
 const STATE = { IDLE: 'idle', PURSUE: 'pursue', ATTACK: 'attack', FLEE: 'flee', DEAD: 'dead' };
@@ -582,7 +583,7 @@ export class Enemy extends Phaser.GameObjects.Container {
         targets: this,
         x: state.x,
         y: state.y,
-        duration: 100, // Matches standard network tick rates
+        duration: NET_INTERVAL, // one sync tick (NET_HZ), so glides join seamlessly
         ease: 'Linear',
         onUpdate: () => {
           // Tell Phaser's physics engine NOT to fight the slide

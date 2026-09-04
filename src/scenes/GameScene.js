@@ -257,6 +257,13 @@ export class GameScene extends Phaser.Scene {
     this.players.push(p2);
     this.physics.add.collider(this.players, this._noWalkGroup);
 
+    // An ally who dropped mid-session stays a ghost across region restarts
+    // until they rejoin (set/cleared by the CLIENT_DISCONNECTED/JOINED handlers).
+    if (this.network.connected && this.network.isHost() && this.registry.get('allyAway')) {
+      p2.downed = true;
+      p2.setAlpha(0.15);
+    }
+
     // Apply unlocked skill-tree nodes so character growth survives reloads. Each
     // player only picks up the nodes matching its own character.
     this._skillNodes = [...(saveData.skillNodes || [])];
@@ -315,21 +322,19 @@ export class GameScene extends Phaser.Scene {
       this.network.on('PROJECTILE_SPAWN', onProjSpawn);
       _netCleanup.push(['PROJECTILE_SPAWN', onProjSpawn]);
 
-      // Mid-game co-op teardown. Two distinct signals end a session: the
-      // socket-level 'disconnected' (the relay server itself died), and the
-      // server's peer-drop MESSAGE (HOST_/CLIENT_DISCONNECTED) — when the
-      // partner leaves, the survivor's socket stays open, so only the message
-      // arrives. Both were unhandled in-game. The host's world is
-      // self-sufficient (Tara AI reclaims P2 once `connected` drops); the
-      // client's world is host-simulated and dies with the link, so it says
-      // goodbye and returns to the menu. Role is captured now:
-      // NetworkManager clears it on disconnect().
+      // Mid-game co-op teardown. Two distinct signals matter: the socket-level
+      // 'disconnected' (the relay server itself died), and the server's
+      // peer-drop MESSAGE (HOST_/CLIENT_DISCONNECTED) — when the partner
+      // leaves, the survivor's socket stays open, so only the message arrives.
+      // Role is captured now: NetworkManager clears it on disconnect().
       const wasClient = this.network.isClient();
-      let coopEnded = false;
-      const endCoop = () => {
-        if (coopEnded) return;
-        coopEnded = true;
-        if (wasClient) {
+      if (wasClient) {
+        // Client: either signal ends the session — this world is
+        // host-simulated and dies with the link.
+        let coopEnded = false;
+        const endCoop = () => {
+          if (coopEnded) return;
+          coopEnded = true;
           this._persist();
           this.events.emit('show_dialogue', { text: '⟨Connection Lost⟩ The thread to your ally has snapped. Returning to the beginning...' });
           this.time.delayedCall(2400, () => {
@@ -338,16 +343,89 @@ export class GameScene extends Phaser.Scene {
             this.scene.stop('GameScene');
             this.scene.start('MainMenuScene');
           });
-        } else {
+        };
+        this.network.on('disconnected', endCoop);
+        _netCleanup.push(['disconnected', endCoop]);
+        this.network.on('HOST_DISCONNECTED', endCoop);
+        _netCleanup.push(['HOST_DISCONNECTED', endCoop]);
+      } else {
+        // Host: the relay server dying ends co-op for good — continue solo
+        // (Tara AI reclaims P2 the moment `connected` drops).
+        const onServerLost = () => {
           this.network.disconnect();
-          try { this.scene.get('UIScene')?.toast?.('Ally disconnected — continuing solo', '#ffcc44', 3000); } catch (e) {}
-        }
+          this.registry.remove('allyAway');
+          // Un-ghost a waiting ally copy so Tara AI can drive it again.
+          const ally = this.players?.find(p => p && !p.isLocal);
+          if (ally?.downed) { ally.downed = false; ally.setAlpha(1); }
+          try { this.scene.get('UIScene')?.toast?.('Connection lost — continuing solo', '#ffcc44', 3000); } catch (e) {}
+        };
+        this.network.on('disconnected', onServerLost);
+        _netCleanup.push(['disconnected', onServerLost]);
+
+        // ...but a client drop keeps the room open server-side, so hold the
+        // socket and let them rejoin with the same code. Their copy waits as an
+        // untargetable ghost (enemy AI skips downed players); the rejoiner's
+        // first PLAYER_STATE restores it via the downed→up transition.
+        const onAllyLeft = () => {
+          this.registry.set('allyAway', true);   // survives region restarts
+          const ally = this.players?.find(p => p && !p.isLocal);
+          if (ally) { ally.downed = true; ally.setAlpha(0.15); ally.body?.setVelocity(0, 0); }
+          try { this.scene.get('UIScene')?.toast?.(`Ally disconnected — they can rejoin with code ${this.network.roomCode || ''}`, '#ffcc44', 5000); } catch (e) {}
+        };
+        this.network.on('CLIENT_DISCONNECTED', onAllyLeft);
+        _netCleanup.push(['CLIENT_DISCONNECTED', onAllyLeft]);
+
+        // Rejoin handshake: the menu's join flow lands them in the room, the
+        // server tells us, and we hand back everything needed to jump straight
+        // into the running game (region + character assignment).
+        const onAllyJoined = () => {
+          this.registry.remove('allyAway');
+          this.network.send('REJOIN_INFO', {
+            regionIndex: this._regionIndex,
+            p1Char: this._p1Char, p2Char: this._p2Char,
+          });
+          try { this.scene.get('UIScene')?.toast?.('Ally rejoined!', '#88ff88', 2500); } catch (e) {}
+        };
+        this.network.on('CLIENT_JOINED', onAllyJoined);
+        _netCleanup.push(['CLIENT_JOINED', onAllyJoined]);
+
+        // A (re)joining client announces when its scene is live — catch it up
+        // on a boss fight already in progress (BOSS_TRIGGER is idempotent).
+        const onClientReady = () => {
+          if (this._bossTriggered && this._boss?.alive) {
+            this.network.send('BOSS_TRIGGER', { bossKey: this._boss.bossKey });
+          }
+        };
+        this.network.on('CLIENT_READY', onClientReady);
+        _netCleanup.push(['CLIENT_READY', onClientReady]);
+      }
+
+      // Partner rested at a Thread Shrine: apply the real rest to the local
+      // player (their write to our remote copy is cosmetic-only).
+      const onShrineRest = () => {
+        const local = this.players.find(p => p?.isLocal);
+        if (!local) return;
+        local.hp = local.maxHp;
+        local.stamina = local.maxStamina;
+        local._updateHpBar?.();
+        local.refillAmrit?.(this);
+        if (local.downed) local.revive?.();
+        this.audio?.shrineRest?.();
+        this._persist();
+        this.events.emit('show_dialogue', { text: '⟨Thread Shrine⟩ Your ally rests — the thread carries the mending to you as well.' });
+        this.time.delayedCall(2600, () => this.events.emit('hide_dialogue'));
       };
-      this.network.on('disconnected', endCoop);
-      _netCleanup.push(['disconnected', endCoop]);
-      const peerGoneMsg = wasClient ? 'HOST_DISCONNECTED' : 'CLIENT_DISCONNECTED';
-      this.network.on(peerGoneMsg, endCoop);
-      _netCleanup.push([peerGoneMsg, endCoop]);
+      this.network.on('SHRINE_REST', onShrineRest);
+      _netCleanup.push(['SHRINE_REST', onShrineRest]);
+
+      // Partner struck a hymn resonance stone: mirror it so both puzzles
+      // advance (and solve) in step.
+      const onHymnStrike = ({ idx }) => {
+        const stone = (this._hymnStones || []).find(s => s.idx === idx);
+        if (stone) this._strikeHymnStone(stone, true);
+      };
+      this.network.on('HYMN_STRIKE', onHymnStrike);
+      _netCleanup.push(['HYMN_STRIKE', onHymnStrike]);
 
       // Heals cast by the partner (e.g. Tara's Jal Mend): a direct hp write on
       // their remote copy is overwritten by the owner's next broadcast, so the
@@ -464,6 +542,12 @@ export class GameScene extends Phaser.Scene {
         };
         this.network.on('BOSS_SYNC', onBossSync);
         _netCleanup.push(['BOSS_SYNC', onBossSync]);
+
+        // Announce once this scene is fully built (boss arena included) so the
+        // host can catch us up — e.g. a fight already in progress after rejoin.
+        this.time.delayedCall(500, () => {
+          if (this.network?.connected) this.network.send('CLIENT_READY', {});
+        });
       }
 
       this.events.once('shutdown', () => {
@@ -1792,7 +1876,7 @@ export class GameScene extends Phaser.Scene {
     if (this._shrineOpen) return;
     this._shrineOpen = true;
     this._paused = true;
-    this.physics.pause();
+    if (!this.network?.connected) this.physics.pause();   // co-op: overlay only
     this._shrinePrompt?.setVisible(false);
     this.scene.launch('ShrineScene', {
       regionIndex: this._regionIndex,
@@ -1806,7 +1890,7 @@ export class GameScene extends Phaser.Scene {
     if (!this._shrineOpen) return;
     this._shrineOpen = false;
     this._paused = false;
-    this.physics.resume();
+    if (!this.network?.connected) this.physics.resume();
   }
 
   // ── Thread Shards (merchant currency) ────────────────────────────────────────
@@ -1958,6 +2042,12 @@ export class GameScene extends Phaser.Scene {
     // Recover the party, refill Amrit, and save this shrine as the respawn point.
     for (const p of this.players) {
       if (!p) continue;
+      // Co-op: the partner's hp/Amrit live on their device — forward the rest
+      // (SHRINE_REST) so the mending is real there, not a cosmetic write here.
+      if (!p.isLocal && this.network?.connected) {
+        this.network.send('SHRINE_REST', {});
+        continue;
+      }
       p.hp = p.maxHp;
       p.stamina = p.maxStamina;
       p._updateHpBar?.();
@@ -2205,10 +2295,14 @@ export class GameScene extends Phaser.Scene {
     stone.glyph.setColor(lit ? '#eaffff' : '#bcdde8');
   }
 
-  _strikeHymnStone(stone) {
+  _strikeHymnStone(stone, fromNet = false) {
     const puz = this._hymnPuzzle;
     this.audio.hymnNote(stone.freq);
     this.tweens.add({ targets: stone.gfx, scale: { from: 1.35, to: 1 }, duration: 260, ease: 'Sine.easeOut' });
+    // Co-op: mirror the strike so the partner hears the note, sees the stone
+    // light, and their puzzle advances in step (both solve — and are rewarded —
+    // together, like shared kill credit).
+    if (!fromNet && this.network?.connected) this.network.send('HYMN_STRIKE', { idx: stone.idx });
     if (!puz || puz.solved) return;   // solved stones stay playable, just for the music
 
     if (stone.idx === puz.order[puz.progress]) {
@@ -3145,7 +3239,10 @@ export class GameScene extends Phaser.Scene {
   }
 
   update(time, delta) {
-    if (this._paused) return;
+    // Solo: pausing freezes the whole simulation. Co-op: the world is shared,
+    // so pause is only an overlay — keep simulating/syncing and just swallow
+    // this device's input (after the merge below) while the menu is up.
+    if (this._paused && !this.network?.connected) return;
 
     if (this._hitStopUntil && performance.now() >= this._hitStopUntil) this._hitStopRestore();
 
@@ -3179,6 +3276,16 @@ export class GameScene extends Phaser.Scene {
       if (tKey && tKey._justDown) {
         merged._justDown = true;
         tKey._justDown = false;
+      }
+    }
+
+    // Co-op pause overlay: the menu owns this device's input while the shared
+    // world runs on underneath.
+    if (this._paused) {
+      for (const dir of ['left', 'right', 'up', 'down']) this._mergedCursors[dir].isDown = false;
+      for (const name in this._mergedKeys) {
+        this._mergedKeys[name].isDown = false;
+        this._mergedKeys[name]._justDown = false;
       }
     }
 
@@ -4429,12 +4536,15 @@ export class GameScene extends Phaser.Scene {
 
   togglePause() {
     this._paused = !this._paused;
+    // Co-op: menus are overlays — the shared world (and its sync) never stops,
+    // only this device's input does (see update()). Solo pauses fully.
+    const coop = !!this.network?.connected;
     if (this._paused) {
       this.scene.launch('PauseScene');
-      this.physics.pause();
+      if (!coop) this.physics.pause();
     } else {
       this.scene.stop('PauseScene');
-      this.physics.resume();
+      if (!coop) this.physics.resume();
     }
   }
 
@@ -4442,7 +4552,7 @@ export class GameScene extends Phaser.Scene {
     if (this._mapOpen) return;
     this._mapOpen = true;
     this._paused  = true;
-    this.physics.pause();
+    if (!this.network?.connected) this.physics.pause();
     this.scene.launch('WorldMapScene', {
       from: 'game', currentRegion: this._regionIndex, fastTravel: !!opts.fastTravel,
     });
@@ -4453,7 +4563,7 @@ export class GameScene extends Phaser.Scene {
     if (!this._mapOpen) return;
     this._mapOpen = false;
     this._paused  = false;
-    this.physics.resume();
+    if (!this.network?.connected) this.physics.resume();
   }
 
   // Fast travel from the world map to an explored region's shrine.

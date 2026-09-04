@@ -480,6 +480,8 @@ export class MainMenuScene extends Phaser.Scene {
   // ── Game start / co-op ────────────────────────────────────────────────────
 
   _startGame(isCoop, regionIndex = 0, charData = {}) {
+    // Stale ghost flag from a previous co-op session must not haunt a new one.
+    this.registry.remove('allyAway');
     // Refresh region maps in parallel with the fade so editor-saved data is current
     const mapsPromise = RegionCatalog.refresh()
       .then(list => { this.registry.set('regionMaps', list); })
@@ -634,6 +636,14 @@ export class MainMenuScene extends Phaser.Scene {
         this._netOn(net, 'ROOM_READY', () => {
           this._showCharSelect(net, false);
         });
+        // Rejoining a game already in progress: the in-game host answers the
+        // join with everything needed to skip setup and jump straight in.
+        this._netOn(net, 'REJOIN_INFO', ({ regionIndex, p1Char, p2Char }) => {
+          this.registry.set('network', net);
+          this._startGame(true, regionIndex ?? 0, {
+            p1Char: p1Char || 'dhruva', p2Char: p2Char || 'tara',
+          });
+        });
         this._netOn(net, 'ROOM_ERROR', ({ reason }) => {
           this._roomPrompt.setText('ERROR: ' + reason);
           this._roomInput.setText('____');
@@ -771,24 +781,55 @@ export class MainMenuScene extends Phaser.Scene {
       }
     };
 
-    const selectChar = (char) => {
-      if (myChar) return;
-      myChar = char;
+    // Movable so a race-resolution switch (below) can relocate it.
+    const checkTxt = this.add.text(0, cardY + 108, '✓  SELECTED', {
+      fontSize: '13px', fontFamily: 'monospace', color: '#ffffff',
+    }).setOrigin(0.5).setDepth(D + 3).setVisible(false);
+
+    const applyMyPick = (char) => {
       const other = char === 'dhruva' ? 'tara' : 'dhruva';
       borders[char].setStrokeStyle(3, col[char]);
       borders[other].setStrokeStyle(2, 0x223344);
       bgs[other].setAlpha(0.3);
-      this.add.text(cx[char], cardY + 108, '✓  SELECTED', {
-        fontSize: '13px', fontFamily: 'monospace', color: hex[char],
-      }).setOrigin(0.5).setDepth(D + 3);
+      checkTxt.setPosition(cx[char], cardY + 108).setColor(hex[char]).setVisible(true);
+    };
+
+    const selectChar = (char) => {
+      if (myChar) return;
+      // The partner's hero is taken — heroes are unique in co-op.
+      if (char === partnerChar) {
+        statusTxt.setText(`Your partner already chose ${char.toUpperCase()} — pick the other hero.`);
+        return;
+      }
+      myChar = char;
+      applyMyPick(char);
       statusTxt.setText('Waiting for partner...');
       net.send('CHAR_SELECT', { char });
       tryStart();
     };
 
     this._netOn(net, 'CHAR_SELECT', ({ char }) => {
+      // Simultaneous same-pick race: deterministic rule — the host keeps its
+      // hero, the client yields and re-announces. The host ignores the
+      // conflicting pick and waits for that corrected announcement.
+      if (char === myChar) {
+        if (isHost) return;
+        partnerChar = char;
+        partnerTxt.setText(`Partner chose: ${char.toUpperCase()}`).setStyle({ color: hex[char] });
+        myChar = char === 'dhruva' ? 'tara' : 'dhruva';
+        applyMyPick(myChar);
+        statusTxt.setText(`Both chose the same hero — you take ${myChar.toUpperCase()}.`);
+        net.send('CHAR_SELECT', { char: myChar });
+        tryStart();
+        return;
+      }
       partnerChar = char;
       partnerTxt.setText(`Partner chose: ${char.toUpperCase()}`).setStyle({ color: hex[char] });
+      // Grey out the taken hero for a player still choosing.
+      if (!myChar) {
+        bgs[char].setAlpha(0.35);
+        borders[char].setStrokeStyle(2, 0x553344);
+      }
       tryStart();
     });
 

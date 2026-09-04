@@ -1,4 +1,5 @@
 import { BOSSES } from '../data/bosses.js';
+import { NET_INTERVAL } from '../constants.js';
 
 const STATE = { IDLE: 'idle', ENTER: 'enter', FIGHT: 'fight', STAGGER: 'stagger', DEAD: 'dead', AMBUSH: 'ambush' };
 
@@ -1125,7 +1126,7 @@ export class Boss extends Phaser.GameObjects.Container {
         targets: this,
         x: state.x,
         y: state.y,
-        duration: 100, // Matches standard network tick rates
+        duration: NET_INTERVAL, // one sync tick (NET_HZ), so glides join seamlessly
         ease: 'Linear',
         onUpdate: () => {
           // Tell Phaser's physics engine NOT to fight the slide
