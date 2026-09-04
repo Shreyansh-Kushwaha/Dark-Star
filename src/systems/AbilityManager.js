@@ -87,6 +87,24 @@ export class AbilityManager {
       },
       onComplete: () => gfx.destroy(),
     });
+
+    // Scorched Earth capstone: the impact site burns for 3 ticks.
+    if (player._skillEffects?.has('slam_burn')) {
+      const bx = player.x, by = player.y;
+      const tickDmg = 20 * player.abilityPow;
+      for (let t = 1; t <= 3; t++) {
+        scene.time.delayedCall(t * 900, () => {
+          if (!scene.scene?.isActive?.()) return;
+          _vfxPlay(scene, 'vfx_fire3', bx + (Math.random() - 0.5) * 80, by + (Math.random() - 0.5) * 60 - 10, 0.9, by + 2);
+          for (const e of scene.enemies) {
+            if (!e?.active || !e.alive) continue;
+            if (Phaser.Math.Distance.Between(bx, by, e.x, e.y) <= r * 0.8) {
+              e.takeDamage(tickDmg, player, scene);
+            }
+          }
+        });
+      }
+    }
     scene.audio.ability();
   }
 
@@ -108,6 +126,26 @@ export class AbilityManager {
           player.remove(fx, true);
           player._agniShieldFx = null;
         }
+      });
+    }
+
+    // Aegis Detonation capstone: the fading shield bursts outward.
+    if (player._skillEffects?.has('shield_burst')) {
+      scene.time.delayedCall(3000, () => {
+        if (!player.active || !player.alive) return;
+        const br = 140;
+        const dmg = 70 * player.abilityPow;
+        for (const e of scene.enemies) {
+          if (!e?.active || !e.alive) continue;
+          const d = Phaser.Math.Distance.Between(player.x, player.y, e.x, e.y);
+          if (d <= br) {
+            e.takeDamage(dmg, player, scene);
+            const angle = Math.atan2(e.y - player.y, e.x - player.x);
+            if (e.knockback) e.knockback(angle, 220);
+          }
+        }
+        _vfxPlay(scene, 'vfx_fire2', player.x, player.y - 20, 1.6, player.depth - 1);
+        scene.audio.ability();
       });
     }
 
@@ -159,11 +197,30 @@ export class AbilityManager {
     }
 
     // Green dash trail — 4 VFX sprites spaced along the path
+    const ox = player.x, oy = player.y;
     for (let i = 0; i < 4; i++) {
-      const gx = player.x + dx * dist * (i / 4);
-      const gy = player.y + dy * dist * (i / 4);
+      const gx = ox + dx * dist * (i / 4);
+      const gy = oy + dy * dist * (i / 4);
       scene.time.delayedCall(i * 35, () => {
         _vfxPlay(scene, 'vfx_green1', gx, gy - 10, 0.85, player.depth + 1);
+      });
+    }
+
+    // Storm Wake capstone: the wake crackles a beat later, shocking anything
+    // still standing along the dash corridor (wider than the dash's own hitbox).
+    if (player._skillEffects?.has('dash_shock')) {
+      scene.time.delayedCall(400, () => {
+        const shockDmg = 30 * player.abilityPow;
+        for (const e of scene.enemies) {
+          if (!e?.active || !e.alive) continue;
+          const ex = e.x - ox, ey = e.y - oy;
+          const proj = ex * dx + ey * dy;
+          if (proj < 0 || proj > dist) continue;
+          if (Math.abs(ex * dy - ey * dx) <= halfW * 2) {
+            e.takeDamage(shockDmg, player, scene);
+            _vfxPlay(scene, 'vfx_lightning1', e.x, e.y - 20, 0.9, e.depth + 2);
+          }
+        }
       });
     }
 
@@ -182,6 +239,33 @@ export class AbilityManager {
     }
     // Large radiant circle for the overall aura
     _vfxPlay(scene, 'vfx_yellow3', player.x, player.y - 30, 1.6, player.depth + 2);
+
+    // Cleansing Tide capstone: the healing water also scours nearby enemies.
+    if (player._skillEffects?.has('mend_wave')) {
+      const wr = 200;
+      const dmg = 55 * player.abilityPow;
+      for (const e of scene.enemies) {
+        if (!e?.active || !e.alive) continue;
+        const d = Phaser.Math.Distance.Between(player.x, player.y, e.x, e.y);
+        if (d <= wr) {
+          e.takeDamage(dmg, player, scene);
+          const angle = Math.atan2(e.y - player.y, e.x - player.x);
+          if (e.knockback) e.knockback(angle, 180);
+          _vfxPlay(scene, 'vfx_frost1', e.x, e.y - 15, 0.8, e.depth + 2);
+        }
+      }
+      const gfx = scene.add.graphics();
+      scene.tweens.addCounter({
+        from: 0, to: wr, duration: 420,
+        onUpdate: tw => {
+          gfx.clear();
+          gfx.lineStyle(3, 0x66ccff, 0.55 * (1 - tw.progress));
+          gfx.strokeCircle(player.x, player.y, tw.getValue());
+        },
+        onComplete: () => gfx.destroy(),
+      });
+    }
+
     scene.events.emit('healing_aura', { players: scene.players });
     scene.audio.ability();
   }

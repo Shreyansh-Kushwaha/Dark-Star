@@ -662,6 +662,7 @@ export class Player extends Phaser.GameObjects.Container {
     this._skillNodes = Array.isArray(nodeIds) ? [...nodeIds] : [];
     const owned = new Set(this._skillNodes);
     let hpPct = 0, staPct = 0, abPct = 0, dmgPct = 0, defPct = 0, staRegPct = 0;
+    this._skillEffects = new Set();   // capstone behavior flags (AbilityManager checks)
     const tree = SKILL_TREES[this.charKey];
     if (tree) {
       for (const branch of tree.branches) {
@@ -670,6 +671,7 @@ export class Player extends Phaser.GameObjects.Container {
           const m = n.mods || {};
           hpPct += m.hpPct || 0;   staPct += m.staminaPct || 0;  abPct += m.abilityPct || 0;
           dmgPct += m.dmgPct || 0; defPct += m.defensePct || 0;  staRegPct += m.staRegenPct || 0;
+          if (n.effect) this._skillEffects.add(n.effect);
         }
       }
     }
