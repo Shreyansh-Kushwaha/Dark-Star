@@ -148,8 +148,13 @@ export class Player extends Phaser.GameObjects.Container {
     }
 
     if (this.downed) {
-      this._downTimer -= delta;
-      if (this._downTimer <= 0) this.revive();
+      // Hold the auto-revive countdown once the game-over flow owns the
+      // outcome — otherwise the player stood back up 12 seconds later
+      // underneath the YOU DIED screen (scene restart clears the flag).
+      if (!scene?._gameOverActive) {
+        this._downTimer -= delta;
+        if (this._downTimer <= 0) this.revive();
+      }
       return;
     }
 

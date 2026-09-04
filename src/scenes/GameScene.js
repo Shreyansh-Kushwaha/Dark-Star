@@ -648,6 +648,15 @@ export class GameScene extends Phaser.Scene {
     // without this reset the SECOND death's respawn button was a no-op.
     this._respawning = false;
     this._gameOverActive = false;
+    // A region change can arrive (co-op REGION_CHANGE) while an overlay menu is
+    // open on this device; scene.restart doesn't close overlays, so a stale one
+    // would linger over the new region with its open-flag already reset — and
+    // these flags themselves survive restart, permanently blocking M/interacts.
+    for (const key of ['PauseScene', 'WorldMapScene', 'ShrineScene', 'MerchantScene']) {
+      if (this.scene.isActive(key)) this.scene.stop(key);
+    }
+    this._mapOpen = false;
+    this._riddleActive = false;
 
     // Seamless streaming state. `base` is the region occupying world-cell 0
     // (x: 0..WORLD_W). `next`/`prev` hold a pre-loaded neighbour (or null).
@@ -713,6 +722,12 @@ export class GameScene extends Phaser.Scene {
       // The region drone otherwise keeps humming under the main menu forever —
       // nothing outside startAmbient() ever stopped it. Restarts re-start it.
       this.audio?.stopAmbient?.();
+      // Quitting to the menu mid-hitstop/slow-mo left the GLOBAL anim timescale
+      // stuck below 1 (only _fadeAndTransition reset it; the pause-menu and
+      // YOU-DIED exits didn't). Reset on every teardown path.
+      this.anims.globalTimeScale = 1;
+      this.tweens.timeScale = 1;
+      this.time.timeScale = 1;
     });
 
     this.questManager.addEventListener('quest_started', (e) => {

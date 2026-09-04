@@ -69,6 +69,9 @@ export class GameEndingScene extends Phaser.Scene {
 
   create() {
     SaveManager.clear();
+    // The Lost Echo lives only in the registry — clearing the save without it
+    // let a stale echo from this playthrough appear in the next one.
+    this.registry.remove('deathEcho');
 
     // Co-op: the session's socket would otherwise stay open forever. Both
     // players enter the ending within a sync tick of each other, so a short
