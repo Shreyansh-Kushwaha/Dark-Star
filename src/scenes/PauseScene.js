@@ -144,7 +144,9 @@ export class PauseScene extends Phaser.Scene {
     ];
 
     const add = o => { o.setDepth(D + 1); this._setObjs.push(o); return o; };
-    this._setObjs.push(this.add.rectangle(cx, GAME_H / 2, GAME_W, GAME_H, 0x000000, 0.86).setDepth(D));
+    // Interactive veil: swallow pointer events so the menu buttons underneath
+    // (topmost-only hit testing) can't be clicked through the panel.
+    this._setObjs.push(this.add.rectangle(cx, GAME_H / 2, GAME_W, GAME_H, 0x000000, 0.86).setDepth(D).setInteractive());
     add(this.add.text(cx, 120, 'SETTINGS', {
       fontSize: '30px', color: '#ffd700', fontFamily: 'serif', stroke: '#000', strokeThickness: 5,
     }).setOrigin(0.5));

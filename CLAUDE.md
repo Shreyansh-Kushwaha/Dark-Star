@@ -24,9 +24,14 @@ won't load).
   `GameScene` (the big one) with `UIScene` overlay; plus `PauseScene`,
   `WorldMapScene`, `ShrineScene`, `GameEndingScene`.
 - `entities/` — `Player`, `Enemy`, `Boss`, `NPC`.
-- `systems/` — `AbilityManager`, `AudioManager` (procedural WebAudio, no files),
-  `AnimationLoader`, `SaveManager` (localStorage), `QuestManager`, `NetworkManager`,
-  `QualitySettings`.
+- `systems/` — `AbilityManager`, `AudioManager` (procedural WebAudio, no files;
+  music/sfx buses scaled by `Settings` volumes), `AnimationLoader`, `SaveManager`
+  (localStorage), `QuestManager` (predicates: `boss_kill:` / `enemy_kills:N` /
+  `portal_unlock:N` / `pressure_plate` / `talk:<npcId>` / `collect:<item>:<N>`),
+  `NetworkManager`, `QualitySettings`, `Settings` (volumes + reduced motion —
+  pause-menu Settings panel; shake/hitstop go through `GameScene._cameraPunch` /
+  `_hitStop`, never call `cameras.main.shake` directly), `RegionCatalog` (the one
+  shared `/api/regions` fetch — never fetch it directly).
 - `data/` — regions, quests, enemies, bosses, creature stats, codex, prop tables,
   `skills.js` (per-character skill trees), `merchant.js` (shop catalog/pricing).
 - `constants.js` — tuning values, XP curve, item defs, Amrit + Thread-Shard economy.
