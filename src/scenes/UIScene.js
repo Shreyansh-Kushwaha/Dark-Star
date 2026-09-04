@@ -237,16 +237,16 @@ export class UIScene extends Phaser.Scene {
   // ESC/U/I shortcuts these mirror have no on-screen equivalent otherwise.
   // Stacked along the right edge, just under the shard counter.
   _createTouchMenuButtons() {
-    const x = GAME_W - 38;
+    const x = GAME_W - 44;
     const defs = [
       { y: 100, label: '☰', color: 0xffd700, onTap: () => this._openPauseMenu() },
-      { y: 160, label: '📜', color: 0xddaa66, onTap: () => this._toggleQuestPanel(this.scene.get('GameScene')) },
-      { y: 220, label: '🎒', color: 0x8fe3ff, onTap: () => this._toggleInventoryPanel(this.scene.get('GameScene')) },
-      { y: 280, label: '⛶',  color: 0xaaaaaa, onTap: () => this._toggleFullscreen() },
+      { y: 172, label: '📜', color: 0xddaa66, onTap: () => this._toggleQuestPanel(this.scene.get('GameScene')) },
+      { y: 244, label: '🎒', color: 0x8fe3ff, onTap: () => this._toggleInventoryPanel(this.scene.get('GameScene')) },
+      { y: 316, label: '⛶',  color: 0xaaaaaa, onTap: () => this._toggleFullscreen() },
     ];
     for (const d of defs) {
-      const bg = this.add.circle(x, d.y, 28, 0x0a0a14, 0.55).setStrokeStyle(2, d.color, 0.55).setDepth(9500);
-      const txt = this.add.text(x, d.y, d.label, { fontSize: '22px' }).setOrigin(0.5).setDepth(9501);
+      const bg = this.add.circle(x, d.y, 34, 0x0a0a14, 0.55).setStrokeStyle(2, d.color, 0.55).setDepth(9500);
+      const txt = this.add.text(x, d.y, d.label, { fontSize: '26px' }).setOrigin(0.5).setDepth(9501);
       bg.setInteractive({ useHandCursor: true });
       bg.on('pointerdown', () => { bg.setScale(0.9); txt.setScale(0.9); });
       bg.on('pointerup',   () => { bg.setScale(1); txt.setScale(1); d.onTap(); });
