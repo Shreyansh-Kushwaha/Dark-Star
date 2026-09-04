@@ -10,6 +10,24 @@ export class QuestManager extends EventTarget {
     completedIds.forEach(id => this.completed.add(id));
   }
 
+  // Seed persisted kill-count progress for quests already restored into
+  // `active` — without this a `enemy_kills:N` quest restarted from zero on
+  // every region crossing (scene.restart rebuilds this manager).
+  loadProgress(progress = {}) {
+    for (const [id, n] of Object.entries(progress)) {
+      if (this.active.has(id) && n > 0) this.killCounts.set(id, n);
+    }
+  }
+
+  getActiveArray() {
+    return [...this.active.keys()];
+  }
+
+  // killCounts as a plain object for the save.
+  getProgressObject() {
+    return Object.fromEntries(this.killCounts);
+  }
+
   start(questId, questData) {
     if (this.completed.has(questId) || this.active.has(questId)) return;
     this.active.set(questId, { ...questData, progress: 0 });
@@ -20,6 +38,7 @@ export class QuestManager extends EventTarget {
     if (this.completed.has(questId)) return;
     const q = this.active.get(questId);
     this.active.delete(questId);
+    this.killCounts.delete(questId);   // no stale count left for the save
     this.completed.add(questId);
     this.dispatch('quest_completed', { id: questId, quest: q });
   }

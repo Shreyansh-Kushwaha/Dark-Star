@@ -209,6 +209,17 @@ export class GameScene extends Phaser.Scene {
     this.haptics = new HapticsManager();
     this.questManager = new QuestManager();
     this.questManager.load(saveData.completedQuests || []);
+    // Restore in-progress quests and their kill counts — scene.restart on every
+    // region crossing rebuilds this manager, which used to drop both (a kill
+    // quest lost its count and needed re-talking to its NPC). Restored quietly:
+    // the quest_started listeners aren't attached yet, so no toast replays.
+    // Trials sit outside the story, same as the main-quest auto-start rule.
+    if (!this._trial) {
+      for (const id of (saveData.activeQuests || [])) {
+        if (QUESTS[id]) this.questManager.start(id, QUESTS[id]);
+      }
+      this.questManager.loadProgress(saveData.questProgress || {});
+    }
     this.loreManager = new LoreManager();
     this.loreManager.load(saveData.collectedLoreIds || []);
     // Codex tracking: enemies faced and NPCs met (for the Bestiary / NPC pages).
@@ -753,6 +764,16 @@ export class GameScene extends Phaser.Scene {
         this._notifyItemCollected(reward.item);
       }
     });
+    // Quests restored before these listeners existed skipped the
+    // already-satisfied checks quest_started performs — run them now (a fetch
+    // quest whose item was bagged elsewhere, a solved sequence puzzle).
+    for (const [, q] of this.questManager.active) {
+      const comp = q.complete;
+      if (comp?.startsWith('collect:')) this._notifyItemCollected(comp.split(':')[1]);
+      if (comp?.startsWith('sequence:') && this._solvedSequences?.has(comp.split(':')[1])) {
+        this.questManager.onSequenceSolved(comp.split(':')[1]);
+      }
+    }
     // ── Region title ──────────────────────────────────────────────
     // Prefer the map's nickname + Sanskrit subtitle when a JSON map exists,
     // so editor-authored regions (incl. the start region) show the new names
@@ -2160,6 +2181,12 @@ export class GameScene extends Phaser.Scene {
     s.skillNodes       = [...(this._skillNodes || s.skillNodes || [])];
     s.statPoints       = this.scene.get('UIScene')?._statPoints ?? s.statPoints ?? 0;
     s.completedQuests  = [...(this.questManager?.completed ?? s.completedQuests ?? [])];
+    // In-progress quests + kill counts survive crossings/reloads. Trials never
+    // restore or run story quests, so they must not blank the saved set either.
+    if (!this._trial) {
+      s.activeQuests   = this.questManager?.getActiveArray?.() ?? s.activeQuests ?? [];
+      s.questProgress  = this.questManager?.getProgressObject?.() ?? s.questProgress ?? {};
+    }
     s.collectedLoreIds = this.loreManager?.toArray?.() ?? s.collectedLoreIds;
     if (this._encounteredEnemies) s.encounteredEnemyIds = [...this._encounteredEnemies];
     if (this._metNpcs)            s.metNpcs             = [...this._metNpcs.values()];

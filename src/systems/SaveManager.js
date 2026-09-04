@@ -36,6 +36,9 @@ export class SaveManager {
       playerLevel: 1,
       playerXP: 0,
       completedQuests: [],
+      activeQuests: [],       // quest ids in progress — restored on load so crossings don't drop them
+      questProgress: {},      // questId -> enemy-kill count toward its target
+
       inventory: [],
       collectedLoreIds: [],
       encounteredEnemyIds: [],
